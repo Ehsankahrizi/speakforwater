@@ -180,7 +180,8 @@ class NotebookLMAutomator:
                 "notebooklm", "generate", "audio",
                 prompt_truncated,
                 "--wait",
-            ], timeout=1800)  # 30-minute timeout — generation can take 15-20 min
+                "--timeout", "1800",  # Tell SDK to wait up to 30 min
+            ], timeout=1800)  # subprocess timeout also 30 min
 
             logger.info(f"Generation complete: {generate_output[:200]}")
 
