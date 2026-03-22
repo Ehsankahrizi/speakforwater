@@ -5,6 +5,8 @@ Uses a Google Service Account for authentication (no browser needed).
 The service account JSON key is stored as a GitHub Actions secret.
 """
 
+from __future__ import annotations
+
 import json
 import logging
 from datetime import datetime, timezone

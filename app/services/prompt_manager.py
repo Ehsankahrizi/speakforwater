@@ -3,6 +3,8 @@ Manages the default SpeakForWater podcast prompt.
 The prompt is used as the "episode focus" in NotebookLM's Audio Overview.
 """
 
+from __future__ import annotations
+
 DEFAULT_SPEAKFORWATER_PROMPT = """Prompt (SpeakforWater – Podcast Script for One Paper)
 You are creating an episode for the website SpeakforWater.
 This episode is a podcast conversation between:

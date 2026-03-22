@@ -7,6 +7,8 @@ GET  /api/podcast/tasks     — List recent tasks
 GET  /api/downloads/{filename} — Download a generated MP3
 """
 
+from __future__ import annotations
+
 import asyncio
 import logging
 from pathlib import Path

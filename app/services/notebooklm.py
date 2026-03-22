@@ -15,6 +15,8 @@ Authentication is handled via a Netscape-format cookies.txt file
 exported from the user's browser while logged into Google.
 """
 
+from __future__ import annotations
+
 import asyncio
 import json
 import logging
@@ -22,6 +24,7 @@ import re
 import time
 from http.cookiejar import MozillaCookieJar
 from pathlib import Path
+from typing import Callable, Optional
 
 from playwright.async_api import (
     async_playwright,
@@ -87,7 +90,7 @@ def parse_cookies_txt(cookies_path: Path) -> list[dict]:
 
 # ── Status callback type ───────────────────────────────────────────────
 
-StatusCallback = callable  # async def callback(status: TaskStatus, message: str)
+StatusCallback = Callable  # async def callback(status: TaskStatus, message: str)
 
 
 # ── Main automator class ──────────────────────────────────────────────
@@ -98,11 +101,11 @@ class NotebookLMAutomator:
     podcast generation.
     """
 
-    def __init__(self, cookies_path: Path | None = None):
+    def __init__(self, cookies_path: Optional[Path] = None):
         self.cookies_path = cookies_path or settings.cookies_path
-        self._playwright: Playwright | None = None
-        self._browser: Browser | None = None
-        self._context: BrowserContext | None = None
+        self._playwright: Optional[Playwright] = None
+        self._browser: Optional[Browser] = None
+        self._context: Optional[BrowserContext] = None
         self._ready = False
 
     # ── Lifecycle ──────────────────────────────────────────────────
@@ -177,7 +180,7 @@ class NotebookLMAutomator:
         audio_format: AudioFormat = AudioFormat.DEEP_DIVE,
         language: str = "English",
         length: AudioLength = AudioLength.DEFAULT,
-        on_status: StatusCallback | None = None,
+        on_status: Optional[StatusCallback] = None,
     ) -> dict:
         """
         Full pipeline: create notebook → add source → configure audio → generate → download.

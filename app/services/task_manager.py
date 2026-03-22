@@ -5,6 +5,8 @@ Each generation runs as a background asyncio task. The API returns
 a task_id immediately, and the client polls GET /status/{task_id}.
 """
 
+from __future__ import annotations
+
 import asyncio
 import uuid
 import logging

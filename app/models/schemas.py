@@ -2,6 +2,8 @@
 Pydantic models for API request / response validation.
 """
 
+from __future__ import annotations
+
 from datetime import datetime
 from enum import Enum
 from pydantic import BaseModel, Field, HttpUrl

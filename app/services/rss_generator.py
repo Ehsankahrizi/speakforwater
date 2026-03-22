@@ -5,6 +5,8 @@ Generates a valid podcast RSS feed (compatible with Spotify, Apple Podcasts, etc
 from the episodes directory metadata.
 """
 
+from __future__ import annotations
+
 import json
 import logging
 from datetime import datetime, timezone
