@@ -7,9 +7,17 @@ by using NOTEBOOKLM_AUTH_JSON for authentication.
 
 Auth flow:
   1. Run `notebooklm login` on your local machine once (opens browser)
-  2. Export the auth JSON: `notebooklm auth export`
+  2. Export the auth JSON: read ~/.notebooklm/storage_state.json
   3. Store it as a GitHub Actions secret: NOTEBOOKLM_AUTH_JSON
   4. The SDK uses these cookies to make direct API calls (no browser needed)
+
+Correct CLI commands (notebooklm-py):
+  notebooklm create "Title"               — create notebook, prints ID
+  notebooklm use <notebook_id>            — set active notebook context
+  notebooklm source add <url>             — add a source URL
+  notebooklm generate audio "<prompt>" --wait  — generate podcast audio
+  notebooklm download audio <output.mp3>  — download the generated audio
+  notebooklm delete <notebook_id> --yes   — delete notebook (cleanup)
 """
 
 from __future__ import annotations
@@ -18,6 +26,7 @@ import asyncio
 import json
 import logging
 import os
+import re
 import subprocess
 import time
 from pathlib import Path
@@ -32,9 +41,9 @@ class NotebookLMAutomator:
 
     Steps:
       1. Create a new notebook
-      2. Add paper URL as a source
-      3. Generate audio overview with custom prompt
-      4. Wait for generation to complete
+      2. Set the notebook as active (notebooklm use <id>)
+      3. Add paper URL as a source
+      4. Generate audio overview with custom prompt (--wait for completion)
       5. Download the MP3
     """
 
@@ -51,11 +60,12 @@ class NotebookLMAutomator:
         self._ready = False
 
     async def start(self):
-        """Validate authentication."""
+        """Validate authentication and write auth file."""
         if not self.auth_json:
             raise RuntimeError(
                 "No auth JSON provided. Set NOTEBOOKLM_AUTH_JSON environment variable. "
-                "To get it: run 'notebooklm login' locally, then 'notebooklm auth export'."
+                "To get it: run 'notebooklm login' locally, then read "
+                "~/.notebooklm/storage_state.json"
             )
 
         # Write auth JSON to the file location the SDK expects
@@ -66,13 +76,28 @@ class NotebookLMAutomator:
         logger.info("Auth JSON written to ~/.notebooklm/storage_state.json")
 
         # Verify auth is valid
-        result = self._run_cli(["notebooklm", "auth", "check"])
-        if "expired" in result.lower() or "invalid" in result.lower():
-            raise RuntimeError(
-                f"NotebookLM auth is expired or invalid. "
-                f"Please re-run 'notebooklm login' locally and update the secret. "
-                f"Output: {result}"
-            )
+        try:
+            result = self._run_cli(["notebooklm", "auth", "check"])
+            if "expired" in result.lower() or "invalid" in result.lower():
+                raise RuntimeError(
+                    f"NotebookLM auth is expired or invalid. "
+                    f"Please re-run 'notebooklm login' locally and update the secret. "
+                    f"Output: {result}"
+                )
+            logger.info(f"Auth check: {result[:100]}")
+        except RuntimeError as e:
+            # auth check command might not exist in all versions — try listing notebooks
+            if "No such command" in str(e) or "no such command" in str(e).lower():
+                logger.warning("'auth check' not available, trying 'notebooklm list'...")
+                try:
+                    self._run_cli(["notebooklm", "list"], timeout=30)
+                    logger.info("Auth verified via notebook list")
+                except RuntimeError as e2:
+                    raise RuntimeError(
+                        f"Authentication failed. Please re-run 'notebooklm login'. Error: {e2}"
+                    )
+            else:
+                raise
 
         self._ready = True
         logger.info("NotebookLM SDK authentication verified")
@@ -108,6 +133,8 @@ class NotebookLMAutomator:
             raise RuntimeError("Automator not started. Call start() first.")
 
         notebook_id = None
+        filename = f"ep{str(episode_number).zfill(3)}.mp3"
+        mp3_path = self.storage_dir / filename
 
         try:
             # ── Step 1: Create a new notebook ──────────────────────
@@ -115,78 +142,73 @@ class NotebookLMAutomator:
                 await on_status("creating_notebook", "Creating new notebook...")
             logger.info("Creating new notebook...")
 
+            notebook_title = f"SpeakForWater Ep{episode_number}: {paper_title[:50]}"
             create_output = self._run_cli([
-                "notebooklm", "notebook", "create",
-                "--title", f"SpeakForWater Ep{episode_number}: {paper_title[:50]}",
-                "--json"
+                "notebooklm", "create", notebook_title
             ])
 
             notebook_id = self._parse_notebook_id(create_output)
             logger.info(f"Created notebook: {notebook_id}")
 
-            # ── Step 2: Add paper URL as source ────────────────────
+            # ── Step 2: Set active notebook context ─────────────────
+            logger.info(f"Setting active notebook: {notebook_id}")
+            self._run_cli(["notebooklm", "use", notebook_id])
+
+            # ── Step 3: Add paper URL as source ─────────────────────
             if on_status:
                 await on_status("adding_source", f"Adding source: {paper_url}")
             logger.info(f"Adding source URL: {paper_url}")
 
-            self._run_cli([
-                "notebooklm", "source", "add",
-                "--notebook", notebook_id,
-                "--url", paper_url,
-            ])
+            self._run_cli(["notebooklm", "source", "add", paper_url])
 
-            # Wait a moment for the source to be indexed
-            logger.info("Waiting for source indexing...")
-            await asyncio.sleep(10)
+            # Wait for the source to be indexed
+            logger.info("Waiting 15s for source indexing...")
+            await asyncio.sleep(15)
 
-            # ── Step 3: Generate audio overview ────────────────────
+            # ── Step 4: Generate audio overview ──────────────────────
             if on_status:
-                await on_status("generating", "Generating podcast audio (this may take several minutes)...")
-            logger.info("Starting audio generation...")
+                await on_status(
+                    "generating",
+                    "Generating podcast audio (this may take several minutes)..."
+                )
+            logger.info("Starting audio generation (--wait enabled, up to 10 min)...")
 
-            # Write prompt to a temp file (CLI may have length limits)
-            prompt_file = Path("/tmp/speakforwater_prompt.txt")
-            prompt_file.write_text(prompt)
+            # Truncate prompt if needed (CLI may have arg length limits)
+            prompt_truncated = prompt[:2000] if len(prompt) > 2000 else prompt
 
             generate_output = self._run_cli([
                 "notebooklm", "generate", "audio",
-                "--notebook", notebook_id,
-                "--instructions", prompt,
+                prompt_truncated,
                 "--wait",
-                "--json",
-            ], timeout=600)  # 10 minute timeout
+            ], timeout=600)  # 10-minute timeout for generation
 
-            logger.info(f"Generation output: {generate_output[:200]}")
+            logger.info(f"Generation complete: {generate_output[:200]}")
 
-            # ── Step 4: Download the audio ─────────────────────────
+            # ── Step 5: Download the audio ───────────────────────────
             if on_status:
                 await on_status("downloading", "Downloading MP3...")
+            logger.info(f"Downloading MP3 to {mp3_path}...")
 
-            filename = f"ep{str(episode_number).zfill(3)}.mp3"
-            mp3_path = self.storage_dir / filename
-
-            # Try to extract download URL from the output and download
-            download_output = self._run_cli([
-                "notebooklm", "artifact", "download",
-                "--notebook", notebook_id,
-                "--type", "audio",
-                "--output", str(mp3_path),
+            self._run_cli([
+                "notebooklm", "download", "audio",
+                str(mp3_path),
             ], timeout=120)
 
             if not mp3_path.exists():
-                # Fallback: try listing artifacts to find the audio file
-                list_output = self._run_cli([
-                    "notebooklm", "artifact", "list",
-                    "--notebook", notebook_id,
-                    "--json",
-                ])
-                logger.info(f"Artifacts: {list_output[:500]}")
+                # Fallback: try with --output flag syntax
+                logger.warning("First download attempt failed, trying --output flag...")
+                self._run_cli([
+                    "notebooklm", "download", "audio",
+                    "--output", str(mp3_path),
+                ], timeout=120)
+
+            if not mp3_path.exists():
                 raise RuntimeError(
-                    f"MP3 file not found at {mp3_path}. "
-                    f"Artifact list: {list_output[:200]}"
+                    f"MP3 file not found at {mp3_path} after download. "
+                    "Check GitHub Actions logs for the download command output."
                 )
 
-            logger.info(f"Downloaded: {mp3_path} ({mp3_path.stat().st_size} bytes)")
+            logger.info(f"Downloaded: {mp3_path} ({mp3_path.stat().st_size:,} bytes)")
 
             return {
                 "mp3_path": str(mp3_path),
@@ -200,18 +222,20 @@ class NotebookLMAutomator:
             # Try to clean up the notebook
             if notebook_id:
                 try:
+                    logger.info(f"Cleaning up notebook {notebook_id}...")
                     self._run_cli([
-                        "notebooklm", "notebook", "delete",
-                        "--notebook", notebook_id, "--yes"
-                    ])
-                except Exception:
-                    pass
+                        "notebooklm", "delete", notebook_id, "--yes"
+                    ], timeout=30)
+                    logger.info("Notebook deleted.")
+                except Exception as cleanup_err:
+                    logger.warning(f"Cleanup failed (non-fatal): {cleanup_err}")
 
             raise
 
     def _run_cli(self, cmd: list[str], timeout: int = 120) -> str:
         """Run a notebooklm CLI command and return stdout."""
-        logger.info(f"Running: {' '.join(cmd[:6])}...")
+        display = " ".join(cmd[:8])
+        logger.info(f"Running: {display}...")
         try:
             result = subprocess.run(
                 cmd,
@@ -220,44 +244,73 @@ class NotebookLMAutomator:
                 timeout=timeout,
                 env={**os.environ},
             )
+            if result.stdout:
+                logger.debug(f"stdout: {result.stdout[:300]}")
             if result.returncode != 0:
                 error_msg = result.stderr.strip() or result.stdout.strip()
                 logger.error(f"CLI error (exit {result.returncode}): {error_msg}")
                 raise RuntimeError(f"notebooklm CLI failed: {error_msg}")
             return result.stdout.strip()
         except subprocess.TimeoutExpired:
-            raise RuntimeError(f"Command timed out after {timeout}s: {' '.join(cmd[:4])}")
+            raise RuntimeError(
+                f"Command timed out after {timeout}s: {' '.join(cmd[:4])}"
+            )
 
     def _parse_notebook_id(self, output: str) -> str:
-        """Extract notebook ID from CLI JSON output."""
+        """
+        Extract notebook ID from CLI output.
+
+        notebooklm create prints something like:
+          Created notebook 'Title' with ID: abc123def456
+          or just: abc123def456
+        """
+        if not output:
+            raise RuntimeError("Empty output from 'notebooklm create'")
+
+        # Try JSON first
         try:
             data = json.loads(output)
-            # Try common field names
             for key in ["id", "notebook_id", "notebookId", "project_id"]:
                 if key in data:
                     return str(data[key])
-            # If it's a string, use it directly
             if isinstance(data, str):
                 return data
-        except json.JSONDecodeError:
+        except (json.JSONDecodeError, TypeError):
             pass
 
-        # Fallback: look for a UUID-like pattern in the output
-        import re
-        match = re.search(r'[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}', output)
+        # Look for "ID: <value>" pattern
+        match = re.search(r'(?:id|ID):\s*([A-Za-z0-9_-]+)', output)
+        if match:
+            return match.group(1)
+
+        # Look for a UUID-like pattern
+        match = re.search(
+            r'[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}',
+            output, re.IGNORECASE
+        )
         if match:
             return match.group(0)
 
-        # Last resort: return the full output trimmed
-        if output.strip():
-            return output.strip().split('\n')[0].strip()
+        # Look for a long hex/alphanumeric ID (typical NotebookLM project IDs)
+        match = re.search(r'\b([a-f0-9]{16,})\b', output, re.IGNORECASE)
+        if match:
+            return match.group(1)
 
-        raise RuntimeError(f"Could not parse notebook ID from: {output[:200]}")
+        # Last resort: first non-empty word/token from output
+        first_line = output.strip().split('\n')[0].strip()
+        tokens = first_line.split()
+        if tokens:
+            # Try the last token (often the ID comes at the end)
+            return tokens[-1].strip("'\".,")
+
+        raise RuntimeError(
+            f"Could not parse notebook ID from output: {output[:300]}"
+        )
 
     async def health_check(self) -> bool:
-        """Verify auth is still valid."""
+        """Verify auth is still valid by listing notebooks."""
         try:
-            result = self._run_cli(["notebooklm", "auth", "check"])
-            return "expired" not in result.lower() and "invalid" not in result.lower()
+            self._run_cli(["notebooklm", "list"], timeout=30)
+            return True
         except Exception:
             return False
