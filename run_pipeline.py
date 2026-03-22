@@ -47,6 +47,8 @@ logger = logging.getLogger("speakforwater")
 GOOGLE_CREDENTIALS_JSON = os.environ.get("GOOGLE_CREDENTIALS_JSON", "")
 SPREADSHEET_ID = os.environ.get("SPREADSHEET_ID", "")
 SHEET_NAME = os.environ.get("SHEET_NAME", "Sheet1")
+NOTEBOOKLM_AUTH_JSON = os.environ.get("NOTEBOOKLM_AUTH_JSON", "")
+# Legacy: also check NOTEBOOKLM_COOKIES for backward compat
 NOTEBOOKLM_COOKIES = os.environ.get("NOTEBOOKLM_COOKIES", "")
 SITE_URL = os.environ.get("SITE_URL", "")
 REPO_DIR = Path(os.environ.get("GITHUB_WORKSPACE", "."))
@@ -61,8 +63,8 @@ def validate_env():
         missing.append("GOOGLE_CREDENTIALS_JSON")
     if not SPREADSHEET_ID:
         missing.append("SPREADSHEET_ID")
-    if not NOTEBOOKLM_COOKIES:
-        missing.append("NOTEBOOKLM_COOKIES")
+    if not NOTEBOOKLM_AUTH_JSON and not NOTEBOOKLM_COOKIES:
+        missing.append("NOTEBOOKLM_AUTH_JSON")
     if not SITE_URL:
         missing.append("SITE_URL")
 
@@ -118,46 +120,38 @@ def update_sheet_status(row_number: int, status: str, mp3_url: str = ""):
 
 async def generate_podcast(episode: dict) -> Path:
     """
-    Use Playwright to automate NotebookLM and generate the podcast MP3.
+    Use notebooklm-py SDK to generate the podcast MP3.
+    No browser needed — uses direct API calls with auth token.
     Returns the path to the downloaded MP3 file.
     """
     from app.services.notebooklm import NotebookLMAutomator
     from app.services.prompt_manager import get_prompt
-    from app.models.schemas import AudioFormat, AudioLength
-
-    # Write cookies to a temp file
-    cookies_path = Path("/tmp/notebooklm_cookies.txt")
-    cookies_path.write_text(NOTEBOOKLM_COOKIES)
 
     # Ensure downloads directory exists
     DOWNLOADS_DIR.mkdir(parents=True, exist_ok=True)
 
-    # Patch the settings for this run
-    from app.config import settings
-    settings.cookies_path = cookies_path
-    settings.storage_dir = DOWNLOADS_DIR
-    settings.headless = True
-    settings.browser_timeout = 600
+    # Use auth JSON (preferred) or fall back to cookies
+    auth_json = NOTEBOOKLM_AUTH_JSON or NOTEBOOKLM_COOKIES
 
-    automator = NotebookLMAutomator(cookies_path=cookies_path)
+    automator = NotebookLMAutomator(
+        auth_json=auth_json,
+        storage_dir=DOWNLOADS_DIR,
+    )
 
     try:
         await automator.start()
-        logger.info("Browser started successfully")
+        logger.info("NotebookLM SDK ready")
 
         prompt = get_prompt()  # Use default SpeakForWater prompt
 
         async def on_status(status, message):
-            logger.info(f"  [{status.value}] {message}")
+            logger.info(f"  [{status}] {message}")
 
         result = await automator.generate_podcast(
             paper_url=episode["paper_url"],
             paper_title=episode["paper_title"],
             episode_number=episode["episode_number"],
             prompt=prompt,
-            audio_format=AudioFormat.DEEP_DIVE,
-            language="English",
-            length=AudioLength.DEFAULT,
             on_status=on_status,
         )
 
@@ -167,7 +161,6 @@ async def generate_podcast(episode: dict) -> Path:
 
     finally:
         await automator.stop()
-        cookies_path.unlink(missing_ok=True)
 
 
 # ── Step 3: Commit to repo ─────────────────────────────────────────────

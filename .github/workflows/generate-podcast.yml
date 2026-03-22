@@ -1,9 +1,9 @@
 ###############################################################################
 #  SpeakForWater — Daily Podcast Generator
 #
-#  This workflow runs daily at 06:00 UTC (09:30 IRST):
+#  This workflow runs daily at 06:00 UTC:
 #    1. Reads the next queued paper URL from your Google Sheet
-#    2. Launches a headless browser to automate NotebookLM
+#    2. Uses notebooklm-py SDK to automate NotebookLM (no browser needed)
 #    3. Downloads the generated podcast MP3
 #    4. Commits it to this repo (triggers GitHub Pages rebuild)
 #    5. Updates the RSS feed for Spotify / Apple Podcasts
@@ -12,8 +12,8 @@
 #  Required secrets (set in repo Settings → Secrets → Actions):
 #    GOOGLE_CREDENTIALS_JSON  — Service account JSON for Google Sheets
 #    SPREADSHEET_ID           — Your Google Sheet ID
-#    NOTEBOOKLM_COOKIES       — Paste contents of cookies.txt here
-#    SITE_URL                 — e.g. https://ehsan.github.io/speakforwater
+#    NOTEBOOKLM_AUTH_JSON     — Auth export from: notebooklm auth export
+#    SITE_URL                 — e.g. https://ehsankahrizi.github.io/speakforwater
 ###############################################################################
 
 name: Generate Podcast
@@ -79,12 +79,7 @@ jobs:
         run: |
           pip install -r requirements.txt
           pip install gspread google-auth
-
-      # ── Install Playwright + Chromium ───────────────────────────
-      - name: Install Playwright browsers
-        run: |
-          playwright install chromium
-          playwright install-deps chromium
+          pip install notebooklm-py
 
       # ── Create episodes directory if needed ─────────────────────
       - name: Ensure episodes directory exists
@@ -95,6 +90,8 @@ jobs:
         env:
           GOOGLE_CREDENTIALS_JSON: ${{ secrets.GOOGLE_CREDENTIALS_JSON }}
           SPREADSHEET_ID: ${{ secrets.SPREADSHEET_ID }}
+          NOTEBOOKLM_AUTH_JSON: ${{ secrets.NOTEBOOKLM_AUTH_JSON }}
+          # Legacy fallback
           NOTEBOOKLM_COOKIES: ${{ secrets.NOTEBOOKLM_COOKIES }}
           SITE_URL: ${{ secrets.SITE_URL }}
           SHEET_NAME: ${{ secrets.SHEET_NAME || 'Sheet1' }}

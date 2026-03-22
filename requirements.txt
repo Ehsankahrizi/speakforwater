@@ -1,7 +1,9 @@
 # Core
 pydantic==2.10.4
 pydantic-settings==2.7.1
-playwright==1.49.1
+
+# NotebookLM SDK (replaces Playwright browser automation)
+notebooklm-py
 
 # Google Sheets integration
 gspread==6.1.4
