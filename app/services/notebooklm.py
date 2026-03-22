@@ -165,49 +165,20 @@ class NotebookLMAutomator:
             logger.info("Waiting 15s for source indexing...")
             await asyncio.sleep(15)
 
-            # ── Step 4: Generate audio overview ──────────────────────
+            # ── Step 4 & 5: Generate audio + wait + download via Python API ──
+            # The CLI --wait has a hardcoded 300s timeout we can't change,
+            # so we use the Python API directly for full timeout control.
             if on_status:
                 await on_status(
                     "generating",
-                    "Generating podcast audio (this may take several minutes)..."
+                    "Generating podcast audio (this may take up to 25 minutes)..."
                 )
-            logger.info("Starting audio generation (--wait enabled, up to 25 min)...")
 
-            # Truncate prompt if needed (CLI may have arg length limits)
             prompt_truncated = prompt[:2000] if len(prompt) > 2000 else prompt
 
-            generate_output = self._run_cli([
-                "notebooklm", "generate", "audio",
-                prompt_truncated,
-                "--wait",
-                "--timeout", "1800",  # Tell SDK to wait up to 30 min
-            ], timeout=1800)  # subprocess timeout also 30 min
-
-            logger.info(f"Generation complete: {generate_output[:200]}")
-
-            # ── Step 5: Download the audio ───────────────────────────
-            if on_status:
-                await on_status("downloading", "Downloading MP3...")
-            logger.info(f"Downloading MP3 to {mp3_path}...")
-
-            self._run_cli([
-                "notebooklm", "download", "audio",
-                str(mp3_path),
-            ], timeout=120)
-
-            if not mp3_path.exists():
-                # Fallback: try with --output flag syntax
-                logger.warning("First download attempt failed, trying --output flag...")
-                self._run_cli([
-                    "notebooklm", "download", "audio",
-                    "--output", str(mp3_path),
-                ], timeout=120)
-
-            if not mp3_path.exists():
-                raise RuntimeError(
-                    f"MP3 file not found at {mp3_path} after download. "
-                    "Check GitHub Actions logs for the download command output."
-                )
+            await self._generate_and_download_via_api(
+                notebook_id, prompt_truncated, mp3_path, on_status
+            )
 
             logger.info(f"Downloaded: {mp3_path} ({mp3_path.stat().st_size:,} bytes)")
 
@@ -232,6 +203,99 @@ class NotebookLMAutomator:
                     logger.warning(f"Cleanup failed (non-fatal): {cleanup_err}")
 
             raise
+
+    async def _generate_and_download_via_api(
+        self,
+        notebook_id: str,
+        prompt: str,
+        mp3_path: Path,
+        on_status: Optional[Callable] = None,
+    ):
+        """
+        Use the notebooklm-py Python API to generate audio, wait, and download.
+        This gives us control over the wait timeout (CLI --wait is hardcoded at 300s).
+        """
+        try:
+            from notebooklm import NotebookLMClient
+        except ImportError:
+            raise RuntimeError(
+                "notebooklm-py not installed. Run: pip install notebooklm-py"
+            )
+
+        logger.info("Using Python API for generate + wait + download...")
+        client = await NotebookLMClient.from_saved_auth()
+
+        # Step 4a: Start audio generation
+        logger.info(f"Starting audio generation for notebook {notebook_id}...")
+        status = await client.artifacts.generate_audio(
+            notebook_id, instructions=prompt
+        )
+        task_id = status.task_id
+        logger.info(f"Audio generation started. Task ID: {task_id}")
+
+        # Step 4b: Wait for completion with 30-minute timeout
+        logger.info("Waiting for audio generation (up to 30 min, polling every 15s)...")
+        try:
+            await client.artifacts.wait_for_completion(
+                notebook_id,
+                task_id,
+                timeout=1800,       # 30 minutes
+                poll_interval=15,   # check every 15 seconds
+            )
+        except Exception as wait_err:
+            # Some SDK versions may not support timeout/poll_interval kwargs
+            # Fall back to manual polling
+            if "unexpected keyword" in str(wait_err).lower() or "got an unexpected" in str(wait_err).lower():
+                logger.warning(f"wait_for_completion kwargs not supported, using manual polling: {wait_err}")
+                await self._manual_poll_completion(client, notebook_id, task_id)
+            else:
+                raise
+
+        logger.info("Audio generation complete!")
+
+        # Step 5: Download the audio
+        if on_status:
+            await on_status("downloading", "Downloading MP3...")
+        logger.info(f"Downloading MP3 to {mp3_path}...")
+
+        try:
+            await client.artifacts.download_audio(notebook_id, str(mp3_path))
+        except Exception as dl_err:
+            logger.warning(f"Python API download failed ({dl_err}), trying CLI fallback...")
+            self._run_cli(["notebooklm", "download", "audio", str(mp3_path)], timeout=120)
+
+        if not mp3_path.exists():
+            raise RuntimeError(
+                f"MP3 file not found at {mp3_path} after download. "
+                "Check logs for details."
+            )
+
+        logger.info(f"Downloaded: {mp3_path} ({mp3_path.stat().st_size:,} bytes)")
+
+    async def _manual_poll_completion(self, client, notebook_id: str, task_id: str):
+        """Manual polling fallback if wait_for_completion doesn't accept timeout kwarg."""
+        max_wait = 1800  # 30 minutes
+        poll_interval = 15  # seconds
+        elapsed = 0
+
+        while elapsed < max_wait:
+            try:
+                status = await client.artifacts.get_status(notebook_id, task_id)
+                status_str = str(status).lower()
+                logger.info(f"Poll ({elapsed}s): {status_str[:100]}")
+
+                if "completed" in status_str or "done" in status_str or "ready" in status_str:
+                    return
+                if "failed" in status_str or "error" in status_str:
+                    raise RuntimeError(f"Audio generation failed: {status}")
+            except AttributeError:
+                # get_status might not exist — try checking if download works
+                logger.info(f"Poll ({elapsed}s): checking if audio is ready...")
+
+            await asyncio.sleep(poll_interval)
+            elapsed += poll_interval
+
+        raise RuntimeError(f"Audio generation timed out after {max_wait}s (task: {task_id})")
 
     def _run_cli(self, cmd: list[str], timeout: int = 120) -> str:
         """Run a notebooklm CLI command and return stdout."""
