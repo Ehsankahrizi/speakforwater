@@ -171,7 +171,7 @@ class NotebookLMAutomator:
                     "generating",
                     "Generating podcast audio (this may take several minutes)..."
                 )
-            logger.info("Starting audio generation (--wait enabled, up to 10 min)...")
+            logger.info("Starting audio generation (--wait enabled, up to 25 min)...")
 
             # Truncate prompt if needed (CLI may have arg length limits)
             prompt_truncated = prompt[:2000] if len(prompt) > 2000 else prompt
@@ -180,7 +180,7 @@ class NotebookLMAutomator:
                 "notebooklm", "generate", "audio",
                 prompt_truncated,
                 "--wait",
-            ], timeout=600)  # 10-minute timeout for generation
+            ], timeout=1800)  # 30-minute timeout — generation can take 15-20 min
 
             logger.info(f"Generation complete: {generate_output[:200]}")
 
@@ -219,13 +219,13 @@ class NotebookLMAutomator:
         except Exception as e:
             logger.error(f"Generation failed: {e}", exc_info=True)
 
-            # Try to clean up the notebook
+            # Try to clean up the notebook (delete uses the active notebook set by 'use')
             if notebook_id:
                 try:
                     logger.info(f"Cleaning up notebook {notebook_id}...")
-                    self._run_cli([
-                        "notebooklm", "delete", notebook_id, "--yes"
-                    ], timeout=30)
+                    # Ensure the notebook is set as active first
+                    self._run_cli(["notebooklm", "use", notebook_id], timeout=15)
+                    self._run_cli(["notebooklm", "delete", "--yes"], timeout=30)
                     logger.info("Notebook deleted.")
                 except Exception as cleanup_err:
                     logger.warning(f"Cleanup failed (non-fatal): {cleanup_err}")

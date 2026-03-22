@@ -50,7 +50,7 @@ permissions:
 jobs:
   generate:
     runs-on: ubuntu-latest
-    timeout-minutes: 30  # Podcast generation can take up to 10 min
+    timeout-minutes: 45  # Podcast generation can take 15-25 min
 
     steps:
       # ── Checkout repo ───────────────────────────────────────────
