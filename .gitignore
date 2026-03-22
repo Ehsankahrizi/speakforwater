@@ -1,0 +1,19 @@
+# Environment
+.env
+cookies.txt
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+*.egg-info/
+
+# Downloads (generated MP3s)
+app/storage/downloads/*.mp3
+
+# IDE
+.vscode/
+.idea/
+
+# Docker
+*.log

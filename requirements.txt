@@ -1,0 +1,14 @@
+# Core
+pydantic==2.10.4
+pydantic-settings==2.7.1
+playwright==1.49.1
+
+# Google Sheets integration
+gspread==6.1.4
+google-auth==2.37.0
+
+# API server (optional — only needed if running locally with FastAPI)
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+python-multipart==0.0.20
+httpx==0.28.1

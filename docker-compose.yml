@@ -1,0 +1,65 @@
+version: "3.8"
+
+services:
+  # ── SpeakForWater API ─────────────────────────────────────────────
+  speakforwater-api:
+    build: .
+    container_name: speakforwater-api
+    ports:
+      - "8000:8000"
+    volumes:
+      # Mount cookies file (read-only)
+      - ./cookies.txt:/app/cookies.txt:ro
+      # Persist generated MP3s
+      - speakforwater-downloads:/app/app/storage/downloads
+    env_file:
+      - .env
+    restart: unless-stopped
+    networks:
+      - speakforwater
+
+  # ── n8n Workflow Engine ───────────────────────────────────────────
+  n8n:
+    image: n8nio/n8n:latest
+    container_name: speakforwater-n8n
+    ports:
+      - "5678:5678"
+    volumes:
+      - n8n-data:/home/node/.n8n
+    environment:
+      - N8N_BASIC_AUTH_ACTIVE=true
+      - N8N_BASIC_AUTH_USER=${N8N_USER:-ehsan}
+      - N8N_BASIC_AUTH_PASSWORD=${N8N_PASSWORD:-changeme}
+      # Allow long-running executions (podcast generation takes 5-10 min)
+      - EXECUTIONS_TIMEOUT=900
+      - EXECUTIONS_TIMEOUT_MAX=1200
+      # Timezone for cron triggers
+      - GENERIC_TIMEZONE=Asia/Tehran
+      - TZ=Asia/Tehran
+    restart: unless-stopped
+    networks:
+      - speakforwater
+
+  # ── (Optional) Browserless — managed headless Chrome ──────────────
+  # Uncomment if you prefer a managed browser instead of bundled Chromium.
+  # Then set BROWSERLESS_URL=ws://browserless:3000 in .env
+  #
+  # browserless:
+  #   image: browserless/chrome:latest
+  #   container_name: speakforwater-browserless
+  #   ports:
+  #     - "3000:3000"
+  #   environment:
+  #     - MAX_CONCURRENT_SESSIONS=2
+  #     - CONNECTION_TIMEOUT=600000
+  #   restart: unless-stopped
+  #   networks:
+  #     - speakforwater
+
+volumes:
+  speakforwater-downloads:
+  n8n-data:
+
+networks:
+  speakforwater:
+    driver: bridge

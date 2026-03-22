@@ -1,0 +1,115 @@
+###############################################################################
+#  SpeakForWater — Daily Podcast Generator
+#
+#  This workflow runs daily at 06:00 UTC (09:30 IRST):
+#    1. Reads the next queued paper URL from your Google Sheet
+#    2. Launches a headless browser to automate NotebookLM
+#    3. Downloads the generated podcast MP3
+#    4. Commits it to this repo (triggers GitHub Pages rebuild)
+#    5. Updates the RSS feed for Spotify / Apple Podcasts
+#    6. Marks the episode as published in Google Sheets
+#
+#  Required secrets (set in repo Settings → Secrets → Actions):
+#    GOOGLE_CREDENTIALS_JSON  — Service account JSON for Google Sheets
+#    SPREADSHEET_ID           — Your Google Sheet ID
+#    NOTEBOOKLM_COOKIES       — Paste contents of cookies.txt here
+#    SITE_URL                 — e.g. https://ehsan.github.io/speakforwater
+###############################################################################
+
+name: Generate Podcast
+
+on:
+  # ── Daily schedule ─────────────────────────────────────────────────
+  schedule:
+    - cron: "0 6 * * *"  # 06:00 UTC daily (adjust as needed)
+
+  # ── Manual trigger (for testing) ───────────────────────────────────
+  workflow_dispatch:
+    inputs:
+      paper_url:
+        description: "Override: paper URL (leave empty to read from Sheet)"
+        required: false
+        type: string
+      paper_title:
+        description: "Override: paper title"
+        required: false
+        type: string
+      episode_number:
+        description: "Override: episode number"
+        required: false
+        type: number
+
+# Prevent concurrent runs (only one podcast at a time)
+concurrency:
+  group: podcast-generation
+  cancel-in-progress: false
+
+permissions:
+  contents: write  # Needed to push MP3 + metadata commits
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30  # Podcast generation can take up to 10 min
+
+    steps:
+      # ── Checkout repo ───────────────────────────────────────────
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      # ── Setup Python ────────────────────────────────────────────
+      - name: Setup Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      # ── Cache pip dependencies ──────────────────────────────────
+      - name: Cache pip
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+
+      # ── Install dependencies ────────────────────────────────────
+      - name: Install Python dependencies
+        run: |
+          pip install -r requirements.txt
+          pip install gspread google-auth
+
+      # ── Install Playwright + Chromium ───────────────────────────
+      - name: Install Playwright browsers
+        run: |
+          playwright install chromium
+          playwright install-deps chromium
+
+      # ── Create episodes directory if needed ─────────────────────
+      - name: Ensure episodes directory exists
+        run: mkdir -p episodes
+
+      # ── Run the pipeline ────────────────────────────────────────
+      - name: Generate podcast episode
+        env:
+          GOOGLE_CREDENTIALS_JSON: ${{ secrets.GOOGLE_CREDENTIALS_JSON }}
+          SPREADSHEET_ID: ${{ secrets.SPREADSHEET_ID }}
+          NOTEBOOKLM_COOKIES: ${{ secrets.NOTEBOOKLM_COOKIES }}
+          SITE_URL: ${{ secrets.SITE_URL }}
+          SHEET_NAME: ${{ secrets.SHEET_NAME || 'Sheet1' }}
+          # Pass manual overrides if provided
+          MANUAL_PAPER_URL: ${{ inputs.paper_url }}
+          MANUAL_PAPER_TITLE: ${{ inputs.paper_title }}
+          MANUAL_EPISODE_NUMBER: ${{ inputs.episode_number }}
+        run: python run_pipeline.py
+
+      # ── Upload MP3 as artifact (backup) ─────────────────────────
+      - name: Upload podcast artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: podcast-episode
+          path: episodes/ep*.mp3
+          retention-days: 30
+          if-no-files-found: ignore

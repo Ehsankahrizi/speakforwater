@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SpeakForWater — Water Research Podcasts</title>
+  <link rel="alternate" type="application/rss+xml" title="SpeakForWater Podcast" href="podcast.xml">
+  <style>
+    :root {
+      --blue: #1a73e8;
+      --dark: #1a1a2e;
+      --light: #f0f4ff;
+      --accent: #0d9488;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--light);
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      background: linear-gradient(135deg, var(--dark), #16213e);
+      color: white;
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+    header h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+    header p { font-size: 1.1rem; opacity: 0.85; max-width: 600px; margin: 0 auto; }
+    .subscribe-links {
+      margin-top: 1.5rem;
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .subscribe-links a {
+      background: rgba(255,255,255,0.15);
+      color: white;
+      text-decoration: none;
+      padding: 0.5rem 1.2rem;
+      border-radius: 2rem;
+      font-size: 0.9rem;
+      transition: background 0.2s;
+    }
+    .subscribe-links a:hover { background: rgba(255,255,255,0.3); }
+    main { max-width: 800px; margin: 2rem auto; padding: 0 1rem; }
+    .episode {
+      background: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+    .episode h3 { color: var(--dark); margin-bottom: 0.5rem; }
+    .episode .meta {
+      font-size: 0.85rem;
+      color: #666;
+      margin-bottom: 0.75rem;
+    }
+    .episode audio { width: 100%; margin-top: 0.5rem; }
+    .episode .paper-link {
+      display: inline-block;
+      margin-top: 0.5rem;
+      color: var(--blue);
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+    .episode .paper-link:hover { text-decoration: underline; }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: #888;
+      font-size: 0.85rem;
+    }
+    #loading { text-align: center; padding: 2rem; color: #888; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>SpeakForWater</h1>
+    <p>
+      Making water resources research accessible. Anna and Ehsan discuss
+      the latest open-access papers on hydrology, flood management, and
+      water engineering — in plain language.
+    </p>
+    <div class="subscribe-links">
+      <a href="podcast.xml">RSS Feed</a>
+      <a href="#">Spotify</a>
+      <a href="#">Apple Podcasts</a>
+    </div>
+  </header>
+
+  <main>
+    <div id="episodes">
+      <div id="loading">Loading episodes...</div>
+    </div>
+  </main>
+
+  <footer>
+    <p>SpeakForWater &copy; 2026 Ehsan Kahrizi. Powered by NotebookLM.</p>
+  </footer>
+
+  <script>
+    // Dynamically load episodes from the episodes/ directory
+    // by fetching the podcast.xml RSS feed and parsing it.
+    async function loadEpisodes() {
+      const container = document.getElementById('episodes');
+      try {
+        const resp = await fetch('podcast.xml');
+        if (!resp.ok) throw new Error('No podcast.xml found');
+        const text = await resp.text();
+        const parser = new DOMParser();
+        const xml = parser.parseFromString(text, 'application/xml');
+        const items = xml.querySelectorAll('item');
+
+        if (items.length === 0) {
+          container.innerHTML = '<p style="text-align:center;color:#888;padding:2rem;">No episodes yet. Check back soon!</p>';
+          return;
+        }
+
+        container.innerHTML = '';
+        items.forEach(item => {
+          const title = item.querySelector('title')?.textContent || 'Untitled';
+          const pubDate = item.querySelector('pubDate')?.textContent || '';
+          const description = item.querySelector('description')?.textContent || '';
+          const enclosure = item.querySelector('enclosure');
+          const audioUrl = enclosure?.getAttribute('url') || '';
+
+          // Extract paper URL from description if present
+          const paperMatch = description.match(/Original paper: (https?:\/\/\S+)/);
+          const paperUrl = paperMatch ? paperMatch[1] : '';
+
+          const date = pubDate ? new Date(pubDate).toLocaleDateString('en-US', {
+            year: 'numeric', month: 'long', day: 'numeric'
+          }) : '';
+
+          const div = document.createElement('div');
+          div.className = 'episode';
+          div.innerHTML = `
+            <h3>${title}</h3>
+            <div class="meta">${date}</div>
+            ${audioUrl ? `<audio controls preload="none"><source src="${audioUrl}" type="audio/mpeg"></audio>` : ''}
+            ${paperUrl ? `<a class="paper-link" href="${paperUrl}" target="_blank">Read the original paper &rarr;</a>` : ''}
+          `;
+          container.appendChild(div);
+        });
+      } catch (e) {
+        container.innerHTML = '<p style="text-align:center;color:#888;padding:2rem;">No episodes yet. Check back soon!</p>';
+      }
+    }
+    loadEpisodes();
+  </script>
+</body>
+</html>
