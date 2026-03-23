@@ -257,8 +257,9 @@ def _git_commit_and_push(files: list[str], message: str):
         logger.info("No changes to commit")
         return
 
-    # Commit and push
+    # Commit, pull latest, and push
     run(["git", "commit", "-m", message])
+    run(["git", "pull", "--rebase", "origin", "main"])
     run(["git", "push"])
     logger.info("Pushed to GitHub")
 

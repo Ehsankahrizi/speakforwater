@@ -74,6 +74,10 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-pip-
 
+      # ── Install ffmpeg (for intro/outro stitching) ────────────────
+      - name: Install ffmpeg
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+
       # ── Install dependencies ────────────────────────────────────
       - name: Install Python dependencies
         run: |
