@@ -266,20 +266,11 @@ def _git_commit_and_push(files: list[str], message: str):
 
 # ── Main pipeline ──────────────────────────────────────────────────────
 
-async def main():
-    """Run the full pipeline: Sheet → NotebookLM → Git → Sheet."""
-    logger.info("=" * 60)
-    logger.info("  SpeakForWater — Daily Podcast Pipeline")
-    logger.info("=" * 60)
-
-    validate_env()
-
-    # Step 1: Get next episode from Google Sheets
-    episode = get_next_episode()
-    if not episode:
-        logger.info("Nothing to process. Exiting.")
-        return
-
+async def process_one_episode(episode: dict) -> bool:
+    """
+    Try to generate, stitch, commit, and publish one episode.
+    Returns True if successful, False if failed.
+    """
     row_number = episode["row_number"]
 
     try:
@@ -314,19 +305,55 @@ async def main():
         logger.info(f"  Episode {episode['episode_number']} published!")
         logger.info(f"  MP3: {mp3_url}")
         logger.info("=" * 60)
+        return True
 
     except Exception as e:
-        logger.error(f"\nPipeline failed: {e}", exc_info=True)
+        logger.error(f"\nFailed: {e}", exc_info=True)
         try:
             update_sheet_status(row_number, "failed")
         except Exception:
             pass
-        sys.exit(1)
+        return False
 
     finally:
         # Cleanup temp files
         if DOWNLOADS_DIR.exists():
             shutil.rmtree(DOWNLOADS_DIR, ignore_errors=True)
+
+
+async def main():
+    """Run the full pipeline: Sheet → NotebookLM → Git → Sheet.
+    If a paper fails (e.g. paywalled URL), skip it and try the next queued paper.
+    Tries up to MAX_ATTEMPTS papers per run to find one that works.
+    """
+    MAX_ATTEMPTS = 5  # Try up to 5 queued papers before giving up
+
+    logger.info("=" * 60)
+    logger.info("  SpeakForWater — Daily Podcast Pipeline")
+    logger.info("=" * 60)
+
+    validate_env()
+
+    for attempt in range(1, MAX_ATTEMPTS + 1):
+        # Get next queued episode
+        episode = get_next_episode()
+        if not episode:
+            logger.info("No more queued episodes — nothing to do.")
+            return
+
+        logger.info(f"\n--- Attempt {attempt}/{MAX_ATTEMPTS} ---")
+        success = await process_one_episode(episode)
+
+        if success:
+            return  # Done!
+
+        logger.warning(
+            f"Episode #{episode['episode_number']} failed. "
+            f"Trying next queued paper..."
+        )
+
+    logger.error(f"All {MAX_ATTEMPTS} attempts failed. Exiting.")
+    sys.exit(1)
 
 
 if __name__ == "__main__":
