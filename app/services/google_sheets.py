@@ -51,6 +51,22 @@ class EpisodeQueue:
         self.sheet = self.spreadsheet.worksheet(sheet_name)
         logger.info(f"Connected to sheet: {self.spreadsheet.title} / {sheet_name}")
 
+    @staticmethod
+    def _find_column(row: dict, target: str, default=""):
+        """
+        Find a value in a row dict using flexible header matching.
+        Handles trailing spaces, different casing, underscores vs spaces, etc.
+        """
+        # Normalise the target: lowercase, strip, replace spaces with underscores
+        norm_target = target.strip().lower().replace(" ", "_")
+
+        for key, value in row.items():
+            norm_key = str(key).strip().lower().replace(" ", "_")
+            if norm_key == norm_target:
+                return value
+
+        return default
+
     def get_next_queued(self) -> dict | None:
         """
         Find the first row where status = 'queued'.
@@ -58,16 +74,42 @@ class EpisodeQueue:
         """
         all_rows = self.sheet.get_all_records()
 
+        # Log headers once to help debug column name issues
+        if all_rows:
+            headers = list(all_rows[0].keys())
+            logger.info(f"Sheet headers: {headers}")
+
         for i, row in enumerate(all_rows):
-            if str(row.get("status", "")).strip().lower() == "queued":
+            status_val = str(self._find_column(row, "status")).strip().lower()
+            if status_val == "queued":
                 row_number = i + 2  # +1 for header, +1 for 1-indexed
+
+                # Read episode_number with flexible matching
+                ep_raw = self._find_column(row, "episode_number", default=0)
+                try:
+                    ep_num = int(ep_raw)
+                except (ValueError, TypeError):
+                    ep_num = 0
+
+                # Fallback: if ep_num is still 0, read directly from column E
+                if ep_num == 0:
+                    try:
+                        cell_val = self.sheet.cell(row_number, 5).value  # Column E
+                        if cell_val is not None:
+                            ep_num = int(cell_val)
+                            logger.info(f"Episode number from column E fallback: {ep_num}")
+                    except (ValueError, TypeError):
+                        pass
+
+                logger.info(f"Queued row {row_number}: episode_number={ep_num}")
+
                 return {
                     "row_number": row_number,
-                    "date": str(row.get("date", "")),
-                    "paper_url": str(row.get("paper_url", "")),
-                    "paper_title": str(row.get("paper_title", "")),
-                    "status": str(row.get("status", "")),
-                    "episode_number": int(row.get("episode_number", 0)),
+                    "date": str(self._find_column(row, "date")),
+                    "paper_url": str(self._find_column(row, "paper_url")),
+                    "paper_title": str(self._find_column(row, "paper_title")),
+                    "status": str(self._find_column(row, "status")),
+                    "episode_number": ep_num,
                 }
 
         logger.info("No queued episodes found")
