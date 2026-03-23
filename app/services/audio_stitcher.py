@@ -108,38 +108,19 @@ def stitch_podcast(
         shutil.copy2(podcast_path, output_path)
         return output_path
 
-    cf_sec = crossfade_ms / 1000.0
-
+    # Simple concatenation: play intro fully, then podcast fully, then outro fully.
+    # No crossfade — just clean joins. The intro/outro jingles should have
+    # their own fade-in/fade-out built in already.
     if len(inputs) == 2:
-        # Either intro+podcast or podcast+outro
-        if has_intro:
-            # Crossfade intro into podcast
-            filter_complex = (
-                f"[0]afade=t=out:st=0:d={cf_sec}[a0];"
-                f"[1]afade=t=in:st=0:d={cf_sec}[a1];"
-                f"[a0][a1]concat=n=2:v=0:a=1,"
-                f"loudnorm=I=-16:TP=-1.5:LRA=11[out]"
-            )
-        else:
-            # Crossfade podcast into outro
-            filter_complex = (
-                f"[0]apad=pad_dur=0[a0];"
-                f"[1]afade=t=in:st=0:d={cf_sec}[a1];"
-                f"[a0][a1]concat=n=2:v=0:a=1,"
-                f"loudnorm=I=-16:TP=-1.5:LRA=11[out]"
-            )
+        filter_complex = (
+            "[0][1]concat=n=2:v=0:a=1,"
+            "loudnorm=I=-16:TP=-1.5:LRA=11[out]"
+        )
     else:
         # All three: intro + podcast + outro
         filter_complex = (
-            # Normalize each input
-            f"[0]afade=t=out:st=0:d={cf_sec}[intro];"
-            f"[1]afade=t=in:st=0:d={cf_sec}[podcast_in];"
-            f"[podcast_in]apad=pad_dur=0[podcast];"
-            f"[2]afade=t=in:st=0:d={cf_sec},afade=t=out:st=3:d=2[outro];"
-            # Concatenate all three
-            f"[intro][podcast][outro]concat=n=3:v=0:a=1,"
-            # Final loudness normalization
-            f"loudnorm=I=-16:TP=-1.5:LRA=11[out]"
+            "[0][1][2]concat=n=3:v=0:a=1,"
+            "loudnorm=I=-16:TP=-1.5:LRA=11[out]"
         )
 
     cmd = [
