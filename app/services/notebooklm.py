@@ -159,7 +159,24 @@ class NotebookLMAutomator:
                 await on_status("adding_source", f"Adding source: {paper_url}")
             logger.info(f"Adding source URL: {paper_url}")
 
-            self._run_cli(["notebooklm", "source", "add", paper_url])
+            # Retry source add up to 3 times (may fail on paywalled or slow URLs)
+            source_added = False
+            for attempt in range(1, 4):
+                try:
+                    self._run_cli(["notebooklm", "source", "add", paper_url], timeout=60)
+                    source_added = True
+                    break
+                except RuntimeError as e:
+                    logger.warning(f"Source add attempt {attempt}/3 failed: {str(e)[:150]}")
+                    if attempt < 3:
+                        await asyncio.sleep(10)
+
+            if not source_added:
+                raise RuntimeError(
+                    f"Failed to add source after 3 attempts. "
+                    f"The URL may be paywalled or inaccessible: {paper_url}. "
+                    f"Try using a DOI link (https://doi.org/...) or open-access URL."
+                )
 
             # Wait for the source to be indexed
             logger.info("Waiting 15s for source indexing...")
