@@ -9,6 +9,10 @@ notebooklm-py
 gspread==6.1.4
 google-auth==2.37.0
 
+# Paper search
+requests>=2.31.0
+pyyaml>=6.0
+
 # API server (optional — only needed if running locally with FastAPI)
 fastapi==0.115.6
 uvicorn[standard]==0.34.0

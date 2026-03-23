@@ -1,0 +1,90 @@
+# ─────────────────────────────────────────────────────────────
+# SpeakForWater — Journal Sources
+#
+# Journals and sources to search for papers. Each entry has:
+#   name:       Display name
+#   type:       How to search (crossref, openalex, or direct)
+#   issn:       ISSN for filtering results (optional)
+#   open_access: true = all papers are free, false = mixed
+#   priority:   Higher = searched first (1-10)
+#
+# Only open_access: true journals are guaranteed to work with
+# the NotebookLM podcast pipeline. Mixed journals may have
+# paywalled papers that will be skipped.
+#
+# Edit this list to add/remove journals as needed.
+# ─────────────────────────────────────────────────────────────
+
+# ── Fully Open Access (best for pipeline) ──────────────────
+
+journals:
+  - name: "MDPI Water"
+    type: openalex
+    issn: "2073-4441"
+    open_access: true
+    priority: 10
+
+  - name: "Hydrology and Earth System Sciences (HESS)"
+    type: openalex
+    issn: "1607-7938"
+    open_access: true
+    priority: 10
+
+  - name: "Frontiers in Water"
+    type: openalex
+    issn: "2624-9375"
+    open_access: true
+    priority: 10
+
+  - name: "Earth System Science Data"
+    type: openalex
+    issn: "1866-3516"
+    open_access: true
+    priority: 9
+
+  - name: "Environmental Research Letters"
+    type: openalex
+    issn: "1748-9326"
+    open_access: true
+    priority: 8
+
+  - name: "Water Resources Research"
+    type: openalex
+    issn: "0043-1397"
+    open_access: false
+    priority: 7
+
+  # ── Mixed Access (some papers open, some paywalled) ────────
+
+  - name: "Journal of Hydrology"
+    type: openalex
+    issn: "0022-1694"
+    open_access: false
+    priority: 6
+
+  - name: "Nature Water"
+    type: openalex
+    issn: "2731-6084"
+    open_access: false
+    priority: 6
+
+  - name: "Agricultural Water Management"
+    type: openalex
+    issn: "0378-3774"
+    open_access: false
+    priority: 5
+
+  - name: "Water Research"
+    type: openalex
+    issn: "0043-1354"
+    open_access: false
+    priority: 5
+
+  # ── Preprint Servers (always open) ─────────────────────────
+
+  - name: "EarthArXiv"
+    type: openalex
+    issn: ""
+    open_access: true
+    priority: 8
+    source_id: "S4306402567"  # OpenAlex source ID for EarthArXiv
