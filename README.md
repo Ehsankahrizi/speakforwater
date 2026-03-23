@@ -1,6 +1,6 @@
 # SpeakForWater
 
-Automated daily podcast generation from water resources research papers using Google NotebookLM + GitHub Actions. Completely free — no server needed.
+Automated daily podcast generation from water resources research papers .
 
 ## How It Works
 
