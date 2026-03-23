@@ -289,6 +289,19 @@ async def main():
         logger.info(f"\nGenerating podcast for: {episode['paper_title']}")
         mp3_path = await generate_podcast(episode)
 
+        # Step 2b: Stitch intro/outro music
+        logger.info("\nStitching intro/outro jingles...")
+        from app.services.audio_stitcher import stitch_podcast
+        try:
+            mp3_path = stitch_podcast(
+                podcast_path=mp3_path,
+                intro_path=REPO_DIR / "assets" / "intro.mp3",
+                outro_path=REPO_DIR / "assets" / "outro.mp3",
+            )
+            logger.info(f"Stitched podcast: {mp3_path}")
+        except Exception as e:
+            logger.warning(f"Stitching failed (using raw podcast): {e}")
+
         # Step 3: Commit to repo
         logger.info("\nCommitting episode to repository...")
         mp3_url = commit_episode(episode, mp3_path)
