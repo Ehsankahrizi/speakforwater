@@ -1,0 +1,65 @@
+###############################################################################
+#  SpeakForWater — Daily Paper Search
+#
+#  Runs daily to find new open-access water research papers and add them
+#  to the Google Sheet queue. Uses OpenAlex API (free, no key needed).
+#
+#  Keywords:  config/keywords.yml  (edit to change search terms)
+#  Journals:  config/journals.yml  (edit to add/remove journal sources)
+#
+#  Required secrets:
+#    GOOGLE_CREDENTIALS_JSON  — Service account JSON for Google Sheets
+#    SPREADSHEET_ID           — Your Google Sheet ID
+###############################################################################
+
+name: Search Papers
+
+on:
+  # ── Daily schedule (runs before podcast generation) ──────────
+  schedule:
+    - cron: "0 4 * * *"  # 04:00 UTC daily (before podcast generation at 06:00)
+
+  # ── Manual trigger ───────────────────────────────────────────
+  workflow_dispatch:
+    inputs:
+      max_papers:
+        description: "Max papers to find (default 10)"
+        required: false
+        type: number
+        default: 10
+      days_back:
+        description: "Search window in days (default 90)"
+        required: false
+        type: number
+        default: 90
+
+concurrency:
+  group: paper-search
+  cancel-in-progress: false
+
+jobs:
+  search:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: |
+          pip install requests pyyaml gspread google-auth
+
+      - name: Search for papers
+        env:
+          GOOGLE_CREDENTIALS_JSON: ${{ secrets.GOOGLE_CREDENTIALS_JSON }}
+          SPREADSHEET_ID: ${{ secrets.SPREADSHEET_ID }}
+          SHEET_NAME: ${{ secrets.SHEET_NAME || 'Sheet1' }}
+          MAX_PAPERS: ${{ inputs.max_papers || '10' }}
+          DAYS_BACK: ${{ inputs.days_back || '90' }}
+        run: python search_papers.py

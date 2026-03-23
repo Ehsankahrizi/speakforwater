@@ -1,0 +1,29 @@
+# ─────────────────────────────────────────────────────────────
+# SpeakForWater — Search Keywords
+#
+# These keywords are used to find relevant water research papers.
+# The search rotates through keywords daily so results stay varied.
+# Edit this list any time — changes take effect on the next run.
+#
+# Tips:
+#   - Use specific phrases for better results (e.g. "sea water intrusion")
+#   - Add new research topics as your podcast evolves
+#   - Order doesn't matter — keywords are rotated automatically
+# ─────────────────────────────────────────────────────────────
+
+keywords:
+  - water footprint
+  - irrigation efficiency
+  - agricultural water management
+  - sustainability water resources
+  - water management
+  - drought impact
+  - flooding risk assessment
+  - climate change water
+  - sea level rise
+  - seawater intrusion
+  - water quality
+  - groundwater depletion
+  - water scarcity
+  - virtual water trade
+  - crop water productivity
