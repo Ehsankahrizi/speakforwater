@@ -16,44 +16,5 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Tue, 24 Mar 2026 07:58:53 +0000</lastBuildDate>
-
-    <item>
-      <title>Ep 2: Baffle-Enhanced Scour Mitigation in Rectangular and Trapezoidal Piano Key Weirs: An Experimental and Machine Learning Investigation
-</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep002.mp3" length="33065659" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep002.mp3</guid>
-      <pubDate></pubDate>
-      <itunes:episode>2</itunes:episode>
-      <itunes:duration>0</itunes:duration>
-      <description>SpeakForWater Episode 2: Baffle-Enhanced Scour Mitigation in Rectangular and Trapezoidal Piano Key Weirs: An Experimental and Machine Learning Investigation
-. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
-
-Original paper: https://www.mdpi.com/2073-4441/16/15/2133?utm_campaign=releaseissue_waterutm_medium=emailutm_source=releaseissueutm_term=doilink109</description>
-    </item>
-    <item>
-      <title>Ep 1: Experimental evaluation of two-layer air bubble curtains to prevent seawater intrusion into rivers</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep001.mp3" length="24887242" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep001.mp3</guid>
-      <pubDate></pubDate>
-      <itunes:episode>1</itunes:episode>
-      <itunes:duration>0</itunes:duration>
-      <description>SpeakForWater Episode 1: Experimental evaluation of two-layer air bubble curtains to prevent seawater intrusion into rivers. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
-
-Original paper: https://iwaponline.com/jwcc/article/14/2/543/92985/Experimental-evaluation-of-two-layer-air-bubble</description>
-    </item>
-    <item>
-      <title>Ep 0: Baffle-Enhanced Scour Mitigation in Rectangular and Trapezoidal Piano Key Weirs: An Experimental and Machine Learning Investigation
-</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep000.mp3" length="24089776" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep000.mp3</guid>
-      <pubDate></pubDate>
-      <itunes:episode>0</itunes:episode>
-      <itunes:duration>0</itunes:duration>
-      <description>SpeakForWater Episode 0: Baffle-Enhanced Scour Mitigation in Rectangular and Trapezoidal Piano Key Weirs: An Experimental and Machine Learning Investigation
-. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
-
-Original paper: https://www.mdpi.com/2073-4441/16/15/2133?utm_campaign=releaseissue_waterutm_medium=emailutm_source=releaseissueutm_term=doilink109</description>
-    </item>
 </channel>
 </rss>
