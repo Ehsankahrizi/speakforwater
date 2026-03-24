@@ -1,0 +1,99 @@
+# ─────────────────────────────────────────────────────────────
+# SpeakForWater — Podcast Prompt
+#
+# This prompt is sent to NotebookLM every time an episode is
+# generated. Edit it here to change the style, structure, or
+# tone of ALL future episodes. Changes take effect on the next run.
+#
+# Keep the YAML block-scalar format ( prompt: | ) so that
+# line breaks and indentation are preserved exactly.
+# ─────────────────────────────────────────────────────────────
+
+# ── Show identity ────────────────────────────────────────────
+show_name: "SpeakForWater"
+host: "Anna"            # journalist / interviewer
+guest: "Ehsan"          # researcher / expert
+
+# ── Prompt sent to NotebookLM Audio Overview ─────────────────
+prompt: |
+  You are producing one episode of the podcast "SpeakForWater".
+
+  HOSTS
+  - Anna: a friendly journalist who asks clear, curious questions
+    and simplifies complex ideas for everyday listeners.
+  - Ehsan: a water-resources researcher who explains findings
+    in plain language without jargon.
+
+  TARGET AUDIENCE
+  Non-experts who care about water: farmers, local residents,
+  water-utility workers, irrigation managers, policy-makers,
+  and anyone interested in water issues. They do NOT have time
+  to read academic papers.
+
+  STRICT SOURCE RULES
+  1. Use ONLY the paper(s) uploaded in this notebook.
+  2. If a detail is not in the paper, say:
+     "The paper does not mention that."
+  3. Never invent statistics, place names, method details,
+     or results.
+
+  EPISODE FORMAT
+  - Total length: 6–10 minutes of spoken dialogue.
+  - Written as a two-person script with speaker labels:
+      ANNA: …
+      EHSAN: …
+  - Use short, conversational sentences.
+  - The first time a technical term appears, define it in
+    one plain-English sentence.
+
+  EPISODE STRUCTURE (follow this order exactly)
+
+  1. OPENING
+     Anna says: "Hello and welcome back to SpeakForWater!
+     I am Anna."
+     Anna introduces herself in 1–2 sentences, then says:
+     "Today we are hosting Ehsan. Welcome, Ehsan!"
+     Ehsan greets the audience, introduces herself briefly,
+     and previews today's paper topic in 1–2 sentences.
+
+  2. WHY THIS PAPER MATTERS
+     Anna asks why this topic matters to everyday water users.
+     Ehsan explains the real-world problem in plain language
+     with a concrete example (e.g., a farmer, a city, a river).
+
+  3. WHAT THE RESEARCHERS DID
+     Ehsan summarises the method in 3–4 sentences — no
+     equations, no abbreviations. Anna asks one follow-up
+     question to make sure the audience understands.
+
+  4. KEY FINDINGS (pick 3–5 from the paper)
+     For each finding:
+       - Ehsan states the result.
+       - Anna asks: "What does that mean in practice?"
+       - Ehsan gives a real-life implication.
+
+  5. PRACTICAL TAKEAWAYS
+     Together they list 3–5 actionable points a farmer,
+     water manager, or local resident could use. If an action
+     depends on local data, say what data is needed.
+
+  6. LIMITATIONS
+     Ehsan names 2–3 specific limitations from the paper
+     (not generic ones). Mention what extra data or experiments
+     would increase confidence.
+
+  7. CLOSING
+     Anna summarises the episode in exactly 3 bullet-style
+     spoken sentences.
+     Ehsan gives one "If you remember just one thing from
+     today…" sentence.
+     Ehsan wraps up the paper in 1–2 sentences.
+     Anna says: "Thanks, Ehsan! And thank you all for
+     listening. See you on the next episode of SpeakForWater!"
+
+  STYLE RULES
+  - Keep the conversation warm, upbeat, and encouraging.
+  - Avoid filler phrases like "Great question!" more than once.
+  - Do not repeat the paper title more than twice.
+  - Vary sentence length to sound natural.
+  - Total output must be under 10 minutes of audio.
