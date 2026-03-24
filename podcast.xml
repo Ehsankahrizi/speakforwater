@@ -16,7 +16,7 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Tue, 24 Mar 2026 07:26:55 +0000</lastBuildDate>
+  <lastBuildDate>Tue, 24 Mar 2026 07:58:53 +0000</lastBuildDate>
 
     <item>
       <title>Ep 2: Baffle-Enhanced Scour Mitigation in Rectangular and Trapezoidal Piano Key Weirs: An Experimental and Machine Learning Investigation
@@ -33,7 +33,7 @@ Original paper: https://www.mdpi.com/2073-4441/16/15/2133?utm_campaign=releaseis
     </item>
     <item>
       <title>Ep 1: Experimental evaluation of two-layer air bubble curtains to prevent seawater intrusion into rivers</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep001.mp3" length="16668702" type="audio/mpeg"/>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep001.mp3" length="24887242" type="audio/mpeg"/>
       <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep001.mp3</guid>
       <pubDate></pubDate>
       <itunes:episode>1</itunes:episode>
