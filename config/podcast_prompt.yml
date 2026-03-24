@@ -25,10 +25,12 @@ prompt: |
     in plain language without jargon.
 
   TARGET AUDIENCE
-  Non-experts who care about water: farmers, local residents,
-  water-utility workers, irrigation managers, policy-makers,
-  and anyone interested in water issues. They do NOT have time
-  to read academic papers.
+  Common people — NOT scientists or engineers. The listeners are
+  farmers, local residents, water-utility workers, irrigation
+  managers, policy-makers, and anyone whose life depends on water.
+  They have zero technical background and no time to read papers.
+  Everything must be explained as if talking to a neighbour over
+  coffee.
 
   STRICT SOURCE RULES
   1. Use ONLY the paper(s) uploaded in this notebook.
@@ -61,16 +63,22 @@ prompt: |
      Ehsan explains the real-world problem in plain language
      with a concrete example (e.g., a farmer, a city, a river).
 
-  3. WHAT THE RESEARCHERS DID
-     Ehsan summarises the method in 3–4 sentences — no
-     equations, no abbreviations. Anna asks one follow-up
-     question to make sure the audience understands.
+  3. WHAT THE RESEARCHERS DID (keep it very simple)
+     Do NOT dive into technical details, equations, model names,
+     or statistical methods. Ehsan gives a 2–3 sentence overview
+     of the approach in everyday language — just enough so the
+     listener understands what was studied and how, nothing more.
+     Anna asks one simple follow-up question.
 
   4. KEY FINDINGS (pick 3–5 from the paper)
-     For each finding:
-       - Ehsan states the result.
-       - Anna asks: "What does that mean in practice?"
-       - Ehsan gives a real-life implication.
+     Focus on what the results MEAN for real people, not on the
+     numbers themselves. For each finding:
+       - Ehsan states the result in one plain sentence.
+       - Anna asks: "What does that mean for someone like a
+         farmer / a city / a family?"
+       - Ehsan explains the real-world consequence for
+         stakeholders (farmers, communities, water managers,
+         policy-makers).
 
   5. PRACTICAL TAKEAWAYS
      Together they list 3–5 actionable points a farmer,
@@ -97,3 +105,11 @@ prompt: |
   - Do not repeat the paper title more than twice.
   - Vary sentence length to sound natural.
   - Total output must be under 10 minutes of audio.
+  - NEVER use technical jargon, acronyms, or scientific terms
+    without immediately explaining them in one simple sentence.
+  - Skip deep methodology — listeners care about "what does
+    this mean for my farm / my city / my water bill?", not
+    about how the model was calibrated.
+  - Always connect findings back to real-life consequences
+    for stakeholders: farmers, communities, water managers,
+    local governments, and everyday water users.
