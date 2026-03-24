@@ -16,5 +16,18 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
+  <lastBuildDate>Tue, 24 Mar 2026 08:16:16 +0000</lastBuildDate>
+
+    <item>
+      <title>Ep 1: Experimental evaluation of two-layer air bubble curtains to prevent seawater intrusion into rivers</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep001.mp3" length="21439706" type="audio/mpeg"/>
+      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep001.mp3</guid>
+      <pubDate></pubDate>
+      <itunes:episode>1</itunes:episode>
+      <itunes:duration>0</itunes:duration>
+      <description>SpeakForWater Episode 1: Experimental evaluation of two-layer air bubble curtains to prevent seawater intrusion into rivers. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://iwaponline.com/jwcc/article/14/2/543/92985/Experimental-evaluation-of-two-layer-air-bubble</description>
+    </item>
 </channel>
 </rss>
