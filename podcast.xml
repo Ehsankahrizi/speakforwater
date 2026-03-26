@@ -16,8 +16,19 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Thu, 26 Mar 2026 14:09:06 +0000</lastBuildDate>
+  <lastBuildDate>Thu, 26 Mar 2026 19:31:01 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 10: How does integrating multi-scale monitoring and compound-specific isotope analysis improve the evaluation of &lt;i&gt;S&lt;/i&gt; -metolachlor degradation in agro-ecosystems?</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep010.mp3" length="18111915" type="audio/mpeg"/>
+      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep010.mp3</guid>
+      <pubDate></pubDate>
+      <itunes:episode>10</itunes:episode>
+      <itunes:duration>0</itunes:duration>
+      <description>SpeakForWater Episode 10: How does integrating multi-scale monitoring and compound-specific isotope analysis improve the evaluation of &lt;i&gt;S&lt;/i&gt; -metolachlor degradation in agro-ecosystems?. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://hess.copernicus.org/articles/30/1291/2026/hess-30-1291-2026.pdf</description>
+    </item>
     <item>
       <title>Ep 9: Technical note: Analysis of concentration-discharge hysteresis loops using Self-Organizing Maps</title>
       <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep009.mp3" length="27659566" type="audio/mpeg"/>
