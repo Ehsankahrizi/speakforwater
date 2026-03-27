@@ -16,7 +16,7 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Fri, 27 Mar 2026 13:34:09 +0000</lastBuildDate>
+  <lastBuildDate>Fri, 27 Mar 2026 19:14:46 +0000</lastBuildDate>
 
     <item>
       <title>Ep 12: Modeling surface water and groundwater mixing and mixing-dependent denitrification with bedform dynamics</title>
@@ -118,15 +118,15 @@ Original paper: https://www.mdpi.com/2073-4441/18/6/721/pdf</description>
 Original paper: https://www.mdpi.com/2073-4441/18/6/728/pdf</description>
     </item>
     <item>
-      <title>Ep 1: Experimental evaluation of two-layer air bubble curtains to prevent seawater intrusion into rivers</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep001.mp3" length="21439706" type="audio/mpeg"/>
+      <title>Ep 1: Climate-Driven Water Scarcity and Its Public Health Implications: A Multi-Regional Assessment Across Vulnerable Socio-Ecological Systems</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep001.mp3" length="13336522" type="audio/mpeg"/>
       <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep001.mp3</guid>
       <pubDate></pubDate>
       <itunes:episode>1</itunes:episode>
       <itunes:duration>0</itunes:duration>
-      <description>SpeakForWater Episode 1: Experimental evaluation of two-layer air bubble curtains to prevent seawater intrusion into rivers. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+      <description>SpeakForWater Episode 1: Climate-Driven Water Scarcity and Its Public Health Implications: A Multi-Regional Assessment Across Vulnerable Socio-Ecological Systems. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
 
-Original paper: https://iwaponline.com/jwcc/article/14/2/543/92985/Experimental-evaluation-of-two-layer-air-bubble</description>
+Original paper: https://www.mdpi.com/2073-4441/18/6/699/pdf</description>
     </item>
 </channel>
 </rss>
