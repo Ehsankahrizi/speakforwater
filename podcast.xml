@@ -16,7 +16,7 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Sat, 28 Mar 2026 07:15:50 +0000</lastBuildDate>
+  <lastBuildDate>Sat, 28 Mar 2026 13:23:16 +0000</lastBuildDate>
 
     <item>
       <title>Ep 12: Modeling surface water and groundwater mixing and mixing-dependent denitrification with bedform dynamics</title>
@@ -107,15 +107,15 @@ Original paper: https://www.mdpi.com/2073-4441/18/6/722/pdf</description>
 Original paper: https://www.mdpi.com/2073-4441/18/6/721/pdf</description>
     </item>
     <item>
-      <title>Ep 4: Contrasting Climatic and Land-Use Controls Structure Nutrient and Turbidity Regimes Across Mediterranean River Basins</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep004.mp3" length="30576712" type="audio/mpeg"/>
+      <title>Ep 4: An Investigation on the Effectiveness of Horizontal Curtain Grouting Based on Multi-Method Joint Analysis: A Case Study of the Cuihongshan Iron-Polymetallic Mine</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep004.mp3" length="16654909" type="audio/mpeg"/>
       <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep004.mp3</guid>
       <pubDate></pubDate>
       <itunes:episode>4</itunes:episode>
       <itunes:duration>0</itunes:duration>
-      <description>SpeakForWater Episode 4: Contrasting Climatic and Land-Use Controls Structure Nutrient and Turbidity Regimes Across Mediterranean River Basins. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+      <description>SpeakForWater Episode 4: An Investigation on the Effectiveness of Horizontal Curtain Grouting Based on Multi-Method Joint Analysis: A Case Study of the Cuihongshan Iron-Polymetallic Mine. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
 
-Original paper: https://www.mdpi.com/2073-4441/18/6/728/pdf</description>
+Original paper: https://www.mdpi.com/2073-4441/18/5/613/pdf?version=1772619329</description>
     </item>
     <item>
       <title>Ep 2: Long-Term Hydrodynamic Evolution and Extreme Parameter Estimation in the Mekong River Estuary</title>
