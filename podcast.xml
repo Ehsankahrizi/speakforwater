@@ -16,7 +16,7 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Fri, 27 Mar 2026 19:14:46 +0000</lastBuildDate>
+  <lastBuildDate>Sat, 28 Mar 2026 07:15:50 +0000</lastBuildDate>
 
     <item>
       <title>Ep 12: Modeling surface water and groundwater mixing and mixing-dependent denitrification with bedform dynamics</title>
@@ -116,6 +116,17 @@ Original paper: https://www.mdpi.com/2073-4441/18/6/721/pdf</description>
       <description>SpeakForWater Episode 4: Contrasting Climatic and Land-Use Controls Structure Nutrient and Turbidity Regimes Across Mediterranean River Basins. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
 
 Original paper: https://www.mdpi.com/2073-4441/18/6/728/pdf</description>
+    </item>
+    <item>
+      <title>Ep 2: Long-Term Hydrodynamic Evolution and Extreme Parameter Estimation in the Mekong River Estuary</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep002.mp3" length="18832268" type="audio/mpeg"/>
+      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep002.mp3</guid>
+      <pubDate></pubDate>
+      <itunes:episode>2</itunes:episode>
+      <itunes:duration>0</itunes:duration>
+      <description>SpeakForWater Episode 2: Long-Term Hydrodynamic Evolution and Extreme Parameter Estimation in the Mekong River Estuary. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://www.mdpi.com/2073-4441/18/5/620/pdf?version=1772700804</description>
     </item>
     <item>
       <title>Ep 1: Climate-Driven Water Scarcity and Its Public Health Implications: A Multi-Regional Assessment Across Vulnerable Socio-Ecological Systems</title>
