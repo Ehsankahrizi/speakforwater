@@ -16,7 +16,7 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Mon, 30 Mar 2026 08:08:12 +0000</lastBuildDate>
+  <lastBuildDate>Mon, 30 Mar 2026 14:02:41 +0000</lastBuildDate>
 
     <item>
       <title>Ep 12: Modeling surface water and groundwater mixing and mixing-dependent denitrification with bedform dynamics</title>
@@ -129,15 +129,15 @@ Original paper: https://www.mdpi.com/2073-4441/18/5/613/pdf?version=1772619329</
 Original paper: https://www.mdpi.com/2073-4441/18/5/620/pdf?version=1772700804</description>
     </item>
     <item>
-      <title>Ep 1: Climate-Driven Water Scarcity and Its Public Health Implications: A Multi-Regional Assessment Across Vulnerable Socio-Ecological Systems</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep001.mp3" length="13336522" type="audio/mpeg"/>
+      <title>Ep 1: Redox distribution of Asgard archaea and co-occurring taxa in microbial mats from an early Proterozoic ecosystem analog</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep001.mp3" length="25096640" type="audio/mpeg"/>
       <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep001.mp3</guid>
       <pubDate></pubDate>
       <itunes:episode>1</itunes:episode>
       <itunes:duration>0</itunes:duration>
-      <description>SpeakForWater Episode 1: Climate-Driven Water Scarcity and Its Public Health Implications: A Multi-Regional Assessment Across Vulnerable Socio-Ecological Systems. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+      <description>SpeakForWater Episode 1: Redox distribution of Asgard archaea and co-occurring taxa in microbial mats from an early Proterozoic ecosystem analog. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
 
-Original paper: https://www.mdpi.com/2073-4441/18/6/699/pdf</description>
+Original paper: https://www.biorxiv.org/content/biorxiv/early/2026/03/21/2026.03.20.713109.full.pdf</description>
     </item>
 </channel>
 </rss>
