@@ -16,7 +16,7 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Tue, 31 Mar 2026 07:38:41 +0000</lastBuildDate>
+  <lastBuildDate>Tue, 31 Mar 2026 14:02:13 +0000</lastBuildDate>
 
     <item>
       <title>Ep 12: Modeling surface water and groundwater mixing and mixing-dependent denitrification with bedform dynamics</title>
@@ -116,6 +116,17 @@ Original paper: https://www.mdpi.com/2073-4441/18/5/604/pdf?version=1772524302</
       <description>SpeakForWater Episode 4: An Investigation on the Effectiveness of Horizontal Curtain Grouting Based on Multi-Method Joint Analysis: A Case Study of the Cuihongshan Iron-Polymetallic Mine. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
 
 Original paper: https://www.mdpi.com/2073-4441/18/5/613/pdf?version=1772619329</description>
+    </item>
+    <item>
+      <title>Ep 3: Integrated Assessment of Water Resource Carrying Capacity: Dynamics, Obstacles, Coordination and Driving Mechanisms in the Gansu Section of the Yellow River Basin, China</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep003.mp3" length="19946338" type="audio/mpeg"/>
+      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep003.mp3</guid>
+      <pubDate></pubDate>
+      <itunes:episode>3</itunes:episode>
+      <itunes:duration>0</itunes:duration>
+      <description>SpeakForWater Episode 3: Integrated Assessment of Water Resource Carrying Capacity: Dynamics, Obstacles, Coordination and Driving Mechanisms in the Gansu Section of the Yellow River Basin, China. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://www.mdpi.com/2073-4441/18/6/761/pdf?version=1774276288</description>
     </item>
     <item>
       <title>Ep 2: Navigating Water (In)Security in Pakistan-Occupied Jammu and Kashmir (POJK)</title>
