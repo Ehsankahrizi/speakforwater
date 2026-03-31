@@ -16,7 +16,7 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Mon, 30 Mar 2026 19:31:20 +0000</lastBuildDate>
+  <lastBuildDate>Tue, 31 Mar 2026 07:38:41 +0000</lastBuildDate>
 
     <item>
       <title>Ep 12: Modeling surface water and groundwater mixing and mixing-dependent denitrification with bedform dynamics</title>
@@ -118,15 +118,15 @@ Original paper: https://www.mdpi.com/2073-4441/18/5/604/pdf?version=1772524302</
 Original paper: https://www.mdpi.com/2073-4441/18/5/613/pdf?version=1772619329</description>
     </item>
     <item>
-      <title>Ep 2: Long-Term Hydrodynamic Evolution and Extreme Parameter Estimation in the Mekong River Estuary</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep002.mp3" length="18832268" type="audio/mpeg"/>
+      <title>Ep 2: Navigating Water (In)Security in Pakistan-Occupied Jammu and Kashmir (POJK)</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep002.mp3" length="32265685" type="audio/mpeg"/>
       <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep002.mp3</guid>
       <pubDate></pubDate>
       <itunes:episode>2</itunes:episode>
       <itunes:duration>0</itunes:duration>
-      <description>SpeakForWater Episode 2: Long-Term Hydrodynamic Evolution and Extreme Parameter Estimation in the Mekong River Estuary. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+      <description>SpeakForWater Episode 2: Navigating Water (In)Security in Pakistan-Occupied Jammu and Kashmir (POJK). A podcast conversation between Anna and Ehsan discussing the latest water resources research.
 
-Original paper: https://www.mdpi.com/2073-4441/18/5/620/pdf?version=1772700804</description>
+Original paper: https://doi.org/10.3390/w18070768</description>
     </item>
     <item>
       <title>Ep 1: Minute 330 of the US–Mexico Water Treaty: A Testament to Transboundary Cooperation Amidst Drought in the Colorado River Basin</title>
