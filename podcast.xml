@@ -16,7 +16,7 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Wed, 01 Apr 2026 14:09:33 +0000</lastBuildDate>
+  <lastBuildDate>Wed, 01 Apr 2026 19:25:47 +0000</lastBuildDate>
 
     <item>
       <title>Ep 12: Modeling surface water and groundwater mixing and mixing-dependent denitrification with bedform dynamics</title>
@@ -74,15 +74,15 @@ Original paper: https://doi.org/10.1088/1748-9326/ae358e</description>
 Original paper: https://essd.copernicus.org/articles/18/1969/2026/essd-18-1969-2026.pdf</description>
     </item>
     <item>
-      <title>Ep 7: An application of U/Th-series radiotracers to study groundwater transport processes in the surficial and Upper Floridan Aquifer System in central Florida, USA</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep007.mp3" length="28880215" type="audio/mpeg"/>
+      <title>Ep 7: Towards a typology for hybrid compound flood modeling</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep007.mp3" length="33777861" type="audio/mpeg"/>
       <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep007.mp3</guid>
       <pubDate></pubDate>
       <itunes:episode>7</itunes:episode>
       <itunes:duration>0</itunes:duration>
-      <description>SpeakForWater Episode 7: An application of U/Th-series radiotracers to study groundwater transport processes in the surficial and Upper Floridan Aquifer System in central Florida, USA. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+      <description>SpeakForWater Episode 7: Towards a typology for hybrid compound flood modeling. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
 
-Original paper: https://public-pages-files-2025.frontiersin.org/journals/water/articles/10.3389/frwa.2025.1682438/pdf</description>
+Original paper: https://hess.copernicus.org/articles/30/1397/2026/hess-30-1397-2026.pdf</description>
     </item>
     <item>
       <title>Ep 6: Future changes in seasonal drought in Australia</title>
