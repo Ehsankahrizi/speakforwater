@@ -16,7 +16,7 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Wed, 01 Apr 2026 07:54:33 +0000</lastBuildDate>
+  <lastBuildDate>Wed, 01 Apr 2026 14:09:33 +0000</lastBuildDate>
 
     <item>
       <title>Ep 12: Modeling surface water and groundwater mixing and mixing-dependent denitrification with bedform dynamics</title>
@@ -85,15 +85,15 @@ Original paper: https://essd.copernicus.org/articles/18/1969/2026/essd-18-1969-2
 Original paper: https://public-pages-files-2025.frontiersin.org/journals/water/articles/10.3389/frwa.2025.1682438/pdf</description>
     </item>
     <item>
-      <title>Ep 6: Mapping water content dynamics in SAT systems using 3D electrical tomography</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep006.mp3" length="29645708" type="audio/mpeg"/>
+      <title>Ep 6: Future changes in seasonal drought in Australia</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep006.mp3" length="31354743" type="audio/mpeg"/>
       <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep006.mp3</guid>
       <pubDate></pubDate>
       <itunes:episode>6</itunes:episode>
       <itunes:duration>0</itunes:duration>
-      <description>SpeakForWater Episode 6: Mapping water content dynamics in SAT systems using 3D electrical tomography. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+      <description>SpeakForWater Episode 6: Future changes in seasonal drought in Australia. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
 
-Original paper: https://hess.copernicus.org/articles/30/877/2026/hess-30-877-2026.pdf</description>
+Original paper: https://hess.copernicus.org/articles/30/1463/2026/hess-30-1463-2026.pdf</description>
     </item>
     <item>
       <title>Ep 5: Integrated Sediment Yield Estimation and Control in Erosion-Prone Watersheds: A Systematic Review of Models, Strategies, and Emerging Technologies</title>
