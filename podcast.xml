@@ -16,7 +16,7 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Tue, 31 Mar 2026 19:28:28 +0000</lastBuildDate>
+  <lastBuildDate>Wed, 01 Apr 2026 07:54:33 +0000</lastBuildDate>
 
     <item>
       <title>Ep 12: Modeling surface water and groundwater mixing and mixing-dependent denitrification with bedform dynamics</title>
@@ -96,15 +96,15 @@ Original paper: https://public-pages-files-2025.frontiersin.org/journals/water/a
 Original paper: https://hess.copernicus.org/articles/30/877/2026/hess-30-877-2026.pdf</description>
     </item>
     <item>
-      <title>Ep 5: The Transformation of P, Fe, and Mn Fractions in Sediment Cores of a Highly Eutrophic Estuary in Northern Taiwan</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep005.mp3" length="23570671" type="audio/mpeg"/>
+      <title>Ep 5: Integrated Sediment Yield Estimation and Control in Erosion-Prone Watersheds: A Systematic Review of Models, Strategies, and Emerging Technologies</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep005.mp3" length="22733708" type="audio/mpeg"/>
       <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep005.mp3</guid>
       <pubDate></pubDate>
       <itunes:episode>5</itunes:episode>
       <itunes:duration>0</itunes:duration>
-      <description>SpeakForWater Episode 5: The Transformation of P, Fe, and Mn Fractions in Sediment Cores of a Highly Eutrophic Estuary in Northern Taiwan. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+      <description>SpeakForWater Episode 5: Integrated Sediment Yield Estimation and Control in Erosion-Prone Watersheds: A Systematic Review of Models, Strategies, and Emerging Technologies. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
 
-Original paper: https://www.mdpi.com/2073-4441/18/5/604/pdf?version=1772524302</description>
+Original paper: https://www.mdpi.com/2073-4441/18/6/751/pdf?version=1774252486</description>
     </item>
     <item>
       <title>Ep 4: Ecological Selection of Anammox Bacteria Driven by Endogenous Carbon in a Low-Oxygen SBR Biofilm System Without External Carbon Addition</title>
