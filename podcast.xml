@@ -16,7 +16,7 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Sat, 04 Apr 2026 07:20:02 +0000</lastBuildDate>
+  <lastBuildDate>Sat, 04 Apr 2026 13:56:20 +0000</lastBuildDate>
 
     <item>
       <title>Ep 12: Modeling surface water and groundwater mixing and mixing-dependent denitrification with bedform dynamics</title>
@@ -74,15 +74,15 @@ Original paper: https://hess.copernicus.org/articles/30/1165/2026/hess-30-1165-2
 Original paper: https://hess.copernicus.org/articles/30/1309/2026/hess-30-1309-2026.pdf</description>
     </item>
     <item>
-      <title>Ep 7: Towards a typology for hybrid compound flood modeling</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep007.mp3" length="33777861" type="audio/mpeg"/>
+      <title>Ep 7: A review of current best practices and future directions in assimilating GRACE/-FO terrestrial water storage data into numerical models</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep007.mp3" length="28843226" type="audio/mpeg"/>
       <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep007.mp3</guid>
       <pubDate></pubDate>
       <itunes:episode>7</itunes:episode>
       <itunes:duration>0</itunes:duration>
-      <description>SpeakForWater Episode 7: Towards a typology for hybrid compound flood modeling. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+      <description>SpeakForWater Episode 7: A review of current best practices and future directions in assimilating GRACE/-FO terrestrial water storage data into numerical models. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
 
-Original paper: https://hess.copernicus.org/articles/30/1397/2026/hess-30-1397-2026.pdf</description>
+Original paper: https://hess.copernicus.org/articles/30/985/2026/hess-30-985-2026.pdf</description>
     </item>
     <item>
       <title>Ep 6: Future changes in seasonal drought in Australia</title>
