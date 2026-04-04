@@ -16,7 +16,7 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Sat, 04 Apr 2026 13:56:20 +0000</lastBuildDate>
+  <lastBuildDate>Sat, 04 Apr 2026 19:05:03 +0000</lastBuildDate>
 
     <item>
       <title>Ep 12: Modeling surface water and groundwater mixing and mixing-dependent denitrification with bedform dynamics</title>
@@ -140,15 +140,15 @@ Original paper: https://www.mdpi.com/2073-4441/18/6/763/pdf?version=1774278252</
 Original paper: https://www.mdpi.com/2073-4441/18/6/762/pdf</description>
     </item>
     <item>
-      <title>Ep 1: Projections of Temperature-Driven Changes in Seasonal Ice Coverage Around Prince Edward Island, Canada</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep001.mp3" length="18829133" type="audio/mpeg"/>
+      <title>Ep 1: Innovations in the Revised FAO56 Guidelines for Computing Crop Water Requirements: Data, Calculation Methods, Irrigation, and Climate Change Challenges</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep001.mp3" length="18441058" type="audio/mpeg"/>
       <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep001.mp3</guid>
       <pubDate></pubDate>
       <itunes:episode>1</itunes:episode>
       <itunes:duration>0</itunes:duration>
-      <description>SpeakForWater Episode 1: Projections of Temperature-Driven Changes in Seasonal Ice Coverage Around Prince Edward Island, Canada. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+      <description>SpeakForWater Episode 1: Innovations in the Revised FAO56 Guidelines for Computing Crop Water Requirements: Data, Calculation Methods, Irrigation, and Climate Change Challenges. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
 
-Original paper: https://www.mdpi.com/2073-4441/18/7/777/pdf?version=1774448140</description>
+Original paper: https://doi.org/10.3390/w18070793</description>
     </item>
 </channel>
 </rss>
