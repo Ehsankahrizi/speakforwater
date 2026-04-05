@@ -16,7 +16,7 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Sat, 04 Apr 2026 19:05:03 +0000</lastBuildDate>
+  <lastBuildDate>Sun, 05 Apr 2026 07:28:01 +0000</lastBuildDate>
 
     <item>
       <title>Ep 12: Modeling surface water and groundwater mixing and mixing-dependent denitrification with bedform dynamics</title>
@@ -129,15 +129,15 @@ Original paper: https://www.mdpi.com/2073-4441/18/6/739/pdf?version=1774267214</
 Original paper: https://www.mdpi.com/2073-4441/18/6/763/pdf?version=1774278252</description>
     </item>
     <item>
-      <title>Ep 2: Generalised Machine Learning Model for Prediction of Heavy Metals in Stormwater</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep002.mp3" length="31992966" type="audio/mpeg"/>
+      <title>Ep 2: Mangrove Ecosystems: Importance, Threats and Opportunities for Restoration</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep002.mp3" length="26351144" type="audio/mpeg"/>
       <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep002.mp3</guid>
       <pubDate></pubDate>
       <itunes:episode>2</itunes:episode>
       <itunes:duration>0</itunes:duration>
-      <description>SpeakForWater Episode 2: Generalised Machine Learning Model for Prediction of Heavy Metals in Stormwater. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+      <description>SpeakForWater Episode 2: Mangrove Ecosystems: Importance, Threats and Opportunities for Restoration. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
 
-Original paper: https://www.mdpi.com/2073-4441/18/6/762/pdf</description>
+Original paper: https://www.mdpi.com/2073-4441/18/7/787/pdf?version=1774523369</description>
     </item>
     <item>
       <title>Ep 1: Innovations in the Revised FAO56 Guidelines for Computing Crop Water Requirements: Data, Calculation Methods, Irrigation, and Climate Change Challenges</title>
