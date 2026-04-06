@@ -16,7 +16,7 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Sun, 05 Apr 2026 19:05:17 +0000</lastBuildDate>
+  <lastBuildDate>Mon, 06 Apr 2026 08:04:09 +0000</lastBuildDate>
 
     <item>
       <title>Ep 12: Modeling surface water and groundwater mixing and mixing-dependent denitrification with bedform dynamics</title>
@@ -96,15 +96,15 @@ Original paper: https://hess.copernicus.org/articles/30/985/2026/hess-30-985-202
 Original paper: https://hess.copernicus.org/articles/30/1463/2026/hess-30-1463-2026.pdf</description>
     </item>
     <item>
-      <title>Ep 5: Extreme drought–accelerated dissolved carbon metabolism triggers pulsed CO &lt;sub&gt;2&lt;/sub&gt; outgassing in karst lakes</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep005.mp3" length="13562220" type="audio/mpeg"/>
+      <title>Ep 5: Enhancing understanding of vulnerability to climate change in rural territories of Tunisia: from local perceptions to a quantitative assessment</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep005.mp3" length="17757068" type="audio/mpeg"/>
       <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep005.mp3</guid>
       <pubDate></pubDate>
       <itunes:episode>5</itunes:episode>
       <itunes:duration>0</itunes:duration>
-      <description>SpeakForWater Episode 5: Extreme drought–accelerated dissolved carbon metabolism triggers pulsed CO &lt;sub&gt;2&lt;/sub&gt; outgassing in karst lakes. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+      <description>SpeakForWater Episode 5: Enhancing understanding of vulnerability to climate change in rural territories of Tunisia: from local perceptions to a quantitative assessment. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
 
-Original paper: https://hess.copernicus.org/articles/30/1381/2026/hess-30-1381-2026.pdf</description>
+Original paper: https://public-pages-files-2025.frontiersin.org/journals/water/articles/10.3389/frwa.2026.1750579/pdf</description>
     </item>
     <item>
       <title>Ep 4: Upscaling WEPP Model to Project Spatial Variability of Soil Erosion in Agricultural-Dominant Watershed, India</title>
