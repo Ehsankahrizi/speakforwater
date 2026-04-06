@@ -16,7 +16,7 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Mon, 06 Apr 2026 08:04:09 +0000</lastBuildDate>
+  <lastBuildDate>Mon, 06 Apr 2026 19:20:04 +0000</lastBuildDate>
 
     <item>
       <title>Ep 12: Modeling surface water and groundwater mixing and mixing-dependent denitrification with bedform dynamics</title>
@@ -85,15 +85,15 @@ Original paper: https://hess.copernicus.org/articles/30/1309/2026/hess-30-1309-2
 Original paper: https://hess.copernicus.org/articles/30/985/2026/hess-30-985-2026.pdf</description>
     </item>
     <item>
-      <title>Ep 6: Future changes in seasonal drought in Australia</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep006.mp3" length="31354743" type="audio/mpeg"/>
+      <title>Ep 6: Modeling and quantifying surface water resource potential in Awash Bello watershed, Upper Awash River Basin, Ethiopia, using SWAT model</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep006.mp3" length="16501936" type="audio/mpeg"/>
       <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep006.mp3</guid>
       <pubDate></pubDate>
       <itunes:episode>6</itunes:episode>
       <itunes:duration>0</itunes:duration>
-      <description>SpeakForWater Episode 6: Future changes in seasonal drought in Australia. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+      <description>SpeakForWater Episode 6: Modeling and quantifying surface water resource potential in Awash Bello watershed, Upper Awash River Basin, Ethiopia, using SWAT model. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
 
-Original paper: https://hess.copernicus.org/articles/30/1463/2026/hess-30-1463-2026.pdf</description>
+Original paper: https://public-pages-files-2025.frontiersin.org/journals/water/articles/10.3389/frwa.2025.1720895/pdf</description>
     </item>
     <item>
       <title>Ep 5: Enhancing understanding of vulnerability to climate change in rural territories of Tunisia: from local perceptions to a quantitative assessment</title>
