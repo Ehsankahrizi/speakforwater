@@ -16,7 +16,7 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Tue, 07 Apr 2026 14:03:46 +0000</lastBuildDate>
+  <lastBuildDate>Wed, 08 Apr 2026 08:29:16 +0000</lastBuildDate>
 
     <item>
       <title>Ep 12: Modeling surface water and groundwater mixing and mixing-dependent denitrification with bedform dynamics</title>
@@ -107,15 +107,15 @@ Original paper: https://public-pages-files-2025.frontiersin.org/journals/water/a
 Original paper: https://public-pages-files-2025.frontiersin.org/journals/water/articles/10.3389/frwa.2026.1750579/pdf</description>
     </item>
     <item>
-      <title>Ep 4: Upscaling WEPP Model to Project Spatial Variability of Soil Erosion in Agricultural-Dominant Watershed, India</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep004.mp3" length="15814811" type="audio/mpeg"/>
+      <title>Ep 4: Performance Evaluation and Application of TOC-CRDS for Various Stable Carbon Isotope Analyses in Groundwater</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep004.mp3" length="31949708" type="audio/mpeg"/>
       <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep004.mp3</guid>
       <pubDate></pubDate>
       <itunes:episode>4</itunes:episode>
       <itunes:duration>0</itunes:duration>
-      <description>SpeakForWater Episode 4: Upscaling WEPP Model to Project Spatial Variability of Soil Erosion in Agricultural-Dominant Watershed, India. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+      <description>SpeakForWater Episode 4: Performance Evaluation and Application of TOC-CRDS for Various Stable Carbon Isotope Analyses in Groundwater. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
 
-Original paper: https://doi.org/10.3390/w18060744</description>
+Original paper: https://www.mdpi.com/2073-4441/18/7/783/pdf?version=1774521012</description>
     </item>
     <item>
       <title>Ep 3: Effects of Polymer-Based Soil Conditioner and Humic Acid on Soil Properties and Cotton Yield in Saline–Sodic Soils</title>
