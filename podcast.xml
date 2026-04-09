@@ -16,7 +16,7 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Wed, 08 Apr 2026 19:41:37 +0000</lastBuildDate>
+  <lastBuildDate>Thu, 09 Apr 2026 07:58:22 +0000</lastBuildDate>
 
     <item>
       <title>Ep 12: Modeling surface water and groundwater mixing and mixing-dependent denitrification with bedform dynamics</title>
@@ -85,15 +85,15 @@ Original paper: https://hess.copernicus.org/articles/30/1309/2026/hess-30-1309-2
 Original paper: https://essd.copernicus.org/articles/18/1703/2026/essd-18-1703-2026.pdf</description>
     </item>
     <item>
-      <title>Ep 6: Modeling and quantifying surface water resource potential in Awash Bello watershed, Upper Awash River Basin, Ethiopia, using SWAT model</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep006.mp3" length="16501936" type="audio/mpeg"/>
+      <title>Ep 6: Assessing the impact of nature-based solutions on soil health in sub-Saharan Africa through farmer-centred methods</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep006.mp3" length="21311183" type="audio/mpeg"/>
       <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep006.mp3</guid>
       <pubDate></pubDate>
       <itunes:episode>6</itunes:episode>
       <itunes:duration>0</itunes:duration>
-      <description>SpeakForWater Episode 6: Modeling and quantifying surface water resource potential in Awash Bello watershed, Upper Awash River Basin, Ethiopia, using SWAT model. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+      <description>SpeakForWater Episode 6: Assessing the impact of nature-based solutions on soil health in sub-Saharan Africa through farmer-centred methods. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
 
-Original paper: https://public-pages-files-2025.frontiersin.org/journals/water/articles/10.3389/frwa.2025.1720895/pdf</description>
+Original paper: https://doi.org/10.1088/1748-9326/ae3975</description>
     </item>
     <item>
       <title>Ep 5: RAPSODI: radiosonde atmospheric profiles from ship and island platforms during ORCESTRA, collected to Decipher the ITCZ</title>
