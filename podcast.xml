@@ -16,7 +16,7 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Thu, 09 Apr 2026 14:07:58 +0000</lastBuildDate>
+  <lastBuildDate>Thu, 09 Apr 2026 19:32:49 +0000</lastBuildDate>
 
     <item>
       <title>Ep 12: Modeling surface water and groundwater mixing and mixing-dependent denitrification with bedform dynamics</title>
@@ -63,15 +63,15 @@ Original paper: https://doi.org/10.5194/hess-30-849-2026</description>
 Original paper: https://essd.copernicus.org/articles/18/1561/2026/essd-18-1561-2026.pdf</description>
     </item>
     <item>
-      <title>Ep 8: Novel insights into deep groundwater exploration by geophysical estimation of hard rock permeability</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep008.mp3" length="23546847" type="audio/mpeg"/>
+      <title>Ep 8: Encounter-state over-anchoring governs productive PETase binding on PET surfaces</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep008.mp3" length="26571200" type="audio/mpeg"/>
       <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep008.mp3</guid>
       <pubDate></pubDate>
       <itunes:episode>8</itunes:episode>
       <itunes:duration>0</itunes:duration>
-      <description>SpeakForWater Episode 8: Novel insights into deep groundwater exploration by geophysical estimation of hard rock permeability. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+      <description>SpeakForWater Episode 8: Encounter-state over-anchoring governs productive PETase binding on PET surfaces. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
 
-Original paper: https://hess.copernicus.org/articles/30/1309/2026/hess-30-1309-2026.pdf</description>
+Original paper: https://www.biorxiv.org/content/biorxiv/early/2026/03/18/2026.03.17.712535.full.pdf</description>
     </item>
     <item>
       <title>Ep 7: Synaptic dynamics as a tunable substrate shaping neuronal activity sequences</title>
