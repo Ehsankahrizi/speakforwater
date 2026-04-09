@@ -16,7 +16,7 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Thu, 09 Apr 2026 07:58:22 +0000</lastBuildDate>
+  <lastBuildDate>Thu, 09 Apr 2026 14:07:58 +0000</lastBuildDate>
 
     <item>
       <title>Ep 12: Modeling surface water and groundwater mixing and mixing-dependent denitrification with bedform dynamics</title>
@@ -74,15 +74,15 @@ Original paper: https://essd.copernicus.org/articles/18/1561/2026/essd-18-1561-2
 Original paper: https://hess.copernicus.org/articles/30/1309/2026/hess-30-1309-2026.pdf</description>
     </item>
     <item>
-      <title>Ep 7: The Potsdam Soil Moisture Observatory: high-coverage reference observations at kilometer scale</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep007.mp3" length="23687281" type="audio/mpeg"/>
+      <title>Ep 7: Synaptic dynamics as a tunable substrate shaping neuronal activity sequences</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep007.mp3" length="21476695" type="audio/mpeg"/>
       <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep007.mp3</guid>
       <pubDate></pubDate>
       <itunes:episode>7</itunes:episode>
       <itunes:duration>0</itunes:duration>
-      <description>SpeakForWater Episode 7: The Potsdam Soil Moisture Observatory: high-coverage reference observations at kilometer scale. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+      <description>SpeakForWater Episode 7: Synaptic dynamics as a tunable substrate shaping neuronal activity sequences. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
 
-Original paper: https://essd.copernicus.org/articles/18/1703/2026/essd-18-1703-2026.pdf</description>
+Original paper: https://www.biorxiv.org/content/biorxiv/early/2026/03/23/2026.03.22.713064.full.pdf</description>
     </item>
     <item>
       <title>Ep 6: Assessing the impact of nature-based solutions on soil health in sub-Saharan Africa through farmer-centred methods</title>
