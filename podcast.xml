@@ -16,7 +16,7 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Thu, 09 Apr 2026 19:32:49 +0000</lastBuildDate>
+  <lastBuildDate>Fri, 10 Apr 2026 08:04:45 +0000</lastBuildDate>
 
     <item>
       <title>Ep 12: Modeling surface water and groundwater mixing and mixing-dependent denitrification with bedform dynamics</title>
@@ -52,15 +52,15 @@ Original paper: https://hess.copernicus.org/articles/30/1261/2026/hess-30-1261-2
 Original paper: https://doi.org/10.5194/hess-30-849-2026</description>
     </item>
     <item>
-      <title>Ep 9: Mapping key soil micronutrients across the Tibetan Plateau</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep009.mp3" length="14036186" type="audio/mpeg"/>
+      <title>Ep 9: Freshwater biodiversity is not adequately addressed by the current protected areas of the Caribbean biodiversity hotspot</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep009.mp3" length="27993724" type="audio/mpeg"/>
       <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep009.mp3</guid>
       <pubDate></pubDate>
       <itunes:episode>9</itunes:episode>
       <itunes:duration>0</itunes:duration>
-      <description>SpeakForWater Episode 9: Mapping key soil micronutrients across the Tibetan Plateau. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+      <description>SpeakForWater Episode 9: Freshwater biodiversity is not adequately addressed by the current protected areas of the Caribbean biodiversity hotspot. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
 
-Original paper: https://essd.copernicus.org/articles/18/1561/2026/essd-18-1561-2026.pdf</description>
+Original paper: https://www.biorxiv.org/content/biorxiv/early/2026/03/18/2026.03.16.712036.full.pdf</description>
     </item>
     <item>
       <title>Ep 8: Encounter-state over-anchoring governs productive PETase binding on PET surfaces</title>
