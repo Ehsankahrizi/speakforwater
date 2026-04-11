@@ -16,7 +16,7 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Sat, 11 Apr 2026 13:26:44 +0000</lastBuildDate>
+  <lastBuildDate>Sat, 11 Apr 2026 19:08:48 +0000</lastBuildDate>
 
     <item>
       <title>Ep 12: Modeling surface water and groundwater mixing and mixing-dependent denitrification with bedform dynamics</title>
@@ -107,15 +107,15 @@ Original paper: https://doi.org/10.1088/1748-9326/ae3975</description>
 Original paper: https://essd.copernicus.org/articles/18/1833/2026/essd-18-1833-2026.pdf</description>
     </item>
     <item>
-      <title>Ep 4: Performance Evaluation and Application of TOC-CRDS for Various Stable Carbon Isotope Analyses in Groundwater</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep004.mp3" length="31949708" type="audio/mpeg"/>
+      <title>Ep 4: Feasibility and Local Perceptions About Treated Wastewater Reuse for Irrigation: Insights from the Prato Circular City Framework (Italy)</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep004.mp3" length="27011311" type="audio/mpeg"/>
       <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep004.mp3</guid>
       <pubDate></pubDate>
       <itunes:episode>4</itunes:episode>
       <itunes:duration>0</itunes:duration>
-      <description>SpeakForWater Episode 4: Performance Evaluation and Application of TOC-CRDS for Various Stable Carbon Isotope Analyses in Groundwater. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+      <description>SpeakForWater Episode 4: Feasibility and Local Perceptions About Treated Wastewater Reuse for Irrigation: Insights from the Prato Circular City Framework (Italy). A podcast conversation between Anna and Ehsan discussing the latest water resources research.
 
-Original paper: https://www.mdpi.com/2073-4441/18/7/783/pdf?version=1774521012</description>
+Original paper: https://www.mdpi.com/2073-4441/18/7/809/pdf?version=1774692391</description>
     </item>
     <item>
       <title>Ep 3: Spatial Assessment of Flood Susceptibility in the Abai Region, Kazakhstan</title>
