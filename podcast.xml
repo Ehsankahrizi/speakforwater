@@ -16,7 +16,7 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Sat, 11 Apr 2026 19:08:48 +0000</lastBuildDate>
+  <lastBuildDate>Sun, 12 Apr 2026 07:34:42 +0000</lastBuildDate>
 
     <item>
       <title>Ep 12: Modeling surface water and groundwater mixing and mixing-dependent denitrification with bedform dynamics</title>
@@ -96,15 +96,15 @@ Original paper: https://www.biorxiv.org/content/biorxiv/early/2026/03/23/2026.03
 Original paper: https://doi.org/10.1088/1748-9326/ae3975</description>
     </item>
     <item>
-      <title>Ep 5: RAPSODI: radiosonde atmospheric profiles from ship and island platforms during ORCESTRA, collected to Decipher the ITCZ</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep005.mp3" length="32256908" type="audio/mpeg"/>
+      <title>Ep 5: Community Structure Characteristics of Zooplankton and Their Relationship with Environmental Factors in the Lhasa River Basin</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep005.mp3" length="25022661" type="audio/mpeg"/>
       <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep005.mp3</guid>
       <pubDate></pubDate>
       <itunes:episode>5</itunes:episode>
       <itunes:duration>0</itunes:duration>
-      <description>SpeakForWater Episode 5: RAPSODI: radiosonde atmospheric profiles from ship and island platforms during ORCESTRA, collected to Decipher the ITCZ. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+      <description>SpeakForWater Episode 5: Community Structure Characteristics of Zooplankton and Their Relationship with Environmental Factors in the Lhasa River Basin. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
 
-Original paper: https://essd.copernicus.org/articles/18/1833/2026/essd-18-1833-2026.pdf</description>
+Original paper: https://www.mdpi.com/2073-4441/18/7/814/pdf?version=1774705820</description>
     </item>
     <item>
       <title>Ep 4: Feasibility and Local Perceptions About Treated Wastewater Reuse for Irrigation: Insights from the Prato Circular City Framework (Italy)</title>
