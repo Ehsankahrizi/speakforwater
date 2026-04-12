@@ -16,7 +16,7 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Sun, 12 Apr 2026 07:34:42 +0000</lastBuildDate>
+  <lastBuildDate>Sun, 12 Apr 2026 13:35:16 +0000</lastBuildDate>
 
     <item>
       <title>Ep 12: Modeling surface water and groundwater mixing and mixing-dependent denitrification with bedform dynamics</title>
@@ -85,15 +85,15 @@ Original paper: https://www.biorxiv.org/content/biorxiv/early/2026/03/18/2026.03
 Original paper: https://www.biorxiv.org/content/biorxiv/early/2026/03/23/2026.03.22.713064.full.pdf</description>
     </item>
     <item>
-      <title>Ep 6: Assessing the impact of nature-based solutions on soil health in sub-Saharan Africa through farmer-centred methods</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep006.mp3" length="21311183" type="audio/mpeg"/>
+      <title>Ep 6: A highly generalizable data-driven model for spatiotemporal urban flood dynamics real-time forecasting based on coupled CNN and ConvLSTM</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep006.mp3" length="36449247" type="audio/mpeg"/>
       <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep006.mp3</guid>
       <pubDate></pubDate>
       <itunes:episode>6</itunes:episode>
       <itunes:duration>0</itunes:duration>
-      <description>SpeakForWater Episode 6: Assessing the impact of nature-based solutions on soil health in sub-Saharan Africa through farmer-centred methods. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+      <description>SpeakForWater Episode 6: A highly generalizable data-driven model for spatiotemporal urban flood dynamics real-time forecasting based on coupled CNN and ConvLSTM. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
 
-Original paper: https://doi.org/10.1088/1748-9326/ae3975</description>
+Original paper: https://hess.copernicus.org/articles/30/1625/2026/hess-30-1625-2026.pdf</description>
     </item>
     <item>
       <title>Ep 5: Community Structure Characteristics of Zooplankton and Their Relationship with Environmental Factors in the Lhasa River Basin</title>
