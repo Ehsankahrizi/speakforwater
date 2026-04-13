@@ -16,7 +16,7 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Sun, 12 Apr 2026 19:13:22 +0000</lastBuildDate>
+  <lastBuildDate>Mon, 13 Apr 2026 08:29:46 +0000</lastBuildDate>
 
     <item>
       <title>Ep 12: Modeling surface water and groundwater mixing and mixing-dependent denitrification with bedform dynamics</title>
@@ -140,15 +140,15 @@ Original paper: https://www.mdpi.com/2073-4441/18/7/817/pdf?version=1774863774</
 Original paper: https://www.mdpi.com/2073-4441/18/7/824/pdf?version=1774880335</description>
     </item>
     <item>
-      <title>Ep 1: Evaluation of Subsurface Moisture Dynamics and Leakage Pathways Through Geoelectrical Mapping: Insights from Nagi Lake, South Sikkim</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep001.mp3" length="18679921" type="audio/mpeg"/>
+      <title>Ep 1: A Systematic Overview of Institutional Pathways and Constraints in the Integration of Local and Indigenous Knowledge into Water Resource Policy: An African Perspective</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep001.mp3" length="25896614" type="audio/mpeg"/>
       <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep001.mp3</guid>
       <pubDate></pubDate>
       <itunes:episode>1</itunes:episode>
       <itunes:duration>0</itunes:duration>
-      <description>SpeakForWater Episode 1: Evaluation of Subsurface Moisture Dynamics and Leakage Pathways Through Geoelectrical Mapping: Insights from Nagi Lake, South Sikkim. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+      <description>SpeakForWater Episode 1: A Systematic Overview of Institutional Pathways and Constraints in the Integration of Local and Indigenous Knowledge into Water Resource Policy: An African Perspective. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
 
-Original paper: https://www.mdpi.com/2073-4441/18/7/823/pdf?version=1774878698</description>
+Original paper: https://www.mdpi.com/2073-4441/18/7/827/pdf?version=1774933988</description>
     </item>
 </channel>
 </rss>
