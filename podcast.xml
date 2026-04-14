@@ -16,7 +16,7 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Mon, 13 Apr 2026 19:33:09 +0000</lastBuildDate>
+  <lastBuildDate>Tue, 14 Apr 2026 08:12:48 +0000</lastBuildDate>
 
     <item>
       <title>Ep 12: Modeling surface water and groundwater mixing and mixing-dependent denitrification with bedform dynamics</title>
@@ -118,15 +118,15 @@ Original paper: https://www.mdpi.com/2073-4441/18/7/814/pdf?version=1774705820</
 Original paper: https://www.mdpi.com/2073-4441/18/7/809/pdf?version=1774692391</description>
     </item>
     <item>
-      <title>Ep 3: Spatial Assessment of Flood Susceptibility in the Abai Region, Kazakhstan</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep003.mp3" length="33311419" type="audio/mpeg"/>
+      <title>Ep 3: Advances in Subsurface Drip Irrigation System Design, Water–Fertilizer Synergy, and Sustainable Wheat Production in Xinjiang</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep003.mp3" length="18838537" type="audio/mpeg"/>
       <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep003.mp3</guid>
       <pubDate></pubDate>
       <itunes:episode>3</itunes:episode>
       <itunes:duration>0</itunes:duration>
-      <description>SpeakForWater Episode 3: Spatial Assessment of Flood Susceptibility in the Abai Region, Kazakhstan. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+      <description>SpeakForWater Episode 3: Advances in Subsurface Drip Irrigation System Design, Water–Fertilizer Synergy, and Sustainable Wheat Production in Xinjiang. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
 
-Original paper: https://www.mdpi.com/2073-4441/18/7/817/pdf?version=1774863774</description>
+Original paper: https://doi.org/10.3390/w18070852</description>
     </item>
     <item>
       <title>Ep 2: Treated Wastewater Use for Fertigation: A Distance-Based and Sodium-Constrained Deterministic Allocation Model in the Semi-Arid Region of Minas Gerais, Brazil</title>
