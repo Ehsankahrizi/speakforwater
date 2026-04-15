@@ -16,7 +16,7 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Tue, 14 Apr 2026 19:37:22 +0000</lastBuildDate>
+  <lastBuildDate>Wed, 15 Apr 2026 08:12:02 +0000</lastBuildDate>
 
     <item>
       <title>Ep 12: Modeling surface water and groundwater mixing and mixing-dependent denitrification with bedform dynamics</title>
@@ -85,15 +85,15 @@ Original paper: https://www.biorxiv.org/content/biorxiv/early/2026/03/18/2026.03
 Original paper: https://hess.copernicus.org/articles/30/1523/2026/hess-30-1523-2026.pdf</description>
     </item>
     <item>
-      <title>Ep 6: A highly generalizable data-driven model for spatiotemporal urban flood dynamics real-time forecasting based on coupled CNN and ConvLSTM</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep006.mp3" length="36449247" type="audio/mpeg"/>
+      <title>Ep 6: From grid to ground: how well do gridded products represent soil moisture dynamics in natural ecosystems during precipitation events?</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep006.mp3" length="14672529" type="audio/mpeg"/>
       <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep006.mp3</guid>
       <pubDate></pubDate>
       <itunes:episode>6</itunes:episode>
       <itunes:duration>0</itunes:duration>
-      <description>SpeakForWater Episode 6: A highly generalizable data-driven model for spatiotemporal urban flood dynamics real-time forecasting based on coupled CNN and ConvLSTM. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+      <description>SpeakForWater Episode 6: From grid to ground: how well do gridded products represent soil moisture dynamics in natural ecosystems during precipitation events?. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
 
-Original paper: https://hess.copernicus.org/articles/30/1625/2026/hess-30-1625-2026.pdf</description>
+Original paper: https://hess.copernicus.org/articles/30/1813/2026/hess-30-1813-2026.pdf</description>
     </item>
     <item>
       <title>Ep 5: Multi-Objective Collaborative Optimization Model and Application of the Water-Energy-Food-Carbon Nexus Under Uncertainty: A Case Study of the Heihe Irrigation Area</title>
