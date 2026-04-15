@@ -1,10 +1,10 @@
 {
   "episode_number": 6,
-  "title": "A highly generalizable data-driven model for spatiotemporal urban flood dynamics real-time forecasting based on coupled CNN and ConvLSTM",
-  "paper_url": "https://hess.copernicus.org/articles/30/1625/2026/hess-30-1625-2026.pdf",
+  "title": "From grid to ground: how well do gridded products represent soil moisture dynamics in natural ecosystems during precipitation events?",
+  "paper_url": "https://hess.copernicus.org/articles/30/1813/2026/hess-30-1813-2026.pdf",
   "filename": "ep006.mp3",
-  "published_at": "2026-04-12T13:35:16.185867+00:00",
-  "file_size_bytes": 36449247,
+  "published_at": "2026-04-15T08:12:02.178298+00:00",
+  "file_size_bytes": 14672529,
   "duration_seconds": 0,
-  "description": "SpeakForWater Episode 6: A highly generalizable data-driven model for spatiotemporal urban flood dynamics real-time forecasting based on coupled CNN and ConvLSTM. A podcast conversation between Anna and Ehsan discussing the latest water resources research."
+  "description": "SpeakForWater Episode 6: From grid to ground: how well do gridded products represent soil moisture dynamics in natural ecosystems during precipitation events?. A podcast conversation between Anna and Ehsan discussing the latest water resources research."
 }
