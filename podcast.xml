@@ -16,7 +16,7 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Wed, 15 Apr 2026 08:12:02 +0000</lastBuildDate>
+  <lastBuildDate>Wed, 15 Apr 2026 19:53:11 +0000</lastBuildDate>
 
     <item>
       <title>Ep 12: Modeling surface water and groundwater mixing and mixing-dependent denitrification with bedform dynamics</title>
@@ -129,15 +129,15 @@ Original paper: https://doi.org/10.3390/w18070851</description>
 Original paper: https://doi.org/10.3390/w18070852</description>
     </item>
     <item>
-      <title>Ep 2: Treated Wastewater Use for Fertigation: A Distance-Based and Sodium-Constrained Deterministic Allocation Model in the Semi-Arid Region of Minas Gerais, Brazil</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep002.mp3" length="23573806" type="audio/mpeg"/>
+      <title>Ep 2: Technical note: Efficiency of various evaporation barriers for use in automated water samplers for subsequent water isotope analysis</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep002.mp3" length="26462739" type="audio/mpeg"/>
       <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep002.mp3</guid>
       <pubDate></pubDate>
       <itunes:episode>2</itunes:episode>
       <itunes:duration>0</itunes:duration>
-      <description>SpeakForWater Episode 2: Treated Wastewater Use for Fertigation: A Distance-Based and Sodium-Constrained Deterministic Allocation Model in the Semi-Arid Region of Minas Gerais, Brazil. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+      <description>SpeakForWater Episode 2: Technical note: Efficiency of various evaporation barriers for use in automated water samplers for subsequent water isotope analysis. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
 
-Original paper: https://doi.org/10.3390/w18070853</description>
+Original paper: https://hess.copernicus.org/articles/30/1801/2026/hess-30-1801-2026.pdf</description>
     </item>
     <item>
       <title>Ep 1: Spatio-Environmental Drivers of Water Scarcity in Semi-Arid Catchments: Insights from NDWI and LULC</title>
