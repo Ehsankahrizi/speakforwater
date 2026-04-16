@@ -16,7 +16,7 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Wed, 15 Apr 2026 19:53:11 +0000</lastBuildDate>
+  <lastBuildDate>Thu, 16 Apr 2026 08:08:44 +0000</lastBuildDate>
 
     <item>
       <title>Ep 12: Modeling surface water and groundwater mixing and mixing-dependent denitrification with bedform dynamics</title>
@@ -140,15 +140,15 @@ Original paper: https://doi.org/10.3390/w18070852</description>
 Original paper: https://hess.copernicus.org/articles/30/1801/2026/hess-30-1801-2026.pdf</description>
     </item>
     <item>
-      <title>Ep 1: Spatio-Environmental Drivers of Water Scarcity in Semi-Arid Catchments: Insights from NDWI and LULC</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep001.mp3" length="22276669" type="audio/mpeg"/>
+      <title>Ep 1: Spectral Quasi-Linearization Analysis of Nonlinear Contaminant Transport in a Porous Channel with Generalized Haldane Kinetics</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep001.mp3" length="13502661" type="audio/mpeg"/>
       <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep001.mp3</guid>
       <pubDate></pubDate>
       <itunes:episode>1</itunes:episode>
       <itunes:duration>0</itunes:duration>
-      <description>SpeakForWater Episode 1: Spatio-Environmental Drivers of Water Scarcity in Semi-Arid Catchments: Insights from NDWI and LULC. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+      <description>SpeakForWater Episode 1: Spectral Quasi-Linearization Analysis of Nonlinear Contaminant Transport in a Porous Channel with Generalized Haldane Kinetics. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
 
-Original paper: https://doi.org/10.3390/w18070855</description>
+Original paper: https://www.mdpi.com/2073-4441/18/7/842/pdf?version=1775036941</description>
     </item>
 </channel>
 </rss>
