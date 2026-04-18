@@ -16,7 +16,7 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Sat, 18 Apr 2026 13:28:35 +0000</lastBuildDate>
+  <lastBuildDate>Sat, 18 Apr 2026 19:14:46 +0000</lastBuildDate>
 
     <item>
       <title>Ep 12: Modeling surface water and groundwater mixing and mixing-dependent denitrification with bedform dynamics</title>
@@ -107,15 +107,15 @@ Original paper: https://hess.copernicus.org/articles/30/1813/2026/hess-30-1813-2
 Original paper: https://doi.org/10.3390/w18070841</description>
     </item>
     <item>
-      <title>Ep 4: Enhancing Evaporative Flux and Desalinization in Saline Soils via Porous Ceramic Inserts</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep004.mp3" length="18005962" type="audio/mpeg"/>
+      <title>Ep 4: Data-Driven Modeling and Optimization of a Modified Ludzack–Ettinger Process Using ML and DL for Effluent Quality Prediction</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep004.mp3" length="32567242" type="audio/mpeg"/>
       <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep004.mp3</guid>
       <pubDate></pubDate>
       <itunes:episode>4</itunes:episode>
       <itunes:duration>0</itunes:duration>
-      <description>SpeakForWater Episode 4: Enhancing Evaporative Flux and Desalinization in Saline Soils via Porous Ceramic Inserts. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+      <description>SpeakForWater Episode 4: Data-Driven Modeling and Optimization of a Modified Ludzack–Ettinger Process Using ML and DL for Effluent Quality Prediction. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
 
-Original paper: https://doi.org/10.3390/w18070851</description>
+Original paper: https://www.mdpi.com/2073-4441/18/7/863/pdf?version=1775211458</description>
     </item>
     <item>
       <title>Ep 3: “There Is No Governance”: Drinking Water Governance in Coastal Areas of Bangladesh</title>
