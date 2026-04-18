@@ -16,7 +16,7 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Sat, 18 Apr 2026 07:29:56 +0000</lastBuildDate>
+  <lastBuildDate>Sat, 18 Apr 2026 13:28:35 +0000</lastBuildDate>
 
     <item>
       <title>Ep 12: Modeling surface water and groundwater mixing and mixing-dependent denitrification with bedform dynamics</title>
@@ -118,15 +118,15 @@ Original paper: https://doi.org/10.3390/w18070841</description>
 Original paper: https://doi.org/10.3390/w18070851</description>
     </item>
     <item>
-      <title>Ep 3: Evolutionary Characteristics of Water Resource Governance Policies in China: Based on a Quantitative Textual Analysis</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep003.mp3" length="32300793" type="audio/mpeg"/>
+      <title>Ep 3: “There Is No Governance”: Drinking Water Governance in Coastal Areas of Bangladesh</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep003.mp3" length="28938521" type="audio/mpeg"/>
       <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep003.mp3</guid>
       <pubDate></pubDate>
       <itunes:episode>3</itunes:episode>
       <itunes:duration>0</itunes:duration>
-      <description>SpeakForWater Episode 3: Evolutionary Characteristics of Water Resource Governance Policies in China: Based on a Quantitative Textual Analysis. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+      <description>SpeakForWater Episode 3: “There Is No Governance”: Drinking Water Governance in Coastal Areas of Bangladesh. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
 
-Original paper: https://www.mdpi.com/2073-4441/18/7/862/pdf?version=1775210963</description>
+Original paper: https://www.mdpi.com/2073-4441/18/7/861/pdf?version=1775207675</description>
     </item>
     <item>
       <title>Ep 2: Comparative Investigation on Flow Behavior and Energy Dissipation of a Novel Cylindrical Asteroid-Shaped Emitter and a Conventional Emitter</title>
