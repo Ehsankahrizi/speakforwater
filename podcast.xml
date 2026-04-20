@@ -16,7 +16,7 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Mon, 20 Apr 2026 08:34:50 +0000</lastBuildDate>
+  <lastBuildDate>Mon, 20 Apr 2026 14:20:02 +0000</lastBuildDate>
 
     <item>
       <title>Ep 12: Modeling surface water and groundwater mixing and mixing-dependent denitrification with bedform dynamics</title>
@@ -118,15 +118,15 @@ Original paper: https://doi.org/10.3390/w18070841</description>
 Original paper: https://www.mdpi.com/2073-4441/18/7/863/pdf?version=1775211458</description>
     </item>
     <item>
-      <title>Ep 3: “There Is No Governance”: Drinking Water Governance in Coastal Areas of Bangladesh</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep003.mp3" length="28938521" type="audio/mpeg"/>
+      <title>Ep 3: Physics-informed Bayesian Neural Network for groundwater recharge estimation in data-scarce arid regions</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep003.mp3" length="30319667" type="audio/mpeg"/>
       <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep003.mp3</guid>
       <pubDate></pubDate>
       <itunes:episode>3</itunes:episode>
       <itunes:duration>0</itunes:duration>
-      <description>SpeakForWater Episode 3: “There Is No Governance”: Drinking Water Governance in Coastal Areas of Bangladesh. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+      <description>SpeakForWater Episode 3: Physics-informed Bayesian Neural Network for groundwater recharge estimation in data-scarce arid regions. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
 
-Original paper: https://www.mdpi.com/2073-4441/18/7/861/pdf?version=1775207675</description>
+Original paper: https://public-pages-files-2025.frontiersin.org/journals/water/articles/10.3389/frwa.2026.1787659/pdf</description>
     </item>
     <item>
       <title>Ep 2: The Infrastructuralization of Water: Water Management and Sustainable Development of Kinmen Island</title>
