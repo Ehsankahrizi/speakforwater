@@ -16,7 +16,7 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Tue, 21 Apr 2026 08:22:51 +0000</lastBuildDate>
+  <lastBuildDate>Tue, 21 Apr 2026 14:24:46 +0000</lastBuildDate>
 
     <item>
       <title>Ep 12: Modeling surface water and groundwater mixing and mixing-dependent denitrification with bedform dynamics</title>
@@ -140,15 +140,15 @@ Original paper: https://public-pages-files-2025.frontiersin.org/journals/water/a
 Original paper: https://www.mdpi.com/2073-4441/18/7/791/pdf?version=1774599798</description>
     </item>
     <item>
-      <title>Ep 1: Hydrogeochemistry and Accelerating Salinization of Groundwater in the Saoura Valley Oases (Southwest, Algeria)</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep001.mp3" length="25667781" type="audio/mpeg"/>
+      <title>Ep 1: Watershed Ecological Compensation and Transboundary Water Governance: Impacts on Pollution Abatement and Green Economic Efficiency in the Xin’an River Basin, China</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep001.mp3" length="27582452" type="audio/mpeg"/>
       <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep001.mp3</guid>
       <pubDate></pubDate>
       <itunes:episode>1</itunes:episode>
       <itunes:duration>0</itunes:duration>
-      <description>SpeakForWater Episode 1: Hydrogeochemistry and Accelerating Salinization of Groundwater in the Saoura Valley Oases (Southwest, Algeria). A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+      <description>SpeakForWater Episode 1: Watershed Ecological Compensation and Transboundary Water Governance: Impacts on Pollution Abatement and Green Economic Efficiency in the Xin’an River Basin, China. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
 
-Original paper: https://www.mdpi.com/2073-4441/18/7/831/pdf?version=1774946794</description>
+Original paper: https://www.mdpi.com/2073-4441/18/8/891/pdf?version=1775706069</description>
     </item>
 </channel>
 </rss>
