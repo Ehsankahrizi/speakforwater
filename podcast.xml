@@ -16,7 +16,7 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Mon, 20 Apr 2026 14:20:02 +0000</lastBuildDate>
+  <lastBuildDate>Tue, 21 Apr 2026 08:22:51 +0000</lastBuildDate>
 
     <item>
       <title>Ep 12: Modeling surface water and groundwater mixing and mixing-dependent denitrification with bedform dynamics</title>
@@ -107,15 +107,15 @@ Original paper: https://hess.copernicus.org/articles/30/1813/2026/hess-30-1813-2
 Original paper: https://doi.org/10.3390/w18070841</description>
     </item>
     <item>
-      <title>Ep 4: Data-Driven Modeling and Optimization of a Modified Ludzack–Ettinger Process Using ML and DL for Effluent Quality Prediction</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep004.mp3" length="32567242" type="audio/mpeg"/>
+      <title>Ep 4: Characterization of the vertical distribution of plankton and the formation of thin layers in the northern Gulf of Mexico using digital holography</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep004.mp3" length="31725890" type="audio/mpeg"/>
       <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep004.mp3</guid>
       <pubDate></pubDate>
       <itunes:episode>4</itunes:episode>
       <itunes:duration>0</itunes:duration>
-      <description>SpeakForWater Episode 4: Data-Driven Modeling and Optimization of a Modified Ludzack–Ettinger Process Using ML and DL for Effluent Quality Prediction. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+      <description>SpeakForWater Episode 4: Characterization of the vertical distribution of plankton and the formation of thin layers in the northern Gulf of Mexico using digital holography. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
 
-Original paper: https://www.mdpi.com/2073-4441/18/7/863/pdf?version=1775211458</description>
+Original paper: https://www.biorxiv.org/content/biorxiv/early/2026/03/31/2026.03.29.714992.full.pdf</description>
     </item>
     <item>
       <title>Ep 3: Physics-informed Bayesian Neural Network for groundwater recharge estimation in data-scarce arid regions</title>
