@@ -16,7 +16,7 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Tue, 21 Apr 2026 19:42:06 +0000</lastBuildDate>
+  <lastBuildDate>Wed, 22 Apr 2026 08:14:45 +0000</lastBuildDate>
 
     <item>
       <title>Ep 12: Modeling surface water and groundwater mixing and mixing-dependent denitrification with bedform dynamics</title>
@@ -118,15 +118,15 @@ Original paper: https://doi.org/10.3390/w18070841</description>
 Original paper: https://www.biorxiv.org/content/biorxiv/early/2026/03/31/2026.03.29.714992.full.pdf</description>
     </item>
     <item>
-      <title>Ep 3: Physics-informed Bayesian Neural Network for groundwater recharge estimation in data-scarce arid regions</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep003.mp3" length="30319667" type="audio/mpeg"/>
+      <title>Ep 3: BioDCASE: Using data challenges to make community advances in computational bioacoustics</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep003.mp3" length="26845172" type="audio/mpeg"/>
       <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep003.mp3</guid>
       <pubDate></pubDate>
       <itunes:episode>3</itunes:episode>
       <itunes:duration>0</itunes:duration>
-      <description>SpeakForWater Episode 3: Physics-informed Bayesian Neural Network for groundwater recharge estimation in data-scarce arid regions. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+      <description>SpeakForWater Episode 3: BioDCASE: Using data challenges to make community advances in computational bioacoustics. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
 
-Original paper: https://public-pages-files-2025.frontiersin.org/journals/water/articles/10.3389/frwa.2026.1787659/pdf</description>
+Original paper: https://www.biorxiv.org/content/biorxiv/early/2026/04/06/2026.04.02.716062.full.pdf</description>
     </item>
     <item>
       <title>Ep 2: Linking water footprint and social vulnerability: a sub-regional input–output framework for assessing multiple dimensions of water scarcity</title>
