@@ -16,7 +16,7 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Thu, 23 Apr 2026 14:15:37 +0000</lastBuildDate>
+  <lastBuildDate>Thu, 23 Apr 2026 19:31:33 +0000</lastBuildDate>
 
     <item>
       <title>Ep 12: Modeling surface water and groundwater mixing and mixing-dependent denitrification with bedform dynamics</title>
@@ -107,15 +107,15 @@ Original paper: https://hess.copernicus.org/articles/30/1813/2026/hess-30-1813-2
 Original paper: https://doi.org/10.3390/w18070841</description>
     </item>
     <item>
-      <title>Ep 4: Persistent male survival advantage in a protogynous hermaphrodite fish</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep004.mp3" length="30509002" type="audio/mpeg"/>
+      <title>Ep 4: Statistical Evaluation of Observed Precipitation from INMET Meteorological Stations and MERGE Estimates in the Eastern Amazon</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep004.mp3" length="16961482" type="audio/mpeg"/>
       <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep004.mp3</guid>
       <pubDate></pubDate>
       <itunes:episode>4</itunes:episode>
       <itunes:duration>0</itunes:duration>
-      <description>SpeakForWater Episode 4: Persistent male survival advantage in a protogynous hermaphrodite fish. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+      <description>SpeakForWater Episode 4: Statistical Evaluation of Observed Precipitation from INMET Meteorological Stations and MERGE Estimates in the Eastern Amazon. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
 
-Original paper: https://www.biorxiv.org/content/biorxiv/early/2026/04/06/2026.04.02.716101.full.pdf</description>
+Original paper: https://www.mdpi.com/2073-4441/18/8/898/pdf?version=1775721544</description>
     </item>
     <item>
       <title>Ep 3: Uncertainty-Aware Groundwater Potential Mapping in Arid Basement Terrain Using AHP and Dirichlet-Based Monte Carlo Simulation: Evidence from the Sudanese Nubian Shield</title>
