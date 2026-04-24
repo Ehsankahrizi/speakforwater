@@ -16,7 +16,7 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Fri, 24 Apr 2026 08:25:15 +0000</lastBuildDate>
+  <lastBuildDate>Fri, 24 Apr 2026 14:08:18 +0000</lastBuildDate>
 
     <item>
       <title>Ep 12: Modeling surface water and groundwater mixing and mixing-dependent denitrification with bedform dynamics</title>
@@ -140,15 +140,15 @@ Original paper: https://www.mdpi.com/2073-4441/18/8/901/pdf?version=1775742205</
 Original paper: https://www.mdpi.com/2073-4441/18/8/907/pdf?version=1775814917</description>
     </item>
     <item>
-      <title>Ep 1: Multiscale Pollution Risk and Mitigation Modelling to Inform Efficacy of Nature-Based Solutions</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep001.mp3" length="29929084" type="audio/mpeg"/>
+      <title>Ep 1: Multidecadal Intensification of Internal Phosphorus Loading in the Archipelago Sea and Implications for Mitigation Strategies</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep001.mp3" length="20718099" type="audio/mpeg"/>
       <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep001.mp3</guid>
       <pubDate></pubDate>
       <itunes:episode>1</itunes:episode>
       <itunes:duration>0</itunes:duration>
-      <description>SpeakForWater Episode 1: Multiscale Pollution Risk and Mitigation Modelling to Inform Efficacy of Nature-Based Solutions. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+      <description>SpeakForWater Episode 1: Multidecadal Intensification of Internal Phosphorus Loading in the Archipelago Sea and Implications for Mitigation Strategies. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
 
-Original paper: https://www.mdpi.com/2073-4441/18/8/906/pdf?version=1775814260</description>
+Original paper: https://www.mdpi.com/2073-4441/18/8/908/pdf?version=1775814928</description>
     </item>
 </channel>
 </rss>
