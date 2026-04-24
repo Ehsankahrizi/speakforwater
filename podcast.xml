@@ -16,7 +16,7 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Thu, 23 Apr 2026 19:31:33 +0000</lastBuildDate>
+  <lastBuildDate>Fri, 24 Apr 2026 08:25:15 +0000</lastBuildDate>
 
     <item>
       <title>Ep 12: Modeling surface water and groundwater mixing and mixing-dependent denitrification with bedform dynamics</title>
@@ -96,15 +96,15 @@ Original paper: https://hess.copernicus.org/articles/30/1523/2026/hess-30-1523-2
 Original paper: https://hess.copernicus.org/articles/30/1813/2026/hess-30-1813-2026.pdf</description>
     </item>
     <item>
-      <title>Ep 5: Multi-Objective Collaborative Optimization Model and Application of the Water-Energy-Food-Carbon Nexus Under Uncertainty: A Case Study of the Heihe Irrigation Area</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep005.mp3" length="17226050" type="audio/mpeg"/>
+      <title>Ep 5: Black Sea Planktonic Organisms as Bioindicators for Biological Early Warning Systems: A Systematic Review</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep005.mp3" length="20343817" type="audio/mpeg"/>
       <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep005.mp3</guid>
       <pubDate></pubDate>
       <itunes:episode>5</itunes:episode>
       <itunes:duration>0</itunes:duration>
-      <description>SpeakForWater Episode 5: Multi-Objective Collaborative Optimization Model and Application of the Water-Energy-Food-Carbon Nexus Under Uncertainty: A Case Study of the Heihe Irrigation Area. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+      <description>SpeakForWater Episode 5: Black Sea Planktonic Organisms as Bioindicators for Biological Early Warning Systems: A Systematic Review. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
 
-Original paper: https://doi.org/10.3390/w18070841</description>
+Original paper: https://www.mdpi.com/2073-4441/18/8/899/pdf?version=1775735792</description>
     </item>
     <item>
       <title>Ep 4: Statistical Evaluation of Observed Precipitation from INMET Meteorological Stations and MERGE Estimates in the Eastern Amazon</title>
