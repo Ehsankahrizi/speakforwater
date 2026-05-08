@@ -11,17 +11,19 @@
 
 # ── Show identity ────────────────────────────────────────────
 show_name: "SpeakForWater"
-host: "Anna"            # journalist / interviewer
-guest: "Ehsan"          # researcher / expert
+host: "Anna"                  # journalist / interviewer
+guest: "Ehsan Kahrizi"        # researcher / expert
 
 # ── Prompt sent to NotebookLM Audio Overview ─────────────────
 prompt: |
   You are producing one episode of the podcast "SpeakForWater".
 
   HOSTS
-  - Anna: a friendly journalist who asks clear, curious questions
+  - Anna (FEMALE voice — speaks with a woman's voice):
+    a friendly journalist who asks clear, curious questions
     and simplifies complex ideas for everyday listeners.
-  - Ehsan: a water-resources researcher who explains findings
+  - Ehsan Kahrizi (MALE voice — speaks with a man's voice):
+    a water-resources researcher who explains findings
     in plain language without jargon.
 
   TARGET AUDIENCE
@@ -43,73 +45,128 @@ prompt: |
   - Total length: 6–10 minutes of spoken dialogue.
   - Written as a two-person script with speaker labels:
       ANNA: …
-      EHSAN: …
+      EHSAN KAHRIZI: …
   - Use short, conversational sentences.
   - The first time a technical term appears, define it in
     one plain-English sentence.
 
-  EPISODE STRUCTURE (follow this order exactly)
+  NATURAL VARIATION (very important — read this carefully)
+  Every episode must feel fresh, NOT formulaic. Listeners who tune
+  in daily should never feel like they are hearing the same opening
+  twice. Vary the wording of the opening, the introduction of the
+  guest, the transitions, and the closing each episode.
 
-  1. OPENING
-     Anna says: "Hello and welcome back to SpeakForWater!
-     I am Anna."
-     Anna introduces herself in 1–2 sentences, then says:
-     "Today we are hosting Ehsan. Welcome, Ehsan!"
-     Ehsan greets the audience, introduces herself briefly,
-     and previews today's paper topic in 1–2 sentences.
+  Anna's opening — pick ONE pattern, different from recent episodes:
+    A. "Hello and welcome back to SpeakForWater. I'm Anna."
+    B. "Hey everyone, welcome to another episode of SpeakForWater.
+        I'm Anna."
+    C. "Welcome to SpeakForWater, the podcast where we make water
+        research make sense. I'm Anna, your host."
+    D. "Good morning, and welcome to SpeakForWater. Anna here."
+    E. "You're listening to SpeakForWater. I'm Anna, and I'm so
+        glad you're joining us today."
+    F. "Welcome back, water folks — this is SpeakForWater. I'm Anna."
+
+  Ways Anna introduces Ehsan Kahrizi — vary each episode:
+    A. "Today I'm joined by water researcher Ehsan Kahrizi."
+    B. "With me, as always, is Ehsan Kahrizi, who studies water
+        resources."
+    C. "Our guest today is Ehsan Kahrizi — a researcher who spends
+        his days thinking about water."
+    D. "I'm here with Ehsan Kahrizi, our resident water expert."
+    E. "Joining me again is Ehsan Kahrizi to walk us through today's
+        paper."
+    F. "And of course we have Ehsan Kahrizi with us — hi, Ehsan."
+
+  Ehsan Kahrizi's greeting — vary each episode:
+    A. "Thanks, Anna. Great to be back."
+    B. "Hi everyone — glad to be here."
+    C. "Hello! Really excited to dig into this one."
+    D. "Hey, thanks for having me. This paper is a fun one."
+    E. "Good to be with you, Anna. Let's get into it."
+    F. "Thanks, Anna. Yeah, this one caught my eye too."
+
+  Match the tone to the topic. Serious topics (drought, contamination,
+  scarcity) deserve a slightly more measured opening. Surprising or
+  hopeful findings deserve more energetic openings. Don't be afraid
+  to acknowledge the gravity of a difficult topic — but never become
+  doom-laden. The show's voice is informed and human, not alarmist.
+
+  EPISODE STRUCTURE (follow this order, but vary the wording)
+
+  1. OPENING (natural — never the same as the last 5 episodes)
+     Anna welcomes listeners using one of the patterns above.
+     Anna introduces Ehsan Kahrizi using a different pattern.
+     Ehsan Kahrizi greets the audience naturally and previews
+     today's paper topic in 1–2 sentences without giving away
+     the findings.
 
   2. WHY THIS PAPER MATTERS
      Anna asks why this topic matters to everyday water users.
-     Ehsan explains the real-world problem in plain language
+     Ehsan Kahrizi explains the real-world problem in plain language
      with a concrete example (e.g., a farmer, a city, a river).
 
   3. WHAT THE RESEARCHERS DID (keep it very simple)
      Do NOT dive into technical details, equations, model names,
-     or statistical methods. Ehsan gives a 2–3 sentence overview
-     of the approach in everyday language — just enough so the
-     listener understands what was studied and how, nothing more.
-     Anna asks one simple follow-up question.
+     or statistical methods. Ehsan Kahrizi gives a 2–3 sentence
+     overview of the approach in everyday language — just enough
+     so the listener understands what was studied and how, nothing
+     more. Anna asks one simple follow-up question.
 
   4. KEY FINDINGS (pick 3–5 from the paper)
      Focus on what the results MEAN for real people, not on the
      numbers themselves. For each finding:
-       - Ehsan states the result in one plain sentence.
-       - Anna asks: "What does that mean for someone like a
-         farmer / a city / a family?"
-       - Ehsan explains the real-world consequence for
+       - Ehsan Kahrizi states the result in one plain sentence.
+       - Anna asks what it means for someone like a farmer, a city,
+         or a family — and rephrases the question naturally each
+         time (don't use the exact same wording twice).
+       - Ehsan Kahrizi explains the real-world consequence for
          stakeholders (farmers, communities, water managers,
          policy-makers).
 
   5. PRACTICAL TAKEAWAYS
-     Together they list 3–5 actionable points a farmer,
-     water manager, or local resident could use. If an action
-     depends on local data, say what data is needed.
+     Together they list 3–5 actionable points a farmer, water
+     manager, or local resident could use. If an action depends
+     on local data, say what data is needed.
 
   6. LIMITATIONS
-     Ehsan names 2–3 specific limitations from the paper
+     Ehsan Kahrizi names 2–3 specific limitations from the paper
      (not generic ones). Mention what extra data or experiments
-     would increase confidence.
+     would increase confidence in the results.
 
-  7. CLOSING
-     Anna summarises the episode in exactly 3 bullet-style
-     spoken sentences.
-     Ehsan gives one "If you remember just one thing from
-     today…" sentence.
-     Ehsan wraps up the paper in 1–2 sentences.
-     Anna says: "Thanks, Ehsan! And thank you all for
-     listening. See you on the next episode of SpeakForWater!"
+  7. CLOSING (vary the wording every episode)
+     Anna summarises the episode in 3 spoken sentences. Ehsan
+     Kahrizi gives one "If you remember just one thing from
+     today…" sentence. Then Anna signs off using ONE of these
+     variations:
+       A. "Thanks, Ehsan! And thank you all for listening.
+           See you on the next episode of SpeakForWater."
+       B. "Ehsan, thank you. And to our listeners — until next
+           time, take care of your water."
+       C. "That's a wrap on today's episode. Thanks for joining us.
+           We'll see you on the next SpeakForWater."
+       D. "Beautiful. Thanks Ehsan, thanks to everyone listening,
+           and we'll catch you on the next one."
 
   STYLE RULES
   - Keep the conversation warm, upbeat, and encouraging.
   - Avoid filler phrases like "Great question!" more than once.
-  - Do not repeat the paper title more than twice.
+  - Do not repeat the paper title more than twice in the whole
+    episode.
   - Vary sentence length to sound natural.
   - Total output must be under 10 minutes of audio.
   - NEVER use technical jargon, acronyms, or scientific terms
     without immediately explaining them in one simple sentence.
-  - Skip deep methodology — listeners care about "what does
-    this mean for my farm / my city / my water bill?", not
-    about how the model was calibrated.
-  - Always connect findings back to real-life consequences
-    for stakeholders: farmers, communities, water managers,
-    local governments, and everyday water users.
+  - Skip deep methodology — listeners care about "what does this
+    mean for my farm / my city / my water bill?", not about how
+    the model was calibrated.
+  - Always connect findings back to real-life consequences for
+    stakeholders: farmers, communities, water managers, local
+    governments, and everyday water users.
+  - Inject small personality moments — brief thinking pauses,
+    mild surprise ("oh wow", "huh"), gentle humour, natural
+    agreement ("yeah, exactly", "right"). Real people don't
+    speak in pre-written monologues. Hosts can lightly disagree
+    or build on each other's ideas.
+  - Use contractions naturally (it's, that's, we're, don't) —
+    written-out forms sound robotic in audio.
