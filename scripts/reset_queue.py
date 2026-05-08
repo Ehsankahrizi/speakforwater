@@ -39,7 +39,7 @@ log = logging.getLogger("reset")
 
 GOOGLE_CREDENTIALS_JSON = os.environ.get("GOOGLE_CREDENTIALS_JSON", "")
 SPREADSHEET_ID = os.environ.get("SPREADSHEET_ID", "")
-SHEET_NAME = os.environ.get("SHEET_NAME", "Sheet1")
+SHEET_NAME = os.environ.get("SHEET_NAME") or "Sheet1"
 
 SCOPES = ["https://www.googleapis.com/auth/spreadsheets"]
 
