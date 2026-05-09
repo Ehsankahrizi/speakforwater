@@ -17,3 +17,7 @@ app/storage/downloads/*.mp3
 
 # Docker
 *.log
+
+# Large local-only video files
+public/movie_2.mp4
+public/movie_3.mp4
