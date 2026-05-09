@@ -1,0 +1,255 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../layouts/Layout.astro";
+import EpisodeCard from "../components/EpisodeCard.astro";
+import AudioPlayer from "../components/AudioPlayer.astro";
+import SubscribeButtons from "../components/SubscribeButtons.astro";
+
+const allEpisodes = (await getCollection("episodes")).sort(
+  (a, b) => b.data.pub_date.valueOf() - a.data.pub_date.valueOf()
+);
+
+const featured = allEpisodes[0];
+const recent = allEpisodes.slice(1, 7);
+---
+
+<Layout>
+  <section class="hero">
+    <div class="container-narrow hero-inner">
+      <span class="eyebrow">Daily · water research · AI-narrated</span>
+      <h1>The world's water research, narrated every morning.</h1>
+      <p class="hero-lede">
+        A new peer-reviewed paper, distilled into a 10-minute conversation.
+        No paywalls, no jargon — just the science that's shaping our water future.
+      </p>
+      <SubscribeButtons />
+    </div>
+  </section>
+
+  {featured && (
+    <section class="featured">
+      <div class="container">
+        <div class="featured-frame">
+          <div class="featured-meta">
+            <span class="eyebrow">Latest episode · {new Intl.DateTimeFormat("en-US", { month: "long", day: "numeric" }).format(featured.data.pub_date)}</span>
+            <h2>{featured.data.title}</h2>
+            <p class="featured-paper">
+              Episode {featured.data.episode_number} · {featured.data.duration}
+              {featured.data.paper.journal && (
+                <>
+                  · From <em>{featured.data.paper.journal}</em>
+                </>
+              )}
+              {featured.data.paper.open_access && <> · Open access</>}
+            </p>
+          </div>
+
+          <AudioPlayer
+            src={featured.data.audio_url}
+            title={featured.data.title}
+            episodeNumber={featured.data.episode_number}
+          />
+
+          {featured.data.topics.length > 0 && (
+            <div class="featured-topics">
+              {featured.data.topics.map((t) => <span class="tag">{t}</span>)}
+            </div>
+          )}
+
+          <a href={`/episodes/${featured.slug}`} class="featured-link">
+            Read the show notes
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  )}
+
+  {recent.length > 0 && (
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Recent episodes</h2>
+          <a href="/episodes" class="all-link">
+            View all {allEpisodes.length} episodes
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+
+        <div class="episode-grid">
+          {recent.map((ep) => (
+            <EpisodeCard
+              href={`/episodes/${ep.slug}`}
+              number={ep.data.episode_number}
+              title={ep.data.title}
+              date={ep.data.pub_date}
+              duration={ep.data.duration}
+              journal={ep.data.paper.journal}
+              topics={ep.data.topics}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <section class="section how">
+    <div class="container-narrow">
+      <span class="eyebrow">How it works</span>
+      <h2>From paper to podcast, every weekday.</h2>
+      <div class="steps">
+        <div class="step">
+          <span class="step-num">01</span>
+          <h3>Discover</h3>
+          <p>Each morning, an AI agent scans new open-access water research from arXiv, OpenAlex, and partner journals — ranking by novelty and relevance.</p>
+        </div>
+        <div class="step">
+          <span class="step-num">02</span>
+          <h3>Distill</h3>
+          <p>The top paper of the day is fed to NotebookLM, which generates a natural conversation between two AI hosts who unpack the methodology and findings.</p>
+        </div>
+        <div class="step">
+          <span class="step-num">03</span>
+          <h3>Publish</h3>
+          <p>The episode auto-publishes here and on every major podcast platform — fully transcribed, citation-linked, and free to listen forever.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .hero {
+    padding: 100px 0 60px;
+    text-align: center;
+    background:
+      radial-gradient(ellipse at top, rgba(24, 95, 165, 0.06), transparent 60%),
+      var(--c-bg);
+  }
+
+  .hero-lede {
+    font-size: 1.18rem;
+    color: var(--c-ink-muted);
+    max-width: 560px;
+    margin: 18px auto 32px;
+    line-height: 1.6;
+  }
+
+  .hero h1 {
+    margin-top: 18px;
+  }
+
+  .hero :global(.sub-row) {
+    justify-content: center;
+  }
+
+  .featured {
+    padding: 24px 0 80px;
+  }
+
+  .featured-frame {
+    background: linear-gradient(180deg, var(--c-brand-light) 0%, var(--c-brand-tint) 100%);
+    border: 1px solid var(--c-border);
+    border-radius: 24px;
+    padding: 36px;
+  }
+
+  .featured-meta h2 {
+    margin-top: 8px;
+    margin-bottom: 6px;
+    color: var(--c-brand-deep);
+  }
+
+  .featured-paper {
+    color: var(--c-brand-deep);
+    font-size: 0.95rem;
+    margin-bottom: 24px;
+    opacity: 0.85;
+  }
+
+  .featured-topics {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .featured-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 24px;
+    font-size: 0.92rem;
+    font-weight: 500;
+    color: var(--c-brand-deep);
+  }
+
+  .featured-link:hover {
+    color: var(--c-ink);
+  }
+
+  .section-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 32px;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .section-head h2 { margin: 0; }
+
+  .all-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+
+  .episode-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 18px;
+  }
+
+  .how {
+    background: var(--c-bg-card);
+    border-top: 1px solid var(--c-border);
+    border-bottom: 1px solid var(--c-border);
+    text-align: center;
+  }
+
+  .how h2 {
+    margin-top: 14px;
+    margin-bottom: 48px;
+  }
+
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 32px;
+    text-align: left;
+  }
+
+  .step h3 {
+    margin: 14px 0 8px;
+  }
+
+  .step p {
+    color: var(--c-ink-muted);
+    font-size: 0.95rem;
+    margin: 0;
+  }
+
+  .step-num {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--c-brand);
+    letter-spacing: 0.1em;
+  }
+
+  @media (max-width: 720px) {
+    .featured-frame { padding: 24px; }
+  }
+</style>

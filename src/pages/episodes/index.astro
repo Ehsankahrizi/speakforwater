@@ -1,0 +1,151 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import EpisodeCard from "../../components/EpisodeCard.astro";
+
+const episodes = (await getCollection("episodes")).sort(
+  (a, b) => b.data.pub_date.valueOf() - a.data.pub_date.valueOf()
+);
+
+// Collect all unique topics
+const allTopics = [...new Set(episodes.flatMap((e) => e.data.topics))].sort();
+---
+
+<Layout
+  title="All episodes — SpeakForWater"
+  description={`Browse all ${episodes.length} episodes of SpeakForWater, the daily AI-narrated water research podcast.`}
+>
+  <section class="archive-hero">
+    <div class="container-narrow">
+      <span class="eyebrow">Archive</span>
+      <h1>All episodes</h1>
+      <p class="lede">
+        {episodes.length} episodes covering {allTopics.length} topics in water science.
+        Browse the full archive below or filter by topic.
+      </p>
+    </div>
+  </section>
+
+  {allTopics.length > 0 && (
+    <section class="filter-bar">
+      <div class="container">
+        <div class="filters" id="filters">
+          <button class="filter active" data-filter="all">All</button>
+          {allTopics.map((t) => (
+            <button class="filter" data-filter={t}>{t}</button>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <section class="archive-list">
+    <div class="container">
+      <div class="episode-grid" id="episode-grid">
+        {episodes.map((ep) => (
+          <div class="card-wrap" data-topics={ep.data.topics.join(",")}>
+            <EpisodeCard
+              href={`/episodes/${ep.slug}`}
+              number={ep.data.episode_number}
+              title={ep.data.title}
+              date={ep.data.pub_date}
+              duration={ep.data.duration}
+              journal={ep.data.paper.journal}
+              topics={ep.data.topics}
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .archive-hero {
+    padding: 80px 0 32px;
+  }
+
+  .archive-hero h1 {
+    margin-top: 14px;
+  }
+
+  .lede {
+    font-size: 1.1rem;
+    color: var(--c-ink-muted);
+    max-width: 540px;
+  }
+
+  .filter-bar {
+    border-top: 1px solid var(--c-border);
+    border-bottom: 1px solid var(--c-border);
+    padding: 18px 0;
+    background: var(--c-bg-card);
+    position: sticky;
+    top: 65px;
+    z-index: 10;
+    backdrop-filter: blur(12px);
+  }
+
+  .filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .filter {
+    padding: 6px 14px;
+    background: transparent;
+    border: 1px solid var(--c-border-strong);
+    border-radius: var(--radius-pill);
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--c-ink-muted);
+    cursor: pointer;
+    font-family: var(--font-sans);
+    transition: all 0.15s ease;
+  }
+
+  .filter:hover {
+    border-color: var(--c-brand);
+    color: var(--c-brand);
+  }
+
+  .filter.active {
+    background: var(--c-brand);
+    border-color: var(--c-brand);
+    color: white;
+  }
+
+  .archive-list {
+    padding: 48px 0 80px;
+  }
+
+  .episode-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 18px;
+  }
+
+  .card-wrap.hidden { display: none; }
+</style>
+
+<script>
+  const filters = document.querySelectorAll<HTMLButtonElement>(".filter");
+  const cards = document.querySelectorAll<HTMLDivElement>(".card-wrap");
+
+  filters.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const filter = btn.dataset.filter!;
+      filters.forEach((b) => b.classList.toggle("active", b === btn));
+
+      cards.forEach((c) => {
+        if (filter === "all") {
+          c.classList.remove("hidden");
+        } else {
+          const topics = (c.dataset.topics || "").split(",");
+          c.classList.toggle("hidden", !topics.includes(filter));
+        }
+      });
+    });
+  });
+</script>

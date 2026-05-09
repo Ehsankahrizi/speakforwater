@@ -1,0 +1,39 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="404 — Page not found">
+  <section class="not-found">
+    <div class="container-narrow">
+      <span class="eyebrow">404</span>
+      <h1>This page has evaporated.</h1>
+      <p class="lede">
+        The page you're looking for doesn't exist — or maybe never did.
+        Try browsing the episodes instead.
+      </p>
+      <div class="actions">
+        <a href="/" class="btn btn-primary">Back to home</a>
+        <a href="/episodes" class="btn">Browse episodes</a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .not-found {
+    padding: 120px 0;
+    text-align: center;
+  }
+  .lede {
+    font-size: 1.15rem;
+    color: var(--c-ink-muted);
+    max-width: 480px;
+    margin: 18px auto 32px;
+  }
+  .actions {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+</style>
