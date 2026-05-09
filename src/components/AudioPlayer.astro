@@ -1,0 +1,225 @@
+---
+interface Props {
+  src: string;
+  title?: string;
+  episodeNumber?: number;
+}
+
+const { src, title, episodeNumber } = Astro.props;
+const id = `audio-${Math.random().toString(36).slice(2, 9)}`;
+---
+
+<div class="audio-player" data-player>
+  <audio id={id} src={src} preload="metadata"></audio>
+
+  <div class="player-row">
+    <button class="play-btn" data-play aria-label="Play episode">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true">
+        <path d="M8 5v14l11-7z" />
+      </svg>
+    </button>
+
+    <div class="track">
+      <div class="track-meta" aria-hidden="true">
+        {episodeNumber && <span class="ep-num">Ep {episodeNumber}</span>}
+        {title && <span class="ep-title">{title}</span>}
+      </div>
+      <div class="progress-wrap">
+        <div class="progress-bar" data-progress-bar>
+          <div class="progress-fill" data-progress-fill></div>
+        </div>
+        <div class="time-row">
+          <span data-current>00:00</span>
+          <span data-total>--:--</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="controls">
+      <button class="ctrl" data-skip="-15" aria-label="Back 15 seconds">−15</button>
+      <button class="ctrl" data-skip="30" aria-label="Forward 30 seconds">+30</button>
+      <button class="ctrl ctrl-speed" data-speed aria-label="Playback speed">1×</button>
+    </div>
+  </div>
+</div>
+
+<style>
+  .audio-player {
+    background: var(--c-bg-card);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-lg);
+    padding: 18px;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .player-row {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 16px;
+    align-items: center;
+  }
+
+  .play-btn {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    border: 0;
+    background: var(--c-brand);
+    color: white;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.15s ease, transform 0.1s ease;
+    flex-shrink: 0;
+  }
+
+  .play-btn:hover { background: var(--c-brand-deep); }
+  .play-btn:active { transform: scale(0.96); }
+
+  .track {
+    min-width: 0;
+  }
+
+  .track-meta {
+    display: flex;
+    gap: 8px;
+    align-items: baseline;
+    font-size: 0.85rem;
+    margin-bottom: 8px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .ep-num {
+    color: var(--c-brand);
+    font-weight: 600;
+  }
+
+  .ep-title {
+    color: var(--c-ink-muted);
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .progress-bar {
+    height: 4px;
+    background: var(--c-border);
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+    margin-bottom: 6px;
+  }
+
+  .progress-fill {
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 0;
+    background: var(--c-brand);
+    border-radius: 4px;
+    transition: width 0.1s linear;
+  }
+
+  .time-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.78rem;
+    color: var(--c-ink-muted);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .controls {
+    display: flex;
+    gap: 6px;
+  }
+
+  .ctrl {
+    background: transparent;
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-sm);
+    padding: 6px 10px;
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--c-ink-muted);
+    cursor: pointer;
+    font-family: var(--font-mono);
+  }
+
+  .ctrl:hover {
+    border-color: var(--c-brand);
+    color: var(--c-brand);
+  }
+
+  @media (max-width: 540px) {
+    .controls { display: none; }
+  }
+</style>
+
+<script>
+  document.querySelectorAll<HTMLDivElement>("[data-player]").forEach((root) => {
+    const audio = root.querySelector<HTMLAudioElement>("audio");
+    const playBtn = root.querySelector<HTMLButtonElement>("[data-play]");
+    const fill = root.querySelector<HTMLDivElement>("[data-progress-fill]");
+    const bar = root.querySelector<HTMLDivElement>("[data-progress-bar]");
+    const current = root.querySelector<HTMLSpanElement>("[data-current]");
+    const total = root.querySelector<HTMLSpanElement>("[data-total]");
+    const speedBtn = root.querySelector<HTMLButtonElement>("[data-speed]");
+    if (!audio || !playBtn || !fill || !bar || !current || !total) return;
+
+    const speeds = [1, 1.25, 1.5, 2];
+    let speedIdx = 0;
+
+    const fmt = (s: number) => {
+      if (!isFinite(s)) return "--:--";
+      const m = Math.floor(s / 60);
+      const sec = Math.floor(s % 60);
+      return `${String(m).padStart(2, "0")}:${String(sec).padStart(2, "0")}`;
+    };
+
+    audio.addEventListener("loadedmetadata", () => {
+      total.textContent = fmt(audio.duration);
+    });
+
+    audio.addEventListener("timeupdate", () => {
+      const pct = (audio.currentTime / audio.duration) * 100;
+      fill.style.width = `${pct}%`;
+      current.textContent = fmt(audio.currentTime);
+    });
+
+    playBtn.addEventListener("click", () => {
+      if (audio.paused) {
+        audio.play();
+        playBtn.innerHTML =
+          '<svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>';
+        playBtn.setAttribute("aria-label", "Pause episode");
+      } else {
+        audio.pause();
+        playBtn.innerHTML =
+          '<svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>';
+        playBtn.setAttribute("aria-label", "Play episode");
+      }
+    });
+
+    bar.addEventListener("click", (e) => {
+      const rect = bar.getBoundingClientRect();
+      const ratio = (e.clientX - rect.left) / rect.width;
+      audio.currentTime = ratio * audio.duration;
+    });
+
+    root.querySelectorAll<HTMLButtonElement>("[data-skip]").forEach((b) => {
+      b.addEventListener("click", () => {
+        const delta = Number(b.dataset.skip);
+        audio.currentTime = Math.max(0, Math.min(audio.duration, audio.currentTime + delta));
+      });
+    });
+
+    if (speedBtn) {
+      speedBtn.addEventListener("click", () => {
+        speedIdx = (speedIdx + 1) % speeds.length;
+        audio.playbackRate = speeds[speedIdx];
+        speedBtn.textContent = `${speeds[speedIdx]}×`;
+      });
+    }
+  });
+</script>

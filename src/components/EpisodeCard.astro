@@ -1,0 +1,140 @@
+---
+interface Props {
+  href: string;
+  number: number;
+  title: string;
+  date: Date;
+  duration: string;
+  journal?: string;
+  topics?: string[];
+  size?: "default" | "featured" | "compact";
+}
+
+const {
+  href,
+  number,
+  title,
+  date,
+  duration,
+  journal,
+  topics = [],
+  size = "default",
+} = Astro.props;
+
+const dateStr = new Intl.DateTimeFormat("en-US", {
+  month: "short",
+  day: "numeric",
+  year: "numeric",
+}).format(date);
+---
+
+<a href={href} class:list={["card", `card--${size}`]}>
+  <div class="card-meta">
+    <span class="ep-number">Ep {number}</span>
+    <span class="dot">·</span>
+    <span class="date">{dateStr}</span>
+  </div>
+
+  <h3 class="card-title">{title}</h3>
+
+  <div class="card-footer">
+    <span class="duration">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" />
+      </svg>
+      {duration}
+    </span>
+    {journal && <span class="journal">{journal}</span>}
+  </div>
+
+  {topics.length > 0 && (
+    <div class="topics">
+      {topics.slice(0, 3).map((t) => <span class="tag">{t}</span>)}
+    </div>
+  )}
+</a>
+
+<style>
+  .card {
+    display: block;
+    background: var(--c-bg-card);
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-lg);
+    padding: 22px;
+    transition: all 0.2s ease;
+    color: inherit;
+    height: 100%;
+  }
+
+  .card:hover {
+    border-color: var(--c-brand);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+  }
+
+  .card-meta {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.74rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--c-ink-muted);
+    margin-bottom: 10px;
+  }
+
+  .ep-number {
+    color: var(--c-brand);
+    font-weight: 600;
+  }
+
+  .dot { opacity: 0.5; }
+
+  .card-title {
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    font-weight: 500;
+    line-height: 1.35;
+    margin: 0 0 14px;
+    color: var(--c-ink);
+  }
+
+  .card--featured .card-title {
+    font-size: 1.55rem;
+  }
+
+  .card--compact {
+    padding: 16px 18px;
+  }
+
+  .card--compact .card-title {
+    font-size: 1rem;
+    margin-bottom: 8px;
+  }
+
+  .card-footer {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.82rem;
+    color: var(--c-ink-muted);
+    flex-wrap: wrap;
+  }
+
+  .duration {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .journal {
+    font-style: italic;
+  }
+
+  .topics {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 14px;
+  }
+</style>

@@ -1,0 +1,79 @@
+---
+interface Props {
+  variant?: "row" | "grid";
+}
+const { variant = "row" } = Astro.props;
+
+const platforms = [
+  {
+    name: "Apple Podcasts",
+    href: "https://podcasts.apple.com/podcast/speakforwater",
+    icon: "M12 2a10 10 0 100 20 10 10 0 000-20zm0 4a3 3 0 110 6 3 3 0 010-6zm0 8a2 2 0 110 4 2 2 0 010-4z",
+  },
+  {
+    name: "Spotify",
+    href: "https://open.spotify.com/show/speakforwater",
+    icon: "M12 2a10 10 0 100 20 10 10 0 000-20zM7 14.5c2.5-1.2 6-1.2 9 .5M7 11c3-1.5 7.5-1 11 1M7.5 7.5c3.5-1.5 9-1 12.5 1.5",
+  },
+  {
+    name: "RSS feed",
+    href: "/podcast.xml",
+    icon: "M5 19a2 2 0 100-4 2 2 0 000 4zM5 11a8 8 0 018 8M5 4a15 15 0 0115 15",
+  },
+  {
+    name: "Newsletter",
+    href: "/subscribe#newsletter",
+    icon: "M3 7l9 6 9-6M3 7v10a2 2 0 002 2h14a2 2 0 002-2V7M3 7l9-4 9 4",
+  },
+];
+---
+
+<div class:list={["sub-row", `sub-${variant}`]}>
+  {platforms.map((p) => (
+    <a href={p.href} class="sub-btn" rel={p.href.startsWith("http") ? "noopener" : undefined}>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d={p.icon} />
+      </svg>
+      {p.name}
+    </a>
+  ))}
+</div>
+
+<style>
+  .sub-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .sub-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 10px;
+  }
+
+  .sub-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    border: 1px solid var(--c-border-strong);
+    border-radius: var(--radius);
+    background: var(--c-bg-card);
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--c-ink);
+    transition: all 0.15s ease;
+  }
+
+  .sub-btn:hover {
+    border-color: var(--c-brand);
+    color: var(--c-brand);
+    transform: translateY(-1px);
+  }
+
+  .sub-grid .sub-btn {
+    justify-content: center;
+    padding: 14px 16px;
+  }
+</style>

@@ -1,0 +1,313 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+import AudioPlayer from "../../components/AudioPlayer.astro";
+
+export async function getStaticPaths() {
+  const episodes = await getCollection("episodes");
+  return episodes.map((ep) => ({
+    params: { slug: ep.slug },
+    props: { episode: ep },
+  }));
+}
+
+const { episode } = Astro.props;
+const { Content } = await episode.render();
+
+const dateStr = new Intl.DateTimeFormat("en-US", {
+  weekday: "long",
+  month: "long",
+  day: "numeric",
+  year: "numeric",
+}).format(episode.data.pub_date);
+---
+
+<Layout
+  title={episode.data.title}
+  description={episode.data.description}
+>
+  <article class="episode">
+    <div class="container-narrow">
+      <a href="/episodes" class="back-link">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
+        All episodes
+      </a>
+
+      <div class="ep-meta">
+        <span class="ep-num">Episode {episode.data.episode_number}</span>
+        <span class="dot">·</span>
+        <span>{dateStr}</span>
+        <span class="dot">·</span>
+        <span>{episode.data.duration}</span>
+      </div>
+
+      <h1>{episode.data.title}</h1>
+      <p class="ep-desc">{episode.data.description}</p>
+
+      <div class="player-wrap">
+        <AudioPlayer
+          src={episode.data.audio_url}
+          title={episode.data.title}
+          episodeNumber={episode.data.episode_number}
+        />
+      </div>
+
+      {episode.data.topics.length > 0 && (
+        <div class="topics-row">
+          {episode.data.topics.map((t) => <span class="tag">{t}</span>)}
+        </div>
+      )}
+
+      <div class="paper-card">
+        <span class="eyebrow">Featured paper</span>
+        <h3>{episode.data.paper.title}</h3>
+        {episode.data.paper.authors && episode.data.paper.authors.length > 0 && (
+          <p class="authors">{episode.data.paper.authors.join(", ")}</p>
+        )}
+        <p class="paper-meta">
+          {episode.data.paper.journal && <em>{episode.data.paper.journal}</em>}
+          {episode.data.paper.open_access && <span class="oa-badge">Open access</span>}
+        </p>
+        <a href={episode.data.paper.url} class="paper-link" target="_blank" rel="noopener">
+          Read the paper
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+        </a>
+      </div>
+
+      {episode.data.chapters && episode.data.chapters.length > 0 && (
+        <section class="chapters">
+          <h2>Chapters</h2>
+          <ol>
+            {episode.data.chapters.map((ch) => (
+              <li>
+                <span class="chapter-time">{ch.start}</span>
+                <span class="chapter-title">{ch.title}</span>
+              </li>
+            ))}
+          </ol>
+        </section>
+      )}
+
+      <section class="show-notes">
+        <h2>Show notes</h2>
+        <div class="prose">
+          <Content />
+        </div>
+      </section>
+
+      {episode.data.transcript && (
+        <details class="transcript">
+          <summary>Read the full transcript</summary>
+          <div class="transcript-body">
+            <p>{episode.data.transcript}</p>
+          </div>
+        </details>
+      )}
+    </div>
+  </article>
+</Layout>
+
+<style>
+  .episode {
+    padding: 48px 0 96px;
+  }
+
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.88rem;
+    color: var(--c-ink-muted);
+    margin-bottom: 32px;
+  }
+
+  .back-link:hover { color: var(--c-brand); }
+
+  .ep-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+    font-size: 0.85rem;
+    color: var(--c-ink-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 16px;
+  }
+
+  .ep-num { color: var(--c-brand); font-weight: 600; }
+  .dot { opacity: 0.5; }
+
+  h1 { margin-bottom: 18px; }
+
+  .ep-desc {
+    font-size: 1.18rem;
+    color: var(--c-ink-soft);
+    line-height: 1.65;
+    margin-bottom: 36px;
+  }
+
+  .player-wrap {
+    margin-bottom: 24px;
+  }
+
+  .topics-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 36px;
+  }
+
+  .paper-card {
+    background: var(--c-brand-light);
+    border-radius: var(--radius-lg);
+    padding: 24px 28px;
+    margin: 36px 0;
+  }
+
+  .paper-card h3 {
+    margin: 8px 0;
+    color: var(--c-brand-deep);
+    font-size: 1.15rem;
+  }
+
+  .authors {
+    font-size: 0.9rem;
+    color: var(--c-brand-deep);
+    margin: 8px 0;
+    opacity: 0.85;
+  }
+
+  .paper-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.85rem;
+    color: var(--c-brand-deep);
+    margin-bottom: 16px;
+  }
+
+  .oa-badge {
+    background: white;
+    color: var(--c-brand-deep);
+    padding: 2px 10px;
+    border-radius: var(--radius-pill);
+    font-size: 0.72rem;
+    font-weight: 500;
+  }
+
+  .paper-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.92rem;
+    font-weight: 500;
+    color: var(--c-brand-deep);
+  }
+
+  .chapters {
+    margin: 48px 0;
+  }
+
+  .chapters ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-left: 2px solid var(--c-border);
+  }
+
+  .chapters li {
+    display: flex;
+    gap: 16px;
+    padding: 8px 0 8px 18px;
+    align-items: baseline;
+  }
+
+  .chapter-time {
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    color: var(--c-brand);
+    min-width: 50px;
+  }
+
+  .show-notes {
+    margin: 48px 0;
+  }
+
+  .prose {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: var(--c-ink-soft);
+  }
+
+  .prose :global(h2),
+  .prose :global(h3) {
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+  }
+
+  .prose :global(p) {
+    margin-bottom: 1.2em;
+  }
+
+  .prose :global(ul),
+  .prose :global(ol) {
+    padding-left: 1.4em;
+    margin-bottom: 1.2em;
+  }
+
+  .prose :global(li) {
+    margin-bottom: 0.4em;
+  }
+
+  .prose :global(a) {
+    border-bottom: 1px solid currentColor;
+  }
+
+  .prose :global(blockquote) {
+    border-left: 3px solid var(--c-brand);
+    padding-left: 1.2em;
+    color: var(--c-ink-muted);
+    font-style: italic;
+    margin: 1.5em 0;
+  }
+
+  .prose :global(code) {
+    background: var(--c-brand-light);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.92em;
+    font-family: var(--font-mono);
+  }
+
+  .transcript {
+    margin: 48px 0;
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-lg);
+    padding: 0 24px;
+  }
+
+  .transcript summary {
+    cursor: pointer;
+    padding: 18px 0;
+    font-weight: 500;
+    list-style: none;
+  }
+
+  .transcript summary::before {
+    content: "+ ";
+    color: var(--c-brand);
+    font-weight: 600;
+  }
+
+  .transcript[open] summary::before {
+    content: "− ";
+  }
+
+  .transcript-body {
+    padding-bottom: 24px;
+    color: var(--c-ink-muted);
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+</style>

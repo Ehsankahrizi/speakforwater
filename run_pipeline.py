@@ -52,7 +52,7 @@ NOTEBOOKLM_AUTH_JSON = os.environ.get("NOTEBOOKLM_AUTH_JSON", "")
 NOTEBOOKLM_COOKIES = os.environ.get("NOTEBOOKLM_COOKIES", "")
 SITE_URL = os.environ.get("SITE_URL", "")
 REPO_DIR = Path(os.environ.get("GITHUB_WORKSPACE", "."))
-EPISODES_DIR = REPO_DIR / "episodes"
+EPISODES_DIR = REPO_DIR / "public" / "episodes"
 DOWNLOADS_DIR = Path("/tmp/speakforwater-downloads")
 
 
@@ -215,7 +215,7 @@ def commit_episode(episode: dict, mp3_path: Path) -> str:
         episodes_dir=EPISODES_DIR,
         site_url=SITE_URL,
     )
-    rss_path = REPO_DIR / "podcast.xml"
+    rss_path = REPO_DIR / "public" / "podcast.xml"
     rss_path.write_text(rss_content, encoding="utf-8")
     logger.info(f"Updated RSS feed: {rss_path}")
 
