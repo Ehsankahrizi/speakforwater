@@ -15,7 +15,11 @@ const recent = allEpisodes.slice(1, 7);
 
 <Layout>
   <section class="hero-fullpage">
-    <video class="hero-video" autoplay muted loop playsinline preload="auto" aria-hidden="true">
+    <video
+      class="hero-video"
+      autoplay muted loop playsinline preload="auto"
+      aria-hidden="true"
+    >
       <source src="/movie_1.mp4" type="video/mp4" />
     </video>
     <div class="hero-overlay"></div>
@@ -142,7 +146,132 @@ const recent = allEpisodes.slice(1, 7);
       </div>
     </div>
   </section>
+
+  {featured && (
+    <aside class="sticky-player" id="sticky-player" data-href={`/episodes/${featured.slug}`}>
+      <audio
+        id="sticky-audio"
+        src={featured.data.audio_url}
+        preload="metadata"
+      ></audio>
+
+      <button class="sp-play" id="sp-play" aria-label="Play latest episode">
+        <svg class="sp-icon-play" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        <svg class="sp-icon-pause" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" style="display:none"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>
+      </button>
+
+      <div class="sp-info">
+        <div class="sp-eyebrow">Latest · Episode {featured.data.episode_number}</div>
+        <a class="sp-title" href={`/episodes/${featured.slug}`}>{featured.data.title}</a>
+      </div>
+
+      <div class="sp-progress" id="sp-progress" aria-label="Playback progress">
+        <div class="sp-progress-fill" id="sp-progress-fill"></div>
+      </div>
+
+      <div class="sp-time" id="sp-time">--:-- / --:--</div>
+
+      <button class="sp-close" id="sp-close" aria-label="Hide player">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <path d="M6 6l12 12M6 18L18 6"/>
+        </svg>
+      </button>
+    </aside>
+  )}
 </Layout>
+
+<script>
+  // Slow down the hero video to give a calmer feel
+  const heroVideo = document.querySelector<HTMLVideoElement>(".hero-video");
+  if (heroVideo) {
+    heroVideo.playbackRate = 0.5;
+    heroVideo.addEventListener("loadeddata", () => {
+      heroVideo.playbackRate = 0.5;
+    });
+  }
+
+  // ── Sticky bottom player ──────────────────────────────────────
+  const player = document.getElementById("sticky-player") as HTMLElement | null;
+  const audio = document.getElementById("sticky-audio") as HTMLAudioElement | null;
+  const playBtn = document.getElementById("sp-play");
+  const iconPlay = playBtn?.querySelector(".sp-icon-play") as SVGElement | null;
+  const iconPause = playBtn?.querySelector(".sp-icon-pause") as SVGElement | null;
+  const progress = document.getElementById("sp-progress");
+  const fill = document.getElementById("sp-progress-fill");
+  const timeEl = document.getElementById("sp-time");
+  const closeBtn = document.getElementById("sp-close");
+
+  if (player && audio && playBtn && iconPlay && iconPause && progress && fill && timeEl && closeBtn) {
+    const fmt = (s: number) => {
+      if (!isFinite(s)) return "--:--";
+      const m = Math.floor(s / 60);
+      const sec = Math.floor(s % 60);
+      return `${String(m).padStart(2, "0")}:${String(sec).padStart(2, "0")}`;
+    };
+
+    // Show after scroll past hero
+    let visible = false;
+    const onScroll = () => {
+      if (window.scrollY > window.innerHeight * 0.6) {
+        if (!visible) {
+          player.classList.add("visible");
+          visible = true;
+        }
+      } else if (audio.paused) {
+        if (visible) {
+          player.classList.remove("visible");
+          visible = false;
+        }
+      }
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+
+    // Play / pause
+    playBtn.addEventListener("click", () => {
+      if (audio.paused) {
+        audio.play();
+      } else {
+        audio.pause();
+      }
+    });
+
+    audio.addEventListener("play", () => {
+      iconPlay.style.display = "none";
+      iconPause.style.display = "";
+      playBtn.setAttribute("aria-label", "Pause latest episode");
+      // Force visible while playing
+      player.classList.add("visible");
+    });
+    audio.addEventListener("pause", () => {
+      iconPlay.style.display = "";
+      iconPause.style.display = "none";
+      playBtn.setAttribute("aria-label", "Play latest episode");
+    });
+
+    audio.addEventListener("loadedmetadata", () => {
+      timeEl.textContent = `00:00 / ${fmt(audio.duration)}`;
+    });
+
+    audio.addEventListener("timeupdate", () => {
+      const pct = (audio.currentTime / audio.duration) * 100 || 0;
+      fill.style.width = `${pct}%`;
+      timeEl.textContent = `${fmt(audio.currentTime)} / ${fmt(audio.duration)}`;
+    });
+
+    progress.addEventListener("click", (e) => {
+      const rect = progress.getBoundingClientRect();
+      const ratio = (e.clientX - rect.left) / rect.width;
+      audio.currentTime = ratio * audio.duration;
+    });
+
+    closeBtn.addEventListener("click", () => {
+      audio.pause();
+      player.classList.remove("visible");
+      visible = false;
+    });
+  }
+</script>
 
 <style>
   /* ── Full-screen hero with calm water video ─────────────────── */
@@ -155,7 +284,7 @@ const recent = allEpisodes.slice(1, 7);
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: -65px; /* compensate for sticky header */
+    margin-top: -65px;
     padding-top: 65px;
   }
 
@@ -190,15 +319,10 @@ const recent = allEpisodes.slice(1, 7);
     z-index: 2;
   }
 
-  .wave-1 {
-    animation: wave-slide 22s linear infinite;
-  }
-  .wave-2 {
-    animation: wave-slide 30s linear infinite reverse;
-  }
-  .wave-3 {
-    animation: wave-slide 18s linear infinite;
-  }
+  /* Slower wave motion for a calmer feel */
+  .wave-1 { animation: wave-slide 60s linear infinite; }
+  .wave-2 { animation: wave-slide 80s linear infinite reverse; }
+  .wave-3 { animation: wave-slide 50s linear infinite; }
 
   @keyframes wave-slide {
     from { transform: translateX(0); }
@@ -385,6 +509,7 @@ const recent = allEpisodes.slice(1, 7);
     border-top: 1px solid var(--c-border);
     border-bottom: 1px solid var(--c-border);
     text-align: center;
+    margin-bottom: 88px; /* room for sticky player */
   }
 
   .how h2 {
@@ -399,9 +524,7 @@ const recent = allEpisodes.slice(1, 7);
     text-align: left;
   }
 
-  .step h3 {
-    margin: 14px 0 8px;
-  }
+  .step h3 { margin: 14px 0 8px; }
 
   .step p {
     color: var(--c-ink-muted);
@@ -416,7 +539,138 @@ const recent = allEpisodes.slice(1, 7);
     letter-spacing: 0.1em;
   }
 
+  /* ── Sticky bottom player ─────────────────────────────────────── */
+
+  .sticky-player {
+    position: fixed;
+    left: 16px;
+    right: 16px;
+    bottom: 16px;
+    z-index: 80;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 12px 16px 12px 12px;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: saturate(180%) blur(24px);
+    -webkit-backdrop-filter: saturate(180%) blur(24px);
+    border: 1px solid rgba(10, 37, 64, 0.08);
+    border-radius: 16px;
+    box-shadow: 0 12px 40px rgba(10, 37, 64, 0.12);
+    transform: translateY(calc(100% + 24px));
+    opacity: 0;
+    transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.3s ease;
+    max-width: 920px;
+    margin: 0 auto;
+  }
+
+  .sticky-player.visible {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .sp-play {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 0;
+    background: var(--c-brand);
+    color: white;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.15s ease, transform 0.1s ease;
+  }
+
+  .sp-play:hover { background: var(--c-brand-deep); }
+  .sp-play:active { transform: scale(0.96); }
+
+  .sp-info {
+    min-width: 0;
+    flex-shrink: 1;
+    flex-basis: 220px;
+    flex-grow: 0;
+  }
+
+  .sp-eyebrow {
+    font-family: var(--font-sans);
+    font-size: 0.68rem;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    color: var(--c-brand);
+    font-weight: 600;
+    margin-bottom: 2px;
+  }
+
+  .sp-title {
+    display: block;
+    font-family: var(--font-serif);
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--c-ink);
+    line-height: 1.3;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .sp-title:hover { color: var(--c-brand); }
+
+  .sp-progress {
+    flex: 1;
+    height: 4px;
+    background: rgba(10, 37, 64, 0.12);
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    min-width: 80px;
+  }
+
+  .sp-progress-fill {
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 0;
+    background: var(--c-brand);
+    border-radius: 4px;
+    transition: width 0.1s linear;
+  }
+
+  .sp-time {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--c-ink-muted);
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .sp-close {
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 0;
+    background: transparent;
+    color: var(--c-ink-muted);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.15s ease, color 0.15s ease;
+  }
+
+  .sp-close:hover {
+    background: rgba(10, 37, 64, 0.06);
+    color: var(--c-ink);
+  }
+
   @media (max-width: 720px) {
+    .sticky-player { gap: 10px; padding: 10px 12px; }
+    .sp-time { display: none; }
+    .sp-info { flex-basis: 140px; }
     .featured-frame { padding: 24px; }
     .hero-fullpage { min-height: 540px; }
   }
