@@ -16,139 +16,20 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Sat, 25 Apr 2026 19:17:54 +0000</lastBuildDate>
+  <lastBuildDate>Sat, 09 May 2026 01:42:01 +0000</lastBuildDate>
 
     <item>
-      <title>Ep 12: Modeling surface water and groundwater mixing and mixing-dependent denitrification with bedform dynamics</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep012.mp3" length="18795905" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep012.mp3</guid>
-      <pubDate></pubDate>
-      <itunes:episode>12</itunes:episode>
-      <itunes:duration>0</itunes:duration>
-      <description>SpeakForWater Episode 12: Modeling surface water and groundwater mixing and mixing-dependent denitrification with bedform dynamics. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
-
-Original paper: https://hess.copernicus.org/articles/30/1221/2026/hess-30-1221-2026.pdf</description>
-    </item>
-    <item>
-      <title>Ep 11: Synergistic impact of simultaneously assimilating radar- and radiometer-based soil moisture retrievals on the performance of numerical weather prediction systems</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep011.mp3" length="31712725" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep011.mp3</guid>
-      <pubDate></pubDate>
-      <itunes:episode>11</itunes:episode>
-      <itunes:duration>0</itunes:duration>
-      <description>SpeakForWater Episode 11: Synergistic impact of simultaneously assimilating radar- and radiometer-based soil moisture retrievals on the performance of numerical weather prediction systems. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
-
-Original paper: https://hess.copernicus.org/articles/30/1261/2026/hess-30-1261-2026.pdf</description>
-    </item>
-    <item>
-      <title>Ep 10: River intermittency: mapping and upscaling of water occurrence using unmanned aerial vehicle, Random Forest and remote sensing landscape attributes</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep010.mp3" length="24626436" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep010.mp3</guid>
-      <pubDate></pubDate>
-      <itunes:episode>10</itunes:episode>
-      <itunes:duration>0</itunes:duration>
-      <description>SpeakForWater Episode 10: River intermittency: mapping and upscaling of water occurrence using unmanned aerial vehicle, Random Forest and remote sensing landscape attributes. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
-
-Original paper: https://doi.org/10.5194/hess-30-849-2026</description>
-    </item>
-    <item>
-      <title>Ep 9: Freshwater biodiversity is not adequately addressed by the current protected areas of the Caribbean biodiversity hotspot</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep009.mp3" length="27993724" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep009.mp3</guid>
-      <pubDate></pubDate>
-      <itunes:episode>9</itunes:episode>
-      <itunes:duration>0</itunes:duration>
-      <description>SpeakForWater Episode 9: Freshwater biodiversity is not adequately addressed by the current protected areas of the Caribbean biodiversity hotspot. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
-
-Original paper: https://www.biorxiv.org/content/biorxiv/early/2026/03/18/2026.03.16.712036.full.pdf</description>
-    </item>
-    <item>
-      <title>Ep 8: Encounter-state over-anchoring governs productive PETase binding on PET surfaces</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep008.mp3" length="26571200" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep008.mp3</guid>
-      <pubDate></pubDate>
-      <itunes:episode>8</itunes:episode>
-      <itunes:duration>0</itunes:duration>
-      <description>SpeakForWater Episode 8: Encounter-state over-anchoring governs productive PETase binding on PET surfaces. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
-
-Original paper: https://www.biorxiv.org/content/biorxiv/early/2026/03/18/2026.03.17.712535.full.pdf</description>
-    </item>
-    <item>
-      <title>Ep 7: Different tracer, different bias: using radon to reveal flow paths beyond the Window of Detection</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep007.mp3" length="29194939" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep007.mp3</guid>
-      <pubDate></pubDate>
-      <itunes:episode>7</itunes:episode>
-      <itunes:duration>0</itunes:duration>
-      <description>SpeakForWater Episode 7: Different tracer, different bias: using radon to reveal flow paths beyond the Window of Detection. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
-
-Original paper: https://hess.copernicus.org/articles/30/1523/2026/hess-30-1523-2026.pdf</description>
-    </item>
-    <item>
-      <title>Ep 6: From grid to ground: how well do gridded products represent soil moisture dynamics in natural ecosystems during precipitation events?</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep006.mp3" length="14672529" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep006.mp3</guid>
-      <pubDate></pubDate>
-      <itunes:episode>6</itunes:episode>
-      <itunes:duration>0</itunes:duration>
-      <description>SpeakForWater Episode 6: From grid to ground: how well do gridded products represent soil moisture dynamics in natural ecosystems during precipitation events?. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
-
-Original paper: https://hess.copernicus.org/articles/30/1813/2026/hess-30-1813-2026.pdf</description>
-    </item>
-    <item>
-      <title>Ep 5: Black Sea Planktonic Organisms as Bioindicators for Biological Early Warning Systems: A Systematic Review</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep005.mp3" length="20343817" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep005.mp3</guid>
-      <pubDate></pubDate>
-      <itunes:episode>5</itunes:episode>
-      <itunes:duration>0</itunes:duration>
-      <description>SpeakForWater Episode 5: Black Sea Planktonic Organisms as Bioindicators for Biological Early Warning Systems: A Systematic Review. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
-
-Original paper: https://www.mdpi.com/2073-4441/18/8/899/pdf?version=1775735792</description>
-    </item>
-    <item>
-      <title>Ep 4: Statistical Evaluation of Observed Precipitation from INMET Meteorological Stations and MERGE Estimates in the Eastern Amazon</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep004.mp3" length="16961482" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep004.mp3</guid>
-      <pubDate></pubDate>
-      <itunes:episode>4</itunes:episode>
-      <itunes:duration>0</itunes:duration>
-      <description>SpeakForWater Episode 4: Statistical Evaluation of Observed Precipitation from INMET Meteorological Stations and MERGE Estimates in the Eastern Amazon. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
-
-Original paper: https://www.mdpi.com/2073-4441/18/8/898/pdf?version=1775721544</description>
-    </item>
-    <item>
-      <title>Ep 3: Stakeholder Roles Across Water Management Action Arenas</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep003.mp3" length="15656823" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep003.mp3</guid>
-      <pubDate></pubDate>
-      <itunes:episode>3</itunes:episode>
-      <itunes:duration>0</itunes:duration>
-      <description>SpeakForWater Episode 3: Stakeholder Roles Across Water Management Action Arenas. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
-
-Original paper: https://www.mdpi.com/2073-4441/18/8/902/pdf?version=1775744036</description>
-    </item>
-    <item>
-      <title>Ep 2: Meltwater Contribution and Mass Balance of the Juncal Norte Glacier During an Extreme Drought Year in the Dry Andes of Central Chile</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep002.mp3" length="15903837" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep002.mp3</guid>
-      <pubDate></pubDate>
-      <itunes:episode>2</itunes:episode>
-      <itunes:duration>0</itunes:duration>
-      <description>SpeakForWater Episode 2: Meltwater Contribution and Mass Balance of the Juncal Norte Glacier During an Extreme Drought Year in the Dry Andes of Central Chile. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
-
-Original paper: https://www.mdpi.com/2073-4441/18/8/897/pdf?version=1775716957</description>
-    </item>
-    <item>
-      <title>Ep 1: Enhanced IMERG SPE Using LSTM with a Novel Adaptive Regularization Method</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep001.mp3" length="22961913" type="audio/mpeg"/>
+      <title>Ep 1: Baffle-Enhanced Scour Mitigation in Rectangular and Trapezoidal Piano Key Weirs: An Experimental and Machine Learning Investigation
+</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep001.mp3" length="21629041" type="audio/mpeg"/>
       <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep001.mp3</guid>
       <pubDate></pubDate>
       <itunes:episode>1</itunes:episode>
       <itunes:duration>0</itunes:duration>
-      <description>SpeakForWater Episode 1: Enhanced IMERG SPE Using LSTM with a Novel Adaptive Regularization Method. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+      <description>SpeakForWater Episode 1: Baffle-Enhanced Scour Mitigation in Rectangular and Trapezoidal Piano Key Weirs: An Experimental and Machine Learning Investigation
+. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
 
-Original paper: https://www.mdpi.com/2073-4441/18/8/905/pdf?version=1775813273</description>
+Original paper: https://www.mdpi.com/2073-4441/16/15/2133?utm_campaign=releaseissue_waterutm_medium=emailutm_source=releaseissueutm_term=doilink109</description>
     </item>
 </channel>
 </rss>
