@@ -320,6 +320,46 @@ async def process_one_episode(episode: dict) -> bool:
         # Step 4: Mark as published
         update_sheet_status(row_number, "published", mp3_url=mp3_url)
 
+        # Step 5: Publish to YouTube (auto)
+        try:
+            from app.services.cover_generator import make_cover
+            from app.services.video_generator import make_video
+            from app.services.youtube_publisher import upload_video
+
+            ep_num = episode["episode_number"]
+            paper_title = episode["paper_title"]
+
+            cover_path = Path("/tmp") / f"ep{str(ep_num).zfill(3)}_cover.png"
+            bg = REPO_DIR / "public" / "movie_1.mp4"
+            make_cover(
+                cover_path,
+                title=paper_title,
+                episode_number=ep_num,
+                background=bg if bg.exists() else None,
+            )
+
+            video_path = Path("/tmp") / f"ep{str(ep_num).zfill(3)}.mp4"
+            make_video(mp3_path, cover_path, video_path)
+
+            yt_description = (
+                f"Episode {ep_num} of SpeakForWater — daily AI-narrated water research.\n\n"
+                f"In this episode: {paper_title}\n\n"
+                f"Listen on the website: {SITE_URL}\n"
+                f"Original paper: {episode['paper_url']}\n\n"
+                f"Subscribe on Apple Podcasts, Spotify, and more."
+            )
+
+            yt_url = upload_video(
+                video_path,
+                title=f"Ep {ep_num}: {paper_title}",
+                description=yt_description,
+                tags=["water", "research", "podcast", "AI", "science", "hydrology"],
+                privacy_status="public",
+            )
+            logger.info(f"YouTube URL: {yt_url}")
+        except Exception as e:
+            logger.warning(f"YouTube publish failed (continuing): {e}")
+
         logger.info("\n" + "=" * 60)
         logger.info(f"  Episode {episode['episode_number']} published!")
         logger.info(f"  MP3: {mp3_url}")
