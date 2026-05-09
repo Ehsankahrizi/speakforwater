@@ -32,6 +32,7 @@ import gspread
 from google.oauth2.service_account import Credentials
 
 from app.services.paper_search import load_keywords, load_journals, search_papers
+from app.services.paper_ranker import rank_papers
 
 # ── Logging ────────────────────────────────────────────────────────────
 
@@ -185,7 +186,15 @@ def main():
         logger.info("No papers found. Try adjusting keywords or date range.")
         return
 
-    logger.info(f"\nFound {len(papers)} papers. Checking for duplicates...")
+    logger.info(f"\nFound {len(papers)} candidate papers from OpenAlex.")
+    logger.info("Running AI ranking via Claude Haiku...")
+    papers = rank_papers(papers, max_keep=MAX_PAPERS)
+
+    if not papers:
+        logger.info("No papers passed the AI ranking threshold. Exiting.")
+        return
+
+    logger.info(f"\n{len(papers)} papers passed AI ranking. Checking for duplicates...")
 
     # Connect to Sheet and check duplicates
     sheet = get_sheet()
