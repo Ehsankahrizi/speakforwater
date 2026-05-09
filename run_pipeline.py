@@ -225,6 +225,23 @@ def commit_episode(episode: dict, mp3_path: Path) -> str:
         message=f"Add episode {ep_num}: {episode['paper_title']}",
     )
 
+    # Also generate markdown for the Astro website
+    try:
+        import subprocess
+        subprocess.run(['python3', 'scripts/json_to_md.py'], check=False, cwd=str(REPO_DIR))
+        files.append(str(REPO_DIR / 'src' / 'content' / 'episodes'))
+    except Exception as e:
+        logger.warning(f'json_to_md failed: {e}')
+
+    # Re-commit if markdown files were created
+    try:
+        _git_commit_and_push(
+            files=[str(REPO_DIR / 'src' / 'content' / 'episodes')],
+            message=f'Sync episode {ep_num} to markdown',
+        )
+    except Exception:
+        pass
+
     # Return the public URL
     mp3_url = f"{SITE_URL}/episodes/{filename}"
     return mp3_url
