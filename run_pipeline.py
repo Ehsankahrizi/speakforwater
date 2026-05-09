@@ -277,6 +277,25 @@ async def process_one_episode(episode: dict) -> bool:
         # Mark as processing
         update_sheet_status(row_number, "processing")
 
+        # Override episode_number with the next sequential DISPLAY number
+        # (count of published rows + 1). This ensures the website shows
+        # Episode 1, 2, 3, ... in order — regardless of failed/queued rows
+        # in the Sheet.
+        from app.services.google_sheets import EpisodeQueue
+        _q = EpisodeQueue(
+            credentials_json=GOOGLE_CREDENTIALS_JSON,
+            spreadsheet_id=SPREADSHEET_ID,
+            sheet_name=SHEET_NAME,
+        )
+        _published = sum(
+            1 for r in _q.sheet.get_all_records()
+            if str(r.get("status") or "").strip().lower() == "published"
+        )
+        episode["episode_number"] = _published + 1
+        logger.info(
+            f"Using sequential display number: Ep {episode['episode_number']}"
+        )
+
         # Step 2: Generate podcast
         logger.info(f"\nGenerating podcast for: {episode['paper_title']}")
         mp3_path = await generate_podcast(episode)
