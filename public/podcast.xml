@@ -16,8 +16,19 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Sun, 10 May 2026 13:56:15 +0000</lastBuildDate>
+  <lastBuildDate>Sun, 10 May 2026 19:26:46 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 7: Impact of occurrence conditions on NO &lt;sub&gt;3&lt;/sub&gt; &lt;sup&gt;−&lt;/sup&gt; -N source apportionment in groundwater: insights from PCA-APCS-MLR and MixSIAR methods</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep007.mp3" length="29699624" type="audio/mpeg"/>
+      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep007.mp3</guid>
+      <pubDate></pubDate>
+      <itunes:episode>7</itunes:episode>
+      <itunes:duration>0</itunes:duration>
+      <description>SpeakForWater Episode 7: Impact of occurrence conditions on NO &lt;sub&gt;3&lt;/sub&gt; &lt;sup&gt;−&lt;/sup&gt; -N source apportionment in groundwater: insights from PCA-APCS-MLR and MixSIAR methods. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://hess.copernicus.org/articles/30/1449/2026/hess-30-1449-2026.pdf</description>
+    </item>
     <item>
       <title>Ep 6: An Integrated Modeling Approach for Managing the Water–Energy–Food Nexus in Resource-Based Cities: A Case Study of Daqing, China</title>
       <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep006.mp3" length="30099611" type="audio/mpeg"/>
