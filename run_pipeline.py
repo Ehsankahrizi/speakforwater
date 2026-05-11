@@ -353,16 +353,32 @@ async def process_one_episode(episode: dict) -> bool:
                 title=paper_title,
                 episode_number=ep_num,
                 background=bg if bg.exists() else None,
+                paper_url=episode.get("paper_url", ""),
             )
 
             video_path = Path("/tmp") / f"ep{str(ep_num).zfill(3)}.mp4"
             make_video(mp3_path, cover_path, video_path)
 
             yt_description = (
-                f"Episode {ep_num} of SpeakForWater — daily AI-narrated water research.\n\n"
-                f"In this episode: {paper_title}\n\n"
-                f"Listen on the website: {SITE_URL}\n"
-                f"Original paper: {episode['paper_url']}\n\n"
+                f"Episode {ep_num} of SpeakForWater — daily narrated water research scientific papers.
+"
+                f"In this episode, the paper is entitled \"{paper_title}\", and is analyzed in simple terms.
+"
+                f"Listen on the website: {SITE_URL}
+"
+                f"Original paper: {episode['paper_url']}
+"
+                f"
+"
+                f"Conflict of interest note: this podcast is based on the understanding of "
+                f"speakforwater.com from this paper, and any findings in the papers are not "
+                f"directly provided by the speakforwater.com team, and all findings and credits "
+                f"are for the authors. Additionally, any prospective mentioned in this podcast "
+                f"is based on our understanding of these papers and may not be exactly correct. "
+                f"We just narrated it based on our best knowledge.
+"
+                f"
+"
                 f"Subscribe on Apple Podcasts, Spotify, and more."
             )
 
