@@ -1,0 +1,187 @@
+---
+import Layout from "../layouts/Layout.astro";
+const updated = "May 2026";
+---
+
+<Layout
+  title="Disclaimer & Editorial Policy"
+  description="Disclaimer, copyright notice, and editorial policy for SpeakForWater — the daily AI-narrated water research podcast."
+>
+  <article class="legal">
+    <div class="container-narrow">
+      <span class="eyebrow">Legal</span>
+      <h1>Disclaimer &amp; Editorial Policy</h1>
+      <p class="updated">Last updated: {updated}</p>
+
+      <section>
+        <h2>1. Nature of the content</h2>
+        <p>
+          SpeakForWater is an independent educational podcast that produces
+          AI-generated audio summaries of publicly available, open-access
+          peer-reviewed research papers about water resources, hydrology,
+          and related fields.
+        </p>
+        <p>
+          Each episode is created using a combination of automated paper
+          discovery, large-language-model summarization, and AI text-to-
+          speech narration. Episodes are produced without manual review of
+          every word. AI systems can and do make mistakes, including (but
+          not limited to) misinterpretations of methodology, incorrect
+          attributions, factual errors, mispronunciations, and omissions.
+        </p>
+      </section>
+
+      <section>
+        <h2>2. Not the original authors' work or voice</h2>
+        <p>
+          The scientific findings discussed in any SpeakForWater episode are
+          the work of the original paper's authors, not of SpeakForWater. We
+          do not generate, originate, or claim ownership of any scientific
+          result, hypothesis, or conclusion. All credit for the research
+          belongs to the cited authors, their institutions, and the
+          publishing journal.
+        </p>
+        <p>
+          The voices in our episodes are AI-synthesized and do not represent
+          the actual voices, views, statements, or opinions of any real
+          person. The dialogue is an interpretive narrative device, not a
+          verbatim quotation of the authors.
+        </p>
+        <p>
+          SpeakForWater is not affiliated with, endorsed by, sponsored by,
+          or representing any of the authors, co-authors, institutions,
+          funders, journals, or publishers referenced in any episode.
+          Mention of a paper in this podcast does not imply that the paper's
+          authors have reviewed or approved this episode.
+        </p>
+      </section>
+
+      <section>
+        <h2>3. Editorial limitations</h2>
+        <p>
+          While we strive for accuracy and rely only on open-access papers
+          that anyone can independently verify, we cannot guarantee that any
+          specific statement in any episode is correct. Listeners must
+          consult the original paper before relying on any information. The
+          original paper is linked in each episode's show notes.
+        </p>
+      </section>
+
+      <section>
+        <h2>4. Not professional advice</h2>
+        <p>
+          Nothing in any SpeakForWater episode constitutes medical,
+          engineering, environmental, legal, financial, or policy advice.
+          Water-related decisions can have safety, regulatory, and public-
+          health consequences. Always consult qualified, licensed
+          professionals for guidance specific to your situation.
+        </p>
+      </section>
+
+      <section>
+        <h2>5. Copyright &amp; fair use</h2>
+        <p>
+          Paper titles, abstracts, and brief excerpts may be included under
+          fair-use principles for educational commentary and review. Full
+          paper text is never republished. All cited works remain the
+          intellectual property of their respective copyright holders.
+        </p>
+        <p>
+          If you are an author, publisher, or rights holder and believe a
+          SpeakForWater episode infringes your rights, please contact us at
+          <a href="mailto:hello@speakforwater.com">hello@speakforwater.com</a>
+          with the specific episode and a description of the issue. We will
+          remove or correct the episode within 7 calendar days of a
+          verifiable request.
+        </p>
+      </section>
+
+      <section>
+        <h2>6. Trademarks</h2>
+        <p>
+          All trademarks, journal names, and institution names referenced
+          remain the property of their respective owners. Their mention does
+          not imply endorsement of SpeakForWater.
+        </p>
+      </section>
+
+      <section>
+        <h2>7. No warranty; limitation of liability</h2>
+        <p>
+          The SpeakForWater podcast and website are provided "as is",
+          without warranty of any kind, express or implied. To the fullest
+          extent permitted by applicable law, SpeakForWater and its
+          maintainer(s) disclaim all liability for any damages, losses, or
+          consequences arising from the use of, reliance on, or inability
+          to use this content.
+        </p>
+      </section>
+
+      <section>
+        <h2>8. Right to modify</h2>
+        <p>
+          We reserve the right to edit, retract, correct, or remove any
+          episode at any time, with or without notice. Listeners using
+          external podcast apps (Apple Podcasts, Spotify, etc.) may have
+          cached older versions; the version on speakforwater.com is
+          authoritative.
+        </p>
+      </section>
+
+      <section>
+        <h2>9. Reporting errors</h2>
+        <p>
+          If you find a factual error in any episode, please email
+          <a href="mailto:hello@speakforwater.com">hello@speakforwater.com</a>.
+          We take corrections seriously and will publish a correction note
+          in the affected episode's show page.
+        </p>
+      </section>
+
+      <section>
+        <h2>10. Contact</h2>
+        <p>
+          For questions, corrections, takedown requests, or partnership
+          inquiries:
+          <a href="mailto:hello@speakforwater.com">hello@speakforwater.com</a>.
+        </p>
+        <p class="muted small">
+          By accessing speakforwater.com or any SpeakForWater content, you
+          agree to these terms.
+        </p>
+      </section>
+    </div>
+  </article>
+</Layout>
+
+<style>
+  .legal {
+    padding: 80px 0 96px;
+  }
+
+  .updated {
+    color: var(--c-ink-muted);
+    font-size: 0.9rem;
+    margin: 8px 0 40px;
+  }
+
+  section {
+    margin-bottom: 36px;
+  }
+
+  section h2 {
+    margin-bottom: 14px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--c-border);
+    font-size: 1.25rem;
+  }
+
+  section p {
+    font-size: 1rem;
+    line-height: 1.75;
+    color: var(--c-ink-soft);
+    margin-bottom: 1em;
+  }
+
+  .small { font-size: 0.85rem; }
+</style>
