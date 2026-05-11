@@ -42,6 +42,11 @@ logging.basicConfig(
 logger = logging.getLogger("speakforwater")
 
 
+class _YouTubeDisabled(Exception):
+    """Signal that YouTube publishing is intentionally turned off."""
+    pass
+
+
 # ── Configuration from environment ─────────────────────────────────────
 
 GOOGLE_CREDENTIALS_JSON = os.environ.get("GOOGLE_CREDENTIALS_JSON", "")
@@ -337,8 +342,14 @@ async def process_one_episode(episode: dict) -> bool:
         # Step 4: Mark as published
         update_sheet_status(row_number, "published", mp3_url=mp3_url)
 
-        # Step 5: Publish to YouTube (auto)
+        # Step 5: Publish to YouTube (auto, gated by YOUTUBE_ENABLED)
         try:
+            if os.environ.get("YOUTUBE_ENABLED", "false").strip().lower() != "true":
+                logger.info(
+                    "YouTube publish disabled (YOUTUBE_ENABLED != 'true'). "
+                    "To enable, set repo variable YOUTUBE_ENABLED=true."
+                )
+                raise _YouTubeDisabled()
             from app.services.cover_generator import make_cover
             from app.services.video_generator import make_video
             from app.services.youtube_publisher import upload_video
@@ -395,6 +406,8 @@ async def process_one_episode(episode: dict) -> bool:
                 privacy_status="public",
             )
             logger.info(f"YouTube URL: {yt_url}")
+        except _YouTubeDisabled:
+            pass
         except Exception as e:
             logger.warning(f"YouTube publish failed (continuing): {e}")
 
