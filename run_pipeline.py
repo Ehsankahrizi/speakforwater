@@ -360,25 +360,30 @@ async def process_one_episode(episode: dict) -> bool:
             make_video(mp3_path, cover_path, video_path)
 
             yt_description = (
-                f"Episode {ep_num} of SpeakForWater — daily narrated water research scientific papers.
-"
-                f"In this episode, the paper is entitled \"{paper_title}\", and is analyzed in simple terms.
-"
-                f"Listen on the website: {SITE_URL}
-"
-                f"Original paper: {episode['paper_url']}
-"
-                f"
-"
-                f"Conflict of interest note: this podcast is based on the understanding of "
-                f"speakforwater.com from this paper, and any findings in the papers are not "
-                f"directly provided by the speakforwater.com team, and all findings and credits "
-                f"are for the authors. Additionally, any prospective mentioned in this podcast "
-                f"is based on our understanding of these papers and may not be exactly correct. "
-                f"We just narrated it based on our best knowledge.
-"
-                f"
-"
+                f"Episode {ep_num} of SpeakForWater — daily narrated water research scientific papers.\n"
+                f"In this episode, the paper is entitled \"{paper_title}\", and is analyzed in simple terms.\n"
+                f"Listen on the website: {SITE_URL}\n"
+                f"Original paper: {episode['paper_url']}\n"
+                f"\n"
+                f"— DISCLAIMER —\n"
+                f"This episode is an AI-generated audio interpretation of the referenced "
+                f"peer-reviewed paper. SpeakForWater is an independent project and is not "
+                f"affiliated with, endorsed by, or representing the authors, the journal, or "
+                f"any institution involved in the original research.\n"
+                f"\n"
+                f"All scientific findings, conclusions, data, and intellectual credit belong "
+                f"solely to the original paper's authors. We make a best-effort, good-faith "
+                f"summary of publicly available open-access research for educational purposes "
+                f"only and do not add, alter, or generate scientific claims of our own.\n"
+                f"\n"
+                f"AI narration may contain inaccuracies, omissions, or mischaracterizations. "
+                f"Listeners are responsible for consulting the original paper before relying "
+                f"on any information presented here. This podcast is not a substitute for "
+                f"professional, medical, engineering, or policy advice.\n"
+                f"\n"
+                f"If you are an author or rights holder and would like an episode removed or "
+                f"corrected, contact: hello@speakforwater.com. We respond within 7 days.\n"
+                f"\n"
                 f"Subscribe on Apple Podcasts, Spotify, and more."
             )
 
