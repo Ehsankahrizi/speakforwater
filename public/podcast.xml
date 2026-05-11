@@ -16,8 +16,19 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Mon, 11 May 2026 10:03:35 +0000</lastBuildDate>
+  <lastBuildDate>Mon, 11 May 2026 15:46:11 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 14: The ISLAS2020 field campaign: studying the near-surface exchange process of stable water isotopes during the arctic wintertime</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep014.mp3" length="28681239" type="audio/mpeg"/>
+      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep014.mp3</guid>
+      <pubDate></pubDate>
+      <itunes:episode>14</itunes:episode>
+      <itunes:duration>0</itunes:duration>
+      <description>SpeakForWater Episode 14: The ISLAS2020 field campaign: studying the near-surface exchange process of stable water isotopes during the arctic wintertime. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://essd.copernicus.org/articles/18/1969/2026/essd-18-1969-2026.pdf</description>
+    </item>
     <item>
       <title>Ep 13: An application of U/Th-series radiotracers to study groundwater transport processes in the surficial and Upper Floridan Aquifer System in central Florida, USA</title>
       <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep013.mp3" length="23962897" type="audio/mpeg"/>
