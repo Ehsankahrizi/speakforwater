@@ -16,8 +16,19 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Mon, 11 May 2026 01:14:08 +0000</lastBuildDate>
+  <lastBuildDate>Mon, 11 May 2026 04:47:51 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 12: Mapping water content dynamics in SAT systems using 3D electrical tomography</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep012.mp3" length="28527012" type="audio/mpeg"/>
+      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep012.mp3</guid>
+      <pubDate></pubDate>
+      <itunes:episode>12</itunes:episode>
+      <itunes:duration>0</itunes:duration>
+      <description>SpeakForWater Episode 12: Mapping water content dynamics in SAT systems using 3D electrical tomography. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://hess.copernicus.org/articles/30/877/2026/hess-30-877-2026.pdf</description>
+    </item>
     <item>
       <title>Ep 11: The Transformation of P, Fe, and Mn Fractions in Sediment Cores of a Highly Eutrophic Estuary in Northern Taiwan</title>
       <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep011.mp3" length="33508277" type="audio/mpeg"/>
