@@ -16,8 +16,19 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Sun, 10 May 2026 23:03:49 +0000</lastBuildDate>
+  <lastBuildDate>Mon, 11 May 2026 01:14:08 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 11: The Transformation of P, Fe, and Mn Fractions in Sediment Cores of a Highly Eutrophic Estuary in Northern Taiwan</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep011.mp3" length="33508277" type="audio/mpeg"/>
+      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep011.mp3</guid>
+      <pubDate></pubDate>
+      <itunes:episode>11</itunes:episode>
+      <itunes:duration>0</itunes:duration>
+      <description>SpeakForWater Episode 11: The Transformation of P, Fe, and Mn Fractions in Sediment Cores of a Highly Eutrophic Estuary in Northern Taiwan. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://www.mdpi.com/2073-4441/18/5/604/pdf?version=1772524302</description>
+    </item>
     <item>
       <title>Ep 10: Synergistic impact of simultaneously assimilating radar- and radiometer-based soil moisture retrievals on the performance of numerical weather prediction systems</title>
       <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep010.mp3" length="33548401" type="audio/mpeg"/>
