@@ -16,8 +16,19 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Mon, 11 May 2026 04:47:51 +0000</lastBuildDate>
+  <lastBuildDate>Mon, 11 May 2026 10:03:35 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 13: An application of U/Th-series radiotracers to study groundwater transport processes in the surficial and Upper Floridan Aquifer System in central Florida, USA</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep013.mp3" length="23962897" type="audio/mpeg"/>
+      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep013.mp3</guid>
+      <pubDate></pubDate>
+      <itunes:episode>13</itunes:episode>
+      <itunes:duration>0</itunes:duration>
+      <description>SpeakForWater Episode 13: An application of U/Th-series radiotracers to study groundwater transport processes in the surficial and Upper Floridan Aquifer System in central Florida, USA. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://public-pages-files-2025.frontiersin.org/journals/water/articles/10.3389/frwa.2025.1682438/pdf</description>
+    </item>
     <item>
       <title>Ep 12: Mapping water content dynamics in SAT systems using 3D electrical tomography</title>
       <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep012.mp3" length="28527012" type="audio/mpeg"/>
