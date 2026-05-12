@@ -23,6 +23,7 @@ const isActive = (path: string) =>
     </a>
 
     <nav class="primary-nav" aria-label="Primary">
+      <a href="/" class:list={[{ active: isActive("/") }]}>Home</a>
       <a href="/episodes" class:list={[{ active: isActive("/episodes") }]}>Episodes</a>
       <a href="/about" class:list={[{ active: isActive("/about") }]}>About</a>
       <a href="/subscribe" class:list={[{ active: isActive("/subscribe") }]}>Subscribe</a>
@@ -31,7 +32,6 @@ const isActive = (path: string) =>
 </header>
 
 <script>
-  // Toggle a `scrolled` class on the header once user scrolls a bit.
   const header = document.getElementById("site-header");
   if (header) {
     const onScroll = () => {
@@ -58,7 +58,6 @@ const isActive = (path: string) =>
     transition: background 0.35s ease, border-color 0.35s ease, backdrop-filter 0.35s ease;
   }
 
-  /* Homepage: transparent at top, becomes opaque on scroll */
   .site-header.transparent-mode {
     background: transparent;
     backdrop-filter: none;
@@ -95,24 +94,15 @@ const isActive = (path: string) =>
 
   .brand:hover { color: var(--c-ink); }
 
-  .brand-circle, .brand-drop {
-    transition: fill 0.35s ease;
-  }
+  .brand-circle, .brand-drop { transition: fill 0.35s ease; }
 
-  /* Brand colors when transparent over hero */
-  .site-header.transparent-mode:not(.scrolled) .brand {
-    color: white;
-  }
-  .site-header.transparent-mode:not(.scrolled) .brand-circle {
-    fill: rgba(255, 255, 255, 0.18);
-  }
-  .site-header.transparent-mode:not(.scrolled) .brand-drop {
-    fill: white;
-  }
+  .site-header.transparent-mode:not(.scrolled) .brand { color: white; }
+  .site-header.transparent-mode:not(.scrolled) .brand-circle { fill: rgba(255, 255, 255, 0.18); }
+  .site-header.transparent-mode:not(.scrolled) .brand-drop { fill: white; }
 
   .primary-nav {
     display: flex;
-    gap: 28px;
+    gap: 24px;
   }
 
   .primary-nav a {
@@ -124,13 +114,8 @@ const isActive = (path: string) =>
     transition: color 0.35s ease;
   }
 
-  .primary-nav a:hover {
-    color: var(--c-ink);
-  }
-
-  .primary-nav a.active {
-    color: var(--c-ink);
-  }
+  .primary-nav a:hover { color: var(--c-ink); }
+  .primary-nav a.active { color: var(--c-ink); }
 
   .primary-nav a.active::after {
     content: "";
@@ -141,7 +126,6 @@ const isActive = (path: string) =>
     border-radius: 2px;
   }
 
-  /* Nav colors when transparent over hero */
   .site-header.transparent-mode:not(.scrolled) .primary-nav a {
     color: rgba(255, 255, 255, 0.85);
     text-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
@@ -155,7 +139,7 @@ const isActive = (path: string) =>
   }
 
   @media (max-width: 560px) {
-    .primary-nav { gap: 18px; }
+    .primary-nav { gap: 16px; }
     .primary-nav a { font-size: 0.85rem; }
   }
 </style>
