@@ -16,8 +16,19 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Mon, 11 May 2026 20:12:57 +0000</lastBuildDate>
+  <lastBuildDate>Tue, 12 May 2026 09:01:02 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 16: Redox distribution of Asgard archaea and co-occurring taxa in microbial mats from an early Proterozoic ecosystem analog</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep016.mp3" length="28342692" type="audio/mpeg"/>
+      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep016.mp3</guid>
+      <pubDate></pubDate>
+      <itunes:episode>16</itunes:episode>
+      <itunes:duration>0</itunes:duration>
+      <description>SpeakForWater Episode 16: Redox distribution of Asgard archaea and co-occurring taxa in microbial mats from an early Proterozoic ecosystem analog. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://www.biorxiv.org/content/biorxiv/early/2026/03/21/2026.03.20.713109.full.pdf</description>
+    </item>
     <item>
       <title>Ep 15: Classifying pan-Arctic supra-permafrost aquifer function under present and projected conditions</title>
       <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep015.mp3" length="31141346" type="audio/mpeg"/>
