@@ -14,25 +14,16 @@ const {
   href,
   number,
   title,
-  date,
   duration,
   journal,
   topics = [],
   size = "default",
 } = Astro.props;
-
-const dateStr = new Intl.DateTimeFormat("en-US", {
-  month: "short",
-  day: "numeric",
-  year: "numeric",
-}).format(date);
 ---
 
 <a href={href} class:list={["card", `card--${size}`]}>
   <div class="card-meta">
     <span class="ep-number">Ep {number}</span>
-    <span class="dot">·</span>
-    <span class="date">{dateStr}</span>
   </div>
 
   <h3 class="card-title">{title}</h3>
@@ -88,8 +79,6 @@ const dateStr = new Intl.DateTimeFormat("en-US", {
     font-weight: 600;
   }
 
-  .dot { opacity: 0.5; }
-
   .card-title {
     font-family: var(--font-serif);
     font-size: 1.1rem;
@@ -99,18 +88,9 @@ const dateStr = new Intl.DateTimeFormat("en-US", {
     color: var(--c-ink);
   }
 
-  .card--featured .card-title {
-    font-size: 1.55rem;
-  }
-
-  .card--compact {
-    padding: 16px 18px;
-  }
-
-  .card--compact .card-title {
-    font-size: 1rem;
-    margin-bottom: 8px;
-  }
+  .card--featured .card-title { font-size: 1.55rem; }
+  .card--compact { padding: 16px 18px; }
+  .card--compact .card-title { font-size: 1rem; margin-bottom: 8px; }
 
   .card-footer {
     display: flex;
@@ -127,9 +107,7 @@ const dateStr = new Intl.DateTimeFormat("en-US", {
     gap: 5px;
   }
 
-  .journal {
-    font-style: italic;
-  }
+  .journal { font-style: italic; }
 
   .topics {
     display: flex;
