@@ -16,8 +16,19 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Tue, 12 May 2026 09:01:02 +0000</lastBuildDate>
+  <lastBuildDate>Tue, 12 May 2026 15:10:26 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 17: Minute 330 of the US–Mexico Water Treaty: A Testament to Transboundary Cooperation Amidst Drought in the Colorado River Basin</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep017.mp3" length="29456135" type="audio/mpeg"/>
+      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep017.mp3</guid>
+      <pubDate></pubDate>
+      <itunes:episode>17</itunes:episode>
+      <itunes:duration>0</itunes:duration>
+      <description>SpeakForWater Episode 17: Minute 330 of the US–Mexico Water Treaty: A Testament to Transboundary Cooperation Amidst Drought in the Colorado River Basin. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://doi.org/10.3390/w18070775</description>
+    </item>
     <item>
       <title>Ep 16: Redox distribution of Asgard archaea and co-occurring taxa in microbial mats from an early Proterozoic ecosystem analog</title>
       <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep016.mp3" length="28342692" type="audio/mpeg"/>
