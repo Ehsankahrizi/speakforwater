@@ -16,8 +16,19 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Wed, 13 May 2026 20:24:25 +0000</lastBuildDate>
+  <lastBuildDate>Thu, 14 May 2026 08:56:03 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 22: Future changes in seasonal drought in Australia</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep022.mp3" length="21426930" type="audio/mpeg"/>
+      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep022.mp3</guid>
+      <pubDate></pubDate>
+      <itunes:episode>22</itunes:episode>
+      <itunes:duration>0</itunes:duration>
+      <description>SpeakForWater Episode 22: Future changes in seasonal drought in Australia. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://hess.copernicus.org/articles/30/1463/2026/hess-30-1463-2026.pdf</description>
+    </item>
     <item>
       <title>Ep 21: Integrated Sediment Yield Estimation and Control in Erosion-Prone Watersheds: A Systematic Review of Models, Strategies, and Emerging Technologies</title>
       <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep021.mp3" length="36895391" type="audio/mpeg"/>
