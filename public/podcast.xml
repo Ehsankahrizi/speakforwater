@@ -16,8 +16,19 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Thu, 14 May 2026 08:56:03 +0000</lastBuildDate>
+  <lastBuildDate>Thu, 14 May 2026 14:49:30 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 23: Towards a typology for hybrid compound flood modeling</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep023.mp3" length="34418355" type="audio/mpeg"/>
+      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep023.mp3</guid>
+      <pubDate></pubDate>
+      <itunes:episode>23</itunes:episode>
+      <itunes:duration>0</itunes:duration>
+      <description>SpeakForWater Episode 23: Towards a typology for hybrid compound flood modeling. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://hess.copernicus.org/articles/30/1397/2026/hess-30-1397-2026.pdf</description>
+    </item>
     <item>
       <title>Ep 22: Future changes in seasonal drought in Australia</title>
       <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep022.mp3" length="21426930" type="audio/mpeg"/>
