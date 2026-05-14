@@ -16,8 +16,19 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Thu, 14 May 2026 14:49:30 +0000</lastBuildDate>
+  <lastBuildDate>Thu, 14 May 2026 20:08:13 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 24: Novel insights into deep groundwater exploration by geophysical estimation of hard rock permeability</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep024.mp3" length="29600958" type="audio/mpeg"/>
+      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep024.mp3</guid>
+      <pubDate></pubDate>
+      <itunes:episode>24</itunes:episode>
+      <itunes:duration>0</itunes:duration>
+      <description>SpeakForWater Episode 24: Novel insights into deep groundwater exploration by geophysical estimation of hard rock permeability. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://hess.copernicus.org/articles/30/1309/2026/hess-30-1309-2026.pdf</description>
+    </item>
     <item>
       <title>Ep 23: Towards a typology for hybrid compound flood modeling</title>
       <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep023.mp3" length="34418355" type="audio/mpeg"/>
