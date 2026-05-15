@@ -2,15 +2,14 @@
 import { getCollection } from "astro:content";
 import Layout from "../layouts/Layout.astro";
 import EpisodeCard from "../components/EpisodeCard.astro";
-import AudioPlayer from "../components/AudioPlayer.astro";
 import SubscribeButtons from "../components/SubscribeButtons.astro";
 
 const allEpisodes = (await getCollection("episodes")).sort(
   (a, b) => b.data.pub_date.valueOf() - a.data.pub_date.valueOf()
 );
 
-const featured = allEpisodes[0];
-const recent = allEpisodes.slice(1, 7);
+// Show up to 9 most recent episodes on the homepage grid (no pinned featured)
+const recent = allEpisodes.slice(0, 9);
 ---
 
 <Layout>
@@ -36,7 +35,7 @@ const recent = allEpisodes.slice(1, 7);
       <path class="wave wave-2" fill="url(#waveGrad)" opacity="0.7"
         d="M0,224L60,229.3C120,235,240,245,360,234.7C480,224,600,192,720,192C840,192,960,224,1080,229.3C1200,235,1320,213,1380,202.7L1440,192L1440,320L0,320Z"></path>
       <path class="wave wave-3" fill="rgba(255,255,255,0.95)"
-        d="M0,256L60,261.3C120,267,240,277,360,277.3C480,277,600,267,720,261.3C840,256,960,256,1080,261.3C1200,267,1320,277,1380,282.7L1440,288L1440,320L0,320Z"></path>
+        d="M0,256L60,261.3C120,267,240,277,360,277.3C480,267,600,267,720,261.3C840,256,960,256,1080,261.3C1200,267,1320,277,1380,282.7L1440,288L1440,320L0,320Z"></path>
     </svg>
 
     <div class="hero-content">
@@ -49,6 +48,27 @@ const recent = allEpisodes.slice(1, 7);
       <div class="hero-subscribe">
         <SubscribeButtons />
       </div>
+
+      <!-- Intro audio player -->
+      <div class="intro-player" data-intro-player>
+        <audio id="intro-audio" src="/ep000.m4a" preload="metadata"></audio>
+
+        <button class="ip-play" id="ip-play" aria-label="Play introduction">
+          <svg class="ip-icon-play" viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          <svg class="ip-icon-pause" viewBox="0 0 24 24" width="22" height="22" fill="currentColor" style="display:none"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>
+        </button>
+
+        <div class="ip-info">
+          <span class="ip-eyebrow">Start here · Introduction</span>
+          <span class="ip-title">What is SpeakForWater?</span>
+        </div>
+
+        <div class="ip-progress" id="ip-progress">
+          <div class="ip-progress-fill" id="ip-progress-fill"></div>
+        </div>
+
+        <div class="ip-time" id="ip-time">--:-- / --:--</div>
+      </div>
     </div>
 
     <a href="#latest" class="scroll-indicator" aria-label="Scroll to episodes">
@@ -56,47 +76,8 @@ const recent = allEpisodes.slice(1, 7);
     </a>
   </section>
 
-  {featured && (
-    <section class="featured" id="latest">
-      <div class="container">
-        <div class="featured-frame">
-          <div class="featured-meta">
-            <span class="eyebrow">Latest episode</span>
-            <h2>{featured.data.title}</h2>
-            <p class="featured-paper">
-              Episode {featured.data.episode_number} · {featured.data.duration}
-              {featured.data.paper.journal && (
-                <>
-                  · From <em>{featured.data.paper.journal}</em>
-                </>
-              )}
-              {featured.data.paper.open_access && <> · Open access</>}
-            </p>
-          </div>
-
-          <AudioPlayer
-            src={featured.data.audio_url}
-            title={featured.data.title}
-            episodeNumber={featured.data.episode_number}
-          />
-
-          {featured.data.topics.length > 0 && (
-            <div class="featured-topics">
-              {featured.data.topics.map((t) => <span class="tag">{t}</span>)}
-            </div>
-          )}
-
-          <a href={`/episodes/${featured.slug}`} class="featured-link">
-            Read the show notes
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </a>
-        </div>
-      </div>
-    </section>
-  )}
-
   {recent.length > 0 && (
-    <section class="section">
+    <section class="section" id="latest">
       <div class="container">
         <div class="section-head">
           <h2>Recent episodes</h2>
@@ -146,42 +127,9 @@ const recent = allEpisodes.slice(1, 7);
       </div>
     </div>
   </section>
-
-  {featured && (
-    <aside class="sticky-player" id="sticky-player" data-href={`/episodes/${featured.slug}`}>
-      <audio
-        id="sticky-audio"
-        src={featured.data.audio_url}
-        preload="metadata"
-      ></audio>
-
-      <button class="sp-play" id="sp-play" aria-label="Play latest episode">
-        <svg class="sp-icon-play" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-        <svg class="sp-icon-pause" viewBox="0 0 24 24" width="20" height="20" fill="currentColor" style="display:none"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>
-      </button>
-
-      <div class="sp-info">
-        <div class="sp-eyebrow">Latest · Episode {featured.data.episode_number}</div>
-        <a class="sp-title" href={`/episodes/${featured.slug}`}>{featured.data.title}</a>
-      </div>
-
-      <div class="sp-progress" id="sp-progress" aria-label="Playback progress">
-        <div class="sp-progress-fill" id="sp-progress-fill"></div>
-      </div>
-
-      <div class="sp-time" id="sp-time">--:-- / --:--</div>
-
-      <button class="sp-close" id="sp-close" aria-label="Hide player">
-        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-          <path d="M6 6l12 12M6 18L18 6"/>
-        </svg>
-      </button>
-    </aside>
-  )}
 </Layout>
 
 <script>
-  // Slow down the hero video to give a calmer feel
   const heroVideo = document.querySelector<HTMLVideoElement>(".hero-video");
   if (heroVideo) {
     heroVideo.playbackRate = 0.5;
@@ -190,18 +138,16 @@ const recent = allEpisodes.slice(1, 7);
     });
   }
 
-  // ── Sticky bottom player ──────────────────────────────────────
-  const player = document.getElementById("sticky-player") as HTMLElement | null;
-  const audio = document.getElementById("sticky-audio") as HTMLAudioElement | null;
-  const playBtn = document.getElementById("sp-play");
-  const iconPlay = playBtn?.querySelector(".sp-icon-play") as SVGElement | null;
-  const iconPause = playBtn?.querySelector(".sp-icon-pause") as SVGElement | null;
-  const progress = document.getElementById("sp-progress");
-  const fill = document.getElementById("sp-progress-fill");
-  const timeEl = document.getElementById("sp-time");
-  const closeBtn = document.getElementById("sp-close");
+  // ── Intro audio player ─────────────────────────────────────────
+  const audio = document.getElementById("intro-audio") as HTMLAudioElement | null;
+  const playBtn = document.getElementById("ip-play");
+  const iconPlay = playBtn?.querySelector(".ip-icon-play") as SVGElement | null;
+  const iconPause = playBtn?.querySelector(".ip-icon-pause") as SVGElement | null;
+  const progress = document.getElementById("ip-progress");
+  const fill = document.getElementById("ip-progress-fill");
+  const timeEl = document.getElementById("ip-time");
 
-  if (player && audio && playBtn && iconPlay && iconPause && progress && fill && timeEl && closeBtn) {
+  if (audio && playBtn && iconPlay && iconPause && progress && fill && timeEl) {
     const fmt = (s: number) => {
       if (!isFinite(s)) return "--:--";
       const m = Math.floor(s / 60);
@@ -209,83 +155,46 @@ const recent = allEpisodes.slice(1, 7);
       return `${String(m).padStart(2, "0")}:${String(sec).padStart(2, "0")}`;
     };
 
-    // Show after scroll past hero
-    let visible = false;
-    const onScroll = () => {
-      if (window.scrollY > window.innerHeight * 0.6) {
-        if (!visible) {
-          player.classList.add("visible");
-          visible = true;
-        }
-      } else if (audio.paused) {
-        if (visible) {
-          player.classList.remove("visible");
-          visible = false;
-        }
-      }
-    };
-    window.addEventListener("scroll", onScroll, { passive: true });
-    onScroll();
-
-    // Play / pause
     playBtn.addEventListener("click", () => {
-      if (audio.paused) {
-        audio.play();
-      } else {
-        audio.pause();
-      }
+      if (audio.paused) audio.play();
+      else audio.pause();
     });
 
     audio.addEventListener("play", () => {
       iconPlay.style.display = "none";
       iconPause.style.display = "";
-      playBtn.setAttribute("aria-label", "Pause latest episode");
-      // Force visible while playing
-      player.classList.add("visible");
     });
     audio.addEventListener("pause", () => {
       iconPlay.style.display = "";
       iconPause.style.display = "none";
-      playBtn.setAttribute("aria-label", "Play latest episode");
     });
-
     audio.addEventListener("loadedmetadata", () => {
       timeEl.textContent = `00:00 / ${fmt(audio.duration)}`;
     });
-
     audio.addEventListener("timeupdate", () => {
       const pct = (audio.currentTime / audio.duration) * 100 || 0;
       fill.style.width = `${pct}%`;
       timeEl.textContent = `${fmt(audio.currentTime)} / ${fmt(audio.duration)}`;
     });
-
     progress.addEventListener("click", (e) => {
       const rect = progress.getBoundingClientRect();
-      const ratio = (e.clientX - rect.left) / rect.width;
+      const ratio = ((e as MouseEvent).clientX - rect.left) / rect.width;
       audio.currentTime = ratio * audio.duration;
-    });
-
-    closeBtn.addEventListener("click", () => {
-      audio.pause();
-      player.classList.remove("visible");
-      visible = false;
     });
   }
 </script>
 
 <style>
-  /* ── Full-screen hero with calm water video ─────────────────── */
-
+  /* ── Hero ─────────────────────────────────────────────── */
   .hero-fullpage {
     position: relative;
-    height: 100vh;
-    min-height: 600px;
+    min-height: 100vh;
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-top: -65px;
-    padding-top: 65px;
+    padding: 95px 0 40px;
   }
 
   .hero-video {
@@ -319,11 +228,9 @@ const recent = allEpisodes.slice(1, 7);
     z-index: 2;
   }
 
-  /* Slower wave motion for a calmer feel */
   .wave-1 { animation: wave-slide 60s linear infinite; }
   .wave-2 { animation: wave-slide 80s linear infinite reverse; }
   .wave-3 { animation: wave-slide 50s linear infinite; }
-
   @keyframes wave-slide {
     from { transform: translateX(0); }
     to { transform: translateX(-60px); }
@@ -335,7 +242,7 @@ const recent = allEpisodes.slice(1, 7);
     text-align: center;
     color: white;
     padding: 0 24px;
-    max-width: 720px;
+    max-width: 760px;
     animation: fadeUp 1.2s ease-out;
   }
 
@@ -346,7 +253,6 @@ const recent = allEpisodes.slice(1, 7);
 
   .hero-eyebrow {
     display: inline-block;
-    font-family: var(--font-sans);
     font-size: 0.75rem;
     font-weight: 500;
     letter-spacing: 2px;
@@ -375,27 +281,113 @@ const recent = allEpisodes.slice(1, 7);
     line-height: 1.6;
     color: rgba(255, 255, 255, 0.95);
     max-width: 560px;
-    margin: 0 auto 36px;
+    margin: 0 auto 28px;
     text-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
   }
 
-  .hero-subscribe :global(.sub-row) {
-    justify-content: center;
-  }
-
+  .hero-subscribe :global(.sub-row) { justify-content: center; }
   .hero-subscribe :global(.sub-btn) {
     background: rgba(255, 255, 255, 0.15);
     border-color: rgba(255, 255, 255, 0.35);
     color: white;
     backdrop-filter: blur(10px);
   }
-
   .hero-subscribe :global(.sub-btn:hover) {
     background: rgba(255, 255, 255, 0.25);
     border-color: rgba(255, 255, 255, 0.55);
     color: white;
   }
 
+  /* ── Intro audio player (below subscribe buttons) ────── */
+  .intro-player {
+    margin: 30px auto 0;
+    max-width: 620px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      "play info time"
+      "progress progress progress";
+    align-items: center;
+    gap: 10px 14px;
+    padding: 14px 18px;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 18px;
+    color: white;
+  }
+
+  .ip-play {
+    grid-area: play;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    border: 0;
+    background: white;
+    color: var(--c-brand);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.1s ease, box-shadow 0.15s ease;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+  }
+  .ip-play:hover { transform: scale(1.04); }
+  .ip-play:active { transform: scale(0.96); }
+
+  .ip-info {
+    grid-area: info;
+    text-align: left;
+    min-width: 0;
+  }
+  .ip-eyebrow {
+    display: block;
+    font-size: 0.66rem;
+    font-weight: 600;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.75);
+    margin-bottom: 2px;
+  }
+  .ip-title {
+    display: block;
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: white;
+    line-height: 1.2;
+  }
+
+  .ip-time {
+    grid-area: time;
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: rgba(255, 255, 255, 0.8);
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+
+  .ip-progress {
+    grid-area: progress;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+  .ip-progress-fill {
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 0;
+    background: white;
+    border-radius: 4px;
+    transition: width 0.1s linear;
+  }
+
+  /* ── Scroll indicator ────────────────────────────────── */
   .scroll-indicator {
     position: absolute;
     bottom: 30px;
@@ -411,7 +403,6 @@ const recent = allEpisodes.slice(1, 7);
     padding-top: 8px;
     animation: pulse 2.5s ease-in-out infinite;
   }
-
   .scroll-indicator span {
     width: 4px;
     height: 8px;
@@ -419,66 +410,14 @@ const recent = allEpisodes.slice(1, 7);
     border-radius: 2px;
     animation: scroll-dot 2s ease-in-out infinite;
   }
-
-  @keyframes pulse {
-    0%, 100% { opacity: 0.6; }
-    50% { opacity: 1; }
-  }
-
+  @keyframes pulse { 0%, 100% { opacity: 0.6; } 50% { opacity: 1; } }
   @keyframes scroll-dot {
     0% { transform: translateY(0); opacity: 1; }
     50% { transform: translateY(8px); opacity: 0.4; }
     100% { transform: translateY(0); opacity: 1; }
   }
 
-  /* ── Featured + recent below the hero ────────────────────────── */
-
-  .featured {
-    padding: 80px 0;
-    background: var(--c-bg);
-  }
-
-  .featured-frame {
-    background: linear-gradient(180deg, var(--c-brand-light) 0%, var(--c-brand-tint) 100%);
-    border: 1px solid var(--c-border);
-    border-radius: 24px;
-    padding: 36px;
-  }
-
-  .featured-meta h2 {
-    margin-top: 8px;
-    margin-bottom: 6px;
-    color: var(--c-brand-deep);
-  }
-
-  .featured-paper {
-    color: var(--c-brand-deep);
-    font-size: 0.95rem;
-    margin-bottom: 24px;
-    opacity: 0.85;
-  }
-
-  .featured-topics {
-    margin-top: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-  }
-
-  .featured-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    margin-top: 24px;
-    font-size: 0.92rem;
-    font-weight: 500;
-    color: var(--c-brand-deep);
-  }
-
-  .featured-link:hover {
-    color: var(--c-ink);
-  }
-
+  /* ── Recent + How sections ───────────────────────────── */
   .section-head {
     display: flex;
     justify-content: space-between;
@@ -487,7 +426,6 @@ const recent = allEpisodes.slice(1, 7);
     gap: 12px;
     flex-wrap: wrap;
   }
-
   .section-head h2 { margin: 0; }
 
   .all-link {
@@ -509,29 +447,21 @@ const recent = allEpisodes.slice(1, 7);
     border-top: 1px solid var(--c-border);
     border-bottom: 1px solid var(--c-border);
     text-align: center;
-    margin-bottom: 88px; /* room for sticky player */
+    margin-bottom: 80px;
   }
-
-  .how h2 {
-    margin-top: 14px;
-    margin-bottom: 48px;
-  }
-
+  .how h2 { margin-top: 14px; margin-bottom: 48px; }
   .steps {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 32px;
     text-align: left;
   }
-
   .step h3 { margin: 14px 0 8px; }
-
   .step p {
     color: var(--c-ink-muted);
     font-size: 0.95rem;
     margin: 0;
   }
-
   .step-num {
     font-family: var(--font-mono);
     font-size: 0.78rem;
@@ -539,139 +469,14 @@ const recent = allEpisodes.slice(1, 7);
     letter-spacing: 0.1em;
   }
 
-  /* ── Sticky bottom player ─────────────────────────────────────── */
-
-  .sticky-player {
-    position: fixed;
-    left: 16px;
-    right: 16px;
-    bottom: 16px;
-    z-index: 80;
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    padding: 12px 16px 12px 12px;
-    background: rgba(255, 255, 255, 0.85);
-    backdrop-filter: saturate(180%) blur(24px);
-    -webkit-backdrop-filter: saturate(180%) blur(24px);
-    border: 1px solid rgba(10, 37, 64, 0.08);
-    border-radius: 16px;
-    box-shadow: 0 12px 40px rgba(10, 37, 64, 0.12);
-    transform: translateY(calc(100% + 24px));
-    opacity: 0;
-    transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.3s ease;
-    max-width: 920px;
-    margin: 0 auto;
-  }
-
-  .sticky-player.visible {
-    transform: translateY(0);
-    opacity: 1;
-  }
-
-  .sp-play {
-    flex-shrink: 0;
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    border: 0;
-    background: var(--c-brand);
-    color: white;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    transition: background 0.15s ease, transform 0.1s ease;
-  }
-
-  .sp-play:hover { background: var(--c-brand-deep); }
-  .sp-play:active { transform: scale(0.96); }
-
-  .sp-info {
-    min-width: 0;
-    flex-shrink: 1;
-    flex-basis: 220px;
-    flex-grow: 0;
-  }
-
-  .sp-eyebrow {
-    font-family: var(--font-sans);
-    font-size: 0.68rem;
-    letter-spacing: 1.4px;
-    text-transform: uppercase;
-    color: var(--c-brand);
-    font-weight: 600;
-    margin-bottom: 2px;
-  }
-
-  .sp-title {
-    display: block;
-    font-family: var(--font-serif);
-    font-size: 0.95rem;
-    font-weight: 500;
-    color: var(--c-ink);
-    line-height: 1.3;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-
-  .sp-title:hover { color: var(--c-brand); }
-
-  .sp-progress {
-    flex: 1;
-    height: 4px;
-    background: rgba(10, 37, 64, 0.12);
-    border-radius: 4px;
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-    min-width: 80px;
-  }
-
-  .sp-progress-fill {
-    position: absolute;
-    inset: 0 auto 0 0;
-    width: 0;
-    background: var(--c-brand);
-    border-radius: 4px;
-    transition: width 0.1s linear;
-  }
-
-  .sp-time {
-    font-family: var(--font-mono);
-    font-size: 0.78rem;
-    color: var(--c-ink-muted);
-    font-variant-numeric: tabular-nums;
-    white-space: nowrap;
-    flex-shrink: 0;
-  }
-
-  .sp-close {
-    flex-shrink: 0;
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    border: 0;
-    background: transparent;
-    color: var(--c-ink-muted);
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    transition: background 0.15s ease, color 0.15s ease;
-  }
-
-  .sp-close:hover {
-    background: rgba(10, 37, 64, 0.06);
-    color: var(--c-ink);
-  }
-
   @media (max-width: 720px) {
-    .sticky-player { gap: 10px; padding: 10px 12px; }
-    .sp-time { display: none; }
-    .sp-info { flex-basis: 140px; }
-    .featured-frame { padding: 24px; }
-    .hero-fullpage { min-height: 540px; }
+    .intro-player {
+      grid-template-columns: auto 1fr;
+      grid-template-areas:
+        "play info"
+        "progress progress"
+        "time time";
+    }
+    .ip-time { text-align: right; }
   }
 </style>

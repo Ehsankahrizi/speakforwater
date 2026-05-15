@@ -3,7 +3,7 @@ episode_number: 5
 title: "Reclaimed Water ASR in a Sand-and-Gravel Aquifer: Destin Water Users System (Florida, USA)"
 description: "SpeakForWater Episode 5: Reclaimed Water ASR in a Sand-and-Gravel Aquifer: Destin Water Users System (Florida, USA). A podcast conversation between Anna and Ehsan discussing the latest water resources research."
 pub_date: 2026-05-10
-duration: "10 min"
+duration: "24 min"
 audio_url: "/episodes/ep005.mp3"
 paper:
   title: "Reclaimed Water ASR in a Sand-and-Gravel Aquifer: Destin Water Users System (Florida, USA)"

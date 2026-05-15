@@ -3,7 +3,7 @@ episode_number: 12
 title: "Mapping water content dynamics in SAT systems using 3D electrical tomography"
 description: "SpeakForWater Episode 12: Mapping water content dynamics in SAT systems using 3D electrical tomography. A podcast conversation between Anna and Ehsan discussing the latest water resources research."
 pub_date: 2026-05-11
-duration: "10 min"
+duration: "19 min"
 audio_url: "/episodes/ep012.mp3"
 paper:
   title: "Mapping water content dynamics in SAT systems using 3D electrical tomography"

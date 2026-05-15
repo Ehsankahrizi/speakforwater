@@ -3,7 +3,7 @@ episode_number: 14
 title: "The ISLAS2020 field campaign: studying the near-surface exchange process of stable water isotopes during the arctic wintertime"
 description: "SpeakForWater Episode 14: The ISLAS2020 field campaign: studying the near-surface exchange process of stable water isotopes during the arctic wintertime. A podcast conversation between Anna and Ehsan discussing the latest water resources research."
 pub_date: 2026-05-11
-duration: "10 min"
+duration: "19 min"
 audio_url: "/episodes/ep014.mp3"
 paper:
   title: "The ISLAS2020 field campaign: studying the near-surface exchange process of stable water isotopes during the arctic wintertime"

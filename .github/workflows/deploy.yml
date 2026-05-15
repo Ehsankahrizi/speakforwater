@@ -4,6 +4,12 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  # Re-deploy automatically once Generate Podcast finishes — even when the
+  # bot pushes commits using GITHUB_TOKEN (which by design does NOT trigger
+  # the push event again, to prevent infinite loops).
+  workflow_run:
+    workflows: ["Generate Podcast"]
+    types: [completed]
 
 permissions:
   contents: read
@@ -20,6 +26,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          ref: main
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -32,13 +40,20 @@ jobs:
       - name: Build site
         run: npm run build
 
-      - name: Copy episodes folder into dist
+      - name: Copy episodes folder + RSS into dist
         run: |
           if [ -d "public/episodes" ]; then
-            cp -r public/episodes dist/episodes 2>/dev/null || true
+            mkdir -p dist/episodes
+            cp -r public/episodes/. dist/episodes/ 2>/dev/null || true
           fi
           if [ -f "public/podcast.xml" ]; then
             cp public/podcast.xml dist/podcast.xml
+          fi
+          if [ -f "public/ep000.m4a" ]; then
+            cp public/ep000.m4a dist/ep000.m4a
+          fi
+          if [ -f "public/movie_1.mp4" ]; then
+            cp public/movie_1.mp4 dist/movie_1.mp4
           fi
 
       - name: Upload artifact

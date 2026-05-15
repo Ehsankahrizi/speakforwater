@@ -3,7 +3,7 @@ episode_number: 15
 title: "Classifying pan-Arctic supra-permafrost aquifer function under present and projected conditions"
 description: "SpeakForWater Episode 15: Classifying pan-Arctic supra-permafrost aquifer function under present and projected conditions. A podcast conversation between Anna and Ehsan discussing the latest water resources research."
 pub_date: 2026-05-11
-duration: "10 min"
+duration: "21 min"
 audio_url: "/episodes/ep015.mp3"
 paper:
   title: "Classifying pan-Arctic supra-permafrost aquifer function under present and projected conditions"

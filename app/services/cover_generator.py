@@ -1,23 +1,20 @@
 """
 SpeakForWater — cover_generator.py
 
-Generates a YouTube-ready PNG cover image (1920x1080) for an episode.
+Uses public/cover.png as a template (TV screen mockup) and overlays:
+  - Episode number
+  - Paper title (auto-fitted)
+  - Authors and year
 
-New layout:
-  Top-left:  EPISODE 11  (large, bold)
-  Middle:    "Title of Paper:"  +  italic title (centered)
-  Bottom:    Original paper authors (or fallback line)
-  Footer:    Narrated by speakforwater.com
-
-Background: extracts a frame from a video (movie_1.mp4) or solid color.
+Inside the TV area boundaries. Auto-shrinks font if text overflows.
 """
 
 from __future__ import annotations
 
+import json
 import logging
+import os
 import re
-import subprocess
-import textwrap
 import urllib.parse
 import urllib.request
 from html import unescape
@@ -28,41 +25,38 @@ from PIL import Image, ImageDraw, ImageFont
 
 log = logging.getLogger(__name__)
 
-WIDTH, HEIGHT = 1920, 1080
-BRAND_DEEP = (10, 37, 64)
-BRAND_LIGHT = (133, 183, 235)
-WHITE = (255, 255, 255)
-SOFT_WHITE = (220, 230, 245)
+WHITE = (245, 248, 252)
+SOFT_BLUE = (155, 200, 230)
+ACCENT = (255, 220, 110)
 
-# Linux fonts (GitHub Actions)
-SERIF_BOLD = "/usr/share/fonts/truetype/dejavu/DejaVuSerif-Bold.ttf"
-SERIF_ITALIC = "/usr/share/fonts/truetype/dejavu/DejaVuSerif-Italic.ttf"
-SERIF_BOLDITALIC = "/usr/share/fonts/truetype/dejavu/DejaVuSerif-BoldItalic.ttf"
-SANS_BOLD = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
-SANS_REGULAR = "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"
+# Linux / macOS font candidates
+SERIF_BOLD_CANDIDATES = [
+    "/usr/share/fonts/truetype/dejavu/DejaVuSerif-Bold.ttf",
+    "/System/Library/Fonts/Supplemental/Times New Roman Bold.ttf",
+]
+SERIF_ITALIC_CANDIDATES = [
+    "/usr/share/fonts/truetype/dejavu/DejaVuSerif-BoldItalic.ttf",
+    "/usr/share/fonts/truetype/dejavu/DejaVuSerif-Italic.ttf",
+    "/System/Library/Fonts/Supplemental/Times New Roman Italic.ttf",
+]
+SANS_BOLD_CANDIDATES = [
+    "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",
+    "/System/Library/Fonts/Helvetica.ttc",
+]
 
-# macOS fallbacks (for local testing)
-MAC_SERIF = "/System/Library/Fonts/Supplemental/Times New Roman Bold.ttf"
-MAC_SERIF_ITALIC = "/System/Library/Fonts/Supplemental/Times New Roman Italic.ttf"
-MAC_SANS = "/System/Library/Fonts/Helvetica.ttc"
-
-VIDEO_EXTS = {".mp4", ".mov", ".mkv", ".webm", ".avi", ".m4v"}
+# TV-screen bounding box inside the cover.png template (as fractions of image
+# size). Defaults assume the TV occupies roughly the center 60% of the image.
+# Override via env vars TV_X1, TV_Y1, TV_X2, TV_Y2 (as 0..1 fractions) if your
+# template has different proportions.
+TV_X1 = float(os.environ.get("TV_X1", "0.18"))
+TV_Y1 = float(os.environ.get("TV_Y1", "0.20"))
+TV_X2 = float(os.environ.get("TV_X2", "0.82"))
+TV_Y2 = float(os.environ.get("TV_Y2", "0.78"))
 
 _HTML_TAG_RE = re.compile(r"<[^>]+>")
 
 
-def _font(size: int, *, serif=False, italic=False, bold=False) -> ImageFont.FreeTypeFont:
-    """Pick the best available font for the requested style."""
-    if serif and italic and bold:
-        candidates = [SERIF_BOLDITALIC, SERIF_ITALIC, MAC_SERIF_ITALIC]
-    elif serif and italic:
-        candidates = [SERIF_ITALIC, MAC_SERIF_ITALIC]
-    elif serif:
-        candidates = [SERIF_BOLD, MAC_SERIF]
-    elif bold:
-        candidates = [SANS_BOLD, MAC_SANS]
-    else:
-        candidates = [SANS_REGULAR, MAC_SANS]
+def _font(size: int, candidates: list[str]) -> ImageFont.FreeTypeFont:
     for path in candidates:
         try:
             return ImageFont.truetype(path, size)
@@ -77,49 +71,85 @@ def _strip_html(text: str) -> str:
     return _HTML_TAG_RE.sub("", unescape(text)).strip()
 
 
-def _video_to_frame(video_path: Path) -> Optional[Path]:
-    """Extract a frame from a video file using FFmpeg."""
-    frame_path = Path("/tmp") / f"{video_path.stem}_frame.png"
-    if frame_path.exists():
-        return frame_path
-    cmd = [
-        "ffmpeg", "-y",
-        "-ss", "3",
-        "-i", str(video_path),
-        "-vframes", "1",
-        "-q:v", "2",
-        str(frame_path),
-    ]
-    try:
-        result = subprocess.run(cmd, capture_output=True, text=True, timeout=30)
-        if result.returncode != 0:
-            log.warning(f"ffmpeg failed: {result.stderr[-200:]}")
-            return None
-    except Exception as e:
-        log.warning(f"ffmpeg crashed: {e}")
-        return None
-    return frame_path if frame_path.exists() else None
+def _wrap_lines(
+    draw: ImageDraw.ImageDraw,
+    text: str,
+    font: ImageFont.FreeTypeFont,
+    max_width: int,
+) -> list[str]:
+    """Greedy word-wrap so each line fits within max_width."""
+    words = text.split()
+    lines: list[str] = []
+    cur: list[str] = []
+    for w in words:
+        trial = " ".join(cur + [w])
+        bbox = draw.textbbox((0, 0), trial, font=font)
+        if (bbox[2] - bbox[0]) <= max_width:
+            cur.append(w)
+        else:
+            if cur:
+                lines.append(" ".join(cur))
+            cur = [w]
+    if cur:
+        lines.append(" ".join(cur))
+    return lines
 
 
-def _resolve_background(background: Optional[Path]) -> Optional[Path]:
-    if not background or not background.exists():
-        return None
-    if background.suffix.lower() in VIDEO_EXTS:
-        log.info(f"Extracting frame from video: {background.name}")
-        return _video_to_frame(background)
-    return background
+def _fit_text(
+    draw: ImageDraw.ImageDraw,
+    text: str,
+    candidates: list[str],
+    max_width: int,
+    max_height: int,
+    *,
+    start_size: int = 64,
+    min_size: int = 18,
+    line_spacing: int = 8,
+) -> tuple[ImageFont.FreeTypeFont, list[str]]:
+    """Find the largest font size at which `text` fits within (max_width, max_height)."""
+    size = start_size
+    while size >= min_size:
+        font = _font(size, candidates)
+        lines = _wrap_lines(draw, text, font, max_width)
+        ascent, descent = font.getmetrics()
+        line_h = ascent + descent + line_spacing
+        total_h = line_h * len(lines)
+        if total_h <= max_height:
+            return font, lines
+        size -= 2
+    font = _font(min_size, candidates)
+    return font, _wrap_lines(draw, text, font, max_width)
 
 
-def _fetch_authors_from_openalex(paper_url: str) -> Optional[str]:
-    """Try to fetch authors from OpenAlex using the paper URL. Best-effort."""
+def _draw_block(
+    draw: ImageDraw.ImageDraw,
+    lines: list[str],
+    font: ImageFont.FreeTypeFont,
+    x_center: int,
+    y_top: int,
+    fill,
+    line_spacing: int = 8,
+) -> int:
+    """Draw lines centered horizontally starting at y_top. Returns the y after the block."""
+    ascent, descent = font.getmetrics()
+    line_h = ascent + descent + line_spacing
+    y = y_top
+    for line in lines:
+        bbox = draw.textbbox((0, 0), line, font=font)
+        w = bbox[2] - bbox[0]
+        draw.text((x_center - w / 2, y), line, font=font, fill=fill)
+        y += line_h
+    return y
+
+
+def _fetch_authors_from_openalex(paper_url: str) -> tuple[Optional[str], Optional[str]]:
+    """Best-effort: return (authors_string, year_string) from OpenAlex."""
     if not paper_url:
-        return None
+        return None, None
     try:
-        # OpenAlex accepts DOI URL or any landing page URL
         api = "https://api.openalex.org/works/" + urllib.parse.quote(paper_url, safe="")
         req = urllib.request.Request(api, headers={"User-Agent": "SpeakForWater/1.0"})
         with urllib.request.urlopen(req, timeout=10) as r:
-            import json
             data = json.loads(r.read().decode("utf-8"))
         names = []
         for a in data.get("authorships", []) or []:
@@ -127,39 +157,16 @@ def _fetch_authors_from_openalex(paper_url: str) -> Optional[str]:
             n = au.get("display_name")
             if n:
                 names.append(n)
-        if not names:
-            return None
-        if len(names) <= 3:
-            return ", ".join(names)
-        return ", ".join(names[:2]) + f", et al."
+        year = data.get("publication_year")
+        if names:
+            if len(names) <= 3:
+                authors_str = ", ".join(names)
+            else:
+                authors_str = ", ".join(names[:2]) + f", et al."
+            return authors_str, (str(year) if year else None)
     except Exception as e:
-        log.info(f"Could not fetch authors from OpenAlex ({e}); using generic credit.")
-        return None
-
-
-def _draw_centered(draw, text, y, font, fill, width=WIDTH):
-    bbox = draw.textbbox((0, 0), text, font=font)
-    w = bbox[2] - bbox[0]
-    draw.text(((width - w) / 2, y), text, font=font, fill=fill)
-
-
-def _wrap_lines(text: str, font: ImageFont.FreeTypeFont, draw, max_width: int) -> list[str]:
-    """Word-wrap text so each line fits within max_width pixels."""
-    words = text.split()
-    lines = []
-    current = []
-    for w in words:
-        trial = " ".join(current + [w])
-        bbox = draw.textbbox((0, 0), trial, font=font)
-        if (bbox[2] - bbox[0]) <= max_width:
-            current.append(w)
-        else:
-            if current:
-                lines.append(" ".join(current))
-            current = [w]
-    if current:
-        lines.append(" ".join(current))
-    return lines
+        log.info(f"Could not fetch authors from OpenAlex ({e}); skipping.")
+    return None, None
 
 
 def make_cover(
@@ -169,91 +176,115 @@ def make_cover(
     background: Optional[Path] = None,
     paper_url: str = "",
     authors: Optional[str] = None,
+    year: Optional[str] = None,
+    template: Optional[Path] = None,
 ) -> Path:
-    """Render a 1920×1080 cover PNG with new layout."""
+    """
+    Render a cover PNG using public/cover.png as a TV template.
+
+    `background` is accepted for backward compatibility and ignored when
+    `template` (or public/cover.png) exists.
+    """
     title = _strip_html(title)
-    resolved_bg = _resolve_background(background)
 
-    # Background
-    if resolved_bg and resolved_bg.exists():
-        try:
-            bg = Image.open(resolved_bg).convert("RGB")
-            ratio = max(WIDTH / bg.width, HEIGHT / bg.height)
-            new_size = (int(bg.width * ratio), int(bg.height * ratio))
-            bg = bg.resize(new_size, Image.LANCZOS)
-            left = (bg.width - WIDTH) // 2
-            top = (bg.height - HEIGHT) // 2
-            bg = bg.crop((left, top, left + WIDTH, top + HEIGHT))
-            overlay = Image.new("RGB", (WIDTH, HEIGHT), BRAND_DEEP)
-            img = Image.blend(bg, overlay, 0.6)
-        except Exception as e:
-            log.warning(f"Background failed ({e}); using solid color.")
-            img = Image.new("RGB", (WIDTH, HEIGHT), BRAND_DEEP)
+    # Resolve template path
+    if template and template.exists():
+        tpl_path = template
     else:
-        img = Image.new("RGB", (WIDTH, HEIGHT), BRAND_DEEP)
+        # Try common locations
+        for candidate in [
+            Path("public/cover.png"),
+            Path("./public/cover.png"),
+            Path(os.environ.get("GITHUB_WORKSPACE", ".")) / "public" / "cover.png",
+        ]:
+            if candidate.exists():
+                tpl_path = candidate
+                break
+        else:
+            tpl_path = None
 
+    if not tpl_path or not tpl_path.exists():
+        log.warning("No cover.png template found — falling back to solid blue cover.")
+        img = Image.new("RGB", (1920, 1080), (10, 37, 64))
+    else:
+        img = Image.open(tpl_path).convert("RGB")
+
+    W, H = img.size
     draw = ImageDraw.Draw(img)
 
-    # ── Top-left: EPISODE N (large, bold) ──────────────────────────
-    ep_label_font = _font(36, bold=True)
-    ep_num_font = _font(140, bold=True)
-    margin_x = 80
-    margin_y = 60
-    draw.text((margin_x, margin_y), "EPISODE", font=ep_label_font, fill=BRAND_LIGHT)
-    draw.text((margin_x, margin_y + 38), str(episode_number), font=ep_num_font, fill=WHITE)
+    # TV bounding box in absolute pixels
+    tv_x1 = int(W * TV_X1)
+    tv_y1 = int(H * TV_Y1)
+    tv_x2 = int(W * TV_X2)
+    tv_y2 = int(H * TV_Y2)
+    tv_w = tv_x2 - tv_x1
+    tv_h = tv_y2 - tv_y1
+    tv_cx = (tv_x1 + tv_x2) // 2
 
-    # ── Center: "Title of Paper:" + italic title ───────────────────
-    label_font = _font(34, bold=True)
-    title_font = _font(60, serif=True, italic=True, bold=True)
+    # Fetch authors/year if not provided
+    if (not authors or not year) and paper_url:
+        fetched_authors, fetched_year = _fetch_authors_from_openalex(paper_url)
+        authors = authors or fetched_authors
+        year = year or fetched_year
 
-    label_text = "Title of Paper"
-    label_bbox = draw.textbbox((0, 0), label_text, font=label_font)
-    label_w = label_bbox[2] - label_bbox[0]
-    label_y = int(HEIGHT * 0.36)
-    draw.text(((WIDTH - label_w) / 2, label_y), label_text, font=label_font, fill=BRAND_LIGHT)
+    # ── Layout inside TV ────────────────────────────────────────────
+    # Reserve vertical space for each block (approximate, fonts will fit
+    # within these heights):
+    #   30% for Episode label + number
+    #   55% for title
+    #   15% for authors/year
+    pad_y = int(tv_h * 0.06)
+    ep_h = int(tv_h * 0.22)
+    title_h = int(tv_h * 0.50)
+    authors_h = int(tv_h * 0.22)
 
-    # Quoted, italic, wrapped title
-    quoted = f"“{title}”"
-    max_title_width = WIDTH - 240  # leave margins
-    lines = _wrap_lines(quoted, title_font, draw, max_title_width)
-    if len(lines) > 5:
-        lines = lines[:5]
-        lines[-1] = lines[-1].rstrip(",.;:!?”") + "…”"
+    cursor_y = tv_y1 + pad_y
 
-    line_height = 78
-    title_block_height = line_height * len(lines)
-    title_start_y = label_y + 70
-    for i, line in enumerate(lines):
-        _draw_centered(draw, line, title_start_y + i * line_height, title_font, WHITE)
-
-    # ── Bottom: authors credit ─────────────────────────────────────
-    # Try to fetch authors from OpenAlex if not provided
-    if not authors and paper_url:
-        authors = _fetch_authors_from_openalex(paper_url)
-    if authors:
-        author_text = f"Original paper by {authors}"
-    else:
-        author_text = "Original paper by the authors cited in the description"
-
-    author_font = _font(28, bold=True)
-    # Wrap author text in case it's long
-    author_lines = _wrap_lines(author_text, author_font, draw, WIDTH - 240)
-    if len(author_lines) > 2:
-        author_lines = author_lines[:2]
-        author_lines[-1] = author_lines[-1].rstrip(",.") + "…"
-    author_y = int(HEIGHT * 0.82)
-    for i, line in enumerate(author_lines):
-        _draw_centered(draw, line, author_y + i * 36, author_font, SOFT_WHITE)
-
-    # ── Footer: narrated by speakforwater.com ──────────────────────
-    footer_font = _font(24, bold=True)
-    _draw_centered(
-        draw,
-        "Narrated by speakforwater.com",
-        int(HEIGHT * 0.93),
-        footer_font,
-        BRAND_LIGHT,
+    # Episode label
+    ep_label_font, _ = _fit_text(
+        draw, "EPISODE", SANS_BOLD_CANDIDATES,
+        max_width=tv_w, max_height=int(ep_h * 0.32),
+        start_size=44, min_size=18,
     )
+    _draw_block(draw, ["EPISODE"], ep_label_font, tv_cx, cursor_y, SOFT_BLUE)
+    cursor_y += int(ep_h * 0.32)
+
+    # Episode number (huge)
+    ep_num_font, _ = _fit_text(
+        draw, str(episode_number), SANS_BOLD_CANDIDATES,
+        max_width=tv_w, max_height=int(ep_h * 0.68),
+        start_size=160, min_size=40,
+    )
+    _draw_block(draw, [str(episode_number)], ep_num_font, tv_cx, cursor_y, ACCENT)
+    cursor_y = tv_y1 + pad_y + ep_h
+
+    # Title — italic, fitted
+    title_text = f"“{title}”"
+    title_font, title_lines = _fit_text(
+        draw, title_text, SERIF_ITALIC_CANDIDATES,
+        max_width=int(tv_w * 0.92), max_height=title_h,
+        start_size=64, min_size=20,
+    )
+    cursor_y = _draw_block(draw, title_lines, title_font, tv_cx, cursor_y, WHITE)
+
+    # Authors + year
+    authors_line = ""
+    if authors and year:
+        authors_line = f"{authors} — {year}"
+    elif authors:
+        authors_line = authors
+    elif year:
+        authors_line = f"Published {year}"
+    else:
+        authors_line = "Original authors cited in the description"
+
+    auth_font, auth_lines = _fit_text(
+        draw, authors_line, SERIF_BOLD_CANDIDATES,
+        max_width=int(tv_w * 0.92), max_height=authors_h,
+        start_size=34, min_size=16,
+    )
+    auth_y_top = tv_y2 - pad_y - (auth_font.getmetrics()[0] + auth_font.getmetrics()[1] + 8) * len(auth_lines)
+    _draw_block(draw, auth_lines, auth_font, tv_cx, auth_y_top, SOFT_BLUE)
 
     output_path.parent.mkdir(parents=True, exist_ok=True)
     img.save(output_path, "PNG", optimize=True)
