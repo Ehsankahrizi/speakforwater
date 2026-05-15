@@ -16,8 +16,19 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Fri, 15 May 2026 09:08:17 +0000</lastBuildDate>
+  <lastBuildDate>Fri, 15 May 2026 14:37:56 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 26: River intermittency: mapping and upscaling of water occurrence using unmanned aerial vehicle, Random Forest and remote sensing landscape attributes</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep026.mp3" length="33179524" type="audio/mpeg"/>
+      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep026.mp3</guid>
+      <pubDate></pubDate>
+      <itunes:episode>26</itunes:episode>
+      <itunes:duration>0</itunes:duration>
+      <description>SpeakForWater Episode 26: River intermittency: mapping and upscaling of water occurrence using unmanned aerial vehicle, Random Forest and remote sensing landscape attributes. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://doi.org/10.5194/hess-30-849-2026</description>
+    </item>
     <item>
       <title>Ep 25: Climate change effects on river droughts in Bavaria using a hydrological large ensemble</title>
       <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep025.mp3" length="27152135" type="audio/mpeg"/>
