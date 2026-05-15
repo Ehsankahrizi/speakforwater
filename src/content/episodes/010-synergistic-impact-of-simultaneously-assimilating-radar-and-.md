@@ -3,7 +3,7 @@ episode_number: 10
 title: "Synergistic impact of simultaneously assimilating radar- and radiometer-based soil moisture retrievals on the performance of numerical weather prediction systems"
 description: "SpeakForWater Episode 10: Synergistic impact of simultaneously assimilating radar- and radiometer-based soil moisture retrievals on the performance of numerical weather prediction systems. A podcast conversation between Anna and Ehsan discussing the latest water resources research."
 pub_date: 2026-05-10
-duration: "10 min"
+duration: "23 min"
 audio_url: "/episodes/ep010.mp3"
 paper:
   title: "Synergistic impact of simultaneously assimilating radar- and radiometer-based soil moisture retrievals on the performance of numerical weather prediction systems"

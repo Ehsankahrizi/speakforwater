@@ -3,7 +3,7 @@ episode_number: 9
 title: "How does integrating multi-scale monitoring and compound-specific isotope analysis improve the evaluation of <i>S</i> -metolachlor degradation in agro-ecosystems?"
 description: "SpeakForWater Episode 9: How does integrating multi-scale monitoring and compound-specific isotope analysis improve the evaluation of <i>S</i> -metolachlor degradation in agro-ecosystems?. A podcast conversation between Anna and Ehsan discussing the latest water resources research."
 pub_date: 2026-05-10
-duration: "10 min"
+duration: "21 min"
 audio_url: "/episodes/ep009.mp3"
 paper:
   title: "How does integrating multi-scale monitoring and compound-specific isotope analysis improve the evaluation of <i>S</i> -metolachlor degradation in agro-ecosystems?"

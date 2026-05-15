@@ -3,7 +3,7 @@ episode_number: 6
 title: "An Integrated Modeling Approach for Managing the Water–Energy–Food Nexus in Resource-Based Cities: A Case Study of Daqing, China"
 description: "SpeakForWater Episode 6: An Integrated Modeling Approach for Managing the Water–Energy–Food Nexus in Resource-Based Cities: A Case Study of Daqing, China. A podcast conversation between Anna and Ehsan discussing the latest water resources research."
 pub_date: 2026-05-10
-duration: "10 min"
+duration: "20 min"
 audio_url: "/episodes/ep006.mp3"
 paper:
   title: "An Integrated Modeling Approach for Managing the Water–Energy–Food Nexus in Resource-Based Cities: A Case Study of Daqing, China"

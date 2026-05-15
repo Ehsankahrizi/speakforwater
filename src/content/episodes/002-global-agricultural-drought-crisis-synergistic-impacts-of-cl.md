@@ -3,7 +3,7 @@ episode_number: 2
 title: "Global Agricultural Drought Crisis: Synergistic Impacts of Climate Change and Human Activities and Their Feedback Mechanisms"
 description: "SpeakForWater Episode 2: Global Agricultural Drought Crisis: Synergistic Impacts of Climate Change and Human Activities and Their Feedback Mechanisms. A podcast conversation between Anna and Ehsan discussing the latest water resources research."
 pub_date: 2026-05-09
-duration: "10 min"
+duration: "25 min"
 audio_url: "/episodes/ep002.mp3"
 paper:
   title: "Global Agricultural Drought Crisis: Synergistic Impacts of Climate Change and Human Activities and Their Feedback Mechanisms"

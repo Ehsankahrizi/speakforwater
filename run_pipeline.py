@@ -202,7 +202,7 @@ def commit_episode(episode: dict, mp3_path: Path) -> str:
         "filename": filename,
         "published_at": now,
         "file_size_bytes": file_size,
-        "duration_seconds": 0,  # Could be extracted with mutagen/ffprobe
+        "duration_seconds": _ffprobe_duration(dest_mp3),
         "description": (
             f"SpeakForWater Episode {ep_num}: {episode['paper_title']}. "
             f"A podcast conversation between Anna and Ehsan discussing "

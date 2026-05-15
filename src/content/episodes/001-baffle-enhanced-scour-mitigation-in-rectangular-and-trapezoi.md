@@ -4,7 +4,7 @@ title: "Baffle-Enhanced Scour Mitigation in Rectangular and Trapezoidal Piano Ke
 description: "SpeakForWater Episode 1: Baffle-Enhanced Scour Mitigation in Rectangular and Trapezoidal Piano Key Weirs: An Experimental and Machine Learning Investigation
 . A podcast conversation between Anna and Ehsan discussing the latest water resources research."
 pub_date: 2026-05-09
-duration: "10 min"
+duration: "15 min"
 audio_url: "/episodes/ep001.mp3"
 paper:
   title: "Baffle-Enhanced Scour Mitigation in Rectangular and Trapezoidal Piano Key Weirs: An Experimental and Machine Learning Investigation"
