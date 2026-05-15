@@ -16,8 +16,19 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Thu, 14 May 2026 20:08:13 +0000</lastBuildDate>
+  <lastBuildDate>Fri, 15 May 2026 09:08:17 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 25: Climate change effects on river droughts in Bavaria using a hydrological large ensemble</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep025.mp3" length="27152135" type="audio/mpeg"/>
+      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep025.mp3</guid>
+      <pubDate></pubDate>
+      <itunes:episode>25</itunes:episode>
+      <itunes:duration>0</itunes:duration>
+      <description>SpeakForWater Episode 25: Climate change effects on river droughts in Bavaria using a hydrological large ensemble. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://hess.copernicus.org/articles/30/1165/2026/hess-30-1165-2026.pdf</description>
+    </item>
     <item>
       <title>Ep 24: Novel insights into deep groundwater exploration by geophysical estimation of hard rock permeability</title>
       <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep024.mp3" length="29600958" type="audio/mpeg"/>
