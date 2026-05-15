@@ -16,8 +16,19 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Fri, 15 May 2026 14:37:56 +0000</lastBuildDate>
+  <lastBuildDate>Fri, 15 May 2026 20:02:23 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 27: Projections of Temperature-Driven Changes in Seasonal Ice Coverage Around Prince Edward Island, Canada</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep027.mp3" length="29700014" type="audio/mpeg"/>
+      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep027.mp3</guid>
+      <pubDate></pubDate>
+      <itunes:episode>27</itunes:episode>
+      <itunes:duration>0</itunes:duration>
+      <description>SpeakForWater Episode 27: Projections of Temperature-Driven Changes in Seasonal Ice Coverage Around Prince Edward Island, Canada. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://www.mdpi.com/2073-4441/18/7/777/pdf?version=1774448140</description>
+    </item>
     <item>
       <title>Ep 26: River intermittency: mapping and upscaling of water occurrence using unmanned aerial vehicle, Random Forest and remote sensing landscape attributes</title>
       <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep026.mp3" length="33179524" type="audio/mpeg"/>
