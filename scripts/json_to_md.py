@@ -58,11 +58,13 @@ for json_path in sorted(JSON_DIR.glob("*.json")):
         if duration_sec > 0 else "10 min"
     )
 
+    cover = data.get("cover")
+
     audio_url = f"/episodes/ep{str(ep_num).zfill(3)}.mp3"
     slug = f"{str(ep_num).zfill(3)}-{slugify(title)}"
     md_path = MD_DIR / f"{slug}.md"
 
-    front = "\n".join([
+    front_lines = [
         "---",
         f"episode_number: {ep_num}",
         f'title: "{yaml_escape(title)}"',
@@ -70,12 +72,17 @@ for json_path in sorted(JSON_DIR.glob("*.json")):
         f"pub_date: {pub_date}",
         f'duration: "{duration}"',
         f'audio_url: "{audio_url}"',
+    ]
+    if cover:
+        front_lines.append(f'cover: "{yaml_escape(cover)}"')
+    front_lines.extend([
         "paper:",
         f'  title: "{yaml_escape(title)}"',
         f'  url: "{yaml_escape(paper_url)}"',
         "  open_access: true",
         "---",
     ])
+    front = "\n".join(front_lines)
 
     body = (
         f"## About this episode\n\n"
