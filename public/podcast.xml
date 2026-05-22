@@ -16,8 +16,19 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Fri, 22 May 2026 06:01:21 +0000</lastBuildDate>
+  <lastBuildDate>Fri, 22 May 2026 06:50:16 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 30: Interpreting Satellite Rainfall Bias Correction Through a Rainfall–Runoff Framework in a Monsoon-Influenced River Basin: The Phetchaburi River Basin, Thailand</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep030.mp3" length="32671077" type="audio/mpeg"/>
+      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep030.mp3</guid>
+      <pubDate></pubDate>
+      <itunes:episode>30</itunes:episode>
+      <itunes:duration>1361.266939</itunes:duration>
+      <description>SpeakForWater Episode 30: Interpreting Satellite Rainfall Bias Correction Through a Rainfall–Runoff Framework in a Monsoon-Influenced River Basin: The Phetchaburi River Basin, Thailand. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://www.mdpi.com/2073-4441/18/8/964/pdf?version=1776503608</description>
+    </item>
     <item>
       <title>Ep 29: Assessment of Soil Physicochemical Changes, Bioaccumulation of Potentially Toxic Elements, and Okra Growth Parameters Under Different Irrigation Systems with Treated Wastewater</title>
       <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep029.mp3" length="31632866" type="audio/mpeg"/>
