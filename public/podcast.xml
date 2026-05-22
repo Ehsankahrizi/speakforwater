@@ -16,8 +16,19 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Fri, 22 May 2026 15:08:32 +0000</lastBuildDate>
+  <lastBuildDate>Fri, 22 May 2026 20:07:37 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 33: Microbial Electrochemical Technologies in Wastewater Treatment: Scale-Up Challenges, Pilot Testing, and Practical Implementation</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep033.mp3" length="20685889" type="audio/mpeg"/>
+      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep033.mp3</guid>
+      <pubDate></pubDate>
+      <itunes:episode>33</itunes:episode>
+      <itunes:duration>861.884082</itunes:duration>
+      <description>SpeakForWater Episode 33: Microbial Electrochemical Technologies in Wastewater Treatment: Scale-Up Challenges, Pilot Testing, and Practical Implementation. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://www.mdpi.com/2073-4441/18/8/966/pdf?version=1776504714</description>
+    </item>
     <item>
       <title>Ep 32: Evaluating Pollutant Removal Performance of Biofiltration Systems for Urban Stormwater Management: A Systematic Literature Review</title>
       <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep032.mp3" length="32582052" type="audio/mpeg"/>
