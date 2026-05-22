@@ -170,6 +170,23 @@ async def generate_podcast(episode: dict) -> Path:
 
 # ── Step 3: Commit to repo ─────────────────────────────────────────────
 
+def _ffprobe_duration(file_path: Path) -> float:
+    """Get the duration of an audio file in seconds using ffprobe."""
+    try:
+        cmd = [
+            "ffprobe",
+            "-v", "error",
+            "-show_entries", "format=duration",
+            "-of", "default=noprint_wrappers=1:nokey=1",
+            str(file_path),
+        ]
+        result = subprocess.run(cmd, capture_output=True, text=True, check=True)
+        return float(result.stdout.strip())
+    except Exception as e:
+        logger.warning(f"Failed to get audio duration via ffprobe: {e}")
+        return 0.0
+
+
 def commit_episode(episode: dict, mp3_path: Path) -> str:
     """
     Copy the MP3 into the repo's episodes/ directory,
@@ -234,7 +251,6 @@ def commit_episode(episode: dict, mp3_path: Path) -> str:
     try:
         import subprocess
         subprocess.run(['python3', 'scripts/json_to_md.py'], check=False, cwd=str(REPO_DIR))
-        files.append(str(REPO_DIR / 'src' / 'content' / 'episodes'))
     except Exception as e:
         logger.warning(f'json_to_md failed: {e}')
 
