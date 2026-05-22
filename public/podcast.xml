@@ -16,8 +16,19 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Fri, 15 May 2026 20:02:23 +0000</lastBuildDate>
+  <lastBuildDate>Fri, 22 May 2026 04:57:54 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 28: Multi-Decadal Remote Sensing of Crop Planting Structure and Surface Water Dynamics in the Ningxia Plain: Drivers and Scale-Dependent Responses</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep028.mp3" length="31521898" type="audio/mpeg"/>
+      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep028.mp3</guid>
+      <pubDate></pubDate>
+      <itunes:episode>28</itunes:episode>
+      <itunes:duration>1313.38449</itunes:duration>
+      <description>SpeakForWater Episode 28: Multi-Decadal Remote Sensing of Crop Planting Structure and Surface Water Dynamics in the Ningxia Plain: Drivers and Scale-Dependent Responses. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://www.mdpi.com/2073-4441/18/8/978/pdf?version=1776693523</description>
+    </item>
     <item>
       <title>Ep 27: Projections of Temperature-Driven Changes in Seasonal Ice Coverage Around Prince Edward Island, Canada</title>
       <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep027.mp3" length="29700014" type="audio/mpeg"/>
@@ -156,7 +167,7 @@ Original paper: https://www.biorxiv.org/content/biorxiv/early/2026/03/21/2026.03
       <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep015.mp3</guid>
       <pubDate></pubDate>
       <itunes:episode>15</itunes:episode>
-      <itunes:duration>0</itunes:duration>
+      <itunes:duration>1297</itunes:duration>
       <description>SpeakForWater Episode 15: Classifying pan-Arctic supra-permafrost aquifer function under present and projected conditions. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
 
 Original paper: https://doi.org/10.1088/1748-9326/ae358e</description>
@@ -167,7 +178,7 @@ Original paper: https://doi.org/10.1088/1748-9326/ae358e</description>
       <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep014.mp3</guid>
       <pubDate></pubDate>
       <itunes:episode>14</itunes:episode>
-      <itunes:duration>0</itunes:duration>
+      <itunes:duration>1194</itunes:duration>
       <description>SpeakForWater Episode 14: The ISLAS2020 field campaign: studying the near-surface exchange process of stable water isotopes during the arctic wintertime. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
 
 Original paper: https://essd.copernicus.org/articles/18/1969/2026/essd-18-1969-2026.pdf</description>
@@ -178,7 +189,7 @@ Original paper: https://essd.copernicus.org/articles/18/1969/2026/essd-18-1969-2
       <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep013.mp3</guid>
       <pubDate></pubDate>
       <itunes:episode>13</itunes:episode>
-      <itunes:duration>0</itunes:duration>
+      <itunes:duration>998</itunes:duration>
       <description>SpeakForWater Episode 13: An application of U/Th-series radiotracers to study groundwater transport processes in the surficial and Upper Floridan Aquifer System in central Florida, USA. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
 
 Original paper: https://public-pages-files-2025.frontiersin.org/journals/water/articles/10.3389/frwa.2025.1682438/pdf</description>
@@ -189,7 +200,7 @@ Original paper: https://public-pages-files-2025.frontiersin.org/journals/water/a
       <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep012.mp3</guid>
       <pubDate></pubDate>
       <itunes:episode>12</itunes:episode>
-      <itunes:duration>0</itunes:duration>
+      <itunes:duration>1188</itunes:duration>
       <description>SpeakForWater Episode 12: Mapping water content dynamics in SAT systems using 3D electrical tomography. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
 
 Original paper: https://hess.copernicus.org/articles/30/877/2026/hess-30-877-2026.pdf</description>
@@ -200,7 +211,7 @@ Original paper: https://hess.copernicus.org/articles/30/877/2026/hess-30-877-202
       <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep011.mp3</guid>
       <pubDate></pubDate>
       <itunes:episode>11</itunes:episode>
-      <itunes:duration>0</itunes:duration>
+      <itunes:duration>1396</itunes:duration>
       <description>SpeakForWater Episode 11: The Transformation of P, Fe, and Mn Fractions in Sediment Cores of a Highly Eutrophic Estuary in Northern Taiwan. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
 
 Original paper: https://www.mdpi.com/2073-4441/18/5/604/pdf?version=1772524302</description>
@@ -211,7 +222,7 @@ Original paper: https://www.mdpi.com/2073-4441/18/5/604/pdf?version=1772524302</
       <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep010.mp3</guid>
       <pubDate></pubDate>
       <itunes:episode>10</itunes:episode>
-      <itunes:duration>0</itunes:duration>
+      <itunes:duration>1397</itunes:duration>
       <description>SpeakForWater Episode 10: Synergistic impact of simultaneously assimilating radar- and radiometer-based soil moisture retrievals on the performance of numerical weather prediction systems. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
 
 Original paper: https://hess.copernicus.org/articles/30/1261/2026/hess-30-1261-2026.pdf</description>
@@ -222,7 +233,7 @@ Original paper: https://hess.copernicus.org/articles/30/1261/2026/hess-30-1261-2
       <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep009.mp3</guid>
       <pubDate></pubDate>
       <itunes:episode>9</itunes:episode>
-      <itunes:duration>0</itunes:duration>
+      <itunes:duration>1314</itunes:duration>
       <description>SpeakForWater Episode 9: How does integrating multi-scale monitoring and compound-specific isotope analysis improve the evaluation of &lt;i&gt;S&lt;/i&gt; -metolachlor degradation in agro-ecosystems?. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
 
 Original paper: https://hess.copernicus.org/articles/30/1291/2026/hess-30-1291-2026.pdf</description>
@@ -233,7 +244,7 @@ Original paper: https://hess.copernicus.org/articles/30/1291/2026/hess-30-1291-2
       <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep008.mp3</guid>
       <pubDate></pubDate>
       <itunes:episode>8</itunes:episode>
-      <itunes:duration>0</itunes:duration>
+      <itunes:duration>1480</itunes:duration>
       <description>SpeakForWater Episode 8: Technical note: Analysis of concentration-discharge hysteresis loops using Self-Organizing Maps. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
 
 Original paper: https://hess.copernicus.org/articles/30/1359/2026/hess-30-1359-2026.pdf</description>
@@ -244,7 +255,7 @@ Original paper: https://hess.copernicus.org/articles/30/1359/2026/hess-30-1359-2
       <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep007.mp3</guid>
       <pubDate></pubDate>
       <itunes:episode>7</itunes:episode>
-      <itunes:duration>0</itunes:duration>
+      <itunes:duration>1237</itunes:duration>
       <description>SpeakForWater Episode 7: Impact of occurrence conditions on NO &lt;sub&gt;3&lt;/sub&gt; &lt;sup&gt;−&lt;/sup&gt; -N source apportionment in groundwater: insights from PCA-APCS-MLR and MixSIAR methods. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
 
 Original paper: https://hess.copernicus.org/articles/30/1449/2026/hess-30-1449-2026.pdf</description>
@@ -255,7 +266,7 @@ Original paper: https://hess.copernicus.org/articles/30/1449/2026/hess-30-1449-2
       <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep006.mp3</guid>
       <pubDate></pubDate>
       <itunes:episode>6</itunes:episode>
-      <itunes:duration>0</itunes:duration>
+      <itunes:duration>1254</itunes:duration>
       <description>SpeakForWater Episode 6: An Integrated Modeling Approach for Managing the Water–Energy–Food Nexus in Resource-Based Cities: A Case Study of Daqing, China. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
 
 Original paper: https://www.mdpi.com/2073-4441/18/6/723/pdf</description>
@@ -266,7 +277,7 @@ Original paper: https://www.mdpi.com/2073-4441/18/6/723/pdf</description>
       <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep005.mp3</guid>
       <pubDate></pubDate>
       <itunes:episode>5</itunes:episode>
-      <itunes:duration>0</itunes:duration>
+      <itunes:duration>1458</itunes:duration>
       <description>SpeakForWater Episode 5: Reclaimed Water ASR in a Sand-and-Gravel Aquifer: Destin Water Users System (Florida, USA). A podcast conversation between Anna and Ehsan discussing the latest water resources research.
 
 Original paper: https://www.mdpi.com/2073-4441/18/6/722/pdf</description>
@@ -277,7 +288,7 @@ Original paper: https://www.mdpi.com/2073-4441/18/6/722/pdf</description>
       <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep004.mp3</guid>
       <pubDate></pubDate>
       <itunes:episode>4</itunes:episode>
-      <itunes:duration>0</itunes:duration>
+      <itunes:duration>813</itunes:duration>
       <description>SpeakForWater Episode 4: Hydrological and Geochemical Modeling of Water Availability and Quality in the Jordan Valley Under Climate Change. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
 
 Original paper: https://www.mdpi.com/2073-4441/18/6/721/pdf</description>
@@ -288,7 +299,7 @@ Original paper: https://www.mdpi.com/2073-4441/18/6/721/pdf</description>
       <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep003.mp3</guid>
       <pubDate></pubDate>
       <itunes:episode>3</itunes:episode>
-      <itunes:duration>0</itunes:duration>
+      <itunes:duration>1248</itunes:duration>
       <description>SpeakForWater Episode 3: Contrasting Climatic and Land-Use Controls Structure Nutrient and Turbidity Regimes Across Mediterranean River Basins. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
 
 Original paper: https://www.mdpi.com/2073-4441/18/6/728/pdf</description>
@@ -299,7 +310,7 @@ Original paper: https://www.mdpi.com/2073-4441/18/6/728/pdf</description>
       <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep002.mp3</guid>
       <pubDate></pubDate>
       <itunes:episode>2</itunes:episode>
-      <itunes:duration>0</itunes:duration>
+      <itunes:duration>1531</itunes:duration>
       <description>SpeakForWater Episode 2: Global Agricultural Drought Crisis: Synergistic Impacts of Climate Change and Human Activities and Their Feedback Mechanisms. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
 
 Original paper: https://www.mdpi.com/2073-4441/18/6/732/pdf?version=1773994726</description>
@@ -311,7 +322,7 @@ Original paper: https://www.mdpi.com/2073-4441/18/6/732/pdf?version=1773994726</
       <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep001.mp3</guid>
       <pubDate></pubDate>
       <itunes:episode>1</itunes:episode>
-      <itunes:duration>0</itunes:duration>
+      <itunes:duration>901</itunes:duration>
       <description>SpeakForWater Episode 1: Baffle-Enhanced Scour Mitigation in Rectangular and Trapezoidal Piano Key Weirs: An Experimental and Machine Learning Investigation
 . A podcast conversation between Anna and Ehsan discussing the latest water resources research.
 
