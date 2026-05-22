@@ -21,3 +21,7 @@ app/storage/downloads/*.mp3
 # Large local-only video files
 public/movie_2.mp4
 public/movie_3.mp4
+node_modules
+dist/
+.astro/
+package-lock.json

@@ -207,6 +207,25 @@ def commit_episode(episode: dict, mp3_path: Path) -> str:
     shutil.copy2(mp3_path, dest_mp3)
     logger.info(f"Copied MP3 to {dest_mp3}")
 
+    # Generate Cover
+    from app.services.cover_generator import make_cover
+    cover_filename = f"ep{str(ep_num).zfill(3)}.png"
+    dest_cover = EPISODES_DIR / cover_filename
+    bg = REPO_DIR / "public" / "movie_1.mp4"
+    cover_generated = False
+    try:
+        make_cover(
+            output_path=dest_cover,
+            title=episode["paper_title"],
+            episode_number=ep_num,
+            background=bg if bg.exists() else None,
+            paper_url=episode.get("paper_url", ""),
+        )
+        logger.info(f"Generated and saved cover to {dest_cover}")
+        cover_generated = True
+    except Exception as e:
+        logger.warning(f"Cover generation failed: {e}")
+
     # Get file size
     file_size = dest_mp3.stat().st_size
 
@@ -226,6 +245,8 @@ def commit_episode(episode: dict, mp3_path: Path) -> str:
             f"the latest water resources research."
         ),
     }
+    if cover_generated and dest_cover.exists():
+        metadata["cover"] = f"/episodes/{cover_filename}"
 
     meta_path = EPISODES_DIR / meta_filename
     with open(meta_path, "w") as f:
@@ -242,8 +263,11 @@ def commit_episode(episode: dict, mp3_path: Path) -> str:
     logger.info(f"Updated RSS feed: {rss_path}")
 
     # Git commit and push
+    commit_files = [str(dest_mp3), str(meta_path), str(rss_path)]
+    if cover_generated and dest_cover.exists():
+        commit_files.append(str(dest_cover))
     _git_commit_and_push(
-        files=[str(dest_mp3), str(meta_path), str(rss_path)],
+        files=commit_files,
         message=f"Add episode {ep_num}: {episode['paper_title']}",
     )
 
@@ -366,22 +390,25 @@ async def process_one_episode(episode: dict) -> bool:
                     "To enable, set repo variable YOUTUBE_ENABLED=true."
                 )
                 raise _YouTubeDisabled()
-            from app.services.cover_generator import make_cover
             from app.services.video_generator import make_video
             from app.services.youtube_publisher import upload_video
 
             ep_num = episode["episode_number"]
             paper_title = episode["paper_title"]
 
-            cover_path = Path("/tmp") / f"ep{str(ep_num).zfill(3)}_cover.png"
-            bg = REPO_DIR / "public" / "movie_1.mp4"
-            make_cover(
-                cover_path,
-                title=paper_title,
-                episode_number=ep_num,
-                background=bg if bg.exists() else None,
-                paper_url=episode.get("paper_url", ""),
-            )
+            # Reuse the cover image if already generated, otherwise generate to /tmp
+            cover_path = EPISODES_DIR / f"ep{str(ep_num).zfill(3)}.png"
+            if not cover_path.exists():
+                from app.services.cover_generator import make_cover
+                cover_path = Path("/tmp") / f"ep{str(ep_num).zfill(3)}_cover.png"
+                bg = REPO_DIR / "public" / "movie_1.mp4"
+                make_cover(
+                    cover_path,
+                    title=paper_title,
+                    episode_number=ep_num,
+                    background=bg if bg.exists() else None,
+                    paper_url=episode.get("paper_url", ""),
+                )
 
             video_path = Path("/tmp") / f"ep{str(ep_num).zfill(3)}.mp4"
             make_video(mp3_path, cover_path, video_path)

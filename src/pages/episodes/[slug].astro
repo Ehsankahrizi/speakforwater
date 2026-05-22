@@ -42,6 +42,12 @@ const dateStr = new Intl.DateTimeFormat("en-US", {
       <h1>{episode.data.title}</h1>
       <p class="ep-desc">{episode.data.description}</p>
 
+      {episode.data.cover && (
+        <div class="cover-wrap">
+          <img src={episode.data.cover} alt={`Cover for Episode ${episode.data.episode_number}`} class="ep-cover" />
+        </div>
+      )}
+
       <div class="player-wrap">
         <AudioPlayer
           src={episode.data.audio_url}
@@ -143,6 +149,23 @@ const dateStr = new Intl.DateTimeFormat("en-US", {
     color: var(--c-ink-soft);
     line-height: 1.65;
     margin-bottom: 36px;
+  }
+
+  .cover-wrap {
+    margin-bottom: 28px;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--c-border);
+    max-width: 100%;
+  }
+
+  .ep-cover {
+    width: 100%;
+    height: auto;
+    display: block;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
   }
 
   .player-wrap {
