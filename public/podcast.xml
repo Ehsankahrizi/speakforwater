@@ -16,8 +16,19 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Fri, 22 May 2026 06:50:16 +0000</lastBuildDate>
+  <lastBuildDate>Fri, 22 May 2026 09:51:23 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 31: Artificial Sweeteners as Emerging Environmental Pollutants: Global Research Trends, Environmental Behavior, and Future Perspectives</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep031.mp3" length="29057402" type="audio/mpeg"/>
+      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep031.mp3</guid>
+      <pubDate></pubDate>
+      <itunes:episode>31</itunes:episode>
+      <itunes:duration>1210.697143</itunes:duration>
+      <description>SpeakForWater Episode 31: Artificial Sweeteners as Emerging Environmental Pollutants: Global Research Trends, Environmental Behavior, and Future Perspectives. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://www.mdpi.com/2073-4441/18/8/961/pdf?version=1776499626</description>
+    </item>
     <item>
       <title>Ep 30: Interpreting Satellite Rainfall Bias Correction Through a Rainfall–Runoff Framework in a Monsoon-Influenced River Basin: The Phetchaburi River Basin, Thailand</title>
       <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep030.mp3" length="32671077" type="audio/mpeg"/>
