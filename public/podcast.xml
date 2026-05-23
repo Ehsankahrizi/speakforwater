@@ -16,8 +16,19 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Fri, 22 May 2026 20:07:37 +0000</lastBuildDate>
+  <lastBuildDate>Sat, 23 May 2026 08:41:58 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 34: Spatio-Temporal Evolution and Associated Factors of Water Retention in Huaihe River Economic Belt</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep034.mp3" length="29058656" type="audio/mpeg"/>
+      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep034.mp3</guid>
+      <pubDate></pubDate>
+      <itunes:episode>34</itunes:episode>
+      <itunes:duration>1210.749388</itunes:duration>
+      <description>SpeakForWater Episode 34: Spatio-Temporal Evolution and Associated Factors of Water Retention in Huaihe River Economic Belt. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://www.mdpi.com/2073-4441/18/8/968/pdf?version=1776520505</description>
+    </item>
     <item>
       <title>Ep 33: Microbial Electrochemical Technologies in Wastewater Treatment: Scale-Up Challenges, Pilot Testing, and Practical Implementation</title>
       <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep033.mp3" length="20685889" type="audio/mpeg"/>
