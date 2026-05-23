@@ -16,8 +16,19 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Sat, 23 May 2026 08:41:58 +0000</lastBuildDate>
+  <lastBuildDate>Sat, 23 May 2026 14:05:44 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 35: Adjusting diurnal error in dielectric-based in situ soil moisture measurements via Fourier time-filtering using land surface model datasets</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep035.mp3" length="31618447" type="audio/mpeg"/>
+      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep035.mp3</guid>
+      <pubDate></pubDate>
+      <itunes:episode>35</itunes:episode>
+      <itunes:duration>1317.407347</itunes:duration>
+      <description>SpeakForWater Episode 35: Adjusting diurnal error in dielectric-based in situ soil moisture measurements via Fourier time-filtering using land surface model datasets. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://hess.copernicus.org/articles/30/2207/2026/hess-30-2207-2026.pdf</description>
+    </item>
     <item>
       <title>Ep 34: Spatio-Temporal Evolution and Associated Factors of Water Retention in Huaihe River Economic Belt</title>
       <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep034.mp3" length="29058656" type="audio/mpeg"/>
