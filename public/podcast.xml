@@ -16,8 +16,19 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Sat, 23 May 2026 14:05:44 +0000</lastBuildDate>
+  <lastBuildDate>Sat, 23 May 2026 19:33:46 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 36: Assessing Surface Water Quality Risks Under Climate Stress and Geopolitical Instability: An Information Systems Approach</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep036.mp3" length="26610460" type="audio/mpeg"/>
+      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep036.mp3</guid>
+      <pubDate></pubDate>
+      <itunes:episode>36</itunes:episode>
+      <itunes:duration>1108.741224</itunes:duration>
+      <description>SpeakForWater Episode 36: Assessing Surface Water Quality Risks Under Climate Stress and Geopolitical Instability: An Information Systems Approach. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://www.mdpi.com/2073-4441/18/9/996/pdf?version=1776863556</description>
+    </item>
     <item>
       <title>Ep 35: Adjusting diurnal error in dielectric-based in situ soil moisture measurements via Fourier time-filtering using land surface model datasets</title>
       <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep035.mp3" length="31618447" type="audio/mpeg"/>
