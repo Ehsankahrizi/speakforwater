@@ -16,8 +16,19 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Sun, 24 May 2026 14:03:34 +0000</lastBuildDate>
+  <lastBuildDate>Sun, 24 May 2026 19:41:39 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 39: Multi-Indicator Assessment of Hydrological Change Across Europe Using Satellite Observations</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep039.mp3" length="30010976" type="audio/mpeg"/>
+      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep039.mp3</guid>
+      <pubDate></pubDate>
+      <itunes:episode>39</itunes:episode>
+      <itunes:duration>1250.429388</itunes:duration>
+      <description>SpeakForWater Episode 39: Multi-Indicator Assessment of Hydrological Change Across Europe Using Satellite Observations. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://www.mdpi.com/2073-4441/18/8/986/pdf?version=1776777203</description>
+    </item>
     <item>
       <title>Ep 38: Mitigating Peak Edge Effects in Multi-Zone Irrigation: A Safety-Constrained Reinforcement Learning Approach with Short-Term Evapotranspiration Forecasting</title>
       <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep038.mp3" length="30587760" type="audio/mpeg"/>
