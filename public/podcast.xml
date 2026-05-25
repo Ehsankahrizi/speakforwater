@@ -16,8 +16,19 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Mon, 25 May 2026 10:33:45 +0000</lastBuildDate>
+  <lastBuildDate>Mon, 25 May 2026 15:38:44 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 41: Technical note: High Nash–Sutcliffe Efficiencies conceal poor simulations of interannual variance in seasonal regimes</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep041.mp3" length="28547074" type="audio/mpeg"/>
+      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep041.mp3</guid>
+      <pubDate></pubDate>
+      <itunes:episode>41</itunes:episode>
+      <itunes:duration>1189.433469</itunes:duration>
+      <description>SpeakForWater Episode 41: Technical note: High Nash–Sutcliffe Efficiencies conceal poor simulations of interannual variance in seasonal regimes. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://hess.copernicus.org/articles/30/2337/2026/hess-30-2337-2026.pdf</description>
+    </item>
     <item>
       <title>Ep 40: Systematic Assessment of Minimum Inter-Event Time Determination Methods and Precipitation Thresholds for Constructing Design-Critical Huff Hyetographs</title>
       <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep040.mp3" length="17308569" type="audio/mpeg"/>
