@@ -16,8 +16,19 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Thu, 28 May 2026 10:28:02 +0000</lastBuildDate>
+  <lastBuildDate>Thu, 28 May 2026 16:31:11 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 50: A Smart Agro-Modelling Framework for Maize Growth and Yield Assessment in a Mediterranean Climate</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep050.mp3" length="28718228" type="audio/mpeg"/>
+      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep050.mp3</guid>
+      <pubDate></pubDate>
+      <itunes:episode>50</itunes:episode>
+      <itunes:duration>1196.564898</itunes:duration>
+      <description>SpeakForWater Episode 50: A Smart Agro-Modelling Framework for Maize Growth and Yield Assessment in a Mediterranean Climate. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://www.mdpi.com/2073-4441/18/9/1015/pdf?version=1777026108</description>
+    </item>
     <item>
       <title>Ep 49: Municipal Carbon Footprint and Water Infrastructure: A Comparative Assessment of Emission Reduction Plans in Three Greek Municipalities</title>
       <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep049.mp3" length="33943136" type="audio/mpeg"/>
