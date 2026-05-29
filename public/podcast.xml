@@ -16,8 +16,19 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Thu, 28 May 2026 20:46:10 +0000</lastBuildDate>
+  <lastBuildDate>Fri, 29 May 2026 10:21:13 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 52: Chemical Characteristics and Suitability Assessment of Surface Water in the Area Surrounding the Nansi Lake</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep052.mp3" length="28800984" type="audio/mpeg"/>
+      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep052.mp3</guid>
+      <pubDate></pubDate>
+      <itunes:episode>52</itunes:episode>
+      <itunes:duration>1200.013061</itunes:duration>
+      <description>SpeakForWater Episode 52: Chemical Characteristics and Suitability Assessment of Surface Water in the Area Surrounding the Nansi Lake. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://doi.org/10.3390/w18091032</description>
+    </item>
     <item>
       <title>Ep 51: Investigation of the Mechanisms of Purification of Water Contaminated with Petroleum Products Using Plasma–Ozone Technology</title>
       <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep051.mp3" length="32941915" type="audio/mpeg"/>
