@@ -16,8 +16,19 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Fri, 29 May 2026 20:48:28 +0000</lastBuildDate>
+  <lastBuildDate>Sat, 30 May 2026 08:47:40 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 55: Hysteresis and Longitudinal Variation in Air–Water Temperature Relationships in the Han River Basin</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep055.mp3" length="24065089" type="audio/mpeg"/>
+      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep055.mp3</guid>
+      <pubDate></pubDate>
+      <itunes:episode>55</itunes:episode>
+      <itunes:duration>1002.684082</itunes:duration>
+      <description>SpeakForWater Episode 55: Hysteresis and Longitudinal Variation in Air–Water Temperature Relationships in the Han River Basin. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://www.mdpi.com/2073-4441/18/9/1013/pdf?version=1776998980</description>
+    </item>
     <item>
       <title>Ep 54: Turbidity Prediction in a Large, Shallow Lake Using Machine Learning</title>
       <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep054.mp3" length="30959534" type="audio/mpeg"/>
