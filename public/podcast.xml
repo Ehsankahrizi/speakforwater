@@ -16,8 +16,19 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Sat, 30 May 2026 19:39:35 +0000</lastBuildDate>
+  <lastBuildDate>Sun, 31 May 2026 09:08:44 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 58: A Synthesis of Compound Drought in Africa: Mechanisms, Hotspots, Impacts, and Future Projections</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep058.mp3" length="33765085" type="audio/mpeg"/>
+      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep058.mp3</guid>
+      <pubDate></pubDate>
+      <itunes:episode>58</itunes:episode>
+      <itunes:duration>1406.850612</itunes:duration>
+      <description>SpeakForWater Episode 58: A Synthesis of Compound Drought in Africa: Mechanisms, Hotspots, Impacts, and Future Projections. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://www.mdpi.com/2073-4441/18/9/1040/pdf?version=1777302756</description>
+    </item>
     <item>
       <title>Ep 57: Analysis of Hydrological Evolution and Drought–Flood Patterns in Dongting Lake Based on Improved Standardized Water-Level Index (ISWI)</title>
       <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep057.mp3" length="26308275" type="audio/mpeg"/>
