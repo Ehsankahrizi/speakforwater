@@ -16,8 +16,19 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Mon, 01 Jun 2026 18:09:15 +0000</lastBuildDate>
+  <lastBuildDate>Mon, 01 Jun 2026 21:53:41 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 63: Flood Characterisation in Lithuanian Lowland Rivers Using a Peaks-over-Threshold Approach</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep063.mp3" length="27422973" type="audio/mpeg"/>
+      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep063.mp3</guid>
+      <pubDate></pubDate>
+      <itunes:episode>63</itunes:episode>
+      <itunes:duration>1142.595918</itunes:duration>
+      <description>SpeakForWater Episode 63: Flood Characterisation in Lithuanian Lowland Rivers Using a Peaks-over-Threshold Approach. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://www.mdpi.com/2073-4441/18/9/1033/pdf?version=1777200945</description>
+    </item>
     <item>
       <title>Ep 62: Seaweed as a Sustainable Adsorbent for the Removal of Vancomycin from Water</title>
       <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep062.mp3" length="38342992" type="audio/mpeg"/>
