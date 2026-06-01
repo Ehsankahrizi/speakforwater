@@ -16,8 +16,19 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Sun, 31 May 2026 19:43:03 +0000</lastBuildDate>
+  <lastBuildDate>Mon, 01 Jun 2026 12:03:12 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 61: Water Quality and Footprint in the European Union Driven by Free Movement of People and Tourism</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep061.mp3" length="32325007" type="audio/mpeg"/>
+      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep061.mp3</guid>
+      <pubDate></pubDate>
+      <itunes:episode>61</itunes:episode>
+      <itunes:duration>1346.847347</itunes:duration>
+      <description>SpeakForWater Episode 61: Water Quality and Footprint in the European Union Driven by Free Movement of People and Tourism. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://www.mdpi.com/2073-4441/18/9/1048/pdf?version=1777375341</description>
+    </item>
     <item>
       <title>Ep 60: Risk Assessment of Dams and Reservoirs to Climate Change in the Mediterranean Region: The Case of Almopeos Dam in Northern Greece</title>
       <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep060.mp3" length="27412942" type="audio/mpeg"/>
