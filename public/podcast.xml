@@ -16,8 +16,19 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Tue, 02 Jun 2026 17:17:07 +0000</lastBuildDate>
+  <lastBuildDate>Tue, 02 Jun 2026 21:36:10 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 66: Seasonal Comparison of Groundwater Irrigation Suitability in the Coastal Zone of Northeastern Laizhou Bay Under the Influence of Seawater Intrusion</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep066.mp3" length="27254326" type="audio/mpeg"/>
+      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep066.mp3</guid>
+      <pubDate></pubDate>
+      <itunes:episode>66</itunes:episode>
+      <itunes:duration>1135.56898</itunes:duration>
+      <description>SpeakForWater Episode 66: Seasonal Comparison of Groundwater Irrigation Suitability in the Coastal Zone of Northeastern Laizhou Bay Under the Influence of Seawater Intrusion. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://doi.org/10.3390/w18091058</description>
+    </item>
     <item>
       <title>Ep 65: Improving Coastal Bottom Dissolved Oxygen Forecasting Using Tide-Derived Features with an LSTM-Based Model</title>
       <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep065.mp3" length="29320089" type="audio/mpeg"/>
