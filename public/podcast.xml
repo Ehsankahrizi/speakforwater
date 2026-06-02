@@ -16,8 +16,19 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Tue, 02 Jun 2026 11:02:47 +0000</lastBuildDate>
+  <lastBuildDate>Tue, 02 Jun 2026 17:17:07 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 65: Improving Coastal Bottom Dissolved Oxygen Forecasting Using Tide-Derived Features with an LSTM-Based Model</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep065.mp3" length="29320089" type="audio/mpeg"/>
+      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep065.mp3</guid>
+      <pubDate></pubDate>
+      <itunes:episode>65</itunes:episode>
+      <itunes:duration>1221.642449</itunes:duration>
+      <description>SpeakForWater Episode 65: Improving Coastal Bottom Dissolved Oxygen Forecasting Using Tide-Derived Features with an LSTM-Based Model. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://www.mdpi.com/2073-4441/18/9/1045/pdf?version=1777371553</description>
+    </item>
     <item>
       <title>Ep 64: Identifying Water Stress Hotspots in Chilean Patagonia Using Spatially Explicit Water Yield Modeling and Anthropization Proxies</title>
       <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep064.mp3" length="29615377" type="audio/mpeg"/>
