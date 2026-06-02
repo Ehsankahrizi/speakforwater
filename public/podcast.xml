@@ -16,8 +16,19 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Mon, 01 Jun 2026 21:53:41 +0000</lastBuildDate>
+  <lastBuildDate>Tue, 02 Jun 2026 11:02:47 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 64: Identifying Water Stress Hotspots in Chilean Patagonia Using Spatially Explicit Water Yield Modeling and Anthropization Proxies</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep064.mp3" length="29615377" type="audio/mpeg"/>
+      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep064.mp3</guid>
+      <pubDate></pubDate>
+      <itunes:episode>64</itunes:episode>
+      <itunes:duration>1233.946122</itunes:duration>
+      <description>SpeakForWater Episode 64: Identifying Water Stress Hotspots in Chilean Patagonia Using Spatially Explicit Water Yield Modeling and Anthropization Proxies. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://www.mdpi.com/2073-4441/18/9/1041/pdf?version=1777359704</description>
+    </item>
     <item>
       <title>Ep 63: Flood Characterisation in Lithuanian Lowland Rivers Using a Peaks-over-Threshold Approach</title>
       <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep063.mp3" length="27422973" type="audio/mpeg"/>
