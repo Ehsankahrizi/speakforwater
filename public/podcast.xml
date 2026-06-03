@@ -16,8 +16,19 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Tue, 02 Jun 2026 21:36:10 +0000</lastBuildDate>
+  <lastBuildDate>Wed, 03 Jun 2026 11:29:14 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 67: Urban Runoff Pollution Forecasting in the Yangtze River Basin: A Physics-Informed Data-Driven Framework Enhanced with Cluster-Based Transfer Learning</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep067.mp3" length="27497578" type="audio/mpeg"/>
+      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep067.mp3</guid>
+      <pubDate></pubDate>
+      <itunes:episode>67</itunes:episode>
+      <itunes:duration>1145.70449</itunes:duration>
+      <description>SpeakForWater Episode 67: Urban Runoff Pollution Forecasting in the Yangtze River Basin: A Physics-Informed Data-Driven Framework Enhanced with Cluster-Based Transfer Learning. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://doi.org/10.3390/w18091095</description>
+    </item>
     <item>
       <title>Ep 66: Seasonal Comparison of Groundwater Irrigation Suitability in the Coastal Zone of Northeastern Laizhou Bay Under the Influence of Seawater Intrusion</title>
       <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep066.mp3" length="27254326" type="audio/mpeg"/>
