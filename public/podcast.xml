@@ -16,8 +16,19 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Wed, 03 Jun 2026 17:19:06 +0000</lastBuildDate>
+  <lastBuildDate>Wed, 03 Jun 2026 21:38:55 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 69: Low-Temperature Stress-Induced Limitations in Mainstream Anammox Wastewater Treatment: Responses, Mechanisms, and Mitigation Strategies</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep069.mp3" length="35388230" type="audio/mpeg"/>
+      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep069.mp3</guid>
+      <pubDate></pubDate>
+      <itunes:episode>69</itunes:episode>
+      <itunes:duration>1474.481633</itunes:duration>
+      <description>SpeakForWater Episode 69: Low-Temperature Stress-Induced Limitations in Mainstream Anammox Wastewater Treatment: Responses, Mechanisms, and Mitigation Strategies. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://www.mdpi.com/2073-4441/18/9/1051/pdf?version=1777381174</description>
+    </item>
     <item>
       <title>Ep 68: Global Trends in Household Rainwater Tank Systems: A Multifaceted Review</title>
       <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep068.mp3" length="34155668" type="audio/mpeg"/>
