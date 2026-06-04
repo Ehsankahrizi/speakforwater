@@ -16,8 +16,19 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Thu, 04 Jun 2026 15:54:23 +0000</lastBuildDate>
+  <lastBuildDate>Thu, 04 Jun 2026 20:28:25 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 76: Occurrence and Seasonal Variability of Cyanotoxins in Mesotrophic and Eutrophic Water Bodies of Central Chile</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep076.mp3" length="35200775" type="audio/mpeg"/>
+      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep076.mp3</guid>
+      <pubDate></pubDate>
+      <itunes:episode>76</itunes:episode>
+      <itunes:duration>1466.67102</itunes:duration>
+      <description>SpeakForWater Episode 76: Occurrence and Seasonal Variability of Cyanotoxins in Mesotrophic and Eutrophic Water Bodies of Central Chile. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://doi.org/10.3390/w18091111</description>
+    </item>
     <item>
       <title>Ep 75: Climate change and irrigation expansion reshape the water pressure and upstream–downstream interactions in the Lancang–Mekong River Basin</title>
       <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep075.mp3" length="27911985" type="audio/mpeg"/>
