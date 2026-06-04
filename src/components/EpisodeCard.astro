@@ -101,7 +101,9 @@ const {
   /* ── Cover ─────────────────────────────────────────── */
   .card-cover {
     position: relative;
-    aspect-ratio: 16 / 9;
+    /* Matches the generated cover image (cover2.png template = 1250×1167)
+       so the full artwork shows without cropping. */
+    aspect-ratio: 1250 / 1167;
     background: var(--c-brand-light);
     overflow: hidden;
   }
