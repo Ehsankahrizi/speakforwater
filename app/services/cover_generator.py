@@ -1,20 +1,19 @@
 """
 SpeakForWater — cover_generator.py
 
-Uses public/cover.png as a template. The cover has THREE separately
-configurable regions, all in ABSOLUTE pixel coordinates:
+Uses public/cover2.png (or cover.png as fallback) as a template.
 
-  1. EPISODE region (label + big number) — top of TV
-  2. TITLE region (italic, auto-fitted)   — user's box (475,184)→(1101,434)
-  3. AUTHORS region (small)               — below the title
+LAYOUT (configurable via env vars):
+  - Episode label "EPISODE N" — centered at single point (EP_CENTER_X, EP_CENTER_Y)
+  - Title — bounding box (TITLE_PX_X1, TITLE_PX_Y1)→(TITLE_PX_X2, TITLE_PX_Y2)
 
-Override any region via env vars. Defaults below are tuned for the user's
-current cover.png template.
-
-Env vars (all integers, in pixels):
-  TITLE_PX_X1, TITLE_PX_Y1, TITLE_PX_X2, TITLE_PX_Y2
-  EP_PX_X1,    EP_PX_Y1,    EP_PX_X2,    EP_PX_Y2
-  AUTH_PX_X1,  AUTH_PX_Y1,  AUTH_PX_X2,  AUTH_PX_Y2
+DEFAULTS (user's cover2.png):
+  Title box   : (219, 191) → (1006, 1842)
+  Episode pt  : (613, 190)
+  Title font  : Montserrat ExtraBold   (fallback: DejaVu Serif BoldItalic)
+  Episode font: Montserrat SemiBold    (fallback: DejaVu Sans Bold)
+  Title color : #082B5A
+  Episode col : #00AEEF
 """
 
 from __future__ import annotations
@@ -33,44 +32,53 @@ from PIL import Image, ImageDraw, ImageFont
 
 log = logging.getLogger(__name__)
 
-WHITE = (245, 248, 252)
-SOFT_BLUE = (155, 200, 230)
-ACCENT = (255, 220, 110)
 
-SERIF_BOLD_CANDIDATES = [
+def _hex_to_rgb(hex_color: str) -> tuple[int, int, int]:
+    h = hex_color.lstrip("#")
+    if len(h) == 6:
+        return (int(h[0:2], 16), int(h[2:4], 16), int(h[4:6], 16))
+    return (255, 255, 255)
+
+
+# ── Colors ───────────────────────────────────────────────────────
+TITLE_COLOR = _hex_to_rgb(os.environ.get("TITLE_COLOR", "#082B5A"))
+EP_COLOR = _hex_to_rgb(os.environ.get("EP_COLOR", "#00AEEF"))
+
+# ── Title bounding box (absolute pixels) ─────────────────────────
+TITLE_PX_X1 = int(float(os.environ.get("TITLE_PX_X1", "219")))
+TITLE_PX_Y1 = int(float(os.environ.get("TITLE_PX_Y1", "191")))
+TITLE_PX_X2 = int(float(os.environ.get("TITLE_PX_X2", "1006")))
+TITLE_PX_Y2 = int(float(os.environ.get("TITLE_PX_Y2", "1842")))
+
+# ── Episode center anchor point (X, Y) ───────────────────────────
+EP_CENTER_X = int(float(os.environ.get("EP_CENTER_X", "613")))
+EP_CENTER_Y = int(float(os.environ.get("EP_CENTER_Y", "190")))
+
+# ── Font candidates (Montserrat first, fallback to DejaVu) ───────
+MONTSERRAT_EXTRABOLD_CANDIDATES = [
+    "/usr/share/fonts/truetype/montserrat/Montserrat-ExtraBold.ttf",
+    "/usr/share/fonts/truetype/montserrat/Montserrat-Bold.ttf",
+    "/usr/share/fonts/opentype/montserrat/Montserrat-ExtraBold.otf",
+    "assets/fonts/Montserrat-ExtraBold.ttf",
     "/usr/share/fonts/truetype/dejavu/DejaVuSerif-Bold.ttf",
     "/System/Library/Fonts/Supplemental/Times New Roman Bold.ttf",
 ]
-SERIF_ITALIC_CANDIDATES = [
-    "/usr/share/fonts/truetype/dejavu/DejaVuSerif-BoldItalic.ttf",
-    "/usr/share/fonts/truetype/dejavu/DejaVuSerif-Italic.ttf",
-    "/System/Library/Fonts/Supplemental/Times New Roman Italic.ttf",
-]
-SANS_BOLD_CANDIDATES = [
+MONTSERRAT_SEMIBOLD_CANDIDATES = [
+    "/usr/share/fonts/truetype/montserrat/Montserrat-SemiBold.ttf",
+    "/usr/share/fonts/truetype/montserrat/Montserrat-Medium.ttf",
+    "/usr/share/fonts/opentype/montserrat/Montserrat-SemiBold.otf",
+    "assets/fonts/Montserrat-SemiBold.ttf",
     "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",
     "/System/Library/Fonts/Helvetica.ttc",
 ]
 
-# ── TITLE box (user-defined, image pixels) ──
-TITLE_PX_X1 = int(os.environ.get("TITLE_PX_X1", "475"))
-TITLE_PX_Y1 = int(os.environ.get("TITLE_PX_Y1", "184"))
-TITLE_PX_X2 = int(os.environ.get("TITLE_PX_X2", "1101"))
-TITLE_PX_Y2 = int(os.environ.get("TITLE_PX_Y2", "434"))
-
-# ── EPISODE (label + number) box — placed ABOVE the title by default ──
-# Sits in the top-strip of the TV between the TV top and the title top.
-# Default: same x-range as title, y from ~70 (just below TV top) to TITLE_PX_Y1 - 6
-EP_PX_X1 = int(os.environ.get("EP_PX_X1", str(TITLE_PX_X1)))
-EP_PX_Y1 = int(os.environ.get("EP_PX_Y1", "70"))
-EP_PX_X2 = int(os.environ.get("EP_PX_X2", str(TITLE_PX_X2)))
-EP_PX_Y2 = int(os.environ.get("EP_PX_Y2", str(max(80, TITLE_PX_Y1 - 6))))
-
-# ── AUTHORS box — placed BELOW the title ──
-# Default: same x-range, y from TITLE_PX_Y2 + 6 to TITLE_PX_Y2 + 160 (clamped at draw time)
-AUTH_PX_X1 = int(os.environ.get("AUTH_PX_X1", str(TITLE_PX_X1)))
-AUTH_PX_Y1 = int(os.environ.get("AUTH_PX_Y1", str(TITLE_PX_Y2 + 6)))
-AUTH_PX_X2 = int(os.environ.get("AUTH_PX_X2", str(TITLE_PX_X2)))
-AUTH_PX_Y2 = int(os.environ.get("AUTH_PX_Y2", str(TITLE_PX_Y2 + 160)))
+# ── Template path candidates ─────────────────────────────────────
+COVER_CANDIDATES = [
+    "public/cover2.png",
+    "public/cover.png",
+    "./public/cover2.png",
+    "./public/cover.png",
+]
 
 _HTML_TAG_RE = re.compile(r"<[^>]+>")
 
@@ -117,8 +125,9 @@ def _fit_text(
     *,
     start_size: int,
     min_size: int,
-    line_spacing: int = 6,
+    line_spacing: int = 8,
 ):
+    """Find largest font size at which `text` fits within (max_width, max_height)."""
     size = start_size
     while size >= min_size:
         font = _font(size, candidates)
@@ -135,7 +144,6 @@ def _fit_text(
 
 
 def _draw_block_centered(draw, lines, font, box_cx: int, box_y1: int, box_y2: int, line_h: int, fill):
-    """Vertically center `lines` inside [box_y1, box_y2] and horizontally center on box_cx."""
     total_h = line_h * len(lines)
     y = box_y1 + max(0, (box_y2 - box_y1 - total_h) // 2)
     for line in lines:
@@ -179,7 +187,7 @@ def make_cover(
     template: Optional[Path] = None,
     cover_title: Optional[str] = None,
 ) -> Path:
-    """Render the cover PNG with three regions: EPISODE, TITLE, AUTHORS."""
+    """Render the cover PNG with episode at single anchor point + title in big bounding box."""
     title = _strip_html(title or "")
     cover_title = _strip_html(cover_title or "") or title
 
@@ -187,120 +195,73 @@ def make_cover(
     if template and template.exists():
         tpl_path = template
     else:
-        for candidate in [
-            Path("public/cover.png"),
-            Path("./public/cover.png"),
-            Path(os.environ.get("GITHUB_WORKSPACE", ".")) / "public" / "cover.png",
-        ]:
-            if candidate.exists():
-                tpl_path = candidate
+        tpl_path = None
+        for candidate in COVER_CANDIDATES:
+            p = Path(candidate)
+            if not p.is_absolute():
+                p2 = Path(os.environ.get("GITHUB_WORKSPACE", ".")) / candidate
+                if p2.exists():
+                    tpl_path = p2
+                    break
+            if p.exists():
+                tpl_path = p
                 break
-        else:
-            tpl_path = None
 
     if not tpl_path or not tpl_path.exists():
-        log.warning("No cover.png template found — solid blue fallback.")
-        img = Image.new("RGB", (1920, 1080), (10, 37, 64))
+        log.warning("No cover template found — solid blue fallback.")
+        img = Image.new("RGB", (1080, 1920), (10, 37, 64))
     else:
         img = Image.open(tpl_path).convert("RGB")
+        log.info(f"Using template: {tpl_path}")
 
     W, H = img.size
     draw = ImageDraw.Draw(img)
 
-    def _clamp_box(x1, y1, x2, y2):
-        return (
-            max(0, min(W - 1, x1)),
-            max(0, min(H - 1, y1)),
-            max(0, min(W, x2)),
-            max(0, min(H, y2)),
-        )
-
-    # ── Title box (user-defined) ──────────────────────────────────
-    t_x1, t_y1, t_x2, t_y2 = _clamp_box(TITLE_PX_X1, TITLE_PX_Y1, TITLE_PX_X2, TITLE_PX_Y2)
+    # Clamp title box
+    t_x1 = max(0, min(W - 1, TITLE_PX_X1))
+    t_y1 = max(0, min(H - 1, TITLE_PX_Y1))
+    t_x2 = max(0, min(W, TITLE_PX_X2))
+    t_y2 = max(0, min(H, TITLE_PX_Y2))
     t_w = max(50, t_x2 - t_x1)
     t_h = max(50, t_y2 - t_y1)
     t_cx = (t_x1 + t_x2) // 2
 
-    # ── Episode box (above title) ─────────────────────────────────
-    e_x1, e_y1, e_x2, e_y2 = _clamp_box(EP_PX_X1, EP_PX_Y1, EP_PX_X2, EP_PX_Y2)
-    e_w = max(50, e_x2 - e_x1)
-    e_h = max(40, e_y2 - e_y1)
-    e_cx = (e_x1 + e_x2) // 2
-
-    # ── Authors box (below title) ─────────────────────────────────
-    a_x1, a_y1, a_x2, a_y2 = _clamp_box(AUTH_PX_X1, AUTH_PX_Y1, AUTH_PX_X2, AUTH_PX_Y2)
-    a_w = max(50, a_x2 - a_x1)
-    a_h = max(20, a_y2 - a_y1)
-    a_cx = (a_x1 + a_x2) // 2
-
     log.info(
-        f"Cover regions — title=({t_x1},{t_y1})→({t_x2},{t_y2}) "
-        f"ep=({e_x1},{e_y1})→({e_x2},{e_y2}) "
-        f"authors=({a_x1},{a_y1})→({a_x2},{a_y2}) "
-        f"image={W}x{H}"
+        f"Cover: image={W}x{H}, title_box=({t_x1},{t_y1})→({t_x2},{t_y2}), "
+        f"ep_anchor=({EP_CENTER_X},{EP_CENTER_Y})"
     )
 
-    # Authors lookup
-    if (not authors or not year) and paper_url:
-        fetched_a, fetched_y = _fetch_authors_from_openalex(paper_url)
-        authors = authors or fetched_a
-        year = year or fetched_y
-
-    # ── 1) EPISODE box: small label + big number ──────────────────
-    # Use ~30% height for label, ~70% for the number, vertically stacked.
-    label_h_max = max(14, int(e_h * 0.32))
-    num_h_max = max(20, e_h - label_h_max - 4)
-
-    label_font, _, label_line_h = _fit_text(
-        draw, "EPISODE", SANS_BOLD_CANDIDATES,
-        max_width=e_w, max_height=label_h_max,
-        start_size=40, min_size=12, line_spacing=0,
+    # ── 1) EPISODE label at the single anchor point ──────────────
+    # We size the episode font so the "EPISODE N" string fits
+    # within ~60% of the title box width.
+    ep_text = f"EPISODE {episode_number}"
+    ep_max_width = int(t_w * 0.65)
+    ep_max_height = 130  # ample vertical room around the anchor
+    ep_font, ep_lines, ep_line_h = _fit_text(
+        draw, ep_text, MONTSERRAT_SEMIBOLD_CANDIDATES,
+        max_width=ep_max_width, max_height=ep_max_height,
+        start_size=72, min_size=18, line_spacing=0,
     )
-    num_font, _, num_line_h = _fit_text(
-        draw, str(episode_number), SANS_BOLD_CANDIDATES,
-        max_width=e_w, max_height=num_h_max,
-        start_size=130, min_size=24, line_spacing=0,
-    )
-    # Stack them: label, then number — start at e_y1
-    label_y_top = e_y1
-    num_y_top = label_y_top + label_line_h + 2
-    # Draw centered horizontally on e_cx
-    lb_bbox = draw.textbbox((0, 0), "EPISODE", font=label_font)
-    lb_w = lb_bbox[2] - lb_bbox[0]
-    draw.text((e_cx - lb_w / 2, label_y_top), "EPISODE", font=label_font, fill=SOFT_BLUE)
-    num_str = str(episode_number)
-    n_bbox = draw.textbbox((0, 0), num_str, font=num_font)
-    n_w = n_bbox[2] - n_bbox[0]
-    draw.text((e_cx - n_w / 2, num_y_top), num_str, font=num_font, fill=ACCENT)
+    # Draw centered on EP_CENTER_X, EP_CENTER_Y (anchor = middle-middle)
+    bbox = draw.textbbox((0, 0), ep_text, font=ep_font)
+    ep_w = bbox[2] - bbox[0]
+    ep_h = bbox[3] - bbox[1]
+    ep_x = EP_CENTER_X - ep_w // 2
+    ep_y = EP_CENTER_Y - ep_h // 2 - bbox[1]  # account for ascender offset
+    draw.text((ep_x, ep_y), ep_text, font=ep_font, fill=EP_COLOR)
 
-    # ── 2) TITLE box (italic, auto-fitted, vertically centered) ───
-    title_quoted = f"“{cover_title}”"
+    # ── 2) TITLE box (auto-fitted, vertically centered) ─────────
     title_font, title_lines, title_line_h = _fit_text(
-        draw, title_quoted, SERIF_ITALIC_CANDIDATES,
-        max_width=int(t_w * 0.95), max_height=t_h,
-        start_size=58, min_size=12, line_spacing=4,
+        draw, cover_title, MONTSERRAT_EXTRABOLD_CANDIDATES,
+        max_width=int(t_w * 0.94), max_height=t_h,
+        start_size=120, min_size=18, line_spacing=12,
     )
-    _draw_block_centered(draw, title_lines, title_font, t_cx, t_y1, t_y2, title_line_h, WHITE)
-
-    # ── 3) AUTHORS box (centered) ─────────────────────────────────
-    if authors and year:
-        authors_line = f"{authors} — {year}"
-    elif authors:
-        authors_line = authors
-    elif year:
-        authors_line = f"Published {year}"
-    else:
-        authors_line = ""
-
-    if authors_line:
-        auth_font, auth_lines, auth_line_h = _fit_text(
-            draw, authors_line, SERIF_BOLD_CANDIDATES,
-            max_width=int(a_w * 0.95), max_height=a_h,
-            start_size=28, min_size=10, line_spacing=4,
-        )
-        _draw_block_centered(draw, auth_lines, auth_font, a_cx, a_y1, a_y2, auth_line_h, SOFT_BLUE)
+    _draw_block_centered(draw, title_lines, title_font, t_cx, t_y1, t_y2, title_line_h, TITLE_COLOR)
 
     output_path.parent.mkdir(parents=True, exist_ok=True)
     img.save(output_path, "PNG", optimize=True)
-    log.info(f"Cover saved: {output_path.name} ({output_path.stat().st_size // 1024} KB)")
+    log.info(
+        f"Cover saved: {output_path.name} ({output_path.stat().st_size // 1024} KB), "
+        f"cover_title='{cover_title[:80]}'"
+    )
     return output_path
