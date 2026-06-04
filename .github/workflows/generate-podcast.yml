@@ -105,6 +105,8 @@ jobs:
           TITLE_PX_Y2: "542"
           TITLE_FONT_MAX: "48"
           EP_FONT_MAX: "34"
+          EP_CENTER_X: "613"
+          EP_CENTER_Y: "150"
           YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
           YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
           YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
