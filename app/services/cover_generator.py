@@ -1,19 +1,23 @@
 """
 SpeakForWater — cover_generator.py
 
-Uses public/cover2.png (or cover.png as fallback) as a template.
+Uses public/cover2.png (or cover.png) as a template. Writes:
+  - Episode label "EPISODE N" — centered at (EP_CENTER_X, EP_CENTER_Y)
+  - Title — fits inside box (TITLE_PX_X1,TITLE_PX_Y1)→(TITLE_PX_X2,TITLE_PX_Y2)
 
-LAYOUT (configurable via env vars):
-  - Episode label "EPISODE N" — centered at single point (EP_CENTER_X, EP_CENTER_Y)
-  - Title — bounding box (TITLE_PX_X1, TITLE_PX_Y1)→(TITLE_PX_X2, TITLE_PX_Y2)
+DEFAULTS (cover2.png):
+  Title box     : (219, 191) → (1006, 1842)
+  Episode pt    : (613, 190)
+  Title font    : Montserrat ExtraBold
+  Episode font  : Montserrat SemiBold
+  Title color   : #082B5A
+  Episode color : #00AEEF
 
-DEFAULTS (user's cover2.png):
-  Title box   : (219, 191) → (1006, 1842)
-  Episode pt  : (613, 190)
-  Title font  : Montserrat ExtraBold   (fallback: DejaVu Serif BoldItalic)
-  Episode font: Montserrat SemiBold    (fallback: DejaVu Sans Bold)
-  Title color : #082B5A
-  Episode col : #00AEEF
+Font sizes are AUTO-FITTED but capped to look reasonable:
+  - Title: max 64pt, min 18pt
+  - Episode: max 56pt, min 18pt
+
+Override caps via env: TITLE_FONT_MAX, EP_FONT_MAX.
 """
 
 from __future__ import annotations
@@ -40,28 +44,30 @@ def _hex_to_rgb(hex_color: str) -> tuple[int, int, int]:
     return (255, 255, 255)
 
 
-# ── Colors ───────────────────────────────────────────────────────
 TITLE_COLOR = _hex_to_rgb(os.environ.get("TITLE_COLOR", "#082B5A"))
 EP_COLOR = _hex_to_rgb(os.environ.get("EP_COLOR", "#00AEEF"))
 
-# ── Title bounding box (absolute pixels) ─────────────────────────
 TITLE_PX_X1 = int(float(os.environ.get("TITLE_PX_X1", "219")))
 TITLE_PX_Y1 = int(float(os.environ.get("TITLE_PX_Y1", "191")))
 TITLE_PX_X2 = int(float(os.environ.get("TITLE_PX_X2", "1006")))
 TITLE_PX_Y2 = int(float(os.environ.get("TITLE_PX_Y2", "1842")))
 
-# ── Episode center anchor point (X, Y) ───────────────────────────
 EP_CENTER_X = int(float(os.environ.get("EP_CENTER_X", "613")))
 EP_CENTER_Y = int(float(os.environ.get("EP_CENTER_Y", "190")))
 
-# ── Font candidates (Montserrat first, fallback to DejaVu) ───────
+# Font size caps (these are STRICT upper bounds; auto-shrinks below if needed)
+TITLE_FONT_MAX = int(os.environ.get("TITLE_FONT_MAX", "64"))
+TITLE_FONT_MIN = int(os.environ.get("TITLE_FONT_MIN", "18"))
+EP_FONT_MAX = int(os.environ.get("EP_FONT_MAX", "56"))
+EP_FONT_MIN = int(os.environ.get("EP_FONT_MIN", "18"))
+
 MONTSERRAT_EXTRABOLD_CANDIDATES = [
     "/usr/share/fonts/truetype/montserrat/Montserrat-ExtraBold.ttf",
     "/usr/share/fonts/truetype/montserrat/Montserrat-Bold.ttf",
     "/usr/share/fonts/opentype/montserrat/Montserrat-ExtraBold.otf",
     "assets/fonts/Montserrat-ExtraBold.ttf",
-    "/usr/share/fonts/truetype/dejavu/DejaVuSerif-Bold.ttf",
-    "/System/Library/Fonts/Supplemental/Times New Roman Bold.ttf",
+    "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",
+    "/System/Library/Fonts/Helvetica.ttc",
 ]
 MONTSERRAT_SEMIBOLD_CANDIDATES = [
     "/usr/share/fonts/truetype/montserrat/Montserrat-SemiBold.ttf",
@@ -72,7 +78,6 @@ MONTSERRAT_SEMIBOLD_CANDIDATES = [
     "/System/Library/Fonts/Helvetica.ttc",
 ]
 
-# ── Template path candidates ─────────────────────────────────────
 COVER_CANDIDATES = [
     "public/cover2.png",
     "public/cover.png",
@@ -127,7 +132,7 @@ def _fit_text(
     min_size: int,
     line_spacing: int = 8,
 ):
-    """Find largest font size at which `text` fits within (max_width, max_height)."""
+    """Find largest font size ≤ start_size at which text fits."""
     size = start_size
     while size >= min_size:
         font = _font(size, candidates)
@@ -153,29 +158,6 @@ def _draw_block_centered(draw, lines, font, box_cx: int, box_y1: int, box_y2: in
         y += line_h
 
 
-def _fetch_authors_from_openalex(paper_url: str) -> tuple[Optional[str], Optional[str]]:
-    if not paper_url:
-        return None, None
-    try:
-        api = "https://api.openalex.org/works/" + urllib.parse.quote(paper_url, safe="")
-        req = urllib.request.Request(api, headers={"User-Agent": "SpeakForWater/1.0"})
-        with urllib.request.urlopen(req, timeout=10) as r:
-            data = json.loads(r.read().decode("utf-8"))
-        names = []
-        for a in data.get("authorships", []) or []:
-            au = a.get("author") or {}
-            n = au.get("display_name")
-            if n:
-                names.append(n)
-        year = data.get("publication_year")
-        if names:
-            authors_str = ", ".join(names[:2]) + (", et al." if len(names) > 2 else "")
-            return authors_str, (str(year) if year else None)
-    except Exception as e:
-        log.info(f"Could not fetch authors from OpenAlex ({e}); skipping.")
-    return None, None
-
-
 def make_cover(
     output_path: Path,
     title: str,
@@ -187,9 +169,17 @@ def make_cover(
     template: Optional[Path] = None,
     cover_title: Optional[str] = None,
 ) -> Path:
-    """Render the cover PNG with episode at single anchor point + title in big bounding box."""
     title = _strip_html(title or "")
     cover_title = _strip_html(cover_title or "") or title
+
+    # DEBUG: explicit logging so we can see what was used
+    log.info(f"[cover] paper_title='{title[:120]}'")
+    log.info(f"[cover] cover_title='{cover_title[:120]}'")
+    if title == cover_title:
+        log.warning(
+            "[cover] cover_title == paper_title → title_simplifier likely failed "
+            "or wasn't called. Check earlier 'title_simplifier' log lines."
+        )
 
     # Resolve template path
     if template and template.exists():
@@ -212,7 +202,7 @@ def make_cover(
         img = Image.new("RGB", (1080, 1920), (10, 37, 64))
     else:
         img = Image.open(tpl_path).convert("RGB")
-        log.info(f"Using template: {tpl_path}")
+        log.info(f"[cover] template: {tpl_path}")
 
     W, H = img.size
     draw = ImageDraw.Draw(img)
@@ -227,41 +217,40 @@ def make_cover(
     t_cx = (t_x1 + t_x2) // 2
 
     log.info(
-        f"Cover: image={W}x{H}, title_box=({t_x1},{t_y1})→({t_x2},{t_y2}), "
+        f"[cover] image={W}x{H} title_box=({t_x1},{t_y1})→({t_x2},{t_y2}) "
         f"ep_anchor=({EP_CENTER_X},{EP_CENTER_Y})"
     )
 
-    # ── 1) EPISODE label at the single anchor point ──────────────
-    # We size the episode font so the "EPISODE N" string fits
-    # within ~60% of the title box width.
+    # ── 1) EPISODE label at the single anchor point ───────────────
     ep_text = f"EPISODE {episode_number}"
-    ep_max_width = int(t_w * 0.65)
-    ep_max_height = 130  # ample vertical room around the anchor
-    ep_font, ep_lines, ep_line_h = _fit_text(
+    ep_font, _ep_lines, _ep_line_h = _fit_text(
         draw, ep_text, MONTSERRAT_SEMIBOLD_CANDIDATES,
-        max_width=ep_max_width, max_height=ep_max_height,
-        start_size=72, min_size=18, line_spacing=0,
+        max_width=int(t_w * 0.55),
+        max_height=int(EP_FONT_MAX * 1.4),
+        start_size=EP_FONT_MAX, min_size=EP_FONT_MIN,
+        line_spacing=0,
     )
-    # Draw centered on EP_CENTER_X, EP_CENTER_Y (anchor = middle-middle)
     bbox = draw.textbbox((0, 0), ep_text, font=ep_font)
     ep_w = bbox[2] - bbox[0]
-    ep_h = bbox[3] - bbox[1]
+    ep_h_px = bbox[3] - bbox[1]
     ep_x = EP_CENTER_X - ep_w // 2
-    ep_y = EP_CENTER_Y - ep_h // 2 - bbox[1]  # account for ascender offset
+    ep_y = EP_CENTER_Y - ep_h_px // 2 - bbox[1]
     draw.text((ep_x, ep_y), ep_text, font=ep_font, fill=EP_COLOR)
 
-    # ── 2) TITLE box (auto-fitted, vertically centered) ─────────
+    # ── 2) TITLE box (auto-fitted, capped at TITLE_FONT_MAX) ─────
     title_font, title_lines, title_line_h = _fit_text(
         draw, cover_title, MONTSERRAT_EXTRABOLD_CANDIDATES,
-        max_width=int(t_w * 0.94), max_height=t_h,
-        start_size=120, min_size=18, line_spacing=12,
+        max_width=int(t_w * 0.92),
+        max_height=t_h,
+        start_size=TITLE_FONT_MAX, min_size=TITLE_FONT_MIN,
+        line_spacing=10,
     )
     _draw_block_centered(draw, title_lines, title_font, t_cx, t_y1, t_y2, title_line_h, TITLE_COLOR)
 
     output_path.parent.mkdir(parents=True, exist_ok=True)
     img.save(output_path, "PNG", optimize=True)
     log.info(
-        f"Cover saved: {output_path.name} ({output_path.stat().st_size // 1024} KB), "
-        f"cover_title='{cover_title[:80]}'"
+        f"[cover] saved: {output_path.name} ({output_path.stat().st_size // 1024} KB), "
+        f"title_font_size={title_font.size}, ep_font_size={ep_font.size}"
     )
     return output_path
