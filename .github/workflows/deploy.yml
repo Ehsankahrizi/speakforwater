@@ -8,7 +8,7 @@ on:
   # bot pushes commits using GITHUB_TOKEN (which by design does NOT trigger
   # the push event again, to prevent infinite loops).
   workflow_run:
-    workflows: ["Generate Podcast"]
+    workflows: ["Generate Podcast", "Regenerate Covers"]
     types: [completed]
 
 permissions:

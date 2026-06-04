@@ -1,0 +1,88 @@
+###############################################################################
+#  SpeakForWater — Regenerate Covers (manual)
+#
+#  Re-renders EVERY episode cover image with the current production logic so the
+#  whole archive is visually consistent:
+#    - cover2.png template + Montserrat fonts
+#    - Groq short, listener-friendly titles
+#    - production layout coordinates (same as generate-podcast.yml)
+#
+#  It commits the regenerated PNGs plus any `cover:` frontmatter back-fills.
+#  Deploy runs automatically afterwards (see deploy.yml workflow_run).
+#
+#  Trigger from: Actions → Regenerate Covers → Run workflow
+###############################################################################
+
+name: Regenerate Covers
+
+on:
+  workflow_dispatch:
+    inputs:
+      episodes:
+        description: "Space-separated episode numbers (blank = all)"
+        required: false
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: regenerate-covers
+  cancel-in-progress: false
+
+jobs:
+  regenerate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Montserrat fonts
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y fonts-montserrat || \
+            (mkdir -p ~/.fonts && cd ~/.fonts && \
+             wget -q https://github.com/JulietaUla/Montserrat/raw/master/fonts/ttf/Montserrat-ExtraBold.ttf && \
+             wget -q https://github.com/JulietaUla/Montserrat/raw/master/fonts/ttf/Montserrat-SemiBold.ttf && \
+             sudo mkdir -p /usr/share/fonts/truetype/montserrat && \
+             sudo cp ~/.fonts/Montserrat-*.ttf /usr/share/fonts/truetype/montserrat/ && \
+             sudo fc-cache -f)
+
+      - name: Install Python dependencies
+        run: pip install -r requirements.txt
+
+      - name: Regenerate covers
+        env:
+          # Cover layout — identical to generate-podcast.yml
+          TITLE_PX_X1: "219"
+          TITLE_PX_Y1: "191"
+          TITLE_PX_X2: "1006"
+          TITLE_PX_Y2: "542"
+          TITLE_FONT_MAX: "48"
+          EP_FONT_MAX: "34"
+          EP_CENTER_X: "613"
+          EP_CENTER_Y: "150"
+          # Groq Llama — short, listener-friendly cover titles
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+        run: python scripts/regenerate_covers.py ${{ inputs.episodes }}
+
+      - name: Commit & push regenerated covers
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add public/episodes/*.png public/episodes/*.json src/content/episodes/*.md
+          if git diff --cached --quiet; then
+            echo "No cover changes to commit."
+          else
+            git commit -m "Regenerate all episode covers (cover2 template + Groq short titles)"
+            git push
+          fi
