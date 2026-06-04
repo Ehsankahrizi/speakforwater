@@ -7,5 +7,6 @@
   "file_size_bytes": 31618447,
   "duration_seconds": 1317.407347,
   "description": "SpeakForWater Episode 35: Adjusting diurnal error in dielectric-based in situ soil moisture measurements via Fourier time-filtering using land surface model datasets. A podcast conversation between Anna and Ehsan discussing the latest water resources research.",
-  "cover": "/episodes/ep035.png"
+  "cover": "/episodes/ep035.png",
+  "cover_title": "Improving soil moisture measurements with new filtering techniques daily"
 }

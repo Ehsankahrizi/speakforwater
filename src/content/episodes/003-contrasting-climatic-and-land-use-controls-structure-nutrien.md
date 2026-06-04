@@ -5,6 +5,7 @@ description: "SpeakForWater Episode 3: Contrasting Climatic and Land-Use Control
 pub_date: 2026-05-09
 duration: "20 min"
 audio_url: "/episodes/ep003.mp3"
+cover: "/episodes/ep003.png"
 paper:
   title: "Contrasting Climatic and Land-Use Controls Structure Nutrient and Turbidity Regimes Across Mediterranean River Basins"
   url: "https://www.mdpi.com/2073-4441/18/6/728/pdf"

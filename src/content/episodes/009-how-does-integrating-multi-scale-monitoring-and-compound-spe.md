@@ -5,6 +5,7 @@ description: "SpeakForWater Episode 9: How does integrating multi-scale monitori
 pub_date: 2026-05-10
 duration: "21 min"
 audio_url: "/episodes/ep009.mp3"
+cover: "/episodes/ep009.png"
 paper:
   title: "How does integrating multi-scale monitoring and compound-specific isotope analysis improve the evaluation of <i>S</i> -metolachlor degradation in agro-ecosystems?"
   url: "https://hess.copernicus.org/articles/30/1291/2026/hess-30-1291-2026.pdf"

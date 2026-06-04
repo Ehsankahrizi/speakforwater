@@ -5,6 +5,7 @@ description: "SpeakForWater Episode 10: Synergistic impact of simultaneously ass
 pub_date: 2026-05-10
 duration: "23 min"
 audio_url: "/episodes/ep010.mp3"
+cover: "/episodes/ep010.png"
 paper:
   title: "Synergistic impact of simultaneously assimilating radar- and radiometer-based soil moisture retrievals on the performance of numerical weather prediction systems"
   url: "https://hess.copernicus.org/articles/30/1261/2026/hess-30-1261-2026.pdf"

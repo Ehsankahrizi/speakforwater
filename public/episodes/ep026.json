@@ -6,5 +6,7 @@
   "published_at": "2026-05-15T14:37:56.851399+00:00",
   "file_size_bytes": 33179524,
   "duration_seconds": 0,
-  "description": "SpeakForWater Episode 26: River intermittency: mapping and upscaling of water occurrence using unmanned aerial vehicle, Random Forest and remote sensing landscape attributes. A podcast conversation between Anna and Ehsan discussing the latest water resources research."
+  "description": "SpeakForWater Episode 26: River intermittency: mapping and upscaling of water occurrence using unmanned aerial vehicle, Random Forest and remote sensing landscape attributes. A podcast conversation between Anna and Ehsan discussing the latest water resources research.",
+  "cover": "/episodes/ep026.png",
+  "cover_title": "Mapping river flow with drones and satellite data together"
 }

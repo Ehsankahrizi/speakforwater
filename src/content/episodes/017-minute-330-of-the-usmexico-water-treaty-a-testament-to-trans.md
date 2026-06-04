@@ -5,6 +5,7 @@ description: "SpeakForWater Episode 17: Minute 330 of the US–Mexico Water Trea
 pub_date: 2026-05-12
 duration: "10 min"
 audio_url: "/episodes/ep017.mp3"
+cover: "/episodes/ep017.png"
 paper:
   title: "Minute 330 of the US–Mexico Water Treaty: A Testament to Transboundary Cooperation Amidst Drought in the Colorado River Basin"
   url: "https://doi.org/10.3390/w18070775"

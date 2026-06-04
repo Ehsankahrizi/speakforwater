@@ -5,6 +5,7 @@ description: "SpeakForWater Episode 15: Classifying pan-Arctic supra-permafrost 
 pub_date: 2026-05-11
 duration: "21 min"
 audio_url: "/episodes/ep015.mp3"
+cover: "/episodes/ep015.png"
 paper:
   title: "Classifying pan-Arctic supra-permafrost aquifer function under present and projected conditions"
   url: "https://doi.org/10.1088/1748-9326/ae358e"

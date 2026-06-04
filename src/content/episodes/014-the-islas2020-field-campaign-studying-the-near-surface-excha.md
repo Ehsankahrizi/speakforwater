@@ -5,6 +5,7 @@ description: "SpeakForWater Episode 14: The ISLAS2020 field campaign: studying t
 pub_date: 2026-05-11
 duration: "19 min"
 audio_url: "/episodes/ep014.mp3"
+cover: "/episodes/ep014.png"
 paper:
   title: "The ISLAS2020 field campaign: studying the near-surface exchange process of stable water isotopes during the arctic wintertime"
   url: "https://essd.copernicus.org/articles/18/1969/2026/essd-18-1969-2026.pdf"

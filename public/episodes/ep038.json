@@ -7,5 +7,6 @@
   "file_size_bytes": 30587760,
   "duration_seconds": 1274.462041,
   "description": "SpeakForWater Episode 38: Mitigating Peak Edge Effects in Multi-Zone Irrigation: A Safety-Constrained Reinforcement Learning Approach with Short-Term Evapotranspiration Forecasting. A podcast conversation between Anna and Ehsan discussing the latest water resources research.",
-  "cover": "/episodes/ep038.png"
+  "cover": "/episodes/ep038.png",
+  "cover_title": "Irrigation systems learn to save water at peak usage times"
 }

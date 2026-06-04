@@ -7,5 +7,6 @@
   "file_size_bytes": 29320089,
   "duration_seconds": 1221.642449,
   "description": "SpeakForWater Episode 65: Improving Coastal Bottom Dissolved Oxygen Forecasting Using Tide-Derived Features with an LSTM-Based Model. A podcast conversation between Anna and Ehsan discussing the latest water resources research.",
-  "cover": "/episodes/ep065.png"
+  "cover": "/episodes/ep065.png",
+  "cover_title": "Predicting coastal water oxygen levels with improved forecasting models"
 }

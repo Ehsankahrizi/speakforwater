@@ -5,6 +5,7 @@ description: "SpeakForWater Episode 24: Novel insights into deep groundwater exp
 pub_date: 2026-05-14
 duration: "10 min"
 audio_url: "/episodes/ep024.mp3"
+cover: "/episodes/ep024.png"
 paper:
   title: "Novel insights into deep groundwater exploration by geophysical estimation of hard rock permeability"
   url: "https://hess.copernicus.org/articles/30/1309/2026/hess-30-1309-2026.pdf"
