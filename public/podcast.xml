@@ -16,8 +16,19 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Thu, 04 Jun 2026 06:40:19 +0000</lastBuildDate>
+  <lastBuildDate>Thu, 04 Jun 2026 10:21:48 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 74: Assessing Flood Vulnerability of Landfills in Southern New Jersey: Incorporating Climate Change and Extreme Weather Impacts</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep074.mp3" length="27724530" type="audio/mpeg"/>
+      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep074.mp3</guid>
+      <pubDate></pubDate>
+      <itunes:episode>74</itunes:episode>
+      <itunes:duration>1155.160816</itunes:duration>
+      <description>SpeakForWater Episode 74: Assessing Flood Vulnerability of Landfills in Southern New Jersey: Incorporating Climate Change and Extreme Weather Impacts. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://doi.org/10.3390/w18091085</description>
+    </item>
     <item>
       <title>Ep 73: Wave Transmission and Ice Drift for Ice Floe Under Waves</title>
       <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep073.mp3" length="30730075" type="audio/mpeg"/>
