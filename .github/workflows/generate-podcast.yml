@@ -98,6 +98,13 @@ jobs:
       - name: Generate podcast episode
         env:
           GOOGLE_CREDENTIALS_JSON: ${{ secrets.GOOGLE_CREDENTIALS_JSON }}
+          # Cover layout (tuned by trial & error)
+          TITLE_PX_X1: "219"
+          TITLE_PX_Y1: "191"
+          TITLE_PX_X2: "1006"
+          TITLE_PX_Y2: "542"
+          TITLE_FONT_MAX: "48"
+          EP_FONT_MAX: "34"
           YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
           YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
           YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
