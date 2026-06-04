@@ -25,6 +25,7 @@ from __future__ import annotations
 
 import json
 import logging
+import os
 import re
 import sys
 import time
@@ -92,12 +93,19 @@ def regenerate(ep_num: int, total: int, idx: int) -> None:
         log.warning(f"[{idx}/{total}] ep{ep_num:03d}: empty title, skipping")
         return
 
-    # Short, plain-English cover title (None if Groq unavailable → full title).
-    cover_title = None
-    try:
-        cover_title = simplify_title(title)
-    except Exception as e:  # pragma: no cover
-        log.warning(f"ep{ep_num:03d}: title_simplifier error: {e}")
+    # Reuse the previously generated short title unless REROLL_TITLES=1.
+    # This lets us re-render covers (e.g. tweak layout) without changing the
+    # approved wording or spending Groq calls.
+    reroll = os.environ.get("REROLL_TITLES", "").strip().lower() in ("1", "true", "yes")
+    cover_title = data.get("cover_title")
+    if cover_title and not reroll:
+        log.info(f"ep{ep_num:03d}: reusing stored cover_title")
+    else:
+        cover_title = None
+        try:
+            cover_title = simplify_title(title)
+        except Exception as e:  # pragma: no cover
+            log.warning(f"ep{ep_num:03d}: title_simplifier error: {e}")
 
     out_png = EP_DIR / f"ep{ep_num:03d}.png"
     make_cover(

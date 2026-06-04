@@ -22,6 +22,11 @@ on:
         description: "Space-separated episode numbers (blank = all)"
         required: false
         type: string
+      reroll_titles:
+        description: "Regenerate short titles via Groq (off = keep existing wording)"
+        required: false
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -73,6 +78,7 @@ jobs:
           EP_CENTER_Y: "200"
           # Groq Llama — short, listener-friendly cover titles
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          REROLL_TITLES: ${{ inputs.reroll_titles }}
         run: python scripts/regenerate_covers.py ${{ inputs.episodes }}
 
       - name: Commit & push regenerated covers
