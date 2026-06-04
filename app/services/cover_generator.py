@@ -1,23 +1,20 @@
 """
 SpeakForWater — cover_generator.py
 
-Uses public/cover.png as a template. Writes inside an EXACT pixel region
-of the TV screen area:
+Uses public/cover.png as a template. The cover has THREE separately
+configurable regions, all in ABSOLUTE pixel coordinates:
 
-  Default (measured from the user's template):
-    top-left     = (475, 184)
-    bottom-right = (1101, 434)
+  1. EPISODE region (label + big number) — top of TV
+  2. TITLE region (italic, auto-fitted)   — user's box (475,184)→(1101,434)
+  3. AUTHORS region (small)               — below the title
 
-Override via env vars TV_PX_X1, TV_PX_Y1, TV_PX_X2, TV_PX_Y2 if you
-update the template.
+Override any region via env vars. Defaults below are tuned for the user's
+current cover.png template.
 
-Inside the TV region we draw, top-to-bottom:
-  - "EPISODE"
-  - episode number (large)
-  - simplified short title (italic, auto-fitted)
-  - authors + year (small)
-
-Font size auto-shrinks so nothing escapes the box.
+Env vars (all integers, in pixels):
+  TITLE_PX_X1, TITLE_PX_Y1, TITLE_PX_X2, TITLE_PX_Y2
+  EP_PX_X1,    EP_PX_Y1,    EP_PX_X2,    EP_PX_Y2
+  AUTH_PX_X1,  AUTH_PX_Y1,  AUTH_PX_X2,  AUTH_PX_Y2
 """
 
 from __future__ import annotations
@@ -54,12 +51,26 @@ SANS_BOLD_CANDIDATES = [
     "/System/Library/Fonts/Helvetica.ttc",
 ]
 
-# ABSOLUTE pixel boundaries of the TV inner area in the cover.png template.
-# Set via env or change defaults if your template changes.
-TV_PX_X1 = int(os.environ.get("TV_PX_X1", "475"))
-TV_PX_Y1 = int(os.environ.get("TV_PX_Y1", "184"))
-TV_PX_X2 = int(os.environ.get("TV_PX_X2", "1101"))
-TV_PX_Y2 = int(os.environ.get("TV_PX_Y2", "434"))
+# ── TITLE box (user-defined, image pixels) ──
+TITLE_PX_X1 = int(os.environ.get("TITLE_PX_X1", "475"))
+TITLE_PX_Y1 = int(os.environ.get("TITLE_PX_Y1", "184"))
+TITLE_PX_X2 = int(os.environ.get("TITLE_PX_X2", "1101"))
+TITLE_PX_Y2 = int(os.environ.get("TITLE_PX_Y2", "434"))
+
+# ── EPISODE (label + number) box — placed ABOVE the title by default ──
+# Sits in the top-strip of the TV between the TV top and the title top.
+# Default: same x-range as title, y from ~70 (just below TV top) to TITLE_PX_Y1 - 6
+EP_PX_X1 = int(os.environ.get("EP_PX_X1", str(TITLE_PX_X1)))
+EP_PX_Y1 = int(os.environ.get("EP_PX_Y1", "70"))
+EP_PX_X2 = int(os.environ.get("EP_PX_X2", str(TITLE_PX_X2)))
+EP_PX_Y2 = int(os.environ.get("EP_PX_Y2", str(max(80, TITLE_PX_Y1 - 6))))
+
+# ── AUTHORS box — placed BELOW the title ──
+# Default: same x-range, y from TITLE_PX_Y2 + 6 to TITLE_PX_Y2 + 160 (clamped at draw time)
+AUTH_PX_X1 = int(os.environ.get("AUTH_PX_X1", str(TITLE_PX_X1)))
+AUTH_PX_Y1 = int(os.environ.get("AUTH_PX_Y1", str(TITLE_PX_Y2 + 6)))
+AUTH_PX_X2 = int(os.environ.get("AUTH_PX_X2", str(TITLE_PX_X2)))
+AUTH_PX_Y2 = int(os.environ.get("AUTH_PX_Y2", str(TITLE_PX_Y2 + 160)))
 
 _HTML_TAG_RE = re.compile(r"<[^>]+>")
 
@@ -104,8 +115,8 @@ def _fit_text(
     max_width: int,
     max_height: int,
     *,
-    start_size: int = 64,
-    min_size: int = 14,
+    start_size: int,
+    min_size: int,
     line_spacing: int = 6,
 ):
     size = start_size
@@ -116,22 +127,22 @@ def _fit_text(
         line_h = ascent + descent + line_spacing
         total_h = line_h * len(lines)
         if total_h <= max_height:
-            return font, lines
+            return font, lines, line_h
         size -= 2
     font = _font(min_size, candidates)
-    return font, _wrap_lines(draw, text, font, max_width)
-
-
-def _draw_block(draw, lines, font, x_center: int, y_top: int, fill, line_spacing: int = 6) -> int:
     ascent, descent = font.getmetrics()
-    line_h = ascent + descent + line_spacing
-    y = y_top
+    return font, _wrap_lines(draw, text, font, max_width), ascent + descent + line_spacing
+
+
+def _draw_block_centered(draw, lines, font, box_cx: int, box_y1: int, box_y2: int, line_h: int, fill):
+    """Vertically center `lines` inside [box_y1, box_y2] and horizontally center on box_cx."""
+    total_h = line_h * len(lines)
+    y = box_y1 + max(0, (box_y2 - box_y1 - total_h) // 2)
     for line in lines:
         bbox = draw.textbbox((0, 0), line, font=font)
         w = bbox[2] - bbox[0]
-        draw.text((x_center - w / 2, y), line, font=font, fill=fill)
+        draw.text((box_cx - w / 2, y), line, font=font, fill=fill)
         y += line_h
-    return y
 
 
 def _fetch_authors_from_openalex(paper_url: str) -> tuple[Optional[str], Optional[str]]:
@@ -161,19 +172,14 @@ def make_cover(
     output_path: Path,
     title: str,
     episode_number: int,
-    background: Optional[Path] = None,   # ignored when cover.png exists
+    background: Optional[Path] = None,
     paper_url: str = "",
     authors: Optional[str] = None,
     year: Optional[str] = None,
     template: Optional[Path] = None,
-    cover_title: Optional[str] = None,   # short, listener-friendly title
+    cover_title: Optional[str] = None,
 ) -> Path:
-    """
-    Render a cover PNG. Writes inside the TV pixel region:
-      (TV_PX_X1, TV_PX_Y1) → (TV_PX_X2, TV_PX_Y2)
-    Use `cover_title` for a short version of the title (preferred for cover).
-    Falls back to `title` if `cover_title` is empty.
-    """
+    """Render the cover PNG with three regions: EPISODE, TITLE, AUTHORS."""
     title = _strip_html(title or "")
     cover_title = _strip_html(cover_title or "") or title
 
@@ -201,60 +207,82 @@ def make_cover(
     W, H = img.size
     draw = ImageDraw.Draw(img)
 
-    # Clamp TV pixel coords to image bounds
-    tv_x1 = max(0, min(W - 1, TV_PX_X1))
-    tv_y1 = max(0, min(H - 1, TV_PX_Y1))
-    tv_x2 = max(0, min(W, TV_PX_X2))
-    tv_y2 = max(0, min(H, TV_PX_Y2))
-    tv_w = tv_x2 - tv_x1
-    tv_h = tv_y2 - tv_y1
-    tv_cx = (tv_x1 + tv_x2) // 2
+    def _clamp_box(x1, y1, x2, y2):
+        return (
+            max(0, min(W - 1, x1)),
+            max(0, min(H - 1, y1)),
+            max(0, min(W, x2)),
+            max(0, min(H, y2)),
+        )
 
-    if tv_w < 50 or tv_h < 50:
-        log.warning(f"TV region too small ({tv_w}x{tv_h}); check TV_PX_* env vars.")
+    # ── Title box (user-defined) ──────────────────────────────────
+    t_x1, t_y1, t_x2, t_y2 = _clamp_box(TITLE_PX_X1, TITLE_PX_Y1, TITLE_PX_X2, TITLE_PX_Y2)
+    t_w = max(50, t_x2 - t_x1)
+    t_h = max(50, t_y2 - t_y1)
+    t_cx = (t_x1 + t_x2) // 2
 
-    # Fetch authors if missing
+    # ── Episode box (above title) ─────────────────────────────────
+    e_x1, e_y1, e_x2, e_y2 = _clamp_box(EP_PX_X1, EP_PX_Y1, EP_PX_X2, EP_PX_Y2)
+    e_w = max(50, e_x2 - e_x1)
+    e_h = max(40, e_y2 - e_y1)
+    e_cx = (e_x1 + e_x2) // 2
+
+    # ── Authors box (below title) ─────────────────────────────────
+    a_x1, a_y1, a_x2, a_y2 = _clamp_box(AUTH_PX_X1, AUTH_PX_Y1, AUTH_PX_X2, AUTH_PX_Y2)
+    a_w = max(50, a_x2 - a_x1)
+    a_h = max(20, a_y2 - a_y1)
+    a_cx = (a_x1 + a_x2) // 2
+
+    log.info(
+        f"Cover regions — title=({t_x1},{t_y1})→({t_x2},{t_y2}) "
+        f"ep=({e_x1},{e_y1})→({e_x2},{e_y2}) "
+        f"authors=({a_x1},{a_y1})→({a_x2},{a_y2}) "
+        f"image={W}x{H}"
+    )
+
+    # Authors lookup
     if (not authors or not year) and paper_url:
         fetched_a, fetched_y = _fetch_authors_from_openalex(paper_url)
         authors = authors or fetched_a
         year = year or fetched_y
 
-    # ── Vertical layout inside TV (top-padded) ────────────────────
-    pad_y = max(8, int(tv_h * 0.05))
-    inner_w = int(tv_w * 0.92)
-    label_h_max = max(14, int(tv_h * 0.16))
-    num_h_max = max(40, int(tv_h * 0.36))
-    title_h_max = max(40, int(tv_h * 0.34))
-    authors_h_max = max(14, int(tv_h * 0.18))
+    # ── 1) EPISODE box: small label + big number ──────────────────
+    # Use ~30% height for label, ~70% for the number, vertically stacked.
+    label_h_max = max(14, int(e_h * 0.32))
+    num_h_max = max(20, e_h - label_h_max - 4)
 
-    y = tv_y1 + pad_y
-
-    # EPISODE label
-    label_font, _ = _fit_text(
+    label_font, _, label_line_h = _fit_text(
         draw, "EPISODE", SANS_BOLD_CANDIDATES,
-        max_width=inner_w, max_height=label_h_max,
-        start_size=42, min_size=12,
+        max_width=e_w, max_height=label_h_max,
+        start_size=40, min_size=12, line_spacing=0,
     )
-    y = _draw_block(draw, ["EPISODE"], label_font, tv_cx, y, SOFT_BLUE, line_spacing=2)
-
-    # Episode number (large, accent)
-    num_font, _ = _fit_text(
+    num_font, _, num_line_h = _fit_text(
         draw, str(episode_number), SANS_BOLD_CANDIDATES,
-        max_width=inner_w, max_height=num_h_max,
-        start_size=140, min_size=30,
+        max_width=e_w, max_height=num_h_max,
+        start_size=130, min_size=24, line_spacing=0,
     )
-    y = _draw_block(draw, [str(episode_number)], num_font, tv_cx, y, ACCENT, line_spacing=2)
+    # Stack them: label, then number — start at e_y1
+    label_y_top = e_y1
+    num_y_top = label_y_top + label_line_h + 2
+    # Draw centered horizontally on e_cx
+    lb_bbox = draw.textbbox((0, 0), "EPISODE", font=label_font)
+    lb_w = lb_bbox[2] - lb_bbox[0]
+    draw.text((e_cx - lb_w / 2, label_y_top), "EPISODE", font=label_font, fill=SOFT_BLUE)
+    num_str = str(episode_number)
+    n_bbox = draw.textbbox((0, 0), num_str, font=num_font)
+    n_w = n_bbox[2] - n_bbox[0]
+    draw.text((e_cx - n_w / 2, num_y_top), num_str, font=num_font, fill=ACCENT)
 
-    # Short title (italic, auto-fitted)
-    quoted = f"“{cover_title}”"
-    title_font, title_lines = _fit_text(
-        draw, quoted, SERIF_ITALIC_CANDIDATES,
-        max_width=inner_w, max_height=title_h_max,
-        start_size=48, min_size=12,
+    # ── 2) TITLE box (italic, auto-fitted, vertically centered) ───
+    title_quoted = f"“{cover_title}”"
+    title_font, title_lines, title_line_h = _fit_text(
+        draw, title_quoted, SERIF_ITALIC_CANDIDATES,
+        max_width=int(t_w * 0.95), max_height=t_h,
+        start_size=58, min_size=12, line_spacing=4,
     )
-    y = _draw_block(draw, title_lines, title_font, tv_cx, y, WHITE, line_spacing=4)
+    _draw_block_centered(draw, title_lines, title_font, t_cx, t_y1, t_y2, title_line_h, WHITE)
 
-    # Authors + year, anchored to bottom of TV region
+    # ── 3) AUTHORS box (centered) ─────────────────────────────────
     if authors and year:
         authors_line = f"{authors} — {year}"
     elif authors:
@@ -265,24 +293,14 @@ def make_cover(
         authors_line = ""
 
     if authors_line:
-        auth_font, auth_lines = _fit_text(
+        auth_font, auth_lines, auth_line_h = _fit_text(
             draw, authors_line, SERIF_BOLD_CANDIDATES,
-            max_width=inner_w, max_height=authors_h_max,
-            start_size=26, min_size=10,
+            max_width=int(a_w * 0.95), max_height=a_h,
+            start_size=28, min_size=10, line_spacing=4,
         )
-        ascent, descent = auth_font.getmetrics()
-        line_h = ascent + descent + 4
-        block_h = line_h * len(auth_lines)
-        auth_y = tv_y2 - pad_y - block_h
-        # Don't overlap title
-        if auth_y < y + 6:
-            auth_y = y + 6
-        _draw_block(draw, auth_lines, auth_font, tv_cx, auth_y, SOFT_BLUE, line_spacing=4)
+        _draw_block_centered(draw, auth_lines, auth_font, a_cx, a_y1, a_y2, auth_line_h, SOFT_BLUE)
 
     output_path.parent.mkdir(parents=True, exist_ok=True)
     img.save(output_path, "PNG", optimize=True)
-    log.info(
-        f"Cover saved: {output_path.name} ({output_path.stat().st_size // 1024} KB), "
-        f"TV box=({tv_x1},{tv_y1})→({tv_x2},{tv_y2})"
-    )
+    log.info(f"Cover saved: {output_path.name} ({output_path.stat().st_size // 1024} KB)")
     return output_path
