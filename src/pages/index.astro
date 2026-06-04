@@ -5,7 +5,7 @@ import EpisodeCard from "../components/EpisodeCard.astro";
 import SubscribeButtons from "../components/SubscribeButtons.astro";
 
 const allEpisodes = (await getCollection("episodes")).sort(
-  (a, b) => b.data.pub_date.valueOf() - a.data.pub_date.valueOf()
+  (a, b) => b.data.episode_number - a.data.episode_number
 );
 
 // Show up to 9 most recent episodes on the homepage grid (no pinned featured)
