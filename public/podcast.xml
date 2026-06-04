@@ -16,8 +16,19 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Wed, 03 Jun 2026 21:38:55 +0000</lastBuildDate>
+  <lastBuildDate>Thu, 04 Jun 2026 03:08:09 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 70: A Data-Centric Approach to Water Quality Prediction: Sample Size, Augmentation, and Model Performance with a Focus on Ammonium in a Tropical Wetland</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep070.mp3" length="29592808" type="audio/mpeg"/>
+      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep070.mp3</guid>
+      <pubDate></pubDate>
+      <itunes:episode>70</itunes:episode>
+      <itunes:duration>1233.005714</itunes:duration>
+      <description>SpeakForWater Episode 70: A Data-Centric Approach to Water Quality Prediction: Sample Size, Augmentation, and Model Performance with a Focus on Ammonium in a Tropical Wetland. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://www.mdpi.com/2073-4441/18/9/1043/pdf?version=1777370772</description>
+    </item>
     <item>
       <title>Ep 69: Low-Temperature Stress-Induced Limitations in Mainstream Anammox Wastewater Treatment: Responses, Mechanisms, and Mitigation Strategies</title>
       <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep069.mp3" length="35388230" type="audio/mpeg"/>
