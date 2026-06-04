@@ -72,10 +72,10 @@ jobs:
           TITLE_PX_Y1: "191"
           TITLE_PX_X2: "1006"
           TITLE_PX_Y2: "542"
-          TITLE_FONT_MAX: "48"
+          TITLE_FONT_MAX: "52"
           EP_FONT_MAX: "34"
           EP_CENTER_X: "613"
-          EP_CENTER_Y: "200"
+          EP_CENTER_Y: "230"
           # Groq Llama — short, listener-friendly cover titles
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
           REROLL_TITLES: ${{ inputs.reroll_titles }}
