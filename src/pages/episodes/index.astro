@@ -4,7 +4,7 @@ import Layout from "../../layouts/Layout.astro";
 import EpisodeCard from "../../components/EpisodeCard.astro";
 
 const episodes = (await getCollection("episodes")).sort(
-  (a, b) => b.data.pub_date.valueOf() - a.data.pub_date.valueOf()
+  (a, b) => b.data.episode_number - a.data.episode_number
 );
 
 // Collect all unique topics
