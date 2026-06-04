@@ -5,6 +5,7 @@ description: "SpeakForWater Episode 27: Projections of Temperature-Driven Change
 pub_date: 2026-05-15
 duration: "10 min"
 audio_url: "/episodes/ep027.mp3"
+cover: "/episodes/ep027.png"
 paper:
   title: "Projections of Temperature-Driven Changes in Seasonal Ice Coverage Around Prince Edward Island, Canada"
   url: "https://www.mdpi.com/2073-4441/18/7/777/pdf?version=1774448140"

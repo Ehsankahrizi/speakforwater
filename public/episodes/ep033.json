@@ -7,5 +7,6 @@
   "file_size_bytes": 20685889,
   "duration_seconds": 861.884082,
   "description": "SpeakForWater Episode 33: Microbial Electrochemical Technologies in Wastewater Treatment: Scale-Up Challenges, Pilot Testing, and Practical Implementation. A podcast conversation between Anna and Ehsan discussing the latest water resources research.",
-  "cover": "/episodes/ep033.png"
+  "cover": "/episodes/ep033.png",
+  "cover_title": "Scaling up and testing new wastewater treatment technologies"
 }

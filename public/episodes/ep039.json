@@ -7,5 +7,6 @@
   "file_size_bytes": 30010976,
   "duration_seconds": 1250.429388,
   "description": "SpeakForWater Episode 39: Multi-Indicator Assessment of Hydrological Change Across Europe Using Satellite Observations. A podcast conversation between Anna and Ehsan discussing the latest water resources research.",
-  "cover": "/episodes/ep039.png"
+  "cover": "/episodes/ep039.png",
+  "cover_title": "Tracking hydrological changes across Europe with satellite data"
 }

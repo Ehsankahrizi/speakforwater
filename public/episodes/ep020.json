@@ -6,5 +6,7 @@
   "published_at": "2026-05-13T15:14:11.975440+00:00",
   "file_size_bytes": 34906114,
   "duration_seconds": 0,
-  "description": "SpeakForWater Episode 20: Ecological Selection of Anammox Bacteria Driven by Endogenous Carbon in a Low-Oxygen SBR Biofilm System Without External Carbon Addition. A podcast conversation between Anna and Ehsan discussing the latest water resources research."
+  "description": "SpeakForWater Episode 20: Ecological Selection of Anammox Bacteria Driven by Endogenous Carbon in a Low-Oxygen SBR Biofilm System Without External Carbon Addition. A podcast conversation between Anna and Ehsan discussing the latest water resources research.",
+  "cover": "/episodes/ep020.png",
+  "cover_title": "Bacteria in low-oxygen systems thrive on their own carbon"
 }

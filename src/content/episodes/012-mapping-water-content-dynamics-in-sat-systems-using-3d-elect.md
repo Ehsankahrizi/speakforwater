@@ -5,6 +5,7 @@ description: "SpeakForWater Episode 12: Mapping water content dynamics in SAT sy
 pub_date: 2026-05-11
 duration: "19 min"
 audio_url: "/episodes/ep012.mp3"
+cover: "/episodes/ep012.png"
 paper:
   title: "Mapping water content dynamics in SAT systems using 3D electrical tomography"
   url: "https://hess.copernicus.org/articles/30/877/2026/hess-30-877-2026.pdf"

@@ -5,6 +5,7 @@ description: "SpeakForWater Episode 8: Technical note: Analysis of concentration
 pub_date: 2026-05-10
 duration: "24 min"
 audio_url: "/episodes/ep008.mp3"
+cover: "/episodes/ep008.png"
 paper:
   title: "Technical note: Analysis of concentration-discharge hysteresis loops using Self-Organizing Maps"
   url: "https://hess.copernicus.org/articles/30/1359/2026/hess-30-1359-2026.pdf"

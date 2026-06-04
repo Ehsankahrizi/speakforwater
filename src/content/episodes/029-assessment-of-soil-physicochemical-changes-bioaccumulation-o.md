@@ -5,6 +5,7 @@ description: "SpeakForWater Episode 29: Assessment of Soil Physicochemical Chang
 pub_date: 2026-05-22
 duration: "21.0 min"
 audio_url: "/episodes/ep029.mp3"
+cover: "/episodes/ep029.png"
 paper:
   title: "Assessment of Soil Physicochemical Changes, Bioaccumulation of Potentially Toxic Elements, and Okra Growth Parameters Under Different Irrigation Systems with Treated Wastewater"
   url: "https://doi.org/10.3390/w18080981"

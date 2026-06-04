@@ -7,5 +7,6 @@
   "file_size_bytes": 29592808,
   "duration_seconds": 1233.005714,
   "description": "SpeakForWater Episode 70: A Data-Centric Approach to Water Quality Prediction: Sample Size, Augmentation, and Model Performance with a Focus on Ammonium in a Tropical Wetland. A podcast conversation between Anna and Ehsan discussing the latest water resources research.",
-  "cover": "/episodes/ep070.png"
+  "cover": "/episodes/ep070.png",
+  "cover_title": "Predicting water quality with better data in wetlands"
 }

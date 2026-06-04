@@ -5,6 +5,7 @@ description: "SpeakForWater Episode 20: Ecological Selection of Anammox Bacteria
 pub_date: 2026-05-13
 duration: "10 min"
 audio_url: "/episodes/ep020.mp3"
+cover: "/episodes/ep020.png"
 paper:
   title: "Ecological Selection of Anammox Bacteria Driven by Endogenous Carbon in a Low-Oxygen SBR Biofilm System Without External Carbon Addition"
   url: "https://www.mdpi.com/2073-4441/18/6/752/pdf"

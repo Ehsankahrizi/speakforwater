@@ -5,6 +5,7 @@ description: "SpeakForWater Episode 7: Impact of occurrence conditions on NO <su
 pub_date: 2026-05-10
 duration: "20 min"
 audio_url: "/episodes/ep007.mp3"
+cover: "/episodes/ep007.png"
 paper:
   title: "Impact of occurrence conditions on NO <sub>3</sub> <sup>−</sup> -N source apportionment in groundwater: insights from PCA-APCS-MLR and MixSIAR methods"
   url: "https://hess.copernicus.org/articles/30/1449/2026/hess-30-1449-2026.pdf"

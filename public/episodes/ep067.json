@@ -7,5 +7,6 @@
   "file_size_bytes": 27497578,
   "duration_seconds": 1145.70449,
   "description": "SpeakForWater Episode 67: Urban Runoff Pollution Forecasting in the Yangtze River Basin: A Physics-Informed Data-Driven Framework Enhanced with Cluster-Based Transfer Learning. A podcast conversation between Anna and Ehsan discussing the latest water resources research.",
-  "cover": "/episodes/ep067.png"
+  "cover": "/episodes/ep067.png",
+  "cover_title": "Forecasting urban pollution in the Yangtze River Basin effectively now"
 }

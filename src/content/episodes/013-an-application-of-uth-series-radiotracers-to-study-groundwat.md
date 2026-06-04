@@ -5,6 +5,7 @@ description: "SpeakForWater Episode 13: An application of U/Th-series radiotrace
 pub_date: 2026-05-11
 duration: "16 min"
 audio_url: "/episodes/ep013.mp3"
+cover: "/episodes/ep013.png"
 paper:
   title: "An application of U/Th-series radiotracers to study groundwater transport processes in the surficial and Upper Floridan Aquifer System in central Florida, USA"
   url: "https://public-pages-files-2025.frontiersin.org/journals/water/articles/10.3389/frwa.2025.1682438/pdf"

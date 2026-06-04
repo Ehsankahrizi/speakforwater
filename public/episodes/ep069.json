@@ -7,5 +7,6 @@
   "file_size_bytes": 35388230,
   "duration_seconds": 1474.481633,
   "description": "SpeakForWater Episode 69: Low-Temperature Stress-Induced Limitations in Mainstream Anammox Wastewater Treatment: Responses, Mechanisms, and Mitigation Strategies. A podcast conversation between Anna and Ehsan discussing the latest water resources research.",
-  "cover": "/episodes/ep069.png"
+  "cover": "/episodes/ep069.png",
+  "cover_title": "Low-temperature stress limits wastewater treatment with anammox process"
 }
