@@ -16,8 +16,19 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Thu, 04 Jun 2026 03:40:19 +0000</lastBuildDate>
+  <lastBuildDate>Thu, 04 Jun 2026 05:48:42 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 72: Sustainable Recirculating Aquaculture Systems (RAS): Development and Challenges</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep072.mp3" length="34809565" type="audio/mpeg"/>
+      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep072.mp3</guid>
+      <pubDate></pubDate>
+      <itunes:episode>72</itunes:episode>
+      <itunes:duration>1450.370612</itunes:duration>
+      <description>SpeakForWater Episode 72: Sustainable Recirculating Aquaculture Systems (RAS): Development and Challenges. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://www.mdpi.com/2073-4441/18/9/1093/pdf?version=1777712431</description>
+    </item>
     <item>
       <title>Ep 71: Multivariate Joint Risk Assessment of Small- and Medium-Sized River Flood in Arid and Semi-Arid Regions Based on Vine Copula</title>
       <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep071.mp3" length="29230437" type="audio/mpeg"/>
