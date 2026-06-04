@@ -5,6 +5,8 @@ interface Props {
   title: string;
   date: Date;
   duration: string;
+  audioUrl?: string;
+  cover?: string;
   journal?: string;
   topics?: string[];
   size?: "default" | "featured" | "compact";
@@ -15,99 +17,243 @@ const {
   number,
   title,
   duration,
+  audioUrl,
+  cover,
   journal,
   topics = [],
   size = "default",
 } = Astro.props;
 ---
 
-<a href={href} class:list={["card", `card--${size}`]}>
-  <div class="card-meta">
-    <span class="ep-number">Ep {number}</span>
-  </div>
+<article class:list={["card", `card--${size}`]} data-ep-card>
+  <div class="card-cover">
+    <a href={href} class="cover-link" aria-label={`Open episode ${number}: ${title}`}>
+      {cover ? (
+        <img src={cover} alt={`Cover for episode ${number}`} loading="lazy" decoding="async" />
+      ) : (
+        <span class="cover-fallback" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="40" height="40" fill="currentColor">
+            <path d="M12 2.5C12 2.5 5 10.5 5 15a7 7 0 0 0 14 0c0-4.5-7-12.5-7-12.5z" />
+          </svg>
+          <span class="cover-fallback-ep">EP {number}</span>
+        </span>
+      )}
+    </a>
 
-  <h3 class="card-title">{title}</h3>
-
-  <div class="card-footer">
-    <span class="duration">
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+    <span class="duration-badge">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
         <circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" />
       </svg>
       {duration}
     </span>
-    {journal && <span class="journal">{journal}</span>}
+
+    {audioUrl && (
+      <>
+        <button class="card-play" data-card-play aria-label={`Play episode ${number}`}>
+          <svg class="ico-play" viewBox="0 0 24 24" width="26" height="26" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z" /></svg>
+          <svg class="ico-pause" viewBox="0 0 24 24" width="26" height="26" fill="currentColor" aria-hidden="true" style="display:none"><path d="M6 5h4v14H6zM14 5h4v14h-4z" /></svg>
+        </button>
+        <div class="card-progress" data-card-progress>
+          <div class="card-progress-fill" data-card-fill></div>
+        </div>
+        <audio data-card-audio src={audioUrl} preload="none"></audio>
+      </>
+    )}
   </div>
 
-  {topics.length > 0 && (
-    <div class="topics">
-      {topics.slice(0, 3).map((t) => <span class="tag">{t}</span>)}
+  <div class="card-body">
+    <div class="card-meta">
+      <span class="ep-number">Episode {number}</span>
+      {journal && <span class="journal">{journal}</span>}
     </div>
-  )}
-</a>
+
+    <a href={href} class="title-link">
+      <h3 class="card-title">{title}</h3>
+    </a>
+
+    {topics.length > 0 && (
+      <div class="topics">
+        {topics.slice(0, 3).map((t) => <span class="tag">{t}</span>)}
+      </div>
+    )}
+  </div>
+</article>
 
 <style>
   .card {
-    display: block;
+    display: flex;
+    flex-direction: column;
     background: var(--c-bg-card);
     border: 1px solid var(--c-border);
     border-radius: var(--radius-lg);
-    padding: 22px;
-    transition: all 0.2s ease;
+    overflow: hidden;
+    transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
     color: inherit;
     height: 100%;
   }
 
   .card:hover {
     border-color: var(--c-brand);
-    transform: translateY(-2px);
-    box-shadow: var(--shadow);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  /* ── Cover ─────────────────────────────────────────── */
+  .card-cover {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    background: var(--c-brand-light);
+    overflow: hidden;
+  }
+
+  .cover-link {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .cover-link img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+  }
+
+  .card:hover .cover-link img { transform: scale(1.04); }
+
+  .cover-fallback {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--c-brand) 0%, var(--c-brand-deep) 100%);
+    color: rgba(255, 255, 255, 0.92);
+  }
+  .cover-fallback-ep {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+  }
+
+  /* duration pill */
+  .duration-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 9px;
+    border-radius: var(--radius-pill);
+    background: rgba(10, 37, 64, 0.72);
+    backdrop-filter: blur(6px);
+    color: #fff;
+    font-size: 0.72rem;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* play button */
+  .card-play {
+    position: absolute;
+    left: 14px;
+    bottom: 14px;
+    z-index: 3;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 0;
+    background: rgba(255, 255, 255, 0.94);
+    color: var(--c-brand);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 6px 18px rgba(10, 37, 64, 0.28);
+    opacity: 0;
+    transform: translateY(6px) scale(0.94);
+    transition: opacity 0.2s ease, transform 0.2s ease, background 0.15s ease;
+  }
+  .card-play svg { margin-left: 1px; }
+  .card-play .ico-pause { margin-left: 0; }
+
+  .card:hover .card-play,
+  .card:focus-within .card-play,
+  .card.is-playing .card-play {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  .card-play:hover { background: #fff; transform: translateY(0) scale(1.06); }
+  .card.is-playing .card-play { color: var(--c-brand-deep); }
+
+  /* progress bar across the bottom of the cover */
+  .card-progress {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 4px;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.28);
+    opacity: 0;
+    cursor: pointer;
+    transition: opacity 0.2s ease, height 0.15s ease;
+  }
+  .card.is-playing .card-progress,
+  .card:hover .card-progress { opacity: 1; }
+  .card.is-playing .card-progress { height: 6px; }
+  .card-progress-fill {
+    height: 100%;
+    width: 0;
+    background: var(--c-accent);
+    transition: width 0.1s linear;
+  }
+
+  /* ── Body ─────────────────────────────────────────── */
+  .card-body {
+    padding: 18px 20px 22px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
   }
 
   .card-meta {
     display: flex;
     align-items: center;
-    gap: 6px;
-    font-size: 0.74rem;
+    gap: 8px;
+    font-size: 0.72rem;
     text-transform: uppercase;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.07em;
     color: var(--c-ink-muted);
-    margin-bottom: 10px;
-  }
-
-  .ep-number {
-    color: var(--c-brand);
-    font-weight: 600;
-  }
-
-  .card-title {
-    font-family: var(--font-serif);
-    font-size: 1.1rem;
-    font-weight: 500;
-    line-height: 1.35;
-    margin: 0 0 14px;
-    color: var(--c-ink);
-  }
-
-  .card--featured .card-title { font-size: 1.55rem; }
-  .card--compact { padding: 16px 18px; }
-  .card--compact .card-title { font-size: 1rem; margin-bottom: 8px; }
-
-  .card-footer {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    font-size: 0.82rem;
-    color: var(--c-ink-muted);
+    margin-bottom: 9px;
     flex-wrap: wrap;
   }
+  .ep-number { color: var(--c-brand); font-weight: 700; }
+  .journal { font-style: italic; text-transform: none; letter-spacing: 0; }
 
-  .duration {
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
+  .title-link { color: inherit; }
+  .card-title {
+    font-family: var(--font-serif);
+    font-size: 1.12rem;
+    font-weight: 500;
+    line-height: 1.34;
+    margin: 0;
+    color: var(--c-ink);
+    transition: color 0.15s ease;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
+  .title-link:hover .card-title { color: var(--c-brand); }
 
-  .journal { font-style: italic; }
+  .card--featured .card-title { font-size: 1.45rem; -webkit-line-clamp: 4; }
 
   .topics {
     display: flex;
@@ -115,4 +261,67 @@ const {
     gap: 6px;
     margin-top: 14px;
   }
+
+  @media (max-width: 480px) {
+    .card-body { padding: 16px 16px 18px; }
+    .card-title { font-size: 1.05rem; }
+  }
 </style>
+
+<script>
+  // Inline mini-player for episode cards. Bundled once by Astro.
+  const cards = document.querySelectorAll<HTMLElement>("[data-ep-card]");
+
+  function pauseAllExcept(current: HTMLAudioElement | null) {
+    document.querySelectorAll<HTMLAudioElement>("audio").forEach((a) => {
+      if (a !== current && !a.paused) a.pause();
+    });
+  }
+
+  cards.forEach((card) => {
+    const audio = card.querySelector<HTMLAudioElement>("[data-card-audio]");
+    const btn = card.querySelector<HTMLButtonElement>("[data-card-play]");
+    const progress = card.querySelector<HTMLElement>("[data-card-progress]");
+    const fill = card.querySelector<HTMLElement>("[data-card-fill]");
+    const iconPlay = btn?.querySelector<SVGElement>(".ico-play");
+    const iconPause = btn?.querySelector<SVGElement>(".ico-pause");
+    if (!audio || !btn || !progress || !fill || !iconPlay || !iconPause) return;
+
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      if (audio.paused) {
+        pauseAllExcept(audio);
+        audio.play();
+      } else {
+        audio.pause();
+      }
+    });
+
+    audio.addEventListener("play", () => {
+      card.classList.add("is-playing");
+      iconPlay.style.display = "none";
+      iconPause.style.display = "";
+    });
+    audio.addEventListener("pause", () => {
+      card.classList.remove("is-playing");
+      iconPlay.style.display = "";
+      iconPause.style.display = "none";
+    });
+    audio.addEventListener("ended", () => {
+      card.classList.remove("is-playing");
+      iconPlay.style.display = "";
+      iconPause.style.display = "none";
+      fill.style.width = "0";
+    });
+    audio.addEventListener("timeupdate", () => {
+      if (!audio.duration) return;
+      fill.style.width = `${(audio.currentTime / audio.duration) * 100}%`;
+    });
+
+    progress.addEventListener("click", (e) => {
+      if (!audio.duration) return;
+      const rect = progress.getBoundingClientRect();
+      audio.currentTime = ((e.clientX - rect.left) / rect.width) * audio.duration;
+    });
+  });
+</script>

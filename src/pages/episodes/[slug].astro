@@ -27,26 +27,43 @@ const dateStr = new Intl.DateTimeFormat("en-US", {
   description={episode.data.description}
 >
   <article class="episode">
-    <div class="container-narrow">
+    <div class="container">
       <a href="/episodes" class="back-link">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
         All episodes
       </a>
 
-      <div class="ep-meta">
-        <span class="ep-num">Episode {episode.data.episode_number}</span>
-        <span class="dot">·</span>
-        <span>{episode.data.duration}</span>
-      </div>
-
-      <h1>{episode.data.title}</h1>
-      <p class="ep-desc">{episode.data.description}</p>
-
-      {episode.data.cover && (
-        <div class="cover-wrap">
-          <img src={episode.data.cover} alt={`Cover for Episode ${episode.data.episode_number}`} class="ep-cover" />
+      <header class="ep-hero">
+        <div class="ep-hero-media">
+          {episode.data.cover ? (
+            <div class="cover-wrap">
+              <img src={episode.data.cover} alt={`Cover for Episode ${episode.data.episode_number}`} class="ep-cover" />
+            </div>
+          ) : (
+            <div class="cover-wrap cover-wrap--fallback" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="56" height="56" fill="currentColor"><path d="M12 2.5C12 2.5 5 10.5 5 15a7 7 0 0 0 14 0c0-4.5-7-12.5-7-12.5z" /></svg>
+              <span>EP {episode.data.episode_number}</span>
+            </div>
+          )}
         </div>
-      )}
+
+        <div class="ep-hero-text">
+          <div class="ep-meta">
+            <span class="ep-num">Episode {episode.data.episode_number}</span>
+            <span class="dot">·</span>
+            <span>{episode.data.duration}</span>
+          </div>
+
+          <h1>{episode.data.title}</h1>
+          <p class="ep-desc">{episode.data.description}</p>
+
+          {episode.data.topics.length > 0 && (
+            <div class="topics-row">
+              {episode.data.topics.map((t) => <span class="tag">{t}</span>)}
+            </div>
+          )}
+        </div>
+      </header>
 
       <div class="player-wrap">
         <AudioPlayer
@@ -56,12 +73,7 @@ const dateStr = new Intl.DateTimeFormat("en-US", {
         />
       </div>
 
-      {episode.data.topics.length > 0 && (
-        <div class="topics-row">
-          {episode.data.topics.map((t) => <span class="tag">{t}</span>)}
-        </div>
-      )}
-
+      <div class="ep-body">
       <div class="paper-card">
         <span class="eyebrow">Featured paper</span>
         <h3>{episode.data.paper.title}</h3>
@@ -107,13 +119,14 @@ const dateStr = new Intl.DateTimeFormat("en-US", {
           </div>
         </details>
       )}
+      </div>
     </div>
   </article>
 </Layout>
 
 <style>
   .episode {
-    padding: 48px 0 96px;
+    padding: 40px 0 96px;
   }
 
   .back-link {
@@ -122,10 +135,54 @@ const dateStr = new Intl.DateTimeFormat("en-US", {
     gap: 6px;
     font-size: 0.88rem;
     color: var(--c-ink-muted);
-    margin-bottom: 32px;
+    margin-bottom: 28px;
   }
 
   .back-link:hover { color: var(--c-brand); }
+
+  /* ── Hero: cover + title side by side on desktop ─────── */
+  .ep-hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+    gap: 40px;
+    align-items: center;
+    margin-bottom: 32px;
+  }
+
+  .ep-hero-media { min-width: 0; }
+
+  .cover-wrap {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--c-border);
+  }
+
+  .cover-wrap--fallback {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    aspect-ratio: 16 / 9;
+    background: linear-gradient(135deg, var(--c-brand) 0%, var(--c-brand-deep) 100%);
+    color: rgba(255, 255, 255, 0.92);
+  }
+  .cover-wrap--fallback span {
+    font-family: var(--font-mono);
+    font-weight: 600;
+    letter-spacing: 0.12em;
+  }
+
+  .ep-cover {
+    width: 100%;
+    height: auto;
+    display: block;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+  }
+
+  .ep-hero-text { min-width: 0; }
 
   .ep-meta {
     display: flex;
@@ -145,45 +202,32 @@ const dateStr = new Intl.DateTimeFormat("en-US", {
   h1 { margin-bottom: 18px; }
 
   .ep-desc {
-    font-size: 1.18rem;
+    font-size: 1.12rem;
     color: var(--c-ink-soft);
-    line-height: 1.65;
-    margin-bottom: 36px;
-  }
-
-  .cover-wrap {
-    margin-bottom: 28px;
-    border-radius: var(--radius-lg);
-    overflow: hidden;
-    box-shadow: var(--shadow);
-    border: 1px solid var(--c-border);
-    max-width: 100%;
-  }
-
-  .ep-cover {
-    width: 100%;
-    height: auto;
-    display: block;
-    aspect-ratio: 16 / 9;
-    object-fit: cover;
+    line-height: 1.6;
+    margin-bottom: 22px;
   }
 
   .player-wrap {
-    margin-bottom: 24px;
+    margin-bottom: 44px;
   }
 
   .topics-row {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
-    margin-bottom: 36px;
+  }
+
+  /* ── Body (wider reading column) ─────────────────────── */
+  .ep-body {
+    max-width: 860px;
   }
 
   .paper-card {
     background: var(--c-brand-light);
     border-radius: var(--radius-lg);
     padding: 24px 28px;
-    margin: 36px 0;
+    margin: 0 0 36px;
   }
 
   .paper-card h3 {
@@ -330,5 +374,24 @@ const dateStr = new Intl.DateTimeFormat("en-US", {
     color: var(--c-ink-muted);
     font-size: 0.95rem;
     line-height: 1.7;
+  }
+
+  /* ── Responsive ─────────────────────────────────────── */
+  @media (max-width: 860px) {
+    .ep-hero {
+      grid-template-columns: 1fr;
+      gap: 24px;
+      align-items: start;
+    }
+    .ep-hero-media { max-width: 520px; }
+    .player-wrap { margin-bottom: 36px; }
+  }
+
+  @media (max-width: 540px) {
+    .episode { padding: 28px 0 72px; }
+    .back-link { margin-bottom: 20px; }
+    .ep-desc { font-size: 1.05rem; }
+    .paper-card { padding: 20px; }
+    .prose { font-size: 1rem; }
   }
 </style>

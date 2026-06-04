@@ -213,6 +213,20 @@ def commit_episode(episode: dict, mp3_path: Path) -> str:
     dest_cover = EPISODES_DIR / cover_filename
     bg = REPO_DIR / "public" / "movie_1.mp4"
     cover_generated = False
+
+    # Short, listener-friendly title for the cover (Groq Llama). Falls back
+    # to the full paper title if GROQ_API_KEY is unset or the call fails.
+    cover_title = None
+    try:
+        from app.services.title_simplifier import simplify_title
+        cover_title = simplify_title(episode["paper_title"])
+        if cover_title:
+            logger.info(f"Cover short title: {cover_title!r}")
+        else:
+            logger.warning("Short title unavailable; cover will use full paper title.")
+    except Exception as e:
+        logger.warning(f"title_simplifier error: {e}; using full paper title.")
+
     try:
         make_cover(
             output_path=dest_cover,
@@ -220,6 +234,7 @@ def commit_episode(episode: dict, mp3_path: Path) -> str:
             episode_number=ep_num,
             background=bg if bg.exists() else None,
             paper_url=episode.get("paper_url", ""),
+            cover_title=cover_title,
         )
         logger.info(f"Generated and saved cover to {dest_cover}")
         cover_generated = True
