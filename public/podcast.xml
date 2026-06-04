@@ -16,8 +16,19 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Thu, 04 Jun 2026 05:48:42 +0000</lastBuildDate>
+  <lastBuildDate>Thu, 04 Jun 2026 06:40:19 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 73: Wave Transmission and Ice Drift for Ice Floe Under Waves</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep073.mp3" length="30730075" type="audio/mpeg"/>
+      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep073.mp3</guid>
+      <pubDate></pubDate>
+      <itunes:episode>73</itunes:episode>
+      <itunes:duration>1280.391837</itunes:duration>
+      <description>SpeakForWater Episode 73: Wave Transmission and Ice Drift for Ice Floe Under Waves. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://www.mdpi.com/2073-4441/18/9/1091/pdf?version=1777709187</description>
+    </item>
     <item>
       <title>Ep 72: Sustainable Recirculating Aquaculture Systems (RAS): Development and Challenges</title>
       <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep072.mp3" length="34809565" type="audio/mpeg"/>
