@@ -1,21 +1,20 @@
 """
 SpeakForWater — title_simplifier.py
 
-Uses Groq (free, open-source Llama 3.1) to turn a technical paper title
-into a short, listener-friendly version suitable for the cover image.
+Uses Groq (free, open-source Llama 3.1) to convert a technical paper
+title into a short, listener-friendly version (8–10 words) for the
+cover image.
 
 Examples:
   Technical : "Global Trends in Household Rainwater Tank Systems: A
                Multifaceted Review"
-  Cover     : "Rainwater tanks at home — what the science says"
-
-  Technical : "Spatio-Temporal Evolution of Land-Use Patterns and Their
-               Effects on Groundwater Recharge in Semi-Arid Regions"
-  Cover     : "How land use is reshaping our groundwater"
+  Cover     : "Household rainwater tanks: a global review for homeowners"
 
 Environment:
-  GROQ_API_KEY     — required (already set as GitHub secret)
-  COVER_TITLE_MODEL — default llama-3.1-8b-instant
+  GROQ_API_KEY              — required
+  COVER_TITLE_MODEL         — default llama-3.1-8b-instant
+  COVER_TITLE_MAX_CHARS     — default 100
+  COVER_TITLE_TARGET_WORDS  — default 9 (range 8–10)
 """
 
 from __future__ import annotations
@@ -31,73 +30,61 @@ log = logging.getLogger(__name__)
 
 GROQ_API_KEY = os.environ.get("GROQ_API_KEY", "")
 MODEL = os.environ.get("COVER_TITLE_MODEL", "llama-3.1-8b-instant")
-
-# Limit on cover title length (in characters); generator will try to stay
-# below this. 80 fits comfortably inside the TV box at the default font.
-MAX_CHARS = int(os.environ.get("COVER_TITLE_MAX_CHARS", "80"))
+MAX_CHARS = int(os.environ.get("COVER_TITLE_MAX_CHARS", "100"))
+TARGET_WORDS = int(os.environ.get("COVER_TITLE_TARGET_WORDS", "9"))
 
 SYSTEM = """You rewrite scientific paper titles into short, plain-English titles for the cover image of a daily water-research podcast called SpeakForWater.
 
 GOALS
-- Convey what the paper is REALLY about in language a farmer, homeowner,
-  or city worker can understand at a glance.
-- 4 to 9 words. Maximum ~80 characters.
-- No jargon, no acronyms, no measurement units.
-- Active and concrete, not abstract.
+- 8 to 10 words. Always. Not shorter, not longer.
+- Plain language a farmer, homeowner, or city worker can understand at a glance.
+- No jargon, no acronyms, no measurement units, no chemical formulas.
+- Concrete, active, and informative — not abstract.
 - No quotation marks around the result.
 - No trailing period.
-- Sentence case (Capitalize first word; everything else lowercase
-  except proper nouns).
+- Sentence case (only first word and proper nouns capitalised).
 
 EXAMPLES
-Technical: "Spatio-Temporal Evolution of Land-Use Patterns and Their
-            Effects on Groundwater Recharge"
-Cover    : How land use shapes our groundwater
+Technical: "Spatio-Temporal Evolution of Land-Use Patterns and Their Effects on Groundwater Recharge"
+Cover    : How land use is reshaping groundwater across regions today
 
-Technical: "Global Trends in Household Rainwater Tank Systems: A
-            Multifaceted Review"
-Cover    : Rainwater tanks at home, explained
+Technical: "Global Trends in Household Rainwater Tank Systems: A Multifaceted Review"
+Cover    : Household rainwater tanks: a global review for homeowners
 
-Technical: "Microplastic Contamination in Drinking Water from
-            Hydraulic Fracturing Sites"
-Cover    : Microplastics in tap water near fracking sites
+Technical: "Microplastic Contamination in Drinking Water from Hydraulic Fracturing Sites"
+Cover    : Tiny plastics in tap water from oil fracking sites
 
-Return ONLY the short title. No explanation, no quotes, no period."""
+Technical: "A Data-Centric Approach to Water Quality Prediction with a Focus on Ammonium"
+Cover    : Predicting water quality with better data, focused on ammonium
+
+Return ONLY the short title (8–10 words). No explanation, no quotes, no period."""
 
 USER = """Original paper title:
 {title}
 
-Return ONLY the short, plain-English cover title (4-9 words)."""
+Return ONLY the short, plain-English cover title (exactly 8 to 10 words)."""
 
 
 def _clean(text: str) -> str:
-    """Strip quotes, extra whitespace, trailing punctuation."""
     if not text:
         return ""
     t = text.strip()
-    # Remove surrounding quotes/braces
     for ch in ['"', "'", "“", "”", "‘", "’", "`", "*"]:
         t = t.strip(ch).strip()
-    # Cap length cleanly at a word boundary
     if len(t) > MAX_CHARS:
         cut = t[:MAX_CHARS].rsplit(" ", 1)[0]
         t = cut.rstrip(",;:.") + "…"
-    # Remove trailing period (cover doesn't need it)
     t = t.rstrip(".")
-    # Collapse internal spaces
     t = re.sub(r"\s+", " ", t)
     return t
 
 
 def simplify_title(original_title: str) -> Optional[str]:
-    """Return a short, listener-friendly version of the paper title.
-
-    Returns None on failure (caller should fall back to the original).
-    """
+    """Return a short, listener-friendly title (8-10 words). None on failure."""
     if not original_title or not original_title.strip():
         return None
     if not GROQ_API_KEY:
-        log.warning("GROQ_API_KEY not set; returning original title.")
+        log.warning("GROQ_API_KEY not set; title_simplifier returning None.")
         return None
 
     try:
@@ -108,16 +95,17 @@ def simplify_title(original_title: str) -> Optional[str]:
                 {"role": "system", "content": SYSTEM},
                 {"role": "user", "content": USER.format(title=original_title.strip())},
             ],
-            max_tokens=60,
+            max_tokens=80,
             temperature=0.3,
         )
         raw = (resp.choices[0].message.content or "").strip()
         short = _clean(raw)
-        if not short or len(short) < 6:
-            log.warning(f"Simplifier returned too-short output: {raw!r}")
+        if not short or len(short) < 10:
+            log.warning(f"title_simplifier returned too-short output: {raw!r}")
             return None
-        log.info(f"Cover title: {original_title!r} → {short!r}")
+        word_count = len(short.split())
+        log.info(f"Cover title ({word_count} words): {original_title!r} → {short!r}")
         return short
     except Exception as e:
-        log.warning(f"Title simplifier failed ({e}); falling back to original.")
+        log.warning(f"title_simplifier failed ({e}); falling back to original.")
         return None
