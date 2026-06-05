@@ -45,7 +45,13 @@ def _hex_to_rgb(hex_color: str) -> tuple[int, int, int]:
 
 
 TITLE_COLOR = _hex_to_rgb(os.environ.get("TITLE_COLOR", "#082B5A"))
-EP_COLOR = _hex_to_rgb(os.environ.get("EP_COLOR", "#00AEEF"))
+EP_COLOR = _hex_to_rgb(os.environ.get("EP_COLOR", "#1565A0"))
+
+# Decorative rules flanking the episode label:  —— EPISODE N ——
+EP_RULE = os.environ.get("EP_RULE", "1").strip().lower() in ("1", "true", "yes")
+EP_RULE_LEN = int(float(os.environ.get("EP_RULE_LEN", "100")))
+EP_RULE_GAP = int(float(os.environ.get("EP_RULE_GAP", "26")))
+EP_RULE_WIDTH = int(float(os.environ.get("EP_RULE_WIDTH", "3")))
 
 TITLE_PX_X1 = int(float(os.environ.get("TITLE_PX_X1", "219")))
 TITLE_PX_Y1 = int(float(os.environ.get("TITLE_PX_Y1", "191")))
@@ -236,6 +242,17 @@ def make_cover(
     ep_x = EP_CENTER_X - ep_w // 2
     ep_y = EP_CENTER_Y - ep_h_px // 2 - bbox[1]
     draw.text((ep_x, ep_y), ep_text, font=ep_font, fill=EP_COLOR)
+
+    # Decorative rules on each side:  —— EPISODE N ——
+    if EP_RULE and EP_RULE_LEN > 0:
+        cy = EP_CENTER_Y
+        l_x2 = ep_x - EP_RULE_GAP
+        l_x1 = l_x2 - EP_RULE_LEN
+        r_x1 = ep_x + ep_w + EP_RULE_GAP
+        r_x2 = r_x1 + EP_RULE_LEN
+        draw.line([(l_x1, cy), (l_x2, cy)], fill=EP_COLOR, width=EP_RULE_WIDTH)
+        draw.line([(r_x1, cy), (r_x2, cy)], fill=EP_COLOR, width=EP_RULE_WIDTH)
+        log.info(f"[cover] ep rules: L({l_x1}-{l_x2}) R({r_x1}-{r_x2}) @y={cy}")
 
     # ── 2) TITLE box (auto-fitted, capped at TITLE_FONT_MAX) ─────
     title_font, title_lines, title_line_h = _fit_text(
