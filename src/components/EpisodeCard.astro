@@ -1,4 +1,6 @@
 ---
+import { versionedCover } from "../lib/coverUrl";
+
 interface Props {
   href: string;
   number: number;
@@ -23,13 +25,15 @@ const {
   topics = [],
   size = "default",
 } = Astro.props;
+
+const coverUrl = versionedCover(cover);
 ---
 
 <article class:list={["card", `card--${size}`]} data-ep-card>
   <div class="card-cover">
     <a href={href} class="cover-link" aria-label={`Open episode ${number}: ${title}`}>
-      {cover ? (
-        <img src={cover} alt={`Cover for episode ${number}`} loading="lazy" decoding="async" />
+      {coverUrl ? (
+        <img src={coverUrl} alt={`Cover for episode ${number}`} loading="lazy" decoding="async" />
       ) : (
         <span class="cover-fallback" aria-hidden="true">
           <svg viewBox="0 0 24 24" width="40" height="40" fill="currentColor">

@@ -78,6 +78,7 @@ jobs:
           EP_CENTER_Y: "545"
           # Episode label color + decorative rules ( —— EPISODE N —— )
           EP_COLOR: "#1565A0"
+          EP_RULE_COLOR: "#8FB9DD"
           EP_RULE_LEN: "100"
           EP_RULE_GAP: "26"
           EP_RULE_WIDTH: "3"
