@@ -16,8 +16,19 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Fri, 05 Jun 2026 15:33:52 +0000</lastBuildDate>
+  <lastBuildDate>Fri, 05 Jun 2026 20:22:43 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 79: Mechanisms of Metal Particle Release from Pipe Scales in Ductile Iron Water Supply Pipelines: Control by Water Quality Parameters</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep079.mp3" length="38518535" type="audio/mpeg"/>
+      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep079.mp3</guid>
+      <pubDate></pubDate>
+      <itunes:episode>79</itunes:episode>
+      <itunes:duration>1604.91102</itunes:duration>
+      <description>SpeakForWater Episode 79: Mechanisms of Metal Particle Release from Pipe Scales in Ductile Iron Water Supply Pipelines: Control by Water Quality Parameters. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://www.mdpi.com/2073-4441/18/9/1101/pdf?version=1777887379</description>
+    </item>
     <item>
       <title>Ep 78: Response of Coastal Vegetation to Extreme Precipitation Modulated by Groundwater: A Case Study of Two Extreme Years in the Contemporary Yellow River Delta</title>
       <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep078.mp3" length="29397830" type="audio/mpeg"/>
