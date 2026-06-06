@@ -16,8 +16,19 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Fri, 05 Jun 2026 20:22:43 +0000</lastBuildDate>
+  <lastBuildDate>Sat, 06 Jun 2026 08:53:44 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 80: Fluorescence Properties and Sources of Dissolved Organic Matter in Xinghua River, a Typical Urban River</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep080.mp3" length="27957751" type="audio/mpeg"/>
+      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep080.mp3</guid>
+      <pubDate></pubDate>
+      <itunes:episode>80</itunes:episode>
+      <itunes:duration>1164.878367</itunes:duration>
+      <description>SpeakForWater Episode 80: Fluorescence Properties and Sources of Dissolved Organic Matter in Xinghua River, a Typical Urban River. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://doi.org/10.3390/w18091102</description>
+    </item>
     <item>
       <title>Ep 79: Mechanisms of Metal Particle Release from Pipe Scales in Ductile Iron Water Supply Pipelines: Control by Water Quality Parameters</title>
       <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep079.mp3" length="38518535" type="audio/mpeg"/>
