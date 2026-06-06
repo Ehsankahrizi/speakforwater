@@ -16,8 +16,19 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Sat, 06 Jun 2026 08:53:44 +0000</lastBuildDate>
+  <lastBuildDate>Sat, 06 Jun 2026 14:16:18 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 81: Painting Water Weaponization: A Deep Belief Network (DBN) and Remote Sensing Approach for Monitoring Land Use and Hydrological Changes in the Helmand /Hirmand Transboundary River Basin</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep081.mp3" length="26831769" type="audio/mpeg"/>
+      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep081.mp3</guid>
+      <pubDate></pubDate>
+      <itunes:episode>81</itunes:episode>
+      <itunes:duration>1117.962449</itunes:duration>
+      <description>SpeakForWater Episode 81: Painting Water Weaponization: A Deep Belief Network (DBN) and Remote Sensing Approach for Monitoring Land Use and Hydrological Changes in the Helmand /Hirmand Transboundary River Basin. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://www.mdpi.com/2073-4441/18/10/1117/pdf?version=1778151465</description>
+    </item>
     <item>
       <title>Ep 80: Fluorescence Properties and Sources of Dissolved Organic Matter in Xinghua River, a Typical Urban River</title>
       <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep080.mp3" length="27957751" type="audio/mpeg"/>
