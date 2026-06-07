@@ -18,7 +18,7 @@ const allTopics = [...new Set(episodes.flatMap((e) => e.data.topics))].sort();
   <section class="archive-head">
     <div class="container">
       <div class="head-row">
-        <div>
+        <div class="head-title">
           <span class="eyebrow">Archive</span>
           <h1>All episodes</h1>
         </div>
@@ -69,20 +69,33 @@ const allTopics = [...new Set(episodes.flatMap((e) => e.data.topics))].sort();
 <style>
   /* ── Compact header ──────────────────────────────── */
   .archive-head {
-    padding: 40px 0 22px;
+    padding: 22px 0 14px;
     border-bottom: 1px solid var(--c-border);
   }
 
   .head-row {
     display: flex;
-    align-items: flex-end;
+    align-items: baseline;
     justify-content: space-between;
-    gap: 24px;
+    gap: 8px 24px;
     flex-wrap: wrap;
   }
 
+  .head-title {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .archive-head .eyebrow {
+    margin: 0;
+  }
+
   .archive-head h1 {
-    margin-top: 8px;
+    margin: 0;
+    font-size: 1.7rem;
+    line-height: 1.1;
   }
 
   .meta {
