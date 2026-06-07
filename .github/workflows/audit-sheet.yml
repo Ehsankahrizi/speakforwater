@@ -1,0 +1,39 @@
+###############################################################################
+#  SpeakForWater — Audit Sheet (manual, READ-ONLY)
+#
+#  Dumps the Google Sheet structure (rows, episode numbers, statuses,
+#  duplicates, blank rows) so we can plan a cleanup. Makes NO changes.
+#
+#  Trigger from: Actions -> Audit Sheet -> Run workflow, then read the log.
+###############################################################################
+
+name: Audit Sheet
+
+on:
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install gspread google-auth
+
+      - name: Audit Google Sheet
+        env:
+          GOOGLE_CREDENTIALS_JSON: ${{ secrets.GOOGLE_CREDENTIALS_JSON }}
+          SPREADSHEET_ID: ${{ secrets.SPREADSHEET_ID }}
+          SHEET_NAME: ${{ secrets.SHEET_NAME || 'Sheet1' }}
+        run: python scripts/audit_sheet.py
