@@ -354,7 +354,7 @@ async def process_one_episode(episode: dict) -> bool:
         # Mark as processing
         update_sheet_status(row_number, "processing")
 
-        # Assign the next DISPLAY number as max(episode_number) + 1.
+        # Assign the next DISPLAY number as max(published episode_number) + 1.
         #
         # NOTE: we intentionally do NOT use "count of published rows + 1".
         # After catalog curation the published count is lower than the highest
@@ -362,8 +362,9 @@ async def process_one_episode(episode: dict) -> bool:
         # the middle of the catalog and collide with an existing episode,
         # overwriting its files. max+1 always allocates a fresh number.
         #
-        # This relies on the Sheet's episode_number column being correct — see
-        # scripts/fix_sheet_numbers.py, which rebuilds it from the website.
+        # We look only at PUBLISHED rows so that dropped/queued rows (which may
+        # carry stale numbers) never affect the next number. The published rows'
+        # episode_number column matches the website (see fix_sheet_numbers.py).
         # We also persist the assigned number back to this row so it is never
         # reused on a subsequent run.
         from app.services.google_sheets import EpisodeQueue
@@ -374,6 +375,8 @@ async def process_one_episode(episode: dict) -> bool:
         )
         _nums = []
         for r in _q.sheet.get_all_records():
+            if str(r.get("status") or "").strip().lower() != "published":
+                continue
             # Header may be "episode_number" with a stray trailing space.
             val = next(
                 (v for k, v in r.items()
