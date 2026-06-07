@@ -6,9 +6,6 @@ pub_date: 2026-05-31
 duration: "22.0 min"
 audio_url: "/episodes/ep024.mp3"
 cover: "/episodes/ep024.png"
-topics:
-  - "Flooding"
-  - "Water Security"
 paper:
   title: "Accelerated Settlement Expansion in High-Hazard Areas of the Ganges–Brahmaputra–Meghna Delta"
   url: "https://www.mdpi.com/2073-4441/18/9/1029/pdf?version=1777201206"

@@ -6,9 +6,6 @@ pub_date: 2026-05-31
 duration: "23.0 min"
 audio_url: "/episodes/ep023.mp3"
 cover: "/episodes/ep023.png"
-topics:
-  - "Drought"
-  - "Climate Change"
 paper:
   title: "A Synthesis of Compound Drought in Africa: Mechanisms, Hotspots, Impacts, and Future Projections"
   url: "https://www.mdpi.com/2073-4441/18/9/1040/pdf?version=1777302756"

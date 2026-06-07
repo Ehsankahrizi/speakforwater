@@ -6,10 +6,6 @@ pub_date: 2026-05-09
 duration: "25 min"
 audio_url: "/episodes/ep001.mp3"
 cover: "/episodes/ep001.png"
-topics:
-  - "Drought"
-  - "Agriculture"
-  - "Climate Change"
 paper:
   title: "Global Agricultural Drought Crisis: Synergistic Impacts of Climate Change and Human Activities and Their Feedback Mechanisms"
   url: "https://www.mdpi.com/2073-4441/18/6/732/pdf?version=1773994726"
