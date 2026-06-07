@@ -6,6 +6,9 @@ pub_date: 2026-05-12
 duration: "10 min"
 audio_url: "/episodes/ep018.mp3"
 cover: "/episodes/ep018.png"
+topics:
+  - "Water Security"
+  - "Water Policy"
 paper:
   title: "Navigating Water (In)Security in Pakistan-Occupied Jammu and Kashmir (POJK)"
   url: "https://doi.org/10.3390/w18070768"

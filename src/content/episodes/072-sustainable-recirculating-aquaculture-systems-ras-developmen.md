@@ -6,6 +6,9 @@ pub_date: 2026-06-04
 duration: "24.0 min"
 audio_url: "/episodes/ep072.mp3"
 cover: "/episodes/ep072.png"
+topics:
+  - "Aquaculture"
+  - "Water Reuse"
 paper:
   title: "Sustainable Recirculating Aquaculture Systems (RAS): Development and Challenges"
   url: "https://www.mdpi.com/2073-4441/18/9/1093/pdf?version=1777712431"

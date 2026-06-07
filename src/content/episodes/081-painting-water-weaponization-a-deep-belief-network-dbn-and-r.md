@@ -6,6 +6,9 @@ pub_date: 2026-06-06
 duration: "18.0 min"
 audio_url: "/episodes/ep081.mp3"
 cover: "/episodes/ep081.png"
+topics:
+  - "Water Security"
+  - "Water Policy"
 paper:
   title: "Painting Water Weaponization: A Deep Belief Network (DBN) and Remote Sensing Approach for Monitoring Land Use and Hydrological Changes in the Helmand /Hirmand Transboundary River Basin"
   url: "https://www.mdpi.com/2073-4441/18/10/1117/pdf?version=1778151465"

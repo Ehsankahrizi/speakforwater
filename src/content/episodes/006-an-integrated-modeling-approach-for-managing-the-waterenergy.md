@@ -6,6 +6,9 @@ pub_date: 2026-05-10
 duration: "20 min"
 audio_url: "/episodes/ep006.mp3"
 cover: "/episodes/ep006.png"
+topics:
+  - "Water & Energy"
+  - "Water Policy"
 paper:
   title: "An Integrated Modeling Approach for Managing the Water–Energy–Food Nexus in Resource-Based Cities: A Case Study of Daqing, China"
   url: "https://www.mdpi.com/2073-4441/18/6/723/pdf"

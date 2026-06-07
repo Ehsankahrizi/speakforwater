@@ -6,6 +6,9 @@ pub_date: 2026-06-04
 duration: "24.0 min"
 audio_url: "/episodes/ep076.mp3"
 cover: "/episodes/ep076.png"
+topics:
+  - "Water Quality"
+  - "Public Health"
 paper:
   title: "Occurrence and Seasonal Variability of Cyanotoxins in Mesotrophic and Eutrophic Water Bodies of Central Chile"
   url: "https://doi.org/10.3390/w18091111"
