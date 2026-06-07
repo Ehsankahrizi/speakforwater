@@ -7,5 +7,10 @@
   "file_size_bytes": 29960194,
   "duration_seconds": 1248.313469,
   "description": "SpeakForWater Episode 37: Watershed Water Supply Security Reliability Assessment and Risk Node Identification in Mountain Piedmont Transition Zones Under Extreme Drought Stress: A Case Study from the Feng River Basin. A podcast conversation between Anna and Ehsan discussing the latest water resources research.",
-  "cover": "/episodes/ep037.png"
+  "cover": "/episodes/ep037.png",
+  "topics": [
+    "Water Security",
+    "Drought",
+    "Drinking Water"
+  ]
 }

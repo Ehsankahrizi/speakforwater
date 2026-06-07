@@ -8,5 +8,9 @@
   "duration_seconds": 1372.551837,
   "description": "SpeakForWater Episode 21: Investigation of the Mechanisms of Purification of Water Contaminated with Petroleum Products Using Plasma–Ozone Technology. A podcast conversation between Anna and Ehsan discussing the latest water resources research.",
   "cover": "/episodes/ep021.png",
-  "cover_title": "Cleaning water contaminated with oil using plasma and ozone"
+  "cover_title": "Cleaning water contaminated with oil using plasma and ozone",
+  "topics": [
+    "Pollution",
+    "Water Quality"
+  ]
 }

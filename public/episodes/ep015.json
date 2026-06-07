@@ -8,5 +8,9 @@
   "duration_seconds": 1170.337959,
   "description": "SpeakForWater Episode 15: SWAT-Based Development of Soil and Water Conservation Best Management Practices. A podcast conversation between Anna and Ehsan discussing the latest water resources research.",
   "cover": "/episodes/ep015.png",
-  "cover_title": "Developing best practices for soil and water conservation"
+  "cover_title": "Developing best practices for soil and water conservation",
+  "topics": [
+    "Agriculture",
+    "Water Quality"
+  ]
 }

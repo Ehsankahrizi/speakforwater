@@ -8,5 +8,9 @@
   "duration_seconds": 1466.67102,
   "description": "SpeakForWater Episode 33: Occurrence and Seasonal Variability of Cyanotoxins in Mesotrophic and Eutrophic Water Bodies of Central Chile. A podcast conversation between Anna and Ehsan discussing the latest water resources research.",
   "cover": "/episodes/ep033.png",
-  "cover_title": "Cyanotoxins found in Chile's lakes and reservoirs throughout the year"
+  "cover_title": "Cyanotoxins found in Chile's lakes and reservoirs throughout the year",
+  "topics": [
+    "Water Quality",
+    "Public Health"
+  ]
 }

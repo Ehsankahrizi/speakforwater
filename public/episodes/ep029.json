@@ -8,5 +8,9 @@
   "duration_seconds": 1423.124898,
   "description": "SpeakForWater Episode 29: Global Trends in Household Rainwater Tank Systems: A Multifaceted Review. A podcast conversation between Anna and Ehsan discussing the latest water resources research.",
   "cover": "/episodes/ep029.png",
-  "cover_title": "Household rainwater tanks: a global review for homeowners"
+  "cover_title": "Household rainwater tanks: a global review for homeowners",
+  "topics": [
+    "Rainwater Harvesting",
+    "Drinking Water"
+  ]
 }

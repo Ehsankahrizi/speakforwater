@@ -8,5 +8,9 @@
   "duration_seconds": 1210.357551,
   "description": "SpeakForWater Episode 18: Low-Cost, Sustainable Materials and 3D-Printed Systems for Wastewater Treatment and Reuse in Rural Communities: A Critical Review. A podcast conversation between Anna and Ehsan discussing the latest water resources research.",
   "cover": "/episodes/ep018.png",
-  "cover_title": "Low-cost solutions for rural wastewater treatment and reuse systems"
+  "cover_title": "Low-cost solutions for rural wastewater treatment and reuse systems",
+  "topics": [
+    "Water Reuse",
+    "Drinking Water"
+  ]
 }

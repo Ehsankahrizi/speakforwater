@@ -8,5 +8,9 @@
   "duration_seconds": 1217.593469,
   "description": "SpeakForWater Episode 16: Loss of Life in River and Flash Floods in Europe: Evaluation of Deterministic Approaches and Implications for Risk Assessment. A podcast conversation between Anna and Ehsan discussing the latest water resources research.",
   "cover": "/episodes/ep016.png",
-  "cover_title": "Evaluating flood risks in European rivers and flash floods"
+  "cover_title": "Evaluating flood risks in European rivers and flash floods",
+  "topics": [
+    "Flooding",
+    "Public Health"
+  ]
 }

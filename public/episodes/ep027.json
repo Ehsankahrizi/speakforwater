@@ -8,5 +8,9 @@
   "duration_seconds": 1233.946122,
   "description": "SpeakForWater Episode 27: Identifying Water Stress Hotspots in Chilean Patagonia Using Spatially Explicit Water Yield Modeling and Anthropization Proxies. A podcast conversation between Anna and Ehsan discussing the latest water resources research.",
   "cover": "/episodes/ep027.png",
-  "cover_title": "Water stress hotspots found in Chilean Patagonia regions today"
+  "cover_title": "Water stress hotspots found in Chilean Patagonia regions today",
+  "topics": [
+    "Water Security",
+    "Drought"
+  ]
 }

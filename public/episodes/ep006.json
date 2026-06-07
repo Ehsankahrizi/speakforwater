@@ -8,5 +8,9 @@
   "duration_seconds": 0,
   "description": "SpeakForWater Episode 6: Navigating Water (In)Security in Pakistan-Occupied Jammu and Kashmir (POJK). A podcast conversation between Anna and Ehsan discussing the latest water resources research.",
   "cover": "/episodes/ep006.png",
-  "cover_title": "Water security in Pakistan-occupied Kashmir faces major challenges"
+  "cover_title": "Water security in Pakistan-occupied Kashmir faces major challenges",
+  "topics": [
+    "Water Security",
+    "Water Policy"
+  ]
 }

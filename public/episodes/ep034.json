@@ -8,5 +8,10 @@
   "duration_seconds": 1604.91102,
   "description": "SpeakForWater Episode 34: Mechanisms of Metal Particle Release from Pipe Scales in Ductile Iron Water Supply Pipelines: Control by Water Quality Parameters. A podcast conversation between Anna and Ehsan discussing the latest water resources research.",
   "cover": "/episodes/ep034.png",
-  "cover_title": "Metal particles released from old water supply pipes controlled by water quality"
+  "cover_title": "Metal particles released from old water supply pipes controlled by water quality",
+  "topics": [
+    "Drinking Water",
+    "Public Health",
+    "Water Quality"
+  ]
 }

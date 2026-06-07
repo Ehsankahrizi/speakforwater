@@ -8,5 +8,10 @@
   "duration_seconds": 0,
   "description": "SpeakForWater Episode 5: Minute 330 of the US–Mexico Water Treaty: A Testament to Transboundary Cooperation Amidst Drought in the Colorado River Basin. A podcast conversation between Anna and Ehsan discussing the latest water resources research.",
   "cover": "/episodes/ep005.png",
-  "cover_title": "US Mexico water treaty cooperation during Colorado River drought"
+  "cover_title": "US Mexico water treaty cooperation during Colorado River drought",
+  "topics": [
+    "Water Policy",
+    "Drought",
+    "Water Security"
+  ]
 }

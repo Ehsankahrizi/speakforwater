@@ -8,5 +8,10 @@
   "duration_seconds": 1357.557551,
   "description": "SpeakForWater Episode 12: Evaluating Pollutant Removal Performance of Biofiltration Systems for Urban Stormwater Management: A Systematic Literature Review. A podcast conversation between Anna and Ehsan discussing the latest water resources research.",
   "cover": "/episodes/ep012.png",
-  "cover_title": "Evaluating how biofilters clean urban stormwater in cities"
+  "cover_title": "Evaluating how biofilters clean urban stormwater in cities",
+  "topics": [
+    "Urban Water",
+    "Water Quality",
+    "Flooding"
+  ]
 }

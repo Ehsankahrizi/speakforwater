@@ -8,5 +8,10 @@
   "duration_seconds": 1271.875918,
   "description": "SpeakForWater Episode 36: A Multi-Source Geospatial Framework for the Evaluation of Urban Flood Resilience Under Extreme Rainfall: Evidence from Chongqing, China. A podcast conversation between Anna and Ehsan discussing the latest water resources research.",
   "cover": "/episodes/ep036.png",
-  "cover_title": "Evaluating urban flood resilience in extreme rainfall events globally"
+  "cover_title": "Evaluating urban flood resilience in extreme rainfall events globally",
+  "topics": [
+    "Flooding",
+    "Urban Water",
+    "Climate Change"
+  ]
 }

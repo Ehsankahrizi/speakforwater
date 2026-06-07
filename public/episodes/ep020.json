@@ -8,5 +8,10 @@
   "duration_seconds": 1414.269388,
   "description": "SpeakForWater Episode 20: Municipal Carbon Footprint and Water Infrastructure: A Comparative Assessment of Emission Reduction Plans in Three Greek Municipalities. A podcast conversation between Anna and Ehsan discussing the latest water resources research.",
   "cover": "/episodes/ep020.png",
-  "cover_title": "Greek municipalities compare water and carbon footprint plans"
+  "cover_title": "Greek municipalities compare water and carbon footprint plans",
+  "topics": [
+    "Water & Energy",
+    "Urban Water",
+    "Water Policy"
+  ]
 }
