@@ -104,8 +104,8 @@ const allTopics = [...new Set(episodes.flatMap((e) => e.data.topics))].sort();
   /* ── Two-column body: filter rail + grid ─────────── */
   .archive-layout {
     display: grid;
-    grid-template-columns: 200px 1fr;
-    gap: 40px;
+    grid-template-columns: 220px 1fr;
+    gap: 36px;
     padding: 32px 0 80px;
     align-items: start;
   }
@@ -145,6 +145,7 @@ const allTopics = [...new Set(episodes.flatMap((e) => e.data.topics))].sort();
     cursor: pointer;
     font-family: var(--font-sans);
     transition: all 0.15s ease;
+    white-space: nowrap;
   }
 
   .filter:hover {
