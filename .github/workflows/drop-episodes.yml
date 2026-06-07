@@ -1,0 +1,71 @@
+###############################################################################
+#  SpeakForWater — Drop Episodes (manual)
+#
+#  Marks (or deletes) episode rows in the Google Sheet for episodes that were
+#  removed from the website during a catalog-curation pass, so the Sheet stays
+#  in sync and dropped episodes are never reprocessed.
+#
+#  Default mode "mark" sets the row's `status` column to "dropped" (preserves
+#  history). Choose "delete" to remove the rows entirely.
+#
+#  Trigger from: Actions -> Drop Episodes -> Run workflow
+#
+#  Required secrets:
+#    GOOGLE_CREDENTIALS_JSON  — Service account JSON for Google Sheets
+#    SPREADSHEET_ID           — Your Google Sheet ID
+###############################################################################
+
+name: Drop Episodes
+
+on:
+  workflow_dispatch:
+    inputs:
+      episodes:
+        description: "Space-separated episode numbers to drop"
+        required: true
+        type: string
+        default: "1 3 7 8 9 10 11 12 13 14 15 16 20 21 23 24 26 27 28 30 33 34 35 38 39 40 41 42 48 50 52 53 54 55 56 62 63 65 67 69 70 71 73 77 78 80 83"
+      mode:
+        description: "mark = set status to 'dropped' (keep rows) | delete = remove rows"
+        required: true
+        type: choice
+        default: mark
+        options:
+          - mark
+          - delete
+
+permissions:
+  contents: read
+
+concurrency:
+  group: drop-episodes
+  cancel-in-progress: false
+
+jobs:
+  drop:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install gspread google-auth
+
+      - name: Update Google Sheet
+        env:
+          GOOGLE_CREDENTIALS_JSON: ${{ secrets.GOOGLE_CREDENTIALS_JSON }}
+          SPREADSHEET_ID: ${{ secrets.SPREADSHEET_ID }}
+          SHEET_NAME: ${{ secrets.SHEET_NAME || 'Sheet1' }}
+        run: |
+          if [ "${{ inputs.mode }}" = "delete" ]; then
+            python scripts/drop_episodes.py --delete ${{ inputs.episodes }}
+          else
+            python scripts/drop_episodes.py ${{ inputs.episodes }}
+          fi
