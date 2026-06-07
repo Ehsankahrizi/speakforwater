@@ -1,17 +1,262 @@
 [
   {
     "website_ep": 1,
-    "decision": "drop",
-    "url": "https://www.mdpi.com/2073-4441/16/15/2133?utm_campaign=releaseissue_waterutm_medium=emailutm_source=releaseissueutm_term=doilink109",
-    "title": "Baffle-Enhanced Scour Mitigation in Rectangular and Trapezoidal Piano Key Weirs: An Experimental and Machine Learning Investigation\n",
-    "title_norm": "baffle-enhanced scour mitigation in rectangular and trapezoidal piano key weirs: an experimental and machine learning investigation"
-  },
-  {
-    "website_ep": 2,
     "decision": "keep",
     "url": "https://www.mdpi.com/2073-4441/18/6/732/pdf?version=1773994726",
     "title": "Global Agricultural Drought Crisis: Synergistic Impacts of Climate Change and Human Activities and Their Feedback Mechanisms",
     "title_norm": "global agricultural drought crisis: synergistic impacts of climate change and human activities and their feedback mechanisms"
+  },
+  {
+    "website_ep": 2,
+    "decision": "keep",
+    "url": "https://www.mdpi.com/2073-4441/18/6/721/pdf",
+    "title": "Hydrological and Geochemical Modeling of Water Availability and Quality in the Jordan Valley Under Climate Change",
+    "title_norm": "hydrological and geochemical modeling of water availability and quality in the jordan valley under climate change"
+  },
+  {
+    "website_ep": 3,
+    "decision": "keep",
+    "url": "https://www.mdpi.com/2073-4441/18/6/722/pdf",
+    "title": "Reclaimed Water ASR in a Sand-and-Gravel Aquifer: Destin Water Users System (Florida, USA)",
+    "title_norm": "reclaimed water asr in a sand-and-gravel aquifer: destin water users system (florida, usa)"
+  },
+  {
+    "website_ep": 4,
+    "decision": "keep",
+    "url": "https://www.mdpi.com/2073-4441/18/6/723/pdf",
+    "title": "An Integrated Modeling Approach for Managing the Water–Energy–Food Nexus in Resource-Based Cities: A Case Study of Daqing, China",
+    "title_norm": "an integrated modeling approach for managing the water–energy–food nexus in resource-based cities: a case study of daqing, china"
+  },
+  {
+    "website_ep": 5,
+    "decision": "keep",
+    "url": "https://doi.org/10.3390/w18070775",
+    "title": "Minute 330 of the US–Mexico Water Treaty: A Testament to Transboundary Cooperation Amidst Drought in the Colorado River Basin",
+    "title_norm": "minute 330 of the us–mexico water treaty: a testament to transboundary cooperation amidst drought in the colorado river basin"
+  },
+  {
+    "website_ep": 6,
+    "decision": "keep",
+    "url": "https://doi.org/10.3390/w18070768",
+    "title": "Navigating Water (In)Security in Pakistan-Occupied Jammu and Kashmir (POJK)",
+    "title_norm": "navigating water (in)security in pakistan-occupied jammu and kashmir (pojk)"
+  },
+  {
+    "website_ep": 7,
+    "decision": "keep",
+    "url": "https://www.mdpi.com/2073-4441/18/6/761/pdf?version=1774276288",
+    "title": "Integrated Assessment of Water Resource Carrying Capacity: Dynamics, Obstacles, Coordination and Driving Mechanisms in the Gansu Section of the Yellow River Basin, China",
+    "title_norm": "integrated assessment of water resource carrying capacity: dynamics, obstacles, coordination and driving mechanisms in the gansu section of the yellow river basin, china"
+  },
+  {
+    "website_ep": 8,
+    "decision": "keep",
+    "url": "https://hess.copernicus.org/articles/30/1463/2026/hess-30-1463-2026.pdf",
+    "title": "Future changes in seasonal drought in Australia",
+    "title_norm": "future changes in seasonal drought in australia"
+  },
+  {
+    "website_ep": 9,
+    "decision": "keep",
+    "url": "https://hess.copernicus.org/articles/30/1165/2026/hess-30-1165-2026.pdf",
+    "title": "Climate change effects on river droughts in Bavaria using a hydrological large ensemble",
+    "title_norm": "climate change effects on river droughts in bavaria using a hydrological large ensemble"
+  },
+  {
+    "website_ep": 10,
+    "decision": "keep",
+    "url": "https://doi.org/10.3390/w18080981",
+    "title": "Assessment of Soil Physicochemical Changes, Bioaccumulation of Potentially Toxic Elements, and Okra Growth Parameters Under Different Irrigation Systems with Treated Wastewater",
+    "title_norm": "assessment of soil physicochemical changes, bioaccumulation of potentially toxic elements, and okra growth parameters under different irrigation systems with treated wastewater"
+  },
+  {
+    "website_ep": 11,
+    "decision": "keep",
+    "url": "https://www.mdpi.com/2073-4441/18/8/961/pdf?version=1776499626",
+    "title": "Artificial Sweeteners as Emerging Environmental Pollutants: Global Research Trends, Environmental Behavior, and Future Perspectives",
+    "title_norm": "artificial sweeteners as emerging environmental pollutants: global research trends, environmental behavior, and future perspectives"
+  },
+  {
+    "website_ep": 12,
+    "decision": "keep",
+    "url": "https://www.mdpi.com/2073-4441/18/8/965/pdf?version=1776504912",
+    "title": "Evaluating Pollutant Removal Performance of Biofiltration Systems for Urban Stormwater Management: A Systematic Literature Review",
+    "title_norm": "evaluating pollutant removal performance of biofiltration systems for urban stormwater management: a systematic literature review"
+  },
+  {
+    "website_ep": 13,
+    "decision": "keep",
+    "url": "https://www.mdpi.com/2073-4441/18/9/996/pdf?version=1776863556",
+    "title": "Assessing Surface Water Quality Risks Under Climate Stress and Geopolitical Instability: An Information Systems Approach",
+    "title_norm": "assessing surface water quality risks under climate stress and geopolitical instability: an information systems approach"
+  },
+  {
+    "website_ep": 14,
+    "decision": "keep",
+    "url": "https://www.mdpi.com/2073-4441/18/9/995/pdf?version=1776857007",
+    "title": "Simulation and Regression Models of Arithmetic Groundwater Quality Indices in Coastal Purba Medinipur, India: Seasonal Trends and Remedial Strategies",
+    "title_norm": "simulation and regression models of arithmetic groundwater quality indices in coastal purba medinipur, india: seasonal trends and remedial strategies"
+  },
+  {
+    "website_ep": 15,
+    "decision": "keep",
+    "url": "https://www.mdpi.com/2073-4441/18/9/1003/pdf?version=1776939515",
+    "title": "SWAT-Based Development of Soil and Water Conservation Best Management Practices",
+    "title_norm": "swat-based development of soil and water conservation best management practices"
+  },
+  {
+    "website_ep": 16,
+    "decision": "keep",
+    "url": "https://www.mdpi.com/2073-4441/18/9/1011/pdf?version=1776953997",
+    "title": "Loss of Life in River and Flash Floods in Europe: Evaluation of Deterministic Approaches and Implications for Risk Assessment",
+    "title_norm": "loss of life in river and flash floods in europe: evaluation of deterministic approaches and implications for risk assessment"
+  },
+  {
+    "website_ep": 17,
+    "decision": "keep",
+    "url": "https://www.mdpi.com/2073-4441/18/9/1005/pdf?version=1776943965",
+    "title": "Reservoir Inflow Risk-Window Early Warning Informed by Monitoring and Routing-Decay Modeling",
+    "title_norm": "reservoir inflow risk-window early warning informed by monitoring and routing-decay modeling"
+  },
+  {
+    "website_ep": 18,
+    "decision": "keep",
+    "url": "https://www.mdpi.com/2073-4441/18/9/1002/pdf?version=1776939184",
+    "title": "Low-Cost, Sustainable Materials and 3D-Printed Systems for Wastewater Treatment and Reuse in Rural Communities: A Critical Review",
+    "title_norm": "low-cost, sustainable materials and 3d-printed systems for wastewater treatment and reuse in rural communities: a critical review"
+  },
+  {
+    "website_ep": 19,
+    "decision": "keep",
+    "url": "https://www.mdpi.com/2073-4441/18/9/1014/pdf?version=1777020937",
+    "title": "Multi-Criteria Geospatial Assessment of Rainwater Harvesting Potential in Urban Environments Using Remote Sensing and GIS",
+    "title_norm": "multi-criteria geospatial assessment of rainwater harvesting potential in urban environments using remote sensing and gis"
+  },
+  {
+    "website_ep": 20,
+    "decision": "keep",
+    "url": "https://www.mdpi.com/2073-4441/18/9/1020/pdf?version=1777039097",
+    "title": "Municipal Carbon Footprint and Water Infrastructure: A Comparative Assessment of Emission Reduction Plans in Three Greek Municipalities",
+    "title_norm": "municipal carbon footprint and water infrastructure: a comparative assessment of emission reduction plans in three greek municipalities"
+  },
+  {
+    "website_ep": 21,
+    "decision": "keep",
+    "url": "https://www.mdpi.com/2073-4441/18/9/1019/pdf?version=1777037581",
+    "title": "Investigation of the Mechanisms of Purification of Water Contaminated with Petroleum Products Using Plasma–Ozone Technology",
+    "title_norm": "investigation of the mechanisms of purification of water contaminated with petroleum products using plasma–ozone technology"
+  },
+  {
+    "website_ep": 22,
+    "decision": "keep",
+    "url": "https://www.mdpi.com/2073-4441/18/9/1039/pdf?version=1777300075",
+    "title": "Analysis of Hydrological Evolution and Drought–Flood Patterns in Dongting Lake Based on Improved Standardized Water-Level Index (ISWI)",
+    "title_norm": "analysis of hydrological evolution and drought–flood patterns in dongting lake based on improved standardized water-level index (iswi)"
+  },
+  {
+    "website_ep": 23,
+    "decision": "keep",
+    "url": "https://www.mdpi.com/2073-4441/18/9/1040/pdf?version=1777302756",
+    "title": "A Synthesis of Compound Drought in Africa: Mechanisms, Hotspots, Impacts, and Future Projections",
+    "title_norm": "a synthesis of compound drought in africa: mechanisms, hotspots, impacts, and future projections"
+  },
+  {
+    "website_ep": 24,
+    "decision": "keep",
+    "url": "https://www.mdpi.com/2073-4441/18/9/1029/pdf?version=1777201206",
+    "title": "Accelerated Settlement Expansion in High-Hazard Areas of the Ganges–Brahmaputra–Meghna Delta",
+    "title_norm": "accelerated settlement expansion in high-hazard areas of the ganges–brahmaputra–meghna delta"
+  },
+  {
+    "website_ep": 25,
+    "decision": "keep",
+    "url": "https://www.mdpi.com/2073-4441/18/9/1031/pdf?version=1777197813",
+    "title": "Risk Assessment of Dams and Reservoirs to Climate Change in the Mediterranean Region: The Case of Almopeos Dam in Northern Greece",
+    "title_norm": "risk assessment of dams and reservoirs to climate change in the mediterranean region: the case of almopeos dam in northern greece"
+  },
+  {
+    "website_ep": 26,
+    "decision": "keep",
+    "url": "https://www.mdpi.com/2073-4441/18/9/1048/pdf?version=1777375341",
+    "title": "Water Quality and Footprint in the European Union Driven by Free Movement of People and Tourism",
+    "title_norm": "water quality and footprint in the european union driven by free movement of people and tourism"
+  },
+  {
+    "website_ep": 27,
+    "decision": "keep",
+    "url": "https://www.mdpi.com/2073-4441/18/9/1041/pdf?version=1777359704",
+    "title": "Identifying Water Stress Hotspots in Chilean Patagonia Using Spatially Explicit Water Yield Modeling and Anthropization Proxies",
+    "title_norm": "identifying water stress hotspots in chilean patagonia using spatially explicit water yield modeling and anthropization proxies"
+  },
+  {
+    "website_ep": 28,
+    "decision": "keep",
+    "url": "https://doi.org/10.3390/w18091058",
+    "title": "Seasonal Comparison of Groundwater Irrigation Suitability in the Coastal Zone of Northeastern Laizhou Bay Under the Influence of Seawater Intrusion",
+    "title_norm": "seasonal comparison of groundwater irrigation suitability in the coastal zone of northeastern laizhou bay under the influence of seawater intrusion"
+  },
+  {
+    "website_ep": 29,
+    "decision": "keep",
+    "url": "https://doi.org/10.3390/w18091069",
+    "title": "Global Trends in Household Rainwater Tank Systems: A Multifaceted Review",
+    "title_norm": "global trends in household rainwater tank systems: a multifaceted review"
+  },
+  {
+    "website_ep": 30,
+    "decision": "keep",
+    "url": "https://www.mdpi.com/2073-4441/18/9/1093/pdf?version=1777712431",
+    "title": "Sustainable Recirculating Aquaculture Systems (RAS): Development and Challenges",
+    "title_norm": "sustainable recirculating aquaculture systems (ras): development and challenges"
+  },
+  {
+    "website_ep": 31,
+    "decision": "keep",
+    "url": "https://doi.org/10.3390/w18091085",
+    "title": "Assessing Flood Vulnerability of Landfills in Southern New Jersey: Incorporating Climate Change and Extreme Weather Impacts",
+    "title_norm": "assessing flood vulnerability of landfills in southern new jersey: incorporating climate change and extreme weather impacts"
+  },
+  {
+    "website_ep": 32,
+    "decision": "keep",
+    "url": "https://doi.org/10.5194/hess-30-2433-2026",
+    "title": "Climate change and irrigation expansion reshape the water pressure and upstream–downstream interactions in the Lancang–Mekong River Basin",
+    "title_norm": "climate change and irrigation expansion reshape the water pressure and upstream–downstream interactions in the lancang–mekong river basin"
+  },
+  {
+    "website_ep": 33,
+    "decision": "keep",
+    "url": "https://doi.org/10.3390/w18091111",
+    "title": "Occurrence and Seasonal Variability of Cyanotoxins in Mesotrophic and Eutrophic Water Bodies of Central Chile",
+    "title_norm": "occurrence and seasonal variability of cyanotoxins in mesotrophic and eutrophic water bodies of central chile"
+  },
+  {
+    "website_ep": 34,
+    "decision": "keep",
+    "url": "https://www.mdpi.com/2073-4441/18/9/1101/pdf?version=1777887379",
+    "title": "Mechanisms of Metal Particle Release from Pipe Scales in Ductile Iron Water Supply Pipelines: Control by Water Quality Parameters",
+    "title_norm": "mechanisms of metal particle release from pipe scales in ductile iron water supply pipelines: control by water quality parameters"
+  },
+  {
+    "website_ep": 35,
+    "decision": "keep",
+    "url": "https://www.mdpi.com/2073-4441/18/10/1117/pdf?version=1778151465",
+    "title": "Painting Water Weaponization: A Deep Belief Network (DBN) and Remote Sensing Approach for Monitoring Land Use and Hydrological Changes in the Helmand /Hirmand Transboundary River Basin",
+    "title_norm": "painting water weaponization: a deep belief network (dbn) and remote sensing approach for monitoring land use and hydrological changes in the helmand /hirmand transboundary river basin"
+  },
+  {
+    "website_ep": 36,
+    "decision": "keep",
+    "url": "https://doi.org/10.3390/w18091067",
+    "title": "A Multi-Source Geospatial Framework for the Evaluation of Urban Flood Resilience Under Extreme Rainfall: Evidence from Chongqing, China",
+    "title_norm": "a multi-source geospatial framework for the evaluation of urban flood resilience under extreme rainfall: evidence from chongqing, china"
+  },
+  {
+    "website_ep": 1,
+    "decision": "drop",
+    "url": "https://www.mdpi.com/2073-4441/16/15/2133?utm_campaign=releaseissue_waterutm_medium=emailutm_source=releaseissueutm_term=doilink109",
+    "title": "Baffle-Enhanced Scour Mitigation in Rectangular and Trapezoidal Piano Key Weirs: An Experimental and Machine Learning Investigation\n",
+    "title_norm": "baffle-enhanced scour mitigation in rectangular and trapezoidal piano key weirs: an experimental and machine learning investigation"
   },
   {
     "website_ep": 3,
@@ -19,27 +264,6 @@
     "url": "https://www.mdpi.com/2073-4441/18/6/728/pdf",
     "title": "Contrasting Climatic and Land-Use Controls Structure Nutrient and Turbidity Regimes Across Mediterranean River Basins",
     "title_norm": "contrasting climatic and land-use controls structure nutrient and turbidity regimes across mediterranean river basins"
-  },
-  {
-    "website_ep": 4,
-    "decision": "keep",
-    "url": "https://www.mdpi.com/2073-4441/18/6/721/pdf",
-    "title": "Hydrological and Geochemical Modeling of Water Availability and Quality in the Jordan Valley Under Climate Change",
-    "title_norm": "hydrological and geochemical modeling of water availability and quality in the jordan valley under climate change"
-  },
-  {
-    "website_ep": 5,
-    "decision": "keep",
-    "url": "https://www.mdpi.com/2073-4441/18/6/722/pdf",
-    "title": "Reclaimed Water ASR in a Sand-and-Gravel Aquifer: Destin Water Users System (Florida, USA)",
-    "title_norm": "reclaimed water asr in a sand-and-gravel aquifer: destin water users system (florida, usa)"
-  },
-  {
-    "website_ep": 6,
-    "decision": "keep",
-    "url": "https://www.mdpi.com/2073-4441/18/6/723/pdf",
-    "title": "An Integrated Modeling Approach for Managing the Water–Energy–Food Nexus in Resource-Based Cities: A Case Study of Daqing, China",
-    "title_norm": "an integrated modeling approach for managing the water–energy–food nexus in resource-based cities: a case study of daqing, china"
   },
   {
     "website_ep": 7,
@@ -112,27 +336,6 @@
     "title_norm": "redox distribution of asgard archaea and co-occurring taxa in microbial mats from an early proterozoic ecosystem analog"
   },
   {
-    "website_ep": 17,
-    "decision": "keep",
-    "url": "https://doi.org/10.3390/w18070775",
-    "title": "Minute 330 of the US–Mexico Water Treaty: A Testament to Transboundary Cooperation Amidst Drought in the Colorado River Basin",
-    "title_norm": "minute 330 of the us–mexico water treaty: a testament to transboundary cooperation amidst drought in the colorado river basin"
-  },
-  {
-    "website_ep": 18,
-    "decision": "keep",
-    "url": "https://doi.org/10.3390/w18070768",
-    "title": "Navigating Water (In)Security in Pakistan-Occupied Jammu and Kashmir (POJK)",
-    "title_norm": "navigating water (in)security in pakistan-occupied jammu and kashmir (pojk)"
-  },
-  {
-    "website_ep": 19,
-    "decision": "keep",
-    "url": "https://www.mdpi.com/2073-4441/18/6/761/pdf?version=1774276288",
-    "title": "Integrated Assessment of Water Resource Carrying Capacity: Dynamics, Obstacles, Coordination and Driving Mechanisms in the Gansu Section of the Yellow River Basin, China",
-    "title_norm": "integrated assessment of water resource carrying capacity: dynamics, obstacles, coordination and driving mechanisms in the gansu section of the yellow river basin, china"
-  },
-  {
     "website_ep": 20,
     "decision": "drop",
     "url": "https://www.mdpi.com/2073-4441/18/6/752/pdf",
@@ -147,13 +350,6 @@
     "title_norm": "integrated sediment yield estimation and control in erosion-prone watersheds: a systematic review of models, strategies, and emerging technologies"
   },
   {
-    "website_ep": 22,
-    "decision": "keep",
-    "url": "https://hess.copernicus.org/articles/30/1463/2026/hess-30-1463-2026.pdf",
-    "title": "Future changes in seasonal drought in Australia",
-    "title_norm": "future changes in seasonal drought in australia"
-  },
-  {
     "website_ep": 23,
     "decision": "drop",
     "url": "https://hess.copernicus.org/articles/30/1397/2026/hess-30-1397-2026.pdf",
@@ -166,13 +362,6 @@
     "url": "https://hess.copernicus.org/articles/30/1309/2026/hess-30-1309-2026.pdf",
     "title": "Novel insights into deep groundwater exploration by geophysical estimation of hard rock permeability",
     "title_norm": "novel insights into deep groundwater exploration by geophysical estimation of hard rock permeability"
-  },
-  {
-    "website_ep": 25,
-    "decision": "keep",
-    "url": "https://hess.copernicus.org/articles/30/1165/2026/hess-30-1165-2026.pdf",
-    "title": "Climate change effects on river droughts in Bavaria using a hydrological large ensemble",
-    "title_norm": "climate change effects on river droughts in bavaria using a hydrological large ensemble"
   },
   {
     "website_ep": 26,
@@ -196,32 +385,11 @@
     "title_norm": "multi-decadal remote sensing of crop planting structure and surface water dynamics in the ningxia plain: drivers and scale-dependent responses"
   },
   {
-    "website_ep": 29,
-    "decision": "keep",
-    "url": "https://doi.org/10.3390/w18080981",
-    "title": "Assessment of Soil Physicochemical Changes, Bioaccumulation of Potentially Toxic Elements, and Okra Growth Parameters Under Different Irrigation Systems with Treated Wastewater",
-    "title_norm": "assessment of soil physicochemical changes, bioaccumulation of potentially toxic elements, and okra growth parameters under different irrigation systems with treated wastewater"
-  },
-  {
     "website_ep": 30,
     "decision": "drop",
     "url": "https://www.mdpi.com/2073-4441/18/8/964/pdf?version=1776503608",
     "title": "Interpreting Satellite Rainfall Bias Correction Through a Rainfall–Runoff Framework in a Monsoon-Influenced River Basin: The Phetchaburi River Basin, Thailand",
     "title_norm": "interpreting satellite rainfall bias correction through a rainfall–runoff framework in a monsoon-influenced river basin: the phetchaburi river basin, thailand"
-  },
-  {
-    "website_ep": 31,
-    "decision": "keep",
-    "url": "https://www.mdpi.com/2073-4441/18/8/961/pdf?version=1776499626",
-    "title": "Artificial Sweeteners as Emerging Environmental Pollutants: Global Research Trends, Environmental Behavior, and Future Perspectives",
-    "title_norm": "artificial sweeteners as emerging environmental pollutants: global research trends, environmental behavior, and future perspectives"
-  },
-  {
-    "website_ep": 32,
-    "decision": "keep",
-    "url": "https://www.mdpi.com/2073-4441/18/8/965/pdf?version=1776504912",
-    "title": "Evaluating Pollutant Removal Performance of Biofiltration Systems for Urban Stormwater Management: A Systematic Literature Review",
-    "title_norm": "evaluating pollutant removal performance of biofiltration systems for urban stormwater management: a systematic literature review"
   },
   {
     "website_ep": 33,
@@ -243,20 +411,6 @@
     "url": "https://hess.copernicus.org/articles/30/2207/2026/hess-30-2207-2026.pdf",
     "title": "Adjusting diurnal error in dielectric-based in situ soil moisture measurements via Fourier time-filtering using land surface model datasets",
     "title_norm": "adjusting diurnal error in dielectric-based in situ soil moisture measurements via fourier time-filtering using land surface model datasets"
-  },
-  {
-    "website_ep": 36,
-    "decision": "keep",
-    "url": "https://www.mdpi.com/2073-4441/18/9/996/pdf?version=1776863556",
-    "title": "Assessing Surface Water Quality Risks Under Climate Stress and Geopolitical Instability: An Information Systems Approach",
-    "title_norm": "assessing surface water quality risks under climate stress and geopolitical instability: an information systems approach"
-  },
-  {
-    "website_ep": 37,
-    "decision": "keep",
-    "url": "https://www.mdpi.com/2073-4441/18/9/995/pdf?version=1776857007",
-    "title": "Simulation and Regression Models of Arithmetic Groundwater Quality Indices in Coastal Purba Medinipur, India: Seasonal Trends and Remedial Strategies",
-    "title_norm": "simulation and regression models of arithmetic groundwater quality indices in coastal purba medinipur, india: seasonal trends and remedial strategies"
   },
   {
     "website_ep": 38,
@@ -294,41 +448,6 @@
     "title_norm": "multiscale modeling of sediment transport during extreme hydrological events: advances, challenges, and future directions"
   },
   {
-    "website_ep": 43,
-    "decision": "keep",
-    "url": "https://www.mdpi.com/2073-4441/18/9/1003/pdf?version=1776939515",
-    "title": "SWAT-Based Development of Soil and Water Conservation Best Management Practices",
-    "title_norm": "swat-based development of soil and water conservation best management practices"
-  },
-  {
-    "website_ep": 44,
-    "decision": "keep",
-    "url": "https://www.mdpi.com/2073-4441/18/9/1011/pdf?version=1776953997",
-    "title": "Loss of Life in River and Flash Floods in Europe: Evaluation of Deterministic Approaches and Implications for Risk Assessment",
-    "title_norm": "loss of life in river and flash floods in europe: evaluation of deterministic approaches and implications for risk assessment"
-  },
-  {
-    "website_ep": 45,
-    "decision": "keep",
-    "url": "https://www.mdpi.com/2073-4441/18/9/1005/pdf?version=1776943965",
-    "title": "Reservoir Inflow Risk-Window Early Warning Informed by Monitoring and Routing-Decay Modeling",
-    "title_norm": "reservoir inflow risk-window early warning informed by monitoring and routing-decay modeling"
-  },
-  {
-    "website_ep": 46,
-    "decision": "keep",
-    "url": "https://www.mdpi.com/2073-4441/18/9/1002/pdf?version=1776939184",
-    "title": "Low-Cost, Sustainable Materials and 3D-Printed Systems for Wastewater Treatment and Reuse in Rural Communities: A Critical Review",
-    "title_norm": "low-cost, sustainable materials and 3d-printed systems for wastewater treatment and reuse in rural communities: a critical review"
-  },
-  {
-    "website_ep": 47,
-    "decision": "keep",
-    "url": "https://www.mdpi.com/2073-4441/18/9/1014/pdf?version=1777020937",
-    "title": "Multi-Criteria Geospatial Assessment of Rainwater Harvesting Potential in Urban Environments Using Remote Sensing and GIS",
-    "title_norm": "multi-criteria geospatial assessment of rainwater harvesting potential in urban environments using remote sensing and gis"
-  },
-  {
     "website_ep": 48,
     "decision": "drop",
     "url": "https://www.mdpi.com/2073-4441/18/9/992/pdf?version=1776852781",
@@ -336,25 +455,11 @@
     "title_norm": "physicochemical and microbiological qualities of the sundays river estuary in the eastern cape province, south africa"
   },
   {
-    "website_ep": 49,
-    "decision": "keep",
-    "url": "https://www.mdpi.com/2073-4441/18/9/1020/pdf?version=1777039097",
-    "title": "Municipal Carbon Footprint and Water Infrastructure: A Comparative Assessment of Emission Reduction Plans in Three Greek Municipalities",
-    "title_norm": "municipal carbon footprint and water infrastructure: a comparative assessment of emission reduction plans in three greek municipalities"
-  },
-  {
     "website_ep": 50,
     "decision": "drop",
     "url": "https://www.mdpi.com/2073-4441/18/9/1015/pdf?version=1777026108",
     "title": "A Smart Agro-Modelling Framework for Maize Growth and Yield Assessment in a Mediterranean Climate",
     "title_norm": "a smart agro-modelling framework for maize growth and yield assessment in a mediterranean climate"
-  },
-  {
-    "website_ep": 51,
-    "decision": "keep",
-    "url": "https://www.mdpi.com/2073-4441/18/9/1019/pdf?version=1777037581",
-    "title": "Investigation of the Mechanisms of Purification of Water Contaminated with Petroleum Products Using Plasma–Ozone Technology",
-    "title_norm": "investigation of the mechanisms of purification of water contaminated with petroleum products using plasma–ozone technology"
   },
   {
     "website_ep": 52,
@@ -392,41 +497,6 @@
     "title_norm": "seasonal dynamics of closed shallow lakes nutrient status controlled by lacustrine groundwater discharge"
   },
   {
-    "website_ep": 57,
-    "decision": "keep",
-    "url": "https://www.mdpi.com/2073-4441/18/9/1039/pdf?version=1777300075",
-    "title": "Analysis of Hydrological Evolution and Drought–Flood Patterns in Dongting Lake Based on Improved Standardized Water-Level Index (ISWI)",
-    "title_norm": "analysis of hydrological evolution and drought–flood patterns in dongting lake based on improved standardized water-level index (iswi)"
-  },
-  {
-    "website_ep": 58,
-    "decision": "keep",
-    "url": "https://www.mdpi.com/2073-4441/18/9/1040/pdf?version=1777302756",
-    "title": "A Synthesis of Compound Drought in Africa: Mechanisms, Hotspots, Impacts, and Future Projections",
-    "title_norm": "a synthesis of compound drought in africa: mechanisms, hotspots, impacts, and future projections"
-  },
-  {
-    "website_ep": 59,
-    "decision": "keep",
-    "url": "https://www.mdpi.com/2073-4441/18/9/1029/pdf?version=1777201206",
-    "title": "Accelerated Settlement Expansion in High-Hazard Areas of the Ganges–Brahmaputra–Meghna Delta",
-    "title_norm": "accelerated settlement expansion in high-hazard areas of the ganges–brahmaputra–meghna delta"
-  },
-  {
-    "website_ep": 60,
-    "decision": "keep",
-    "url": "https://www.mdpi.com/2073-4441/18/9/1031/pdf?version=1777197813",
-    "title": "Risk Assessment of Dams and Reservoirs to Climate Change in the Mediterranean Region: The Case of Almopeos Dam in Northern Greece",
-    "title_norm": "risk assessment of dams and reservoirs to climate change in the mediterranean region: the case of almopeos dam in northern greece"
-  },
-  {
-    "website_ep": 61,
-    "decision": "keep",
-    "url": "https://www.mdpi.com/2073-4441/18/9/1048/pdf?version=1777375341",
-    "title": "Water Quality and Footprint in the European Union Driven by Free Movement of People and Tourism",
-    "title_norm": "water quality and footprint in the european union driven by free movement of people and tourism"
-  },
-  {
     "website_ep": 62,
     "decision": "drop",
     "url": "https://www.mdpi.com/2073-4441/18/9/1037/pdf?version=1777295703",
@@ -441,13 +511,6 @@
     "title_norm": "flood characterisation in lithuanian lowland rivers using a peaks-over-threshold approach"
   },
   {
-    "website_ep": 64,
-    "decision": "keep",
-    "url": "https://www.mdpi.com/2073-4441/18/9/1041/pdf?version=1777359704",
-    "title": "Identifying Water Stress Hotspots in Chilean Patagonia Using Spatially Explicit Water Yield Modeling and Anthropization Proxies",
-    "title_norm": "identifying water stress hotspots in chilean patagonia using spatially explicit water yield modeling and anthropization proxies"
-  },
-  {
     "website_ep": 65,
     "decision": "drop",
     "url": "https://www.mdpi.com/2073-4441/18/9/1045/pdf?version=1777371553",
@@ -455,25 +518,11 @@
     "title_norm": "improving coastal bottom dissolved oxygen forecasting using tide-derived features with an lstm-based model"
   },
   {
-    "website_ep": 66,
-    "decision": "keep",
-    "url": "https://doi.org/10.3390/w18091058",
-    "title": "Seasonal Comparison of Groundwater Irrigation Suitability in the Coastal Zone of Northeastern Laizhou Bay Under the Influence of Seawater Intrusion",
-    "title_norm": "seasonal comparison of groundwater irrigation suitability in the coastal zone of northeastern laizhou bay under the influence of seawater intrusion"
-  },
-  {
     "website_ep": 67,
     "decision": "drop",
     "url": "https://doi.org/10.3390/w18091095",
     "title": "Urban Runoff Pollution Forecasting in the Yangtze River Basin: A Physics-Informed Data-Driven Framework Enhanced with Cluster-Based Transfer Learning",
     "title_norm": "urban runoff pollution forecasting in the yangtze river basin: a physics-informed data-driven framework enhanced with cluster-based transfer learning"
-  },
-  {
-    "website_ep": 68,
-    "decision": "keep",
-    "url": "https://doi.org/10.3390/w18091069",
-    "title": "Global Trends in Household Rainwater Tank Systems: A Multifaceted Review",
-    "title_norm": "global trends in household rainwater tank systems: a multifaceted review"
   },
   {
     "website_ep": 69,
@@ -497,39 +546,11 @@
     "title_norm": "multivariate joint risk assessment of small- and medium-sized river flood in arid and semi-arid regions based on vine copula"
   },
   {
-    "website_ep": 72,
-    "decision": "keep",
-    "url": "https://www.mdpi.com/2073-4441/18/9/1093/pdf?version=1777712431",
-    "title": "Sustainable Recirculating Aquaculture Systems (RAS): Development and Challenges",
-    "title_norm": "sustainable recirculating aquaculture systems (ras): development and challenges"
-  },
-  {
     "website_ep": 73,
     "decision": "drop",
     "url": "https://www.mdpi.com/2073-4441/18/9/1091/pdf?version=1777709187",
     "title": "Wave Transmission and Ice Drift for Ice Floe Under Waves",
     "title_norm": "wave transmission and ice drift for ice floe under waves"
-  },
-  {
-    "website_ep": 74,
-    "decision": "keep",
-    "url": "https://doi.org/10.3390/w18091085",
-    "title": "Assessing Flood Vulnerability of Landfills in Southern New Jersey: Incorporating Climate Change and Extreme Weather Impacts",
-    "title_norm": "assessing flood vulnerability of landfills in southern new jersey: incorporating climate change and extreme weather impacts"
-  },
-  {
-    "website_ep": 75,
-    "decision": "keep",
-    "url": "https://doi.org/10.5194/hess-30-2433-2026",
-    "title": "Climate change and irrigation expansion reshape the water pressure and upstream–downstream interactions in the Lancang–Mekong River Basin",
-    "title_norm": "climate change and irrigation expansion reshape the water pressure and upstream–downstream interactions in the lancang–mekong river basin"
-  },
-  {
-    "website_ep": 76,
-    "decision": "keep",
-    "url": "https://doi.org/10.3390/w18091111",
-    "title": "Occurrence and Seasonal Variability of Cyanotoxins in Mesotrophic and Eutrophic Water Bodies of Central Chile",
-    "title_norm": "occurrence and seasonal variability of cyanotoxins in mesotrophic and eutrophic water bodies of central chile"
   },
   {
     "website_ep": 77,
@@ -546,32 +567,11 @@
     "title_norm": "response of coastal vegetation to extreme precipitation modulated by groundwater: a case study of two extreme years in the contemporary yellow river delta"
   },
   {
-    "website_ep": 79,
-    "decision": "keep",
-    "url": "https://www.mdpi.com/2073-4441/18/9/1101/pdf?version=1777887379",
-    "title": "Mechanisms of Metal Particle Release from Pipe Scales in Ductile Iron Water Supply Pipelines: Control by Water Quality Parameters",
-    "title_norm": "mechanisms of metal particle release from pipe scales in ductile iron water supply pipelines: control by water quality parameters"
-  },
-  {
     "website_ep": 80,
     "decision": "drop",
     "url": "https://doi.org/10.3390/w18091102",
     "title": "Fluorescence Properties and Sources of Dissolved Organic Matter in Xinghua River, a Typical Urban River",
     "title_norm": "fluorescence properties and sources of dissolved organic matter in xinghua river, a typical urban river"
-  },
-  {
-    "website_ep": 81,
-    "decision": "keep",
-    "url": "https://www.mdpi.com/2073-4441/18/10/1117/pdf?version=1778151465",
-    "title": "Painting Water Weaponization: A Deep Belief Network (DBN) and Remote Sensing Approach for Monitoring Land Use and Hydrological Changes in the Helmand /Hirmand Transboundary River Basin",
-    "title_norm": "painting water weaponization: a deep belief network (dbn) and remote sensing approach for monitoring land use and hydrological changes in the helmand /hirmand transboundary river basin"
-  },
-  {
-    "website_ep": 82,
-    "decision": "keep",
-    "url": "https://doi.org/10.3390/w18091067",
-    "title": "A Multi-Source Geospatial Framework for the Evaluation of Urban Flood Resilience Under Extreme Rainfall: Evidence from Chongqing, China",
-    "title_norm": "a multi-source geospatial framework for the evaluation of urban flood resilience under extreme rainfall: evidence from chongqing, china"
   },
   {
     "website_ep": 83,
