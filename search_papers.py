@@ -39,13 +39,27 @@ import os
 import random
 import sys
 from datetime import datetime
+from pathlib import Path
 
 import gspread
+import yaml
 from google.oauth2.service_account import Credentials
 
-from app.services.paper_search import load_keywords
 from app.services.paper_ranker import rank_papers
 from app.services.multi_source_search import aggregate_research
+
+
+def load_keywords(config_path: Path | str = "config/keywords.yml") -> list[str]:
+    """Load stakeholder-oriented search queries from YAML config."""
+    path = Path(config_path)
+    if not path.exists():
+        logger.warning(f"Keywords file not found: {path}, using defaults")
+        return ["access to safe drinking water", "irrigation water management", "drought impact on communities"]
+    with open(path) as f:
+        data = yaml.safe_load(f)
+    keywords = data.get("keywords", [])
+    logger.info(f"Loaded {len(keywords)} queries from {path}")
+    return keywords
 
 # ── Logging ────────────────────────────────────────────────────────────
 
