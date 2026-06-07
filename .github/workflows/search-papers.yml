@@ -2,10 +2,12 @@
 #  SpeakForWater — Daily Paper Search
 #
 #  Runs daily to find new open-access water research papers and add them
-#  to the Google Sheet queue. Uses OpenAlex API (free, no key needed).
+#  to the Google Sheet queue. Searches MULTIPLE sources in parallel
+#  (OpenAlex + Semantic Scholar) — not locked to a technical-journal
+#  whitelist — so stakeholder-relevant research surfaces, then an AI
+#  ranker keeps only the plain-language, real-world-relevant ones.
 #
-#  Keywords:  config/keywords.yml  (edit to change search terms)
-#  Journals:  config/journals.yml  (edit to add/remove journal sources)
+#  Queries:  config/keywords.yml  (stakeholder-oriented, edit any time)
 #
 #  Required secrets:
 #    GOOGLE_CREDENTIALS_JSON  — Service account JSON for Google Sheets
@@ -23,15 +25,20 @@ on:
   workflow_dispatch:
     inputs:
       max_papers:
-        description: "Max papers to find (default 10)"
+        description: "Max papers to queue (default 10)"
         required: false
         type: number
         default: 10
-      days_back:
-        description: "Search window in days (default 90)"
+      num_queries:
+        description: "Stakeholder queries to run per pass (default 6)"
         required: false
         type: number
-        default: 90
+        default: 6
+      years_back:
+        description: "Only keep papers from the last N years (default 5)"
+        required: false
+        type: number
+        default: 5
 
 concurrency:
   group: paper-search
@@ -63,6 +70,13 @@ jobs:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
           RANKER_MODEL: llama-3.1-8b-instant
           RANKER_THRESHOLD: "7.0"
+          # ── Multi-source, stakeholder-oriented search ──────────
+          SEARCH_SOURCES: "openalex,semantic_scholar"  # broad pool, not journal-locked
+          OPENALEX_MAILTO: kahriziehsan490@gmail.com   # polite pool (faster/reliable)
+          UNPAYWALL_EMAIL: kahriziehsan490@gmail.com
+          AGGREGATE_TIMEOUT: "90"
+          NUM_QUERIES: ${{ inputs.num_queries || '6' }}
+          PER_SOURCE: "6"
+          YEARS_BACK: ${{ inputs.years_back || '5' }}
           MAX_PAPERS: ${{ inputs.max_papers || '10' }}
-          DAYS_BACK: ${{ inputs.days_back || '90' }}
         run: python search_papers.py

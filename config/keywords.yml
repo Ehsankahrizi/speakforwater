@@ -1,56 +1,57 @@
 # ─────────────────────────────────────────────────────────────
-# SpeakForWater — Search Keywords
+# SpeakForWater — Search Queries (stakeholder-oriented)
 #
-# These keywords are used to find relevant water research papers.
-# The search rotates through keywords daily so results stay varied.
-# Edit this list any time — changes take effect on the next run.
+# These are natural-language queries used to find water research that
+# matters to real water users — farmers, households, villages, local
+# agencies, industry, and the general public — rather than narrow,
+# highly technical modeling papers.
 #
-# Tips:
-#   - Use specific phrases for better results (e.g. "sea water intrusion")
-#   - Add new research topics as your podcast evolves
-#   - Order doesn't matter — keywords are rotated automatically
+# They are passed to a multi-source search (OpenAlex + Semantic Scholar),
+# then an AI ranker (paper_ranker.py) keeps only the ones that can be
+# explained in plain language with a clear "so what" for everyday people.
+#
+# A few queries are picked at random each run so results stay varied.
+# Phrase them the way you'd describe the topic to a non-scientist —
+# the broader the everyday framing, the more stakeholder-relevant the hits.
 # ─────────────────────────────────────────────────────────────
 
 keywords:
-  - water footprint
-  - water sustainability
-  - water resource sustainability
-  - Water use efficiency
-  - Water productivity
-  - Water governance
-  - Water policy
-  - Water economics
-  - Water rights
-  - Water allocation
-  - water management
-  - water stress
-  - drought
-  - drought risk
-  - drought management
-  - drought adaptation
-  - drought preparedness
-  - irrigation efficiency
-  - agricultural water management
-  - sustainability water resources
-  - water management
-  - drought impact
-  - flooding risk assessment
-  - climate change water
-  - sea level rise
-  - seawater intrusion
-  - water quality
-  - groundwater depletion
-  - groundwater management
-  - groundwater recharge
-  - groundwater protection
-  - groundwater sustainability
-  - groundwater pollution
-  - groundwater contamination
-  - groundwater remediation
-  - groundwater monitoring
-  - water scarcity
-  - virtual water trade
-  - crop water productivity
-  - crop water management
-  - crop water requirement
+  # ── Drinking water & communities ──────────────────────────
+  - access to safe drinking water in rural communities
+  - drinking water quality and public health
+  - water affordability and household water bills
+  - water supply security for small towns and villages
+  - lead and contaminants in tap water
+  - safe water access in developing regions
 
+  # ── Farmers & agriculture ─────────────────────────────────
+  - irrigation water management for smallholder farmers
+  - improving water use efficiency on farms
+  - drought impact on farmers and crops
+  - groundwater depletion affecting agriculture
+  - water-saving irrigation technology for farmers
+  - sustainable groundwater for irrigation
+
+  # ── Drought, floods & climate ─────────────────────────────
+  - drought preparedness for communities
+  - flooding risk in cities and neighborhoods
+  - climate change effects on local water supply
+  - protecting communities from water shortages
+  - managing water during drought
+
+  # ── Quality, pollution & health ───────────────────────────
+  - water pollution and community health
+  - cleaning up contaminated groundwater
+  - protecting rivers and lakes that people depend on
+  - wastewater reuse and recycling for cities
+
+  # ── Governance, economy & industry ────────────────────────
+  - fair water allocation between farms cities and industry
+  - water management policy for local agencies
+  - water use in industry and the economy
+  - community water conservation programs
+  - rainwater harvesting for households and farms
+
+  # ── Coastal & special cases ───────────────────────────────
+  - saltwater intrusion threatening coastal water supply
+  - sea level rise and freshwater supplies
