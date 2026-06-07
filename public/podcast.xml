@@ -16,8 +16,19 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Sat, 06 Jun 2026 19:53:36 +0000</lastBuildDate>
+  <lastBuildDate>Sun, 07 Jun 2026 09:41:43 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 83: Dynamic Water-Energy-Carbon Trade-Off Optimization for Heavy Industry Decarbonization via Deep Reinforcement Learning: A UK Case Study</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep083.mp3" length="31172693" type="audio/mpeg"/>
+      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep083.mp3</guid>
+      <pubDate></pubDate>
+      <itunes:episode>83</itunes:episode>
+      <itunes:duration>1298.834286</itunes:duration>
+      <description>SpeakForWater Episode 83: Dynamic Water-Energy-Carbon Trade-Off Optimization for Heavy Industry Decarbonization via Deep Reinforcement Learning: A UK Case Study. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://www.mdpi.com/2073-4441/18/9/1112/pdf?version=1778062095</description>
+    </item>
     <item>
       <title>Ep 82: A Multi-Source Geospatial Framework for the Evaluation of Urban Flood Resilience Under Extreme Rainfall: Evidence from Chongqing, China</title>
       <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep082.mp3" length="30525693" type="audio/mpeg"/>
