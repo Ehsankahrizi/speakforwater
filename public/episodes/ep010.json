@@ -8,5 +8,10 @@
   "duration_seconds": 1318.008163,
   "description": "SpeakForWater Episode 10: Assessment of Soil Physicochemical Changes, Bioaccumulation of Potentially Toxic Elements, and Okra Growth Parameters Under Different Irrigation Systems with Treated Wastewater. A podcast conversation between Anna and Ehsan discussing the latest water resources research.",
   "cover": "/episodes/ep010.png",
-  "cover_title": "Assessing treated wastewater's impact on soil and okra growth"
+  "cover_title": "Assessing treated wastewater's impact on soil and okra growth",
+  "topics": [
+    "Water Reuse",
+    "Irrigation",
+    "Agriculture"
+  ]
 }

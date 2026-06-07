@@ -8,5 +8,9 @@
   "duration_seconds": 1254.478367,
   "description": "SpeakForWater Episode 17: Reservoir Inflow Risk-Window Early Warning Informed by Monitoring and Routing-Decay Modeling. A podcast conversation between Anna and Ehsan discussing the latest water resources research.",
   "cover": "/episodes/ep017.png",
-  "cover_title": "Early warning system for reservoir inflow risk windows"
+  "cover_title": "Early warning system for reservoir inflow risk windows",
+  "topics": [
+    "Flooding",
+    "Water Security"
+  ]
 }

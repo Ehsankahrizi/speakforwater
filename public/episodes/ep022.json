@@ -8,5 +8,9 @@
   "duration_seconds": 1096.150204,
   "description": "SpeakForWater Episode 22: Analysis of Hydrological Evolution and Drought–Flood Patterns in Dongting Lake Based on Improved Standardized Water-Level Index (ISWI). A podcast conversation between Anna and Ehsan discussing the latest water resources research.",
   "cover": "/episodes/ep022.png",
-  "cover_title": "Understanding drought and flood patterns in Dongting Lake waters"
+  "cover_title": "Understanding drought and flood patterns in Dongting Lake waters",
+  "topics": [
+    "Drought",
+    "Flooding"
+  ]
 }

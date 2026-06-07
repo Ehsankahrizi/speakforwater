@@ -6,6 +6,9 @@ pub_date: 2026-05-27
 duration: "22.0 min"
 audio_url: "/episodes/ep019.mp3"
 cover: "/episodes/ep019.png"
+topics:
+  - "Rainwater Harvesting"
+  - "Urban Water"
 paper:
   title: "Multi-Criteria Geospatial Assessment of Rainwater Harvesting Potential in Urban Environments Using Remote Sensing and GIS"
   url: "https://www.mdpi.com/2073-4441/18/9/1014/pdf?version=1777020937"

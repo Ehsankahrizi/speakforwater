@@ -8,5 +8,9 @@
   "duration_seconds": 1364.062041,
   "description": "SpeakForWater Episode 19: Multi-Criteria Geospatial Assessment of Rainwater Harvesting Potential in Urban Environments Using Remote Sensing and GIS. A podcast conversation between Anna and Ehsan discussing the latest water resources research.",
   "cover": "/episodes/ep019.png",
-  "cover_title": "Assessing rainwater harvesting potential in urban areas with remote sensing"
+  "cover_title": "Assessing rainwater harvesting potential in urban areas with remote sensing",
+  "topics": [
+    "Rainwater Harvesting",
+    "Urban Water"
+  ]
 }

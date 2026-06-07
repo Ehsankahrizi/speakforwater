@@ -8,5 +8,9 @@
   "duration_seconds": 1458,
   "description": "SpeakForWater Episode 3: Reclaimed Water ASR in a Sand-and-Gravel Aquifer: Destin Water Users System (Florida, USA). A podcast conversation between Anna and Ehsan discussing the latest water resources research.",
   "cover": "/episodes/ep003.png",
-  "cover_title": "Reclaimed water stored underground in Destin's sand aquifer system"
+  "cover_title": "Reclaimed water stored underground in Destin's sand aquifer system",
+  "topics": [
+    "Water Reuse",
+    "Groundwater"
+  ]
 }

@@ -8,5 +8,9 @@
   "duration_seconds": 1406.850612,
   "description": "SpeakForWater Episode 23: A Synthesis of Compound Drought in Africa: Mechanisms, Hotspots, Impacts, and Future Projections. A podcast conversation between Anna and Ehsan discussing the latest water resources research.",
   "cover": "/episodes/ep023.png",
-  "cover_title": "Droughts in Africa: causes, hotspots, effects, and future outlook"
+  "cover_title": "Droughts in Africa: causes, hotspots, effects, and future outlook",
+  "topics": [
+    "Drought",
+    "Climate Change"
+  ]
 }

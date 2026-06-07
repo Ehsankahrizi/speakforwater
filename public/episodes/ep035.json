@@ -8,5 +8,9 @@
   "duration_seconds": 1117.962449,
   "description": "SpeakForWater Episode 35: Painting Water Weaponization: A Deep Belief Network (DBN) and Remote Sensing Approach for Monitoring Land Use and Hydrological Changes in the Helmand /Hirmand Transboundary River Basin. A podcast conversation between Anna and Ehsan discussing the latest water resources research.",
   "cover": "/episodes/ep035.png",
-  "cover_title": "Monitoring land use and hydrological changes in the Helmand River"
+  "cover_title": "Monitoring land use and hydrological changes in the Helmand River",
+  "topics": [
+    "Water Security",
+    "Water Policy"
+  ]
 }

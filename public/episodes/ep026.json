@@ -8,5 +8,9 @@
   "duration_seconds": 1346.847347,
   "description": "SpeakForWater Episode 26: Water Quality and Footprint in the European Union Driven by Free Movement of People and Tourism. A podcast conversation between Anna and Ehsan discussing the latest water resources research.",
   "cover": "/episodes/ep026.png",
-  "cover_title": "Water quality in Europe affected by tourism and travel"
+  "cover_title": "Water quality in Europe affected by tourism and travel",
+  "topics": [
+    "Water Quality",
+    "Water Policy"
+  ]
 }

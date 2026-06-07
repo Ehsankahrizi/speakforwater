@@ -8,5 +8,9 @@
   "duration_seconds": 1378.115918,
   "description": "SpeakForWater Episode 24: Accelerated Settlement Expansion in High-Hazard Areas of the Ganges–Brahmaputra–Meghna Delta. A podcast conversation between Anna and Ehsan discussing the latest water resources research.",
   "cover": "/episodes/ep024.png",
-  "cover_title": "Settlements are expanding in high-risk areas of the Ganges Delta"
+  "cover_title": "Settlements are expanding in high-risk areas of the Ganges Delta",
+  "topics": [
+    "Flooding",
+    "Water Security"
+  ]
 }

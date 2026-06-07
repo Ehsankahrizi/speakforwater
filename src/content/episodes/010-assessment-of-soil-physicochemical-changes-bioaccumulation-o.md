@@ -6,6 +6,10 @@ pub_date: 2026-05-22
 duration: "21.0 min"
 audio_url: "/episodes/ep010.mp3"
 cover: "/episodes/ep010.png"
+topics:
+  - "Water Reuse"
+  - "Irrigation"
+  - "Agriculture"
 paper:
   title: "Assessment of Soil Physicochemical Changes, Bioaccumulation of Potentially Toxic Elements, and Okra Growth Parameters Under Different Irrigation Systems with Treated Wastewater"
   url: "https://doi.org/10.3390/w18080981"

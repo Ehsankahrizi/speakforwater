@@ -8,5 +8,10 @@
   "duration_seconds": 1162.971429,
   "description": "SpeakForWater Episode 32: Climate change and irrigation expansion reshape the water pressure and upstream–downstream interactions in the Lancang–Mekong River Basin. A podcast conversation between Anna and Ehsan discussing the latest water resources research.",
   "cover": "/episodes/ep032.png",
-  "cover_title": "Climate change and irrigation alter river water pressure dynamics"
+  "cover_title": "Climate change and irrigation alter river water pressure dynamics",
+  "topics": [
+    "Irrigation",
+    "Climate Change",
+    "Water Security"
+  ]
 }

@@ -8,5 +8,10 @@
   "duration_seconds": 813,
   "description": "SpeakForWater Episode 2: Hydrological and Geochemical Modeling of Water Availability and Quality in the Jordan Valley Under Climate Change. A podcast conversation between Anna and Ehsan discussing the latest water resources research.",
   "cover": "/episodes/ep002.png",
-  "cover_title": "Climate change and water availability in the Jordan Valley"
+  "cover_title": "Climate change and water availability in the Jordan Valley",
+  "topics": [
+    "Water Security",
+    "Climate Change",
+    "Water Quality"
+  ]
 }

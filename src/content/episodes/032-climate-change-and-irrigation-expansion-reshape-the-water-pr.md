@@ -6,6 +6,10 @@ pub_date: 2026-06-04
 duration: "19.0 min"
 audio_url: "/episodes/ep032.mp3"
 cover: "/episodes/ep032.png"
+topics:
+  - "Irrigation"
+  - "Climate Change"
+  - "Water Security"
 paper:
   title: "Climate change and irrigation expansion reshape the water pressure and upstream–downstream interactions in the Lancang–Mekong River Basin"
   url: "https://doi.org/10.5194/hess-30-2433-2026"

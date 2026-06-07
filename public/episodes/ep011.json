@@ -8,5 +8,10 @@
   "duration_seconds": 1210.697143,
   "description": "SpeakForWater Episode 11: Artificial Sweeteners as Emerging Environmental Pollutants: Global Research Trends, Environmental Behavior, and Future Perspectives. A podcast conversation between Anna and Ehsan discussing the latest water resources research.",
   "cover": "/episodes/ep011.png",
-  "cover_title": "Artificial sweeteners are becoming a global environmental concern today"
+  "cover_title": "Artificial sweeteners are becoming a global environmental concern today",
+  "topics": [
+    "Pollution",
+    "Water Quality",
+    "Public Health"
+  ]
 }

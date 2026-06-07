@@ -8,5 +8,10 @@
   "duration_seconds": 1108.741224,
   "description": "SpeakForWater Episode 13: Assessing Surface Water Quality Risks Under Climate Stress and Geopolitical Instability: An Information Systems Approach. A podcast conversation between Anna and Ehsan discussing the latest water resources research.",
   "cover": "/episodes/ep013.png",
-  "cover_title": "Evaluating water risks from climate change and global conflicts"
+  "cover_title": "Evaluating water risks from climate change and global conflicts",
+  "topics": [
+    "Water Quality",
+    "Water Security",
+    "Climate Change"
+  ]
 }

@@ -8,5 +8,10 @@
   "duration_seconds": 1531,
   "description": "SpeakForWater Episode 1: Global Agricultural Drought Crisis: Synergistic Impacts of Climate Change and Human Activities and Their Feedback Mechanisms. A podcast conversation between Anna and Ehsan discussing the latest water resources research.",
   "cover": "/episodes/ep001.png",
-  "cover_title": "Climate change and human actions worsen global drought crisis today"
+  "cover_title": "Climate change and human actions worsen global drought crisis today",
+  "topics": [
+    "Drought",
+    "Agriculture",
+    "Climate Change"
+  ]
 }

@@ -8,5 +8,9 @@
   "duration_seconds": 1450.370612,
   "description": "SpeakForWater Episode 30: Sustainable Recirculating Aquaculture Systems (RAS): Development and Challenges. A podcast conversation between Anna and Ehsan discussing the latest water resources research.",
   "cover": "/episodes/ep030.png",
-  "cover_title": "Developing and overcoming challenges in sustainable fish farming systems"
+  "cover_title": "Developing and overcoming challenges in sustainable fish farming systems",
+  "topics": [
+    "Aquaculture",
+    "Water Reuse"
+  ]
 }

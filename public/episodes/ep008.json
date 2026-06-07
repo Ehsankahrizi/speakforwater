@@ -8,5 +8,9 @@
   "duration_seconds": 0,
   "description": "SpeakForWater Episode 8: Future changes in seasonal drought in Australia. A podcast conversation between Anna and Ehsan discussing the latest water resources research.",
   "cover": "/episodes/ep008.png",
-  "cover_title": "Australia's seasonal droughts may change in the coming years"
+  "cover_title": "Australia's seasonal droughts may change in the coming years",
+  "topics": [
+    "Drought",
+    "Climate Change"
+  ]
 }

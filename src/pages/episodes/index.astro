@@ -115,6 +115,12 @@ const allTopics = [...new Set(episodes.flatMap((e) => e.data.topics))].sort();
   }
 
   /* ── Two-column body: filter rail + grid ─────────── */
+  /* Fallback: if the filter rail is ever absent (no topics), the grid
+     spans the full width instead of collapsing into the rail column. */
+  .archive-layout:not(:has(.filter-rail)) {
+    grid-template-columns: 1fr;
+  }
+
   .archive-layout {
     display: grid;
     grid-template-columns: 220px 1fr;
