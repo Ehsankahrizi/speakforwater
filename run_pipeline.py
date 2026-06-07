@@ -354,21 +354,43 @@ async def process_one_episode(episode: dict) -> bool:
         # Mark as processing
         update_sheet_status(row_number, "processing")
 
-        # Override episode_number with the next sequential DISPLAY number
-        # (count of published rows + 1). This ensures the website shows
-        # Episode 1, 2, 3, ... in order — regardless of failed/queued rows
-        # in the Sheet.
+        # Assign the next DISPLAY number as max(episode_number) + 1.
+        #
+        # NOTE: we intentionally do NOT use "count of published rows + 1".
+        # After catalog curation the published count is lower than the highest
+        # episode number (numbering has gaps), so count+1 would point back into
+        # the middle of the catalog and collide with an existing episode,
+        # overwriting its files. max+1 always allocates a fresh number.
+        #
+        # This relies on the Sheet's episode_number column being correct — see
+        # scripts/fix_sheet_numbers.py, which rebuilds it from the website.
+        # We also persist the assigned number back to this row so it is never
+        # reused on a subsequent run.
         from app.services.google_sheets import EpisodeQueue
         _q = EpisodeQueue(
             credentials_json=GOOGLE_CREDENTIALS_JSON,
             spreadsheet_id=SPREADSHEET_ID,
             sheet_name=SHEET_NAME,
         )
-        _published = sum(
-            1 for r in _q.sheet.get_all_records()
-            if str(r.get("status") or "").strip().lower() == "published"
-        )
-        episode["episode_number"] = _published + 1
+        _nums = []
+        for r in _q.sheet.get_all_records():
+            # Header may be "episode_number" with a stray trailing space.
+            val = next(
+                (v for k, v in r.items()
+                 if str(k).strip().lower() in ("episode_number", "episode", "episode number")),
+                None,
+            )
+            try:
+                _nums.append(int(str(val).strip()))
+            except (ValueError, TypeError):
+                continue
+        episode["episode_number"] = (max(_nums) + 1) if _nums else 1
+        # Persist the assigned number to this row (column 5 = episode_number)
+        # so future max+1 calculations never reuse it.
+        try:
+            _q.sheet.update_cell(row_number, 5, episode["episode_number"])
+        except Exception as e:
+            logger.warning(f"Could not persist episode_number to Sheet: {e}")
         logger.info(
             f"Using sequential display number: Ep {episode['episode_number']}"
         )
