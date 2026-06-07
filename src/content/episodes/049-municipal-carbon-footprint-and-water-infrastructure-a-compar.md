@@ -6,6 +6,10 @@ pub_date: 2026-05-28
 duration: "23.0 min"
 audio_url: "/episodes/ep049.mp3"
 cover: "/episodes/ep049.png"
+topics:
+  - "Water & Energy"
+  - "Urban Water"
+  - "Water Policy"
 paper:
   title: "Municipal Carbon Footprint and Water Infrastructure: A Comparative Assessment of Emission Reduction Plans in Three Greek Municipalities"
   url: "https://www.mdpi.com/2073-4441/18/9/1020/pdf?version=1777039097"

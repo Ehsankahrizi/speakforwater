@@ -6,6 +6,10 @@ pub_date: 2026-05-22
 duration: "22.0 min"
 audio_url: "/episodes/ep032.mp3"
 cover: "/episodes/ep032.png"
+topics:
+  - "Urban Water"
+  - "Water Quality"
+  - "Flooding"
 paper:
   title: "Evaluating Pollutant Removal Performance of Biofiltration Systems for Urban Stormwater Management: A Systematic Literature Review"
   url: "https://www.mdpi.com/2073-4441/18/8/965/pdf?version=1776504912"

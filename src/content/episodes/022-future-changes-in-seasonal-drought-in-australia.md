@@ -6,6 +6,9 @@ pub_date: 2026-05-14
 duration: "10 min"
 audio_url: "/episodes/ep022.mp3"
 cover: "/episodes/ep022.png"
+topics:
+  - "Drought"
+  - "Climate Change"
 paper:
   title: "Future changes in seasonal drought in Australia"
   url: "https://hess.copernicus.org/articles/30/1463/2026/hess-30-1463-2026.pdf"

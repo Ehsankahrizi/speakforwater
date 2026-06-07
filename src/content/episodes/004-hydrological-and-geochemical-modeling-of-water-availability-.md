@@ -6,6 +6,10 @@ pub_date: 2026-05-09
 duration: "13 min"
 audio_url: "/episodes/ep004.mp3"
 cover: "/episodes/ep004.png"
+topics:
+  - "Water Security"
+  - "Climate Change"
+  - "Water Quality"
 paper:
   title: "Hydrological and Geochemical Modeling of Water Availability and Quality in the Jordan Valley Under Climate Change"
   url: "https://www.mdpi.com/2073-4441/18/6/721/pdf"

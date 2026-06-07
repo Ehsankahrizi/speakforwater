@@ -6,6 +6,9 @@ pub_date: 2026-06-01
 duration: "22.0 min"
 audio_url: "/episodes/ep061.mp3"
 cover: "/episodes/ep061.png"
+topics:
+  - "Water Quality"
+  - "Water Policy"
 paper:
   title: "Water Quality and Footprint in the European Union Driven by Free Movement of People and Tourism"
   url: "https://www.mdpi.com/2073-4441/18/9/1048/pdf?version=1777375341"
