@@ -1,0 +1,60 @@
+###############################################################################
+#  SpeakForWater — Fix Sheet Status (manual)
+#
+#  Repairs the Google Sheet `status` column after catalog curation by re-keying
+#  on paper_url / paper_title (the corrupted episode_number column is ignored).
+#  Uses config/episode_decisions.json as the source of truth.
+#
+#  Default mode "report" is a dry-run (no writes). Choose "apply" to commit.
+#
+#  Trigger from: Actions -> Fix Sheet Status -> Run workflow
+###############################################################################
+
+name: Fix Sheet Status
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "report = dry-run diff (no writes) | apply = write corrections"
+        required: true
+        type: choice
+        default: report
+        options:
+          - report
+          - apply
+
+permissions:
+  contents: read
+
+concurrency:
+  group: fix-sheet-status
+  cancel-in-progress: false
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install gspread google-auth
+
+      - name: Fix Sheet status
+        env:
+          GOOGLE_CREDENTIALS_JSON: ${{ secrets.GOOGLE_CREDENTIALS_JSON }}
+          SPREADSHEET_ID: ${{ secrets.SPREADSHEET_ID }}
+          SHEET_NAME: ${{ secrets.SHEET_NAME || 'Sheet1' }}
+        run: |
+          if [ "${{ inputs.mode }}" = "apply" ]; then
+            python scripts/fix_sheet_status.py --apply
+          else
+            python scripts/fix_sheet_status.py
+          fi
