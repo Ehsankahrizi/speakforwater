@@ -6,10 +6,6 @@ pub_date: 2026-06-06
 duration: "21.0 min"
 audio_url: "/episodes/ep036.mp3"
 cover: "/episodes/ep036.png"
-topics:
-  - "Flooding"
-  - "Urban Water"
-  - "Climate Change"
 paper:
   title: "A Multi-Source Geospatial Framework for the Evaluation of Urban Flood Resilience Under Extreme Rainfall: Evidence from Chongqing, China"
   url: "https://doi.org/10.3390/w18091067"

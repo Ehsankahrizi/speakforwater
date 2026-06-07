@@ -6,10 +6,6 @@ pub_date: 2026-05-31
 duration: "19.0 min"
 audio_url: "/episodes/ep025.mp3"
 cover: "/episodes/ep025.png"
-topics:
-  - "Flooding"
-  - "Climate Change"
-  - "Water Security"
 paper:
   title: "Risk Assessment of Dams and Reservoirs to Climate Change in the Mediterranean Region: The Case of Almopeos Dam in Northern Greece"
   url: "https://www.mdpi.com/2073-4441/18/9/1031/pdf?version=1777197813"

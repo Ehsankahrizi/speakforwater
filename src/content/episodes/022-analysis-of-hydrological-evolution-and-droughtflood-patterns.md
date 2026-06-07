@@ -6,9 +6,6 @@ pub_date: 2026-05-30
 duration: "18.0 min"
 audio_url: "/episodes/ep022.mp3"
 cover: "/episodes/ep022.png"
-topics:
-  - "Drought"
-  - "Flooding"
 paper:
   title: "Analysis of Hydrological Evolution and Drought–Flood Patterns in Dongting Lake Based on Improved Standardized Water-Level Index (ISWI)"
   url: "https://www.mdpi.com/2073-4441/18/9/1039/pdf?version=1777300075"

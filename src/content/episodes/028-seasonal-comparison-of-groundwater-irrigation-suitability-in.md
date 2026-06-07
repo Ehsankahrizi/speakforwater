@@ -6,10 +6,6 @@ pub_date: 2026-06-02
 duration: "18.0 min"
 audio_url: "/episodes/ep028.mp3"
 cover: "/episodes/ep028.png"
-topics:
-  - "Groundwater"
-  - "Irrigation"
-  - "Coastal & Seawater"
 paper:
   title: "Seasonal Comparison of Groundwater Irrigation Suitability in the Coastal Zone of Northeastern Laizhou Bay Under the Influence of Seawater Intrusion"
   url: "https://doi.org/10.3390/w18091058"
