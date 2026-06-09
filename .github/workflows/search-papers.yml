@@ -71,7 +71,8 @@ jobs:
           RANKER_MODEL: llama-3.1-8b-instant
           RANKER_THRESHOLD: "7.0"
           # ── Multi-source, stakeholder-oriented search ──────────
-          SEARCH_SOURCES: "openalex,semantic_scholar"  # broad pool, not journal-locked
+          SCOPUS_API_KEY: ${{ secrets.SCOPUS_API_KEY }}
+          SEARCH_SOURCES: "openalex,semantic_scholar,scopus"
           OPENALEX_MAILTO: kahriziehsan490@gmail.com   # polite pool (faster/reliable)
           UNPAYWALL_EMAIL: kahriziehsan490@gmail.com
           AGGREGATE_TIMEOUT: "90"

@@ -37,6 +37,7 @@ import json
 import logging
 import os
 import random
+import re
 import sys
 from datetime import datetime
 from pathlib import Path
@@ -110,6 +111,42 @@ def _recent_enough(year_str: str, cutoff_year: int) -> bool:
         return True  # "n.d." / missing — keep, let the ranker judge
 
 
+# Publishers to exclude (low signal-to-noise for a general audience). Each entry
+# is matched against the DOI prefix and any URL/link on the paper. MDPI's DOI
+# prefix is 10.3390 and its papers live on mdpi.com. Override via env
+# EXCLUDE_PUBLISHERS as a comma list of "doi_prefix|domain" pairs.
+_DEFAULT_EXCLUDED = "10.3390|mdpi.com"
+
+
+def _excluded_publisher(paper: dict) -> str | None:
+    """Return the matched publisher tag if the paper is from an excluded
+    publisher, else None. Matches on DOI prefix or any URL/link/domain."""
+    rules = os.environ.get("EXCLUDE_PUBLISHERS", _DEFAULT_EXCLUDED).strip()
+    if not rules:
+        return None
+    doi = (paper.get("doi") or "").strip().lower()
+    haystack = " ".join(
+        str(paper.get(k) or "").lower()
+        for k in ("doi", "link", "oa_pdf_url", "url")
+    )
+    for rule in rules.split(","):
+        rule = rule.strip()
+        if not rule:
+            continue
+        for token in rule.split("|"):
+            token = token.strip().lower()
+            if not token:
+                continue
+            if token.startswith("10.") and doi:
+                # DOI prefix match (e.g. "10.3390/..." for MDPI).
+                bare = re.sub(r"^https?://doi\.org/", "", doi)
+                if bare.startswith(token):
+                    return rule
+            if token in haystack:
+                return rule
+    return None
+
+
 def gather_candidates() -> list[dict]:
     """Run several stakeholder-oriented queries across sources, merge, filter
     to open-access + recent, and return ranker-ready paper dicts."""
@@ -128,7 +165,7 @@ def gather_candidates() -> list[dict]:
     seen_dois: set[str] = set()
     candidates: list[dict] = []
 
-    n_raw = n_oa = n_recent = 0
+    n_raw = n_oa = n_recent = n_kept = 0
     for query in queries:
         for p in aggregate_research(query, per_source=PER_SOURCE):
             n_raw += 1
@@ -146,6 +183,13 @@ def gather_candidates() -> list[dict]:
             if not _recent_enough(p.get("year", ""), cutoff_year):
                 continue
             n_recent += 1
+
+            # Publisher exclusion (e.g. MDPI — low signal for a general audience).
+            excluded = _excluded_publisher(p)
+            if excluded:
+                logger.info(f"  Skipping ({excluded}): {title[:60]}")
+                continue
+            n_kept += 1
 
             # De-dup across all queries.
             tkey = title.lower()
@@ -166,7 +210,7 @@ def gather_candidates() -> list[dict]:
 
     logger.info(
         f"Search funnel: {n_raw} raw → {n_oa} open-access → {n_recent} recent "
-        f"→ {len(candidates)} unique candidates."
+        f"→ {n_kept} after publisher filter → {len(candidates)} unique candidates."
     )
     return candidates
 
