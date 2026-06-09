@@ -16,8 +16,19 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Tue, 09 Jun 2026 10:10:21 +0000</lastBuildDate>
+  <lastBuildDate>Tue, 09 Jun 2026 15:33:32 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 39: High urban flood risk and no shelter access disproportionally impacts vulnerable communities in the USA</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep039.mp3" length="29689356" type="audio/mpeg"/>
+      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep039.mp3</guid>
+      <pubDate></pubDate>
+      <itunes:episode>39</itunes:episode>
+      <itunes:duration>1237.028571</itunes:duration>
+      <description>SpeakForWater Episode 39: High urban flood risk and no shelter access disproportionally impacts vulnerable communities in the USA. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://www.nature.com/articles/s43247-023-01165-x.pdf</description>
+    </item>
     <item>
       <title>Ep 38: Access to basic drinking water services, safe water storage, and household water treatment practice in rural communities of northwest Ethiopia</title>
       <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep038.mp3" length="26519554" type="audio/mpeg"/>
