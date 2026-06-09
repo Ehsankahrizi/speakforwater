@@ -77,15 +77,31 @@ def find_oa_pdf(doi: str) -> Optional[str]:
 def search_semantic_scholar(query: str, max_results: int = 6) -> List[Dict[str, Any]]:
     """Semantic Scholar Graph API (free, no key, excellent metadata)."""
     print(f"[search] Semantic Scholar: '{query}'")
+    # S2's keyless public pool rate-limits hard (HTTP 429) when several queries
+    # fire in parallel. Retry with backoff so this source — often the only one
+    # returning very recent papers — still contributes instead of silently
+    # dropping out. An optional API key (SEMANTIC_SCHOLAR_API_KEY) lifts the cap.
+    headers = {"User-Agent": _UA}
+    api_key = os.getenv("SEMANTIC_SCHOLAR_API_KEY") or os.getenv("S2_API_KEY")
+    if api_key:
+        headers["x-api-key"] = api_key
     try:
-        resp = requests.get(
-            "https://api.semanticscholar.org/graph/v1/paper/search",
-            params={
-                "query": query, "limit": max_results,
-                "fields": "title,abstract,authors,year,externalIds,url,isOpenAccess,openAccessPdf",
-            },
-            timeout=20, headers={"User-Agent": _UA},
-        )
+        resp = None
+        for attempt in range(1, 4):
+            resp = requests.get(
+                "https://api.semanticscholar.org/graph/v1/paper/search",
+                params={
+                    "query": query, "limit": max_results,
+                    "fields": "title,abstract,authors,year,externalIds,url,isOpenAccess,openAccessPdf",
+                },
+                timeout=20, headers=headers,
+            )
+            if resp.status_code == 429 and attempt < 3:
+                wait = 2 * attempt
+                print(f"[Semantic Scholar] HTTP 429 (rate limited); retry {attempt}/2 in {wait}s")
+                time.sleep(wait)
+                continue
+            break
         if resp.status_code != 200:
             print(f"[Semantic Scholar] HTTP {resp.status_code}")
             return []
@@ -123,7 +139,18 @@ def _reconstruct_abstract(inv_index) -> str:
 
 def search_openalex(query: str, max_results: int = 6) -> List[Dict[str, Any]]:
     print(f"[search] OpenAlex: '{query}'")
-    params = {"search": query, "per_page": max_results, "sort": "relevance_score:desc"}
+    # Filter for recent + open-access AT THE API. OpenAlex's relevance_score sort
+    # heavily favors old, highly-cited classics (e.g. 2003/2010), which the
+    # downstream recency gate then discards — starving the queue. Filtering
+    # server-side means every returned slot is a recent OA paper we can use.
+    years_back = int(os.getenv("YEARS_BACK", "5"))
+    cutoff_year = time.gmtime().tm_year - years_back
+    params = {
+        "search": query,
+        "per_page": max_results,
+        "sort": "relevance_score:desc",
+        "filter": f"from_publication_date:{cutoff_year}-01-01,is_oa:true",
+    }
     if _MAILTO:
         params["mailto"] = _MAILTO
     try:
@@ -217,6 +244,7 @@ def search_scopus(query: str, max_results: int = 3) -> List[Dict[str, Any]]:
         papers = []
         for e in entries:
             doi = e.get("prism:doi", "")
+            oa_url = find_oa_pdf(doi) if doi else ""
             papers.append({
                 "title": e.get("dc:title", "No Title"),
                 "summary": e.get("dc:description", "Abstract requires institutional access."),
@@ -225,7 +253,7 @@ def search_scopus(query: str, max_results: int = 3) -> List[Dict[str, Any]]:
                 "source": "Scopus",
                 "link": f"https://doi.org/{doi}" if doi else ((e.get("link", [{}]) or [{}])[0].get("@href", "")),
                 "doi": doi,
-                "oa_pdf_url": "",
+                "oa_pdf_url": oa_url or "",
             })
         return papers
     except Exception as e:
