@@ -16,8 +16,19 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Tue, 09 Jun 2026 15:33:32 +0000</lastBuildDate>
+  <lastBuildDate>Tue, 09 Jun 2026 20:33:32 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 40: Do-It-Yourself Flood Risk Adaptation Strategies in the Neighborhoods of Kano City, Nigeria</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep040.mp3" length="32557601" type="audio/mpeg"/>
+      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep040.mp3</guid>
+      <pubDate></pubDate>
+      <itunes:episode>40</itunes:episode>
+      <itunes:duration>1356.538776</itunes:duration>
+      <description>SpeakForWater Episode 40: Do-It-Yourself Flood Risk Adaptation Strategies in the Neighborhoods of Kano City, Nigeria. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://link.springer.com/content/pdf/10.1007%2F978-3-030-45106-6_190.pdf</description>
+    </item>
     <item>
       <title>Ep 39: High urban flood risk and no shelter access disproportionally impacts vulnerable communities in the USA</title>
       <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep039.mp3" length="29689356" type="audio/mpeg"/>
