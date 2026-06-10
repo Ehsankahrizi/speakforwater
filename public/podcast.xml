@@ -16,8 +16,19 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Tue, 09 Jun 2026 20:33:32 +0000</lastBuildDate>
+  <lastBuildDate>Wed, 10 Jun 2026 10:33:30 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 41: Inequitable patterns of US flood risk in the Anthropocene</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep041.mp3" length="28569644" type="audio/mpeg"/>
+      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep041.mp3</guid>
+      <pubDate></pubDate>
+      <itunes:episode>41</itunes:episode>
+      <itunes:duration>1190.373878</itunes:duration>
+      <description>SpeakForWater Episode 41: Inequitable patterns of US flood risk in the Anthropocene. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://www.nature.com/articles/s41558-021-01265-6.pdf</description>
+    </item>
     <item>
       <title>Ep 40: Do-It-Yourself Flood Risk Adaptation Strategies in the Neighborhoods of Kano City, Nigeria</title>
       <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep040.mp3" length="32557601" type="audio/mpeg"/>
