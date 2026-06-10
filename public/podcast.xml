@@ -16,8 +16,19 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Wed, 10 Jun 2026 16:08:44 +0000</lastBuildDate>
+  <lastBuildDate>Wed, 10 Jun 2026 20:56:39 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 43: Urban flood risk and green infrastructure: Who is exposed to risk and who benefits from investment? A case study of three U.S. Cities</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep043.mp3" length="30045457" type="audio/mpeg"/>
+      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep043.mp3</guid>
+      <pubDate></pubDate>
+      <itunes:episode>43</itunes:episode>
+      <itunes:duration>1251.866122</itunes:duration>
+      <description>SpeakForWater Episode 43: Urban flood risk and green infrastructure: Who is exposed to risk and who benefits from investment? A case study of three U.S. Cities. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://doi.org/10.1016/j.landurbplan.2022.104417</description>
+    </item>
     <item>
       <title>Ep 42: Global potential for harvesting drinking water from air using solar energy</title>
       <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep042.mp3" length="29076210" type="audio/mpeg"/>
