@@ -16,8 +16,19 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Wed, 10 Jun 2026 10:33:30 +0000</lastBuildDate>
+  <lastBuildDate>Wed, 10 Jun 2026 16:08:44 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 42: Global potential for harvesting drinking water from air using solar energy</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep042.mp3" length="29076210" type="audio/mpeg"/>
+      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep042.mp3</guid>
+      <pubDate></pubDate>
+      <itunes:episode>42</itunes:episode>
+      <itunes:duration>1211.480816</itunes:duration>
+      <description>SpeakForWater Episode 42: Global potential for harvesting drinking water from air using solar energy. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://www.nature.com/articles/s41586-021-03900-w.pdf</description>
+    </item>
     <item>
       <title>Ep 41: Inequitable patterns of US flood risk in the Anthropocene</title>
       <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep041.mp3" length="28569644" type="audio/mpeg"/>
