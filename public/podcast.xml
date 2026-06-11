@@ -16,8 +16,19 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Wed, 10 Jun 2026 20:56:39 +0000</lastBuildDate>
+  <lastBuildDate>Thu, 11 Jun 2026 11:05:03 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 44: ‘They adopt, I also adopt’: The neighborhood effects and irrigator farmers’ conversion to adopt water-saving irrigation technology</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep044.mp3" length="33957555" type="audio/mpeg"/>
+      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep044.mp3</guid>
+      <pubDate></pubDate>
+      <itunes:episode>44</itunes:episode>
+      <itunes:duration>1414.870204</itunes:duration>
+      <description>SpeakForWater Episode 44: ‘They adopt, I also adopt’: The neighborhood effects and irrigator farmers’ conversion to adopt water-saving irrigation technology. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://doi.org/10.1016/j.agwat.2024.109141</description>
+    </item>
     <item>
       <title>Ep 43: Urban flood risk and green infrastructure: Who is exposed to risk and who benefits from investment? A case study of three U.S. Cities</title>
       <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep043.mp3" length="30045457" type="audio/mpeg"/>
