@@ -16,8 +16,19 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Thu, 11 Jun 2026 16:34:09 +0000</lastBuildDate>
+  <lastBuildDate>Thu, 11 Jun 2026 20:47:54 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 46: Saltwater intrusion and climate change impact on coastal agriculture</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep046.mp3" length="30680546" type="audio/mpeg"/>
+      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep046.mp3</guid>
+      <pubDate></pubDate>
+      <itunes:episode>46</itunes:episode>
+      <itunes:duration>1278.328163</itunes:duration>
+      <description>SpeakForWater Episode 46: Saltwater intrusion and climate change impact on coastal agriculture. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://journals.plos.org/water/article/file?id=10.1371/journal.pwat.0000121&amp;type=printable</description>
+    </item>
     <item>
       <title>Ep 45: The role of social interaction in farmers’ water-saving irrigation technology adoption: testing farmers’ interaction mechanisms</title>
       <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep045.mp3" length="38383116" type="audio/mpeg"/>
