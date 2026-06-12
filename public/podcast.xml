@@ -16,8 +16,19 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Thu, 11 Jun 2026 20:47:54 +0000</lastBuildDate>
+  <lastBuildDate>Fri, 12 Jun 2026 10:37:32 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 47: Shoreline subsurface dams to protect coastal aquifers from sea level rise and saltwater intrusion</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep047.mp3" length="32839097" type="audio/mpeg"/>
+      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep047.mp3</guid>
+      <pubDate></pubDate>
+      <itunes:episode>47</itunes:episode>
+      <itunes:duration>1368.267755</itunes:duration>
+      <description>SpeakForWater Episode 47: Shoreline subsurface dams to protect coastal aquifers from sea level rise and saltwater intrusion. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://link.springer.com/content/pdf/10.1007/s13201-023-02032-y.pdf</description>
+    </item>
     <item>
       <title>Ep 46: Saltwater intrusion and climate change impact on coastal agriculture</title>
       <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep046.mp3" length="30680546" type="audio/mpeg"/>
