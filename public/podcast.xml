@@ -16,8 +16,19 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Fri, 12 Jun 2026 15:43:59 +0000</lastBuildDate>
+  <lastBuildDate>Fri, 12 Jun 2026 20:35:01 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 49: Risk of pesticide pollution at the global scale</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep049.mp3" length="28686881" type="audio/mpeg"/>
+      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep049.mp3</guid>
+      <pubDate></pubDate>
+      <itunes:episode>49</itunes:episode>
+      <itunes:duration>1195.258776</itunes:duration>
+      <description>SpeakForWater Episode 49: Risk of pesticide pollution at the global scale. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://rune.une.edu.au/web/retrieve/f3633435-3fb8-45b9-b202-0e29010167eb</description>
+    </item>
     <item>
       <title>Ep 48: OpenET: Filling a Critical Data Gap in Water Management for the Western United States</title>
       <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep048.mp3" length="33635309" type="audio/mpeg"/>
