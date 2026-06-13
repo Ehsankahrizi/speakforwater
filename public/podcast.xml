@@ -16,8 +16,19 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Sat, 13 Jun 2026 09:40:00 +0000</lastBuildDate>
+  <lastBuildDate>Sat, 13 Jun 2026 14:32:46 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 51: Mega‐Tidal and Surface Flooding Controls on Coastal Groundwater and Saltwater Intrusion Within Agricultural Dikelands</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep051.mp3" length="28269340" type="audio/mpeg"/>
+      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep051.mp3</guid>
+      <pubDate></pubDate>
+      <itunes:episode>51</itunes:episode>
+      <itunes:duration>1177.861224</itunes:duration>
+      <description>SpeakForWater Episode 51: Mega‐Tidal and Surface Flooding Controls on Coastal Groundwater and Saltwater Intrusion Within Agricultural Dikelands. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://onlinelibrary.wiley.com/doi/pdfdirect/10.1029/2023WR035054</description>
+    </item>
     <item>
       <title>Ep 50: Anthropogenic drought dominates groundwater depletion in Iran</title>
       <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep050.mp3" length="26864370" type="audio/mpeg"/>
