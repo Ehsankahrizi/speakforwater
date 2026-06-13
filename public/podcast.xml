@@ -16,8 +16,19 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Fri, 12 Jun 2026 20:35:01 +0000</lastBuildDate>
+  <lastBuildDate>Sat, 13 Jun 2026 09:40:00 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 50: Anthropogenic drought dominates groundwater depletion in Iran</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep050.mp3" length="26864370" type="audio/mpeg"/>
+      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep050.mp3</guid>
+      <pubDate></pubDate>
+      <itunes:episode>50</itunes:episode>
+      <itunes:duration>1119.320816</itunes:duration>
+      <description>SpeakForWater Episode 50: Anthropogenic drought dominates groundwater depletion in Iran. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://www.nature.com/articles/s41598-021-88522-y.pdf</description>
+    </item>
     <item>
       <title>Ep 49: Risk of pesticide pollution at the global scale</title>
       <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep049.mp3" length="28686881" type="audio/mpeg"/>
