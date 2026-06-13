@@ -16,8 +16,19 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Sat, 13 Jun 2026 14:32:46 +0000</lastBuildDate>
+  <lastBuildDate>Sat, 13 Jun 2026 19:57:38 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 52: Pharmaceutical pollution of the world’s rivers</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep052.mp3" length="19721030" type="audio/mpeg"/>
+      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep052.mp3</guid>
+      <pubDate></pubDate>
+      <itunes:episode>52</itunes:episode>
+      <itunes:duration>821.681633</itunes:duration>
+      <description>SpeakForWater Episode 52: Pharmaceutical pollution of the world’s rivers. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://www.pnas.org/content/pnas/119/8/e2113947119.full.pdf</description>
+    </item>
     <item>
       <title>Ep 51: Mega‐Tidal and Surface Flooding Controls on Coastal Groundwater and Saltwater Intrusion Within Agricultural Dikelands</title>
       <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep051.mp3" length="28269340" type="audio/mpeg"/>
