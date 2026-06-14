@@ -16,8 +16,19 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Sun, 14 Jun 2026 14:36:37 +0000</lastBuildDate>
+  <lastBuildDate>Sun, 14 Jun 2026 19:56:46 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 55: Remote sensing and multi-criterion analysis for identifying suitable rainwater harvesting areas</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep055.mp3" length="28347707" type="audio/mpeg"/>
+      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep055.mp3</guid>
+      <pubDate></pubDate>
+      <itunes:episode>55</itunes:episode>
+      <itunes:duration>1181.126531</itunes:duration>
+      <description>SpeakForWater Episode 55: Remote sensing and multi-criterion analysis for identifying suitable rainwater harvesting areas. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://link.springer.com/content/pdf/10.1007/s11600-022-00910-8.pdf</description>
+    </item>
     <item>
       <title>Ep 54: Identifying potential zones for rainwater harvesting interventions for sustainable intensification in the semi-arid tropics</title>
       <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep054.mp3" length="31141346" type="audio/mpeg"/>
