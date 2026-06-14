@@ -16,8 +16,19 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Sat, 13 Jun 2026 19:57:38 +0000</lastBuildDate>
+  <lastBuildDate>Sun, 14 Jun 2026 09:57:39 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 53: Future global urban water scarcity and potential solutions</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep053.mp3" length="26853712" type="audio/mpeg"/>
+      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep053.mp3</guid>
+      <pubDate></pubDate>
+      <itunes:episode>53</itunes:episode>
+      <itunes:duration>1118.876735</itunes:duration>
+      <description>SpeakForWater Episode 53: Future global urban water scarcity and potential solutions. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://www.nature.com/articles/s41467-021-25026-3.pdf</description>
+    </item>
     <item>
       <title>Ep 52: Pharmaceutical pollution of the world’s rivers</title>
       <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep052.mp3" length="19721030" type="audio/mpeg"/>
