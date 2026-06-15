@@ -16,8 +16,19 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Sun, 14 Jun 2026 19:56:46 +0000</lastBuildDate>
+  <lastBuildDate>Mon, 15 Jun 2026 12:44:03 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 56: Using water and wastewater decentralization to enhance the resilience and sustainability of cities</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep056.mp3" length="29646097" type="audio/mpeg"/>
+      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep056.mp3</guid>
+      <pubDate></pubDate>
+      <itunes:episode>56</itunes:episode>
+      <itunes:duration>1235.226122</itunes:duration>
+      <description>SpeakForWater Episode 56: Using water and wastewater decentralization to enhance the resilience and sustainability of cities. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://www.nature.com/articles/s44221-024-00303-9.pdf</description>
+    </item>
     <item>
       <title>Ep 55: Remote sensing and multi-criterion analysis for identifying suitable rainwater harvesting areas</title>
       <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep055.mp3" length="28347707" type="audio/mpeg"/>
