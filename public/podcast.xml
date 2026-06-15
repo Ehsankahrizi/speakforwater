@@ -16,8 +16,19 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Mon, 15 Jun 2026 12:44:03 +0000</lastBuildDate>
+  <lastBuildDate>Mon, 15 Jun 2026 21:25:03 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 57: A triple increase in global river basins with water scarcity due to future pollution</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep057.mp3" length="31890538" type="audio/mpeg"/>
+      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep057.mp3</guid>
+      <pubDate></pubDate>
+      <itunes:episode>57</itunes:episode>
+      <itunes:duration>1328.74449</itunes:duration>
+      <description>SpeakForWater Episode 57: A triple increase in global river basins with water scarcity due to future pollution. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://www.nature.com/articles/s41467-024-44947-3.pdf</description>
+    </item>
     <item>
       <title>Ep 56: Using water and wastewater decentralization to enhance the resilience and sustainability of cities</title>
       <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep056.mp3" length="29646097" type="audio/mpeg"/>
