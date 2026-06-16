@@ -16,8 +16,19 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Tue, 16 Jun 2026 11:37:45 +0000</lastBuildDate>
+  <lastBuildDate>Tue, 16 Jun 2026 17:22:48 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 59: A global transition to flash droughts under climate change</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep059.mp3" length="32350711" type="audio/mpeg"/>
+      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep059.mp3</guid>
+      <pubDate></pubDate>
+      <itunes:episode>59</itunes:episode>
+      <itunes:duration>1347.918367</itunes:duration>
+      <description>SpeakForWater Episode 59: A global transition to flash droughts under climate change. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://eprints.soton.ac.uk/477480/1/Global_flash_drought_transition_final.pdf</description>
+    </item>
     <item>
       <title>Ep 58: Comparison of carbon footprint and water scarcity footprint of milk protein produced by cellular agriculture and the dairy industry</title>
       <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep058.mp3" length="30489330" type="audio/mpeg"/>
