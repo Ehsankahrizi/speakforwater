@@ -16,8 +16,19 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Tue, 16 Jun 2026 21:25:06 +0000</lastBuildDate>
+  <lastBuildDate>Wed, 17 Jun 2026 11:21:05 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 61: Rainwater Harvesting and Rural Livelihoods in Nepal</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep061.mp3" length="25938382" type="audio/mpeg"/>
+      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep061.mp3</guid>
+      <pubDate></pubDate>
+      <itunes:episode>61</itunes:episode>
+      <itunes:duration>1080.737959</itunes:duration>
+      <description>SpeakForWater Episode 61: Rainwater Harvesting and Rural Livelihoods in Nepal. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://link.springer.com/content/pdf/10.1007/978-981-16-0680-9_11.pdf</description>
+    </item>
     <item>
       <title>Ep 60: Anthropogenic Drought: Definition, Challenges, and Opportunities</title>
       <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep060.mp3" length="34505500" type="audio/mpeg"/>
