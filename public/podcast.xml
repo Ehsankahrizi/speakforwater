@@ -16,8 +16,19 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Wed, 17 Jun 2026 11:21:05 +0000</lastBuildDate>
+  <lastBuildDate>Wed, 17 Jun 2026 16:11:08 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 62: How Sensitive Is Household Affordability to Changes in Water Bills?</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep062.mp3" length="26712651" type="audio/mpeg"/>
+      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep062.mp3</guid>
+      <pubDate></pubDate>
+      <itunes:episode>62</itunes:episode>
+      <itunes:duration>1112.999184</itunes:duration>
+      <description>SpeakForWater Episode 62: How Sensitive Is Household Affordability to Changes in Water Bills?. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/awwa.2105</description>
+    </item>
     <item>
       <title>Ep 61: Rainwater Harvesting and Rural Livelihoods in Nepal</title>
       <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep061.mp3" length="25938382" type="audio/mpeg"/>
