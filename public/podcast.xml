@@ -16,8 +16,19 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Wed, 17 Jun 2026 20:36:15 +0000</lastBuildDate>
+  <lastBuildDate>Thu, 18 Jun 2026 10:52:39 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 64: Water affordability and human right to water implications in California</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep064.mp3" length="25330878" type="audio/mpeg"/>
+      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep064.mp3</guid>
+      <pubDate></pubDate>
+      <itunes:episode>64</itunes:episode>
+      <itunes:duration>1055.425306</itunes:duration>
+      <description>SpeakForWater Episode 64: Water affordability and human right to water implications in California. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0245237&amp;type=printable</description>
+    </item>
     <item>
       <title>Ep 63: Affordability of household water services across the United States</title>
       <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep063.mp3" length="31427231" type="audio/mpeg"/>
