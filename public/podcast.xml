@@ -16,8 +16,19 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Thu, 18 Jun 2026 16:04:23 +0000</lastBuildDate>
+  <lastBuildDate>Thu, 18 Jun 2026 21:37:44 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 66: Measuring water affordability and the financial capability of utilities</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep066.mp3" length="36830189" type="audio/mpeg"/>
+      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep066.mp3</guid>
+      <pubDate></pubDate>
+      <itunes:episode>66</itunes:episode>
+      <itunes:duration>1534.563265</itunes:duration>
+      <description>SpeakForWater Episode 66: Measuring water affordability and the financial capability of utilities. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://doi.org/10.1002/aws2.1260</description>
+    </item>
     <item>
       <title>Ep 65: Evidence of anthropogenic impacts on global drought frequency, duration, and intensity</title>
       <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep065.mp3" length="31700576" type="audio/mpeg"/>
