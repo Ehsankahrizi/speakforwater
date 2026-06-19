@@ -16,8 +16,19 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Thu, 18 Jun 2026 21:37:44 +0000</lastBuildDate>
+  <lastBuildDate>Fri, 19 Jun 2026 11:03:50 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 67: Freshwater salinization syndrome: from emerging global problem to managing risks</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep067.mp3" length="36160618" type="audio/mpeg"/>
+      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep067.mp3</guid>
+      <pubDate></pubDate>
+      <itunes:episode>67</itunes:episode>
+      <itunes:duration>1506.66449</itunes:duration>
+      <description>SpeakForWater Episode 67: Freshwater salinization syndrome: from emerging global problem to managing risks. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://link.springer.com/content/pdf/10.1007/s10533-021-00784-w.pdf</description>
+    </item>
     <item>
       <title>Ep 66: Measuring water affordability and the financial capability of utilities</title>
       <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep066.mp3" length="36830189" type="audio/mpeg"/>
