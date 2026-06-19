@@ -16,8 +16,19 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Fri, 19 Jun 2026 11:03:50 +0000</lastBuildDate>
+  <lastBuildDate>Fri, 19 Jun 2026 15:47:43 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 68: Beyond the Wedge: Impact of Tidal Streams on Salinization of Groundwater in a Coastal Aquifer Stressed by Pumping and Sea‐Level Rise</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep068.mp3" length="32569513" type="audio/mpeg"/>
+      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep068.mp3</guid>
+      <pubDate></pubDate>
+      <itunes:episode>68</itunes:episode>
+      <itunes:duration>1357.035102</itunes:duration>
+      <description>SpeakForWater Episode 68: Beyond the Wedge: Impact of Tidal Streams on Salinization of Groundwater in a Coastal Aquifer Stressed by Pumping and Sea‐Level Rise. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://doi.org/10.1029/2023wr035840</description>
+    </item>
     <item>
       <title>Ep 67: Freshwater salinization syndrome: from emerging global problem to managing risks</title>
       <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep067.mp3" length="36160618" type="audio/mpeg"/>
