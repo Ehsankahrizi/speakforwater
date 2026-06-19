@@ -16,8 +16,19 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Fri, 19 Jun 2026 15:47:43 +0000</lastBuildDate>
+  <lastBuildDate>Fri, 19 Jun 2026 20:10:41 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 69: Alternative household water affordability metrics using water bill delinquency behavior</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep069.mp3" length="27486920" type="audio/mpeg"/>
+      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep069.mp3</guid>
+      <pubDate></pubDate>
+      <itunes:episode>69</itunes:episode>
+      <itunes:duration>1145.260408</itunes:duration>
+      <description>SpeakForWater Episode 69: Alternative household water affordability metrics using water bill delinquency behavior. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://doi.org/10.1088/1748-9326/ad5609</description>
+    </item>
     <item>
       <title>Ep 68: Beyond the Wedge: Impact of Tidal Streams on Salinization of Groundwater in a Coastal Aquifer Stressed by Pumping and Sea‐Level Rise</title>
       <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep068.mp3" length="32569513" type="audio/mpeg"/>
