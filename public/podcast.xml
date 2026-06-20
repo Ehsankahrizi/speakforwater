@@ -16,8 +16,19 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Sat, 20 Jun 2026 14:39:14 +0000</lastBuildDate>
+  <lastBuildDate>Sat, 20 Jun 2026 19:59:29 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 72: People need freshwater biodiversity</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep072.mp3" length="27224233" type="audio/mpeg"/>
+      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep072.mp3</guid>
+      <pubDate></pubDate>
+      <itunes:episode>72</itunes:episode>
+      <itunes:duration>1134.315102</itunes:duration>
+      <description>SpeakForWater Episode 72: People need freshwater biodiversity. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/wat2.1633</description>
+    </item>
     <item>
       <title>Ep 71: Protecting local water quality has global benefits</title>
       <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep071.mp3" length="27843022" type="audio/mpeg"/>
