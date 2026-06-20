@@ -16,8 +16,19 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Sat, 20 Jun 2026 09:45:49 +0000</lastBuildDate>
+  <lastBuildDate>Sat, 20 Jun 2026 14:39:14 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 71: Protecting local water quality has global benefits</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep071.mp3" length="27843022" type="audio/mpeg"/>
+      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep071.mp3</guid>
+      <pubDate></pubDate>
+      <itunes:episode>71</itunes:episode>
+      <itunes:duration>1160.097959</itunes:duration>
+      <description>SpeakForWater Episode 71: Protecting local water quality has global benefits. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://www.nature.com/articles/s41467-021-22836-3.pdf</description>
+    </item>
     <item>
       <title>Ep 70: The role of Indigenous peoples and local communities in effective and equitable conservation</title>
       <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep070.mp3" length="31467355" type="audio/mpeg"/>
