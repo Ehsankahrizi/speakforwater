@@ -16,8 +16,19 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Fri, 19 Jun 2026 20:10:41 +0000</lastBuildDate>
+  <lastBuildDate>Sat, 20 Jun 2026 09:45:49 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 70: The role of Indigenous peoples and local communities in effective and equitable conservation</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep070.mp3" length="31467355" type="audio/mpeg"/>
+      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep070.mp3</guid>
+      <pubDate></pubDate>
+      <itunes:episode>70</itunes:episode>
+      <itunes:duration>1311.111837</itunes:duration>
+      <description>SpeakForWater Episode 70: The role of Indigenous peoples and local communities in effective and equitable conservation. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: http://www.ecologyandsociety.org/vol26/iss3/art19/ES-2021-12625.pdf</description>
+    </item>
     <item>
       <title>Ep 69: Alternative household water affordability metrics using water bill delinquency behavior</title>
       <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep069.mp3" length="27486920" type="audio/mpeg"/>
