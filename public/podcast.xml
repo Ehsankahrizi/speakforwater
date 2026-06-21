@@ -16,8 +16,19 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Sat, 20 Jun 2026 19:59:29 +0000</lastBuildDate>
+  <lastBuildDate>Sun, 21 Jun 2026 10:12:49 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 73: Unlocking aquifer sustainability through irrigator-driven groundwater conservation</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep073.mp3" length="31570800" type="audio/mpeg"/>
+      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep073.mp3</guid>
+      <pubDate></pubDate>
+      <itunes:episode>73</itunes:episode>
+      <itunes:duration>1315.422041</itunes:duration>
+      <description>SpeakForWater Episode 73: Unlocking aquifer sustainability through irrigator-driven groundwater conservation. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://www.osti.gov/biblio/2514408</description>
+    </item>
     <item>
       <title>Ep 72: People need freshwater biodiversity</title>
       <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep072.mp3" length="27224233" type="audio/mpeg"/>
