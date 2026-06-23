@@ -16,8 +16,19 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Mon, 22 Jun 2026 21:20:01 +0000</lastBuildDate>
+  <lastBuildDate>Tue, 23 Jun 2026 10:08:50 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 78: Correlation of socioeconomic status and lead concentration in tap water in Missouri</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep078.mp3" length="19712253" type="audio/mpeg"/>
+      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep078.mp3</guid>
+      <pubDate></pubDate>
+      <itunes:episode>78</itunes:episode>
+      <itunes:duration>821.315918</itunes:duration>
+      <description>SpeakForWater Episode 78: Correlation of socioeconomic status and lead concentration in tap water in Missouri. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://emerginginvestigators.org/articles/21-181/pdf</description>
+    </item>
     <item>
       <title>Ep 77: Recycling – The Future Urban Sink for Wastewater and Organic Waste</title>
       <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep077.mp3" length="30960788" type="audio/mpeg"/>
