@@ -16,8 +16,19 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Tue, 23 Jun 2026 10:08:50 +0000</lastBuildDate>
+  <lastBuildDate>Tue, 23 Jun 2026 15:31:07 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 79: Maximum, minimum and typical concentration of copper, iron, lead and zinc that can be leached in tap water</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep079.mp3" length="32101190" type="audio/mpeg"/>
+      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep079.mp3</guid>
+      <pubDate></pubDate>
+      <itunes:episode>79</itunes:episode>
+      <itunes:duration>1337.521633</itunes:duration>
+      <description>SpeakForWater Episode 79: Maximum, minimum and typical concentration of copper, iron, lead and zinc that can be leached in tap water. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://wjarr.com/sites/default/files/WJARR-2022-0341.pdf</description>
+    </item>
     <item>
       <title>Ep 78: Correlation of socioeconomic status and lead concentration in tap water in Missouri</title>
       <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep078.mp3" length="19712253" type="audio/mpeg"/>
