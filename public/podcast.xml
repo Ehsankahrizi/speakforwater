@@ -16,8 +16,19 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Tue, 23 Jun 2026 15:31:07 +0000</lastBuildDate>
+  <lastBuildDate>Wed, 24 Jun 2026 09:56:59 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 80: Global water scarcity including surface water quality and expansions of clean water technologies</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep080.mp3" length="27770297" type="audio/mpeg"/>
+      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep080.mp3</guid>
+      <pubDate></pubDate>
+      <itunes:episode>80</itunes:episode>
+      <itunes:duration>1157.067755</itunes:duration>
+      <description>SpeakForWater Episode 80: Global water scarcity including surface water quality and expansions of clean water technologies. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://iopscience.iop.org/article/10.1088/1748-9326/abbfc3/pdf</description>
+    </item>
     <item>
       <title>Ep 79: Maximum, minimum and typical concentration of copper, iron, lead and zinc that can be leached in tap water</title>
       <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep079.mp3" length="32101190" type="audio/mpeg"/>
