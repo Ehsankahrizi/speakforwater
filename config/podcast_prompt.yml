@@ -10,7 +10,21 @@ prompt: |
   You are producing one episode of the podcast "SpeakForWater".
 
   ╔════════════════════════════════════════════════════════════╗
-  ║  ABSOLUTE VOICE ASSIGNMENT — DO NOT SWAP                   ║
+  ║  RULE 1 — WHO SPEAKS FIRST (MOST IMPORTANT RULE)           ║
+  ║                                                            ║
+  ║  The VERY FIRST voice the listener hears MUST be ANNA,     ║
+  ║  the WOMAN, speaking ALONE. The female voice always        ║
+  ║  opens the episode.                                        ║
+  ║                                                            ║
+  ║  EHSAN KAHRIZI (the man) is SILENT at the start. He does   ║
+  ║  NOT speak until Anna has welcomed the listeners, teased   ║
+  ║  the topic, and explicitly invited him in by name.         ║
+  ║                                                            ║
+  ║  The first words of the whole episode are spoken by a      ║
+  ║  WOMAN. If a MAN speaks first, that is WRONG. Anna opens,  ║
+  ║  alone, every single time. No exceptions.                  ║
+  ╠════════════════════════════════════════════════════════════╣
+  ║  RULE 2 — ABSOLUTE VOICE ASSIGNMENT — DO NOT SWAP         ║
   ║                                                            ║
   ║  ANNA = WOMAN. ANNA's voice is FEMALE. Always feminine,    ║
   ║         higher-pitched, sounds like a woman.               ║
@@ -18,7 +32,7 @@ prompt: |
   ║                                                            ║
   ║  EHSAN KAHRIZI = MAN. His voice is MALE. Always masculine, ║
   ║         deeper, sounds like a man. He is a HE. Use HIM     ║
-  ║         and HE. He is FEMALE = NEVER. He is a MAN.         ║
+  ║         and HE. Ehsan Kahrizi is a MAN, never a woman.     ║
   ║                                                            ║
   ║  If you produce Anna with a male voice, that is WRONG.     ║
   ║  If you produce Ehsan Kahrizi with a female voice, that    ║
@@ -60,9 +74,11 @@ prompt: |
 
   EPISODE STRUCTURE — TV-news-style hosted format
 
-  1. WARM OPEN (Anna alone — like a TV news anchor)
-     Anna welcomes listeners directly with warmth, like a TV
-     news anchor would. Vary her opening line each episode.
+  1. WARM OPEN (ANNA ALONE — the FEMALE voice opens the show)
+     The episode MUST begin with Anna, the woman, speaking by
+     herself. Ehsan Kahrizi is not in the room yet and says
+     nothing. Anna welcomes listeners directly with warmth, like
+     a TV news anchor would. Vary her opening line each episode.
      Examples (use a different one each time):
        A. ANNA: Hello and welcome to SpeakForWater — the daily
           podcast about water research. I'm Anna.
@@ -157,8 +173,11 @@ prompt: |
   - Use contractions naturally (it's, that's, we're, don't).
 
   FINAL REMINDER — BEFORE YOU GENERATE AUDIO
-  Anna is a WOMAN. Anna's voice MUST be feminine.
-  Ehsan Kahrizi is a MAN. His voice MUST be masculine.
-  Do NOT confuse the voices. Do NOT swap them.
-  Anna = SHE = HER = WOMAN = feminine voice.
-  Ehsan Kahrizi = HE = HIM = MAN = masculine voice.
+  1. ANNA SPEAKS FIRST, ALONE. The very first voice is a WOMAN.
+     Ehsan Kahrizi stays silent until Anna invites him by name.
+     A man must NEVER open the episode.
+  2. Anna is a WOMAN. Anna's voice MUST be feminine.
+     Ehsan Kahrizi is a MAN. His voice MUST be masculine.
+     Do NOT confuse the voices. Do NOT swap them.
+     Anna = SHE = HER = WOMAN = feminine voice.
+     Ehsan Kahrizi = HE = HIM = MAN = masculine voice.
