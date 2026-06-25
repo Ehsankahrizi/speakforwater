@@ -12,6 +12,8 @@ const id = `audio-${Math.random().toString(36).slice(2, 9)}`;
 <div class="audio-player" data-player>
   <audio id={id} src={src} preload="metadata"></audio>
 
+  <canvas class="viz" data-viz aria-hidden="true"></canvas>
+
   <div class="player-row">
     <button class="play-btn" data-play aria-label="Play episode">
       <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true">
@@ -50,6 +52,15 @@ const id = `audio-${Math.random().toString(36).slice(2, 9)}`;
     border-radius: var(--radius-lg);
     padding: 18px;
     box-shadow: var(--shadow-sm);
+  }
+
+  .viz {
+    display: block;
+    width: 100%;
+    height: 56px;
+    margin-bottom: 16px;
+    border-radius: 12px;
+    background: linear-gradient(180deg, var(--c-brand-tint), transparent);
   }
 
   .player-row {
@@ -157,6 +168,20 @@ const id = `audio-${Math.random().toString(36).slice(2, 9)}`;
 </style>
 
 <script>
+  // One AudioContext shared by every player on the page (browsers cap how
+  // many can exist). Created lazily so it's born from a user gesture.
+  let sharedCtx: AudioContext | null = null;
+  const getCtx = (): AudioContext | null => {
+    if (sharedCtx) return sharedCtx;
+    const AC =
+      window.AudioContext || (window as unknown as { webkitAudioContext?: typeof AudioContext }).webkitAudioContext;
+    if (!AC) return null;
+    sharedCtx = new AC();
+    return sharedCtx;
+  };
+
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
   document.querySelectorAll<HTMLDivElement>("[data-player]").forEach((root) => {
     const audio = root.querySelector<HTMLAudioElement>("audio");
     const playBtn = root.querySelector<HTMLButtonElement>("[data-play]");
@@ -220,6 +245,109 @@ const id = `audio-${Math.random().toString(36).slice(2, 9)}`;
         audio.playbackRate = speeds[speedIdx];
         speedBtn.textContent = `${speeds[speedIdx]}×`;
       });
+    }
+
+    // ── Audio-reactive visualizer ─────────────────────────────
+    const canvas = root.querySelector<HTMLCanvasElement>("[data-viz]");
+    const ctx2d = canvas?.getContext("2d") ?? null;
+    if (canvas && ctx2d) {
+      const BARS = 48;
+      const levels = new Float32Array(BARS);
+      let analyser: AnalyserNode | null = null;
+      let freq: Uint8Array | null = null;
+      let rafId = 0;
+      let dpr = 1;
+
+      // Pull brand colours from the design tokens so it matches the theme.
+      const cs = getComputedStyle(document.documentElement);
+      const cAccent = cs.getPropertyValue("--c-accent").trim() || "#06b6d4";
+      const cBrand = cs.getPropertyValue("--c-brand").trim() || "#185fa5";
+      const cDeep = cs.getPropertyValue("--c-brand-deep").trim() || "#0c447c";
+
+      const sizeCanvas = () => {
+        dpr = Math.min(window.devicePixelRatio || 1, 2);
+        canvas.width = Math.round(canvas.clientWidth * dpr);
+        canvas.height = Math.round(canvas.clientHeight * dpr);
+      };
+      sizeCanvas();
+      new ResizeObserver(sizeCanvas).observe(canvas);
+
+      const render = () => {
+        const W = canvas.width;
+        const H = canvas.height;
+        ctx2d.clearRect(0, 0, W, H);
+        const mid = H / 2;
+        const slot = W / BARS;
+        const bw = slot * 0.62;
+        const minBar = H * 0.05;
+
+        const grad = ctx2d.createLinearGradient(0, 0, 0, H);
+        grad.addColorStop(0, cAccent);
+        grad.addColorStop(0.55, cBrand);
+        grad.addColorStop(1, cDeep);
+        ctx2d.fillStyle = grad;
+        ctx2d.shadowColor = cAccent;
+        ctx2d.shadowBlur = 6 * dpr;
+
+        for (let i = 0; i < BARS; i++) {
+          const barH = Math.max(minBar, levels[i] * H * 0.94);
+          const x = i * slot + (slot - bw) / 2;
+          const y = mid - barH / 2;
+          const r = Math.min(bw / 2, barH / 2);
+          ctx2d.beginPath();
+          if (ctx2d.roundRect) ctx2d.roundRect(x, y, bw, barH, r);
+          else ctx2d.rect(x, y, bw, barH);
+          ctx2d.fill();
+        }
+      };
+
+      const frame = () => {
+        if (analyser && freq && !audio.paused) analyser.getByteFrequencyData(freq);
+        let active = false;
+        for (let i = 0; i < BARS; i++) {
+          let target = 0;
+          if (freq && !audio.paused) {
+            // Focus on the lower ~70% of bins where speech energy lives.
+            const idx = Math.floor((i / BARS) * freq.length * 0.7);
+            target = freq[idx] / 255;
+          }
+          levels[i] += (target - levels[i]) * 0.35; // ease toward target
+          if (levels[i] > 0.01) active = true;
+        }
+        render();
+        // Keep animating while playing, or until the bars settle to baseline.
+        if (!audio.paused || active) {
+          rafId = requestAnimationFrame(frame);
+        } else {
+          rafId = 0;
+        }
+      };
+
+      const startViz = () => {
+        const actx = getCtx();
+        if (!actx || reduceMotion) {
+          render(); // static baseline
+          return;
+        }
+        if (!analyser) {
+          try {
+            const srcNode = actx.createMediaElementSource(audio);
+            analyser = actx.createAnalyser();
+            analyser.fftSize = 256;
+            analyser.smoothingTimeConstant = 0.8;
+            srcNode.connect(analyser);
+            analyser.connect(actx.destination); // keep audio audible
+            freq = new Uint8Array(analyser.frequencyBinCount);
+          } catch {
+            analyser = null; // tainted/unsupported — audio still plays natively
+          }
+        }
+        if (actx.state === "suspended") actx.resume();
+        if (!rafId) frame();
+      };
+
+      audio.addEventListener("play", startViz);
+      render(); // initial idle baseline
     }
   });
 </script>
