@@ -57,6 +57,7 @@ const coverUrl = versionedCover(cover);
           <svg class="ico-play" viewBox="0 0 24 24" width="26" height="26" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z" /></svg>
           <svg class="ico-pause" viewBox="0 0 24 24" width="26" height="26" fill="currentColor" aria-hidden="true" style="display:none"><path d="M6 5h4v14H6zM14 5h4v14h-4z" /></svg>
         </button>
+        <canvas class="card-viz" data-card-viz aria-hidden="true"></canvas>
         <div class="card-progress" data-card-progress>
           <div class="card-progress-fill" data-card-fill></div>
         </div>
@@ -198,6 +199,22 @@ const coverUrl = versionedCover(cover);
   .card-play:hover { background: #fff; transform: translateY(0) scale(1.06); }
   .card.is-playing .card-play { color: var(--c-brand-deep); }
 
+  /* audio-reactive equalizer across the bottom of the cover */
+  .card-viz {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 44px;
+    z-index: 2;
+    opacity: 0;
+    pointer-events: none;
+    background: linear-gradient(180deg, transparent, rgba(8, 28, 55, 0.5));
+    transition: opacity 0.3s ease;
+  }
+  .card.is-playing .card-viz { opacity: 1; }
+
   /* progress bar across the bottom of the cover */
   .card-progress {
     position: absolute;
@@ -205,7 +222,7 @@ const coverUrl = versionedCover(cover);
     right: 0;
     bottom: 0;
     height: 4px;
-    z-index: 2;
+    z-index: 4;
     background: rgba(255, 255, 255, 0.28);
     opacity: 0;
     cursor: pointer;
@@ -284,6 +301,19 @@ const coverUrl = versionedCover(cover);
     });
   }
 
+  // One AudioContext shared by every card (browsers cap how many can exist).
+  // Created lazily so it's born from the play-button gesture.
+  let sharedCtx: AudioContext | null = null;
+  const getCtx = (): AudioContext | null => {
+    if (sharedCtx) return sharedCtx;
+    const AC =
+      window.AudioContext || (window as unknown as { webkitAudioContext?: typeof AudioContext }).webkitAudioContext;
+    if (!AC) return null;
+    sharedCtx = new AC();
+    return sharedCtx;
+  };
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
   cards.forEach((card) => {
     const audio = card.querySelector<HTMLAudioElement>("[data-card-audio]");
     const btn = card.querySelector<HTMLButtonElement>("[data-card-play]");
@@ -329,5 +359,93 @@ const coverUrl = versionedCover(cover);
       const rect = progress.getBoundingClientRect();
       audio.currentTime = ((e.clientX - rect.left) / rect.width) * audio.duration;
     });
+
+    // ── Audio-reactive equalizer ──────────────────────────────
+    const canvas = card.querySelector<HTMLCanvasElement>("[data-card-viz]");
+    const ctx2d = canvas?.getContext("2d") ?? null;
+    if (canvas && ctx2d) {
+      const BARS = 32;
+      const levels = new Float32Array(BARS);
+      let analyser: AnalyserNode | null = null;
+      let freq: Uint8Array | null = null;
+      let rafId = 0;
+      let dpr = 1;
+
+      const cs = getComputedStyle(document.documentElement);
+      const cAccent = cs.getPropertyValue("--c-accent").trim() || "#06b6d4";
+      const cBrand = cs.getPropertyValue("--c-brand").trim() || "#185fa5";
+
+      const sizeCanvas = () => {
+        dpr = Math.min(window.devicePixelRatio || 1, 2);
+        canvas.width = Math.round(canvas.clientWidth * dpr);
+        canvas.height = Math.round(canvas.clientHeight * dpr);
+      };
+      sizeCanvas();
+      new ResizeObserver(sizeCanvas).observe(canvas);
+
+      const render = () => {
+        const W = canvas.width;
+        const H = canvas.height;
+        ctx2d.clearRect(0, 0, W, H);
+        const slot = W / BARS;
+        const bw = slot * 0.58;
+        const minBar = H * 0.06;
+        const grad = ctx2d.createLinearGradient(0, H, 0, 0); // bottom → top
+        grad.addColorStop(0, cBrand);
+        grad.addColorStop(1, cAccent);
+        ctx2d.fillStyle = grad;
+        ctx2d.shadowColor = cAccent;
+        ctx2d.shadowBlur = 5 * dpr;
+        for (let i = 0; i < BARS; i++) {
+          const barH = Math.max(minBar, levels[i] * H * 0.9);
+          const x = i * slot + (slot - bw) / 2;
+          const y = H - barH; // grow up from the bottom edge
+          const r = Math.min(bw / 2, barH, 6 * dpr);
+          ctx2d.beginPath();
+          if (ctx2d.roundRect) ctx2d.roundRect(x, y, bw, barH, [r, r, 0, 0]);
+          else ctx2d.rect(x, y, bw, barH);
+          ctx2d.fill();
+        }
+      };
+
+      const frame = () => {
+        if (analyser && freq && !audio.paused) analyser.getByteFrequencyData(freq);
+        let active = false;
+        for (let i = 0; i < BARS; i++) {
+          let target = 0;
+          if (freq && !audio.paused) {
+            const idx = Math.floor((i / BARS) * freq.length * 0.7);
+            target = freq[idx] / 255;
+          }
+          levels[i] += (target - levels[i]) * 0.35;
+          if (levels[i] > 0.01) active = true;
+        }
+        render();
+        if (!audio.paused || active) rafId = requestAnimationFrame(frame);
+        else rafId = 0;
+      };
+
+      const startViz = () => {
+        const actx = getCtx();
+        if (!actx || reduceMotion) return;
+        if (!analyser) {
+          try {
+            const srcNode = actx.createMediaElementSource(audio);
+            analyser = actx.createAnalyser();
+            analyser.fftSize = 128;
+            analyser.smoothingTimeConstant = 0.8;
+            srcNode.connect(analyser);
+            analyser.connect(actx.destination); // keep audio audible
+            freq = new Uint8Array(analyser.frequencyBinCount);
+          } catch {
+            analyser = null; // tainted/unsupported — audio still plays natively
+          }
+        }
+        if (actx.state === "suspended") actx.resume();
+        if (!rafId) frame();
+      };
+
+      audio.addEventListener("play", startViz);
+    }
   });
 </script>
