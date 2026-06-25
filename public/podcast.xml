@@ -16,8 +16,19 @@
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Wed, 24 Jun 2026 09:56:59 +0000</lastBuildDate>
+  <lastBuildDate>Thu, 25 Jun 2026 09:49:19 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 81: Protecting ancient water harvesting technologies in India: strategies for climate adaptation and sustainable development with global lessons</title>
+      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep081.mp3" length="29172132" type="audio/mpeg"/>
+      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep081.mp3</guid>
+      <pubDate></pubDate>
+      <itunes:episode>81</itunes:episode>
+      <itunes:duration>1215.477551</itunes:duration>
+      <description>SpeakForWater Episode 81: Protecting ancient water harvesting technologies in India: strategies for climate adaptation and sustainable development with global lessons. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://doi.org/10.3389/frwa.2024.1441365</description>
+    </item>
     <item>
       <title>Ep 80: Global water scarcity including surface water quality and expansions of clean water technologies</title>
       <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep080.mp3" length="27770297" type="audio/mpeg"/>
