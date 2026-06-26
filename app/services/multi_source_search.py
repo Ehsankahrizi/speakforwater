@@ -34,6 +34,7 @@ from __future__ import annotations
 
 import concurrent.futures
 import os
+import random
 import re
 import time
 import urllib.parse
@@ -139,16 +140,19 @@ def _reconstruct_abstract(inv_index) -> str:
 
 def search_openalex(query: str, max_results: int = 6) -> List[Dict[str, Any]]:
     print(f"[search] OpenAlex: '{query}'")
-    # Filter for recent + open-access AT THE API. OpenAlex's relevance_score sort
-    # heavily favors old, highly-cited classics (e.g. 2003/2010), which the
-    # downstream recency gate then discards — starving the queue. Filtering
-    # server-side means every returned slot is a recent OA paper we can use.
+    # Sort by NEWEST first (not relevance) so the daily search surfaces fresh
+    # papers instead of the same top-relevance classics every run — relevance is
+    # still enforced by the `search` query and the downstream AI ranker. A small
+    # random page offset adds variety and reaches past the very newest slice.
+    # Recent + open-access are filtered server-side so every slot is usable.
     years_back = int(os.getenv("YEARS_BACK", "5"))
     cutoff_year = time.gmtime().tm_year - years_back
+    page = random.randint(1, int(os.getenv("OPENALEX_MAX_PAGE", "3")))
     params = {
         "search": query,
         "per_page": max_results,
-        "sort": "relevance_score:desc",
+        "page": page,
+        "sort": "publication_date:desc",
         "filter": f"from_publication_date:{cutoff_year}-01-01,is_oa:true",
     }
     if _MAILTO:

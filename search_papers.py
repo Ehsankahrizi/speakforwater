@@ -79,7 +79,7 @@ SHEET_NAME = os.environ.get("SHEET_NAME", "Sheet1")
 
 MAX_PAPERS = int(os.environ.get("MAX_PAPERS", "10"))
 NUM_QUERIES = int(os.environ.get("NUM_QUERIES", "6"))
-PER_SOURCE = int(os.environ.get("PER_SOURCE", "6"))
+PER_SOURCE = int(os.environ.get("PER_SOURCE", "15"))
 YEARS_BACK = int(os.environ.get("YEARS_BACK", "5"))
 
 SCOPES = [
