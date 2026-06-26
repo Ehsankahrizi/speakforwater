@@ -25,3 +25,8 @@ node_modules
 dist/
 .astro/
 package-lock.json
+
+# Large media — served from Cloudflare R2
+public/episodes/*.mp3
+public/ep000.m4a
+public/movie_1.mp4

@@ -1,0 +1,9 @@
+{
+  // Serve the built Astro site (dist/) as static assets on Cloudflare.
+  // No Worker script — this is a static-assets-only deployment.
+  "name": "speakforwater",
+  "compatibility_date": "2026-06-26",
+  "assets": {
+    "directory": "./dist"
+  }
+}
