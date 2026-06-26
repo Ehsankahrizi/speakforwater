@@ -125,6 +125,13 @@ jobs:
           NOTEBOOKLM_COOKIES: ${{ secrets.NOTEBOOKLM_COOKIES }}
           SITE_URL: ${{ secrets.SITE_URL }}
           SHEET_NAME: ${{ secrets.SHEET_NAME || 'Sheet1' }}
+          # Cloudflare R2 media hosting (audio uploaded here; feed points here)
+          MEDIA_BASE_URL: ${{ vars.MEDIA_BASE_URL }}
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ vars.R2_BUCKET }}
+          PODCAST_OWNER_EMAIL: ${{ vars.PODCAST_OWNER_EMAIL || 'kahriziehsan490@gmail.com' }}
           # Pass manual overrides if provided
           MANUAL_PAPER_URL: ${{ inputs.paper_url }}
           MANUAL_PAPER_TITLE: ${{ inputs.paper_title }}
