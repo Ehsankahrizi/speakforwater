@@ -244,6 +244,14 @@ def commit_episode(episode: dict, mp3_path: Path) -> str:
     # Get file size
     file_size = dest_mp3.stat().st_size
 
+    # Upload the MP3 to Cloudflare R2 when configured. If it succeeds, the MP3
+    # is NOT committed to the repo (it lives in R2), which keeps the repo small
+    # and lets Cloudflare Pages build without hitting its 25 MiB file limit.
+    from app.services.r2_uploader import upload_file as r2_upload, r2_enabled
+    mp3_on_r2 = False
+    if r2_enabled():
+        mp3_on_r2 = r2_upload(dest_mp3, f"episodes/{filename}")
+
     # Create metadata JSON
     now = datetime.now(timezone.utc).isoformat()
     metadata = {
@@ -277,8 +285,13 @@ def commit_episode(episode: dict, mp3_path: Path) -> str:
     rss_path.write_text(rss_content, encoding="utf-8")
     logger.info(f"Updated RSS feed: {rss_path}")
 
-    # Git commit and push
-    commit_files = [str(dest_mp3), str(meta_path), str(rss_path)]
+    # Git commit and push. When the MP3 is on R2 we don't commit it (and remove
+    # any local copy so it never lands in the build output).
+    commit_files = [str(meta_path), str(rss_path)]
+    if mp3_on_r2:
+        dest_mp3.unlink(missing_ok=True)
+    else:
+        commit_files.insert(0, str(dest_mp3))
     if cover_generated and dest_cover.exists():
         commit_files.append(str(dest_cover))
     _git_commit_and_push(

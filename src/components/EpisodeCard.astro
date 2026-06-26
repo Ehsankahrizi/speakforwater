@@ -1,5 +1,6 @@
 ---
 import { versionedCover } from "../lib/coverUrl";
+import { mediaUrl, MEDIA_BASE } from "../lib/mediaUrl";
 
 interface Props {
   href: string;
@@ -27,6 +28,10 @@ const {
 } = Astro.props;
 
 const coverUrl = versionedCover(cover);
+const cardAudioSrc = mediaUrl(audioUrl);
+// crossorigin lets the card equalizer read cross-origin (R2) audio; omitted
+// on the same-origin GitHub Pages site.
+const crossorigin = MEDIA_BASE ? "anonymous" : undefined;
 ---
 
 <article class:list={["card", `card--${size}`]} data-ep-card>
@@ -61,7 +66,7 @@ const coverUrl = versionedCover(cover);
         <div class="card-progress" data-card-progress>
           <div class="card-progress-fill" data-card-fill></div>
         </div>
-        <audio data-card-audio src={audioUrl} preload="none"></audio>
+        <audio data-card-audio src={cardAudioSrc} crossorigin={crossorigin} preload="none"></audio>
       </>
     )}
   </div>

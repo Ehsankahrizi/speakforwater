@@ -3,6 +3,7 @@ import { getCollection } from "astro:content";
 import Layout from "../layouts/Layout.astro";
 import EpisodeCard from "../components/EpisodeCard.astro";
 import SubscribeButtons from "../components/SubscribeButtons.astro";
+import { mediaUrl } from "../lib/mediaUrl";
 
 const allEpisodes = (await getCollection("episodes")).sort(
   (a, b) => b.data.episode_number - a.data.episode_number
@@ -19,7 +20,7 @@ const recent = allEpisodes.slice(0, 9);
       autoplay muted loop playsinline preload="auto"
       aria-hidden="true"
     >
-      <source src="/movie_1.mp4" type="video/mp4" />
+      <source src={mediaUrl("/movie_1.mp4")} type="video/mp4" />
     </video>
     <div class="hero-overlay"></div>
 
@@ -51,7 +52,7 @@ const recent = allEpisodes.slice(0, 9);
 
       <!-- Intro audio player -->
       <div class="intro-player" data-intro-player>
-        <audio id="intro-audio" src="/ep000.m4a" preload="metadata"></audio>
+        <audio id="intro-audio" src={mediaUrl("/ep000.m4a")} preload="metadata"></audio>
 
         <button class="ip-play" id="ip-play" aria-label="Play introduction">
           <svg class="ip-icon-play" viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>

@@ -1,4 +1,6 @@
 ---
+import { mediaUrl, MEDIA_BASE } from "../lib/mediaUrl";
+
 interface Props {
   src: string;
   title?: string;
@@ -7,10 +9,14 @@ interface Props {
 
 const { src, title, episodeNumber } = Astro.props;
 const id = `audio-${Math.random().toString(36).slice(2, 9)}`;
+const audioSrc = mediaUrl(src);
+// crossorigin is required for the Web Audio visualizer when the audio is
+// cross-origin (served from R2). Omitted on the same-origin GitHub Pages site.
+const crossorigin = MEDIA_BASE ? "anonymous" : undefined;
 ---
 
 <div class="audio-player" data-player>
-  <audio id={id} src={src} preload="metadata"></audio>
+  <audio id={id} src={audioSrc} crossorigin={crossorigin} preload="metadata"></audio>
 
   <canvas class="viz" data-viz aria-hidden="true"></canvas>
 
