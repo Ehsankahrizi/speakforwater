@@ -5,24 +5,26 @@
   xmlns:content="http://purl.org/rss/1.0/modules/content/">
 <channel>
   <title>SpeakForWater</title>
-  <link>https://ehsankahrizi.github.io/speakforwater</link>
+  <link>https://speakforwater.com</link>
   <description>Making water resources research accessible to everyone. Join Anna and Ehsan as they discuss the latest open-access papers on hydrology, flood management, remote sensing, and water engineering — explained in plain language for farmers, water managers, and anyone who cares about water.</description>
   <language>en</language>
   <itunes:author>Ehsan Kahrizi</itunes:author>
+  <itunes:type>episodic</itunes:type>
   <itunes:owner>
     <itunes:name>Ehsan Kahrizi</itunes:name>
+    <itunes:email>kahriziehsan490@gmail.com</itunes:email>
   </itunes:owner>
   <itunes:category text="Science"/>
-  <itunes:image href="https://ehsankahrizi.github.io/speakforwater/images/cover.jpg"/>
+  <itunes:image href="https://speakforwater.com/podcast-cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
-  <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Thu, 25 Jun 2026 09:49:19 +0000</lastBuildDate>
+  <atom:link href="https://speakforwater.com/podcast.xml" rel="self" type="application/rss+xml"/>
+  <lastBuildDate>Fri, 26 Jun 2026 17:36:23 +0000</lastBuildDate>
 
     <item>
       <title>Ep 81: Protecting ancient water harvesting technologies in India: strategies for climate adaptation and sustainable development with global lessons</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep081.mp3" length="29172132" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep081.mp3</guid>
-      <pubDate></pubDate>
+      <enclosure url="https://speakforwater.com/episodes/ep081.mp3" length="29172132" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep81</guid>
+      <pubDate>Thu, 25 Jun 2026 09:49:19 +0000</pubDate>
       <itunes:episode>81</itunes:episode>
       <itunes:duration>1215.477551</itunes:duration>
       <description>SpeakForWater Episode 81: Protecting ancient water harvesting technologies in India: strategies for climate adaptation and sustainable development with global lessons. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
@@ -31,9 +33,9 @@ Original paper: https://doi.org/10.3389/frwa.2024.1441365</description>
     </item>
     <item>
       <title>Ep 80: Global water scarcity including surface water quality and expansions of clean water technologies</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep080.mp3" length="27770297" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep080.mp3</guid>
-      <pubDate></pubDate>
+      <enclosure url="https://speakforwater.com/episodes/ep080.mp3" length="27770297" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep80</guid>
+      <pubDate>Wed, 24 Jun 2026 09:56:59 +0000</pubDate>
       <itunes:episode>80</itunes:episode>
       <itunes:duration>1157.067755</itunes:duration>
       <description>SpeakForWater Episode 80: Global water scarcity including surface water quality and expansions of clean water technologies. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
@@ -42,9 +44,9 @@ Original paper: https://iopscience.iop.org/article/10.1088/1748-9326/abbfc3/pdf<
     </item>
     <item>
       <title>Ep 79: Maximum, minimum and typical concentration of copper, iron, lead and zinc that can be leached in tap water</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep079.mp3" length="32101190" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep079.mp3</guid>
-      <pubDate></pubDate>
+      <enclosure url="https://speakforwater.com/episodes/ep079.mp3" length="32101190" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep79</guid>
+      <pubDate>Tue, 23 Jun 2026 15:31:07 +0000</pubDate>
       <itunes:episode>79</itunes:episode>
       <itunes:duration>1337.521633</itunes:duration>
       <description>SpeakForWater Episode 79: Maximum, minimum and typical concentration of copper, iron, lead and zinc that can be leached in tap water. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
@@ -53,9 +55,9 @@ Original paper: https://wjarr.com/sites/default/files/WJARR-2022-0341.pdf</descr
     </item>
     <item>
       <title>Ep 78: Correlation of socioeconomic status and lead concentration in tap water in Missouri</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep078.mp3" length="19712253" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep078.mp3</guid>
-      <pubDate></pubDate>
+      <enclosure url="https://speakforwater.com/episodes/ep078.mp3" length="19712253" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep78</guid>
+      <pubDate>Tue, 23 Jun 2026 10:08:50 +0000</pubDate>
       <itunes:episode>78</itunes:episode>
       <itunes:duration>821.315918</itunes:duration>
       <description>SpeakForWater Episode 78: Correlation of socioeconomic status and lead concentration in tap water in Missouri. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
@@ -64,9 +66,9 @@ Original paper: https://emerginginvestigators.org/articles/21-181/pdf</descripti
     </item>
     <item>
       <title>Ep 77: Recycling – The Future Urban Sink for Wastewater and Organic Waste</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep077.mp3" length="30960788" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep077.mp3</guid>
-      <pubDate></pubDate>
+      <enclosure url="https://speakforwater.com/episodes/ep077.mp3" length="30960788" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep77</guid>
+      <pubDate>Mon, 22 Jun 2026 21:20:01 +0000</pubDate>
       <itunes:episode>77</itunes:episode>
       <itunes:duration>1290.004898</itunes:duration>
       <description>SpeakForWater Episode 77: Recycling – The Future Urban Sink for Wastewater and Organic Waste. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
@@ -75,9 +77,9 @@ Original paper: https://doi.org/10.1016/j.cacint.2023.100104</description>
     </item>
     <item>
       <title>Ep 76: Efficient wastewater management for smart cities using Internet of Things (IoT) and blockchain technology</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep076.mp3" length="24370408" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep076.mp3</guid>
-      <pubDate></pubDate>
+      <enclosure url="https://speakforwater.com/episodes/ep076.mp3" length="24370408" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep76</guid>
+      <pubDate>Mon, 22 Jun 2026 12:33:08 +0000</pubDate>
       <itunes:episode>76</itunes:episode>
       <itunes:duration>1015.405714</itunes:duration>
       <description>SpeakForWater Episode 76: Efficient wastewater management for smart cities using Internet of Things (IoT) and blockchain technology. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
@@ -86,9 +88,9 @@ Original paper: https://doi.org/10.21833/ijaas.2024.10.017</description>
     </item>
     <item>
       <title>Ep 75: The timing of unprecedented hydrological drought under climate change</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep075.mp3" length="30064266" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep075.mp3</guid>
-      <pubDate></pubDate>
+      <enclosure url="https://speakforwater.com/episodes/ep075.mp3" length="30064266" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep75</guid>
+      <pubDate>Sun, 21 Jun 2026 20:07:23 +0000</pubDate>
       <itunes:episode>75</itunes:episode>
       <itunes:duration>1252.649796</itunes:duration>
       <description>SpeakForWater Episode 75: The timing of unprecedented hydrological drought under climate change. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
@@ -97,9 +99,9 @@ Original paper: https://www.nature.com/articles/s41467-022-30729-2.pdf</descript
     </item>
     <item>
       <title>Ep 74: Ecosystem services provided by marine and freshwater phytoplankton</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep074.mp3" length="35974417" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep074.mp3</guid>
-      <pubDate></pubDate>
+      <enclosure url="https://speakforwater.com/episodes/ep074.mp3" length="35974417" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep74</guid>
+      <pubDate>Sun, 21 Jun 2026 14:43:21 +0000</pubDate>
       <itunes:episode>74</itunes:episode>
       <itunes:duration>1498.906122</itunes:duration>
       <description>SpeakForWater Episode 74: Ecosystem services provided by marine and freshwater phytoplankton. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
@@ -108,9 +110,9 @@ Original paper: https://link.springer.com/content/pdf/10.1007/s10750-022-04795-y
     </item>
     <item>
       <title>Ep 73: Unlocking aquifer sustainability through irrigator-driven groundwater conservation</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep073.mp3" length="31570800" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep073.mp3</guid>
-      <pubDate></pubDate>
+      <enclosure url="https://speakforwater.com/episodes/ep073.mp3" length="31570800" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep73</guid>
+      <pubDate>Sun, 21 Jun 2026 10:12:49 +0000</pubDate>
       <itunes:episode>73</itunes:episode>
       <itunes:duration>1315.422041</itunes:duration>
       <description>SpeakForWater Episode 73: Unlocking aquifer sustainability through irrigator-driven groundwater conservation. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
@@ -119,9 +121,9 @@ Original paper: https://www.osti.gov/biblio/2514408</description>
     </item>
     <item>
       <title>Ep 72: People need freshwater biodiversity</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep072.mp3" length="27224233" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep072.mp3</guid>
-      <pubDate></pubDate>
+      <enclosure url="https://speakforwater.com/episodes/ep072.mp3" length="27224233" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep72</guid>
+      <pubDate>Sat, 20 Jun 2026 19:59:29 +0000</pubDate>
       <itunes:episode>72</itunes:episode>
       <itunes:duration>1134.315102</itunes:duration>
       <description>SpeakForWater Episode 72: People need freshwater biodiversity. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
@@ -130,9 +132,9 @@ Original paper: https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/wat2.1633<
     </item>
     <item>
       <title>Ep 71: Protecting local water quality has global benefits</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep071.mp3" length="27843022" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep071.mp3</guid>
-      <pubDate></pubDate>
+      <enclosure url="https://speakforwater.com/episodes/ep071.mp3" length="27843022" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep71</guid>
+      <pubDate>Sat, 20 Jun 2026 14:39:14 +0000</pubDate>
       <itunes:episode>71</itunes:episode>
       <itunes:duration>1160.097959</itunes:duration>
       <description>SpeakForWater Episode 71: Protecting local water quality has global benefits. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
@@ -141,9 +143,9 @@ Original paper: https://www.nature.com/articles/s41467-021-22836-3.pdf</descript
     </item>
     <item>
       <title>Ep 70: The role of Indigenous peoples and local communities in effective and equitable conservation</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep070.mp3" length="31467355" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep070.mp3</guid>
-      <pubDate></pubDate>
+      <enclosure url="https://speakforwater.com/episodes/ep070.mp3" length="31467355" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep70</guid>
+      <pubDate>Sat, 20 Jun 2026 09:45:49 +0000</pubDate>
       <itunes:episode>70</itunes:episode>
       <itunes:duration>1311.111837</itunes:duration>
       <description>SpeakForWater Episode 70: The role of Indigenous peoples and local communities in effective and equitable conservation. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
@@ -152,9 +154,9 @@ Original paper: http://www.ecologyandsociety.org/vol26/iss3/art19/ES-2021-12625.
     </item>
     <item>
       <title>Ep 69: Alternative household water affordability metrics using water bill delinquency behavior</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep069.mp3" length="27486920" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep069.mp3</guid>
-      <pubDate></pubDate>
+      <enclosure url="https://speakforwater.com/episodes/ep069.mp3" length="27486920" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep69</guid>
+      <pubDate>Fri, 19 Jun 2026 20:10:41 +0000</pubDate>
       <itunes:episode>69</itunes:episode>
       <itunes:duration>1145.260408</itunes:duration>
       <description>SpeakForWater Episode 69: Alternative household water affordability metrics using water bill delinquency behavior. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
@@ -163,9 +165,9 @@ Original paper: https://doi.org/10.1088/1748-9326/ad5609</description>
     </item>
     <item>
       <title>Ep 68: Beyond the Wedge: Impact of Tidal Streams on Salinization of Groundwater in a Coastal Aquifer Stressed by Pumping and Sea‐Level Rise</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep068.mp3" length="32569513" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep068.mp3</guid>
-      <pubDate></pubDate>
+      <enclosure url="https://speakforwater.com/episodes/ep068.mp3" length="32569513" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep68</guid>
+      <pubDate>Fri, 19 Jun 2026 15:47:43 +0000</pubDate>
       <itunes:episode>68</itunes:episode>
       <itunes:duration>1357.035102</itunes:duration>
       <description>SpeakForWater Episode 68: Beyond the Wedge: Impact of Tidal Streams on Salinization of Groundwater in a Coastal Aquifer Stressed by Pumping and Sea‐Level Rise. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
@@ -174,9 +176,9 @@ Original paper: https://doi.org/10.1029/2023wr035840</description>
     </item>
     <item>
       <title>Ep 67: Freshwater salinization syndrome: from emerging global problem to managing risks</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep067.mp3" length="36160618" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep067.mp3</guid>
-      <pubDate></pubDate>
+      <enclosure url="https://speakforwater.com/episodes/ep067.mp3" length="36160618" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep67</guid>
+      <pubDate>Fri, 19 Jun 2026 11:03:50 +0000</pubDate>
       <itunes:episode>67</itunes:episode>
       <itunes:duration>1506.66449</itunes:duration>
       <description>SpeakForWater Episode 67: Freshwater salinization syndrome: from emerging global problem to managing risks. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
@@ -185,9 +187,9 @@ Original paper: https://link.springer.com/content/pdf/10.1007/s10533-021-00784-w
     </item>
     <item>
       <title>Ep 66: Measuring water affordability and the financial capability of utilities</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep066.mp3" length="36830189" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep066.mp3</guid>
-      <pubDate></pubDate>
+      <enclosure url="https://speakforwater.com/episodes/ep066.mp3" length="36830189" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep66</guid>
+      <pubDate>Thu, 18 Jun 2026 21:37:44 +0000</pubDate>
       <itunes:episode>66</itunes:episode>
       <itunes:duration>1534.563265</itunes:duration>
       <description>SpeakForWater Episode 66: Measuring water affordability and the financial capability of utilities. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
@@ -196,9 +198,9 @@ Original paper: https://doi.org/10.1002/aws2.1260</description>
     </item>
     <item>
       <title>Ep 65: Evidence of anthropogenic impacts on global drought frequency, duration, and intensity</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep065.mp3" length="31700576" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep065.mp3</guid>
-      <pubDate></pubDate>
+      <enclosure url="https://speakforwater.com/episodes/ep065.mp3" length="31700576" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep65</guid>
+      <pubDate>Thu, 18 Jun 2026 16:04:23 +0000</pubDate>
       <itunes:episode>65</itunes:episode>
       <itunes:duration>1320.829388</itunes:duration>
       <description>SpeakForWater Episode 65: Evidence of anthropogenic impacts on global drought frequency, duration, and intensity. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
@@ -207,9 +209,9 @@ Original paper: https://www.nature.com/articles/s41467-021-22314-w.pdf</descript
     </item>
     <item>
       <title>Ep 64: Water affordability and human right to water implications in California</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep064.mp3" length="25330878" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep064.mp3</guid>
-      <pubDate></pubDate>
+      <enclosure url="https://speakforwater.com/episodes/ep064.mp3" length="25330878" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep64</guid>
+      <pubDate>Thu, 18 Jun 2026 10:52:39 +0000</pubDate>
       <itunes:episode>64</itunes:episode>
       <itunes:duration>1055.425306</itunes:duration>
       <description>SpeakForWater Episode 64: Water affordability and human right to water implications in California. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
@@ -218,9 +220,9 @@ Original paper: https://journals.plos.org/plosone/article/file?id=10.1371/journa
     </item>
     <item>
       <title>Ep 63: Affordability of household water services across the United States</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep063.mp3" length="31427231" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep063.mp3</guid>
-      <pubDate></pubDate>
+      <enclosure url="https://speakforwater.com/episodes/ep063.mp3" length="31427231" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep63</guid>
+      <pubDate>Wed, 17 Jun 2026 20:36:15 +0000</pubDate>
       <itunes:episode>63</itunes:episode>
       <itunes:duration>1309.44</itunes:duration>
       <description>SpeakForWater Episode 63: Affordability of household water services across the United States. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
@@ -229,9 +231,9 @@ Original paper: https://journals.plos.org/water/article/file?id=10.1371/journal.
     </item>
     <item>
       <title>Ep 62: How Sensitive Is Household Affordability to Changes in Water Bills?</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep062.mp3" length="26712651" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep062.mp3</guid>
-      <pubDate></pubDate>
+      <enclosure url="https://speakforwater.com/episodes/ep062.mp3" length="26712651" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep62</guid>
+      <pubDate>Wed, 17 Jun 2026 16:11:08 +0000</pubDate>
       <itunes:episode>62</itunes:episode>
       <itunes:duration>1112.999184</itunes:duration>
       <description>SpeakForWater Episode 62: How Sensitive Is Household Affordability to Changes in Water Bills?. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
@@ -240,9 +242,9 @@ Original paper: https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/awwa.2105<
     </item>
     <item>
       <title>Ep 61: Rainwater Harvesting and Rural Livelihoods in Nepal</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep061.mp3" length="25938382" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep061.mp3</guid>
-      <pubDate></pubDate>
+      <enclosure url="https://speakforwater.com/episodes/ep061.mp3" length="25938382" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep61</guid>
+      <pubDate>Wed, 17 Jun 2026 11:21:05 +0000</pubDate>
       <itunes:episode>61</itunes:episode>
       <itunes:duration>1080.737959</itunes:duration>
       <description>SpeakForWater Episode 61: Rainwater Harvesting and Rural Livelihoods in Nepal. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
@@ -251,9 +253,9 @@ Original paper: https://link.springer.com/content/pdf/10.1007/978-981-16-0680-9_
     </item>
     <item>
       <title>Ep 60: Anthropogenic Drought: Definition, Challenges, and Opportunities</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep060.mp3" length="34505500" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep060.mp3</guid>
-      <pubDate></pubDate>
+      <enclosure url="https://speakforwater.com/episodes/ep060.mp3" length="34505500" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep60</guid>
+      <pubDate>Tue, 16 Jun 2026 21:25:06 +0000</pubDate>
       <itunes:episode>60</itunes:episode>
       <itunes:duration>1437.701224</itunes:duration>
       <description>SpeakForWater Episode 60: Anthropogenic Drought: Definition, Challenges, and Opportunities. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
@@ -262,9 +264,9 @@ Original paper: https://onlinelibrary.wiley.com/doi/pdfdirect/10.1029/2019RG0006
     </item>
     <item>
       <title>Ep 59: A global transition to flash droughts under climate change</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep059.mp3" length="32350711" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep059.mp3</guid>
-      <pubDate></pubDate>
+      <enclosure url="https://speakforwater.com/episodes/ep059.mp3" length="32350711" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep59</guid>
+      <pubDate>Tue, 16 Jun 2026 17:22:48 +0000</pubDate>
       <itunes:episode>59</itunes:episode>
       <itunes:duration>1347.918367</itunes:duration>
       <description>SpeakForWater Episode 59: A global transition to flash droughts under climate change. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
@@ -273,9 +275,9 @@ Original paper: https://eprints.soton.ac.uk/477480/1/Global_flash_drought_transi
     </item>
     <item>
       <title>Ep 58: Comparison of carbon footprint and water scarcity footprint of milk protein produced by cellular agriculture and the dairy industry</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep058.mp3" length="30489330" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep058.mp3</guid>
-      <pubDate></pubDate>
+      <enclosure url="https://speakforwater.com/episodes/ep058.mp3" length="30489330" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep58</guid>
+      <pubDate>Tue, 16 Jun 2026 11:37:45 +0000</pubDate>
       <itunes:episode>58</itunes:episode>
       <itunes:duration>1270.360816</itunes:duration>
       <description>SpeakForWater Episode 58: Comparison of carbon footprint and water scarcity footprint of milk protein produced by cellular agriculture and the dairy industry. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
@@ -284,9 +286,9 @@ Original paper: https://link.springer.com/content/pdf/10.1007/s11367-022-02087-0
     </item>
     <item>
       <title>Ep 57: A triple increase in global river basins with water scarcity due to future pollution</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep057.mp3" length="31890538" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep057.mp3</guid>
-      <pubDate></pubDate>
+      <enclosure url="https://speakforwater.com/episodes/ep057.mp3" length="31890538" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep57</guid>
+      <pubDate>Mon, 15 Jun 2026 21:25:03 +0000</pubDate>
       <itunes:episode>57</itunes:episode>
       <itunes:duration>1328.74449</itunes:duration>
       <description>SpeakForWater Episode 57: A triple increase in global river basins with water scarcity due to future pollution. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
@@ -295,9 +297,9 @@ Original paper: https://www.nature.com/articles/s41467-024-44947-3.pdf</descript
     </item>
     <item>
       <title>Ep 56: Using water and wastewater decentralization to enhance the resilience and sustainability of cities</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep056.mp3" length="29646097" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep056.mp3</guid>
-      <pubDate></pubDate>
+      <enclosure url="https://speakforwater.com/episodes/ep056.mp3" length="29646097" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep56</guid>
+      <pubDate>Mon, 15 Jun 2026 12:44:03 +0000</pubDate>
       <itunes:episode>56</itunes:episode>
       <itunes:duration>1235.226122</itunes:duration>
       <description>SpeakForWater Episode 56: Using water and wastewater decentralization to enhance the resilience and sustainability of cities. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
@@ -306,9 +308,9 @@ Original paper: https://www.nature.com/articles/s44221-024-00303-9.pdf</descript
     </item>
     <item>
       <title>Ep 55: Remote sensing and multi-criterion analysis for identifying suitable rainwater harvesting areas</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep055.mp3" length="28347707" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep055.mp3</guid>
-      <pubDate></pubDate>
+      <enclosure url="https://speakforwater.com/episodes/ep055.mp3" length="28347707" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep55</guid>
+      <pubDate>Sun, 14 Jun 2026 19:56:46 +0000</pubDate>
       <itunes:episode>55</itunes:episode>
       <itunes:duration>1181.126531</itunes:duration>
       <description>SpeakForWater Episode 55: Remote sensing and multi-criterion analysis for identifying suitable rainwater harvesting areas. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
@@ -317,9 +319,9 @@ Original paper: https://link.springer.com/content/pdf/10.1007/s11600-022-00910-8
     </item>
     <item>
       <title>Ep 54: Identifying potential zones for rainwater harvesting interventions for sustainable intensification in the semi-arid tropics</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep054.mp3" length="31141346" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep054.mp3</guid>
-      <pubDate></pubDate>
+      <enclosure url="https://speakforwater.com/episodes/ep054.mp3" length="31141346" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep54</guid>
+      <pubDate>Sun, 14 Jun 2026 14:36:37 +0000</pubDate>
       <itunes:episode>54</itunes:episode>
       <itunes:duration>1297.528163</itunes:duration>
       <description>SpeakForWater Episode 54: Identifying potential zones for rainwater harvesting interventions for sustainable intensification in the semi-arid tropics. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
@@ -328,9 +330,9 @@ Original paper: https://www.nature.com/articles/s41598-022-07847-4.pdf</descript
     </item>
     <item>
       <title>Ep 53: Future global urban water scarcity and potential solutions</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep053.mp3" length="26853712" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep053.mp3</guid>
-      <pubDate></pubDate>
+      <enclosure url="https://speakforwater.com/episodes/ep053.mp3" length="26853712" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep53</guid>
+      <pubDate>Sun, 14 Jun 2026 09:57:39 +0000</pubDate>
       <itunes:episode>53</itunes:episode>
       <itunes:duration>1118.876735</itunes:duration>
       <description>SpeakForWater Episode 53: Future global urban water scarcity and potential solutions. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
@@ -339,9 +341,9 @@ Original paper: https://www.nature.com/articles/s41467-021-25026-3.pdf</descript
     </item>
     <item>
       <title>Ep 52: Pharmaceutical pollution of the world’s rivers</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep052.mp3" length="19721030" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep052.mp3</guid>
-      <pubDate></pubDate>
+      <enclosure url="https://speakforwater.com/episodes/ep052.mp3" length="19721030" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep52</guid>
+      <pubDate>Sat, 13 Jun 2026 19:57:38 +0000</pubDate>
       <itunes:episode>52</itunes:episode>
       <itunes:duration>821.681633</itunes:duration>
       <description>SpeakForWater Episode 52: Pharmaceutical pollution of the world’s rivers. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
@@ -350,9 +352,9 @@ Original paper: https://www.pnas.org/content/pnas/119/8/e2113947119.full.pdf</de
     </item>
     <item>
       <title>Ep 51: Mega‐Tidal and Surface Flooding Controls on Coastal Groundwater and Saltwater Intrusion Within Agricultural Dikelands</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep051.mp3" length="28269340" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep051.mp3</guid>
-      <pubDate></pubDate>
+      <enclosure url="https://speakforwater.com/episodes/ep051.mp3" length="28269340" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep51</guid>
+      <pubDate>Sat, 13 Jun 2026 14:32:46 +0000</pubDate>
       <itunes:episode>51</itunes:episode>
       <itunes:duration>1177.861224</itunes:duration>
       <description>SpeakForWater Episode 51: Mega‐Tidal and Surface Flooding Controls on Coastal Groundwater and Saltwater Intrusion Within Agricultural Dikelands. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
@@ -361,9 +363,9 @@ Original paper: https://onlinelibrary.wiley.com/doi/pdfdirect/10.1029/2023WR0350
     </item>
     <item>
       <title>Ep 50: Anthropogenic drought dominates groundwater depletion in Iran</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep050.mp3" length="26864370" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep050.mp3</guid>
-      <pubDate></pubDate>
+      <enclosure url="https://speakforwater.com/episodes/ep050.mp3" length="26864370" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep50</guid>
+      <pubDate>Sat, 13 Jun 2026 09:40:00 +0000</pubDate>
       <itunes:episode>50</itunes:episode>
       <itunes:duration>1119.320816</itunes:duration>
       <description>SpeakForWater Episode 50: Anthropogenic drought dominates groundwater depletion in Iran. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
@@ -372,9 +374,9 @@ Original paper: https://www.nature.com/articles/s41598-021-88522-y.pdf</descript
     </item>
     <item>
       <title>Ep 49: Risk of pesticide pollution at the global scale</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep049.mp3" length="28686881" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep049.mp3</guid>
-      <pubDate></pubDate>
+      <enclosure url="https://speakforwater.com/episodes/ep049.mp3" length="28686881" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep49</guid>
+      <pubDate>Fri, 12 Jun 2026 20:35:01 +0000</pubDate>
       <itunes:episode>49</itunes:episode>
       <itunes:duration>1195.258776</itunes:duration>
       <description>SpeakForWater Episode 49: Risk of pesticide pollution at the global scale. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
@@ -383,9 +385,9 @@ Original paper: https://rune.une.edu.au/web/retrieve/f3633435-3fb8-45b9-b202-0e2
     </item>
     <item>
       <title>Ep 48: OpenET: Filling a Critical Data Gap in Water Management for the Western United States</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep048.mp3" length="33635309" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep048.mp3</guid>
-      <pubDate></pubDate>
+      <enclosure url="https://speakforwater.com/episodes/ep048.mp3" length="33635309" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep48</guid>
+      <pubDate>Fri, 12 Jun 2026 15:43:59 +0000</pubDate>
       <itunes:episode>48</itunes:episode>
       <itunes:duration>1401.443265</itunes:duration>
       <description>SpeakForWater Episode 48: OpenET: Filling a Critical Data Gap in Water Management for the Western United States. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
@@ -394,9 +396,9 @@ Original paper: https://doi.org/10.1111/1752-1688.12956</description>
     </item>
     <item>
       <title>Ep 47: Shoreline subsurface dams to protect coastal aquifers from sea level rise and saltwater intrusion</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep047.mp3" length="32839097" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep047.mp3</guid>
-      <pubDate></pubDate>
+      <enclosure url="https://speakforwater.com/episodes/ep047.mp3" length="32839097" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep47</guid>
+      <pubDate>Fri, 12 Jun 2026 10:37:32 +0000</pubDate>
       <itunes:episode>47</itunes:episode>
       <itunes:duration>1368.267755</itunes:duration>
       <description>SpeakForWater Episode 47: Shoreline subsurface dams to protect coastal aquifers from sea level rise and saltwater intrusion. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
@@ -405,9 +407,9 @@ Original paper: https://link.springer.com/content/pdf/10.1007/s13201-023-02032-y
     </item>
     <item>
       <title>Ep 46: Saltwater intrusion and climate change impact on coastal agriculture</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep046.mp3" length="30680546" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep046.mp3</guid>
-      <pubDate></pubDate>
+      <enclosure url="https://speakforwater.com/episodes/ep046.mp3" length="30680546" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep46</guid>
+      <pubDate>Thu, 11 Jun 2026 20:47:54 +0000</pubDate>
       <itunes:episode>46</itunes:episode>
       <itunes:duration>1278.328163</itunes:duration>
       <description>SpeakForWater Episode 46: Saltwater intrusion and climate change impact on coastal agriculture. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
@@ -416,9 +418,9 @@ Original paper: https://journals.plos.org/water/article/file?id=10.1371/journal.
     </item>
     <item>
       <title>Ep 45: The role of social interaction in farmers’ water-saving irrigation technology adoption: testing farmers’ interaction mechanisms</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep045.mp3" length="38383116" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep045.mp3</guid>
-      <pubDate></pubDate>
+      <enclosure url="https://speakforwater.com/episodes/ep045.mp3" length="38383116" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep45</guid>
+      <pubDate>Thu, 11 Jun 2026 16:34:09 +0000</pubDate>
       <itunes:episode>45</itunes:episode>
       <itunes:duration>1599.268571</itunes:duration>
       <description>SpeakForWater Episode 45: The role of social interaction in farmers’ water-saving irrigation technology adoption: testing farmers’ interaction mechanisms. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
@@ -427,9 +429,9 @@ Original paper: https://www.nature.com/articles/s41598-024-76620-6.pdf</descript
     </item>
     <item>
       <title>Ep 44: ‘They adopt, I also adopt’: The neighborhood effects and irrigator farmers’ conversion to adopt water-saving irrigation technology</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep044.mp3" length="33957555" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep044.mp3</guid>
-      <pubDate></pubDate>
+      <enclosure url="https://speakforwater.com/episodes/ep044.mp3" length="33957555" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep44</guid>
+      <pubDate>Thu, 11 Jun 2026 11:05:03 +0000</pubDate>
       <itunes:episode>44</itunes:episode>
       <itunes:duration>1414.870204</itunes:duration>
       <description>SpeakForWater Episode 44: ‘They adopt, I also adopt’: The neighborhood effects and irrigator farmers’ conversion to adopt water-saving irrigation technology. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
@@ -438,9 +440,9 @@ Original paper: https://doi.org/10.1016/j.agwat.2024.109141</description>
     </item>
     <item>
       <title>Ep 43: Urban flood risk and green infrastructure: Who is exposed to risk and who benefits from investment? A case study of three U.S. Cities</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep043.mp3" length="30045457" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep043.mp3</guid>
-      <pubDate></pubDate>
+      <enclosure url="https://speakforwater.com/episodes/ep043.mp3" length="30045457" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep43</guid>
+      <pubDate>Wed, 10 Jun 2026 20:56:39 +0000</pubDate>
       <itunes:episode>43</itunes:episode>
       <itunes:duration>1251.866122</itunes:duration>
       <description>SpeakForWater Episode 43: Urban flood risk and green infrastructure: Who is exposed to risk and who benefits from investment? A case study of three U.S. Cities. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
@@ -449,9 +451,9 @@ Original paper: https://doi.org/10.1016/j.landurbplan.2022.104417</description>
     </item>
     <item>
       <title>Ep 42: Global potential for harvesting drinking water from air using solar energy</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep042.mp3" length="29076210" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep042.mp3</guid>
-      <pubDate></pubDate>
+      <enclosure url="https://speakforwater.com/episodes/ep042.mp3" length="29076210" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep42</guid>
+      <pubDate>Wed, 10 Jun 2026 16:08:44 +0000</pubDate>
       <itunes:episode>42</itunes:episode>
       <itunes:duration>1211.480816</itunes:duration>
       <description>SpeakForWater Episode 42: Global potential for harvesting drinking water from air using solar energy. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
@@ -460,9 +462,9 @@ Original paper: https://www.nature.com/articles/s41586-021-03900-w.pdf</descript
     </item>
     <item>
       <title>Ep 41: Inequitable patterns of US flood risk in the Anthropocene</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep041.mp3" length="28569644" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep041.mp3</guid>
-      <pubDate></pubDate>
+      <enclosure url="https://speakforwater.com/episodes/ep041.mp3" length="28569644" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep41</guid>
+      <pubDate>Wed, 10 Jun 2026 10:33:30 +0000</pubDate>
       <itunes:episode>41</itunes:episode>
       <itunes:duration>1190.373878</itunes:duration>
       <description>SpeakForWater Episode 41: Inequitable patterns of US flood risk in the Anthropocene. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
@@ -471,9 +473,9 @@ Original paper: https://www.nature.com/articles/s41558-021-01265-6.pdf</descript
     </item>
     <item>
       <title>Ep 40: Do-It-Yourself Flood Risk Adaptation Strategies in the Neighborhoods of Kano City, Nigeria</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep040.mp3" length="32557601" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep040.mp3</guid>
-      <pubDate></pubDate>
+      <enclosure url="https://speakforwater.com/episodes/ep040.mp3" length="32557601" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep40</guid>
+      <pubDate>Tue, 09 Jun 2026 20:33:32 +0000</pubDate>
       <itunes:episode>40</itunes:episode>
       <itunes:duration>1356.538776</itunes:duration>
       <description>SpeakForWater Episode 40: Do-It-Yourself Flood Risk Adaptation Strategies in the Neighborhoods of Kano City, Nigeria. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
@@ -482,9 +484,9 @@ Original paper: https://link.springer.com/content/pdf/10.1007%2F978-3-030-45106-
     </item>
     <item>
       <title>Ep 39: High urban flood risk and no shelter access disproportionally impacts vulnerable communities in the USA</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep039.mp3" length="29689356" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep039.mp3</guid>
-      <pubDate></pubDate>
+      <enclosure url="https://speakforwater.com/episodes/ep039.mp3" length="29689356" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep39</guid>
+      <pubDate>Tue, 09 Jun 2026 15:33:32 +0000</pubDate>
       <itunes:episode>39</itunes:episode>
       <itunes:duration>1237.028571</itunes:duration>
       <description>SpeakForWater Episode 39: High urban flood risk and no shelter access disproportionally impacts vulnerable communities in the USA. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
@@ -493,9 +495,9 @@ Original paper: https://www.nature.com/articles/s43247-023-01165-x.pdf</descript
     </item>
     <item>
       <title>Ep 38: Access to basic drinking water services, safe water storage, and household water treatment practice in rural communities of northwest Ethiopia</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep038.mp3" length="26519554" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep038.mp3</guid>
-      <pubDate></pubDate>
+      <enclosure url="https://speakforwater.com/episodes/ep038.mp3" length="26519554" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep38</guid>
+      <pubDate>Tue, 09 Jun 2026 10:10:21 +0000</pubDate>
       <itunes:episode>38</itunes:episode>
       <itunes:duration>1104.953469</itunes:duration>
       <description>SpeakForWater Episode 38: Access to basic drinking water services, safe water storage, and household water treatment practice in rural communities of northwest Ethiopia. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
@@ -504,9 +506,9 @@ Original paper: https://www.nature.com/articles/s41598-022-25001-y.pdf</descript
     </item>
     <item>
       <title>Ep 37: Watershed Water Supply Security Reliability Assessment and Risk Node Identification in Mountain Piedmont Transition Zones Under Extreme Drought Stress: A Case Study from the Feng River Basin</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep037.mp3" length="29960194" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep037.mp3</guid>
-      <pubDate></pubDate>
+      <enclosure url="https://speakforwater.com/episodes/ep037.mp3" length="29960194" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep37</guid>
+      <pubDate>Sun, 07 Jun 2026 14:19:03 +0000</pubDate>
       <itunes:episode>37</itunes:episode>
       <itunes:duration>1248.313469</itunes:duration>
       <description>SpeakForWater Episode 37: Watershed Water Supply Security Reliability Assessment and Risk Node Identification in Mountain Piedmont Transition Zones Under Extreme Drought Stress: A Case Study from the Feng River Basin. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
@@ -515,9 +517,9 @@ Original paper: https://doi.org/10.3390/w18101121</description>
     </item>
     <item>
       <title>Ep 36: A Multi-Source Geospatial Framework for the Evaluation of Urban Flood Resilience Under Extreme Rainfall: Evidence from Chongqing, China</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep036.mp3" length="30525693" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep036.mp3</guid>
-      <pubDate></pubDate>
+      <enclosure url="https://speakforwater.com/episodes/ep036.mp3" length="30525693" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep36</guid>
+      <pubDate>Sat, 06 Jun 2026 19:53:36 +0000</pubDate>
       <itunes:episode>36</itunes:episode>
       <itunes:duration>1271.875918</itunes:duration>
       <description>SpeakForWater Episode 36: A Multi-Source Geospatial Framework for the Evaluation of Urban Flood Resilience Under Extreme Rainfall: Evidence from Chongqing, China. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
@@ -526,9 +528,9 @@ Original paper: https://doi.org/10.3390/w18091067</description>
     </item>
     <item>
       <title>Ep 35: Painting Water Weaponization: A Deep Belief Network (DBN) and Remote Sensing Approach for Monitoring Land Use and Hydrological Changes in the Helmand /Hirmand Transboundary River Basin</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep035.mp3" length="26831769" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep035.mp3</guid>
-      <pubDate></pubDate>
+      <enclosure url="https://speakforwater.com/episodes/ep035.mp3" length="26831769" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep35</guid>
+      <pubDate>Sat, 06 Jun 2026 14:16:18 +0000</pubDate>
       <itunes:episode>35</itunes:episode>
       <itunes:duration>1117.962449</itunes:duration>
       <description>SpeakForWater Episode 35: Painting Water Weaponization: A Deep Belief Network (DBN) and Remote Sensing Approach for Monitoring Land Use and Hydrological Changes in the Helmand /Hirmand Transboundary River Basin. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
@@ -537,9 +539,9 @@ Original paper: https://www.mdpi.com/2073-4441/18/10/1117/pdf?version=1778151465
     </item>
     <item>
       <title>Ep 34: Mechanisms of Metal Particle Release from Pipe Scales in Ductile Iron Water Supply Pipelines: Control by Water Quality Parameters</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep034.mp3" length="38518535" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep034.mp3</guid>
-      <pubDate></pubDate>
+      <enclosure url="https://speakforwater.com/episodes/ep034.mp3" length="38518535" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep34</guid>
+      <pubDate>Fri, 05 Jun 2026 20:22:43 +0000</pubDate>
       <itunes:episode>34</itunes:episode>
       <itunes:duration>1604.91102</itunes:duration>
       <description>SpeakForWater Episode 34: Mechanisms of Metal Particle Release from Pipe Scales in Ductile Iron Water Supply Pipelines: Control by Water Quality Parameters. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
@@ -548,9 +550,9 @@ Original paper: https://www.mdpi.com/2073-4441/18/9/1101/pdf?version=1777887379<
     </item>
     <item>
       <title>Ep 33: Occurrence and Seasonal Variability of Cyanotoxins in Mesotrophic and Eutrophic Water Bodies of Central Chile</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep033.mp3" length="35200775" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep033.mp3</guid>
-      <pubDate></pubDate>
+      <enclosure url="https://speakforwater.com/episodes/ep033.mp3" length="35200775" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep33</guid>
+      <pubDate>Thu, 04 Jun 2026 20:28:25 +0000</pubDate>
       <itunes:episode>33</itunes:episode>
       <itunes:duration>1466.67102</itunes:duration>
       <description>SpeakForWater Episode 33: Occurrence and Seasonal Variability of Cyanotoxins in Mesotrophic and Eutrophic Water Bodies of Central Chile. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
@@ -559,9 +561,9 @@ Original paper: https://doi.org/10.3390/w18091111</description>
     </item>
     <item>
       <title>Ep 32: Climate change and irrigation expansion reshape the water pressure and upstream–downstream interactions in the Lancang–Mekong River Basin</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep032.mp3" length="27911985" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep032.mp3</guid>
-      <pubDate></pubDate>
+      <enclosure url="https://speakforwater.com/episodes/ep032.mp3" length="27911985" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep32</guid>
+      <pubDate>Thu, 04 Jun 2026 15:54:23 +0000</pubDate>
       <itunes:episode>32</itunes:episode>
       <itunes:duration>1162.971429</itunes:duration>
       <description>SpeakForWater Episode 32: Climate change and irrigation expansion reshape the water pressure and upstream–downstream interactions in the Lancang–Mekong River Basin. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
@@ -570,9 +572,9 @@ Original paper: https://doi.org/10.5194/hess-30-2433-2026</description>
     </item>
     <item>
       <title>Ep 31: Assessing Flood Vulnerability of Landfills in Southern New Jersey: Incorporating Climate Change and Extreme Weather Impacts</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep031.mp3" length="27724530" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep031.mp3</guid>
-      <pubDate></pubDate>
+      <enclosure url="https://speakforwater.com/episodes/ep031.mp3" length="27724530" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep31</guid>
+      <pubDate>Thu, 04 Jun 2026 10:21:48 +0000</pubDate>
       <itunes:episode>31</itunes:episode>
       <itunes:duration>1155.160816</itunes:duration>
       <description>SpeakForWater Episode 31: Assessing Flood Vulnerability of Landfills in Southern New Jersey: Incorporating Climate Change and Extreme Weather Impacts. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
@@ -581,9 +583,9 @@ Original paper: https://doi.org/10.3390/w18091085</description>
     </item>
     <item>
       <title>Ep 30: Sustainable Recirculating Aquaculture Systems (RAS): Development and Challenges</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep030.mp3" length="34809565" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep030.mp3</guid>
-      <pubDate></pubDate>
+      <enclosure url="https://speakforwater.com/episodes/ep030.mp3" length="34809565" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep30</guid>
+      <pubDate>Thu, 04 Jun 2026 05:48:42 +0000</pubDate>
       <itunes:episode>30</itunes:episode>
       <itunes:duration>1450.370612</itunes:duration>
       <description>SpeakForWater Episode 30: Sustainable Recirculating Aquaculture Systems (RAS): Development and Challenges. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
@@ -592,9 +594,9 @@ Original paper: https://www.mdpi.com/2073-4441/18/9/1093/pdf?version=1777712431<
     </item>
     <item>
       <title>Ep 29: Global Trends in Household Rainwater Tank Systems: A Multifaceted Review</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep029.mp3" length="34155668" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep029.mp3</guid>
-      <pubDate></pubDate>
+      <enclosure url="https://speakforwater.com/episodes/ep029.mp3" length="34155668" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep29</guid>
+      <pubDate>Wed, 03 Jun 2026 17:19:06 +0000</pubDate>
       <itunes:episode>29</itunes:episode>
       <itunes:duration>1423.124898</itunes:duration>
       <description>SpeakForWater Episode 29: Global Trends in Household Rainwater Tank Systems: A Multifaceted Review. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
@@ -603,9 +605,9 @@ Original paper: https://doi.org/10.3390/w18091069</description>
     </item>
     <item>
       <title>Ep 28: Seasonal Comparison of Groundwater Irrigation Suitability in the Coastal Zone of Northeastern Laizhou Bay Under the Influence of Seawater Intrusion</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep028.mp3" length="27254326" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep028.mp3</guid>
-      <pubDate></pubDate>
+      <enclosure url="https://speakforwater.com/episodes/ep028.mp3" length="27254326" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep28</guid>
+      <pubDate>Tue, 02 Jun 2026 21:36:10 +0000</pubDate>
       <itunes:episode>28</itunes:episode>
       <itunes:duration>1135.56898</itunes:duration>
       <description>SpeakForWater Episode 28: Seasonal Comparison of Groundwater Irrigation Suitability in the Coastal Zone of Northeastern Laizhou Bay Under the Influence of Seawater Intrusion. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
@@ -614,9 +616,9 @@ Original paper: https://doi.org/10.3390/w18091058</description>
     </item>
     <item>
       <title>Ep 27: Identifying Water Stress Hotspots in Chilean Patagonia Using Spatially Explicit Water Yield Modeling and Anthropization Proxies</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep027.mp3" length="29615377" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep027.mp3</guid>
-      <pubDate></pubDate>
+      <enclosure url="https://speakforwater.com/episodes/ep027.mp3" length="29615377" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep27</guid>
+      <pubDate>Tue, 02 Jun 2026 11:02:47 +0000</pubDate>
       <itunes:episode>27</itunes:episode>
       <itunes:duration>1233.946122</itunes:duration>
       <description>SpeakForWater Episode 27: Identifying Water Stress Hotspots in Chilean Patagonia Using Spatially Explicit Water Yield Modeling and Anthropization Proxies. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
@@ -625,9 +627,9 @@ Original paper: https://www.mdpi.com/2073-4441/18/9/1041/pdf?version=1777359704<
     </item>
     <item>
       <title>Ep 26: Water Quality and Footprint in the European Union Driven by Free Movement of People and Tourism</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep026.mp3" length="32325007" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep026.mp3</guid>
-      <pubDate></pubDate>
+      <enclosure url="https://speakforwater.com/episodes/ep026.mp3" length="32325007" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep26</guid>
+      <pubDate>Mon, 01 Jun 2026 12:03:12 +0000</pubDate>
       <itunes:episode>26</itunes:episode>
       <itunes:duration>1346.847347</itunes:duration>
       <description>SpeakForWater Episode 26: Water Quality and Footprint in the European Union Driven by Free Movement of People and Tourism. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
@@ -636,9 +638,9 @@ Original paper: https://www.mdpi.com/2073-4441/18/9/1048/pdf?version=1777375341<
     </item>
     <item>
       <title>Ep 25: Risk Assessment of Dams and Reservoirs to Climate Change in the Mediterranean Region: The Case of Almopeos Dam in Northern Greece</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep025.mp3" length="27412942" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep025.mp3</guid>
-      <pubDate></pubDate>
+      <enclosure url="https://speakforwater.com/episodes/ep025.mp3" length="27412942" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep25</guid>
+      <pubDate>Sun, 31 May 2026 19:43:03 +0000</pubDate>
       <itunes:episode>25</itunes:episode>
       <itunes:duration>1142.177959</itunes:duration>
       <description>SpeakForWater Episode 25: Risk Assessment of Dams and Reservoirs to Climate Change in the Mediterranean Region: The Case of Almopeos Dam in Northern Greece. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
@@ -647,9 +649,9 @@ Original paper: https://www.mdpi.com/2073-4441/18/9/1031/pdf?version=1777197813<
     </item>
     <item>
       <title>Ep 24: Accelerated Settlement Expansion in High-Hazard Areas of the Ganges–Brahmaputra–Meghna Delta</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep024.mp3" length="33075453" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep024.mp3</guid>
-      <pubDate></pubDate>
+      <enclosure url="https://speakforwater.com/episodes/ep024.mp3" length="33075453" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep24</guid>
+      <pubDate>Sun, 31 May 2026 14:14:41 +0000</pubDate>
       <itunes:episode>24</itunes:episode>
       <itunes:duration>1378.115918</itunes:duration>
       <description>SpeakForWater Episode 24: Accelerated Settlement Expansion in High-Hazard Areas of the Ganges–Brahmaputra–Meghna Delta. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
@@ -658,9 +660,9 @@ Original paper: https://www.mdpi.com/2073-4441/18/9/1029/pdf?version=1777201206<
     </item>
     <item>
       <title>Ep 23: A Synthesis of Compound Drought in Africa: Mechanisms, Hotspots, Impacts, and Future Projections</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep023.mp3" length="33765085" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep023.mp3</guid>
-      <pubDate></pubDate>
+      <enclosure url="https://speakforwater.com/episodes/ep023.mp3" length="33765085" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep23</guid>
+      <pubDate>Sun, 31 May 2026 09:08:43 +0000</pubDate>
       <itunes:episode>23</itunes:episode>
       <itunes:duration>1406.850612</itunes:duration>
       <description>SpeakForWater Episode 23: A Synthesis of Compound Drought in Africa: Mechanisms, Hotspots, Impacts, and Future Projections. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
@@ -669,9 +671,9 @@ Original paper: https://www.mdpi.com/2073-4441/18/9/1040/pdf?version=1777302756<
     </item>
     <item>
       <title>Ep 22: Analysis of Hydrological Evolution and Drought–Flood Patterns in Dongting Lake Based on Improved Standardized Water-Level Index (ISWI)</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep022.mp3" length="26308275" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep022.mp3</guid>
-      <pubDate></pubDate>
+      <enclosure url="https://speakforwater.com/episodes/ep022.mp3" length="26308275" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep22</guid>
+      <pubDate>Sat, 30 May 2026 19:39:34 +0000</pubDate>
       <itunes:episode>22</itunes:episode>
       <itunes:duration>1096.150204</itunes:duration>
       <description>SpeakForWater Episode 22: Analysis of Hydrological Evolution and Drought–Flood Patterns in Dongting Lake Based on Improved Standardized Water-Level Index (ISWI). A podcast conversation between Anna and Ehsan discussing the latest water resources research.
@@ -680,9 +682,9 @@ Original paper: https://www.mdpi.com/2073-4441/18/9/1039/pdf?version=1777300075<
     </item>
     <item>
       <title>Ep 21: Investigation of the Mechanisms of Purification of Water Contaminated with Petroleum Products Using Plasma–Ozone Technology</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep021.mp3" length="32941915" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep021.mp3</guid>
-      <pubDate></pubDate>
+      <enclosure url="https://speakforwater.com/episodes/ep021.mp3" length="32941915" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep21</guid>
+      <pubDate>Thu, 28 May 2026 20:46:09 +0000</pubDate>
       <itunes:episode>21</itunes:episode>
       <itunes:duration>1372.551837</itunes:duration>
       <description>SpeakForWater Episode 21: Investigation of the Mechanisms of Purification of Water Contaminated with Petroleum Products Using Plasma–Ozone Technology. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
@@ -691,9 +693,9 @@ Original paper: https://www.mdpi.com/2073-4441/18/9/1019/pdf?version=1777037581<
     </item>
     <item>
       <title>Ep 20: Municipal Carbon Footprint and Water Infrastructure: A Comparative Assessment of Emission Reduction Plans in Three Greek Municipalities</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep020.mp3" length="33943136" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep020.mp3</guid>
-      <pubDate></pubDate>
+      <enclosure url="https://speakforwater.com/episodes/ep020.mp3" length="33943136" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep20</guid>
+      <pubDate>Thu, 28 May 2026 10:28:02 +0000</pubDate>
       <itunes:episode>20</itunes:episode>
       <itunes:duration>1414.269388</itunes:duration>
       <description>SpeakForWater Episode 20: Municipal Carbon Footprint and Water Infrastructure: A Comparative Assessment of Emission Reduction Plans in Three Greek Municipalities. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
@@ -702,9 +704,9 @@ Original paper: https://www.mdpi.com/2073-4441/18/9/1020/pdf?version=1777039097<
     </item>
     <item>
       <title>Ep 19: Multi-Criteria Geospatial Assessment of Rainwater Harvesting Potential in Urban Environments Using Remote Sensing and GIS</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep019.mp3" length="32738160" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep019.mp3</guid>
-      <pubDate></pubDate>
+      <enclosure url="https://speakforwater.com/episodes/ep019.mp3" length="32738160" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep19</guid>
+      <pubDate>Wed, 27 May 2026 16:20:28 +0000</pubDate>
       <itunes:episode>19</itunes:episode>
       <itunes:duration>1364.062041</itunes:duration>
       <description>SpeakForWater Episode 19: Multi-Criteria Geospatial Assessment of Rainwater Harvesting Potential in Urban Environments Using Remote Sensing and GIS. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
@@ -713,9 +715,9 @@ Original paper: https://www.mdpi.com/2073-4441/18/9/1014/pdf?version=1777020937<
     </item>
     <item>
       <title>Ep 18: Low-Cost, Sustainable Materials and 3D-Printed Systems for Wastewater Treatment and Reuse in Rural Communities: A Critical Review</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep018.mp3" length="29049252" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep018.mp3</guid>
-      <pubDate></pubDate>
+      <enclosure url="https://speakforwater.com/episodes/ep018.mp3" length="29049252" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep18</guid>
+      <pubDate>Wed, 27 May 2026 10:17:55 +0000</pubDate>
       <itunes:episode>18</itunes:episode>
       <itunes:duration>1210.357551</itunes:duration>
       <description>SpeakForWater Episode 18: Low-Cost, Sustainable Materials and 3D-Printed Systems for Wastewater Treatment and Reuse in Rural Communities: A Critical Review. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
@@ -724,9 +726,9 @@ Original paper: https://www.mdpi.com/2073-4441/18/9/1002/pdf?version=1776939184<
     </item>
     <item>
       <title>Ep 17: Reservoir Inflow Risk-Window Early Warning Informed by Monitoring and Routing-Decay Modeling</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep017.mp3" length="30108151" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep017.mp3</guid>
-      <pubDate></pubDate>
+      <enclosure url="https://speakforwater.com/episodes/ep017.mp3" length="30108151" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep17</guid>
+      <pubDate>Tue, 26 May 2026 20:35:46 +0000</pubDate>
       <itunes:episode>17</itunes:episode>
       <itunes:duration>1254.478367</itunes:duration>
       <description>SpeakForWater Episode 17: Reservoir Inflow Risk-Window Early Warning Informed by Monitoring and Routing-Decay Modeling. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
@@ -735,9 +737,9 @@ Original paper: https://www.mdpi.com/2073-4441/18/9/1005/pdf?version=1776943965<
     </item>
     <item>
       <title>Ep 16: Loss of Life in River and Flash Floods in Europe: Evaluation of Deterministic Approaches and Implications for Risk Assessment</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep016.mp3" length="29222914" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep016.mp3</guid>
-      <pubDate></pubDate>
+      <enclosure url="https://speakforwater.com/episodes/ep016.mp3" length="29222914" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep16</guid>
+      <pubDate>Tue, 26 May 2026 16:13:43 +0000</pubDate>
       <itunes:episode>16</itunes:episode>
       <itunes:duration>1217.593469</itunes:duration>
       <description>SpeakForWater Episode 16: Loss of Life in River and Flash Floods in Europe: Evaluation of Deterministic Approaches and Implications for Risk Assessment. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
@@ -746,9 +748,9 @@ Original paper: https://www.mdpi.com/2073-4441/18/9/1011/pdf?version=1776953997<
     </item>
     <item>
       <title>Ep 15: SWAT-Based Development of Soil and Water Conservation Best Management Practices</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep015.mp3" length="28088782" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep015.mp3</guid>
-      <pubDate></pubDate>
+      <enclosure url="https://speakforwater.com/episodes/ep015.mp3" length="28088782" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep15</guid>
+      <pubDate>Tue, 26 May 2026 10:27:17 +0000</pubDate>
       <itunes:episode>15</itunes:episode>
       <itunes:duration>1170.337959</itunes:duration>
       <description>SpeakForWater Episode 15: SWAT-Based Development of Soil and Water Conservation Best Management Practices. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
@@ -757,9 +759,9 @@ Original paper: https://www.mdpi.com/2073-4441/18/9/1003/pdf?version=1776939515<
     </item>
     <item>
       <title>Ep 14: Simulation and Regression Models of Arithmetic Groundwater Quality Indices in Coastal Purba Medinipur, India: Seasonal Trends and Remedial Strategies</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep014.mp3" length="30942607" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep014.mp3</guid>
-      <pubDate></pubDate>
+      <enclosure url="https://speakforwater.com/episodes/ep014.mp3" length="30942607" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep14</guid>
+      <pubDate>Sun, 24 May 2026 08:54:08 +0000</pubDate>
       <itunes:episode>14</itunes:episode>
       <itunes:duration>1289.247347</itunes:duration>
       <description>SpeakForWater Episode 14: Simulation and Regression Models of Arithmetic Groundwater Quality Indices in Coastal Purba Medinipur, India: Seasonal Trends and Remedial Strategies. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
@@ -768,9 +770,9 @@ Original paper: https://www.mdpi.com/2073-4441/18/9/995/pdf?version=1776857007</
     </item>
     <item>
       <title>Ep 13: Assessing Surface Water Quality Risks Under Climate Stress and Geopolitical Instability: An Information Systems Approach</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep013.mp3" length="26610460" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep013.mp3</guid>
-      <pubDate></pubDate>
+      <enclosure url="https://speakforwater.com/episodes/ep013.mp3" length="26610460" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep13</guid>
+      <pubDate>Sat, 23 May 2026 19:33:46 +0000</pubDate>
       <itunes:episode>13</itunes:episode>
       <itunes:duration>1108.741224</itunes:duration>
       <description>SpeakForWater Episode 13: Assessing Surface Water Quality Risks Under Climate Stress and Geopolitical Instability: An Information Systems Approach. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
@@ -779,9 +781,9 @@ Original paper: https://www.mdpi.com/2073-4441/18/9/996/pdf?version=1776863556</
     </item>
     <item>
       <title>Ep 12: Evaluating Pollutant Removal Performance of Biofiltration Systems for Urban Stormwater Management: A Systematic Literature Review</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep012.mp3" length="32582052" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep012.mp3</guid>
-      <pubDate></pubDate>
+      <enclosure url="https://speakforwater.com/episodes/ep012.mp3" length="32582052" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep12</guid>
+      <pubDate>Fri, 22 May 2026 15:08:32 +0000</pubDate>
       <itunes:episode>12</itunes:episode>
       <itunes:duration>1357.557551</itunes:duration>
       <description>SpeakForWater Episode 12: Evaluating Pollutant Removal Performance of Biofiltration Systems for Urban Stormwater Management: A Systematic Literature Review. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
@@ -790,9 +792,9 @@ Original paper: https://www.mdpi.com/2073-4441/18/8/965/pdf?version=1776504912</
     </item>
     <item>
       <title>Ep 11: Artificial Sweeteners as Emerging Environmental Pollutants: Global Research Trends, Environmental Behavior, and Future Perspectives</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep011.mp3" length="29057402" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep011.mp3</guid>
-      <pubDate></pubDate>
+      <enclosure url="https://speakforwater.com/episodes/ep011.mp3" length="29057402" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep11</guid>
+      <pubDate>Fri, 22 May 2026 09:51:23 +0000</pubDate>
       <itunes:episode>11</itunes:episode>
       <itunes:duration>1210.697143</itunes:duration>
       <description>SpeakForWater Episode 11: Artificial Sweeteners as Emerging Environmental Pollutants: Global Research Trends, Environmental Behavior, and Future Perspectives. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
@@ -801,9 +803,9 @@ Original paper: https://www.mdpi.com/2073-4441/18/8/961/pdf?version=1776499626</
     </item>
     <item>
       <title>Ep 10: Assessment of Soil Physicochemical Changes, Bioaccumulation of Potentially Toxic Elements, and Okra Growth Parameters Under Different Irrigation Systems with Treated Wastewater</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep010.mp3" length="31632866" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep010.mp3</guid>
-      <pubDate></pubDate>
+      <enclosure url="https://speakforwater.com/episodes/ep010.mp3" length="31632866" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep10</guid>
+      <pubDate>Fri, 22 May 2026 06:01:21 +0000</pubDate>
       <itunes:episode>10</itunes:episode>
       <itunes:duration>1318.008163</itunes:duration>
       <description>SpeakForWater Episode 10: Assessment of Soil Physicochemical Changes, Bioaccumulation of Potentially Toxic Elements, and Okra Growth Parameters Under Different Irrigation Systems with Treated Wastewater. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
@@ -812,9 +814,9 @@ Original paper: https://doi.org/10.3390/w18080981</description>
     </item>
     <item>
       <title>Ep 9: Climate change effects on river droughts in Bavaria using a hydrological large ensemble</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep009.mp3" length="27152135" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep009.mp3</guid>
-      <pubDate></pubDate>
+      <enclosure url="https://speakforwater.com/episodes/ep009.mp3" length="27152135" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep9</guid>
+      <pubDate>Fri, 15 May 2026 09:08:17 +0000</pubDate>
       <itunes:episode>9</itunes:episode>
       <itunes:duration>0</itunes:duration>
       <description>SpeakForWater Episode 9: Climate change effects on river droughts in Bavaria using a hydrological large ensemble. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
@@ -823,9 +825,9 @@ Original paper: https://hess.copernicus.org/articles/30/1165/2026/hess-30-1165-2
     </item>
     <item>
       <title>Ep 8: Future changes in seasonal drought in Australia</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep008.mp3" length="21426930" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep008.mp3</guid>
-      <pubDate></pubDate>
+      <enclosure url="https://speakforwater.com/episodes/ep008.mp3" length="21426930" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep8</guid>
+      <pubDate>Thu, 14 May 2026 08:56:03 +0000</pubDate>
       <itunes:episode>8</itunes:episode>
       <itunes:duration>0</itunes:duration>
       <description>SpeakForWater Episode 8: Future changes in seasonal drought in Australia. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
@@ -834,9 +836,9 @@ Original paper: https://hess.copernicus.org/articles/30/1463/2026/hess-30-1463-2
     </item>
     <item>
       <title>Ep 7: Integrated Assessment of Water Resource Carrying Capacity: Dynamics, Obstacles, Coordination and Driving Mechanisms in the Gansu Section of the Yellow River Basin, China</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep007.mp3" length="28427329" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep007.mp3</guid>
-      <pubDate></pubDate>
+      <enclosure url="https://speakforwater.com/episodes/ep007.mp3" length="28427329" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep7</guid>
+      <pubDate>Wed, 13 May 2026 09:03:41 +0000</pubDate>
       <itunes:episode>7</itunes:episode>
       <itunes:duration>0</itunes:duration>
       <description>SpeakForWater Episode 7: Integrated Assessment of Water Resource Carrying Capacity: Dynamics, Obstacles, Coordination and Driving Mechanisms in the Gansu Section of the Yellow River Basin, China. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
@@ -845,9 +847,9 @@ Original paper: https://www.mdpi.com/2073-4441/18/6/761/pdf?version=1774276288</
     </item>
     <item>
       <title>Ep 6: Navigating Water (In)Security in Pakistan-Occupied Jammu and Kashmir (POJK)</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep006.mp3" length="30731329" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep006.mp3</guid>
-      <pubDate></pubDate>
+      <enclosure url="https://speakforwater.com/episodes/ep006.mp3" length="30731329" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep6</guid>
+      <pubDate>Tue, 12 May 2026 20:21:21 +0000</pubDate>
       <itunes:episode>6</itunes:episode>
       <itunes:duration>0</itunes:duration>
       <description>SpeakForWater Episode 6: Navigating Water (In)Security in Pakistan-Occupied Jammu and Kashmir (POJK). A podcast conversation between Anna and Ehsan discussing the latest water resources research.
@@ -856,9 +858,9 @@ Original paper: https://doi.org/10.3390/w18070768</description>
     </item>
     <item>
       <title>Ep 5: Minute 330 of the US–Mexico Water Treaty: A Testament to Transboundary Cooperation Amidst Drought in the Colorado River Basin</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep005.mp3" length="29456135" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep005.mp3</guid>
-      <pubDate></pubDate>
+      <enclosure url="https://speakforwater.com/episodes/ep005.mp3" length="29456135" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep5</guid>
+      <pubDate>Tue, 12 May 2026 15:10:26 +0000</pubDate>
       <itunes:episode>5</itunes:episode>
       <itunes:duration>0</itunes:duration>
       <description>SpeakForWater Episode 5: Minute 330 of the US–Mexico Water Treaty: A Testament to Transboundary Cooperation Amidst Drought in the Colorado River Basin. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
@@ -867,9 +869,9 @@ Original paper: https://doi.org/10.3390/w18070775</description>
     </item>
     <item>
       <title>Ep 4: An Integrated Modeling Approach for Managing the Water–Energy–Food Nexus in Resource-Based Cities: A Case Study of Daqing, China</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep004.mp3" length="30099611" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep004.mp3</guid>
-      <pubDate></pubDate>
+      <enclosure url="https://speakforwater.com/episodes/ep004.mp3" length="30099611" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep4</guid>
+      <pubDate>Sun, 10 May 2026 13:56:15 +0000</pubDate>
       <itunes:episode>4</itunes:episode>
       <itunes:duration>1254</itunes:duration>
       <description>SpeakForWater Episode 4: An Integrated Modeling Approach for Managing the Water–Energy–Food Nexus in Resource-Based Cities: A Case Study of Daqing, China. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
@@ -878,9 +880,9 @@ Original paper: https://www.mdpi.com/2073-4441/18/6/723/pdf</description>
     </item>
     <item>
       <title>Ep 3: Reclaimed Water ASR in a Sand-and-Gravel Aquifer: Destin Water Users System (Florida, USA)</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep003.mp3" length="35011050" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep003.mp3</guid>
-      <pubDate></pubDate>
+      <enclosure url="https://speakforwater.com/episodes/ep003.mp3" length="35011050" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep3</guid>
+      <pubDate>Sun, 10 May 2026 08:30:17 +0000</pubDate>
       <itunes:episode>3</itunes:episode>
       <itunes:duration>1458</itunes:duration>
       <description>SpeakForWater Episode 3: Reclaimed Water ASR in a Sand-and-Gravel Aquifer: Destin Water Users System (Florida, USA). A podcast conversation between Anna and Ehsan discussing the latest water resources research.
@@ -889,9 +891,9 @@ Original paper: https://www.mdpi.com/2073-4441/18/6/722/pdf</description>
     </item>
     <item>
       <title>Ep 2: Hydrological and Geochemical Modeling of Water Availability and Quality in the Jordan Valley Under Climate Change</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep002.mp3" length="19536320" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep002.mp3</guid>
-      <pubDate></pubDate>
+      <enclosure url="https://speakforwater.com/episodes/ep002.mp3" length="19536320" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep2</guid>
+      <pubDate>Sat, 09 May 2026 19:24:36 +0000</pubDate>
       <itunes:episode>2</itunes:episode>
       <itunes:duration>813</itunes:duration>
       <description>SpeakForWater Episode 2: Hydrological and Geochemical Modeling of Water Availability and Quality in the Jordan Valley Under Climate Change. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
@@ -900,9 +902,9 @@ Original paper: https://www.mdpi.com/2073-4441/18/6/721/pdf</description>
     </item>
     <item>
       <title>Ep 1: Global Agricultural Drought Crisis: Synergistic Impacts of Climate Change and Human Activities and Their Feedback Mechanisms</title>
-      <enclosure url="https://ehsankahrizi.github.io/speakforwater/episodes/ep001.mp3" length="36760209" type="audio/mpeg"/>
-      <guid isPermaLink="true">https://ehsankahrizi.github.io/speakforwater/episodes/ep001.mp3</guid>
-      <pubDate></pubDate>
+      <enclosure url="https://speakforwater.com/episodes/ep001.mp3" length="36760209" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep1</guid>
+      <pubDate>Sat, 09 May 2026 08:17:15 +0000</pubDate>
       <itunes:episode>1</itunes:episode>
       <itunes:duration>1531</itunes:duration>
       <description>SpeakForWater Episode 1: Global Agricultural Drought Crisis: Synergistic Impacts of Climate Change and Human Activities and Their Feedback Mechanisms. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
