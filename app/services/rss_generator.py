@@ -27,6 +27,7 @@ PODCAST_DESCRIPTION = (
     "explained in plain language for farmers, water managers, and anyone who cares about water."
 )
 PODCAST_AUTHOR = "Ehsan Kahrizi"
+PODCAST_OWNER_EMAIL = os.getenv("PODCAST_OWNER_EMAIL", "kahriziehsan490@gmail.com")
 PODCAST_CATEGORY = "Science"
 PODCAST_LANGUAGE = "en"
 
@@ -48,7 +49,7 @@ def generate_rss(
         RSS XML string
     """
     if not cover_image_url:
-        cover_image_url = f"{site_url}/images/cover.jpg"
+        cover_image_url = f"{site_url}/podcast-cover.jpg"
 
     rss_url = f"{site_url}/podcast.xml"
 
@@ -88,7 +89,7 @@ def generate_rss(
     <item>
       <title>Ep {episode_number}: {_escape_xml(title)}</title>
       <enclosure url="{_escape_xml(mp3_url)}" length="{file_size}" type="audio/mpeg"/>
-      <guid isPermaLink="true">{_escape_xml(mp3_url)}</guid>
+      <guid isPermaLink="false">speakforwater-ep{episode_number}</guid>
       <pubDate>{pub_date_str}</pubDate>
       <itunes:episode>{episode_number}</itunes:episode>
       <itunes:duration>{duration}</itunes:duration>
@@ -106,8 +107,10 @@ def generate_rss(
   <description>{_escape_xml(PODCAST_DESCRIPTION)}</description>
   <language>{PODCAST_LANGUAGE}</language>
   <itunes:author>{_escape_xml(PODCAST_AUTHOR)}</itunes:author>
+  <itunes:type>episodic</itunes:type>
   <itunes:owner>
     <itunes:name>{_escape_xml(PODCAST_AUTHOR)}</itunes:name>
+    <itunes:email>{_escape_xml(PODCAST_OWNER_EMAIL)}</itunes:email>
   </itunes:owner>
   <itunes:category text="{PODCAST_CATEGORY}"/>
   <itunes:image href="{_escape_xml(cover_image_url)}"/>
@@ -125,7 +128,14 @@ def _parse_date(date_str: str) -> datetime | None:
     """Parse various date formats into a datetime object."""
     if not date_str:
         return None
-    for fmt in ["%Y-%m-%dT%H:%M:%S%z", "%Y-%m-%dT%H:%M:%SZ", "%Y-%m-%d"]:
+    # fromisoformat handles the pipeline's timestamps, including microseconds
+    # and timezone offsets (e.g. 2026-06-25T09:49:19.483323+00:00).
+    try:
+        dt = datetime.fromisoformat(date_str.replace("Z", "+00:00"))
+        return dt if dt.tzinfo else dt.replace(tzinfo=timezone.utc)
+    except ValueError:
+        pass
+    for fmt in ["%Y-%m-%dT%H:%M:%S.%f%z", "%Y-%m-%dT%H:%M:%S%z", "%Y-%m-%dT%H:%M:%SZ", "%Y-%m-%d"]:
         try:
             dt = datetime.strptime(date_str, fmt)
             if dt.tzinfo is None:
