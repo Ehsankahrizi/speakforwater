@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import json
 import logging
+import os
 from datetime import datetime, timezone
 from pathlib import Path
 from email.utils import format_datetime
@@ -61,6 +62,10 @@ def generate_rss(
         except Exception as e:
             logger.warning(f"Skipping {meta_file}: {e}")
 
+    # Audio is served from MEDIA_BASE_URL (Cloudflare R2) when set; otherwise
+    # it falls back to the site itself (current GitHub Pages behavior).
+    media_base = (os.getenv("MEDIA_BASE_URL") or site_url).rstrip("/")
+
     # Build RSS XML
     items_xml = ""
     for ep in episodes:
@@ -68,7 +73,7 @@ def generate_rss(
         pub_date_str = format_datetime(pub_date) if pub_date else ""
 
         filename = ep.get("filename", "")
-        mp3_url = f"{site_url}/episodes/{filename}"
+        mp3_url = f"{media_base}/episodes/{filename}"
         file_size = ep.get("file_size_bytes", 0)
         duration = ep.get("duration_seconds", 0)
         episode_number = ep.get("episode_number", 0)

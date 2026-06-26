@@ -13,6 +13,9 @@ google-auth==2.37.0
 requests>=2.31.0
 pyyaml>=6.0
 
+# Cloudflare R2 media uploads (S3-compatible)
+boto3>=1.34
+
 # API server (optional — only needed if running locally with FastAPI)
 fastapi==0.115.6
 uvicorn[standard]==0.34.0
