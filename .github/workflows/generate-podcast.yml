@@ -137,13 +137,6 @@ jobs:
           MANUAL_PAPER_TITLE: ${{ inputs.paper_title }}
           MANUAL_EPISODE_NUMBER: ${{ inputs.episode_number }}
         run: python run_pipeline.py
-
-      # ── Upload MP3 as artifact (backup) ─────────────────────────
-      - name: Upload podcast artifact
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: podcast-episode
-          path: episodes/ep*.mp3
-          retention-days: 30
-          if-no-files-found: ignore
+        # Episodes are uploaded to Cloudflare R2 by the pipeline, so we no
+        # longer back them up as Actions artifacts (that filled the 2 GB
+        # Actions storage quota with redundant ~250 MB MP3s every run).
