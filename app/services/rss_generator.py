@@ -31,6 +31,11 @@ PODCAST_OWNER_EMAIL = os.getenv("PODCAST_OWNER_EMAIL", "kahriziehsan490@gmail.co
 PODCAST_CATEGORY = "Science"
 PODCAST_LANGUAGE = "en"
 
+# WebSub (PubSubHubbub) hub. Advertised in the feed and pinged after each new
+# episode so subscribers like Apple Podcasts pick up new items within minutes
+# instead of waiting hours for their next poll.
+WEBSUB_HUB = "https://pubsubhubbub.appspot.com/"
+
 
 def generate_rss(
     episodes_dir: Path,
@@ -115,13 +120,39 @@ def generate_rss(
   <itunes:category text="{PODCAST_CATEGORY}"/>
   <itunes:image href="{_escape_xml(cover_image_url)}"/>
   <itunes:explicit>false</itunes:explicit>
+  <itunes:new-feed-url>{_escape_xml(rss_url)}</itunes:new-feed-url>
   <atom:link href="{_escape_xml(rss_url)}" rel="self" type="application/rss+xml"/>
+  <atom:link href="{_escape_xml(WEBSUB_HUB)}" rel="hub"/>
   <lastBuildDate>{format_datetime(datetime.now(timezone.utc))}</lastBuildDate>
 {items_xml}
 </channel>
 </rss>"""
 
     return rss
+
+
+def ping_websub_hub(feed_url: str, hub_url: str = WEBSUB_HUB) -> bool:
+    """Notify the WebSub hub that the feed changed (best-effort, no deps).
+
+    Subscribers such as Apple Podcasts that follow the hub then re-fetch the
+    feed within minutes instead of waiting for their next scheduled poll.
+    Returns True on a 2xx response, False otherwise; never raises.
+    """
+    import urllib.parse
+    import urllib.request
+
+    payload = urllib.parse.urlencode(
+        {"hub.mode": "publish", "hub.url": feed_url}
+    ).encode()
+    try:
+        req = urllib.request.Request(hub_url, data=payload, method="POST")
+        with urllib.request.urlopen(req, timeout=15) as resp:
+            status = getattr(resp, "status", resp.getcode())
+            logger.info(f"[websub] pinged hub for {feed_url}: HTTP {status}")
+            return 200 <= status < 300
+    except Exception as e:
+        logger.warning(f"[websub] hub ping failed: {e}")
+        return False
 
 
 def _parse_date(date_str: str) -> datetime | None:
