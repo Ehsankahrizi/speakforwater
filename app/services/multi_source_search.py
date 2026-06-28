@@ -93,7 +93,7 @@ def search_semantic_scholar(query: str, max_results: int = 6) -> List[Dict[str, 
                 "https://api.semanticscholar.org/graph/v1/paper/search",
                 params={
                     "query": query, "limit": max_results,
-                    "fields": "title,abstract,authors,year,externalIds,url,isOpenAccess,openAccessPdf",
+                    "fields": "title,abstract,authors,year,externalIds,url,isOpenAccess,openAccessPdf,venue,publicationTypes",
                 },
                 timeout=20, headers=headers,
             )
@@ -117,6 +117,8 @@ def search_semantic_scholar(query: str, max_results: int = 6) -> List[Dict[str, 
                 "authors": [a for a in authors if a],
                 "year": str(p.get("year") or "n.d."),
                 "source": "Semantic Scholar",
+                "venue": p.get("venue") or "",
+                "pub_types": p.get("publicationTypes") or [],
                 "link": f"https://doi.org/{doi}" if doi else p.get("url", ""),
                 "doi": doi,
                 "oa_pdf_url": oa_pdf,
@@ -153,7 +155,10 @@ def search_openalex(query: str, max_results: int = 6) -> List[Dict[str, Any]]:
         "per_page": max_results,
         "page": page,
         "sort": "publication_date:desc",
-        "filter": f"from_publication_date:{cutoff_year}-01-01,is_oa:true",
+        # type:article|preprint keeps peer-reviewed journal articles and
+        # reputable preprints, but drops dissertations/theses, book chapters,
+        # datasets, and paratext at the source.
+        "filter": f"from_publication_date:{cutoff_year}-01-01,is_oa:true,type:article|preprint",
     }
     if _MAILTO:
         params["mailto"] = _MAILTO
@@ -167,15 +172,19 @@ def search_openalex(query: str, max_results: int = 6) -> List[Dict[str, Any]]:
         for w in resp.json().get("results", []):
             authors = [a.get("author", {}).get("display_name", "") for a in w.get("authorships", [])]
             doi = w.get("doi") or ""
-            link = doi or (w.get("primary_location") or {}).get("landing_page_url") or w.get("id", "")
+            primary = w.get("primary_location") or {}
+            link = doi or primary.get("landing_page_url") or w.get("id", "")
             oa = w.get("open_access", {})
             oa_url = oa.get("oa_url", "") if oa.get("is_oa") else ""
+            venue = (primary.get("source") or {}).get("display_name") or ""
             papers.append({
                 "title": w.get("title") or w.get("display_name") or "Untitled",
                 "summary": _reconstruct_abstract(w.get("abstract_inverted_index")) or "No abstract available.",
                 "authors": [a for a in authors if a],
                 "year": str(w.get("publication_year", "n.d.")),
                 "source": "OpenAlex",
+                "venue": venue,
+                "pub_types": [w.get("type") or ""],
                 "link": link,
                 "doi": re.sub(r"^https?://doi\.org/", "", doi) if doi else "",
                 "oa_pdf_url": oa_url,
