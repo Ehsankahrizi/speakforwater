@@ -17,9 +17,22 @@
   <itunes:category text="Science"/>
   <itunes:image href="https://ehsankahrizi.github.io/speakforwater/podcast-cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
+  <itunes:new-feed-url>https://ehsankahrizi.github.io/speakforwater/podcast.xml</itunes:new-feed-url>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Sun, 28 Jun 2026 00:19:55 +0000</lastBuildDate>
+  <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
+  <lastBuildDate>Sun, 28 Jun 2026 09:29:52 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 83: Spatially explicit temperature optima improve climate impact assessment of global crop productivity</title>
+      <enclosure url="https://media.speakforwater.com/episodes/ep083.mp3" length="28462437" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep83</guid>
+      <pubDate>Sun, 28 Jun 2026 09:29:52 +0000</pubDate>
+      <itunes:episode>83</itunes:episode>
+      <itunes:duration>1185.906939</itunes:duration>
+      <description>SpeakForWater Episode 83: Spatially explicit temperature optima improve climate impact assessment of global crop productivity. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://www.nature.com/articles/s41467-026-74564-1_reference.pdf</description>
+    </item>
     <item>
       <title>Ep 82: Desert Soil Ecology, Biochar, and Mycorrhiza for Sustainable Agroforestry in Arid Regions – Agroeconomics</title>
       <enclosure url="https://media.speakforwater.com/episodes/ep082.mp3" length="31259838" type="audio/mpeg"/>
