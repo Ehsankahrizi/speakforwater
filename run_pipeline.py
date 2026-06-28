@@ -299,6 +299,14 @@ def commit_episode(episode: dict, mp3_path: Path) -> str:
         message=f"Add episode {ep_num}: {episode['paper_title']}",
     )
 
+    # Ping the WebSub hub so Apple Podcasts re-fetches the feed within minutes
+    # instead of waiting hours for its next poll. Best-effort: never fatal.
+    try:
+        from app.services.rss_generator import ping_websub_hub
+        ping_websub_hub(f"{SITE_URL}/podcast.xml")
+    except Exception as e:
+        logger.warning(f"WebSub ping failed: {e}")
+
     # Also generate markdown for the Astro website
     try:
         import subprocess
