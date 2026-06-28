@@ -32,14 +32,18 @@ log = logging.getLogger(__name__)
 GROQ_API_KEY = os.environ.get("GROQ_API_KEY", "")
 RANKER_MODEL = os.environ.get(
     "RANKER_MODEL",
-    "llama-3.1-8b-instant",  # fast + free; upgrade to llama-3.3-70b-versatile for better judgment
+    # 70B model: far better at judging topic relevance and journal quality
+    # than the 8B instant model. Still free on Groq.
+    "llama-3.3-70b-versatile",
 )
-SCORE_THRESHOLD = float(os.environ.get("RANKER_THRESHOLD", "7.0"))
+SCORE_THRESHOLD = float(os.environ.get("RANKER_THRESHOLD", "7.5"))
 RATE_LIMIT_DELAY = float(os.environ.get("RANKER_DELAY_S", "2.0"))  # 30 req/min = 1 req/2s
 
 SYSTEM_PROMPT = """You are a science editor evaluating water research papers for a daily podcast aimed at a general audience (farmers, water managers, citizens, policymakers — NOT scientists).
 
 You score each paper on a 1-10 scale across four dimensions and return a JSON object.
+
+The paper MUST be PRIMARILY about water before you score anything: drinking water, water quality/pollution, hydrology, rivers/lakes/groundwater, irrigation and agricultural water, floods, drought, wastewater/sanitation, water supply, or water governance. If water is only a side mention, it is OFF-TOPIC.
 
 DIMENSIONS:
 - novelty (1-10): Genuinely new findings vs incremental / review / survey
@@ -47,14 +51,15 @@ DIMENSIONS:
 - accessibility (1-10): Can methodology and findings be explained in plain language
 - audience_fit (1-10): Would a non-scientist find this engaging for 10 min
 
-REJECT (overall_score: 0):
-- Pure literature reviews / surveys with no new findings
-- Highly technical with no real-world hook
-- Off-topic (not about water)
-- Predatory journals or low quality
+REJECT (overall_score: 0) if ANY of these are true:
+- Not primarily about water. Examples to reject: solar panels/photovoltaics, generic AI or public-policy papers, food/diet contamination not about water, pure marine biology/ecology with no water-resource angle, energy or transport topics.
+- Not a peer-reviewed journal article or a reputable preprint (bioRxiv/medRxiv). Reject PhD theses/dissertations, book chapters, conference proceedings, working papers, and university repository deposits.
+- Predatory or low-quality journal (e.g. pay-to-publish venues with no real peer review, journals like IJRASET, IJPP and similar).
+- Pure literature review / survey with no new findings.
+- Highly technical with no real-world hook.
 
-ACCEPT (overall_score >= 7):
-- Novel, real-world relevance, explainable simply, clear "so what"
+ACCEPT (overall_score >= 7.5):
+- Clearly about water, from a credible journal (or bioRxiv/medRxiv), novel, real-world relevance, explainable simply, with a clear "so what".
 
 ALWAYS return ONLY a valid JSON object, no other text, no markdown."""
 

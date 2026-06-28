@@ -115,7 +115,14 @@ def _recent_enough(year_str: str, cutoff_year: int) -> bool:
 # is matched against the DOI prefix and any URL/link on the paper. MDPI's DOI
 # prefix is 10.3390 and its papers live on mdpi.com. Override via env
 # EXCLUDE_PUBLISHERS as a comma list of "doi_prefix|domain" pairs.
-_DEFAULT_EXCLUDED = "10.3390|mdpi.com"
+_DEFAULT_EXCLUDED = (
+    "10.3390|mdpi.com,"          # MDPI (low signal-to-noise for a general audience)
+    "10.22214,"                  # IJRASET (predatory)
+    "10.34218,"                  # IJPP (predatory)
+    "ssrn.com,"                  # working papers, not peer-reviewed journals
+    "eprints,"                   # university repository deposits / theses
+    "orbi.uliege.be"             # institutional thesis repository
+)
 
 
 def _excluded_publisher(paper: dict) -> str | None:
@@ -203,7 +210,9 @@ def gather_candidates() -> list[dict]:
             # Normalize for the ranker (it reads abstract / journal / year) and
             # for the Sheet (it needs a single best URL).
             p["abstract"] = p.get("summary", "")
-            p["journal"] = p.get("source", "")
+            # Pass the real journal/venue name (not the search engine) so the
+            # ranker can judge journal quality and spot predatory venues.
+            p["journal"] = p.get("venue") or p.get("source", "")
             p["url"] = oa_url or p.get("link", "")
             p["date"] = p.get("year", "")
             candidates.append(p)
