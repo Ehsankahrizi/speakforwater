@@ -45,11 +45,17 @@ import SubscribeButtons from "../components/SubscribeButtons.astro";
         most important episodes — with links to papers, key findings, and topics
         to watch. Free, no spam, unsubscribe anytime.
       </p>
-      <form class="newsletter-form" action="https://buttondown.email/api/emails/embed-subscribe/speakforwater" method="post" target="popupwindow">
-        <input type="email" name="email" placeholder="you@example.com" required />
-        <button type="submit" class="btn btn-primary">Subscribe</button>
-      </form>
-      <p class="small muted">Powered by Buttondown · GDPR compliant · privacy-friendly</p>
+      <iframe
+        class="newsletter-embed"
+        src="https://speakforwater.substack.com/embed"
+        title="Subscribe to the SpeakForWater newsletter"
+        width="480"
+        height="320"
+        frameborder="0"
+        scrolling="no"
+        loading="lazy"
+      ></iframe>
+      <p class="small muted">Powered by Substack · unsubscribe anytime</p>
     </div>
   </section>
 </Layout>
@@ -113,6 +119,15 @@ import SubscribeButtons from "../components/SubscribeButtons.astro";
   }
 
   .newsletter h2 { margin-top: 14px; margin-bottom: 14px; }
+
+  .newsletter-embed {
+    width: 100%;
+    max-width: 480px;
+    margin: 24px 0 12px;
+    border: 1px solid var(--c-border-strong);
+    border-radius: var(--radius);
+    background: var(--c-bg-card);
+  }
 
   .newsletter-form {
     display: flex;
