@@ -345,7 +345,7 @@ const crossorigin = MEDIA_BASE ? "anonymous" : undefined;
             analyser.connect(actx.destination); // keep audio audible
             freq = new Uint8Array(analyser.frequencyBinCount);
           } catch {
-            analyser = null; // tainted/unsupported — audio still plays natively
+            analyser = null; // tainted/unsupported, audio still plays natively
           }
         }
         if (actx.state === "suspended") actx.resume();
