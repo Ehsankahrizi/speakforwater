@@ -5,7 +5,7 @@
   xmlns:content="http://purl.org/rss/1.0/modules/content/">
 <channel>
   <title>SpeakForWater</title>
-  <link>https://speakforwater.com</link>
+  <link>https://ehsankahrizi.github.io/speakforwater</link>
   <description>Making water resources research accessible to everyone. Join Anna and Ehsan as they discuss the latest open-access papers on hydrology, flood management, remote sensing, and water engineering — explained in plain language for farmers, water managers, and anyone who cares about water.</description>
   <language>en</language>
   <itunes:author>Ehsan Kahrizi</itunes:author>
@@ -15,11 +15,22 @@
     <itunes:email>kahriziehsan490@gmail.com</itunes:email>
   </itunes:owner>
   <itunes:category text="Science"/>
-  <itunes:image href="https://speakforwater.com/podcast-cover.jpg"/>
+  <itunes:image href="https://ehsankahrizi.github.io/speakforwater/podcast-cover.jpg"/>
   <itunes:explicit>false</itunes:explicit>
-  <atom:link href="https://speakforwater.com/podcast.xml" rel="self" type="application/rss+xml"/>
-  <lastBuildDate>Fri, 26 Jun 2026 18:52:13 +0000</lastBuildDate>
+  <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
+  <lastBuildDate>Sun, 28 Jun 2026 00:19:55 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 82: Desert Soil Ecology, Biochar, and Mycorrhiza for Sustainable Agroforestry in Arid Regions – Agroeconomics</title>
+      <enclosure url="https://media.speakforwater.com/episodes/ep082.mp3" length="31259838" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep82</guid>
+      <pubDate>Sun, 28 Jun 2026 00:19:55 +0000</pubDate>
+      <itunes:episode>82</itunes:episode>
+      <itunes:duration>1302.465306</itunes:duration>
+      <description>SpeakForWater Episode 82: Desert Soil Ecology, Biochar, and Mycorrhiza for Sustainable Agroforestry in Arid Regions – Agroeconomics. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://www.ipcc.ch/report/ar6/wg2/downloads/report/IPCC_AR6_WGII_CCP3.pdf</description>
+    </item>
     <item>
       <title>Ep 81: Protecting ancient water harvesting technologies in India: strategies for climate adaptation and sustainable development with global lessons</title>
       <enclosure url="https://media.speakforwater.com/episodes/ep081.mp3" length="29172132" type="audio/mpeg"/>
