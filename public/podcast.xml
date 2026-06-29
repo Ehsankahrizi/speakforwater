@@ -20,8 +20,19 @@
   <itunes:new-feed-url>https://ehsankahrizi.github.io/speakforwater/podcast.xml</itunes:new-feed-url>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
   <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
-  <lastBuildDate>Mon, 29 Jun 2026 11:21:49 +0000</lastBuildDate>
+  <lastBuildDate>Mon, 29 Jun 2026 16:08:02 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 87: Edge-of-field runoff phosphorus loss from silage corn field and grazed grassland in the Fraser Valley, BC, Canada</title>
+      <enclosure url="https://media.speakforwater.com/episodes/ep087.mp3" length="28733275" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep87</guid>
+      <pubDate>Mon, 29 Jun 2026 16:08:02 +0000</pubDate>
+      <itunes:episode>87</itunes:episode>
+      <itunes:duration>1197.191837</itunes:duration>
+      <description>SpeakForWater Episode 87: Edge-of-field runoff phosphorus loss from silage corn field and grazed grassland in the Fraser Valley, BC, Canada. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://www.frontiersin.org/journals/soil-science/articles/10.3389/fsoil.2026.1856995/pdf</description>
+    </item>
     <item>
       <title>Ep 86: Responses of soil-crop systems to inversion tillage in cadmium-contaminated solar greenhouses</title>
       <enclosure url="https://media.speakforwater.com/episodes/ep086.mp3" length="26347146" type="audio/mpeg"/>
