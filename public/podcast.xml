@@ -20,8 +20,19 @@
   <itunes:new-feed-url>https://ehsankahrizi.github.io/speakforwater/podcast.xml</itunes:new-feed-url>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
   <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
-  <lastBuildDate>Mon, 29 Jun 2026 16:08:02 +0000</lastBuildDate>
+  <lastBuildDate>Tue, 30 Jun 2026 10:02:42 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 88: Nature-Related Risk Perceptions Among Vietnamese Smallholder Tea Farmers and Implications for Environmental Management</title>
+      <enclosure url="https://media.speakforwater.com/episodes/ep088.mp3" length="29979629" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep88</guid>
+      <pubDate>Tue, 30 Jun 2026 10:02:42 +0000</pubDate>
+      <itunes:episode>88</itunes:episode>
+      <itunes:duration>1249.123265</itunes:duration>
+      <description>SpeakForWater Episode 88: Nature-Related Risk Perceptions Among Vietnamese Smallholder Tea Farmers and Implications for Environmental Management. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://link.springer.com/content/pdf/10.1007/s00267-026-02534-w.pdf</description>
+    </item>
     <item>
       <title>Ep 87: Edge-of-field runoff phosphorus loss from silage corn field and grazed grassland in the Fraser Valley, BC, Canada</title>
       <enclosure url="https://media.speakforwater.com/episodes/ep087.mp3" length="28733275" type="audio/mpeg"/>
