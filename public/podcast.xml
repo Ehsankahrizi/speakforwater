@@ -20,8 +20,19 @@
   <itunes:new-feed-url>https://ehsankahrizi.github.io/speakforwater/podcast.xml</itunes:new-feed-url>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
   <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
-  <lastBuildDate>Wed, 01 Jul 2026 10:14:14 +0000</lastBuildDate>
+  <lastBuildDate>Wed, 01 Jul 2026 15:02:37 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 92: Voices of the Wetland: Documenting Indigenous Knowledge and Practices for Sustainable Management in Kingwal, Kenya</title>
+      <enclosure url="https://media.speakforwater.com/episodes/ep092.mp3" length="34871632" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep92</guid>
+      <pubDate>Wed, 01 Jul 2026 15:02:37 +0000</pubDate>
+      <itunes:episode>92</itunes:episode>
+      <itunes:duration>1452.956735</itunes:duration>
+      <description>SpeakForWater Episode 92: Voices of the Wetland: Documenting Indigenous Knowledge and Practices for Sustainable Management in Kingwal, Kenya. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://journals.eanso.org/index.php/eajenr/article/download/5147/5537</description>
+    </item>
     <item>
       <title>Ep 91: Rapid groundwater decline and some cases of recovery in aquifers globally</title>
       <enclosure url="https://media.speakforwater.com/episodes/ep091.mp3" length="31434754" type="audio/mpeg"/>
