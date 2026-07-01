@@ -20,8 +20,19 @@
   <itunes:new-feed-url>https://ehsankahrizi.github.io/speakforwater/podcast.xml</itunes:new-feed-url>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
   <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
-  <lastBuildDate>Tue, 30 Jun 2026 20:18:56 +0000</lastBuildDate>
+  <lastBuildDate>Wed, 01 Jul 2026 10:14:14 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 91: Rapid groundwater decline and some cases of recovery in aquifers globally</title>
+      <enclosure url="https://media.speakforwater.com/episodes/ep091.mp3" length="31434754" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep91</guid>
+      <pubDate>Wed, 01 Jul 2026 10:14:14 +0000</pubDate>
+      <itunes:episode>91</itunes:episode>
+      <itunes:duration>1309.753469</itunes:duration>
+      <description>SpeakForWater Episode 91: Rapid groundwater decline and some cases of recovery in aquifers globally. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://www.nature.com/articles/s41586-023-06879-8.pdf</description>
+    </item>
     <item>
       <title>Ep 90: Saving the Seas: What Works (and Why it Matters)</title>
       <enclosure url="https://media.speakforwater.com/episodes/ep090.mp3" length="28438613" type="audio/mpeg"/>
