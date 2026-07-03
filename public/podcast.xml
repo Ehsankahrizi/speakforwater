@@ -20,8 +20,19 @@
   <itunes:new-feed-url>https://ehsankahrizi.github.io/speakforwater/podcast.xml</itunes:new-feed-url>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
   <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
-  <lastBuildDate>Fri, 03 Jul 2026 14:34:38 +0000</lastBuildDate>
+  <lastBuildDate>Fri, 03 Jul 2026 19:48:29 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 99: Selenium–cadmium antagonism alleviates cadmium toxicity and improves the nutritional quality of Dictyophora rubrovolvata in cadmium-contaminated yellow soil</title>
+      <enclosure url="https://media.speakforwater.com/episodes/ep099.mp3" length="28289402" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep99</guid>
+      <pubDate>Fri, 03 Jul 2026 19:48:29 +0000</pubDate>
+      <itunes:episode>99</itunes:episode>
+      <itunes:duration>1178.697143</itunes:duration>
+      <description>SpeakForWater Episode 99: Selenium–cadmium antagonism alleviates cadmium toxicity and improves the nutritional quality of Dictyophora rubrovolvata in cadmium-contaminated yellow soil. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://www.frontiersin.org/journals/environmental-science/articles/10.3389/fenvs.2026.1846543/pdf</description>
+    </item>
     <item>
       <title>Ep 98: Serious games and decision support tools: Supporting farmer decision making for land use net zero.</title>
       <enclosure url="https://media.speakforwater.com/episodes/ep098.mp3" length="27115773" type="audio/mpeg"/>
