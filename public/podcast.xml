@@ -20,8 +20,19 @@
   <itunes:new-feed-url>https://ehsankahrizi.github.io/speakforwater/podcast.xml</itunes:new-feed-url>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
   <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
-  <lastBuildDate>Fri, 03 Jul 2026 09:38:14 +0000</lastBuildDate>
+  <lastBuildDate>Fri, 03 Jul 2026 14:34:38 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 98: Serious games and decision support tools: Supporting farmer decision making for land use net zero.</title>
+      <enclosure url="https://media.speakforwater.com/episodes/ep098.mp3" length="27115773" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep98</guid>
+      <pubDate>Fri, 03 Jul 2026 14:34:38 +0000</pubDate>
+      <itunes:episode>98</itunes:episode>
+      <itunes:duration>1129.795918</itunes:duration>
+      <description>SpeakForWater Episode 98: Serious games and decision support tools: Supporting farmer decision making for land use net zero.. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://eprints.glos.ac.uk/15549/9/15549%20Thompson%2C%20Urquhart%2C%20Maye%2C%20Goodenough%20%282025%29%20Serious%20games%20and%20decision%20support%20tools%20-%20supporting%20farmer%20decision%20making%20for%20land%20use%20net%20zero.pdf</description>
+    </item>
     <item>
       <title>Ep 97: Hybrid water security governance after conflict in South Sudan</title>
       <enclosure url="https://media.speakforwater.com/episodes/ep097.mp3" length="28948315" type="audio/mpeg"/>
