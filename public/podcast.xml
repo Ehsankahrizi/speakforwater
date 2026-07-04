@@ -20,8 +20,19 @@
   <itunes:new-feed-url>https://ehsankahrizi.github.io/speakforwater/podcast.xml</itunes:new-feed-url>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
   <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
-  <lastBuildDate>Sat, 04 Jul 2026 13:57:15 +0000</lastBuildDate>
+  <lastBuildDate>Sat, 04 Jul 2026 20:07:49 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 102: Impact of digital water monitoring systems on disease prevention in resource-constrained regions</title>
+      <enclosure url="https://media.speakforwater.com/episodes/ep102.mp3" length="36807619" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep102</guid>
+      <pubDate>Sat, 04 Jul 2026 20:07:49 +0000</pubDate>
+      <itunes:episode>102</itunes:episode>
+      <itunes:duration>1533.622857</itunes:duration>
+      <description>SpeakForWater Episode 102: Impact of digital water monitoring systems on disease prevention in resource-constrained regions. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://link.springer.com/content/pdf/10.1186/s12982-026-02189-2.pdf</description>
+    </item>
     <item>
       <title>Ep 101: A Mixed Methods Approach to Understanding the Public Health Impact of a School-Based Citizen Science Program to Reduce Arsenic in Private Well Water</title>
       <enclosure url="https://media.speakforwater.com/episodes/ep101.mp3" length="27135208" type="audio/mpeg"/>
