@@ -20,8 +20,19 @@
   <itunes:new-feed-url>https://ehsankahrizi.github.io/speakforwater/podcast.xml</itunes:new-feed-url>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
   <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
-  <lastBuildDate>Sat, 04 Jul 2026 20:07:49 +0000</lastBuildDate>
+  <lastBuildDate>Sun, 05 Jul 2026 09:24:54 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 103: From salinity to nanoplastics: redefining safe yield in strip-island aquifers under emerging contaminant threats</title>
+      <enclosure url="https://media.speakforwater.com/episodes/ep103.mp3" length="31445412" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep103</guid>
+      <pubDate>Sun, 05 Jul 2026 09:24:54 +0000</pubDate>
+      <itunes:episode>103</itunes:episode>
+      <itunes:duration>1310.197551</itunes:duration>
+      <description>SpeakForWater Episode 103: From salinity to nanoplastics: redefining safe yield in strip-island aquifers under emerging contaminant threats. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://hess.copernicus.org/articles/30/3789/2026/hess-30-3789-2026.pdf</description>
+    </item>
     <item>
       <title>Ep 102: Impact of digital water monitoring systems on disease prevention in resource-constrained regions</title>
       <enclosure url="https://media.speakforwater.com/episodes/ep102.mp3" length="36807619" type="audio/mpeg"/>
