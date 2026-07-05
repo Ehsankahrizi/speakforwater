@@ -20,8 +20,19 @@
   <itunes:new-feed-url>https://ehsankahrizi.github.io/speakforwater/podcast.xml</itunes:new-feed-url>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
   <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
-  <lastBuildDate>Sun, 05 Jul 2026 09:24:54 +0000</lastBuildDate>
+  <lastBuildDate>Sun, 05 Jul 2026 14:04:50 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 104: Remediation of Urban Water Contaminated by Microplastics Using Magnetic Nanoparticles and Biosurfactant</title>
+      <enclosure url="https://media.speakforwater.com/episodes/ep104.mp3" length="22920298" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep104</guid>
+      <pubDate>Sun, 05 Jul 2026 14:04:50 +0000</pubDate>
+      <itunes:episode>104</itunes:episode>
+      <itunes:duration>954.98449</itunes:duration>
+      <description>SpeakForWater Episode 104: Remediation of Urban Water Contaminated by Microplastics Using Magnetic Nanoparticles and Biosurfactant. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://www.ria.ie/assets/uploads/2024/06/sapea_report-micro-plastics.pdf</description>
+    </item>
     <item>
       <title>Ep 103: From salinity to nanoplastics: redefining safe yield in strip-island aquifers under emerging contaminant threats</title>
       <enclosure url="https://media.speakforwater.com/episodes/ep103.mp3" length="31445412" type="audio/mpeg"/>
