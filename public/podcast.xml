@@ -20,8 +20,19 @@
   <itunes:new-feed-url>https://ehsankahrizi.github.io/speakforwater/podcast.xml</itunes:new-feed-url>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
   <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
-  <lastBuildDate>Tue, 07 Jul 2026 15:15:47 +0000</lastBuildDate>
+  <lastBuildDate>Tue, 07 Jul 2026 20:20:31 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 111: Regional environmental coordination and industrial enterprise pollution emission: empirical findings from China’s inter-provincial joint control policy</title>
+      <enclosure url="https://media.speakforwater.com/episodes/ep111.mp3" length="29256769" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep111</guid>
+      <pubDate>Tue, 07 Jul 2026 20:20:31 +0000</pubDate>
+      <itunes:episode>111</itunes:episode>
+      <itunes:duration>1219.004082</itunes:duration>
+      <description>SpeakForWater Episode 111: Regional environmental coordination and industrial enterprise pollution emission: empirical findings from China’s inter-provincial joint control policy. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://www.frontiersin.org/journals/environmental-science/articles/10.3389/fenvs.2026.1802192/pdf</description>
+    </item>
     <item>
       <title>Ep 110: Assessment of Storage-Induced Microplastic Generation, Polymer Characteristics, and Human Exposure Risks in Bottled and Sachet Drinking Water Under Different Environmental Conditions in Port Harcourt, Nigeria</title>
       <enclosure url="https://media.speakforwater.com/episodes/ep110.mp3" length="34370708" type="audio/mpeg"/>
