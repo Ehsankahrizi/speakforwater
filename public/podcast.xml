@@ -20,8 +20,19 @@
   <itunes:new-feed-url>https://ehsankahrizi.github.io/speakforwater/podcast.xml</itunes:new-feed-url>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
   <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
-  <lastBuildDate>Mon, 06 Jul 2026 20:50:34 +0000</lastBuildDate>
+  <lastBuildDate>Tue, 07 Jul 2026 10:05:15 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 109: Optimal control of Typhoid fever transmission under environmental and public health interventions</title>
+      <enclosure url="https://media.speakforwater.com/episodes/ep109.mp3" length="32032853" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep109</guid>
+      <pubDate>Tue, 07 Jul 2026 10:05:15 +0000</pubDate>
+      <itunes:episode>109</itunes:episode>
+      <itunes:duration>1334.674286</itunes:duration>
+      <description>SpeakForWater Episode 109: Optimal control of Typhoid fever transmission under environmental and public health interventions. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0351747&amp;type=printable</description>
+    </item>
     <item>
       <title>Ep 108: A Low-Cost Solution for Arsenic in Water: Integrating ZVI Technology into Ceramic Pot Filter: MatiKalp</title>
       <enclosure url="https://media.speakforwater.com/episodes/ep108.mp3" length="32457918" type="audio/mpeg"/>
