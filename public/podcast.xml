@@ -20,8 +20,19 @@
   <itunes:new-feed-url>https://ehsankahrizi.github.io/speakforwater/podcast.xml</itunes:new-feed-url>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
   <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
-  <lastBuildDate>Wed, 08 Jul 2026 14:42:44 +0000</lastBuildDate>
+  <lastBuildDate>Wed, 08 Jul 2026 20:01:47 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 114: Detectıon Of Faılure Potentıal In The Clean Water Network Usıng Multı-Crıterıa Decısıon-Makıng (Mcdm) Methods: The Case Of Yenişehir, Mersin</title>
+      <enclosure url="https://media.speakforwater.com/episodes/ep114.mp3" length="34931818" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep114</guid>
+      <pubDate>Wed, 08 Jul 2026 20:01:47 +0000</pubDate>
+      <itunes:episode>114</itunes:episode>
+      <itunes:duration>1455.46449</itunes:duration>
+      <description>SpeakForWater Episode 114: Detectıon Of Faılure Potentıal In The Clean Water Network Usıng Multı-Crıterıa Decısıon-Makıng (Mcdm) Methods: The Case Of Yenişehir, Mersin. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://dergipark.org.tr/en/download/article-file/5432309</description>
+    </item>
     <item>
       <title>Ep 113: Trust and data sharing: exploring sources of social trust in transboundary water cooperation</title>
       <enclosure url="https://media.speakforwater.com/episodes/ep113.mp3" length="27792866" type="audio/mpeg"/>
