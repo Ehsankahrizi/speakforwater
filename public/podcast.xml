@@ -20,8 +20,19 @@
   <itunes:new-feed-url>https://ehsankahrizi.github.io/speakforwater/podcast.xml</itunes:new-feed-url>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
   <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
-  <lastBuildDate>Thu, 09 Jul 2026 10:14:50 +0000</lastBuildDate>
+  <lastBuildDate>Thu, 09 Jul 2026 15:37:00 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 116: &amp;lt;b&amp;gt;Carbon and Water Footprints of Cotton Production in Punjab, Pakistan: Implications for Climate-Smart&amp;lt;/b&amp;gt;&amp;lt;b&amp;gt; &amp;lt;/b&amp;gt;&amp;lt;b&amp;gt;Agricultural Policy&amp;lt;/b&amp;gt;&amp;lt;b&amp;gt;&amp;lt;/b&amp;gt;</title>
+      <enclosure url="https://media.speakforwater.com/episodes/ep116.mp3" length="33229053" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep116</guid>
+      <pubDate>Thu, 09 Jul 2026 15:36:59 +0000</pubDate>
+      <itunes:episode>116</itunes:episode>
+      <itunes:duration>1384.515918</itunes:duration>
+      <description>SpeakForWater Episode 116: &amp;lt;b&amp;gt;Carbon and Water Footprints of Cotton Production in Punjab, Pakistan: Implications for Climate-Smart&amp;lt;/b&amp;gt;&amp;lt;b&amp;gt; &amp;lt;/b&amp;gt;&amp;lt;b&amp;gt;Agricultural Policy&amp;lt;/b&amp;gt;&amp;lt;b&amp;gt;&amp;lt;/b&amp;gt;. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://journals.ageconfrontiers.com/index.php/agripat/article/download/96/38</description>
+    </item>
     <item>
       <title>Ep 115: GIS-based analytical hierarchy process for comprehensive flood hazard and risk assessment in the Juba River Basin, Somalia</title>
       <enclosure url="https://media.speakforwater.com/episodes/ep115.mp3" length="31469862" type="audio/mpeg"/>
