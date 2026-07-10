@@ -20,8 +20,19 @@
   <itunes:new-feed-url>https://ehsankahrizi.github.io/speakforwater/podcast.xml</itunes:new-feed-url>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
   <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
-  <lastBuildDate>Thu, 09 Jul 2026 20:04:28 +0000</lastBuildDate>
+  <lastBuildDate>Fri, 10 Jul 2026 09:58:42 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 118: Hydrological Modeling-Based Assessment of the Impact of Urbanization on Runoff From Watercourse Catchments</title>
+      <enclosure url="https://media.speakforwater.com/episodes/ep118.mp3" length="32451649" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep118</guid>
+      <pubDate>Fri, 10 Jul 2026 09:58:42 +0000</pubDate>
+      <itunes:episode>118</itunes:episode>
+      <itunes:duration>1352.124082</itunes:duration>
+      <description>SpeakForWater Episode 118: Hydrological Modeling-Based Assessment of the Impact of Urbanization on Runoff From Watercourse Catchments. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://www.ceer.com.pl/pdf-224858-141586?filename=Hydrological-Modeling-Bas.pdf</description>
+    </item>
     <item>
       <title>Ep 117: Peak discharge estimation in data-scarce regions: a comparative study of methods for Syrian ungauged basins</title>
       <enclosure url="https://media.speakforwater.com/episodes/ep117.mp3" length="21695260" type="audio/mpeg"/>
