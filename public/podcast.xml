@@ -20,8 +20,19 @@
   <itunes:new-feed-url>https://ehsankahrizi.github.io/speakforwater/podcast.xml</itunes:new-feed-url>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
   <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
-  <lastBuildDate>Sat, 11 Jul 2026 08:16:09 +0000</lastBuildDate>
+  <lastBuildDate>Sat, 11 Jul 2026 13:50:50 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 122: Managing salinity-induced degradation in coastal agricultural land: Integrating vulnerability diagnostics and a hybrid adaptation pathway in Central Java, Indonesia</title>
+      <enclosure url="https://media.speakforwater.com/episodes/ep122.mp3" length="31661079" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep122</guid>
+      <pubDate>Sat, 11 Jul 2026 13:50:50 +0000</pubDate>
+      <itunes:episode>122</itunes:episode>
+      <itunes:duration>1319.183673</itunes:duration>
+      <description>SpeakForWater Episode 122: Managing salinity-induced degradation in coastal agricultural land: Integrating vulnerability diagnostics and a hybrid adaptation pathway in Central Java, Indonesia. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://jdmlm.ub.ac.id/index.php/jdmlm/article/download/17790/2086</description>
+    </item>
     <item>
       <title>Ep 121: Keberlanjutan Akses Air Bersih melalui Sumur Bor dan Pompa Air Tenaga Surya di Desa Bila Cenge</title>
       <enclosure url="https://media.speakforwater.com/episodes/ep121.mp3" length="26932080" type="audio/mpeg"/>
