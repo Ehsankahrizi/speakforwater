@@ -20,8 +20,19 @@
   <itunes:new-feed-url>https://ehsankahrizi.github.io/speakforwater/podcast.xml</itunes:new-feed-url>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
   <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
-  <lastBuildDate>Sat, 11 Jul 2026 13:50:50 +0000</lastBuildDate>
+  <lastBuildDate>Sat, 11 Jul 2026 19:24:25 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 123: Mitigation of high-strength pesticide wastewater through integrated biological–membrane treatment: mechanistic insights and water reuse potential</title>
+      <enclosure url="https://media.speakforwater.com/episodes/ep123.mp3" length="31193382" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep123</guid>
+      <pubDate>Sat, 11 Jul 2026 19:24:25 +0000</pubDate>
+      <itunes:episode>123</itunes:episode>
+      <itunes:duration>1299.696327</itunes:duration>
+      <description>SpeakForWater Episode 123: Mitigation of high-strength pesticide wastewater through integrated biological–membrane treatment: mechanistic insights and water reuse potential. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://link.springer.com/content/pdf/10.1007/s13201-026-02822-0.pdf</description>
+    </item>
     <item>
       <title>Ep 122: Managing salinity-induced degradation in coastal agricultural land: Integrating vulnerability diagnostics and a hybrid adaptation pathway in Central Java, Indonesia</title>
       <enclosure url="https://media.speakforwater.com/episodes/ep122.mp3" length="31661079" type="audio/mpeg"/>
