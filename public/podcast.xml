@@ -20,8 +20,19 @@
   <itunes:new-feed-url>https://ehsankahrizi.github.io/speakforwater/podcast.xml</itunes:new-feed-url>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
   <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
-  <lastBuildDate>Sun, 12 Jul 2026 08:35:17 +0000</lastBuildDate>
+  <lastBuildDate>Sun, 12 Jul 2026 13:52:00 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 125: STUDY OF THE TEMPERATURE REGIME AND WATER DISCHARGE OF THE SHAGAN RIVER IN AREAS OF TRITIUM CONTAMINATION</title>
+      <enclosure url="https://media.speakforwater.com/episodes/ep125.mp3" length="28469333" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep125</guid>
+      <pubDate>Sun, 12 Jul 2026 13:52:00 +0000</pubDate>
+      <itunes:episode>125</itunes:episode>
+      <itunes:duration>1186.194286</itunes:duration>
+      <description>SpeakForWater Episode 125: STUDY OF THE TEMPERATURE REGIME AND WATER DISCHARGE OF THE SHAGAN RIVER IN AREAS OF TRITIUM CONTAMINATION. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://journal.kazhydromet.kz/kazgidro/article/download/2474/2741</description>
+    </item>
     <item>
       <title>Ep 124: Determinants of flood disaster mitigation strategies practiced by arable crop farmers in Imo State, Nigeria</title>
       <enclosure url="https://media.speakforwater.com/episodes/ep124.mp3" length="31504344" type="audio/mpeg"/>
