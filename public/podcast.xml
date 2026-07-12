@@ -20,8 +20,19 @@
   <itunes:new-feed-url>https://ehsankahrizi.github.io/speakforwater/podcast.xml</itunes:new-feed-url>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
   <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
-  <lastBuildDate>Sat, 11 Jul 2026 19:24:25 +0000</lastBuildDate>
+  <lastBuildDate>Sun, 12 Jul 2026 08:35:17 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 124: Determinants of flood disaster mitigation strategies practiced by arable crop farmers in Imo State, Nigeria</title>
+      <enclosure url="https://media.speakforwater.com/episodes/ep124.mp3" length="31504344" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep124</guid>
+      <pubDate>Sun, 12 Jul 2026 08:35:16 +0000</pubDate>
+      <itunes:episode>124</itunes:episode>
+      <itunes:duration>1312.653061</itunes:duration>
+      <description>SpeakForWater Episode 124: Determinants of flood disaster mitigation strategies practiced by arable crop farmers in Imo State, Nigeria. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://www.frontiersin.org/journals/climate/articles/10.3389/fclim.2026.1855315/pdf</description>
+    </item>
     <item>
       <title>Ep 123: Mitigation of high-strength pesticide wastewater through integrated biological–membrane treatment: mechanistic insights and water reuse potential</title>
       <enclosure url="https://media.speakforwater.com/episodes/ep123.mp3" length="31193382" type="audio/mpeg"/>
