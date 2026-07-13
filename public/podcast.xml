@@ -20,8 +20,19 @@
   <itunes:new-feed-url>https://ehsankahrizi.github.io/speakforwater/podcast.xml</itunes:new-feed-url>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
   <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
-  <lastBuildDate>Sun, 12 Jul 2026 13:52:00 +0000</lastBuildDate>
+  <lastBuildDate>Mon, 13 Jul 2026 15:04:10 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 126: Efficient removal of antibiotics from wastewater by a low-cost olive leaf biosorbent: Thermodynamics, kinetics and quantum chemical studies</title>
+      <enclosure url="https://media.speakforwater.com/episodes/ep126.mp3" length="30466133" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep126</guid>
+      <pubDate>Mon, 13 Jul 2026 15:04:10 +0000</pubDate>
+      <itunes:episode>126</itunes:episode>
+      <itunes:duration>1269.394286</itunes:duration>
+      <description>SpeakForWater Episode 126: Efficient removal of antibiotics from wastewater by a low-cost olive leaf biosorbent: Thermodynamics, kinetics and quantum chemical studies. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://jksus.org/content/185/2026/0/1/pdf/JKSUS_1720_2025.pdf</description>
+    </item>
     <item>
       <title>Ep 125: STUDY OF THE TEMPERATURE REGIME AND WATER DISCHARGE OF THE SHAGAN RIVER IN AREAS OF TRITIUM CONTAMINATION</title>
       <enclosure url="https://media.speakforwater.com/episodes/ep125.mp3" length="28469333" type="audio/mpeg"/>
