@@ -20,8 +20,19 @@
   <itunes:new-feed-url>https://ehsankahrizi.github.io/speakforwater/podcast.xml</itunes:new-feed-url>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
   <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
-  <lastBuildDate>Mon, 13 Jul 2026 15:04:10 +0000</lastBuildDate>
+  <lastBuildDate>Tue, 14 Jul 2026 08:33:20 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 127: Can the governance structure influence the behavior choice of farmers’ participation in ecological agriculture model in the irrigation area of the Tarim River Basin?</title>
+      <enclosure url="https://media.speakforwater.com/episodes/ep127.mp3" length="28730767" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep127</guid>
+      <pubDate>Tue, 14 Jul 2026 08:33:20 +0000</pubDate>
+      <itunes:episode>127</itunes:episode>
+      <itunes:duration>1197.087347</itunes:duration>
+      <description>SpeakForWater Episode 127: Can the governance structure influence the behavior choice of farmers’ participation in ecological agriculture model in the irrigation area of the Tarim River Basin?. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://www.frontiersin.org/journals/sustainable-food-systems/articles/10.3389/fsufs.2026.1824553/pdf</description>
+    </item>
     <item>
       <title>Ep 126: Efficient removal of antibiotics from wastewater by a low-cost olive leaf biosorbent: Thermodynamics, kinetics and quantum chemical studies</title>
       <enclosure url="https://media.speakforwater.com/episodes/ep126.mp3" length="30466133" type="audio/mpeg"/>
