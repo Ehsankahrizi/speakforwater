@@ -20,8 +20,19 @@
   <itunes:new-feed-url>https://ehsankahrizi.github.io/speakforwater/podcast.xml</itunes:new-feed-url>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
   <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
-  <lastBuildDate>Tue, 14 Jul 2026 14:10:54 +0000</lastBuildDate>
+  <lastBuildDate>Tue, 14 Jul 2026 19:46:49 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 129: An innovative weighted fuzzy soft set-based model for multi-criteria groundwater quality assessment in urban areas: A case study of Agartala, India</title>
+      <enclosure url="https://media.speakforwater.com/episodes/ep129.mp3" length="35430235" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep129</guid>
+      <pubDate>Tue, 14 Jul 2026 19:46:49 +0000</pubDate>
+      <itunes:episode>129</itunes:episode>
+      <itunes:duration>1476.231837</itunes:duration>
+      <description>SpeakForWater Episode 129: An innovative weighted fuzzy soft set-based model for multi-criteria groundwater quality assessment in urban areas: A case study of Agartala, India. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://revistagi.geofisica.unam.mx/index.php/RGI/article/download/1855/2996</description>
+    </item>
     <item>
       <title>Ep 128: Separation of heavy metal pollutants by micellar-enhanced ultrafiltration membrane system and its surfactant recovery</title>
       <enclosure url="https://media.speakforwater.com/episodes/ep128.mp3" length="28351469" type="audio/mpeg"/>
