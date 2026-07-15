@@ -20,8 +20,19 @@
   <itunes:new-feed-url>https://ehsankahrizi.github.io/speakforwater/podcast.xml</itunes:new-feed-url>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
   <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
-  <lastBuildDate>Wed, 15 Jul 2026 08:38:46 +0000</lastBuildDate>
+  <lastBuildDate>Wed, 15 Jul 2026 14:10:16 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 131: Pollution analysis and quality assessment of heavy metals in the Batanghari River Water, Jambi, Indonesia</title>
+      <enclosure url="https://media.speakforwater.com/episodes/ep131.mp3" length="34007084" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep131</guid>
+      <pubDate>Wed, 15 Jul 2026 14:10:15 +0000</pubDate>
+      <itunes:episode>131</itunes:episode>
+      <itunes:duration>1416.933878</itunes:duration>
+      <description>SpeakForWater Episode 131: Pollution analysis and quality assessment of heavy metals in the Batanghari River Water, Jambi, Indonesia. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://jdmlm.ub.ac.id/index.php/jdmlm/article/download/17451/2079</description>
+    </item>
     <item>
       <title>Ep 130: Hydrochemical Modelling of Seawater Intrusion and Geogenic Salinity for Sustainable Groundwater Management in Coastal Aquifers</title>
       <enclosure url="https://media.speakforwater.com/episodes/ep130.mp3" length="30541993" type="audio/mpeg"/>
