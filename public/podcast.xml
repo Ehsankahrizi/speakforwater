@@ -20,8 +20,19 @@
   <itunes:new-feed-url>https://ehsankahrizi.github.io/speakforwater/podcast.xml</itunes:new-feed-url>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
   <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
-  <lastBuildDate>Wed, 15 Jul 2026 19:37:11 +0000</lastBuildDate>
+  <lastBuildDate>Thu, 16 Jul 2026 08:36:14 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 133: Agro-Blue Commons: Reframing Recreation through Food–Water–Leisure Integration in the Global South</title>
+      <enclosure url="https://media.speakforwater.com/episodes/ep133.mp3" length="31524406" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep133</guid>
+      <pubDate>Thu, 16 Jul 2026 08:36:14 +0000</pubDate>
+      <itunes:episode>133</itunes:episode>
+      <itunes:duration>1313.48898</itunes:duration>
+      <description>SpeakForWater Episode 133: Agro-Blue Commons: Reframing Recreation through Food–Water–Leisure Integration in the Global South. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://www.scifiniti.com/uploads/source/articles/sustainable_food_connect/2026/volume2/20260013/article.pdf</description>
+    </item>
     <item>
       <title>Ep 132: Duty to Serve: Sovereign Immunity in Municipal Water Utility Suits</title>
       <enclosure url="https://media.speakforwater.com/episodes/ep132.mp3" length="37423900" type="audio/mpeg"/>
