@@ -20,8 +20,19 @@
   <itunes:new-feed-url>https://ehsankahrizi.github.io/speakforwater/podcast.xml</itunes:new-feed-url>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
   <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
-  <lastBuildDate>Thu, 16 Jul 2026 08:36:14 +0000</lastBuildDate>
+  <lastBuildDate>Thu, 16 Jul 2026 14:21:41 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 134: Beyond inequality to inequity: rethinking spatial and population disparities in green cooling effects across China’s major cities</title>
+      <enclosure url="https://media.speakforwater.com/episodes/ep134.mp3" length="30390274" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep134</guid>
+      <pubDate>Thu, 16 Jul 2026 14:21:41 +0000</pubDate>
+      <itunes:episode>134</itunes:episode>
+      <itunes:duration>1266.233469</itunes:duration>
+      <description>SpeakForWater Episode 134: Beyond inequality to inequity: rethinking spatial and population disparities in green cooling effects across China’s major cities. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://www.nature.com/articles/s42949-026-00438-6_reference.pdf</description>
+    </item>
     <item>
       <title>Ep 133: Agro-Blue Commons: Reframing Recreation through Food–Water–Leisure Integration in the Global South</title>
       <enclosure url="https://media.speakforwater.com/episodes/ep133.mp3" length="31524406" type="audio/mpeg"/>
