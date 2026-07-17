@@ -20,8 +20,19 @@
   <itunes:new-feed-url>https://ehsankahrizi.github.io/speakforwater/podcast.xml</itunes:new-feed-url>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
   <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
-  <lastBuildDate>Thu, 16 Jul 2026 19:38:29 +0000</lastBuildDate>
+  <lastBuildDate>Fri, 17 Jul 2026 08:31:09 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 136: Linking species distributions and urban governance through social ecological fit in blue green infrastructure</title>
+      <enclosure url="https://media.speakforwater.com/episodes/ep136.mp3" length="37302274" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep136</guid>
+      <pubDate>Fri, 17 Jul 2026 08:31:09 +0000</pubDate>
+      <itunes:episode>136</itunes:episode>
+      <itunes:duration>1554.233469</itunes:duration>
+      <description>SpeakForWater Episode 136: Linking species distributions and urban governance through social ecological fit in blue green infrastructure. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://www.nature.com/articles/s42949-026-00426-w_reference.pdf</description>
+    </item>
     <item>
       <title>Ep 135: Flood-induced mobilization of industrial contaminants in the United States: mechanisms, exposure pathways, and implications for water and health policy</title>
       <enclosure url="https://media.speakforwater.com/episodes/ep135.mp3" length="37123596" type="audio/mpeg"/>
