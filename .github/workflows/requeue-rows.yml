@@ -1,0 +1,70 @@
+###############################################################################
+#  SpeakForWater — Re-queue Rows (manual)
+#
+#  Resets specific sheet rows' `status` back to "queued" so the daily pipeline
+#  picks them up again. Use to recover papers wrongly marked "failed" by a
+#  systemic error (e.g. NotebookLM at its notebook limit).
+#
+#  By default only rows currently "failed" are touched; tick `force` to override.
+#  Default mode "report" is a dry-run (no writes). Choose "apply" to commit.
+#
+#  Trigger from: Actions -> Re-queue Rows -> Run workflow
+###############################################################################
+
+name: Re-queue Rows
+
+on:
+  workflow_dispatch:
+    inputs:
+      rows:
+        description: "Comma-separated sheet row numbers, e.g. 160,161,162,163,164"
+        required: true
+        type: string
+      mode:
+        description: "report = dry-run (no writes) | apply = write changes"
+        required: true
+        type: choice
+        default: report
+        options:
+          - report
+          - apply
+      force:
+        description: "Re-queue rows even if not currently 'failed'"
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: requeue-rows
+  cancel-in-progress: false
+
+jobs:
+  requeue:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install gspread google-auth
+
+      - name: Re-queue rows
+        env:
+          GOOGLE_CREDENTIALS_JSON: ${{ secrets.GOOGLE_CREDENTIALS_JSON }}
+          SPREADSHEET_ID: ${{ secrets.SPREADSHEET_ID }}
+          SHEET_NAME: ${{ secrets.SHEET_NAME || 'Sheet1' }}
+          ROWS: ${{ inputs.rows }}
+        run: |
+          FLAGS=""
+          if [ "${{ inputs.mode }}" = "apply" ]; then FLAGS="$FLAGS --apply"; fi
+          if [ "${{ inputs.force }}" = "true" ]; then FLAGS="$FLAGS --force"; fi
+          python scripts/requeue_rows.py $FLAGS
