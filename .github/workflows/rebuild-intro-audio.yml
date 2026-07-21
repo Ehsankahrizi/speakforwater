@@ -1,0 +1,65 @@
+###############################################################################
+#  SpeakForWater — Rebuild Intro Audio (manual)
+#
+#  Adds the intro + outro jingles to the home-page introduction audio
+#  (ep000.m4a) so it matches the regular episodes. Idempotent: the pristine
+#  original is preserved in R2 as ep000_raw.m4a and always used as the source,
+#  so re-running never stacks a second intro/outro.
+#
+#  Default mode "report" is a dry-run (no writes). Choose "apply" to publish.
+#
+#  Trigger from: Actions -> Rebuild Intro Audio -> Run workflow
+###############################################################################
+
+name: Rebuild Intro Audio
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "report = dry-run (no writes) | apply = write to R2"
+        required: true
+        type: choice
+        default: report
+        options:
+          - report
+          - apply
+
+permissions:
+  contents: read
+
+concurrency:
+  group: rebuild-intro-audio
+  cancel-in-progress: false
+
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install ffmpeg
+        run: sudo apt-get update && sudo apt-get install -y ffmpeg
+
+      - name: Install dependencies
+        run: pip install boto3
+
+      - name: Rebuild intro audio
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ vars.R2_BUCKET }}
+        run: |
+          if [ "${{ inputs.mode }}" = "apply" ]; then
+            python scripts/rebuild_intro_audio.py --apply
+          else
+            python scripts/rebuild_intro_audio.py
+          fi
