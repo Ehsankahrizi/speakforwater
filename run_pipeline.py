@@ -91,6 +91,17 @@ def _is_notebooklm_limit_error(exc: Exception) -> bool:
     )
 
 
+def _is_notebooklm_ratelimit_error(exc: Exception) -> bool:
+    """
+    True if NotebookLM refused audio generation because the account hit its
+    daily Audio Overview quota (~3/day on free). Surfaces as a RateLimitError on
+    CREATE_ARTIFACT. Systemic for the rest of the UTC day — every remaining paper
+    hits it identically — so we abort instead of burning the whole queue.
+    """
+    msg = str(exc).lower()
+    return "ratelimiterror" in msg or "rate limit" in msg or "rate_limit" in msg
+
+
 # ── Configuration from environment ─────────────────────────────────────
 
 GOOGLE_CREDENTIALS_JSON = os.environ.get("GOOGLE_CREDENTIALS_JSON", "")
@@ -592,6 +603,21 @@ async def process_one_episode(episode: dict) -> bool:
                 "(free accounts cap at 100). The pipeline now auto-deletes each "
                 "notebook after use, so this should stop recurring once you are "
                 "back under the limit. Aborting before burning the queue."
+            ) from e
+
+        if _is_notebooklm_ratelimit_error(e):
+            # Daily Audio Overview quota is spent (~3/day on free). Every
+            # remaining paper will hit the same limit today, so re-queue this
+            # (good) paper and abort — it will generate after the UTC reset.
+            try:
+                update_sheet_status(row_number, "queued")
+            except Exception:
+                pass
+            raise FatalPipelineError(
+                "NotebookLM daily audio limit reached (RateLimitError). The "
+                "free tier allows ~3 Audio Overviews per day; the quota is spent. "
+                "This paper was left queued and will generate after the limit "
+                "resets (around 00:00 UTC). Aborting before burning the queue."
             ) from e
 
         logger.error(f"\nFailed: {e}", exc_info=True)
