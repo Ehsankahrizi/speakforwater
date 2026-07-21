@@ -199,6 +199,10 @@ class NotebookLMAutomator:
 
             logger.info(f"Downloaded: {mp3_path} ({mp3_path.stat().st_size:,} bytes)")
 
+            # Delete the notebook now that the MP3 is safely downloaded — free
+            # accounts cap at 100 notebooks, so we must not leak one per episode.
+            self._delete_notebook(notebook_id)
+
             return {
                 "mp3_path": str(mp3_path),
                 "notebook_id": notebook_id,
@@ -208,16 +212,9 @@ class NotebookLMAutomator:
         except Exception as e:
             logger.error(f"Generation failed: {e}", exc_info=True)
 
-            # Try to clean up the notebook (delete uses the active notebook set by 'use')
-            if notebook_id:
-                try:
-                    logger.info(f"Cleaning up notebook {notebook_id}...")
-                    # Ensure the notebook is set as active first
-                    self._run_cli(["notebooklm", "use", notebook_id], timeout=15)
-                    self._run_cli(["notebooklm", "delete", "--yes"], timeout=30)
-                    logger.info("Notebook deleted.")
-                except Exception as cleanup_err:
-                    logger.warning(f"Cleanup failed (non-fatal): {cleanup_err}")
+            # Clean up the notebook so a failed run doesn't leak one either.
+            # (No-op if creation itself failed and notebook_id is still None.)
+            self._delete_notebook(notebook_id)
 
             raise
 
@@ -287,6 +284,25 @@ class NotebookLMAutomator:
             "The audio may still be generating on NotebookLM — "
             "check notebooklm.google.com manually."
         )
+
+    def _delete_notebook(self, notebook_id: str) -> None:
+        """
+        Delete a notebook (best-effort, never raises).
+
+        NotebookLM caps free accounts at 100 owned notebooks, so we must not
+        leak a notebook per episode. The MP3 is already downloaded before this
+        is called, so the notebook is disposable. Delete operates on the active
+        notebook, so we set it active first.
+        """
+        if not notebook_id:
+            return
+        try:
+            logger.info(f"Deleting notebook {notebook_id}...")
+            self._run_cli(["notebooklm", "use", notebook_id], timeout=15)
+            self._run_cli(["notebooklm", "delete", "--yes"], timeout=30)
+            logger.info("Notebook deleted.")
+        except Exception as del_err:
+            logger.warning(f"Notebook delete failed (non-fatal): {del_err}")
 
     def _run_cli(self, cmd: list[str], timeout: int = 120) -> str:
         """Run a notebooklm CLI command and return stdout."""
