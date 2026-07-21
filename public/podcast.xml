@@ -20,8 +20,19 @@
   <itunes:new-feed-url>https://ehsankahrizi.github.io/speakforwater/podcast.xml</itunes:new-feed-url>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
   <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
-  <lastBuildDate>Sat, 18 Jul 2026 19:23:39 +0000</lastBuildDate>
+  <lastBuildDate>Tue, 21 Jul 2026 04:25:44 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 142: Dam-Break Simulation of the Sepaku Semoi Dam Using Zhong Xing Hy21 for Flood Hazard Mapping and Disaster Mitigation Planning</title>
+      <enclosure url="https://media.speakforwater.com/episodes/ep142.mp3" length="26224893" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep142</guid>
+      <pubDate>Tue, 21 Jul 2026 04:25:43 +0000</pubDate>
+      <itunes:episode>142</itunes:episode>
+      <itunes:duration>1092.675918</itunes:duration>
+      <description>SpeakForWater Episode 142: Dam-Break Simulation of the Sepaku Semoi Dam Using Zhong Xing Hy21 for Flood Hazard Mapping and Disaster Mitigation Planning. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: http://jurnalth.pusair-pu.go.id/index.php/JTH/article/download/858/582</description>
+    </item>
     <item>
       <title>Ep 141: Coastal plain retention modulates flashflood chlorophylla anomalies in the Red Sea: a CPRI based multisite analysis</title>
       <enclosure url="https://media.speakforwater.com/episodes/ep141.mp3" length="28716974" type="audio/mpeg"/>
