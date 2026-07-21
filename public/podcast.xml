@@ -20,8 +20,19 @@
   <itunes:new-feed-url>https://ehsankahrizi.github.io/speakforwater/podcast.xml</itunes:new-feed-url>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
   <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
-  <lastBuildDate>Tue, 21 Jul 2026 04:25:44 +0000</lastBuildDate>
+  <lastBuildDate>Tue, 21 Jul 2026 04:37:09 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 143: Microplastics and the Human Body: Exposure, Translocation, and the Margin-of-Exposure Question</title>
+      <enclosure url="https://media.speakforwater.com/episodes/ep143.mp3" length="31335697" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep143</guid>
+      <pubDate>Tue, 21 Jul 2026 04:37:09 +0000</pubDate>
+      <itunes:episode>143</itunes:episode>
+      <itunes:duration>1305.626122</itunes:duration>
+      <description>SpeakForWater Episode 143: Microplastics and the Human Body: Exposure, Translocation, and the Margin-of-Exposure Question. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://holisticquality.io/research/microplastics-and-the-human-body-full.pdf</description>
+    </item>
     <item>
       <title>Ep 142: Dam-Break Simulation of the Sepaku Semoi Dam Using Zhong Xing Hy21 for Flood Hazard Mapping and Disaster Mitigation Planning</title>
       <enclosure url="https://media.speakforwater.com/episodes/ep142.mp3" length="26224893" type="audio/mpeg"/>
