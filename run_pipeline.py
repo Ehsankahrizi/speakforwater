@@ -47,6 +47,36 @@ class _YouTubeDisabled(Exception):
     pass
 
 
+class FatalPipelineError(Exception):
+    """
+    A systemic failure that will affect every paper equally, so retrying
+    other queued papers is pointless. Aborts the run immediately.
+    """
+    pass
+
+
+def _is_sheets_permission_error(exc: Exception) -> bool:
+    """
+    True if the exception is a Google Sheets 403 ("caller does not have
+    permission"). This is systemic — the service account can't write to the
+    sheet — usually because Google Drive storage is full or the sheet is no
+    longer shared with the service account as Editor. Retrying won't help.
+    """
+    try:
+        from gspread.exceptions import APIError
+    except Exception:
+        return False
+
+    if not isinstance(exc, APIError):
+        return False
+
+    # gspread 6.x exposes both a parsed `.code` and the raw response.
+    if getattr(exc, "code", None) == 403:
+        return True
+    resp = getattr(exc, "response", None)
+    return resp is not None and getattr(resp, "status_code", None) == 403
+
+
 # ── Configuration from environment ─────────────────────────────────────
 
 GOOGLE_CREDENTIALS_JSON = os.environ.get("GOOGLE_CREDENTIALS_JSON", "")
@@ -522,6 +552,18 @@ async def process_one_episode(episode: dict) -> bool:
         return True
 
     except Exception as e:
+        # A Sheets 403 is systemic (storage full / lost Editor access): every
+        # paper will hit it, and even marking this row "failed" would 403 again.
+        # Abort the whole run instead of burning attempts on other papers.
+        if _is_sheets_permission_error(e):
+            raise FatalPipelineError(
+                "Google Sheets write was denied (403). The service account "
+                "cannot modify the sheet. Most likely the Google Drive storage "
+                "is full, or the sheet is no longer shared with the service "
+                "account as Editor. Fix that, then re-run — no papers were "
+                "changed."
+            ) from e
+
         logger.error(f"\nFailed: {e}", exc_info=True)
         try:
             update_sheet_status(row_number, "failed")
@@ -556,7 +598,11 @@ async def main():
             return
 
         logger.info(f"\n--- Attempt {attempt}/{MAX_ATTEMPTS} ---")
-        success = await process_one_episode(episode)
+        try:
+            success = await process_one_episode(episode)
+        except FatalPipelineError as e:
+            logger.error(f"\nAborting run — {e}")
+            sys.exit(1)
 
         if success:
             return  # Done!
