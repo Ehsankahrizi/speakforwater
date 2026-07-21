@@ -30,3 +30,9 @@ package-lock.json
 public/episodes/*.mp3
 public/ep000.m4a
 public/movie_1.mp4
+
+# macOS Finder metadata
+.DS_Store
+
+# Claude Code local config
+.claude/
