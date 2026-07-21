@@ -53,6 +53,50 @@ _CONTENT_TYPES = {
 }
 
 
+def object_exists(key: str) -> bool:
+    """True if an object with `key` exists in the bucket."""
+    if not r2_enabled():
+        return False
+    try:
+        _client().head_object(Bucket=os.environ["R2_BUCKET"], Key=key)
+        return True
+    except Exception:
+        return False
+
+
+def download_file(key: str, local_path: Path) -> bool:
+    """Download R2 object `key` to `local_path`. Returns True on success."""
+    if not r2_enabled():
+        return False
+    local_path = Path(local_path)
+    local_path.parent.mkdir(parents=True, exist_ok=True)
+    try:
+        _client().download_file(os.environ["R2_BUCKET"], key, str(local_path))
+        logger.info(f"[r2] downloaded {key} -> {local_path}")
+        return True
+    except Exception as e:
+        logger.error(f"[r2] download failed for {key}: {e}")
+        return False
+
+
+def copy_object(src_key: str, dst_key: str) -> bool:
+    """Server-side copy `src_key` to `dst_key` within the bucket."""
+    if not r2_enabled():
+        return False
+    bucket = os.environ["R2_BUCKET"]
+    try:
+        _client().copy_object(
+            Bucket=bucket,
+            Key=dst_key,
+            CopySource={"Bucket": bucket, "Key": src_key},
+        )
+        logger.info(f"[r2] copied {src_key} -> {dst_key}")
+        return True
+    except Exception as e:
+        logger.error(f"[r2] copy failed {src_key} -> {dst_key}: {e}")
+        return False
+
+
 def upload_file(local_path: Path, key: str) -> bool:
     """Upload a local file to R2 under `key` (e.g. "episodes/ep082.mp3").
 
