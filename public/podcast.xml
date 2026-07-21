@@ -20,8 +20,19 @@
   <itunes:new-feed-url>https://ehsankahrizi.github.io/speakforwater/podcast.xml</itunes:new-feed-url>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
   <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
-  <lastBuildDate>Tue, 21 Jul 2026 04:37:09 +0000</lastBuildDate>
+  <lastBuildDate>Tue, 21 Jul 2026 04:55:47 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 144: Microplastic occurrence and removal in unbranded refilled drinking water treatment systems: Implications for human exposure in Karawang, Indonesia</title>
+      <enclosure url="https://media.speakforwater.com/episodes/ep144.mp3" length="24616168" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep144</guid>
+      <pubDate>Tue, 21 Jul 2026 04:55:47 +0000</pubDate>
+      <itunes:episode>144</itunes:episode>
+      <itunes:duration>1025.645714</itunes:duration>
+      <description>SpeakForWater Episode 144: Microplastic occurrence and removal in unbranded refilled drinking water treatment systems: Implications for human exposure in Karawang, Indonesia. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://www.jeeng.net/pdf-220133-141870?filename=Microplastic-occurrence-a.pdf</description>
+    </item>
     <item>
       <title>Ep 143: Microplastics and the Human Body: Exposure, Translocation, and the Margin-of-Exposure Question</title>
       <enclosure url="https://media.speakforwater.com/episodes/ep143.mp3" length="31335697" type="audio/mpeg"/>
