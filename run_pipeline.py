@@ -77,6 +77,20 @@ def _is_sheets_permission_error(exc: Exception) -> bool:
     return resp is not None and getattr(resp, "status_code", None) == 403
 
 
+def _is_notebooklm_limit_error(exc: Exception) -> bool:
+    """
+    True if the failure is NotebookLM refusing to create a notebook because the
+    account is at its notebook cap (100 on free). This is systemic — every paper
+    will hit it identically — so we abort instead of burning the whole queue.
+    """
+    msg = str(exc).lower()
+    return (
+        "notebook limit" in msg
+        or "maximum number of notebooks" in msg
+        or "owned notebooks" in msg
+    )
+
+
 # ── Configuration from environment ─────────────────────────────────────
 
 GOOGLE_CREDENTIALS_JSON = os.environ.get("GOOGLE_CREDENTIALS_JSON", "")
@@ -562,6 +576,22 @@ async def process_one_episode(episode: dict) -> bool:
                 "is full, or the sheet is no longer shared with the service "
                 "account as Editor. Fix that, then re-run — no papers were "
                 "changed."
+            ) from e
+
+        if _is_notebooklm_limit_error(e):
+            # This row was already flipped to "processing"; put it back to
+            # "queued" so it is retried next run (the paper is fine — NotebookLM
+            # was full). Otherwise it would be stranded in "processing".
+            try:
+                update_sheet_status(row_number, "queued")
+            except Exception:
+                pass
+            raise FatalPipelineError(
+                "NotebookLM notebook limit reached — no new notebooks can be "
+                "created. Delete old notebooks at https://notebooklm.google.com "
+                "(free accounts cap at 100). The pipeline now auto-deletes each "
+                "notebook after use, so this should stop recurring once you are "
+                "back under the limit. Aborting before burning the queue."
             ) from e
 
         logger.error(f"\nFailed: {e}", exc_info=True)
