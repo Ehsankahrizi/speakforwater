@@ -1,0 +1,65 @@
+###############################################################################
+#  SpeakForWater — Cleanup NotebookLM Notebooks (manual)
+#
+#  Deletes old NotebookLM notebooks, keeping only the N most recent. NotebookLM
+#  free accounts cap at 100 owned notebooks; this clears the backlog so the
+#  daily pipeline can create new ones again.
+#
+#  Only OWNED notebooks are touched; shared ones are never deleted.
+#  Default mode "report" is a dry-run (no deletes). Choose "apply" to delete.
+#
+#  Trigger from: Actions -> Cleanup Notebooks -> Run workflow
+###############################################################################
+
+name: Cleanup Notebooks
+
+on:
+  workflow_dispatch:
+    inputs:
+      keep:
+        description: "How many most-recent notebooks to keep"
+        required: true
+        type: string
+        default: "5"
+      mode:
+        description: "report = dry-run (no deletes) | apply = delete"
+        required: true
+        type: choice
+        default: report
+        options:
+          - report
+          - apply
+
+permissions:
+  contents: read
+
+concurrency:
+  group: cleanup-notebooks
+  cancel-in-progress: false
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install notebooklm-py
+
+      - name: Cleanup notebooks
+        env:
+          NOTEBOOKLM_AUTH_JSON: ${{ secrets.NOTEBOOKLM_AUTH_JSON }}
+          KEEP: ${{ inputs.keep }}
+        run: |
+          if [ "${{ inputs.mode }}" = "apply" ]; then
+            python scripts/cleanup_notebooks.py --apply
+          else
+            python scripts/cleanup_notebooks.py
+          fi
