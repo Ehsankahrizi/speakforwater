@@ -20,8 +20,19 @@
   <itunes:new-feed-url>https://ehsankahrizi.github.io/speakforwater/podcast.xml</itunes:new-feed-url>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
   <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
-  <lastBuildDate>Wed, 22 Jul 2026 14:24:23 +0000</lastBuildDate>
+  <lastBuildDate>Wed, 22 Jul 2026 19:45:05 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 147: From indicators to governance: a pressure–condition–response framework reveals nonlinear ecological responses to multiple stressors in an agricultural-urban basin</title>
+      <enclosure url="https://media.speakforwater.com/episodes/ep147.mp3" length="27646790" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep147</guid>
+      <pubDate>Wed, 22 Jul 2026 19:45:05 +0000</pubDate>
+      <itunes:episode>147</itunes:episode>
+      <itunes:duration>1151.921633</itunes:duration>
+      <description>SpeakForWater Episode 147: From indicators to governance: a pressure–condition–response framework reveals nonlinear ecological responses to multiple stressors in an agricultural-urban basin. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://link.springer.com/content/pdf/10.1007/s10661-026-15608-3.pdf</description>
+    </item>
     <item>
       <title>Ep 146: A critical review of point-of-use drinking water treatment in the United States</title>
       <enclosure url="https://media.speakforwater.com/episodes/ep146.mp3" length="30684935" type="audio/mpeg"/>
