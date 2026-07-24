@@ -20,8 +20,19 @@
   <itunes:new-feed-url>https://ehsankahrizi.github.io/speakforwater/podcast.xml</itunes:new-feed-url>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
   <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
-  <lastBuildDate>Thu, 23 Jul 2026 19:52:55 +0000</lastBuildDate>
+  <lastBuildDate>Fri, 24 Jul 2026 14:12:33 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 150: Climate Change, Place, and Mental Health in Sub-Saharan Africa: A Multi-Country Analysis of Lived Experiences Following Extreme Weather Events</title>
+      <enclosure url="https://media.speakforwater.com/episodes/ep150.mp3" length="30342000" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep150</guid>
+      <pubDate>Fri, 24 Jul 2026 14:12:33 +0000</pubDate>
+      <itunes:episode>150</itunes:episode>
+      <itunes:duration>1264.222041</itunes:duration>
+      <description>SpeakForWater Episode 150: Climate Change, Place, and Mental Health in Sub-Saharan Africa: A Multi-Country Analysis of Lived Experiences Following Extreme Weather Events. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://www.medrxiv.org/content/medrxiv/early/2026/07/08/2026.06.25.26356208.full.pdf</description>
+    </item>
     <item>
       <title>Ep 149: Enhancing Urban Traffic Resilience Under Pluvial Flooding Through Adaptive Signal Control</title>
       <enclosure url="https://media.speakforwater.com/episodes/ep149.mp3" length="31808409" type="audio/mpeg"/>
