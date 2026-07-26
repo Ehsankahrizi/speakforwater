@@ -20,8 +20,19 @@
   <itunes:new-feed-url>https://ehsankahrizi.github.io/speakforwater/podcast.xml</itunes:new-feed-url>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
   <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
-  <lastBuildDate>Sat, 25 Jul 2026 19:27:48 +0000</lastBuildDate>
+  <lastBuildDate>Sun, 26 Jul 2026 08:43:59 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 155: Improved community resilience through multi-stakeholder collaboration: Identifying and mitigating impacts of municipal water infrastructure degradation in an urban watershed</title>
+      <enclosure url="https://media.speakforwater.com/episodes/ep155.mp3" length="26671273" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep155</guid>
+      <pubDate>Sun, 26 Jul 2026 08:43:59 +0000</pubDate>
+      <itunes:episode>155</itunes:episode>
+      <itunes:duration>1111.275102</itunes:duration>
+      <description>SpeakForWater Episode 155: Improved community resilience through multi-stakeholder collaboration: Identifying and mitigating impacts of municipal water infrastructure degradation in an urban watershed. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://iopscience.iop.org/article/10.1088/1748-9326/ae860c/pdf</description>
+    </item>
     <item>
       <title>Ep 154: Early Detection of Soil Multifunctionality Loss in Amazonian Mangroves Driven by Land Use Change</title>
       <enclosure url="https://media.speakforwater.com/episodes/ep154.mp3" length="26658734" type="audio/mpeg"/>
