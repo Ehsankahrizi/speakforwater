@@ -20,8 +20,19 @@
   <itunes:new-feed-url>https://ehsankahrizi.github.io/speakforwater/podcast.xml</itunes:new-feed-url>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
   <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
-  <lastBuildDate>Sun, 26 Jul 2026 19:30:18 +0000</lastBuildDate>
+  <lastBuildDate>Mon, 27 Jul 2026 10:14:18 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 158: Quantifying Watershed Criticality via Deep Learning and Explainable AI for Groundwater Resilience</title>
+      <enclosure url="https://media.speakforwater.com/episodes/ep158.mp3" length="14450355" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep158</guid>
+      <pubDate>Mon, 27 Jul 2026 10:14:18 +0000</pubDate>
+      <itunes:episode>158</itunes:episode>
+      <itunes:duration>602.070204</itunes:duration>
+      <description>SpeakForWater Episode 158: Quantifying Watershed Criticality via Deep Learning and Explainable AI for Groundwater Resilience. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://eartharxiv.org/repository/object/13799/download/24196/</description>
+    </item>
     <item>
       <title>Ep 157: ‘We use a thief to catch a thief:’ The (il)legitimisation and stigmatisation of informal water vendors in policy and practice</title>
       <enclosure url="https://media.speakforwater.com/episodes/ep157.mp3" length="25856880" type="audio/mpeg"/>
