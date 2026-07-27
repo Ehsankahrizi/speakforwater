@@ -20,8 +20,19 @@
   <itunes:new-feed-url>https://ehsankahrizi.github.io/speakforwater/podcast.xml</itunes:new-feed-url>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
   <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
-  <lastBuildDate>Mon, 27 Jul 2026 10:14:18 +0000</lastBuildDate>
+  <lastBuildDate>Mon, 27 Jul 2026 15:04:34 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 159: Assessment of the efficiency of phytofiltration systems with energy willow for reducing nitrate pollution in the Vereshchytsia River catchment</title>
+      <enclosure url="https://media.speakforwater.com/episodes/ep159.mp3" length="37008240" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep159</guid>
+      <pubDate>Mon, 27 Jul 2026 15:04:34 +0000</pubDate>
+      <itunes:episode>159</itunes:episode>
+      <itunes:duration>1541.982041</itunes:duration>
+      <description>SpeakForWater Episode 159: Assessment of the efficiency of phytofiltration systems with energy willow for reducing nitrate pollution in the Vereshchytsia River catchment. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://www.jeeng.net/pdf-220352-141882?filename=Assessment-of-the-efficie.pdf</description>
+    </item>
     <item>
       <title>Ep 158: Quantifying Watershed Criticality via Deep Learning and Explainable AI for Groundwater Resilience</title>
       <enclosure url="https://media.speakforwater.com/episodes/ep158.mp3" length="14450355" type="audio/mpeg"/>
