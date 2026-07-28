@@ -20,8 +20,19 @@
   <itunes:new-feed-url>https://ehsankahrizi.github.io/speakforwater/podcast.xml</itunes:new-feed-url>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
   <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
-  <lastBuildDate>Mon, 27 Jul 2026 19:55:39 +0000</lastBuildDate>
+  <lastBuildDate>Tue, 28 Jul 2026 09:00:22 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 161: Assessment of Drinking Water Safety in Public Primary Schools in Southern Nigeria: Implications for School WASH and SDG 6</title>
+      <enclosure url="https://media.speakforwater.com/episodes/ep161.mp3" length="31864207" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep161</guid>
+      <pubDate>Tue, 28 Jul 2026 09:00:22 +0000</pubDate>
+      <itunes:episode>161</itunes:episode>
+      <itunes:duration>1327.647347</itunes:duration>
+      <description>SpeakForWater Episode 161: Assessment of Drinking Water Safety in Public Primary Schools in Southern Nigeria: Implications for School WASH and SDG 6. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://scholarpublishing.org/journals/index.php/BJHR/article/download/11957/12159</description>
+    </item>
     <item>
       <title>Ep 160: Integrated lab-scale greywater filtration and soil aquifer treatment for sustainable groundwater recharge</title>
       <enclosure url="https://media.speakforwater.com/episodes/ep160.mp3" length="28951449" type="audio/mpeg"/>
