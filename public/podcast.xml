@@ -20,8 +20,19 @@
   <itunes:new-feed-url>https://ehsankahrizi.github.io/speakforwater/podcast.xml</itunes:new-feed-url>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
   <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
-  <lastBuildDate>Tue, 28 Jul 2026 09:00:22 +0000</lastBuildDate>
+  <lastBuildDate>Tue, 28 Jul 2026 14:37:01 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 162: Evidence of critical bacterial pathogens in household drinking water sources in Mbale City of Eastern Uganda warrants an urgent call to action</title>
+      <enclosure url="https://media.speakforwater.com/episodes/ep162.mp3" length="28395355" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep162</guid>
+      <pubDate>Tue, 28 Jul 2026 14:37:01 +0000</pubDate>
+      <itunes:episode>162</itunes:episode>
+      <itunes:duration>1183.111837</itunes:duration>
+      <description>SpeakForWater Episode 162: Evidence of critical bacterial pathogens in household drinking water sources in Mbale City of Eastern Uganda warrants an urgent call to action. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://link.springer.com/content/pdf/10.1186/s12982-026-02507-8.pdf</description>
+    </item>
     <item>
       <title>Ep 161: Assessment of Drinking Water Safety in Public Primary Schools in Southern Nigeria: Implications for School WASH and SDG 6</title>
       <enclosure url="https://media.speakforwater.com/episodes/ep161.mp3" length="31864207" type="audio/mpeg"/>
