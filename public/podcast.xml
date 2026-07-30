@@ -20,8 +20,19 @@
   <itunes:new-feed-url>https://ehsankahrizi.github.io/speakforwater/podcast.xml</itunes:new-feed-url>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
   <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
-  <lastBuildDate>Wed, 29 Jul 2026 19:37:02 +0000</lastBuildDate>
+  <lastBuildDate>Thu, 30 Jul 2026 08:50:14 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 167: Assessment of fluoride in Tanzanian water sources for sustainable water supply services: Distribution, risks and mitigation strategies</title>
+      <enclosure url="https://media.speakforwater.com/episodes/ep167.mp3" length="35157516" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep167</guid>
+      <pubDate>Thu, 30 Jul 2026 08:50:14 +0000</pubDate>
+      <itunes:episode>167</itunes:episode>
+      <itunes:duration>1464.868571</itunes:duration>
+      <description>SpeakForWater Episode 167: Assessment of fluoride in Tanzanian water sources for sustainable water supply services: Distribution, risks and mitigation strategies. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://www.allstudyjournal.com/article/2069/8-6-17-929.pdf</description>
+    </item>
     <item>
       <title>Ep 166: Clay pots for reducing fluoride concentration in drinking water</title>
       <enclosure url="https://media.speakforwater.com/episodes/ep166.mp3" length="26088220" type="audio/mpeg"/>
