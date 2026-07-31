@@ -20,8 +20,19 @@
   <itunes:new-feed-url>https://ehsankahrizi.github.io/speakforwater/podcast.xml</itunes:new-feed-url>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
   <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
-  <lastBuildDate>Fri, 31 Jul 2026 09:21:17 +0000</lastBuildDate>
+  <lastBuildDate>Fri, 31 Jul 2026 14:37:13 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 170: Trade-off analysis of ecosystem services to assess co-benefits of blue-green infrastructure to support planning for urban sustainability and resilience</title>
+      <enclosure url="https://media.speakforwater.com/episodes/ep170.mp3" length="24409278" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep170</guid>
+      <pubDate>Fri, 31 Jul 2026 14:37:13 +0000</pubDate>
+      <itunes:episode>170</itunes:episode>
+      <itunes:duration>1017.025306</itunes:duration>
+      <description>SpeakForWater Episode 170: Trade-off analysis of ecosystem services to assess co-benefits of blue-green infrastructure to support planning for urban sustainability and resilience. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://www.tandfonline.com/doi/pdf/10.1080/1573062X.2026.2697971?needAccess=true</description>
+    </item>
     <item>
       <title>Ep 169: The Effects of Water Scarcity on Rural Livelihoods: Case Study of Eisleben Village, Molemole Municipality, South Africa</title>
       <enclosure url="https://media.speakforwater.com/episodes/ep169.mp3" length="28814150" type="audio/mpeg"/>
