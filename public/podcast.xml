@@ -20,8 +20,19 @@
   <itunes:new-feed-url>https://ehsankahrizi.github.io/speakforwater/podcast.xml</itunes:new-feed-url>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
   <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
-  <lastBuildDate>Thu, 30 Jul 2026 19:50:51 +0000</lastBuildDate>
+  <lastBuildDate>Fri, 31 Jul 2026 09:21:17 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 169: The Effects of Water Scarcity on Rural Livelihoods: Case Study of Eisleben Village, Molemole Municipality, South Africa</title>
+      <enclosure url="https://media.speakforwater.com/episodes/ep169.mp3" length="28814150" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep169</guid>
+      <pubDate>Fri, 31 Jul 2026 09:21:17 +0000</pubDate>
+      <itunes:episode>169</itunes:episode>
+      <itunes:duration>1200.561633</itunes:duration>
+      <description>SpeakForWater Episode 169: The Effects of Water Scarcity on Rural Livelihoods: Case Study of Eisleben Village, Molemole Municipality, South Africa. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://www.wr-publishing.org/index.php/ijarbm/article/download/685/665</description>
+    </item>
     <item>
       <title>Ep 168: Measuring cotton’s environmental burden: a dual LCA–emergy framework for conventional and organic systems</title>
       <enclosure url="https://media.speakforwater.com/episodes/ep168.mp3" length="28277490" type="audio/mpeg"/>
