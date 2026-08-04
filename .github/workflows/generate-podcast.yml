@@ -12,7 +12,11 @@
 #  Required secrets (set in repo Settings → Secrets → Actions):
 #    GOOGLE_CREDENTIALS_JSON  — Service account JSON for Google Sheets
 #    SPREADSHEET_ID           — Your Google Sheet ID
-#    NOTEBOOKLM_AUTH_JSON     — Auth export from: notebooklm auth export
+#    NOTEBOOKLM_AUTH_JSON     — Contents of ~/.notebooklm/profiles/default/
+#                               storage_state.json after `notebooklm login`.
+#                               ('notebooklm auth export' does not exist.)
+#                               See SPEAKFORWATER_HANDOFF.md -> "Refresh
+#                               NotebookLM auth" for the full procedure.
 #    SITE_URL                 — e.g. https://ehsankahrizi.github.io/speakforwater
 ###############################################################################
 
@@ -86,9 +90,11 @@ jobs:
       # ── Install dependencies ────────────────────────────────────
       - name: Install Python dependencies
         run: |
+          # requirements.txt is the single source of truth. Do NOT re-install
+          # notebooklm-py unpinned here — that is how CI silently drifted onto a
+          # different major version than the machine that minted the auth cookies.
           pip install -r requirements.txt
-          pip install gspread google-auth
-          pip install notebooklm-py
+          pip freeze | grep -i notebooklm || true   # log the resolved version
 
       # ── Create episodes directory if needed ─────────────────────
       - name: Ensure episodes directory exists

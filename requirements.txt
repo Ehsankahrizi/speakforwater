@@ -3,7 +3,15 @@ pydantic==2.10.4
 pydantic-settings==2.7.1
 
 # NotebookLM SDK (replaces Playwright browser automation)
-notebooklm-py
+#
+# PINNED DELIBERATELY. The session cookies in NOTEBOOKLM_AUTH_JSON are minted by
+# `notebooklm login` on a local machine, so the local and CI versions must agree
+# on which Google host they target. When Google rebranded NotebookLM to Gemini
+# Notebook (notebooklm.google.com -> notebook.google.com), only 0.8.0+ followed;
+# older clients still fetch the token from the dead host and report the session
+# as "expired or invalid" no matter how recently you logged in.
+# Upgrade this pin and re-run `notebooklm login` together, never separately.
+notebooklm-py==0.8.0
 
 # Google Sheets integration
 gspread==6.1.4

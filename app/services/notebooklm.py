@@ -75,29 +75,36 @@ class NotebookLMAutomator:
         auth_file.write_text(self.auth_json)
         logger.info("Auth JSON written to ~/.notebooklm/storage_state.json")
 
-        # Verify auth is valid
+        # Local sanity check on the cookie file (cheap, and not always present).
         try:
             result = self._run_cli(["notebooklm", "auth", "check"])
-            if "expired" in result.lower() or "invalid" in result.lower():
-                raise RuntimeError(
-                    f"NotebookLM auth is expired or invalid. "
-                    f"Please re-run 'notebooklm login' locally and update the secret. "
-                    f"Output: {result}"
-                )
-            logger.info(f"Auth check: {result[:100]}")
+            logger.info(f"Auth check (local): {result[:100]}")
         except RuntimeError as e:
-            # auth check command might not exist in all versions — try listing notebooks
-            if "No such command" in str(e) or "no such command" in str(e).lower():
-                logger.warning("'auth check' not available, trying 'notebooklm list'...")
-                try:
-                    self._run_cli(["notebooklm", "list"], timeout=30)
-                    logger.info("Auth verified via notebook list")
-                except RuntimeError as e2:
-                    raise RuntimeError(
-                        f"Authentication failed. Please re-run 'notebooklm login'. Error: {e2}"
-                    )
-            else:
+            if "no such command" not in str(e).lower():
                 raise
+            logger.warning("'auth check' not available in this CLI version.")
+
+        # `auth check` only inspects the cookie file on disk — it happily reports
+        # success for cookies Google has already expired server-side. So make one
+        # real API call: an expired secret then fails here, once and clearly,
+        # instead of surfacing mid-generation as a confusing per-paper error.
+        try:
+            self._run_cli(["notebooklm", "list"], timeout=60)
+            logger.info("Auth verified against the NotebookLM API (notebook list)")
+        except RuntimeError as e:
+            if "no such command" in str(e).lower():
+                logger.warning(
+                    "'notebooklm list' unavailable — skipping live auth probe."
+                )
+            else:
+                raise RuntimeError(
+                    "NotebookLM authentication expired or invalid — the stored "
+                    "session cookies were rejected by Google. Re-run "
+                    "'notebooklm login' locally and update the "
+                    "NOTEBOOKLM_AUTH_JSON secret with the new "
+                    "~/.notebooklm/storage_state.json. "
+                    f"Error: {e}"
+                ) from e
 
         self._ready = True
         logger.info("NotebookLM SDK authentication verified")
