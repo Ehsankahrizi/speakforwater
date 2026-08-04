@@ -77,6 +77,27 @@ def _is_sheets_permission_error(exc: Exception) -> bool:
     return resp is not None and getattr(resp, "status_code", None) == 403
 
 
+def _is_notebooklm_auth_error(exc: Exception) -> bool:
+    """
+    True if NotebookLM rejected the session cookies (NOTEBOOKLM_AUTH_JSON has
+    expired, or Google invalidated it). The CLI surfaces this as an exit-2
+    "Authentication expired or invalid. Redirected to accounts.google.com" on
+    the first real API call.
+
+    This is the most systemic failure there is — no paper can be processed until
+    the secret is refreshed — so we abort instead of marking every queued paper
+    "failed" for a problem that has nothing to do with the papers.
+    """
+    msg = str(exc).lower()
+    return (
+        "authentication expired" in msg
+        or "authentication failed" in msg
+        or "notebooklm login" in msg
+        or "re-authenticate" in msg
+        or "accounts.google.com" in msg
+    )
+
+
 def _is_notebooklm_limit_error(exc: Exception) -> bool:
     """
     True if the failure is NotebookLM refusing to create a notebook because the
@@ -587,6 +608,23 @@ async def process_one_episode(episode: dict) -> bool:
                 "is full, or the sheet is no longer shared with the service "
                 "account as Editor. Fix that, then re-run — no papers were "
                 "changed."
+            ) from e
+
+        if _is_notebooklm_auth_error(e):
+            # The stored NotebookLM session is dead. Every remaining paper will
+            # fail identically on its first API call, so re-queue this (good)
+            # paper and abort rather than burning the queue.
+            try:
+                update_sheet_status(row_number, "queued")
+            except Exception:
+                pass
+            raise FatalPipelineError(
+                "NotebookLM authentication expired — the NOTEBOOKLM_AUTH_JSON "
+                "secret is no longer accepted by Google (the CLI was redirected "
+                "to the sign-in page). Refresh it: run 'notebooklm login' "
+                "locally, then copy ~/.notebooklm/storage_state.json into the "
+                "NOTEBOOKLM_AUTH_JSON repository secret. This paper was left "
+                "queued. Aborting before burning the queue."
             ) from e
 
         if _is_notebooklm_limit_error(e):

@@ -272,12 +272,81 @@ git push
 - Deploy site: https://github.com/Ehsankahrizi/speakforwater/actions/workflows/deploy.yml
 - Reset queue: https://github.com/Ehsankahrizi/speakforwater/actions/workflows/reset_queue.yml
 
-### Refresh NotebookLM auth (when token expires)
+### Refresh NotebookLM auth (when the session expires)
+
+**Version first.** The local CLI must be the exact version pinned in
+`requirements.txt` (`notebooklm-py==0.8.0`). The cookies you mint locally are
+only usable by a CI client that targets the same Google host, and the host
+changed in 0.8.0 (see "Gemini Notebook rebrand" below). A mismatched local
+version produces a file that looks perfect and fails in CI as "expired".
+
 ```bash
-cd /Users/ehsankahrizi/speakforwater
+pip install -U "notebooklm-py==0.8.0" && notebooklm --version
 notebooklm login
-# Then copy contents of ~/.notebooklm/storage_state.json
-# Paste into GitHub secret NOTEBOOKLM_AUTH_JSON
+```
+
+A browser opens — sign in. As of 0.8.0 the session **saves automatically** once
+login is detected; there is no ENTER step (0.3.x required one). The file lands at
+`~/.notebooklm/profiles/default/storage_state.json`.
+
+Verify BEFORE touching the secret — `--test` is the flag that actually calls
+Google. Without it "Token fetch" is skipped and the check passes on a dead session:
+
+```bash
+notebooklm auth check --test
+```
+
+**`Token fetch` must be ✓.** Everything above it can pass on a session Google has
+already killed. Then copy it into the GitHub secret `NOTEBOOKLM_AUTH_JSON`
+(Settings → Secrets and variables → Actions):
+
+```bash
+pbcopy < ~/.notebooklm/profiles/default/storage_state.json
+```
+
+Optional end-to-end check of the exact code path CI uses (env var, not file):
+
+```bash
+NOTEBOOKLM_AUTH_JSON="$(cat ~/.notebooklm/profiles/default/storage_state.json)" notebooklm list
+```
+
+Two ways this silently lies to you:
+- **Cookie expiry dates mean nothing.** Google revokes sessions server-side long
+  before the timestamps in the file. A file whose cookies "expire in 2027" can be
+  dead today. Only `auth check --test` knows.
+- **The Gemini Notebook rebrand.** Google moved NotebookLM from
+  `notebooklm.google.com` to `notebook.google.com`. Support landed in 0.8.0
+  (2026-08-03). Any older client still fetches its token from the old host, gets
+  redirected to the sign-in page, and reports "Authentication expired or invalid"
+  even seconds after a successful login. If you see that error immediately after
+  logging in, suspect the version, not the cookies.
+
+**If `login` crashes with `TargetClosedError` before the browser appears**, look
+for `Opening in existing browser session.` in the browser logs. That means another
+Chrome-for-Testing instance already holds `~/.notebooklm/browser_profile`, so the
+new process hands off to it and exits, killing Playwright's pipe. It is a browser
+lock, not an auth problem. Fix:
+
+```bash
+pkill -f "Google Chrome for Testing"   # usually an orphan from a previous attempt
+notebooklm login
+```
+
+Note that `chrome-devtools-mcp` (Antigravity IDE) also drives Chrome for Testing
+and can hold the same lock. Three escalating workarounds:
+
+```bash
+# 1. Use your real Chrome instead of the bundled Chromium (0.8.0+).
+#    This is the documented fix for bundled-Chromium crashes on modern macOS.
+notebooklm login --browser chrome
+
+# 2. Skip Playwright entirely — read cookies from an already-signed-in browser.
+notebooklm login --browser-cookies chrome
+
+# 3. Sidestep the shared profile: NOTEBOOKLM_HOME relocates the browser profile
+#    AND the JSON, so nothing can contend for the lock.
+NOTEBOOKLM_HOME=/tmp/nlm-login notebooklm login
+# then copy /tmp/nlm-login/profiles/default/storage_state.json into the secret
 ```
 
 ### Local test of cover generation
