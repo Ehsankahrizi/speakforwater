@@ -47,6 +47,16 @@ logger = logging.getLogger(__name__)
 # out of an HTTP error page and publishes it. A silently wrong episode is far
 # worse than a failed run, so these checks are fatal, not advisory.
 
+# ── Prompt ───────────────────────────────────────────────────────────────
+# How much of the podcast prompt is actually sent. notebooklm-py imposes no
+# limit of its own (checked in 0.8.0: no length cap on `instructions` at any
+# layer), so this is ours — a conservative figure that episodes have been
+# generated at for months. Raising it is an untested bet against an unknown
+# server-side limit; shortening the prompt is free. tests/test_prompt.py fails
+# if config/podcast_prompt.yml outgrows it.
+PROMPT_MAX_CHARS = 2000
+
+
 # ── Source ingestion ─────────────────────────────────────────────────────
 # Because NotebookLM's own fetcher is blocked, the pipeline downloads the PDF
 # itself and uploads the bytes. Publisher CDNs serve a bot wall to non-browser
@@ -293,7 +303,7 @@ class NotebookLMAutomator:
                     "Generating podcast audio (this may take up to 25 minutes)..."
                 )
 
-            prompt_truncated = prompt[:2000] if len(prompt) > 2000 else prompt
+            prompt_truncated = self._cap_prompt(prompt)
 
             await self._generate_and_download_via_api(
                 notebook_id, prompt_truncated, mp3_path, on_status
@@ -386,6 +396,29 @@ class NotebookLMAutomator:
             "The audio may still be generating on NotebookLM — "
             "check notebooklm.google.com manually."
         )
+
+    def _cap_prompt(self, prompt: str) -> str:
+        """Trim the prompt to what we send, and say so when trimming happens.
+
+        This used to be a bare ``prompt[:2000]``. config/podcast_prompt.yml had
+        grown to 5,932 characters, so two thirds of it — every style rule, and
+        the whole back half of the episode structure — was cut mid-sentence and
+        never reached NotebookLM, with nothing in the logs to say so. A prompt
+        rule you cannot see being dropped is worse than no rule at all.
+        """
+        if len(prompt) <= PROMPT_MAX_CHARS:
+            logger.info(
+                f"Prompt: {len(prompt)}/{PROMPT_MAX_CHARS} chars (sent in full)"
+            )
+            return prompt
+
+        logger.warning(
+            f"Prompt is {len(prompt)} chars; sending only the first "
+            f"{PROMPT_MAX_CHARS}. {len(prompt) - PROMPT_MAX_CHARS} characters "
+            "will NOT reach NotebookLM — anything below the cut has no effect. "
+            "Shorten config/podcast_prompt.yml."
+        )
+        return prompt[:PROMPT_MAX_CHARS]
 
     def _download_pdf(self, url: str, filename_stem: str = "source") -> Path | None:
         """Download `url` to a temp file if it really serves a PDF, else None.

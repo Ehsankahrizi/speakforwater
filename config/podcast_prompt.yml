@@ -1,139 +1,76 @@
 # ─────────────────────────────────────────────────────────────
 # SpeakForWater — Podcast Prompt
+#
+# TWO HARD CONSTRAINTS. Please read before editing.
+#
+# 1. LENGTH. app/services/notebooklm.py sends only the first
+#    PROMPT_MAX_CHARS characters. The previous version of this file was
+#    5,932 chars against a 2,000 cap, so two thirds of it — every style
+#    rule and the whole back half of the structure — was silently thrown
+#    away and never reached NotebookLM. Keep this prompt under the cap;
+#    tests/test_prompt.py fails if it grows past. Prefer deleting an
+#    example over adding one.
+#
+# 2. NO NAMES, NO GENDER. NotebookLM picks the two TTS voices itself and
+#    exposes no voice/speaker control at any layer (verified 2026-08-06:
+#    no such parameter in the CLI, the Python API, or the library). It
+#    also ignores instructions like "the host must sound female" — an
+#    earlier prompt shouted that in capitals and the voices still came
+#    out swapped.
+#
+#    So the script never says a name and never asserts a gender. Two
+#    unnamed voices cannot be mismatched to a name, which makes the
+#    problem structurally impossible instead of merely unlikely. Do NOT
+#    reintroduce "Anna"/"Ehsan" into the spoken script.
+#
+#    The solo open is kept deliberately: one voice speaking alone first
+#    is the best available heuristic for how NotebookLM assigns voices.
+#    It is a nudge, not a guarantee — which is exactly why nothing in
+#    the audio depends on it landing.
 # ─────────────────────────────────────────────────────────────
 
 show_name: "SpeakForWater"
-host: "Anna"
-guest: "Ehsan"
+# Roles, not people. See constraint 2 above before adding names here.
+host_role: "host"
+guest_role: "water-resources researcher"
 
 prompt: |
-  You are producing one episode of the podcast "SpeakForWater".
+  One episode of the podcast "SpeakForWater".
 
-  ── CAST (two speakers only) ──────────────────────────────────
-  • ANNA — a woman. She is the host and journalist. She opens the
-    show alone, guides the conversation, and asks the questions.
-    Refer to Anna as "she" / "her". Anna is female.
-  • EHSAN — a man. He is the guest expert, a water-resources
-    researcher who answers Anna's questions in plain language.
-    Refer to Ehsan as "he" / "him". Ehsan is male.
+  CAST — two speakers, identified only by role:
+    HOST — presents the show, guides it, asks the questions.
+    EXPERT — a water researcher, does the explaining.
+  NO NAMES. Neither speaker is ever named, introduces themselves by
+  name, or addresses the other by name; invent no names. Never state
+  or imply their gender or use gendered pronouns for them — say "my
+  guest", "our expert", "the host".
 
-  Use the names exactly as "Anna" and "Ehsan" (first names only —
-  never a surname). Keep this casting consistent for the whole
-  episode: Anna the woman hosts and asks; Ehsan the man explains.
+  AUDIENCE — ordinary people, not scientists: farmers, residents,
+  utility and irrigation workers, policy-makers. No technical
+  background. Explain as if to a neighbour over coffee.
 
-  ── TARGET AUDIENCE ───────────────────────────────────────────
-  Common people — NOT scientists or engineers: farmers, local
-  residents, water-utility workers, irrigation managers,
-  policy-makers, and anyone whose life depends on water. They have
-  zero technical background and no time to read papers. Explain
-  everything as if talking to a neighbour over coffee.
+  SOURCES — use ONLY the paper(s) in this notebook. If a detail is
+  absent, say "The paper does not mention that." Never invent
+  statistics, places, methods, or results.
 
-  ── STRICT SOURCE RULES ───────────────────────────────────────
-  1. Use ONLY the paper(s) uploaded in this notebook.
-  2. If a detail is not in the paper, say:
-     "The paper does not mention that."
-  3. Never invent statistics, place names, method details, or
-     results.
+  STRUCTURE
+    1. OPEN — the host ALONE, no guest yet: welcome listeners to
+       SpeakForWater like a news anchor, then tease the topic in 2–3
+       sentences without giving away findings. Vary this each episode.
+    2. The host brings in the expert by role; the expert greets back.
+    3. WHY IT MATTERS — the real problem, one everyday example.
+    4. WHAT THEY DID — 2–3 sentences, no methods or models.
+    5. FINDINGS — 3–5. Each: expert states it, host asks what it
+       means for real people, expert gives the consequence.
+    6. TAKEAWAYS — 3–5 a farmer, manager, or resident could act on.
+    7. LIMITATIONS — 2–3 specific ones from the paper.
+    8. CLOSE — host summarises in ~3 sentences, expert adds one "if
+       you remember one thing" line, host signs off.
 
-  ── EPISODE FORMAT ────────────────────────────────────────────
-  • Total length: 6–10 minutes of spoken dialogue.
-  • Two-person script with speaker labels:
-      ANNA: ...      (the woman, host)
-      EHSAN: ...     (the man, expert)
-  • Short, conversational sentences.
-  • The first time a technical term appears, define it in one
-    plain-English sentence.
-
-  ── EPISODE STRUCTURE (TV-news-style hosted format) ───────────
-
-  1. WARM OPEN — Anna alone.
-     The episode begins with Anna, the host, speaking by herself.
-     Ehsan is not in yet and says nothing. Anna welcomes listeners
-     warmly, like a news anchor, and names herself as the host.
-     Vary her opening line each episode. Examples:
-       A. ANNA: Hello and welcome to SpeakForWater — the daily
-          podcast about water research. I'm Anna, your host.
-       B. ANNA: Hi everyone, Anna here — welcome back to
-          SpeakForWater.
-       C. ANNA: Good morning and welcome to SpeakForWater. I'm
-          Anna, and I'll be your host today.
-       D. ANNA: Welcome to SpeakForWater. I'm Anna — so glad
-          you're with us.
-
-  2. TOPIC TEASER — Anna alone, 2–3 sentences.
-     Anna teases today's topic without revealing the findings, and
-     frames why it matters to everyday people. Vary the wording.
-
-  3. WELCOMING THE GUEST — Anna introduces Ehsan.
-     Anna warmly invites Ehsan in and makes clear he is the expert
-     she is interviewing. Vary the phrasing each episode:
-       A. ANNA: To unpack this, I'm joined by water researcher
-          Ehsan. Welcome, Ehsan — great to have you.
-       B. ANNA: And to walk us through it, my guest is Ehsan, a
-          researcher who studies water for a living. Hi Ehsan!
-       C. ANNA: Helping me make sense of this is our expert,
-          Ehsan. Ehsan, thanks for joining me.
-     Then Ehsan greets her back warmly (vary each time):
-       A. EHSAN: Thanks Anna, glad to be here.
-       B. EHSAN: Hi Anna, hi everyone — happy to dig into this.
-       C. EHSAN: Thanks for having me, Anna. Hello to everyone
-          listening.
-
-  4. WHY THIS PAPER MATTERS
-     Anna asks why this topic matters to everyday water users.
-     Ehsan explains the real-world problem in plain language with
-     a concrete example.
-
-  5. WHAT THE RESEARCHERS DID (very simple)
-     No technical details, equations, model names, or statistical
-     methods. Ehsan gives a 2–3 sentence overview in everyday
-     language.
-
-  6. KEY FINDINGS (3–5 from the paper)
-     For each: Ehsan states it plainly, Anna asks what it means
-     for real people (vary the wording), Ehsan explains the
-     consequence for stakeholders.
-
-  7. PRACTICAL TAKEAWAYS
-     3–5 actionable points a farmer, water manager, or local
-     resident could use.
-
-  8. LIMITATIONS
-     Ehsan names 2–3 specific limitations from the paper.
-
-  9. CLOSING — Anna wraps, TV-news style.
-     Anna summarises in about three spoken sentences. Ehsan gives
-     one "If you remember just one thing today..." sentence. Then
-     Anna signs off (vary each episode):
-       A. ANNA: Thanks Ehsan, and thank you all for listening.
-          See you on the next SpeakForWater.
-       B. ANNA: Ehsan, thank you. And to everyone listening —
-          take care of your water. Until next time.
-       C. ANNA: Thanks Ehsan. That's a wrap on today's episode.
-          We'll see you on the next SpeakForWater.
-
-  ── STYLE RULES ───────────────────────────────────────────────
-  • Keep the conversation warm, upbeat, and encouraging.
-  • As host, Anna leads: she asks most of the questions and keeps
-    things moving. As expert, Ehsan does most of the explaining.
-  • Let the dialogue itself make the roles and genders clear: Anna
-    addresses Ehsan by name and treats him as the expert she is
-    interviewing ("So Ehsan, what did the researchers find?"), and
-    Ehsan addresses Anna by name when he answers ("Well Anna, ...").
-    Keep it natural — no forced or repeated gender labels.
-  • Avoid filler like "Great question!" more than once.
-  • Vary sentence length to sound natural.
-  • Total output must be under 10 minutes of audio.
-  • Never use technical jargon, acronyms, or scientific terms
-    without immediately explaining them in one simple sentence.
-  • Skip deep methodology — listeners care about "what does this
-    mean for my farm / my city / my water bill?", not model
-    calibration.
-  • Always connect findings back to real-life consequences for
-    stakeholders: farmers, communities, water managers, local
-    governments, and everyday water users.
-  • Inject small personality moments — brief thinking pauses, mild
-    surprise ("oh wow", "huh"), gentle humour, natural agreement
-    ("yeah, exactly", "right"). Real people don't speak in
-    pre-written monologues.
-  • Use contractions naturally (it's, that's, we're, don't).
+  STYLE — 6–10 minutes. Warm, upbeat, conversational. Let the roles
+  carry it: the host asks, the expert explains. Define each technical
+  term the first time in one plain sentence; skip methodology —
+  listeners care about their farm, their city, their water bill. Tie
+  findings to real consequences. Use contractions, vary sentence
+  length, allow small human moments (a pause, mild surprise, "yeah,
+  exactly").
