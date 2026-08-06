@@ -43,6 +43,7 @@ from datetime import datetime
 from pathlib import Path
 
 import gspread
+import requests
 import yaml
 from google.oauth2.service_account import Credentials
 
@@ -152,6 +153,154 @@ def _excluded_publisher(paper: dict) -> str | None:
             if token in haystack:
                 return rule
     return None
+
+
+# ── Ingestibility verification ─────────────────────────────────────────
+#
+# NotebookLM fetches URL sources server-side, from Google's own IPs, and the
+# major academic publishers block that fetcher. Worse, the block is silent: the
+# fetch "succeeds", and NotebookLM ingests the block page as a healthy source.
+# Verified live 2026-08-05 — a Springer DOI produced a ready source titled
+# "406 Not Acceptable", and a PMC link produced "Checking your browser -
+# reCAPTCHA". app/services/notebooklm.py now refuses those at generation time.
+#
+# So the only route that reliably works is: we download the PDF ourselves and
+# upload the bytes. That means a paper is only worth queueing if WE can
+# actually fetch its PDF. Measured the same day:
+#
+#   fetchable: arxiv.org, journals.plos.org, nature.com, frontiersin.org
+#   blocked:   link.springer.com, pubs.acs.org, sciencedirect.com,
+#              pmc.ncbi.nlm.nih.gov
+#
+# That list is deliberately NOT hard-coded as a filter — it would go stale, and
+# blanket-excluding Springer or Elsevier would throw away good papers whose
+# other hosted copies are fine. Instead every candidate is verified by actually
+# fetching its first bytes and checking for the PDF magic number, and several
+# locations per paper are tried before giving up.
+
+PDF_VERIFY_BYTES = 2048
+PDF_VERIFY_TIMEOUT = 20
+# Unpaywall requires a contact address. search-papers.yml already sets
+# UNPAYWALL_EMAIL for the aggregator; reuse it rather than add another var.
+UNPAYWALL_EMAIL = (
+    os.environ.get("UNPAYWALL_EMAIL")
+    or os.environ.get("OPENALEX_MAILTO")
+    or os.environ.get("PODCAST_OWNER_EMAIL")
+    or ""
+).strip()
+
+# Publisher CDNs commonly serve a bot wall to non-browser user agents.
+BROWSER_UA = (
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
+    "(KHTML, like Gecko) Chrome/122.0 Safari/537.36"
+)
+
+
+def _verify_pdf_url(url: str) -> bool:
+    """True if this URL actually serves a PDF to us right now.
+
+    Checks the magic number rather than trusting Content-Type: the blocked
+    hosts return an HTML bot wall, sometimes still labelled as a PDF.
+    """
+    if not url or not url.lower().startswith(("http://", "https://")):
+        return False
+    try:
+        with requests.get(
+            url,
+            headers={"User-Agent": BROWSER_UA, "Accept": "application/pdf,*/*"},
+            timeout=PDF_VERIFY_TIMEOUT,
+            stream=True,
+            allow_redirects=True,
+        ) as r:
+            if r.status_code != 200:
+                return False
+            chunk = next(r.iter_content(PDF_VERIFY_BYTES), b"") or b""
+            return chunk.lstrip()[:5].startswith(b"%PDF")
+    except Exception as e:
+        logger.debug(f"    verify failed for {url[:70]}: {type(e).__name__}")
+        return False
+
+
+def _unpaywall_pdf_locations(doi: str) -> list[str]:
+    """Every OA PDF location Unpaywall knows for this DOI, publisher first.
+
+    A paper blocked at its publisher is often readable from a repository
+    mirror, so one failed URL should not condemn the paper.
+    """
+    doi = re.sub(r"^https?://doi\.org/", "", (doi or "").strip(), flags=re.I)
+    if not doi or not UNPAYWALL_EMAIL:
+        return []
+    try:
+        r = requests.get(
+            f"https://api.unpaywall.org/v2/{doi}",
+            params={"email": UNPAYWALL_EMAIL},
+            timeout=PDF_VERIFY_TIMEOUT,
+        )
+        if r.status_code != 200:
+            return []
+        data = r.json()
+    except Exception as e:
+        logger.debug(f"    unpaywall lookup failed for {doi}: {type(e).__name__}")
+        return []
+
+    urls: list[str] = []
+    for loc in data.get("oa_locations") or []:
+        for key in ("url_for_pdf", "url"):
+            u = (loc.get(key) or "").strip()
+            if u and u not in urls:
+                urls.append(u)
+    return urls
+
+
+# Hosts measured refusing NotebookLM's own fetcher at ADD_SOURCE (rpc_code=9),
+# or feeding it a block page. Being un-downloadable is NOT on its own a reason
+# to drop a paper: ScienceDirect blocks our downloader but serves NotebookLM
+# perfectly — episode 175 ingested 13,157 words that way. A paper is only
+# hopeless when we cannot download it AND NotebookLM cannot fetch it either.
+#
+# This list is measured, narrow, and will go stale. It only ever costs us a
+# paper we might have kept; the content guard in app/services/notebooklm.py is
+# the actual safety net against a bad source becoming an episode.
+INGEST_HOSTILE_HOSTS = (
+    "link.springer.com",
+    "nature.com",
+    "pubs.acs.org",
+    "pmc.ncbi.nlm.nih.gov",
+)
+
+
+def _ingest_hostile(url: str) -> bool:
+    return any(h in url.lower() for h in INGEST_HOSTILE_HOSTS)
+
+
+def resolve_source_url(paper: dict) -> tuple[str | None, str]:
+    """Pick the URL to queue and say how the content will actually be obtained.
+
+    Returns ``(url, route)`` where route is:
+      "download" — we can fetch the PDF ourselves and upload the bytes
+                   (safest; works even where NotebookLM's fetcher is blocked)
+      "fetch"    — we cannot download it, but NotebookLM should manage the URL
+      ""         — neither route is available; the paper is unusable
+    """
+    tried: list[str] = []
+    for key in ("oa_pdf_url", "url", "link"):
+        u = (paper.get(key) or "").strip()
+        if u and u not in tried:
+            tried.append(u)
+
+    for u in _unpaywall_pdf_locations(paper.get("doi", "")):
+        if u not in tried:
+            tried.append(u)
+
+    for u in tried:
+        if _verify_pdf_url(u):
+            return u, "download"
+
+    for u in tried:
+        if not _ingest_hostile(u):
+            return u, "fetch"
+
+    return None, ""
 
 
 def gather_candidates() -> list[dict]:
@@ -326,13 +475,50 @@ def main():
         return
 
     logger.info(f"\nFound {len(candidates)} open-access candidates. Running AI ranking via Groq...")
-    papers = rank_papers(candidates, max_keep=MAX_PAPERS)
+    # Rank a wider pool than we need: some top-ranked papers will turn out to
+    # be un-fetchable, and we backfill from further down rather than shipping
+    # a short queue. Ranking order is preserved, so journal quality still wins.
+    ranked = rank_papers(candidates, max_keep=MAX_PAPERS * 3)
 
-    if not papers:
+    if not ranked:
         logger.info("No papers passed the AI ranking threshold. Exiting.")
         return
 
-    logger.info(f"\n{len(papers)} papers passed AI ranking. Checking for duplicates...")
+    logger.info(
+        f"\n{len(ranked)} papers passed AI ranking. Checking each has a working "
+        f"route into NotebookLM (its own fetcher is blocked by some publishers, "
+        f"so where we can, we download the PDF and upload the bytes)..."
+    )
+
+    papers: list[dict] = []
+    n_blocked = 0
+    for p in ranked:
+        if len(papers) >= MAX_PAPERS:
+            break
+        title = (p.get("title") or "")[:60]
+        url, route = resolve_source_url(p)
+        if not url:
+            n_blocked += 1
+            logger.info(f"  ✗ no route in: {title}")
+            continue
+        # Queue the URL we just qualified, not whichever one search returned.
+        p["url"] = url
+        papers.append(p)
+        logger.info(f"  ✓ [{route}] {title}")
+
+    logger.info(
+        f"\n{len(papers)} papers queueable ({n_blocked} dropped — neither "
+        f"downloadable by us nor fetchable by NotebookLM). Checking duplicates..."
+    )
+
+    if not papers:
+        logger.info(
+            "No ranked paper had a working route in. That usually means the "
+            "run drew entirely from publishers that block both us and "
+            "NotebookLM (Springer, ACS). Widen config/keywords.yml toward "
+            "open-access venues, or raise NUM_QUERIES."
+        )
+        return
 
     sheet = get_sheet()
     existing_urls, existing_titles = get_existing_urls(sheet)
