@@ -35,6 +35,76 @@ from typing import Callable, Optional
 logger = logging.getLogger(__name__)
 
 
+# ── Source-content validation ────────────────────────────────────────────
+# NotebookLM fetches URL sources server-side, from Google's own IPs. When a
+# publisher blocks that fetcher, the fetch still "succeeds": the block page is
+# ingested and the source reaches status=ready like any other. Verified live on
+# 2026-08-05 — a https://doi.org/... link for a Springer paper produced a ready
+# source titled "406 Not Acceptable" holding 44 words of "Your IP has been
+# blocked due to suspicious activity".
+#
+# Nothing raises, so without this check the pipeline generates a full episode
+# out of an HTTP error page and publishes it. A silently wrong episode is far
+# worse than a failed run, so these checks are fatal, not advisory.
+
+# ── Source ingestion ─────────────────────────────────────────────────────
+# Because NotebookLM's own fetcher is blocked, the pipeline downloads the PDF
+# itself and uploads the bytes. Publisher CDNs serve a bot wall to non-browser
+# user agents, so the download presents a browser one.
+PDF_DOWNLOAD_UA = (
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
+    "(KHTML, like Gecko) Chrome/122.0 Safari/537.36"
+)
+PDF_DOWNLOAD_TIMEOUT = 60
+MIN_PDF_BYTES = 10_000       # below this it is an error page, not a paper
+MAX_PDF_BYTES = 100_000_000  # guard against a mislabelled huge response
+
+
+# Fatal below this: a real paper never lands here, a block page always does.
+MIN_CONTENT_WORDS = 150
+
+# Not fatal, but loud. Enough to build an episode on, but thin for a paper —
+# usually an abstract-only or partially-rendered fetch.
+THIN_CONTENT_WORDS = 500
+
+# Matched case-insensitively against the fetched source title.
+BLOCK_TITLE_MARKERS = (
+    "not acceptable",       # 406 — Springer Nature's fetcher block
+    "access denied",
+    "access blocked",
+    "forbidden",            # 403
+    "not found",            # 404
+    "too many requests",    # 429
+    "just a moment",        # Cloudflare interstitial
+    "attention required",   # Cloudflare block
+    "are you a robot",
+    "security check",
+    "verify you are human",
+    "service unavailable",  # 503
+)
+
+# Matched case-insensitively against the fetched source body, for block pages
+# whose title looks innocent.
+BLOCK_BODY_MARKERS = (
+    "your ip has been blocked",
+    "ip has been blocked",
+    "unusual traffic",
+    "suspicious activity",
+    "enable javascript to continue",
+    "please complete the captcha",
+    "access to this page has been denied",
+)
+
+
+class SourceContentError(RuntimeError):
+    """The source was ingested, but its content is not the paper.
+
+    Distinct from a source-add failure: the add succeeded and NotebookLM
+    reports the source ready. Raised so callers can tell "this paper is
+    unusable" apart from "NotebookLM is broken".
+    """
+
+
 class NotebookLMAutomator:
     """
     Automates NotebookLM podcast generation using the notebooklm-py CLI/SDK.
@@ -161,33 +231,58 @@ class NotebookLMAutomator:
             logger.info(f"Setting active notebook: {notebook_id}")
             self._run_cli(["notebooklm", "use", notebook_id])
 
-            # ── Step 3: Add paper URL as source ─────────────────────
+            # ── Step 3: Add the paper as a source ───────────────────
             if on_status:
                 await on_status("adding_source", f"Adding source: {paper_url}")
-            logger.info(f"Adding source URL: {paper_url}")
 
-            # Retry source add up to 3 times (may fail on paywalled or slow URLs)
-            source_added = False
-            for attempt in range(1, 4):
-                try:
-                    self._run_cli(["notebooklm", "source", "add", paper_url], timeout=60)
-                    source_added = True
-                    break
-                except RuntimeError as e:
-                    logger.warning(f"Source add attempt {attempt}/3 failed: {str(e)[:150]}")
-                    if attempt < 3:
-                        await asyncio.sleep(10)
+            # Download-and-upload first, URL second. NotebookLM's server-side
+            # fetcher is blocked by most publishers, so handing it a URL either
+            # fails outright or silently ingests a block page; fetching the
+            # bytes ourselves sidesteps that entirely. See _download_pdf.
+            source_added = self._add_source_as_file(notebook_id, paper_url, paper_title)
+
+            if not source_added:
+                logger.info("File upload unavailable — falling back to URL add.")
+                for attempt in range(1, 4):
+                    try:
+                        self._run_cli(
+                            ["notebooklm", "source", "add", paper_url, "-n", notebook_id],
+                            timeout=60,
+                        )
+                        source_added = True
+                        break
+                    except RuntimeError as e:
+                        logger.warning(
+                            f"Source add attempt {attempt}/3 failed: {str(e)[:150]}"
+                        )
+                        if attempt < 3:
+                            await asyncio.sleep(10)
 
             if not source_added:
                 raise RuntimeError(
-                    f"Failed to add source after 3 attempts. "
-                    f"The URL may be paywalled or inaccessible: {paper_url}. "
-                    f"Try using a DOI link (https://doi.org/...) or open-access URL."
+                    f"Failed to add source after 3 attempts: {paper_url}\n"
+                    f"An rpc_code=9 rejection in under a second is NotebookLM "
+                    f"refusing the domain outright, not a paywall or a slow "
+                    f"fetch — verified on 2026-08-05 for link.springer.com, "
+                    f"www.nature.com and pubs.acs.org, article pages included.\n"
+                    f"Do NOT retry this as a https://doi.org/... link. The DOI "
+                    f"is accepted, but it resolves to the same blocked "
+                    f"publisher and NotebookLM ingests the '406 Not "
+                    f"Acceptable' page as a healthy source. Use an "
+                    f"open-access host (PMC, arXiv, DOAJ) instead."
                 )
 
             # Wait for the source to be indexed
             logger.info("Waiting 15s for source indexing...")
             await asyncio.sleep(15)
+
+            # ── Step 3b: Verify what was actually ingested ──────────
+            # A successful add proves NotebookLM accepted the URL, not that it
+            # fetched the paper. Check before spending ~25 min of generation
+            # (and a daily audio quota slot) on an error page.
+            if on_status:
+                await on_status("validating_source", "Verifying ingested content...")
+            self._validate_source_content(notebook_id)
 
             # ── Step 4 & 5: Generate audio + wait + download via Python API ──
             # The CLI --wait has a hardcoded 300s timeout we can't change,
@@ -291,6 +386,205 @@ class NotebookLMAutomator:
             "The audio may still be generating on NotebookLM — "
             "check notebooklm.google.com manually."
         )
+
+    def _download_pdf(self, url: str, filename_stem: str = "source") -> Path | None:
+        """Download `url` to a temp file if it really serves a PDF, else None.
+
+        Verifies the magic number rather than the Content-Type header: the
+        publishers that block automated access serve an HTML bot wall, and
+        some of them still label it as a PDF.
+        """
+        if not url.lower().startswith(("http://", "https://")):
+            return None
+        try:
+            import requests
+        except ImportError:
+            logger.warning("requests unavailable — cannot use the file-upload path.")
+            return None
+
+        # Resolve symlinks: on macOS /tmp is a link to /private/tmp, and the
+        # CLI refuses to upload through a symlink (its anti-exfiltration guard).
+        tmp = (self.storage_dir.resolve() / f"{filename_stem}_{int(time.time())}.pdf")
+        try:
+            with requests.get(
+                url,
+                headers={"User-Agent": PDF_DOWNLOAD_UA, "Accept": "application/pdf,*/*"},
+                timeout=PDF_DOWNLOAD_TIMEOUT,
+                stream=True,
+                allow_redirects=True,
+            ) as r:
+                if r.status_code != 200:
+                    logger.info(f"Download returned HTTP {r.status_code}: {url[:80]}")
+                    return None
+
+                first = b""
+                with open(tmp, "wb") as fh:
+                    for chunk in r.iter_content(65536):
+                        if not chunk:
+                            continue
+                        if not first:
+                            first = chunk
+                            if not first.lstrip()[:5].startswith(b"%PDF"):
+                                logger.info(
+                                    "Downloaded content is not a PDF (likely a bot "
+                                    f"wall): {url[:80]}"
+                                )
+                                return None
+                        fh.write(chunk)
+                        if fh.tell() > MAX_PDF_BYTES:
+                            logger.warning(
+                                f"PDF exceeds {MAX_PDF_BYTES // 1_000_000} MB, "
+                                "abandoning download."
+                            )
+                            return None
+
+            size = tmp.stat().st_size
+            if size < MIN_PDF_BYTES:
+                logger.info(f"Downloaded PDF is implausibly small ({size} bytes).")
+                return None
+
+            logger.info(f"Downloaded PDF: {size:,} bytes from {url[:80]}")
+            return tmp
+        except Exception as e:
+            logger.info(f"Download failed ({type(e).__name__}): {str(e)[:120]}")
+            return None
+        finally:
+            # Remove the partial file on every failure path above.
+            if tmp.exists() and (not tmp.stat().st_size or tmp.stat().st_size < MIN_PDF_BYTES):
+                tmp.unlink(missing_ok=True)
+
+    def _add_source_as_file(
+        self, notebook_id: str, paper_url: str, paper_title: str
+    ) -> bool:
+        """Download the paper and upload the bytes. True if the source landed.
+
+        The temp file is named after the paper because NotebookLM derives an
+        uploaded source's title from its filename, and that title is what the
+        content guard and the logs read back.
+        """
+        stem = re.sub(r"[^A-Za-z0-9]+", "_", paper_title).strip("_")[:60] or "paper"
+        pdf = self._download_pdf(paper_url, filename_stem=stem)
+        if pdf is None:
+            return False
+        try:
+            logger.info(f"Uploading {pdf.name} as a file source...")
+            self._run_cli(
+                [
+                    "notebooklm", "source", "add", str(pdf),
+                    "--type", "file",
+                    "--title", paper_title[:200],
+                    "-n", notebook_id,
+                ],
+                timeout=300,   # upload + server-side extraction
+            )
+            logger.info("Source uploaded from file.")
+            return True
+        except RuntimeError as e:
+            logger.warning(f"File upload failed: {str(e)[:150]}")
+            return False
+        finally:
+            pdf.unlink(missing_ok=True)
+
+    def _validate_source_content(self, notebook_id: str) -> dict:
+        """Verify the ingested source is the paper, not a publisher block page.
+
+        Raises SourceContentError when the content is unusable. See the
+        module-level notes on MIN_CONTENT_WORDS for why this is fatal.
+
+        Returns the accepted source's {title, url, words} for logging.
+        """
+        listing = self._run_cli_json(
+            ["notebooklm", "source", "list", "-n", notebook_id, "--json"],
+            timeout=60,
+        )
+        sources = listing.get("sources") or []
+        if not sources:
+            raise SourceContentError(
+                "NotebookLM reports no sources in the notebook after a "
+                "successful add — nothing to generate an episode from."
+            )
+
+        # The pipeline adds exactly one source per episode; validate whichever
+        # ones are present so a future multi-source change stays covered.
+        accepted: dict | None = None
+        for src in sources:
+            title = (src.get("title") or "").strip()
+            url = src.get("url") or ""
+            status = (src.get("status") or "").lower()
+
+            if status != "ready":
+                raise SourceContentError(
+                    f"Source did not finish processing (status={status!r}): {url}"
+                )
+
+            lowered_title = title.lower()
+            for marker in BLOCK_TITLE_MARKERS:
+                if marker in lowered_title:
+                    raise SourceContentError(
+                        f"The publisher served a block/error page instead of the "
+                        f"paper. NotebookLM ingested it as a valid source titled "
+                        f"{title!r} (matched {marker!r}). URL: {url}"
+                    )
+
+            detail = self._run_cli_json(
+                [
+                    "notebooklm", "source", "fulltext", src["id"],
+                    "-n", notebook_id, "--json",
+                ],
+                timeout=90,
+            )
+            content = detail.get("content") or ""
+            words = len(content.split())
+            lowered_body = content.lower()
+
+            for marker in BLOCK_BODY_MARKERS:
+                if marker in lowered_body:
+                    raise SourceContentError(
+                        f"The fetched page is a bot/IP block, not the paper "
+                        f"(matched {marker!r} in the body). "
+                        f"Title={title!r}, {words} words. URL: {url}"
+                    )
+
+            if words < MIN_CONTENT_WORDS:
+                raise SourceContentError(
+                    f"Ingested source holds only {words} words "
+                    f"(minimum {MIN_CONTENT_WORDS}) — too little to be the "
+                    f"paper, and almost certainly an error page. "
+                    f"Title={title!r}. URL: {url}"
+                )
+
+            if words < THIN_CONTENT_WORDS:
+                logger.warning(
+                    f"Source content is thin ({words} words, expected "
+                    f">{THIN_CONTENT_WORDS}) — possibly abstract-only. "
+                    f"Continuing. Title={title!r}"
+                )
+
+            logger.info(
+                f"Source content validated: {words:,} words, title={title!r}"
+            )
+            if accepted is None:
+                accepted = {"title": title, "url": url, "words": words}
+
+        return accepted or {}
+
+    def _run_cli_json(self, cmd: list[str], timeout: int = 60) -> dict:
+        """Run a --json CLI command and parse its payload.
+
+        Some subcommands print a human line before the JSON (``source
+        fulltext`` emits ``Matched: <id> (<title>)``), so parse from the first
+        brace rather than assuming stdout is pure JSON.
+        """
+        out = self._run_cli(cmd, timeout=timeout)
+        start = out.find("{")
+        if start == -1:
+            raise RuntimeError(f"Expected JSON from {cmd[1:4]}, got: {out[:200]}")
+        try:
+            return json.loads(out[start:])
+        except json.JSONDecodeError as e:
+            raise RuntimeError(
+                f"Could not parse JSON from {cmd[1:4]}: {e}. Output: {out[:200]}"
+            ) from e
 
     def _delete_notebook(self, notebook_id: str) -> None:
         """
