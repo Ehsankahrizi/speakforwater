@@ -1,0 +1,36 @@
+#!/bin/sh
+# Keep package.json and pyproject.toml in step with VERSION.
+#
+# Only fires when VERSION is part of this commit, so ordinary commits pay
+# nothing. When it does fire it rewrites the two manifests and stages them, so
+# editing VERSION alone is enough to cut a release.
+#
+# Enable once per clone:
+#     git config core.hooksPath .githooks
+#
+# tests/test_version.py still pins all three together, so a commit made with
+# the hook disabled (or from another clone) is caught rather than silently
+# shipping a mismatch.
+
+if ! git diff --cached --name-only | grep -qx 'VERSION'; then
+    exit 0
+fi
+
+echo "pre-commit: VERSION changed, syncing manifests..."
+
+if ! python3 scripts/sync_version.py; then
+    echo "pre-commit: version sync failed; commit aborted." >&2
+    exit 1
+fi
+
+# Stage only manifests the sync actually touched, so this never pulls
+# unrelated edits to those files into the commit... they are version-only
+# files in practice, but be explicit about what the hook adds.
+for f in package.json pyproject.toml; do
+    if ! git diff --quiet -- "$f"; then
+        git add "$f"
+        echo "pre-commit: staged $f"
+    fi
+done
+
+exit 0

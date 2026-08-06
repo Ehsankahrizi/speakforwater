@@ -3,9 +3,12 @@
 VERSION is the single source of truth for both the Python pipeline and the
 Astro site (src/lib/version.ts reads the same file). package.json and
 pyproject.toml still carry their own declarations because their tooling
-requires it — tests/test_version.py fails if any of them drift from VERSION.
+requires it; scripts/sync_version.py propagates VERSION into them, and
+tests/test_version.py fails if any of them drift.
 
-To release: edit VERSION, run the tests, commit.
+To release: edit VERSION and commit. The .githooks/pre-commit hook syncs the
+manifests and stages them (enable once with `git config core.hooksPath
+.githooks`); run scripts/sync_version.py by hand if the hook is not enabled.
 """
 
 from __future__ import annotations
