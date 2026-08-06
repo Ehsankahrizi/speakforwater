@@ -32,6 +32,8 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
+from app.version import VERSION
+
 # ── Logging ────────────────────────────────────────────────────────────
 
 logging.basicConfig(
@@ -679,7 +681,7 @@ async def main():
     MAX_ATTEMPTS = 5  # Try up to 5 queued papers before giving up
 
     logger.info("=" * 60)
-    logger.info("  SpeakForWater — Daily Podcast Pipeline")
+    logger.info(f"  SpeakForWater — Daily Podcast Pipeline  v{VERSION}")
     logger.info("=" * 60)
 
     validate_env()

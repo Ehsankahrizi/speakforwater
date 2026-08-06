@@ -1,6 +1,6 @@
 {
   "name": "speakforwater-site",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "type": "module",
   "description": "SpeakForWater — daily AI-narrated podcast on water research. Static site built with Astro.",
   "scripts": {

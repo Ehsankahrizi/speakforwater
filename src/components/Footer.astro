@@ -1,4 +1,6 @@
 ---
+import { VERSION } from "../lib/version";
+
 const year = new Date().getFullYear();
 ---
 
@@ -33,7 +35,7 @@ const year = new Date().getFullYear();
 
   <div class="container footer-bottom">
     <span class="muted small">© {year} SpeakForWater. All rights reserved.</span>
-    <span class="muted small">speakforwater.com</span>
+    <span class="muted small">speakforwater.com <span class="version">v{VERSION}</span></span>
   </div>
 </footer>
 
@@ -98,6 +100,13 @@ const year = new Date().getFullYear();
   }
 
   .small { font-size: 0.82rem; }
+
+  /* Present but recessive — useful when reporting a problem, not a headline. */
+  .version {
+    font-variant-numeric: tabular-nums;
+    opacity: 0.65;
+    margin-left: 6px;
+  }
 
   @media (max-width: 720px) {
     .footer-inner {
