@@ -118,6 +118,8 @@ def _recent_enough(year_str: str, cutoff_year: int) -> bool:
 # EXCLUDE_PUBLISHERS as a comma list of "doi_prefix|domain" pairs.
 _DEFAULT_EXCLUDED = (
     "10.3390|mdpi.com,"          # MDPI (low signal-to-noise for a general audience)
+    "10.3389|frontiersin.org,"   # Frontiers (editorial-quality concerns)
+    "10.1155|hindawi.com,"       # Hindawi (editorial-quality concerns)
     "10.22214,"                  # IJRASET (predatory)
     "10.34218,"                  # IJPP (predatory)
     "ssrn.com,"                  # working papers, not peer-reviewed journals
