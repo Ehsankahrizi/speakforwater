@@ -1,0 +1,57 @@
+###############################################################################
+#  SpeakForWater — Tests
+#
+#  Runs the pytest suite on every push and pull request.
+#
+#  Why this exists: the suite is almost entirely made of guards against
+#  failures that are silent by nature — a source that ingests a publisher
+#  block page as if it were the paper, a prompt quietly truncated to a third
+#  of its length, a version that drifts between three files, a speaker name
+#  creeping back into the podcast script. None of those announce themselves at
+#  runtime. Until this workflow existed the tests only ran if someone
+#  remembered to run them locally, which meant the guards could rot unnoticed
+#  and we would not find out until a bad episode was already published.
+#
+#  Needs no secrets. Every setting in app/config.py has a default, so the
+#  suite runs in a clean environment with no credentials, no network calls,
+#  and no Google or NotebookLM access.
+###############################################################################
+
+name: Tests
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+  workflow_dispatch:
+
+# A newer push makes an in-flight run redundant; cancel it rather than pay for
+# both. Never groups two different branches together.
+concurrency:
+  group: tests-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  pytest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          # requirements.txt does not include pytest — it is the runtime
+          # manifest, not the dev one. Install it explicitly.
+          pip install -r requirements.txt pytest
+
+      - name: Run tests
+        run: pytest tests/ -v
