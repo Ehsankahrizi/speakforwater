@@ -92,3 +92,47 @@ def test_ingest_hostile_host_detection(url, hostile):
 
 def test_no_urls_at_all_is_dropped(no_network):
     assert sp.resolve_source_url({}) == (None, "")
+
+
+# ── Publisher exclusion ────────────────────────────────────────────────
+# Editorial, not technical: these venues are reachable, we choose not to use
+# them. Distinct from INGEST_HOSTILE_HOSTS, which is about what we *can* fetch.
+# Matching is by DOI prefix OR domain, so a paper still gets excluded when a
+# search source omits one of the two.
+
+@pytest.mark.parametrize(
+    "label,paper",
+    [
+        ("mdpi doi", {"doi": "10.3390/w15112034"}),
+        ("mdpi domain", {"oa_pdf_url": "https://www.mdpi.com/2073-4441/15/11/2034/pdf"}),
+        ("frontiers doi", {"doi": "10.3389/fmicb.2019.01000"}),
+        ("frontiers domain", {"oa_pdf_url": "https://www.frontiersin.org/articles/x/pdf"}),
+        ("hindawi doi", {"doi": "10.1155/2022/3895859"}),
+        ("hindawi domain", {"oa_pdf_url": "https://downloads.hindawi.com/journals/x.pdf"}),
+        ("ijraset", {"doi": "10.22214/ijraset.2023.1"}),
+        ("ssrn", {"oa_pdf_url": "https://papers.ssrn.com/x"}),
+    ],
+)
+def test_excluded_publishers_are_rejected(label, paper):
+    assert sp._excluded_publisher(paper) is not None, label
+
+
+@pytest.mark.parametrize(
+    "label,paper",
+    [
+        ("nature", {"doi": "10.1038/s41598-026-55822-0"}),
+        ("elsevier", {"doi": "10.1016/j.envpol.2023.121751"}),
+        ("springer", {"doi": "10.1007/s11356-026-38041-y"}),
+        ("wiley", {"doi": "10.1002/wat2.1234"}),
+        ("plos", {"doi": "10.1371/journal.pone.0000217"}),
+        ("acs", {"doi": "10.1021/acs.chemmater.6c00594"}),
+    ],
+)
+def test_wanted_publishers_survive_exclusion(label, paper):
+    """Publisher exclusion must not quietly swallow the venues we want.
+
+    Springer and ACS are dropped later for being unfetchable — that is the
+    routing check's job, and it is reversible the day they unblock. They must
+    not be conflated with an editorial exclusion.
+    """
+    assert sp._excluded_publisher(paper) is None, label
