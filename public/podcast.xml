@@ -20,8 +20,19 @@
   <itunes:new-feed-url>https://ehsankahrizi.github.io/speakforwater/podcast.xml</itunes:new-feed-url>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
   <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
-  <lastBuildDate>Fri, 07 Aug 2026 00:17:53 +0000</lastBuildDate>
+  <lastBuildDate>Fri, 07 Aug 2026 07:36:04 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 178: Promises and pitfalls of climate adaptation tools across the Mediterranean</title>
+      <enclosure url="https://media.speakforwater.com/episodes/ep178.mp3" length="17632697" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep178</guid>
+      <pubDate>Fri, 07 Aug 2026 07:36:04 +0000</pubDate>
+      <itunes:episode>178</itunes:episode>
+      <itunes:duration>734.667755</itunes:duration>
+      <description>SpeakForWater Episode 178: Promises and pitfalls of climate adaptation tools across the Mediterranean. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://www.nature.com/articles/s43247-026-03795-3_reference.pdf</description>
+    </item>
     <item>
       <title>Ep 177: Hydro-Geophysical Assessment of Freshwater-Lens Thinning and Saline Upconing in Three Inhabited Atolls of the Northern Cook Islands</title>
       <enclosure url="https://media.speakforwater.com/episodes/ep177.mp3" length="18758052" type="audio/mpeg"/>
