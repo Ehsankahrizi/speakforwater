@@ -20,8 +20,19 @@
   <itunes:new-feed-url>https://ehsankahrizi.github.io/speakforwater/podcast.xml</itunes:new-feed-url>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
   <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
-  <lastBuildDate>Fri, 07 Aug 2026 13:26:55 +0000</lastBuildDate>
+  <lastBuildDate>Fri, 07 Aug 2026 19:15:28 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 180: The Prediction of Water Quality Application in a Dam Reservoir</title>
+      <enclosure url="https://media.speakforwater.com/episodes/ep180.mp3" length="28345200" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep180</guid>
+      <pubDate>Fri, 07 Aug 2026 19:15:28 +0000</pubDate>
+      <itunes:episode>180</itunes:episode>
+      <itunes:duration>1181.022041</itunes:duration>
+      <description>SpeakForWater Episode 180: The Prediction of Water Quality Application in a Dam Reservoir. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://doi.org/10.4194/trjfas30206</description>
+    </item>
     <item>
       <title>Ep 179: Environmental impacts on water quality due to structural measures: A case study in Hung My commune, Chau Thanh district, Tra Vinh Province, Viet Nam</title>
       <enclosure url="https://media.speakforwater.com/episodes/ep179.mp3" length="27351502" type="audio/mpeg"/>
