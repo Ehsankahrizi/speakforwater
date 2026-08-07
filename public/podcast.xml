@@ -20,8 +20,19 @@
   <itunes:new-feed-url>https://ehsankahrizi.github.io/speakforwater/podcast.xml</itunes:new-feed-url>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
   <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
-  <lastBuildDate>Thu, 06 Aug 2026 14:45:37 +0000</lastBuildDate>
+  <lastBuildDate>Fri, 07 Aug 2026 00:17:53 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 177: Hydro-Geophysical Assessment of Freshwater-Lens Thinning and Saline Upconing in Three Inhabited Atolls of the Northern Cook Islands</title>
+      <enclosure url="https://media.speakforwater.com/episodes/ep177.mp3" length="18758052" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep177</guid>
+      <pubDate>Fri, 07 Aug 2026 00:17:53 +0000</pubDate>
+      <itunes:episode>177</itunes:episode>
+      <itunes:duration>781.557551</itunes:duration>
+      <description>SpeakForWater Episode 177: Hydro-Geophysical Assessment of Freshwater-Lens Thinning and Saline Upconing in Three Inhabited Atolls of the Northern Cook Islands. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://ojs.pps.unsri.ac.id/index.php/ppsunsri/article/download/690/398</description>
+    </item>
     <item>
       <title>Ep 176: Assessment of water, sanitation, and hygiene facilities to eliminate open defecation in public secondary schools in Obollo education zone, Enugu State, Nigeria (2018-2022)</title>
       <enclosure url="https://media.speakforwater.com/episodes/ep176.mp3" length="12441017" type="audio/mpeg"/>
