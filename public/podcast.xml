@@ -20,8 +20,19 @@
   <itunes:new-feed-url>https://ehsankahrizi.github.io/speakforwater/podcast.xml</itunes:new-feed-url>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
   <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
-  <lastBuildDate>Sat, 08 Aug 2026 07:11:33 +0000</lastBuildDate>
+  <lastBuildDate>Sat, 08 Aug 2026 13:13:27 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 182: Deer Antler &lt;i&gt;δ&lt;/i&gt; &lt;sup&gt;18&lt;/sup&gt; O Records Desalination in Israel&apos;s Water Supply</title>
+      <enclosure url="https://media.speakforwater.com/episodes/ep182.mp3" length="24014306" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep182</guid>
+      <pubDate>Sat, 08 Aug 2026 13:13:27 +0000</pubDate>
+      <itunes:episode>182</itunes:episode>
+      <itunes:duration>1000.568163</itunes:duration>
+      <description>SpeakForWater Episode 182: Deer Antler &lt;i&gt;δ&lt;/i&gt; &lt;sup&gt;18&lt;/sup&gt; O Records Desalination in Israel&apos;s Water Supply. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://doi.org/10.1002/rcm.70139</description>
+    </item>
     <item>
       <title>Ep 181: Hydrological-hegemony and media narratives: India’s transboundary governance over the Indus basin</title>
       <enclosure url="https://media.speakforwater.com/episodes/ep181.mp3" length="33215260" type="audio/mpeg"/>
