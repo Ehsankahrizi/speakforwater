@@ -20,8 +20,19 @@
   <itunes:new-feed-url>https://ehsankahrizi.github.io/speakforwater/podcast.xml</itunes:new-feed-url>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
   <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
-  <lastBuildDate>Fri, 07 Aug 2026 19:15:28 +0000</lastBuildDate>
+  <lastBuildDate>Sat, 08 Aug 2026 07:11:33 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 181: Hydrological-hegemony and media narratives: India’s transboundary governance over the Indus basin</title>
+      <enclosure url="https://media.speakforwater.com/episodes/ep181.mp3" length="33215260" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep181</guid>
+      <pubDate>Sat, 08 Aug 2026 07:11:33 +0000</pubDate>
+      <itunes:episode>181</itunes:episode>
+      <itunes:duration>1383.941224</itunes:duration>
+      <description>SpeakForWater Episode 181: Hydrological-hegemony and media narratives: India’s transboundary governance over the Indus basin. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://www.nature.com/articles/s41599-026-08298-2_reference.pdf</description>
+    </item>
     <item>
       <title>Ep 180: The Prediction of Water Quality Application in a Dam Reservoir</title>
       <enclosure url="https://media.speakforwater.com/episodes/ep180.mp3" length="28345200" type="audio/mpeg"/>
