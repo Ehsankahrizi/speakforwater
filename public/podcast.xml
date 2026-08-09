@@ -20,8 +20,19 @@
   <itunes:new-feed-url>https://ehsankahrizi.github.io/speakforwater/podcast.xml</itunes:new-feed-url>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
   <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
-  <lastBuildDate>Sun, 09 Aug 2026 13:13:13 +0000</lastBuildDate>
+  <lastBuildDate>Sun, 09 Aug 2026 19:00:25 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 186: Assessment of potentially trace metals contamination in watersheds of the eastern Mitidja plain, Algeria</title>
+      <enclosure url="https://media.speakforwater.com/episodes/ep186.mp3" length="29342659" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep186</guid>
+      <pubDate>Sun, 09 Aug 2026 19:00:25 +0000</pubDate>
+      <itunes:episode>186</itunes:episode>
+      <itunes:duration>1222.582857</itunes:duration>
+      <description>SpeakForWater Episode 186: Assessment of potentially trace metals contamination in watersheds of the eastern Mitidja plain, Algeria. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://cosmos.gnest.org/system/files/2026-07/gnest_08015_accepted%20manuscript.pdf</description>
+    </item>
     <item>
       <title>Ep 185: Decisive factors in sustainable stormwater management</title>
       <enclosure url="https://media.speakforwater.com/episodes/ep185.mp3" length="17553075" type="audio/mpeg"/>
