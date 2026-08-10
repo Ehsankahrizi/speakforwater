@@ -20,8 +20,19 @@
   <itunes:new-feed-url>https://ehsankahrizi.github.io/speakforwater/podcast.xml</itunes:new-feed-url>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
   <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
-  <lastBuildDate>Mon, 10 Aug 2026 13:35:41 +0000</lastBuildDate>
+  <lastBuildDate>Mon, 10 Aug 2026 19:14:46 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 189: Water and Sanitation Facilities in selected schools in Ibadan, South-western Nigeria</title>
+      <enclosure url="https://media.speakforwater.com/episodes/ep189.mp3" length="32538793" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep189</guid>
+      <pubDate>Mon, 10 Aug 2026 19:14:46 +0000</pubDate>
+      <itunes:episode>189</itunes:episode>
+      <itunes:duration>1355.755102</itunes:duration>
+      <description>SpeakForWater Episode 189: Water and Sanitation Facilities in selected schools in Ibadan, South-western Nigeria. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: http://journal.engineering.fuoye.edu.ng/index.php/engineer/article/download/625/pdf</description>
+    </item>
     <item>
       <title>Ep 188: Urban Water Sustainability in a Rapidly Growing City: Stakeholder Perspectives, Governance Gaps and Management Priorities in Parramatta, Sydney, Australia</title>
       <enclosure url="https://media.speakforwater.com/episodes/ep188.mp3" length="31817813" type="audio/mpeg"/>
