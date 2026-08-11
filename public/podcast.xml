@@ -20,8 +20,19 @@
   <itunes:new-feed-url>https://ehsankahrizi.github.io/speakforwater/podcast.xml</itunes:new-feed-url>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
   <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
-  <lastBuildDate>Tue, 11 Aug 2026 07:26:41 +0000</lastBuildDate>
+  <lastBuildDate>Tue, 11 Aug 2026 13:31:26 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 191: Green synthesis of graphene oxide–TiO2/Fe2O3/ZnO nanocomposites for photocatalytic degradation of petroleum refinery wastewater</title>
+      <enclosure url="https://media.speakforwater.com/episodes/ep191.mp3" length="27739577" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep191</guid>
+      <pubDate>Tue, 11 Aug 2026 13:31:26 +0000</pubDate>
+      <itunes:episode>191</itunes:episode>
+      <itunes:duration>1155.787755</itunes:duration>
+      <description>SpeakForWater Episode 191: Green synthesis of graphene oxide–TiO2/Fe2O3/ZnO nanocomposites for photocatalytic degradation of petroleum refinery wastewater. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://www.nature.com/articles/s41598-026-61380-2_reference.pdf</description>
+    </item>
     <item>
       <title>Ep 190: Assessment of Conventional Water Treatment Plant Efficiency in Removing Microplastic Pollutants: A Case Study of Mtoni CWTP, Dar es Salaam</title>
       <enclosure url="https://media.speakforwater.com/episodes/ep190.mp3" length="26997908" type="audio/mpeg"/>
