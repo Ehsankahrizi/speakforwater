@@ -20,8 +20,19 @@
   <itunes:new-feed-url>https://ehsankahrizi.github.io/speakforwater/podcast.xml</itunes:new-feed-url>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
   <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
-  <lastBuildDate>Mon, 10 Aug 2026 19:14:46 +0000</lastBuildDate>
+  <lastBuildDate>Tue, 11 Aug 2026 07:26:41 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 190: Assessment of Conventional Water Treatment Plant Efficiency in Removing Microplastic Pollutants: A Case Study of Mtoni CWTP, Dar es Salaam</title>
+      <enclosure url="https://media.speakforwater.com/episodes/ep190.mp3" length="26997908" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep190</guid>
+      <pubDate>Tue, 11 Aug 2026 07:26:41 +0000</pubDate>
+      <itunes:episode>190</itunes:episode>
+      <itunes:duration>1124.884898</itunes:duration>
+      <description>SpeakForWater Episode 190: Assessment of Conventional Water Treatment Plant Efficiency in Removing Microplastic Pollutants: A Case Study of Mtoni CWTP, Dar es Salaam. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://carijournals.org/journals/JE/article/download/3874/4468</description>
+    </item>
     <item>
       <title>Ep 189: Water and Sanitation Facilities in selected schools in Ibadan, South-western Nigeria</title>
       <enclosure url="https://media.speakforwater.com/episodes/ep189.mp3" length="32538793" type="audio/mpeg"/>
