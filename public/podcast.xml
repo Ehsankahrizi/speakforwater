@@ -20,8 +20,19 @@
   <itunes:new-feed-url>https://ehsankahrizi.github.io/speakforwater/podcast.xml</itunes:new-feed-url>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
   <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
-  <lastBuildDate>Tue, 11 Aug 2026 19:21:58 +0000</lastBuildDate>
+  <lastBuildDate>Wed, 12 Aug 2026 07:52:49 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 193: Cross-Linked and Encapsulated Laccase from Trametes sp.: Optimized Degradation of Bisphenol A and Diclofenac in Aqueous Solution</title>
+      <enclosure url="https://media.speakforwater.com/episodes/ep193.mp3" length="21401853" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep193</guid>
+      <pubDate>Wed, 12 Aug 2026 07:52:49 +0000</pubDate>
+      <itunes:episode>193</itunes:episode>
+      <itunes:duration>891.715918</itunes:duration>
+      <description>SpeakForWater Episode 193: Cross-Linked and Encapsulated Laccase from Trametes sp.: Optimized Degradation of Bisphenol A and Diclofenac in Aqueous Solution. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://www.ije.ir/article_243586_9d6af4b7e802b3b31ee9db4065420a5c.pdf</description>
+    </item>
     <item>
       <title>Ep 192: Community-scale assessment of flood-related public health vulnerability using multi-criteria AHP in Northwestern Bangladesh</title>
       <enclosure url="https://media.speakforwater.com/episodes/ep192.mp3" length="27132073" type="audio/mpeg"/>
