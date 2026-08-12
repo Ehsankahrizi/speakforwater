@@ -20,8 +20,19 @@
   <itunes:new-feed-url>https://ehsankahrizi.github.io/speakforwater/podcast.xml</itunes:new-feed-url>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
   <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
-  <lastBuildDate>Wed, 12 Aug 2026 07:52:49 +0000</lastBuildDate>
+  <lastBuildDate>Wed, 12 Aug 2026 13:40:52 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 194: Integrated thermal and phytoremediation of agricultural soils impacted by PFAS</title>
+      <enclosure url="https://media.speakforwater.com/episodes/ep194.mp3" length="36451518" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep194</guid>
+      <pubDate>Wed, 12 Aug 2026 13:40:52 +0000</pubDate>
+      <itunes:episode>194</itunes:episode>
+      <itunes:duration>1518.785306</itunes:duration>
+      <description>SpeakForWater Episode 194: Integrated thermal and phytoremediation of agricultural soils impacted by PFAS. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://doi.org/10.1073/pnas.2600786123</description>
+    </item>
     <item>
       <title>Ep 193: Cross-Linked and Encapsulated Laccase from Trametes sp.: Optimized Degradation of Bisphenol A and Diclofenac in Aqueous Solution</title>
       <enclosure url="https://media.speakforwater.com/episodes/ep193.mp3" length="21401853" type="audio/mpeg"/>
