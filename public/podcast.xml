@@ -20,8 +20,19 @@
   <itunes:new-feed-url>https://ehsankahrizi.github.io/speakforwater/podcast.xml</itunes:new-feed-url>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
   <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
-  <lastBuildDate>Wed, 12 Aug 2026 13:40:52 +0000</lastBuildDate>
+  <lastBuildDate>Wed, 12 Aug 2026 19:20:36 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 195: Performance Evaluation of Fayda Waste Stabilization Ponds, Duhok, Iraq: Operational Performance, Challenges and Improvement Opportunities</title>
+      <enclosure url="https://media.speakforwater.com/episodes/ep195.mp3" length="23475139" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep195</guid>
+      <pubDate>Wed, 12 Aug 2026 19:20:36 +0000</pubDate>
+      <itunes:episode>195</itunes:episode>
+      <itunes:duration>978.102857</itunes:duration>
+      <description>SpeakForWater Episode 195: Performance Evaluation of Fayda Waste Stabilization Ponds, Duhok, Iraq: Operational Performance, Challenges and Improvement Opportunities. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://cosmos.gnest.org/system/files/2026-07/gnest_08454_accepted%20manuscript.pdf</description>
+    </item>
     <item>
       <title>Ep 194: Integrated thermal and phytoremediation of agricultural soils impacted by PFAS</title>
       <enclosure url="https://media.speakforwater.com/episodes/ep194.mp3" length="36451518" type="audio/mpeg"/>
