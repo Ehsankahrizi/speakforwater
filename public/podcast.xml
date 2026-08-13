@@ -20,8 +20,19 @@
   <itunes:new-feed-url>https://ehsankahrizi.github.io/speakforwater/podcast.xml</itunes:new-feed-url>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
   <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
-  <lastBuildDate>Thu, 13 Aug 2026 07:53:34 +0000</lastBuildDate>
+  <lastBuildDate>Thu, 13 Aug 2026 19:25:21 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 197: An Integrated Assessment of the Positive and Negative Impacts of Flooding on Agriculture, Human Settlements, and Livelihood in Kogi State, Nigeria</title>
+      <enclosure url="https://media.speakforwater.com/episodes/ep197.mp3" length="18973092" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep197</guid>
+      <pubDate>Thu, 13 Aug 2026 19:25:21 +0000</pubDate>
+      <itunes:episode>197</itunes:episode>
+      <itunes:duration>790.517551</itunes:duration>
+      <description>SpeakForWater Episode 197: An Integrated Assessment of the Positive and Negative Impacts of Flooding on Agriculture, Human Settlements, and Livelihood in Kogi State, Nigeria. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://www.ijisrt.com/assets/upload/files/IJISRT26JUL318.pdf</description>
+    </item>
     <item>
       <title>Ep 196: A study of rainfall-flood compound risk in Wuchang Historic City based on different climate scenarios</title>
       <enclosure url="https://media.speakforwater.com/episodes/ep196.mp3" length="31688037" type="audio/mpeg"/>
