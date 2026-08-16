@@ -20,8 +20,19 @@
   <itunes:new-feed-url>https://ehsankahrizi.github.io/speakforwater/podcast.xml</itunes:new-feed-url>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
   <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
-  <lastBuildDate>Sat, 15 Aug 2026 18:48:00 +0000</lastBuildDate>
+  <lastBuildDate>Sun, 16 Aug 2026 07:01:58 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 204: Impacts of anthropogenic and environmental stressors on biotic communities in Al-Mahmoudia Canal, Egypt: a seasonal assessment of water quality and plankton dynamics</title>
+      <enclosure url="https://media.speakforwater.com/episodes/ep204.mp3" length="31816560" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep204</guid>
+      <pubDate>Sun, 16 Aug 2026 07:01:58 +0000</pubDate>
+      <itunes:episode>204</itunes:episode>
+      <itunes:duration>1325.662041</itunes:duration>
+      <description>SpeakForWater Episode 204: Impacts of anthropogenic and environmental stressors on biotic communities in Al-Mahmoudia Canal, Egypt: a seasonal assessment of water quality and plankton dynamics. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://www.nature.com/articles/s41598-026-62334-4.pdf</description>
+    </item>
     <item>
       <title>Ep 203: Cumulative human health risk from low-level PCB exposure in waste environments: a congener-specific assessment with implications for regulatory thresholds</title>
       <enclosure url="https://media.speakforwater.com/episodes/ep203.mp3" length="19583103" type="audio/mpeg"/>
