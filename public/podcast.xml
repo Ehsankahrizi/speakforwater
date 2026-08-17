@@ -20,8 +20,19 @@
   <itunes:new-feed-url>https://ehsankahrizi.github.io/speakforwater/podcast.xml</itunes:new-feed-url>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
   <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
-  <lastBuildDate>Mon, 17 Aug 2026 07:18:48 +0000</lastBuildDate>
+  <lastBuildDate>Mon, 17 Aug 2026 13:12:32 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 208: Heterogeneous impacts of rainwater harvesting systems on income and food outcomes in northern Ghana</title>
+      <enclosure url="https://media.speakforwater.com/episodes/ep208.mp3" length="28827315" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep208</guid>
+      <pubDate>Mon, 17 Aug 2026 13:12:32 +0000</pubDate>
+      <itunes:episode>208</itunes:episode>
+      <itunes:duration>1201.110204</itunes:duration>
+      <description>SpeakForWater Episode 208: Heterogeneous impacts of rainwater harvesting systems on income and food outcomes in northern Ghana. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://www.frontiersin.org/journals/environmental-economics/articles/10.3389/frevc.2026.1808592/pdf</description>
+    </item>
     <item>
       <title>Ep 207: Assessment of Waste Water Management in a Low-Cost Housing Settlement: The Case of Emali Town, Makueni County, Kenya</title>
       <enclosure url="https://media.speakforwater.com/episodes/ep207.mp3" length="28661177" type="audio/mpeg"/>
