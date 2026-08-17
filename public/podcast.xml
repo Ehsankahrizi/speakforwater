@@ -20,8 +20,19 @@
   <itunes:new-feed-url>https://ehsankahrizi.github.io/speakforwater/podcast.xml</itunes:new-feed-url>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
   <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
-  <lastBuildDate>Mon, 17 Aug 2026 13:12:32 +0000</lastBuildDate>
+  <lastBuildDate>Mon, 17 Aug 2026 19:06:29 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 209: Green technological innovation strengthens the association between public environmental concern and lower agricultural carbon emission intensity in China</title>
+      <enclosure url="https://media.speakforwater.com/episodes/ep209.mp3" length="29002858" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep209</guid>
+      <pubDate>Mon, 17 Aug 2026 19:06:29 +0000</pubDate>
+      <itunes:episode>209</itunes:episode>
+      <itunes:duration>1208.42449</itunes:duration>
+      <description>SpeakForWater Episode 209: Green technological innovation strengthens the association between public environmental concern and lower agricultural carbon emission intensity in China. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://www.nature.com/articles/s41598-026-63495-y_reference.pdf</description>
+    </item>
     <item>
       <title>Ep 208: Heterogeneous impacts of rainwater harvesting systems on income and food outcomes in northern Ghana</title>
       <enclosure url="https://media.speakforwater.com/episodes/ep208.mp3" length="28827315" type="audio/mpeg"/>
