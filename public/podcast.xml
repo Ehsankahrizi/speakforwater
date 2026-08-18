@@ -20,8 +20,19 @@
   <itunes:new-feed-url>https://ehsankahrizi.github.io/speakforwater/podcast.xml</itunes:new-feed-url>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
   <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
-  <lastBuildDate>Tue, 18 Aug 2026 13:11:05 +0000</lastBuildDate>
+  <lastBuildDate>Tue, 18 Aug 2026 19:01:09 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 212: PFAS Data Hub: An open data portal featuring geovisualisation</title>
+      <enclosure url="https://media.speakforwater.com/episodes/ep212.mp3" length="23334078" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep212</guid>
+      <pubDate>Tue, 18 Aug 2026 19:01:09 +0000</pubDate>
+      <itunes:episode>212</itunes:episode>
+      <itunes:duration>972.225306</itunes:duration>
+      <description>SpeakForWater Episode 212: PFAS Data Hub: An open data portal featuring geovisualisation. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://peercommunityjournal.org/item/10.24072/pcjournal.750.pdf</description>
+    </item>
     <item>
       <title>Ep 211: Comparison of Water Pump Technologies for Climate-Resilient Irrigation Systems</title>
       <enclosure url="https://media.speakforwater.com/episodes/ep211.mp3" length="28082512" type="audio/mpeg"/>
