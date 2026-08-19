@@ -20,8 +20,19 @@
   <itunes:new-feed-url>https://ehsankahrizi.github.io/speakforwater/podcast.xml</itunes:new-feed-url>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
   <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
-  <lastBuildDate>Tue, 18 Aug 2026 19:01:09 +0000</lastBuildDate>
+  <lastBuildDate>Wed, 19 Aug 2026 13:10:09 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 213: Stuffed toys as a source of oral PFAS exposure: Migration into artificial saliva and exposure assessment</title>
+      <enclosure url="https://media.speakforwater.com/episodes/ep213.mp3" length="26814842" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep213</guid>
+      <pubDate>Wed, 19 Aug 2026 13:10:09 +0000</pubDate>
+      <itunes:episode>213</itunes:episode>
+      <itunes:duration>1117.257143</itunes:duration>
+      <description>SpeakForWater Episode 213: Stuffed toys as a source of oral PFAS exposure: Migration into artificial saliva and exposure assessment. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://www.nature.com/articles/s41370-026-00946-8.pdf</description>
+    </item>
     <item>
       <title>Ep 212: PFAS Data Hub: An open data portal featuring geovisualisation</title>
       <enclosure url="https://media.speakforwater.com/episodes/ep212.mp3" length="23334078" type="audio/mpeg"/>
