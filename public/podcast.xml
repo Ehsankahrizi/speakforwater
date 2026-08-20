@@ -20,8 +20,19 @@
   <itunes:new-feed-url>https://ehsankahrizi.github.io/speakforwater/podcast.xml</itunes:new-feed-url>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
   <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
-  <lastBuildDate>Thu, 20 Aug 2026 13:13:59 +0000</lastBuildDate>
+  <lastBuildDate>Thu, 20 Aug 2026 19:20:49 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 217: Tales, Traditions, and Tides: The Little Logan River and its Role in Cache Valley&apos;s History, Culture, and Conservation</title>
+      <enclosure url="https://media.speakforwater.com/episodes/ep217.mp3" length="33615874" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep217</guid>
+      <pubDate>Thu, 20 Aug 2026 19:20:49 +0000</pubDate>
+      <itunes:episode>217</itunes:episode>
+      <itunes:duration>1400.633469</itunes:duration>
+      <description>SpeakForWater Episode 217: Tales, Traditions, and Tides: The Little Logan River and its Role in Cache Valley&apos;s History, Culture, and Conservation. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://digitalcommons.usu.edu/context/gradreports2023/article/1180/viewcontent/auto_convert.pdf</description>
+    </item>
     <item>
       <title>Ep 216: A cascading vortex pipe fishway for safe downstream fish passage</title>
       <enclosure url="https://media.speakforwater.com/episodes/ep216.mp3" length="23716511" type="audio/mpeg"/>
