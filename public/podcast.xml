@@ -20,8 +20,19 @@
   <itunes:new-feed-url>https://ehsankahrizi.github.io/speakforwater/podcast.xml</itunes:new-feed-url>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
   <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
-  <lastBuildDate>Fri, 21 Aug 2026 07:06:57 +0000</lastBuildDate>
+  <lastBuildDate>Fri, 21 Aug 2026 13:11:33 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 219: ACCESSIBLE MUNICIPAL WATER SOURCES IN ERELU WATERWORKS ZONE, OYO STATE, NIGERIA</title>
+      <enclosure url="https://media.speakforwater.com/episodes/ep219.mp3" length="34955642" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep219</guid>
+      <pubDate>Fri, 21 Aug 2026 13:11:33 +0000</pubDate>
+      <itunes:episode>219</itunes:episode>
+      <itunes:duration>1456.457143</itunes:duration>
+      <description>SpeakForWater Episode 219: ACCESSIBLE MUNICIPAL WATER SOURCES IN ERELU WATERWORKS ZONE, OYO STATE, NIGERIA. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://www.journalijar.com/uploads/2026/07/6a60874d12a3f_IJAR-58437.pdf</description>
+    </item>
     <item>
       <title>Ep 218: Analysis of Evolving Flood Patterns and Associated Damages Across Pakistan</title>
       <enclosure url="https://media.speakforwater.com/episodes/ep218.mp3" length="27782835" type="audio/mpeg"/>
