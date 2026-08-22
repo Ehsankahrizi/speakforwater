@@ -20,8 +20,19 @@
   <itunes:new-feed-url>https://ehsankahrizi.github.io/speakforwater/podcast.xml</itunes:new-feed-url>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
   <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
-  <lastBuildDate>Fri, 21 Aug 2026 19:00:00 +0000</lastBuildDate>
+  <lastBuildDate>Sat, 22 Aug 2026 06:59:57 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 221: Assessing multi-decadal shoreline change and future sea level projections to support coastal adaptation in Selangor, Malaysia</title>
+      <enclosure url="https://media.speakforwater.com/episodes/ep221.mp3" length="26900733" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep221</guid>
+      <pubDate>Sat, 22 Aug 2026 06:59:57 +0000</pubDate>
+      <itunes:episode>221</itunes:episode>
+      <itunes:duration>1120.835918</itunes:duration>
+      <description>SpeakForWater Episode 221: Assessing multi-decadal shoreline change and future sea level projections to support coastal adaptation in Selangor, Malaysia. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://www.frontiersin.org/journals/marine-science/articles/10.3389/fmars.2026.1893327/pdf</description>
+    </item>
     <item>
       <title>Ep 220: “Water Is There; But It Doesn’t Come”: Moral Narratives of Municipal Water Failure in Madibeng, South Africa</title>
       <enclosure url="https://media.speakforwater.com/episodes/ep220.mp3" length="25556576" type="audio/mpeg"/>
