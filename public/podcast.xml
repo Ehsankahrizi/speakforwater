@@ -20,8 +20,19 @@
   <itunes:new-feed-url>https://ehsankahrizi.github.io/speakforwater/podcast.xml</itunes:new-feed-url>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
   <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
-  <lastBuildDate>Sat, 22 Aug 2026 06:59:57 +0000</lastBuildDate>
+  <lastBuildDate>Sat, 22 Aug 2026 13:02:52 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 222: Rethinking Urban Resilience in Iraq: The Impact of Sustainable Urban Design on Mitigating Climate Change-Induced Displacement</title>
+      <enclosure url="https://media.speakforwater.com/episodes/ep222.mp3" length="30207835" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep222</guid>
+      <pubDate>Sat, 22 Aug 2026 13:02:52 +0000</pubDate>
+      <itunes:episode>222</itunes:episode>
+      <itunes:duration>1258.631837</itunes:duration>
+      <description>SpeakForWater Episode 222: Rethinking Urban Resilience in Iraq: The Impact of Sustainable Urban Design on Mitigating Climate Change-Induced Displacement. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://joe.uobaghdad.edu.iq/index.php/main/article/download/4049/2813</description>
+    </item>
     <item>
       <title>Ep 221: Assessing multi-decadal shoreline change and future sea level projections to support coastal adaptation in Selangor, Malaysia</title>
       <enclosure url="https://media.speakforwater.com/episodes/ep221.mp3" length="26900733" type="audio/mpeg"/>
