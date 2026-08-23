@@ -20,8 +20,19 @@
   <itunes:new-feed-url>https://ehsankahrizi.github.io/speakforwater/podcast.xml</itunes:new-feed-url>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
   <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
-  <lastBuildDate>Sun, 23 Aug 2026 13:05:30 +0000</lastBuildDate>
+  <lastBuildDate>Sun, 23 Aug 2026 18:48:09 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 225: Spatiotemporal variability of groundwater salinity and nitrate in a multi-aquifer system, Durango, Mexico</title>
+      <enclosure url="https://media.speakforwater.com/episodes/ep225.mp3" length="19258349" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep225</guid>
+      <pubDate>Sun, 23 Aug 2026 18:48:09 +0000</pubDate>
+      <itunes:episode>225</itunes:episode>
+      <itunes:duration>802.403265</itunes:duration>
+      <description>SpeakForWater Episode 225: Spatiotemporal variability of groundwater salinity and nitrate in a multi-aquifer system, Durango, Mexico. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://journals.enviromindsolutions.com/index.php/jeshs/article/download/99/129</description>
+    </item>
     <item>
       <title>Ep 224: Post-Fire Urban Runoff Assessment in a Mediterranean Basin Using Integrated UAV–SWMM–HEC-RAS Modelling</title>
       <enclosure url="https://media.speakforwater.com/episodes/ep224.mp3" length="30795276" type="audio/mpeg"/>
