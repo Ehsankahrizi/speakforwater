@@ -20,8 +20,19 @@
   <itunes:new-feed-url>https://ehsankahrizi.github.io/speakforwater/podcast.xml</itunes:new-feed-url>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
   <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
-  <lastBuildDate>Sun, 23 Aug 2026 07:00:24 +0000</lastBuildDate>
+  <lastBuildDate>Sun, 23 Aug 2026 13:05:30 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 224: Post-Fire Urban Runoff Assessment in a Mediterranean Basin Using Integrated UAV–SWMM–HEC-RAS Modelling</title>
+      <enclosure url="https://media.speakforwater.com/episodes/ep224.mp3" length="30795276" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep224</guid>
+      <pubDate>Sun, 23 Aug 2026 13:05:30 +0000</pubDate>
+      <itunes:episode>224</itunes:episode>
+      <itunes:duration>1283.108571</itunes:duration>
+      <description>SpeakForWater Episode 224: Post-Fire Urban Runoff Assessment in a Mediterranean Basin Using Integrated UAV–SWMM–HEC-RAS Modelling. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://isprs-archives.copernicus.org/articles/XLIX-B3-2026/1283/2026/isprs-archives-XLIX-B3-2026-1283-2026.pdf</description>
+    </item>
     <item>
       <title>Ep 223: Delivering Relief: Water Trucks and the Negotiations of a “Cut-Off” Life in Contemporary Lebanon</title>
       <enclosure url="https://media.speakforwater.com/episodes/ep223.mp3" length="31604027" type="audio/mpeg"/>
