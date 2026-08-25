@@ -20,8 +20,19 @@
   <itunes:new-feed-url>https://ehsankahrizi.github.io/speakforwater/podcast.xml</itunes:new-feed-url>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
   <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
-  <lastBuildDate>Tue, 25 Aug 2026 07:12:37 +0000</lastBuildDate>
+  <lastBuildDate>Tue, 25 Aug 2026 13:18:09 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 230: Implications of water insecurity for food practices and health in contexts of migration and displacement: evidence from the US-Mexico borderlands</title>
+      <enclosure url="https://media.speakforwater.com/episodes/ep230.mp3" length="28794715" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep230</guid>
+      <pubDate>Tue, 25 Aug 2026 13:18:09 +0000</pubDate>
+      <itunes:episode>230</itunes:episode>
+      <itunes:duration>1199.751837</itunes:duration>
+      <description>SpeakForWater Episode 230: Implications of water insecurity for food practices and health in contexts of migration and displacement: evidence from the US-Mexico borderlands. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://www.frontiersin.org/journals/nutrition/articles/10.3389/fnut.2026.1771924/pdf</description>
+    </item>
     <item>
       <title>Ep 229: Spatial and statistical assessment of groundwater quality in semi-urban Delhi, India using PCA and WQI</title>
       <enclosure url="https://media.speakforwater.com/episodes/ep229.mp3" length="38889056" type="audio/mpeg"/>
