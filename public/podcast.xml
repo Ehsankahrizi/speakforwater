@@ -20,8 +20,19 @@
   <itunes:new-feed-url>https://ehsankahrizi.github.io/speakforwater/podcast.xml</itunes:new-feed-url>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
   <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
-  <lastBuildDate>Tue, 25 Aug 2026 13:18:09 +0000</lastBuildDate>
+  <lastBuildDate>Wed, 26 Aug 2026 07:13:49 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 231: Performance of horizontal roughing filter technology for safe drinking water access in rural developing economies</title>
+      <enclosure url="https://media.speakforwater.com/episodes/ep231.mp3" length="31137585" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep231</guid>
+      <pubDate>Wed, 26 Aug 2026 07:13:49 +0000</pubDate>
+      <itunes:episode>231</itunes:episode>
+      <itunes:duration>1297.371429</itunes:duration>
+      <description>SpeakForWater Episode 231: Performance of horizontal roughing filter technology for safe drinking water access in rural developing economies. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://www.tandfonline.com/doi/pdf/10.1080/23570008.2025.2574766?needAccess=true</description>
+    </item>
     <item>
       <title>Ep 230: Implications of water insecurity for food practices and health in contexts of migration and displacement: evidence from the US-Mexico borderlands</title>
       <enclosure url="https://media.speakforwater.com/episodes/ep230.mp3" length="28794715" type="audio/mpeg"/>
