@@ -28,7 +28,7 @@ Environment variables:
   NUM_QUERIES              — how many queries to run per pass (default 6)
   PER_SOURCE               — results requested per source per query (default 6)
   YEARS_BACK               — keep papers no older than this many years (default 5)
-  MAX_PAPERS               — max papers to queue per run (default 10)
+  MAX_PAPERS               — max papers to queue per run (default 2)
 """
 
 from __future__ import annotations
@@ -78,7 +78,9 @@ GOOGLE_CREDENTIALS_JSON = os.environ.get("GOOGLE_CREDENTIALS_JSON", "")
 SPREADSHEET_ID = os.environ.get("SPREADSHEET_ID", "")
 SHEET_NAME = os.environ.get("SHEET_NAME", "Sheet1")
 
-MAX_PAPERS = int(os.environ.get("MAX_PAPERS", "10"))
+# Kept deliberately small: the pipeline publishes one episode per weekday,
+# so a large queue is backlog, not supply. See search-papers.yml.
+MAX_PAPERS = int(os.environ.get("MAX_PAPERS", "2"))
 NUM_QUERIES = int(os.environ.get("NUM_QUERIES", "6"))
 PER_SOURCE = int(os.environ.get("PER_SOURCE", "15"))
 YEARS_BACK = int(os.environ.get("YEARS_BACK", "5"))

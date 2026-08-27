@@ -1,7 +1,8 @@
 ###############################################################################
-#  SpeakForWater — Daily Podcast Generator
+#  SpeakForWater — Weekday Podcast Generator
 #
-#  This workflow runs daily at 06:00 UTC:
+#  This workflow runs at 08:00 America/Chicago Monday-Friday, publishing ONE
+#  episode per run:
 #    1. Reads the next queued paper URL from your Google Sheet
 #    2. Uses notebooklm-py SDK to automate NotebookLM (no browser needed)
 #    3. Downloads the generated podcast MP3
@@ -23,9 +24,21 @@
 name: Generate Podcast
 
 on:
-  # ── Daily schedule ─────────────────────────────────────────────────
+  # ── Weekday schedule ───────────────────────────────────────────────
   schedule:
-    - cron: "0 6,12,18 * * *"  # Runs at 06:00, 12:00 and 18:00 UTC daily
+    # Target: 08:00 America/Chicago, one episode per weekday.
+    #
+    # GitHub cron is UTC-only and knows nothing about daylight saving, so no
+    # single entry hits 8 AM Central all year: 8 AM CST is 14:00 UTC, 8 AM CDT
+    # is 13:00 UTC. Both fire, and the `gate` job below drops whichever one is
+    # not 08:00 in Chicago that day. Net effect is exactly one run per weekday,
+    # at 8 AM local, across the DST switch.
+    #
+    # Each run publishes exactly one episode, so the number of surviving cron
+    # hits IS the number of episodes per day. ("0 6,12,18 * * *" was three a
+    # day, every day.) 1-5 is Mon-Fri; at 13-14 UTC the Chicago date is the
+    # same day, so no weekday drifts across the boundary.
+    - cron: "0 13,14 * * 1-5"
 
   # ── Manual trigger (for testing) ───────────────────────────────────
   workflow_dispatch:
@@ -52,7 +65,35 @@ permissions:
   contents: write  # Needed to push MP3 + metadata commits
 
 jobs:
+  # Only one of the two scheduled hours is really 08:00 in Chicago on any given
+  # day; this drops the other. Skipped (not failed), so the DST twin never
+  # sends a failure notification. Manual runs always pass.
+  gate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    outputs:
+      proceed: ${{ steps.check.outputs.proceed }}
+    steps:
+      - name: Check it is 08:00 in Chicago
+        id: check
+        run: |
+          if [ "${{ github.event_name }}" != "schedule" ]; then
+            echo "Manual run — proceeding regardless of the clock."
+            echo "proceed=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          hour=$(TZ=America/Chicago date +%H)
+          if [ "$hour" = "08" ]; then
+            echo "Chicago local time is 08:00 — proceeding."
+            echo "proceed=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "Chicago local time is ${hour}:00, not 08:00 — DST twin run, skipping."
+            echo "proceed=false" >> "$GITHUB_OUTPUT"
+          fi
+
   generate:
+    needs: gate
+    if: needs.gate.outputs.proceed == 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 90  # Podcast generation can take 15-25 min
 

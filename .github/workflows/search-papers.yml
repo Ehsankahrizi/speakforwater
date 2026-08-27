@@ -17,18 +17,25 @@
 name: Search Papers
 
 on:
-  # ── Daily schedule (runs before podcast generation) ──────────
+  # ── Weekday schedule (runs before podcast generation) ────────
   schedule:
-    - cron: "0 4 * * *"  # 04:00 UTC daily (before podcast generation at 06:00)
+    # Weekdays only, matching generate-podcast.yml: papers are queued on the
+    # days episodes are actually published, so the queue does not grow over
+    # weekends with nothing consuming it.
+    #
+    # 04:00 UTC sits ~9 hours ahead of the 13:00/14:00 UTC publish window on
+    # the same UTC day, so each weekday's episode draws from a queue that was
+    # topped up that morning.
+    - cron: "0 4 * * 1-5"  # 04:00 UTC, Mon-Fri
 
   # ── Manual trigger ───────────────────────────────────────────
   workflow_dispatch:
     inputs:
       max_papers:
-        description: "Max papers to queue (default 10)"
+        description: "Max papers to queue (default 2)"
         required: false
         type: number
-        default: 10
+        default: 2
       num_queries:
         description: "Stakeholder queries to run per pass (default 6)"
         required: false
@@ -79,5 +86,9 @@ jobs:
           NUM_QUERIES: ${{ inputs.num_queries || '6' }}
           PER_SOURCE: "6"
           YEARS_BACK: ${{ inputs.years_back || '5' }}
-          MAX_PAPERS: ${{ inputs.max_papers || '10' }}
+          # Sized against consumption, not against how many good papers exist.
+          # generate-podcast.yml publishes one episode per weekday, so queueing
+          # 10 a day grew the backlog by ~65 papers a week and buried fresh
+          # research behind a queue months long.
+          MAX_PAPERS: ${{ inputs.max_papers || '2' }}
         run: python search_papers.py
