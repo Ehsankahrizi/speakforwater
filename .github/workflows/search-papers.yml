@@ -1,8 +1,8 @@
 ###############################################################################
-#  SpeakForWater — Daily Paper Search
+#  SpeakForWater — Weekday Paper Search
 #
-#  Runs daily to find new open-access water research papers and add them
-#  to the Google Sheet queue. Searches MULTIPLE sources in parallel
+#  Runs each weekday to find new open-access water research papers and add
+#  them to the Google Sheet queue. Searches MULTIPLE sources in parallel
 #  (OpenAlex + Semantic Scholar) — not locked to a technical-journal
 #  whitelist — so stakeholder-relevant research surfaces, then an AI
 #  ranker keeps only the plain-language, real-world-relevant ones.
@@ -17,16 +17,24 @@
 name: Search Papers
 
 on:
-  # ── Weekday schedule (runs before podcast generation) ────────
+  # ── Weekday schedule (best effort; see below) ────────────────
   schedule:
     # Weekdays only, matching generate-podcast.yml: papers are queued on the
     # days episodes are actually published, so the queue does not grow over
-    # weekends with nothing consuming it.
+    # weekends with nothing consuming it. At MAX_PAPERS=2 that is 10 queued a
+    # week against 5 consumed — the ~5/week margin covers papers that later
+    # fail at the download or content-validation stage.
     #
-    # 04:00 UTC sits ~9 hours ahead of the 13:00/14:00 UTC publish window on
-    # the same UTC day, so each weekday's episode draws from a queue that was
-    # topped up that morning.
-    - cron: "0 4 * * 1-5"  # 04:00 UTC, Mon-Fri
+    # 04:00 UTC is an intent, not an ordering guarantee. This workflow does NOT
+    # reliably run before the day's episode: GitHub delivers scheduled runs when
+    # it has capacity, and these landed at 15:06 and 16:30 UTC on 2026-08-27/28
+    # — after the 13:00/14:00 publish window they were supposed to precede.
+    #
+    # Nothing depends on winning that race. The sheet is a buffer several days
+    # deep, so an episode draws on papers queued days ago and a late (or
+    # skipped) search costs nothing. Do not add logic that assumes this ran
+    # first; keep the buffer deep enough that it never matters.
+    - cron: "0 4 * * 1-5"  # 04:00 UTC, Mon-Fri — best effort, see above
 
   # ── Manual trigger ───────────────────────────────────────────
   workflow_dispatch:
@@ -75,7 +83,13 @@ jobs:
           SPREADSHEET_ID: ${{ secrets.SPREADSHEET_ID }}
           SHEET_NAME: ${{ secrets.SHEET_NAME || 'Sheet1' }}
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
-          RANKER_MODEL: llama-3.1-8b-instant
+          # No RANKER_MODEL override here on purpose. This line used to pin
+          # llama-3.1-8b-instant, which Groq has since retired; every ranking
+          # call 404'd and the run reported success having queued nothing, for
+          # at least eight consecutive runs. paper_ranker.py's own default is
+          # both current and a better judge of topic fit, and it now verifies
+          # the model exists before scoring, so a future retirement fails the
+          # build instead of quietly emptying the queue.
           RANKER_THRESHOLD: "7.0"
           # ── Multi-source, stakeholder-oriented search ──────────
           SCOPUS_API_KEY: ${{ secrets.SCOPUS_API_KEY }}

@@ -82,6 +82,17 @@ Return JSON exactly:
 }}"""
 
 
+class RankerUnavailable(RuntimeError):
+    """The ranker could not run at all — as opposed to running and rejecting.
+
+    These two outcomes produce the same empty result set but mean opposite
+    things, and conflating them hid a multi-week outage: Groq retired
+    `llama-3.1-8b-instant`, every call 404'd, each 404 was logged as a warning
+    and returned None, and the run exited 0 with "No papers passed the AI
+    ranking threshold." Eight green runs in a row queued nothing.
+    """
+
+
 def _client() -> Groq:
     if not GROQ_API_KEY:
         raise RuntimeError(
@@ -89,6 +100,25 @@ def _client() -> Groq:
             "and add it as a GitHub secret."
         )
     return Groq(api_key=GROQ_API_KEY)
+
+
+def _assert_model_available(client: Groq) -> None:
+    """Fail loudly, before scoring, if RANKER_MODEL is not served any more.
+
+    Providers retire model ids on their own schedule, and the failure that
+    causes is silent here by default: every paper simply gets rejected. One
+    cheap call up front turns that into a red build naming the replacement.
+    """
+    try:
+        available = sorted(m.id for m in client.models.list().data)
+    except Exception as e:  # noqa: BLE001 — network/auth, reported as-is
+        raise RankerUnavailable(f"Could not list Groq models: {e}") from e
+
+    if RANKER_MODEL not in available:
+        raise RankerUnavailable(
+            f"RANKER_MODEL={RANKER_MODEL!r} is not served by Groq any more.\n"
+            f"Available models: {', '.join(available)}"
+        )
 
 
 def rank_paper(paper: dict[str, Any]) -> dict[str, Any] | None:
@@ -119,8 +149,10 @@ def rank_paper(paper: dict[str, Any]) -> dict[str, Any] | None:
             temperature=0.2,
         )
     except Exception as e:
-        log.warning(f"  ! Groq API failed for '{title[:60]}': {e}")
-        return None
+        # Raised, not swallowed: an unreachable API is not a verdict on the
+        # paper. rank_papers() decides whether one failure is noise or the
+        # whole ranker being down.
+        raise RankerUnavailable(f"Groq API failed for '{title[:60]}': {e}") from e
 
     raw = resp.choices[0].message.content.strip() if resp.choices else ""
 
@@ -174,20 +206,44 @@ def rank_papers(
         )
         return papers[:max_keep]
 
+    _assert_model_available(_client())
+
     log.info(
         f"\nRanking {len(papers)} candidate papers with "
         f"{RANKER_MODEL} via Groq…"
     )
 
     accepted = []
+    api_failures = 0
     for i, paper in enumerate(papers, 1):
         log.info(f"[{i}/{len(papers)}] {paper.get('title', 'Untitled')[:60]}…")
-        ranked = rank_paper(paper)
+        try:
+            ranked = rank_paper(paper)
+        except RankerUnavailable as e:
+            # Tolerated individually — a rate limit or a blip should not sink
+            # the run — but counted, and checked against the total below.
+            api_failures += 1
+            log.warning(f"  ! {e}")
+            ranked = None
         if ranked:
             accepted.append(ranked)
         # Polite rate limiting (30 req/min on free tier)
         if i < len(papers):
             time.sleep(RATE_LIMIT_DELAY)
+
+    # An empty result is a normal outcome; an empty result produced entirely by
+    # failed calls is an outage wearing its costume. Distinguish them here so
+    # the run goes red instead of green.
+    if api_failures and not accepted:
+        raise RankerUnavailable(
+            f"All {api_failures} of {len(papers)} ranking calls failed — "
+            f"the ranker is down, not the papers. Nothing was queued."
+        )
+    if api_failures:
+        log.warning(
+            f"  ! {api_failures} of {len(papers)} ranking calls failed and "
+            f"those papers were dropped."
+        )
 
     accepted.sort(key=lambda p: p.get("score", 0), reverse=True)
     log.info(
