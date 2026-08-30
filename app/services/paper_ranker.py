@@ -1,7 +1,7 @@
 """
 SpeakForWater — paper_ranker.py
 
-AI-powered paper ranking using Groq's free API + open-source Llama 3.1.
+AI-powered paper ranking using Groq's free API + an open-weights model.
 
 Takes a list of candidate papers from OpenAlex, scores each one for
 podcast-fit, and returns only papers above a configurable score threshold.
@@ -32,9 +32,15 @@ log = logging.getLogger(__name__)
 GROQ_API_KEY = os.environ.get("GROQ_API_KEY", "")
 RANKER_MODEL = os.environ.get(
     "RANKER_MODEL",
-    # 70B model: far better at judging topic relevance and journal quality
-    # than the 8B instant model. Still free on Groq.
-    "llama-3.3-70b-versatile",
+    # Largest general-purpose model Groq serves, for the same reason the 70B
+    # Llama was chosen before it: judging topic fit and journal quality is
+    # exactly where the small models were weak.
+    #
+    # Groq retired the whole Llama 3.x line — 3.1-8b-instant AND
+    # 3.3-70b-versatile both 404 as of 2026-08. Expect this id to expire too;
+    # _assert_model_available() below is what turns that into a red build
+    # rather than a queue that quietly stops filling.
+    "openai/gpt-oss-120b",
 )
 SCORE_THRESHOLD = float(os.environ.get("RANKER_THRESHOLD", "7.5"))
 RATE_LIMIT_DELAY = float(os.environ.get("RANKER_DELAY_S", "2.0"))  # 30 req/min = 1 req/2s
@@ -145,7 +151,10 @@ def rank_paper(paper: dict[str, Any]) -> dict[str, Any] | None:
                 {"role": "user", "content": prompt},
             ],
             response_format={"type": "json_object"},
-            max_tokens=300,
+            # Sized for a reasoning model: gpt-oss spends tokens thinking before
+            # it emits the object, and a 300-token ceiling can be exhausted
+            # before the JSON starts, yielding an empty completion.
+            max_tokens=1200,
             temperature=0.2,
         )
     except Exception as e:
