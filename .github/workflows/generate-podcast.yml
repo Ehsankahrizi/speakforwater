@@ -30,14 +30,17 @@ on:
     #
     # GitHub cron is UTC-only and knows nothing about daylight saving, so no
     # single entry hits 8 AM Central all year: 8 AM CST is 14:00 UTC, 8 AM CDT
-    # is 13:00 UTC. Both fire, and the `gate` job below drops whichever one is
-    # not 08:00 in Chicago that day. Net effect is exactly one run per weekday,
-    # at 8 AM local, across the DST switch.
+    # is 13:00 UTC. Both fire; the `gate` job below lets the first one through
+    # and drops the other. Net effect is exactly one episode per weekday.
     #
-    # Each run publishes exactly one episode, so the number of surviving cron
-    # hits IS the number of episodes per day. ("0 6,12,18 * * *" was three a
-    # day, every day.) 1-5 is Mon-Fri; at 13-14 UTC the Chicago date is the
-    # same day, so no weekday drifts across the boundary.
+    # 8 AM is the target, not a guarantee — GitHub delivers scheduled runs when
+    # it has capacity, routinely an hour or two late and sometimes much more.
+    # The gate deliberately does not care: see its comment.
+    #
+    # Each surviving run publishes exactly one episode, so the number of cron
+    # hits the gate admits IS the number of episodes per day. ("0 6,12,18 * * *"
+    # was three a day, every day.) 1-5 is Mon-Fri; at 13-14 UTC the Chicago date
+    # is the same day, so no weekday drifts across the boundary.
     - cron: "0 13,14 * * 1-5"
 
   # ── Manual trigger (for testing) ───────────────────────────────────
@@ -56,7 +59,9 @@ on:
         required: false
         type: number
 
-# Prevent concurrent runs (only one podcast at a time)
+# Prevent concurrent runs (only one podcast at a time). This is also what makes
+# the gate's dedupe airtight: the DST twin's gate job cannot start until the
+# first run has finished and pushed, so it always sees today's episode.
 concurrency:
   group: podcast-generation
   cancel-in-progress: false
@@ -65,29 +70,74 @@ permissions:
   contents: write  # Needed to push MP3 + metadata commits
 
 jobs:
-  # Only one of the two scheduled hours is really 08:00 in Chicago on any given
-  # day; this drops the other. Skipped (not failed), so the DST twin never
-  # sends a failure notification. Manual runs always pass.
+  # Both cron entries below fire on a weekday, and only one should publish.
+  # This gate picks the winner by asking "has today's episode been published
+  # yet?" rather than "is it 08:00 in Chicago?".
+  #
+  # The clock cannot be used here. GitHub delivers scheduled runs late, by an
+  # amount that is not bounded in practice: this repo's own history shows the
+  # 18:00 UTC entry arriving at 19:54, and the 13:00/14:00 pair arriving at
+  # 22:51 and 22:55. An hour-equality test throws away every run that is more
+  # than 59 minutes late, which is how 2026-08-27 and 2026-08-28 published
+  # nothing at all.
+  #
+  # Asking about published state instead is indifferent to how late the
+  # trigger lands, and still yields exactly one episode per weekday.
   gate:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     outputs:
       proceed: ${{ steps.check.outputs.proceed }}
     steps:
-      - name: Check it is 08:00 in Chicago
+      - name: Check today's episode is not already published
         id: check
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           if [ "${{ github.event_name }}" != "schedule" ]; then
             echo "Manual run — proceeding regardless of the clock."
             echo "proceed=true" >> "$GITHUB_OUTPUT"
             exit 0
           fi
-          hour=$(TZ=America/Chicago date +%H)
-          if [ "$hour" = "08" ]; then
-            echo "Chicago local time is 08:00 — proceeding."
+
+          today=$(TZ=America/Chicago date +%F)
+          dow=$(TZ=America/Chicago date +%u)   # 1=Mon .. 7=Sun
+
+          if [ "$dow" -gt 5 ]; then
+            echo "Chicago date $today is a weekend — skipping."
+            echo "proceed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          # This morning's midnight in Chicago, as an ISO 8601 instant. Built
+          # from %z (portable) rather than GNU's %:z, because a format string
+          # the local date(1) does not understand would land in the query
+          # verbatim, the API would ignore the unparseable `since`, and the
+          # gate would then skip every day on a full commit list.
+          offset=$(TZ=America/Chicago date +%z)          # e.g. -0500
+          since="$(TZ=America/Chicago date +%Y-%m-%dT00:00:00)${offset:0:3}:${offset:3:2}"
+          case "$since" in
+            ????-??-??T00:00:00[+-]??:??) ;;
+            *) echo "Refusing to query with malformed since: $since" >&2; exit 1 ;;
+          esac
+
+          # Queried live rather than from a checkout: for a scheduled event
+          # github.sha is pinned to the branch tip at trigger time, so a
+          # checkout would not contain an episode the twin run just pushed.
+          # A failure here exits non-zero on purpose — a visibly broken gate is
+          # better than one that quietly guesses and either skips a day or
+          # publishes twice.
+          published=$(gh api \
+            "repos/${{ github.repository }}/commits?sha=${{ github.event.repository.default_branch }}&since=$since" \
+            --jq '[.[] | select(.commit.message | startswith("Add episode "))] | length')
+
+          echo "Episodes published since $since: $published"
+
+          if [ "$published" -eq 0 ]; then
+            echo "No episode published yet on $today (Chicago) — proceeding."
             echo "proceed=true" >> "$GITHUB_OUTPUT"
           else
-            echo "Chicago local time is ${hour}:00, not 08:00 — DST twin run, skipping."
+            echo "$published episode commit(s) already on $today (Chicago) — today is done, skipping."
             echo "proceed=false" >> "$GITHUB_OUTPUT"
           fi
 
