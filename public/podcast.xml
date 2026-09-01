@@ -20,8 +20,19 @@
   <itunes:new-feed-url>https://ehsankahrizi.github.io/speakforwater/podcast.xml</itunes:new-feed-url>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
   <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
-  <lastBuildDate>Mon, 31 Aug 2026 20:47:00 +0000</lastBuildDate>
+  <lastBuildDate>Tue, 01 Sep 2026 17:24:40 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 236: Predicting Climate Change Impacts in a semiarid city in northwest Mexico: A WRF-Based Downscaling Study</title>
+      <enclosure url="https://media.speakforwater.com/episodes/ep236.mp3" length="27132700" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep236</guid>
+      <pubDate>Tue, 01 Sep 2026 17:24:40 +0000</pubDate>
+      <itunes:episode>236</itunes:episode>
+      <itunes:duration>1130.501224</itunes:duration>
+      <description>SpeakForWater Episode 236: Predicting Climate Change Impacts in a semiarid city in northwest Mexico: A WRF-Based Downscaling Study. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://iopscience.iop.org/article/10.1088/2515-7620/ae967e/pdf</description>
+    </item>
     <item>
       <title>Ep 235: Racialized economic concentration predicts storm-related injuries and deaths in the United States, 2005–2022</title>
       <enclosure url="https://media.speakforwater.com/episodes/ep235.mp3" length="31105611" type="audio/mpeg"/>
