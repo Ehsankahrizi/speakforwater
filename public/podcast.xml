@@ -20,8 +20,19 @@
   <itunes:new-feed-url>https://ehsankahrizi.github.io/speakforwater/podcast.xml</itunes:new-feed-url>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
   <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
-  <lastBuildDate>Mon, 07 Sep 2026 18:21:00 +0000</lastBuildDate>
+  <lastBuildDate>Tue, 08 Sep 2026 17:16:48 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 241: Hydroclimatic Regime Shifts and Compound Heat–Dry Events in Rajshahi Division, Bangladesh: Integrating Thermal Gradients, Change-Point Detection, and Heat-Driven Dryness Dynamics (1992–2022)</title>
+      <enclosure url="https://media.speakforwater.com/episodes/ep241.mp3" length="23443792" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep241</guid>
+      <pubDate>Tue, 08 Sep 2026 17:16:48 +0000</pubDate>
+      <itunes:episode>241</itunes:episode>
+      <itunes:duration>976.796735</itunes:duration>
+      <description>SpeakForWater Episode 241: Hydroclimatic Regime Shifts and Compound Heat–Dry Events in Rajshahi Division, Bangladesh: Integrating Thermal Gradients, Change-Point Detection, and Heat-Driven Dryness Dynamics (1992–2022). A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://eartharxiv.org/repository/object/14346/download/25037/</description>
+    </item>
     <item>
       <title>Ep 240: Plastic and microplastic pollution in Ecuador: Environmental evidence, human exposure, regulatory gaps, and circular economy responses // Poluição por plásticos e microplásticos no Equador: evidências ambientais, exposição humana, lacunas regulatórias e respostas da economia circular</title>
       <enclosure url="https://media.speakforwater.com/episodes/ep240.mp3" length="31143854" type="audio/mpeg"/>
