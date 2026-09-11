@@ -20,8 +20,19 @@
   <itunes:new-feed-url>https://ehsankahrizi.github.io/speakforwater/podcast.xml</itunes:new-feed-url>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
   <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
-  <lastBuildDate>Thu, 10 Sep 2026 17:05:55 +0000</lastBuildDate>
+  <lastBuildDate>Fri, 11 Sep 2026 17:06:59 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 244: Examination of hydro climatic trend and drought analysis for climate resilience in the eastern escarpment of Abaya Chamo sub-basin, Rift Valley Lake Basin, Ethiopia</title>
+      <enclosure url="https://media.speakforwater.com/episodes/ep244.mp3" length="33109934" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep244</guid>
+      <pubDate>Fri, 11 Sep 2026 17:06:59 +0000</pubDate>
+      <itunes:episode>244</itunes:episode>
+      <itunes:duration>1379.552653</itunes:duration>
+      <description>SpeakForWater Episode 244: Examination of hydro climatic trend and drought analysis for climate resilience in the eastern escarpment of Abaya Chamo sub-basin, Rift Valley Lake Basin, Ethiopia. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0354913&amp;type=printable</description>
+    </item>
     <item>
       <title>Ep 243: Environmental assessments of floodwater infiltration in boreholes in Isoko North LGA and Environs, Delta State, Nigeria: A GIS and AHP based approach</title>
       <enclosure url="https://media.speakforwater.com/episodes/ep243.mp3" length="22776729" type="audio/mpeg"/>
