@@ -20,8 +20,19 @@
   <itunes:new-feed-url>https://ehsankahrizi.github.io/speakforwater/podcast.xml</itunes:new-feed-url>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
   <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
-  <lastBuildDate>Mon, 14 Sep 2026 18:39:11 +0000</lastBuildDate>
+  <lastBuildDate>Tue, 15 Sep 2026 17:39:40 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 246: Recharge sources, hydrochemical evolution, and health risks of groundwater and geothermal water in the Guangdong-Fujian coastal region, southeastern China</title>
+      <enclosure url="https://media.speakforwater.com/episodes/ep246.mp3" length="23039417" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep246</guid>
+      <pubDate>Tue, 15 Sep 2026 17:39:39 +0000</pubDate>
+      <itunes:episode>246</itunes:episode>
+      <itunes:duration>959.947755</itunes:duration>
+      <description>SpeakForWater Episode 246: Recharge sources, hydrochemical evolution, and health risks of groundwater and geothermal water in the Guangdong-Fujian coastal region, southeastern China. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://www.researchsquare.com/article/rs-10046101/latest.pdf</description>
+    </item>
     <item>
       <title>Ep 245: Promoting Sustainable Water Demand Management Through Community Water Literacy: A Case Study From Aurora, Colorado (USA)</title>
       <enclosure url="https://media.speakforwater.com/episodes/ep245.mp3" length="32943169" type="audio/mpeg"/>
