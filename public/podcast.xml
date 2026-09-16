@@ -20,8 +20,19 @@
   <itunes:new-feed-url>https://ehsankahrizi.github.io/speakforwater/podcast.xml</itunes:new-feed-url>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
   <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
-  <lastBuildDate>Tue, 15 Sep 2026 17:39:40 +0000</lastBuildDate>
+  <lastBuildDate>Wed, 16 Sep 2026 17:41:34 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 247: Sector-specific clean water scarcity and competition under global change</title>
+      <enclosure url="https://media.speakforwater.com/episodes/ep247.mp3" length="34462868" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep247</guid>
+      <pubDate>Wed, 16 Sep 2026 17:41:34 +0000</pubDate>
+      <itunes:episode>247</itunes:episode>
+      <itunes:duration>1435.924898</itunes:duration>
+      <description>SpeakForWater Episode 247: Sector-specific clean water scarcity and competition under global change. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://www.nature.com/articles/s41545-026-00608-0.pdf</description>
+    </item>
     <item>
       <title>Ep 246: Recharge sources, hydrochemical evolution, and health risks of groundwater and geothermal water in the Guangdong-Fujian coastal region, southeastern China</title>
       <enclosure url="https://media.speakforwater.com/episodes/ep246.mp3" length="23039417" type="audio/mpeg"/>
