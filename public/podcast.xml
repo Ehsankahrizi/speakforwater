@@ -20,8 +20,19 @@
   <itunes:new-feed-url>https://ehsankahrizi.github.io/speakforwater/podcast.xml</itunes:new-feed-url>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
   <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
-  <lastBuildDate>Fri, 18 Sep 2026 17:08:05 +0000</lastBuildDate>
+  <lastBuildDate>Mon, 21 Sep 2026 18:43:23 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 250: Comprehensive assessment of physicochemical and microbial contamination and quantitative health risk of rainwater harvested from traditional thatched roofs in rural South Africa</title>
+      <enclosure url="https://media.speakforwater.com/episodes/ep250.mp3" length="32849755" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep250</guid>
+      <pubDate>Mon, 21 Sep 2026 18:43:23 +0000</pubDate>
+      <itunes:episode>250</itunes:episode>
+      <itunes:duration>1368.711837</itunes:duration>
+      <description>SpeakForWater Episode 250: Comprehensive assessment of physicochemical and microbial contamination and quantitative health risk of rainwater harvested from traditional thatched roofs in rural South Africa. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://www.tandfonline.com/doi/pdf/10.1080/10934529.2026.2715169?needAccess=true</description>
+    </item>
     <item>
       <title>Ep 249: Biogas Technology for Strengthening Soil and Water Conservation: A Case Study in Leksana Village, Merawu Subwatershed</title>
       <enclosure url="https://media.speakforwater.com/episodes/ep249.mp3" length="11937585" type="audio/mpeg"/>
