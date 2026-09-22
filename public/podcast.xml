@@ -20,8 +20,19 @@
   <itunes:new-feed-url>https://ehsankahrizi.github.io/speakforwater/podcast.xml</itunes:new-feed-url>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
   <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
-  <lastBuildDate>Mon, 21 Sep 2026 18:43:23 +0000</lastBuildDate>
+  <lastBuildDate>Tue, 22 Sep 2026 17:42:38 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 251: Nano-optical transduction sensor for ultra-sensitive detection of lead and arsenic using quantum dot nanoprobes</title>
+      <enclosure url="https://media.speakforwater.com/episodes/ep251.mp3" length="27399776" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep251</guid>
+      <pubDate>Tue, 22 Sep 2026 17:42:38 +0000</pubDate>
+      <itunes:episode>251</itunes:episode>
+      <itunes:duration>1141.629388</itunes:duration>
+      <description>SpeakForWater Episode 251: Nano-optical transduction sensor for ultra-sensitive detection of lead and arsenic using quantum dot nanoprobes. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://www.nature.com/articles/s41598-026-65438-z_reference.pdf</description>
+    </item>
     <item>
       <title>Ep 250: Comprehensive assessment of physicochemical and microbial contamination and quantitative health risk of rainwater harvested from traditional thatched roofs in rural South Africa</title>
       <enclosure url="https://media.speakforwater.com/episodes/ep250.mp3" length="32849755" type="audio/mpeg"/>
