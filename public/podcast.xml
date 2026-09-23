@@ -20,8 +20,19 @@
   <itunes:new-feed-url>https://ehsankahrizi.github.io/speakforwater/podcast.xml</itunes:new-feed-url>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
   <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
-  <lastBuildDate>Tue, 22 Sep 2026 17:42:38 +0000</lastBuildDate>
+  <lastBuildDate>Wed, 23 Sep 2026 17:54:03 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 252: EXPLORING FLOOD MITIGATION STRATEGIES TO ENHANCE FOOD SECURITY AMONG RURAL RICE FARMING COMMUNITIES IN IBAJI LOCAL GOVERNMENT, KOGI STATE, NIGERIA</title>
+      <enclosure url="https://media.speakforwater.com/episodes/ep252.mp3" length="15060994" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep252</guid>
+      <pubDate>Wed, 23 Sep 2026 17:54:03 +0000</pubDate>
+      <itunes:episode>252</itunes:episode>
+      <itunes:duration>627.513469</itunes:duration>
+      <description>SpeakForWater Episode 252: EXPLORING FLOOD MITIGATION STRATEGIES TO ENHANCE FOOD SECURITY AMONG RURAL RICE FARMING COMMUNITIES IN IBAJI LOCAL GOVERNMENT, KOGI STATE, NIGERIA. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://bexfordpublishing.co.uk/journals/bjcr/articles/BEX_JUL_26_133/download</description>
+    </item>
     <item>
       <title>Ep 251: Nano-optical transduction sensor for ultra-sensitive detection of lead and arsenic using quantum dot nanoprobes</title>
       <enclosure url="https://media.speakforwater.com/episodes/ep251.mp3" length="27399776" type="audio/mpeg"/>
