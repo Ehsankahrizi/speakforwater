@@ -20,8 +20,19 @@
   <itunes:new-feed-url>https://ehsankahrizi.github.io/speakforwater/podcast.xml</itunes:new-feed-url>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
   <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
-  <lastBuildDate>Wed, 30 Sep 2026 18:30:57 +0000</lastBuildDate>
+  <lastBuildDate>Thu, 01 Oct 2026 18:57:17 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 258: Subsurface drip irrigation and low-dose ozone application: Enhancing lettuce growth without compromising soil health</title>
+      <enclosure url="https://media.speakforwater.com/episodes/ep258.mp3" length="28080631" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep258</guid>
+      <pubDate>Thu, 01 Oct 2026 18:57:17 +0000</pubDate>
+      <itunes:episode>258</itunes:episode>
+      <itunes:duration>1169.998367</itunes:duration>
+      <description>SpeakForWater Episode 258: Subsurface drip irrigation and low-dose ozone application: Enhancing lettuce growth without compromising soil health. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://www.tandfonline.com/doi/pdf/10.1080/23311932.2026.2710933?needAccess=true</description>
+    </item>
     <item>
       <title>Ep 257: Regional variability in climate change impacts on agricultural reservoir water balance and tailored adaptation strategies under SSP scenarios in South Korea</title>
       <enclosure url="https://media.speakforwater.com/episodes/ep257.mp3" length="29889350" type="audio/mpeg"/>
