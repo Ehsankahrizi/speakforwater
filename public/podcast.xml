@@ -20,8 +20,19 @@
   <itunes:new-feed-url>https://ehsankahrizi.github.io/speakforwater/podcast.xml</itunes:new-feed-url>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
   <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
-  <lastBuildDate>Thu, 01 Oct 2026 18:57:17 +0000</lastBuildDate>
+  <lastBuildDate>Fri, 02 Oct 2026 18:28:50 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 259: EFFECTS OF IMIDACLOPRID-BASED PESTICIDES ON CLADOPHORA GLOMERATA (L.) KÜTZ. COLLECTED FROM ZANGILAN DISTRICT</title>
+      <enclosure url="https://media.speakforwater.com/episodes/ep259.mp3" length="30878659" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep259</guid>
+      <pubDate>Fri, 02 Oct 2026 18:28:50 +0000</pubDate>
+      <itunes:episode>259</itunes:episode>
+      <itunes:duration>1286.582857</itunes:duration>
+      <description>SpeakForWater Episode 259: EFFECTS OF IMIDACLOPRID-BASED PESTICIDES ON CLADOPHORA GLOMERATA (L.) KÜTZ. COLLECTED FROM ZANGILAN DISTRICT. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://doi.org/10.30546/2664-5297.2026.9.01.095</description>
+    </item>
     <item>
       <title>Ep 258: Subsurface drip irrigation and low-dose ozone application: Enhancing lettuce growth without compromising soil health</title>
       <enclosure url="https://media.speakforwater.com/episodes/ep258.mp3" length="28080631" type="audio/mpeg"/>
