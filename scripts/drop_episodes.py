@@ -17,21 +17,19 @@ Usage:
   python scripts/drop_episodes.py --delete 1 3 7 ... # delete rows
 
 Environment variables:
-  GOOGLE_CREDENTIALS_JSON  — Service account JSON for Google Sheets
-  SPREADSHEET_ID           — Google Sheet ID
-  SHEET_NAME               — worksheet name (default "Sheet1")
+  QUEUE_FILE               — optional, default data/queue.json
   DROP_STATUS              — status value to write (default "dropped")
 """
 
 from __future__ import annotations
 
-import json
 import logging
 import os
 import sys
+from pathlib import Path
 
-import gspread
-from google.oauth2.service_account import Credentials
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+from app.services.json_queue import open_worksheet, rowcol_to_a1  # noqa: E402
 
 logging.basicConfig(
     level=logging.INFO,
@@ -40,27 +38,13 @@ logging.basicConfig(
 )
 logger = logging.getLogger("drop-episodes")
 
-GOOGLE_CREDENTIALS_JSON = os.environ.get("GOOGLE_CREDENTIALS_JSON", "")
-SPREADSHEET_ID = os.environ.get("SPREADSHEET_ID", "")
-SHEET_NAME = os.environ.get("SHEET_NAME", "Sheet1")
 DROP_STATUS = os.environ.get("DROP_STATUS", "dropped")
 
-SCOPES = [
-    "https://www.googleapis.com/auth/spreadsheets",
-    "https://www.googleapis.com/auth/drive.readonly",
-]
 
 
 def get_sheet():
-    if not GOOGLE_CREDENTIALS_JSON or not SPREADSHEET_ID:
-        logger.error("Missing GOOGLE_CREDENTIALS_JSON or SPREADSHEET_ID.")
-        sys.exit(1)
-    creds = Credentials.from_service_account_info(json.loads(GOOGLE_CREDENTIALS_JSON), scopes=SCOPES)
-    client = gspread.authorize(creds)
-    ss = client.open_by_key(SPREADSHEET_ID)
-    sheet = ss.worksheet(SHEET_NAME)
-    logger.info(f"Connected to sheet: {ss.title} / {SHEET_NAME}")
-    return sheet
+    """Open data/queue.json (gspread-compatible worksheet)."""
+    return open_worksheet()
 
 
 def _col_index(header: list[str], *names: str) -> int:
@@ -128,7 +112,7 @@ def main():
     else:
         # Batch-update the status cell for each matched row.
         updates = [
-            {"range": gspread.utils.rowcol_to_a1(row_num, status_col), "values": [[DROP_STATUS]]}
+            {"range": rowcol_to_a1(row_num, status_col), "values": [[DROP_STATUS]]}
             for row_num, _ in matches
         ]
         sheet.batch_update(updates, value_input_option="USER_ENTERED")

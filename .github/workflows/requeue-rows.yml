@@ -35,7 +35,7 @@ on:
         default: false
 
 permissions:
-  contents: read
+  contents: write  # commits data/queue.json
 
 concurrency:
   group: requeue-rows
@@ -54,17 +54,17 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Install dependencies
-        run: pip install gspread google-auth
-
       - name: Re-queue rows
         env:
-          GOOGLE_CREDENTIALS_JSON: ${{ secrets.GOOGLE_CREDENTIALS_JSON }}
-          SPREADSHEET_ID: ${{ secrets.SPREADSHEET_ID }}
-          SHEET_NAME: ${{ secrets.SHEET_NAME || 'Sheet1' }}
           ROWS: ${{ inputs.rows }}
         run: |
           FLAGS=""
           if [ "${{ inputs.mode }}" = "apply" ]; then FLAGS="$FLAGS --apply"; fi
           if [ "${{ inputs.force }}" = "true" ]; then FLAGS="$FLAGS --force"; fi
           python scripts/requeue_rows.py $FLAGS
+
+      # ── Save queue changes back to the repo ─────────────────────
+      - name: Commit data/queue.json
+        if: always()
+        run: |
+          python scripts/commit_queue.py "Queue: requeue rows"

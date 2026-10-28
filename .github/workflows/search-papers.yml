@@ -2,7 +2,7 @@
 #  SpeakForWater — Weekday Paper Search
 #
 #  Runs each weekday to find new open-access water research papers and add
-#  them to the Google Sheet queue. Searches MULTIPLE sources in parallel
+#  them to the queue (data/queue.json). Searches MULTIPLE sources in parallel
 #  (OpenAlex + Semantic Scholar) — not locked to a technical-journal
 #  whitelist — so stakeholder-relevant research surfaces, then an AI
 #  ranker keeps only the plain-language, real-world-relevant ones.
@@ -10,8 +10,7 @@
 #  Queries:  config/keywords.yml  (stakeholder-oriented, edit any time)
 #
 #  Required secrets:
-#    GOOGLE_CREDENTIALS_JSON  — Service account JSON for Google Sheets
-#    SPREADSHEET_ID           — Your Google Sheet ID
+#    (No Google secrets: the queue is data/queue.json in this repo.)
 ###############################################################################
 
 name: Search Papers
@@ -59,6 +58,9 @@ concurrency:
   group: paper-search
   cancel-in-progress: false
 
+permissions:
+  contents: write  # commits data/queue.json
+
 jobs:
   search:
     runs-on: ubuntu-latest
@@ -75,13 +77,10 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install requests pyyaml gspread google-auth groq
+          pip install requests pyyaml groq
 
       - name: Search for papers
         env:
-          GOOGLE_CREDENTIALS_JSON: ${{ secrets.GOOGLE_CREDENTIALS_JSON }}
-          SPREADSHEET_ID: ${{ secrets.SPREADSHEET_ID }}
-          SHEET_NAME: ${{ secrets.SHEET_NAME || 'Sheet1' }}
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
           # No RANKER_MODEL override here on purpose. This line used to pin
           # llama-3.1-8b-instant, which Groq has since retired; every ranking
@@ -106,3 +105,9 @@ jobs:
           # research behind a queue months long.
           MAX_PAPERS: ${{ inputs.max_papers || '2' }}
         run: python search_papers.py
+
+      # ── Save queue changes back to the repo ─────────────────────
+      - name: Commit data/queue.json
+        if: always()
+        run: |
+          python scripts/commit_queue.py "Queue: add papers from search"

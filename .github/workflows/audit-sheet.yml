@@ -1,7 +1,7 @@
 ###############################################################################
 #  SpeakForWater — Audit Sheet (manual, READ-ONLY)
 #
-#  Dumps the Google Sheet structure (rows, episode numbers, statuses,
+#  Dumps the queue (data/queue.json) structure (rows, episode numbers, statuses,
 #  duplicates, blank rows) so we can plan a cleanup. Makes NO changes.
 #
 #  Trigger from: Actions -> Audit Sheet -> Run workflow, then read the log.
@@ -28,12 +28,5 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Install dependencies
-        run: pip install gspread google-auth
-
-      - name: Audit Google Sheet
-        env:
-          GOOGLE_CREDENTIALS_JSON: ${{ secrets.GOOGLE_CREDENTIALS_JSON }}
-          SPREADSHEET_ID: ${{ secrets.SPREADSHEET_ID }}
-          SHEET_NAME: ${{ secrets.SHEET_NAME || 'Sheet1' }}
+      - name: Audit queue (data/queue.json)
         run: python scripts/audit_sheet.py

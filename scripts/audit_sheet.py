@@ -16,41 +16,27 @@ Usage:
   python scripts/audit_sheet.py
 
 Environment:
-  GOOGLE_CREDENTIALS_JSON, SPREADSHEET_ID, SHEET_NAME (default "Sheet1")
+  QUEUE_FILE (optional, default data/queue.json)
 """
 
 from __future__ import annotations
 
-import json
 import logging
-import os
 import sys
+from pathlib import Path
 from collections import defaultdict
 
-import gspread
-from google.oauth2.service_account import Credentials
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+from app.services.json_queue import open_worksheet  # noqa: E402
 
 logging.basicConfig(level=logging.INFO, format="%(message)s")
 log = logging.getLogger("audit-sheet")
 
-GOOGLE_CREDENTIALS_JSON = os.environ.get("GOOGLE_CREDENTIALS_JSON", "")
-SPREADSHEET_ID = os.environ.get("SPREADSHEET_ID", "")
-SHEET_NAME = os.environ.get("SHEET_NAME", "Sheet1")
-SCOPES = [
-    "https://www.googleapis.com/auth/spreadsheets.readonly",
-    "https://www.googleapis.com/auth/drive.readonly",
-]
 
 
 def get_sheet():
-    if not GOOGLE_CREDENTIALS_JSON or not SPREADSHEET_ID:
-        log.error("Missing GOOGLE_CREDENTIALS_JSON or SPREADSHEET_ID.")
-        sys.exit(1)
-    creds = Credentials.from_service_account_info(json.loads(GOOGLE_CREDENTIALS_JSON), scopes=SCOPES)
-    ss = gspread.authorize(creds).open_by_key(SPREADSHEET_ID)
-    sheet = ss.worksheet(SHEET_NAME)
-    log.info(f"Sheet: {ss.title} / {SHEET_NAME}")
-    return sheet
+    """Open data/queue.json (gspread-compatible worksheet)."""
+    return open_worksheet()
 
 
 def _idx(header, *names):

@@ -5,18 +5,17 @@ SpeakForWater — Complete pipeline runner for GitHub Actions.
 This single script replaces both the FastAPI server and n8n workflow.
 It runs once per execution (triggered daily by GitHub Actions cron):
 
-  1. Read next queued episode from Google Sheets
+  1. Read next queued episode from data/queue.json
   2. Automate NotebookLM to generate the podcast
   3. Commit the MP3 + metadata to this repo
   4. Update the RSS feed
-  5. Mark the episode as published in Google Sheets
+  5. Mark the episode as published in data/queue.json
 
 Usage:
   python run_pipeline.py
 
 Environment variables (set as GitHub Actions secrets):
-  GOOGLE_CREDENTIALS_JSON  — Service account JSON key for Google Sheets
-  SPREADSHEET_ID           — Google Sheet ID (from the URL)
+  QUEUE_FILE               — Optional; defaults to data/queue.json in the repo
   NOTEBOOKLM_COOKIES       — Contents of cookies.txt (Netscape format)
   GITHUB_TOKEN             — Automatically provided by GitHub Actions
   SITE_URL                 — Your GitHub Pages URL (e.g. https://ehsan.github.io/speakforwater)
@@ -55,28 +54,6 @@ class FatalPipelineError(Exception):
     other queued papers is pointless. Aborts the run immediately.
     """
     pass
-
-
-def _is_sheets_permission_error(exc: Exception) -> bool:
-    """
-    True if the exception is a Google Sheets 403 ("caller does not have
-    permission"). This is systemic — the service account can't write to the
-    sheet — usually because Google Drive storage is full or the sheet is no
-    longer shared with the service account as Editor. Retrying won't help.
-    """
-    try:
-        from gspread.exceptions import APIError
-    except Exception:
-        return False
-
-    if not isinstance(exc, APIError):
-        return False
-
-    # gspread 6.x exposes both a parsed `.code` and the raw response.
-    if getattr(exc, "code", None) == 403:
-        return True
-    resp = getattr(exc, "response", None)
-    return resp is not None and getattr(resp, "status_code", None) == 403
 
 
 def _is_notebooklm_auth_error(exc: Exception) -> bool:
@@ -127,9 +104,6 @@ def _is_notebooklm_ratelimit_error(exc: Exception) -> bool:
 
 # ── Configuration from environment ─────────────────────────────────────
 
-GOOGLE_CREDENTIALS_JSON = os.environ.get("GOOGLE_CREDENTIALS_JSON", "")
-SPREADSHEET_ID = os.environ.get("SPREADSHEET_ID", "")
-SHEET_NAME = os.environ.get("SHEET_NAME", "Sheet1")
 NOTEBOOKLM_AUTH_JSON = os.environ.get("NOTEBOOKLM_AUTH_JSON", "")
 # Legacy: also check NOTEBOOKLM_COOKIES for backward compat
 NOTEBOOKLM_COOKIES = os.environ.get("NOTEBOOKLM_COOKIES", "")
@@ -142,10 +116,6 @@ DOWNLOADS_DIR = Path("/tmp/speakforwater-downloads")
 def validate_env():
     """Check all required environment variables are set."""
     missing = []
-    if not GOOGLE_CREDENTIALS_JSON:
-        missing.append("GOOGLE_CREDENTIALS_JSON")
-    if not SPREADSHEET_ID:
-        missing.append("SPREADSHEET_ID")
     if not NOTEBOOKLM_AUTH_JSON and not NOTEBOOKLM_COOKIES:
         missing.append("NOTEBOOKLM_AUTH_JSON")
     if not SITE_URL:
@@ -157,18 +127,13 @@ def validate_env():
         sys.exit(1)
 
 
-# ── Step 1: Read from Google Sheets ────────────────────────────────────
+# ── Step 1: Read from the queue file (data/queue.json) ─────────────────
 
 def get_next_episode() -> dict | None:
-    """Fetch the next queued episode from the Google Sheet."""
-    from app.services.google_sheets import EpisodeQueue
+    """Fetch the next queued episode from data/queue.json."""
+    from app.services.json_queue import EpisodeQueue
 
-    logger.info("Connecting to Google Sheets...")
-    queue = EpisodeQueue(
-        credentials_json=GOOGLE_CREDENTIALS_JSON,
-        spreadsheet_id=SPREADSHEET_ID,
-        sheet_name=SHEET_NAME,
-    )
+    queue = EpisodeQueue()
     episode = queue.get_next_queued()
 
     if episode:
@@ -183,14 +148,11 @@ def get_next_episode() -> dict | None:
 
 
 def update_sheet_status(row_number: int, status: str, mp3_url: str = ""):
-    """Update the Google Sheet with the episode status."""
-    from app.services.google_sheets import EpisodeQueue
+    """Update the episode's status in data/queue.json (saved to disk at once;
+    the workflow's final step commits it)."""
+    from app.services.json_queue import EpisodeQueue
 
-    queue = EpisodeQueue(
-        credentials_json=GOOGLE_CREDENTIALS_JSON,
-        spreadsheet_id=SPREADSHEET_ID,
-        sheet_name=SHEET_NAME,
-    )
+    queue = EpisodeQueue()
     if status == "published":
         queue.mark_published(row_number, mp3_url)
     elif status == "failed":
@@ -416,13 +378,17 @@ def _git_commit_and_push(files: list[str], message: str):
             raise RuntimeError(f"Git command failed: {' '.join(cmd)}")
         return result.stdout.strip()
 
-    # Configure git for GitHub Actions
+    # Configure git for GitHub Actions (identity + queue.json merge driver)
     run(["git", "config", "user.name", "SpeakForWater Bot"])
     run(["git", "config", "user.email", "bot@speakforwater.com"])
+    from app.services.json_queue import _ensure_git_setup, queue_path
+    _ensure_git_setup(REPO_DIR)
 
-    # Stage files
+    # Stage files — always include the queue so its status edits ride along
     for f in files:
         run(["git", "add", f])
+    if queue_path().exists():
+        run(["git", "add", str(queue_path())])
 
     # Check if there are changes to commit
     result = subprocess.run(
@@ -435,7 +401,7 @@ def _git_commit_and_push(files: list[str], message: str):
 
     # Commit, pull latest, and push
     run(["git", "commit", "-m", message])
-    run(["git", "pull", "--rebase", "origin", "main"])
+    run(["git", "pull", "--rebase", "--autostash", "origin", "main"])
     run(["git", "push"])
     logger.info("Pushed to GitHub")
 
@@ -466,12 +432,8 @@ async def process_one_episode(episode: dict) -> bool:
         # episode_number column matches the website (see fix_sheet_numbers.py).
         # We also persist the assigned number back to this row so it is never
         # reused on a subsequent run.
-        from app.services.google_sheets import EpisodeQueue
-        _q = EpisodeQueue(
-            credentials_json=GOOGLE_CREDENTIALS_JSON,
-            spreadsheet_id=SPREADSHEET_ID,
-            sheet_name=SHEET_NAME,
-        )
+        from app.services.json_queue import EpisodeQueue
+        _q = EpisodeQueue()
         _nums = []
         for r in _q.sheet.get_all_records():
             if str(r.get("status") or "").strip().lower() != "published":
@@ -492,7 +454,7 @@ async def process_one_episode(episode: dict) -> bool:
         try:
             _q.sheet.update_cell(row_number, 5, episode["episode_number"])
         except Exception as e:
-            logger.warning(f"Could not persist episode_number to Sheet: {e}")
+            logger.warning(f"Could not persist episode_number to queue: {e}")
         logger.info(
             f"Using sequential display number: Ep {episode['episode_number']}"
         )
@@ -600,18 +562,6 @@ async def process_one_episode(episode: dict) -> bool:
         return True
 
     except Exception as e:
-        # A Sheets 403 is systemic (storage full / lost Editor access): every
-        # paper will hit it, and even marking this row "failed" would 403 again.
-        # Abort the whole run instead of burning attempts on other papers.
-        if _is_sheets_permission_error(e):
-            raise FatalPipelineError(
-                "Google Sheets write was denied (403). The service account "
-                "cannot modify the sheet. Most likely the Google Drive storage "
-                "is full, or the sheet is no longer shared with the service "
-                "account as Editor. Fix that, then re-run — no papers were "
-                "changed."
-            ) from e
-
         if _is_notebooklm_auth_error(e):
             # The stored NotebookLM session is dead. Every remaining paper will
             # fail identically on its first API call, so re-queue this (good)
@@ -674,7 +624,7 @@ async def process_one_episode(episode: dict) -> bool:
 
 
 async def main():
-    """Run the full pipeline: Sheet → NotebookLM → Git → Sheet.
+    """Run the full pipeline: queue.json → NotebookLM → Git → queue.json.
     If a paper fails (e.g. paywalled URL), skip it and try the next queued paper.
     Tries up to MAX_ATTEMPTS papers per run to find one that works.
     """

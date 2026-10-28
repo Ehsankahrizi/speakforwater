@@ -15,20 +15,17 @@ Two jobs in one script:
 Trigger this manually from GitHub Actions → Reset queue → Run workflow.
 
 Environment variables (set as GitHub Secrets):
-  GOOGLE_CREDENTIALS_JSON  Service-account JSON
-  SPREADSHEET_ID           Sheet ID
-  SHEET_NAME               Optional, default Sheet1
+  QUEUE_FILE               Optional, default data/queue.json
 """
 
 from __future__ import annotations
 
-import json
 import logging
-import os
 import sys
+from pathlib import Path
 
-import gspread
-from google.oauth2.service_account import Credentials
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+from app.services.json_queue import open_worksheet  # noqa: E402
 
 logging.basicConfig(
     level=logging.INFO,
@@ -37,27 +34,14 @@ logging.basicConfig(
 )
 log = logging.getLogger("reset")
 
-GOOGLE_CREDENTIALS_JSON = os.environ.get("GOOGLE_CREDENTIALS_JSON", "")
-SPREADSHEET_ID = os.environ.get("SPREADSHEET_ID", "")
-SHEET_NAME = os.environ.get("SHEET_NAME") or "Sheet1"
 
-SCOPES = ["https://www.googleapis.com/auth/spreadsheets"]
 
 
 def main() -> None:
-    if not GOOGLE_CREDENTIALS_JSON or not SPREADSHEET_ID:
-        log.error("Missing env: GOOGLE_CREDENTIALS_JSON or SPREADSHEET_ID")
-        sys.exit(1)
-
-    creds = Credentials.from_service_account_info(
-        json.loads(GOOGLE_CREDENTIALS_JSON), scopes=SCOPES
-    )
-    client = gspread.authorize(creds)
-    spreadsheet = client.open_by_key(SPREADSHEET_ID)
-    sheet = spreadsheet.worksheet(SHEET_NAME)
+    sheet = open_worksheet()
 
     rows = sheet.get_all_records()
-    log.info(f"Read {len(rows)} rows from sheet: {spreadsheet.title}/{SHEET_NAME}")
+    log.info(f"Read {len(rows)} rows from sheet: {sheet.path}")
 
     if not rows:
         log.warning("Sheet is empty.")
@@ -94,7 +78,7 @@ def main() -> None:
         log.info("Nothing to update — sheet is already correct.")
         return
 
-    # Batch update in chunks of 100 (gspread limit)
+    # Batch update in chunks of 100 (legacy chunking; harmless with the JSON queue)
     CHUNK = 100
     total_chunks = (len(updates) + CHUNK - 1) // CHUNK
     for c in range(total_chunks):

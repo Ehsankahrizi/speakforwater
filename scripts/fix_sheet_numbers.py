@@ -18,7 +18,7 @@ Usage:
   python scripts/fix_sheet_numbers.py --apply    # apply
 
 Environment:
-  GOOGLE_CREDENTIALS_JSON, SPREADSHEET_ID, SHEET_NAME (default "Sheet1")
+  QUEUE_FILE (optional, default data/queue.json)
 """
 
 from __future__ import annotations
@@ -30,20 +30,13 @@ import re
 import sys
 from pathlib import Path
 
-import gspread
-from google.oauth2.service_account import Credentials
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+from app.services.json_queue import open_worksheet, rowcol_to_a1  # noqa: E402
 
 logging.basicConfig(level=logging.INFO, format="%(message)s")
 log = logging.getLogger("fix-numbers")
 
-GOOGLE_CREDENTIALS_JSON = os.environ.get("GOOGLE_CREDENTIALS_JSON", "")
-SPREADSHEET_ID = os.environ.get("SPREADSHEET_ID", "")
-SHEET_NAME = os.environ.get("SHEET_NAME", "Sheet1")
 DECISIONS_FILE = os.environ.get("DECISIONS_FILE", "config/episode_decisions.json")
-SCOPES = [
-    "https://www.googleapis.com/auth/spreadsheets",
-    "https://www.googleapis.com/auth/drive.readonly",
-]
 
 
 def norm_title(t: str) -> str:
@@ -56,14 +49,8 @@ def norm_url(u: str) -> str:
 
 
 def get_sheet():
-    if not GOOGLE_CREDENTIALS_JSON or not SPREADSHEET_ID:
-        log.error("Missing GOOGLE_CREDENTIALS_JSON or SPREADSHEET_ID.")
-        sys.exit(1)
-    creds = Credentials.from_service_account_info(json.loads(GOOGLE_CREDENTIALS_JSON), scopes=SCOPES)
-    ss = gspread.authorize(creds).open_by_key(SPREADSHEET_ID)
-    sheet = ss.worksheet(SHEET_NAME)
-    log.info(f"Sheet: {ss.title} / {SHEET_NAME}")
-    return sheet
+    """Open data/queue.json (gspread-compatible worksheet)."""
+    return open_worksheet()
 
 
 def _idx(header, *names):
@@ -132,7 +119,7 @@ def main():
         return
 
     updates = [
-        {"range": gspread.utils.rowcol_to_a1(rn, i_ep + 1), "values": [[new]]}
+        {"range": rowcol_to_a1(rn, i_ep + 1), "values": [[new]]}
         for rn, _, _, new in changes
     ]
     sheet.batch_update(updates, value_input_option="USER_ENTERED")

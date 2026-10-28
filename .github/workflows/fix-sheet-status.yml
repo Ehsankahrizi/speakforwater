@@ -1,7 +1,7 @@
 ###############################################################################
 #  SpeakForWater — Fix Sheet Status (manual)
 #
-#  Repairs the Google Sheet `status` column after catalog curation by re-keying
+#  Repairs the queue (data/queue.json) `status` column after catalog curation by re-keying
 #  on paper_url / paper_title (the corrupted episode_number column is ignored).
 #  Uses config/episode_decisions.json as the source of truth.
 #
@@ -25,7 +25,7 @@ on:
           - apply
 
 permissions:
-  contents: read
+  contents: write  # commits data/queue.json
 
 concurrency:
   group: fix-sheet-status
@@ -44,17 +44,16 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Install dependencies
-        run: pip install gspread google-auth
-
       - name: Fix Sheet status
-        env:
-          GOOGLE_CREDENTIALS_JSON: ${{ secrets.GOOGLE_CREDENTIALS_JSON }}
-          SPREADSHEET_ID: ${{ secrets.SPREADSHEET_ID }}
-          SHEET_NAME: ${{ secrets.SHEET_NAME || 'Sheet1' }}
         run: |
           if [ "${{ inputs.mode }}" = "apply" ]; then
             python scripts/fix_sheet_status.py --apply
           else
             python scripts/fix_sheet_status.py
           fi
+
+      # ── Save queue changes back to the repo ─────────────────────
+      - name: Commit data/queue.json
+        if: always()
+        run: |
+          python scripts/commit_queue.py "Queue: fix statuses"

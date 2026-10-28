@@ -17,20 +17,18 @@ Usage:
 
 Environment:
   ROWS                     Comma-separated 1-indexed sheet row numbers
-  GOOGLE_CREDENTIALS_JSON  Service-account JSON
-  SPREADSHEET_ID           Sheet ID
-  SHEET_NAME               Optional, default Sheet1
+  QUEUE_FILE               Optional, default data/queue.json
 """
 
 from __future__ import annotations
 
-import json
 import logging
 import os
 import sys
+from pathlib import Path
 
-import gspread
-from google.oauth2.service_account import Credentials
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+from app.services.json_queue import open_worksheet, rowcol_to_a1  # noqa: E402
 
 logging.basicConfig(
     level=logging.INFO,
@@ -39,13 +37,9 @@ logging.basicConfig(
 )
 log = logging.getLogger("requeue")
 
-GOOGLE_CREDENTIALS_JSON = os.environ.get("GOOGLE_CREDENTIALS_JSON", "")
-SPREADSHEET_ID = os.environ.get("SPREADSHEET_ID", "")
-SHEET_NAME = os.environ.get("SHEET_NAME") or "Sheet1"
 ROWS = os.environ.get("ROWS", "")
 
 STATUS_COL = 4  # column D
-SCOPES = ["https://www.googleapis.com/auth/spreadsheets"]
 
 
 def parse_rows(raw: str) -> list[int]:
@@ -69,20 +63,13 @@ def main() -> None:
     apply = "--apply" in sys.argv[1:]
     force = "--force" in sys.argv[1:]
 
-    if not GOOGLE_CREDENTIALS_JSON or not SPREADSHEET_ID:
-        log.error("Missing env: GOOGLE_CREDENTIALS_JSON or SPREADSHEET_ID")
-        sys.exit(1)
-
     rows = parse_rows(ROWS)
     if not rows:
         log.error("No rows given. Set ROWS='160,161,...'")
         sys.exit(1)
 
-    creds = Credentials.from_service_account_info(
-        json.loads(GOOGLE_CREDENTIALS_JSON), scopes=SCOPES
-    )
-    sheet = gspread.authorize(creds).open_by_key(SPREADSHEET_ID).worksheet(SHEET_NAME)
-    log.info(f"Sheet: {sheet.spreadsheet.title} / {SHEET_NAME}")
+    sheet = open_worksheet()
+    log.info(f"Queue: {sheet.path}")
     log.info(f"Mode: {'APPLY (writing)' if apply else 'REPORT (dry-run)'}"
              f"{' [--force]' if force else ''}")
 
@@ -110,7 +97,7 @@ def main() -> None:
         return
 
     updates = [
-        {"range": gspread.utils.rowcol_to_a1(rn, STATUS_COL), "values": [["queued"]]}
+        {"range": rowcol_to_a1(rn, STATUS_COL), "values": [["queued"]]}
         for rn in to_change
     ]
     sheet.batch_update(updates, value_input_option="USER_ENTERED")

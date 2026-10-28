@@ -1,7 +1,7 @@
 ###############################################################################
 #  SpeakForWater — Fix Sheet Numbers (manual)
 #
-#  Rebuilds the corrupted Google Sheet `episode_number` column by re-keying on
+#  Rebuilds the corrupted queue (data/queue.json) `episode_number` column by re-keying on
 #  paper_url / paper_title against config/episode_decisions.json, so future
 #  episodes can be numbered as max+1 without collisions.
 #
@@ -25,7 +25,7 @@ on:
           - apply
 
 permissions:
-  contents: read
+  contents: write  # commits data/queue.json
 
 concurrency:
   group: fix-sheet-numbers
@@ -44,17 +44,16 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Install dependencies
-        run: pip install gspread google-auth
-
       - name: Fix Sheet numbers
-        env:
-          GOOGLE_CREDENTIALS_JSON: ${{ secrets.GOOGLE_CREDENTIALS_JSON }}
-          SPREADSHEET_ID: ${{ secrets.SPREADSHEET_ID }}
-          SHEET_NAME: ${{ secrets.SHEET_NAME || 'Sheet1' }}
         run: |
           if [ "${{ inputs.mode }}" = "apply" ]; then
             python scripts/fix_sheet_numbers.py --apply
           else
             python scripts/fix_sheet_numbers.py
           fi
+
+      # ── Save queue changes back to the repo ─────────────────────
+      - name: Commit data/queue.json
+        if: always()
+        run: |
+          python scripts/commit_queue.py "Queue: fix episode numbers"

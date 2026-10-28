@@ -5,7 +5,7 @@ SpeakForWater — Paper Search Pipeline (multi-source, stakeholder-oriented)
 Runs daily (separate from podcast generation) to find new open-access water
 research papers that matter to real water users — farmers, households,
 villages, local agencies, industry, the general public — and add them to the
-Google Sheet queue.
+data/queue.json queue.
 
 Steps:
   1. Load stakeholder-oriented queries from config/keywords.yml
@@ -14,15 +14,14 @@ Steps:
      whitelist, so applied / everyday-relevant research can surface
   3. Keep only open-access papers (so NotebookLM can read the full text)
   4. AI-rank for plain-language, real-world relevance (paper_ranker.py)
-  5. Check the Google Sheet for duplicates
+  5. Check data/queue.json for duplicates
   6. Add new papers with status "queued"
 
 Usage:
   python search_papers.py
 
 Environment variables:
-  GOOGLE_CREDENTIALS_JSON  — Service account JSON for Google Sheets
-  SPREADSHEET_ID           — Google Sheet ID
+  QUEUE_FILE               — optional; defaults to data/queue.json
   GROQ_API_KEY             — Groq key for the AI ranker
   SEARCH_SOURCES           — comma list (default "openalex,semantic_scholar")
   NUM_QUERIES              — how many queries to run per pass (default 6)
@@ -33,19 +32,15 @@ Environment variables:
 
 from __future__ import annotations
 
-import json
 import logging
 import os
 import random
 import re
-import sys
 from datetime import datetime
 from pathlib import Path
 
-import gspread
 import requests
 import yaml
-from google.oauth2.service_account import Credentials
 
 from app.services.paper_ranker import rank_papers
 from app.services.multi_source_search import aggregate_research
@@ -74,10 +69,6 @@ logger = logging.getLogger("paper-search")
 
 # ── Config ─────────────────────────────────────────────────────────────
 
-GOOGLE_CREDENTIALS_JSON = os.environ.get("GOOGLE_CREDENTIALS_JSON", "")
-SPREADSHEET_ID = os.environ.get("SPREADSHEET_ID", "")
-SHEET_NAME = os.environ.get("SHEET_NAME", "Sheet1")
-
 # Kept deliberately small: the pipeline publishes one episode per weekday,
 # so a large queue is backlog, not supply. See search-papers.yml.
 MAX_PAPERS = int(os.environ.get("MAX_PAPERS", "2"))
@@ -85,22 +76,12 @@ NUM_QUERIES = int(os.environ.get("NUM_QUERIES", "6"))
 PER_SOURCE = int(os.environ.get("PER_SOURCE", "15"))
 YEARS_BACK = int(os.environ.get("YEARS_BACK", "5"))
 
-SCOPES = [
-    "https://www.googleapis.com/auth/spreadsheets",
-    "https://www.googleapis.com/auth/drive.readonly",
-]
 
 
 def validate_env():
-    """Check required environment variables."""
-    missing = []
-    if not GOOGLE_CREDENTIALS_JSON:
-        missing.append("GOOGLE_CREDENTIALS_JSON")
-    if not SPREADSHEET_ID:
-        missing.append("SPREADSHEET_ID")
-    if missing:
-        logger.error(f"Missing env vars: {', '.join(missing)}")
-        sys.exit(1)
+    """Nothing required any more: the queue is a file in the repo.
+    (GROQ_API_KEY is checked by the ranker itself.)"""
+    return
 
 
 # ── Search (multi-source) ──────────────────────────────────────────────
@@ -377,17 +358,12 @@ def gather_candidates() -> list[dict]:
     return candidates
 
 
-# ── Google Sheets ──────────────────────────────────────────────────────
+# ── Queue (data/queue.json) ────────────────────────────────────────────
 
 def get_sheet():
-    """Connect to Google Sheet."""
-    creds_dict = json.loads(GOOGLE_CREDENTIALS_JSON)
-    creds = Credentials.from_service_account_info(creds_dict, scopes=SCOPES)
-    client = gspread.authorize(creds)
-    spreadsheet = client.open_by_key(SPREADSHEET_ID)
-    sheet = spreadsheet.worksheet(SHEET_NAME)
-    logger.info(f"Connected to sheet: {spreadsheet.title} / {SHEET_NAME}")
-    return sheet
+    """Open the JSON queue (gspread-compatible worksheet)."""
+    from app.services.json_queue import open_worksheet
+    return open_worksheet()
 
 
 def get_existing_urls(sheet) -> tuple[set[str], set[str]]:
@@ -421,7 +397,7 @@ def get_next_episode_number(sheet) -> int:
 
 
 def add_papers_to_sheet(sheet, papers: list[dict], existing_urls: set, existing_titles: set, start_episode: int) -> int:
-    """Add new papers to the Google Sheet. Returns number of papers added."""
+    """Add new papers to the queue. Returns number of papers added."""
     added = 0
     episode_num = start_episode
 
@@ -478,6 +454,22 @@ def main():
         logger.info("No open-access candidates found. Try adjusting queries or YEARS_BACK.")
         return
 
+    # Drop papers already in the queue BEFORE ranking — every candidate costs a
+    # Groq call, and re-ranking known papers is what burns the free-tier quota.
+    sheet = get_sheet()
+    existing_urls, existing_titles = get_existing_urls(sheet)
+    before = len(candidates)
+    candidates = [
+        c for c in candidates
+        if (c.get("url") or "").strip().lower() not in existing_urls
+        and (c.get("title") or "").strip().lower() not in existing_titles
+    ]
+    if before != len(candidates):
+        logger.info(f"Skipped {before - len(candidates)} candidates already in the queue.")
+    if not candidates:
+        logger.info("Every candidate is already in the queue. Nothing to rank.")
+        return
+
     logger.info(f"\nFound {len(candidates)} open-access candidates. Running AI ranking via Groq...")
     # Rank a wider pool than we need: some top-ranked papers will turn out to
     # be un-fetchable, and we backfill from further down rather than shipping
@@ -524,7 +516,7 @@ def main():
         )
         return
 
-    sheet = get_sheet()
+    sheet.reload()
     existing_urls, existing_titles = get_existing_urls(sheet)
     next_episode = get_next_episode_number(sheet)
 

@@ -13,9 +13,8 @@ pydantic-settings==2.7.1
 # Upgrade this pin and re-run `notebooklm login` together, never separately.
 notebooklm-py==0.8.0
 
-# Google Sheets integration
-gspread==6.1.4
-google-auth==2.37.0
+# Google auth (YouTube publisher). The episode queue is data/queue.json — no Sheets.
+google-auth==2.37.0  # used by the YouTube publisher
 
 # Paper search
 requests>=2.31.0

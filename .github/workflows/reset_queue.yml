@@ -8,6 +8,9 @@ on:
         required: true
         default: ''
 
+permissions:
+  contents: write  # commits data/queue.json
+
 jobs:
   reset:
     runs-on: ubuntu-latest
@@ -25,12 +28,11 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Install dependencies
-        run: pip install gspread google-auth
-
       - name: Run reset_queue.py
         run: python scripts/reset_queue.py
-        env:
-          GOOGLE_CREDENTIALS_JSON: ${{ secrets.GOOGLE_CREDENTIALS_JSON }}
-          SPREADSHEET_ID: ${{ secrets.SPREADSHEET_ID }}
-          SHEET_NAME: ${{ secrets.SHEET_NAME }}
+
+      # ── Save queue changes back to the repo ─────────────────────
+      - name: Commit data/queue.json
+        if: always()
+        run: |
+          python scripts/commit_queue.py "Queue: reset"

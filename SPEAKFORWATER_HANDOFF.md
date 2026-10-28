@@ -20,6 +20,27 @@
 
 ---
 
+## Episode queue (data/queue.json) — replaced Google Sheets on 2026-10-28
+
+The paper queue used to be a Google Sheet. Its Google Cloud project was deleted,
+which broke every run from 2026-10-05, so the queue now lives in the repo:
+
+- **File:** `data/queue.json`, one paper per line, columns
+  `date, paper_url, paper_title, status, episode_number, mp3_url, published_at`.
+  Status is `queued` / `processing` / `published` / `failed` / `dropped`.
+- **Code:** `app/services/json_queue.py` (gspread-compatible `JsonWorksheet`,
+  `EpisodeQueue`, `commit_queue()`). Row numbers keep the old sheet meaning
+  (row 1 = header, first paper = row 2), so `requeue-rows` inputs are unchanged.
+- **Saving:** every workflow that edits the queue ends with an `if: always()`
+  step running `python scripts/commit_queue.py "<message>"`.
+- **Concurrent edits:** `.gitattributes` routes `data/queue.json` through
+  `scripts/merge_queue.py`, a row-level 3-way merge driver, so a search run and a
+  podcast run pushing at the same time never conflict.
+- **Manual edits:** edit the file on GitHub (keep one row per line), or
+  re-queue a paper by changing its `"status"` to `"queued"`.
+- The old secrets `GOOGLE_CREDENTIALS_JSON`, `SPREADSHEET_ID`, `SHEET_NAME`
+  are no longer used and can be deleted.
+
 ## 2. Architecture
 
 ### Daily Pipeline (runs via GitHub Actions cron)
@@ -30,11 +51,11 @@ Search Papers (04:00 UTC)
      ├─ OpenAlex API search (configured keywords + journals)
      ├─ app/services/paper_ranker.py → Groq Llama 3.1 8B scoring
      │  (novelty, impact, accessibility, audience_fit, threshold ≥ 7)
-     └─ Add accepted papers to Google Sheet (status=queued)
+     └─ Add accepted papers to data/queue.json (status=queued)
 
 Generate Podcast (06:00 UTC)
   └─ run_pipeline.py
-     ├─ Read next queued row from Google Sheet
+     ├─ Read next queued row from data/queue.json
      ├─ Override episode_number with sequential display number (count of published + 1)
      ├─ app/services/notebooklm.py → notebooklm-py SDK → NotebookLM Audio Overview
      │  (uses config/podcast_prompt.yml with TV-news format, gender-locked voices)
@@ -139,8 +160,7 @@ Deploy site (auto)
 ## 4. GitHub Secrets & Variables
 
 ### Secrets (Settings → Secrets and variables → Actions)
-- `GOOGLE_CREDENTIALS_JSON` — service account JSON for Sheets
-- `SPREADSHEET_ID` — Google Sheet ID
+- *(No Google Sheets secrets — the queue is `data/queue.json`, see "Episode queue" below.)*
 - `SHEET_NAME` — usually "Sheet1"
 - `NOTEBOOKLM_AUTH_JSON` — Google session JSON (refresh manually when expired)
 - `GROQ_API_KEY` — free tier, generates 14,400 req/day max

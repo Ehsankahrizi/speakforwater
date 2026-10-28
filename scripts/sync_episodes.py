@@ -13,9 +13,7 @@ Usage:
   python scripts/sync_episodes.py
 
 Environment variables:
-  GOOGLE_CREDENTIALS_JSON  Service account JSON (GitHub secret)
-  SPREADSHEET_ID           Google Sheet ID
-  SHEET_NAME               (optional, default Sheet1)
+  QUEUE_FILE               (optional, default data/queue.json)
   EPISODES_DIR             (optional, default src/content/episodes)
   SITE_AUDIO_BASE          (optional) base URL where MP3s are served from.
                            Defaults to /episodes/ which assumes the GitHub
@@ -24,26 +22,18 @@ Environment variables:
 
 from __future__ import annotations
 
-import json
 import os
 import re
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
-import gspread
-from google.oauth2.service_account import Credentials
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+from app.services.json_queue import open_worksheet  # noqa: E402
 
-GOOGLE_CREDENTIALS_JSON = os.environ.get("GOOGLE_CREDENTIALS_JSON", "")
-SPREADSHEET_ID = os.environ.get("SPREADSHEET_ID", "")
-SHEET_NAME = os.environ.get("SHEET_NAME", "Sheet1")
 EPISODES_DIR = Path(os.environ.get("EPISODES_DIR", "src/content/episodes"))
 SITE_AUDIO_BASE = os.environ.get("SITE_AUDIO_BASE", "/episodes/")
 
-SCOPES = [
-    "https://www.googleapis.com/auth/spreadsheets.readonly",
-    "https://www.googleapis.com/auth/drive.readonly",
-]
 
 
 def slugify(text: str) -> str:
@@ -61,14 +51,8 @@ def yaml_escape(s: str) -> str:
 
 
 def get_sheet():
-    if not GOOGLE_CREDENTIALS_JSON or not SPREADSHEET_ID:
-        print("ERROR: GOOGLE_CREDENTIALS_JSON and SPREADSHEET_ID required.", file=sys.stderr)
-        sys.exit(1)
-    creds_dict = json.loads(GOOGLE_CREDENTIALS_JSON)
-    creds = Credentials.from_service_account_info(creds_dict, scopes=SCOPES)
-    client = gspread.authorize(creds)
-    spreadsheet = client.open_by_key(SPREADSHEET_ID)
-    return spreadsheet.worksheet(SHEET_NAME)
+    """Open data/queue.json (gspread-compatible worksheet)."""
+    return open_worksheet()
 
 
 def parse_topics(raw: str) -> list[str]:

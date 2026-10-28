@@ -1,7 +1,7 @@
 ###############################################################################
 #  SpeakForWater — Drop Episodes (manual)
 #
-#  Marks (or deletes) episode rows in the Google Sheet for episodes that were
+#  Marks (or deletes) episode rows in the queue (data/queue.json) for episodes that were
 #  removed from the website during a catalog-curation pass, so the Sheet stays
 #  in sync and dropped episodes are never reprocessed.
 #
@@ -11,8 +11,7 @@
 #  Trigger from: Actions -> Drop Episodes -> Run workflow
 #
 #  Required secrets:
-#    GOOGLE_CREDENTIALS_JSON  — Service account JSON for Google Sheets
-#    SPREADSHEET_ID           — Your Google Sheet ID
+#    (No Google secrets: the queue is data/queue.json in this repo.)
 ###############################################################################
 
 name: Drop Episodes
@@ -35,7 +34,7 @@ on:
           - delete
 
 permissions:
-  contents: read
+  contents: write  # commits data/queue.json
 
 concurrency:
   group: drop-episodes
@@ -55,17 +54,16 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Install dependencies
-        run: pip install gspread google-auth
-
-      - name: Update Google Sheet
-        env:
-          GOOGLE_CREDENTIALS_JSON: ${{ secrets.GOOGLE_CREDENTIALS_JSON }}
-          SPREADSHEET_ID: ${{ secrets.SPREADSHEET_ID }}
-          SHEET_NAME: ${{ secrets.SHEET_NAME || 'Sheet1' }}
+      - name: Update queue (data/queue.json)
         run: |
           if [ "${{ inputs.mode }}" = "delete" ]; then
             python scripts/drop_episodes.py --delete ${{ inputs.episodes }}
           else
             python scripts/drop_episodes.py ${{ inputs.episodes }}
           fi
+
+      # ── Save queue changes back to the repo ─────────────────────
+      - name: Commit data/queue.json
+        if: always()
+        run: |
+          python scripts/commit_queue.py "Queue: drop episodes"

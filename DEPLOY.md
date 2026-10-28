@@ -30,7 +30,7 @@ speakforwater-site/
 │   │       ├── index.astro   # Archive with filter
 │   │       └── [slug].astro  # Single episode page
 │   └── styles/global.css
-├── scripts/sync_episodes.py  # Pulls episodes from Google Sheet
+├── scripts/sync_episodes.py  # Builds episode pages from data/queue.json
 └── .github/workflows/deploy.yml
 ```
 
@@ -119,18 +119,15 @@ your daily workflow is called) — right after the publish step — that runs:
 ```yaml
 - name: Sync episodes to website
   run: python scripts/sync_episodes.py
-  env:
-    GOOGLE_CREDENTIALS_JSON: ${{ secrets.GOOGLE_CREDENTIALS_JSON }}
-    SPREADSHEET_ID: ${{ secrets.SPREADSHEET_ID }}
 
 - name: Commit synced episodes
   run: |
     git add src/content/episodes/
-    git commit -m "Sync episodes from Sheet" || echo "No changes"
+    git commit -m "Sync episodes from queue" || echo "No changes"
     git push
 ```
 
-This pulls every published row from your Google Sheet and creates a markdown
+This pulls every published row from data/queue.json and creates a markdown
 file per episode. The site then auto-rebuilds (because the `deploy.yml`
 workflow triggers on push).
 
