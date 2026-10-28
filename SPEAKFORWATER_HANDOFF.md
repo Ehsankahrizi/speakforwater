@@ -418,7 +418,7 @@ make_cover(
 
 ## 12. Where to Continue
 
-When you pick this up, start by:
+When you pick this up again, start by:
 1. `cd /Users/ehsankahrizi/speakforwater`
 2. `git pull` to sync latest
 3. Check Actions tab for recent workflow status
