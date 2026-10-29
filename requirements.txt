@@ -11,7 +11,13 @@ pydantic-settings==2.7.1
 # older clients still fetch the token from the dead host and report the session
 # as "expired or invalid" no matter how recently you logged in.
 # Upgrade this pin and re-run `notebooklm login` together, never separately.
-notebooklm-py==0.8.0
+#
+# 0.8.6, not 0.8.0: Google now answers a signed-out request with a token-less
+# landing page instead of redirecting to sign-in. 0.8.0 read that as "CSRF token
+# not found in HTML ... page structure has changed", which looks like a library
+# break rather than the expired session it was (Oct 2026, 19 failed runs).
+# 0.8.5+ asks /login and reports it as "Authentication expired".
+notebooklm-py==0.8.6
 
 # Google auth (YouTube publisher). The episode queue is data/queue.json — no Sheets.
 google-auth==2.37.0  # used by the YouTube publisher

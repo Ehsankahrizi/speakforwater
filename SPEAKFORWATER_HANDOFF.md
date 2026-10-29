@@ -295,13 +295,13 @@ git push
 ### Refresh NotebookLM auth (when the session expires)
 
 **Version first.** The local CLI must be the exact version pinned in
-`requirements.txt` (`notebooklm-py==0.8.0`). The cookies you mint locally are
+`requirements.txt` (`notebooklm-py==0.8.6`). The cookies you mint locally are
 only usable by a CI client that targets the same Google host, and the host
 changed in 0.8.0 (see "Gemini Notebook rebrand" below). A mismatched local
 version produces a file that looks perfect and fails in CI as "expired".
 
 ```bash
-pip install -U "notebooklm-py==0.8.0" && notebooklm --version
+pip install -U "notebooklm-py==0.8.6" && notebooklm --version
 notebooklm login
 ```
 
@@ -330,7 +330,12 @@ Optional end-to-end check of the exact code path CI uses (env var, not file):
 NOTEBOOKLM_AUTH_JSON="$(cat ~/.notebooklm/profiles/default/storage_state.json)" notebooklm list
 ```
 
-Two ways this silently lies to you:
+Three ways this silently lies to you:
+- **"CSRF token not found in HTML … page structure has changed" is usually an
+  expired session.** Google stopped redirecting signed-out requests to the
+  sign-in page and now serves a token-less landing page; clients before 0.8.5
+  misreport that as a page-structure change. If CI shows it on 0.8.5+, believe
+  it; on anything older, refresh the session first.
 - **Cookie expiry dates mean nothing.** Google revokes sessions server-side long
   before the timestamps in the file. A file whose cookies "expire in 2027" can be
   dead today. Only `auth check --test` knows.
