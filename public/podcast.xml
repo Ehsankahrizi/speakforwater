@@ -20,8 +20,19 @@
   <itunes:new-feed-url>https://ehsankahrizi.github.io/speakforwater/podcast.xml</itunes:new-feed-url>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
   <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
-  <lastBuildDate>Fri, 30 Oct 2026 18:37:16 +0000</lastBuildDate>
+  <lastBuildDate>Mon, 02 Nov 2026 22:22:49 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 262: Citizen science as a long-term environmental baseline: assessing impacts of a small dam removal in Montana, USA</title>
+      <enclosure url="https://media.speakforwater.com/episodes/ep262.mp3" length="28469960" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep262</guid>
+      <pubDate>Mon, 02 Nov 2026 22:22:49 +0000</pubDate>
+      <itunes:episode>262</itunes:episode>
+      <itunes:duration>1186.220408</itunes:duration>
+      <description>SpeakForWater Episode 262: Citizen science as a long-term environmental baseline: assessing impacts of a small dam removal in Montana, USA. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://gc.copernicus.org/articles/9/401/2026/gc-9-401-2026.pdf</description>
+    </item>
     <item>
       <title>Ep 261: Rice Husk Biochar Filtration for Microplastic Removal from Raw Water at a Drinking-Water Depot in Aceh Besar, Indonesia</title>
       <enclosure url="https://media.speakforwater.com/episodes/ep261.mp3" length="26187903" type="audio/mpeg"/>
