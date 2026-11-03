@@ -20,8 +20,19 @@
   <itunes:new-feed-url>https://ehsankahrizi.github.io/speakforwater/podcast.xml</itunes:new-feed-url>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
   <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
-  <lastBuildDate>Mon, 02 Nov 2026 22:22:49 +0000</lastBuildDate>
+  <lastBuildDate>Tue, 03 Nov 2026 20:09:08 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 263: Revaluing Kā Springs in Okinawa’s Islands, Japan: From Cultural Practice to Water Governance</title>
+      <enclosure url="https://media.speakforwater.com/episodes/ep263.mp3" length="14751286" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep263</guid>
+      <pubDate>Tue, 03 Nov 2026 20:09:08 +0000</pubDate>
+      <itunes:episode>263</itunes:episode>
+      <itunes:duration>614.60898</itunes:duration>
+      <description>SpeakForWater Episode 263: Revaluing Kā Springs in Okinawa’s Islands, Japan: From Cultural Practice to Water Governance. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://islandstudiesjournal.org/article/167558.pdf</description>
+    </item>
     <item>
       <title>Ep 262: Citizen science as a long-term environmental baseline: assessing impacts of a small dam removal in Montana, USA</title>
       <enclosure url="https://media.speakforwater.com/episodes/ep262.mp3" length="28469960" type="audio/mpeg"/>
