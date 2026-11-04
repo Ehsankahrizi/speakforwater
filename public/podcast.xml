@@ -20,8 +20,19 @@
   <itunes:new-feed-url>https://ehsankahrizi.github.io/speakforwater/podcast.xml</itunes:new-feed-url>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
   <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
-  <lastBuildDate>Tue, 03 Nov 2026 20:09:08 +0000</lastBuildDate>
+  <lastBuildDate>Wed, 04 Nov 2026 20:51:01 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 264: Validation of the open-source hydrodynamic model SFINCS on historical river floods at the global scale</title>
+      <enclosure url="https://media.speakforwater.com/episodes/ep264.mp3" length="33135639" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep264</guid>
+      <pubDate>Wed, 04 Nov 2026 20:51:01 +0000</pubDate>
+      <itunes:episode>264</itunes:episode>
+      <itunes:duration>1380.623673</itunes:duration>
+      <description>SpeakForWater Episode 264: Validation of the open-source hydrodynamic model SFINCS on historical river floods at the global scale. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://hess.copernicus.org/articles/30/5491/2026/hess-30-5491-2026.pdf</description>
+    </item>
     <item>
       <title>Ep 263: Revaluing Kā Springs in Okinawa’s Islands, Japan: From Cultural Practice to Water Governance</title>
       <enclosure url="https://media.speakforwater.com/episodes/ep263.mp3" length="14751286" type="audio/mpeg"/>
