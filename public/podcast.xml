@@ -20,8 +20,19 @@
   <itunes:new-feed-url>https://ehsankahrizi.github.io/speakforwater/podcast.xml</itunes:new-feed-url>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
   <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
-  <lastBuildDate>Wed, 04 Nov 2026 20:51:01 +0000</lastBuildDate>
+  <lastBuildDate>Thu, 05 Nov 2026 21:24:50 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 265: Redox-driven dissolution of bulk cadmium sulfide triggers in-root immobilization as cadmium–phosphate nanocrystals</title>
+      <enclosure url="https://media.speakforwater.com/episodes/ep265.mp3" length="16224592" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep265</guid>
+      <pubDate>Thu, 05 Nov 2026 21:24:50 +0000</pubDate>
+      <itunes:episode>265</itunes:episode>
+      <itunes:duration>675.996735</itunes:duration>
+      <description>SpeakForWater Episode 265: Redox-driven dissolution of bulk cadmium sulfide triggers in-root immobilization as cadmium–phosphate nanocrystals. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://www.nature.com/articles/s43247-026-03974-2_reference.pdf</description>
+    </item>
     <item>
       <title>Ep 264: Validation of the open-source hydrodynamic model SFINCS on historical river floods at the global scale</title>
       <enclosure url="https://media.speakforwater.com/episodes/ep264.mp3" length="33135639" type="audio/mpeg"/>
