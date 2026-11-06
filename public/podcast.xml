@@ -20,8 +20,19 @@
   <itunes:new-feed-url>https://ehsankahrizi.github.io/speakforwater/podcast.xml</itunes:new-feed-url>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
   <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
-  <lastBuildDate>Thu, 05 Nov 2026 21:24:50 +0000</lastBuildDate>
+  <lastBuildDate>Fri, 06 Nov 2026 20:02:26 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 266: Evaluation of a developed Water Quality Monitoring System (WQMS) alongside arithmetic water quality index model</title>
+      <enclosure url="https://media.speakforwater.com/episodes/ep266.mp3" length="24594852" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep266</guid>
+      <pubDate>Fri, 06 Nov 2026 20:02:26 +0000</pubDate>
+      <itunes:episode>266</itunes:episode>
+      <itunes:duration>1024.757551</itunes:duration>
+      <description>SpeakForWater Episode 266: Evaluation of a developed Water Quality Monitoring System (WQMS) alongside arithmetic water quality index model. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://journals.vilniustech.lt/index.php/JEELM/article/download/28056/13576</description>
+    </item>
     <item>
       <title>Ep 265: Redox-driven dissolution of bulk cadmium sulfide triggers in-root immobilization as cadmium–phosphate nanocrystals</title>
       <enclosure url="https://media.speakforwater.com/episodes/ep265.mp3" length="16224592" type="audio/mpeg"/>
