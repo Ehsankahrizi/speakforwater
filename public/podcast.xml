@@ -20,8 +20,19 @@
   <itunes:new-feed-url>https://ehsankahrizi.github.io/speakforwater/podcast.xml</itunes:new-feed-url>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
   <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
-  <lastBuildDate>Fri, 06 Nov 2026 20:02:26 +0000</lastBuildDate>
+  <lastBuildDate>Mon, 09 Nov 2026 23:06:59 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 267: Incorporating scientific evidence to change the “levee paradigm” against flooding in the delta of the Ranchería River (Colombia)</title>
+      <enclosure url="https://media.speakforwater.com/episodes/ep267.mp3" length="27777820" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep267</guid>
+      <pubDate>Mon, 09 Nov 2026 23:06:59 +0000</pubDate>
+      <itunes:episode>267</itunes:episode>
+      <itunes:duration>1157.381224</itunes:duration>
+      <description>SpeakForWater Episode 267: Incorporating scientific evidence to change the “levee paradigm” against flooding in the delta of the Ranchería River (Colombia). A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://www.nature.com/articles/s41598-026-66168-y_reference.pdf</description>
+    </item>
     <item>
       <title>Ep 266: Evaluation of a developed Water Quality Monitoring System (WQMS) alongside arithmetic water quality index model</title>
       <enclosure url="https://media.speakforwater.com/episodes/ep266.mp3" length="24594852" type="audio/mpeg"/>
