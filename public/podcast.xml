@@ -20,8 +20,19 @@
   <itunes:new-feed-url>https://ehsankahrizi.github.io/speakforwater/podcast.xml</itunes:new-feed-url>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
   <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
-  <lastBuildDate>Tue, 10 Nov 2026 20:27:11 +0000</lastBuildDate>
+  <lastBuildDate>Wed, 11 Nov 2026 20:11:26 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 269: Perceived consequences of megadrought on wellbeing and the role of health care: narratives from rural communities in Elqui Province, Chile</title>
+      <enclosure url="https://media.speakforwater.com/episodes/ep269.mp3" length="28656160" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep269</guid>
+      <pubDate>Wed, 11 Nov 2026 20:11:26 +0000</pubDate>
+      <itunes:episode>269</itunes:episode>
+      <itunes:duration>1193.949751</itunes:duration>
+      <description>SpeakForWater Episode 269: Perceived consequences of megadrought on wellbeing and the role of health care: narratives from rural communities in Elqui Province, Chile. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://www.rrh.org.au/assets/article_documents/article_print_10701.pdf</description>
+    </item>
     <item>
       <title>Ep 268: GREEN HYDROGEN AND THE PRICE OF WATER: CHALLENGES FOR THE CASPIAN REGION OF KAZAKHSTAN</title>
       <enclosure url="https://media.speakforwater.com/episodes/ep268.mp3" length="12104351" type="audio/mpeg"/>
