@@ -20,8 +20,19 @@
   <itunes:new-feed-url>https://ehsankahrizi.github.io/speakforwater/podcast.xml</itunes:new-feed-url>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
   <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
-  <lastBuildDate>Wed, 11 Nov 2026 20:11:26 +0000</lastBuildDate>
+  <lastBuildDate>Thu, 12 Nov 2026 20:51:05 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 270: Mineral-integrated electrochemical system enabling membrane-free pH swing and active chlorine species generation for urine valorization</title>
+      <enclosure url="https://media.speakforwater.com/episodes/ep270.mp3" length="34615213" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep270</guid>
+      <pubDate>Thu, 12 Nov 2026 20:51:05 +0000</pubDate>
+      <itunes:episode>270</itunes:episode>
+      <itunes:duration>1442.240726</itunes:duration>
+      <description>SpeakForWater Episode 270: Mineral-integrated electrochemical system enabling membrane-free pH swing and active chlorine species generation for urine valorization. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://www.nature.com/articles/s41467-026-77732-5_reference.pdf</description>
+    </item>
     <item>
       <title>Ep 269: Perceived consequences of megadrought on wellbeing and the role of health care: narratives from rural communities in Elqui Province, Chile</title>
       <enclosure url="https://media.speakforwater.com/episodes/ep269.mp3" length="28656160" type="audio/mpeg"/>
