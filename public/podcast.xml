@@ -20,8 +20,19 @@
   <itunes:new-feed-url>https://ehsankahrizi.github.io/speakforwater/podcast.xml</itunes:new-feed-url>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
   <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
-  <lastBuildDate>Mon, 16 Nov 2026 22:54:56 +0000</lastBuildDate>
+  <lastBuildDate>Tue, 17 Nov 2026 21:39:34 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 273: Divergent fertility responses to cyclones and floods: a mixed-methods study from rural Bangladesh</title>
+      <enclosure url="https://media.speakforwater.com/episodes/ep273.mp3" length="13998332" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep273</guid>
+      <pubDate>Tue, 17 Nov 2026 21:39:34 +0000</pubDate>
+      <itunes:episode>273</itunes:episode>
+      <itunes:duration>583.195283</itunes:duration>
+      <description>SpeakForWater Episode 273: Divergent fertility responses to cyclones and floods: a mixed-methods study from rural Bangladesh. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://www.cambridge.org/core/services/aop-cambridge-core/content/view/1D94384BFCDDB21F3336A811B86B832F/S0021932026100662a.pdf/div-class-title-divergent-fertility-responses-to-cyclones-and-floods-a-mixed-methods-study-from-rural-bangladesh-div.pdf</description>
+    </item>
     <item>
       <title>Ep 272: Long-term impacts of land retirement on groundwater nitrate concentrations</title>
       <enclosure url="https://media.speakforwater.com/episodes/ep272.mp3" length="26197306" type="audio/mpeg"/>
