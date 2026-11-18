@@ -20,8 +20,19 @@
   <itunes:new-feed-url>https://ehsankahrizi.github.io/speakforwater/podcast.xml</itunes:new-feed-url>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
   <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
-  <lastBuildDate>Tue, 17 Nov 2026 21:39:34 +0000</lastBuildDate>
+  <lastBuildDate>Wed, 18 Nov 2026 21:19:56 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 274: Modeling the potential of green roofs and improved green roof systems for urban flood mitigation in Chandigarh, India</title>
+      <enclosure url="https://media.speakforwater.com/episodes/ep274.mp3" length="33280461" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep274</guid>
+      <pubDate>Wed, 18 Nov 2026 21:19:56 +0000</pubDate>
+      <itunes:episode>274</itunes:episode>
+      <itunes:duration>1386.628934</itunes:duration>
+      <description>SpeakForWater Episode 274: Modeling the potential of green roofs and improved green roof systems for urban flood mitigation in Chandigarh, India. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://www.nature.com/articles/s41598-026-69004-5_reference.pdf</description>
+    </item>
     <item>
       <title>Ep 273: Divergent fertility responses to cyclones and floods: a mixed-methods study from rural Bangladesh</title>
       <enclosure url="https://media.speakforwater.com/episodes/ep273.mp3" length="13998332" type="audio/mpeg"/>
