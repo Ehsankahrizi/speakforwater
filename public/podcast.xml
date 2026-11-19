@@ -20,8 +20,19 @@
   <itunes:new-feed-url>https://ehsankahrizi.github.io/speakforwater/podcast.xml</itunes:new-feed-url>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
   <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
-  <lastBuildDate>Wed, 18 Nov 2026 21:19:56 +0000</lastBuildDate>
+  <lastBuildDate>Thu, 19 Nov 2026 21:25:19 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 275: Surveillance of Mytella strigata using eDNA and local ecological knowledge: implications for management and alternative feed use</title>
+      <enclosure url="https://media.speakforwater.com/episodes/ep275.mp3" length="15277914" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep275</guid>
+      <pubDate>Thu, 19 Nov 2026 21:25:19 +0000</pubDate>
+      <itunes:episode>275</itunes:episode>
+      <itunes:duration>636.508299</itunes:duration>
+      <description>SpeakForWater Episode 275: Surveillance of Mytella strigata using eDNA and local ecological knowledge: implications for management and alternative feed use. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://www.nature.com/articles/s41598-026-70454-0_reference.pdf</description>
+    </item>
     <item>
       <title>Ep 274: Modeling the potential of green roofs and improved green roof systems for urban flood mitigation in Chandigarh, India</title>
       <enclosure url="https://media.speakforwater.com/episodes/ep274.mp3" length="33280461" type="audio/mpeg"/>
