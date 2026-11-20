@@ -20,8 +20,19 @@
   <itunes:new-feed-url>https://ehsankahrizi.github.io/speakforwater/podcast.xml</itunes:new-feed-url>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
   <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
-  <lastBuildDate>Thu, 19 Nov 2026 21:25:19 +0000</lastBuildDate>
+  <lastBuildDate>Fri, 20 Nov 2026 21:04:03 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 276: Exploring community experiences and perceptions of water security in South Africa: a qualitative investigation</title>
+      <enclosure url="https://media.speakforwater.com/episodes/ep276.mp3" length="11580856" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep276</guid>
+      <pubDate>Fri, 20 Nov 2026 21:04:03 +0000</pubDate>
+      <itunes:episode>276</itunes:episode>
+      <itunes:duration>482.46712</itunes:duration>
+      <description>SpeakForWater Episode 276: Exploring community experiences and perceptions of water security in South Africa: a qualitative investigation. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://doi.org/10.63212/ijds25100901</description>
+    </item>
     <item>
       <title>Ep 275: Surveillance of Mytella strigata using eDNA and local ecological knowledge: implications for management and alternative feed use</title>
       <enclosure url="https://media.speakforwater.com/episodes/ep275.mp3" length="15277914" type="audio/mpeg"/>
