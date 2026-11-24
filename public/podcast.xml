@@ -20,8 +20,19 @@
   <itunes:new-feed-url>https://ehsankahrizi.github.io/speakforwater/podcast.xml</itunes:new-feed-url>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
   <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
-  <lastBuildDate>Tue, 24 Nov 2026 00:47:37 +0000</lastBuildDate>
+  <lastBuildDate>Tue, 24 Nov 2026 23:05:04 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 278: Graph-Based Safe-Routing for Flood-Aware Evacuation in Urban Environments</title>
+      <enclosure url="https://media.speakforwater.com/episodes/ep278.mp3" length="17406998" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep278</guid>
+      <pubDate>Tue, 24 Nov 2026 23:05:04 +0000</pubDate>
+      <itunes:episode>278</itunes:episode>
+      <itunes:duration>725.231746</itunes:duration>
+      <description>SpeakForWater Episode 278: Graph-Based Safe-Routing for Flood-Aware Evacuation in Urban Environments. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://isprs-annals.copernicus.org/articles/XII-4-W2-2026/195/2026/isprs-annals-XII-4-W2-2026-195-2026.pdf</description>
+    </item>
     <item>
       <title>Ep 277: Open-Source GIS Applications for Flood and Landslide Assessment: Comparative Cases from Poland and Malaysia</title>
       <enclosure url="https://media.speakforwater.com/episodes/ep277.mp3" length="24258812" type="audio/mpeg"/>
