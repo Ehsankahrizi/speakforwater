@@ -20,8 +20,19 @@
   <itunes:new-feed-url>https://ehsankahrizi.github.io/speakforwater/podcast.xml</itunes:new-feed-url>
   <atom:link href="https://ehsankahrizi.github.io/speakforwater/podcast.xml" rel="self" type="application/rss+xml"/>
   <atom:link href="https://pubsubhubbub.appspot.com/" rel="hub"/>
-  <lastBuildDate>Thu, 26 Nov 2026 22:18:19 +0000</lastBuildDate>
+  <lastBuildDate>Fri, 27 Nov 2026 21:58:42 +0000</lastBuildDate>
 
+    <item>
+      <title>Ep 281: When Armoring and Nourishment Are No Longer Enough: Managed Retreat and Coastal Adaptation in California</title>
+      <enclosure url="https://media.speakforwater.com/episodes/ep281.mp3" length="31185231" type="audio/mpeg"/>
+      <guid isPermaLink="false">speakforwater-ep281</guid>
+      <pubDate>Fri, 27 Nov 2026 21:58:42 +0000</pubDate>
+      <itunes:episode>281</itunes:episode>
+      <itunes:duration>1299.321905</itunes:duration>
+      <description>SpeakForWater Episode 281: When Armoring and Nourishment Are No Longer Enough: Managed Retreat and Coastal Adaptation in California. A podcast conversation between Anna and Ehsan discussing the latest water resources research.
+
+Original paper: https://www.cambridge.org/core/services/aop-cambridge-core/content/view/F0B66C126B739FBD9A6CEBDEC1E29060/S2754720526100572a.pdf/div-class-title-when-armoring-and-nourishment-are-no-longer-enough-managed-retreat-and-coastal-adaptation-in-california-div.pdf</description>
+    </item>
     <item>
       <title>Ep 280: Assessing the resilience of water supply infrastructure to climate variability: a current status assessment in rural India</title>
       <enclosure url="https://media.speakforwater.com/episodes/ep280.mp3" length="18316686" type="audio/mpeg"/>
